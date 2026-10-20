@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Хронометр для Windows — Chronometer for Windows</title>
+<meta name="description" content="Хронометр для Windows: рахує час у програмах та іграх на комп'ютері й показує його на телефоні. Chronometer for Windows.">
+<link rel="icon" href="../icon.png">
+<style>
+  :root { --bg:#0B0B16; --card:#151528; --line:#2a2850; --text:#E8E6FF; --muted:#9A97C0; --cyan:#00E5FF; --violet:#8A5CFF; --magenta:#FF2BD6; }
+  * { box-sizing:border-box; }
+  html, body { overflow-x:hidden; }
+  body { margin:0; background:radial-gradient(circle at 50% 0%, #241a4a 0%, var(--bg) 60%) fixed, var(--bg); color:var(--text); font:17px/1.6 system-ui, "Segoe UI", Arial, sans-serif; }
+  main { max-width:760px; margin:0 auto; padding:40px 16px 64px; }
+  header { text-align:center; }
+  header img { width:120px; height:120px; border-radius:28px; box-shadow:0 0 60px rgba(138,92,255,.45); }
+  h1 { font-size:40px; line-height:1.15; margin:18px 0 6px; background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .sub { color:var(--muted); margin:0 0 26px; }
+  .download { display:inline-flex; align-items:center; gap:12px; padding:16px 30px; border-radius:16px; color:#fff; font-weight:700; font-size:19px; text-decoration:none;
+    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); box-shadow:0 0 40px rgba(138,92,255,.5); }
+  .download:active { transform:scale(.98); }
+  .meta { color:var(--muted); font-size:14px; margin-top:10px; }
+  section { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:10px 22px 20px; margin-top:22px; }
+  h2 { font-size:20px; color:#fff; margin:12px 0 8px; }
+  ol.steps { list-style:none; padding:0; margin:0; counter-reset:s; }
+  ol.steps > li { counter-increment:s; position:relative; padding:12px 0 12px 54px; border-top:1px solid var(--line); }
+  ol.steps > li:first-child { border-top:0; }
+  ol.steps > li::before { content:counter(s); position:absolute; left:0; top:12px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-weight:800;
+    background:rgba(138,92,255,.18); border:1px solid var(--violet); color:#fff; }
+  b.key { color:var(--cyan); }
+  /* A drawing of Windows' SmartScreen window with the two clicks marked. */
+  .smart { margin-top:10px; border-radius:10px; overflow:hidden; background:#0b4f8a; color:#fff; font:14px/1.45 "Segoe UI", system-ui, sans-serif; max-width:440px; width:100%; }
+  .smart .in { padding:16px 18px 14px; }
+  .smart .t { font-size:20px; font-weight:600; margin-bottom:6px; }
+  .smart .link { display:inline-block; margin-top:8px; text-decoration:underline; outline:2px solid var(--magenta); outline-offset:3px; border-radius:3px; }
+  .smart .bar { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; padding:10px 14px; background:#0a426f; }
+  .smart .btn { padding:5px 16px; border:1px solid #fff; border-radius:2px; }
+  .smart .btn.run { outline:2px solid var(--magenta); outline-offset:3px; }
+  .note { color:var(--muted); font-size:14px; }
+  ul { padding-left:20px; margin:6px 0; }
+  a { color:var(--cyan); }
+  footer { color:var(--muted); font-size:14px; margin-top:32px; text-align:center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="../icon.png" alt="">
+    <h1>Хронометр для Windows</h1>
+    <p class="sub">Час у програмах та іграх на комп'ютері — разом із телефоном · Chronometer for Windows</p>
+    <a class="download" href="Khronometr-PC.exe" download>⬇&nbsp; Завантажити · Download</a>
+    <div class="meta">Windows 10 / 11 · ~0.2 MB · безкоштовно · free</div>
+  </header>
+
+  <section>
+    <h2>Як встановити</h2>
+    <ol class="steps">
+      <li><b>Завантаж</b> файл кнопкою вище й <b>запусти</b> його.</li>
+      <li>
+        Якщо Windows покаже «Windows захистив ваш ПК» — натисни <b class="key">Докладніше</b>, потім <b class="key">Виконати все одно</b>.
+        Так буває з програмами без платного підпису; Хронометр нічого не встановлює поза своєю папкою.
+        <div class="smart" aria-hidden="true">
+          <div class="in">
+            <div class="t">Windows захистив ваш ПК</div>
+            Microsoft Defender SmartScreen запобіг запуску нерозпізнаної програми…
+            <div><span class="link">Докладніше</span></div>
+          </div>
+          <div class="bar"><span class="btn run">Виконати все одно</span><span class="btn">Не запускати</span></div>
+        </div>
+      </li>
+      <li>Хронометр з'явиться <b>біля годинника</b> (у треї). Натисни на його іконку → <b class="key">Увійти через Google…</b> — тим самим акаунтом, що й на телефоні.</li>
+      <li>Готово: комп'ютер з'явиться на телефоні на вкладці <b>«Пристрої»</b>. Програма сама запускатиметься з Windows.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Що він робить</h2>
+    <ul>
+      <li>Рахує час у кожній програмі й грі, поки її вікно перед тобою.</li>
+      <li>Підтягує час ігор зі Steam і трафік із журналу Windows.</li>
+      <li>Ліміти з телефона діють і тут: коли час вийшов, вікно закриває екран «Час вийшов».</li>
+      <li>Дані йдуть лише в приховану папку на <b>твоєму</b> Google Диску — жодних серверів, реклами й стеження.</li>
+    </ul>
+  </section>
+
+  <section lang="en">
+    <h2>How to install</h2>
+    <ol class="steps">
+      <li><b>Download</b> the file with the button above and <b>run</b> it.</li>
+      <li>If Windows says “Windows protected your PC”, click <b class="key">More info</b>, then <b class="key">Run anyway</b>. This happens to apps without a paid signature; Chronometer installs nothing outside its own folder.</li>
+      <li>Chronometer appears <b>next to the clock</b> (in the tray). Click its icon → <b class="key">Sign in with Google…</b> with the same account as on your phone.</li>
+      <li>Done: the PC shows up on the phone in the <b>Devices</b> tab. It starts with Windows by itself.</li>
+    </ol>
+    <p class="note">It counts the time each program is in front, adds Steam playtime and Windows traffic, applies your phone's limits, and keeps everything in a hidden folder on your own Google Drive.</p>
+  </section>
+
+  <footer><a href="../">Хронометр · Chronometer</a> · <a href="../privacy.html">Політика конфіденційності · Privacy Policy</a></footer>
+</main>
+</body>
+</html>
