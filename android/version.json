@@ -1,11 +1,11 @@
 {
-  "versionCode": 29,
-  "versionName": "0.29.0",
+  "versionCode": 30,
+  "versionName": "0.29.1",
   "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk",
-  "sha256": "5f3a367b34e61e861f0bda429a1d0a5838aac6a117fb86b1ab45200a7cebf75a",
+  "sha256": "a5c8af9457db944d90269a8cf7736640033a9a07291913dba7d1317a44068235",
   "size": 14182920,
   "notes": {
-    "uk": "Усі пристрої: час, коли телефон і ПК працювали одночасно, рахується один раз",
-    "en": "All devices: time when the phone and PC were used at once counts once"
+    "uk": "Усі пристрої: одночасний час рахується один раз. Іконки застосунків оновлюються після їхнього оновлення",
+    "en": "All devices: simultaneous time counts once. App icons refresh after the app updates"
   }
 }
