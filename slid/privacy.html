@@ -52,10 +52,11 @@ en: {
   sections: [
     { id: "data", icon: "pin", title: "What data the app holds", html: `<ul>
 <li><b>Location.</b> While you keep recording on, the app records the phone’s location (also in the background) to show where you have been and how you travelled.</li>
-<li><b>Physical activity.</b> If you allow it, Android tells the app whether you are walking, cycling or in a vehicle. It is used only to tell how you travelled.</li>
+<li><b>Physical activity.</b> If you allow it, Android tells the app whether you are walking, cycling or in a vehicle. It is used only to tell how you travelled. While recording is on, the app also counts the phone’s own steps hour by hour; they stay on the device.</li>
 <li><b>Photos and videos.</b> If you allow it, the app reads the date and the place stored in your gallery files to show photos on the map. The pictures are not copied or sent anywhere. The app does not write anything into your photo files; it can only remove a place that an older version wrote, after Android asks you.</li>
 <li><b>Imported files.</b> Google Timeline or Google Takeout files you choose are read on the phone.</li>
 <li><b>Places and settings:</b> the names you give places, language, theme.</li>
+<li><b>Weekly reports</b> <span class="opt">{opt}</span>: the mood and the words you write about a week, and your birthday if you give it, to show how much of your life the timeline holds.</li>
 </ul><p>All of it is stored on your device.</p>` },
     { id: "internet", icon: "globe", title: "What goes over the internet", html: `<ul>
 <li><b>Maps.</b> Map tiles are loaded from OpenFreeMap (OpenStreetMap data), and satellite images from Esri. These servers see which area is shown, not who you are.</li>
@@ -86,10 +87,11 @@ uk: {
   sections: [
     { id: "data", icon: "pin", title: "Які дані є в застосунку", html: `<ul>
 <li><b>Місцезнаходження.</b> Поки ти тримаєш запис увімкненим, застосунок записує місцезнаходження телефона (зокрема у фоні), щоб показати місця, де ти буваєш, і твої переїзди.</li>
-<li><b>Фізична активність.</b> Якщо дозволиш, Android повідомляє, чи ти йдеш, їдеш велосипедом або транспортом. Це потрібно лише для визначення способу пересування.</li>
+<li><b>Фізична активність.</b> Якщо дозволиш, Android повідомляє, чи ти йдеш, їдеш велосипедом або транспортом. Це потрібно лише для визначення способу пересування. Поки запис увімкнено, застосунок також рахує кроки самого телефона щогодини; вони лишаються на пристрої.</li>
 <li><b>Фото й відео.</b> Якщо дозволиш, застосунок читає з галереї дату зйомки й місце, записане у файлі, щоб показати фото на карті. Самі знімки нікуди не копіюються й не надсилаються. Застосунок нічого не записує у твої фото; він може лише прибрати місце, яке записала давніша версія, після запиту Android.</li>
 <li><b>Імпортовані файли.</b> Файли хронології Google чи Google Takeout, які ти вибереш, читаються на телефоні.</li>
 <li><b>Місця й налаштування:</b> назви, які ти даєш місцям, мова, тема.</li>
+<li><b>Звіти тижнів</b> <span class="opt">{opt}</span>: настрій і слова, які ти пишеш про тиждень, а також дата народження, якщо ти її вкажеш, щоб показати, яку частину життя охоплює хронологія.</li>
 </ul><p>Усе це зберігається на твоєму пристрої.</p>` },
     { id: "internet", icon: "globe", title: "Що надсилається в інтернет", html: `<ul>
 <li><b>Карти.</b> Шматки карти завантажуються з OpenFreeMap (дані OpenStreetMap), супутникові знімки — з Esri. Ці сервери бачать, яку місцевість показано, але не те, хто ти.</li>
@@ -120,10 +122,11 @@ es: {
   sections: [
     { id: "data", icon: "pin", title: "Qué datos guarda la app", html: `<ul>
 <li><b>Ubicación.</b> Mientras mantienes la grabación activada, la app registra la ubicación del teléfono (también en segundo plano) para mostrar dónde has estado y cómo te has desplazado.</li>
-<li><b>Actividad física.</b> Si lo permites, Android indica a la app si caminas, vas en bici o en un vehículo. Solo se usa para saber cómo te has desplazado.</li>
+<li><b>Actividad física.</b> Si lo permites, Android indica a la app si caminas, vas en bici o en un vehículo. Solo se usa para saber cómo te has desplazado. Mientras la grabación está activada, la app también cuenta los pasos del propio teléfono hora a hora; se quedan en el dispositivo.</li>
 <li><b>Fotos y vídeos.</b> Si lo permites, la app lee la fecha y el lugar guardados en los archivos de tu galería para mostrar las fotos en el mapa. Las imágenes no se copian ni se envían a ningún sitio. La app no escribe nada en tus fotos; solo puede quitar un lugar que escribió una versión anterior, después de que Android te lo pregunte.</li>
 <li><b>Archivos importados.</b> Los archivos de la Cronología de Google o de Google Takeout que elijas se leen en el teléfono.</li>
 <li><b>Lugares y ajustes:</b> los nombres que das a los lugares, el idioma, el tema.</li>
+<li><b>Resúmenes semanales</b> <span class="opt">{opt}</span>: el estado de ánimo y las palabras que escribes sobre una semana, y tu fecha de nacimiento si la indicas, para mostrar qué parte de tu vida recoge la cronología.</li>
 </ul><p>Todo ello se guarda en tu dispositivo.</p>` },
     { id: "internet", icon: "globe", title: "Qué se envía por internet", html: `<ul>
 <li><b>Mapas.</b> Las teselas del mapa se cargan desde OpenFreeMap (datos de OpenStreetMap) y las imágenes de satélite desde Esri. Estos servidores ven qué zona se muestra, no quién eres.</li>
@@ -154,10 +157,11 @@ pt: {
   sections: [
     { id: "data", icon: "pin", title: "Que dados a app guarda", html: `<ul>
 <li><b>Localização.</b> Enquanto mantém a gravação ativada, a app regista a localização do telemóvel (também em segundo plano) para mostrar por onde andou e como se deslocou.</li>
-<li><b>Atividade física.</b> Se permitir, o Android indica à app se está a caminhar, de bicicleta ou num veículo. Isto só é usado para saber como se deslocou.</li>
+<li><b>Atividade física.</b> Se permitir, o Android indica à app se está a caminhar, de bicicleta ou num veículo. Isto só é usado para saber como se deslocou. Enquanto a gravação está ativada, a app também conta os passos do próprio telemóvel hora a hora; ficam no dispositivo.</li>
 <li><b>Fotos e vídeos.</b> Se permitir, a app lê a data e o local guardados nos ficheiros da galeria para mostrar as fotos no mapa. As imagens não são copiadas nem enviadas para lado nenhum. A app não escreve nada nas suas fotos; só pode remover um local que uma versão anterior escreveu, depois de o Android lhe perguntar.</li>
 <li><b>Ficheiros importados.</b> Os ficheiros da Cronologia do Google ou do Google Takeout que escolher são lidos no telemóvel.</li>
 <li><b>Locais e definições:</b> os nomes que dá aos locais, o idioma, o tema.</li>
+<li><b>Resumos semanais</b> <span class="opt">{opt}</span>: o estado de espírito e as palavras que escreve sobre uma semana, e a sua data de nascimento se a indicar, para mostrar que parte da sua vida a cronologia abrange.</li>
 </ul><p>Tudo isto é guardado no seu dispositivo.</p>` },
     { id: "internet", icon: "globe", title: "O que passa pela internet", html: `<ul>
 <li><b>Mapas.</b> Os mosaicos do mapa são carregados do OpenFreeMap (dados do OpenStreetMap) e as imagens de satélite da Esri. Estes servidores veem que zona é mostrada, não quem é você.</li>
@@ -188,10 +192,11 @@ fr: {
   sections: [
     { id: "data", icon: "pin", title: "Quelles données l’app contient", html: `<ul>
 <li><b>Position.</b> Tant que l’enregistrement est activé, l’app enregistre la position du téléphone (y compris en arrière-plan) pour montrer vos lieux et vos trajets.</li>
-<li><b>Activité physique.</b> Si vous l’autorisez, Android indique à l’app si vous marchez, êtes à vélo ou dans un véhicule. Cela sert uniquement à reconnaître le moyen de transport.</li>
+<li><b>Activité physique.</b> Si vous l’autorisez, Android indique à l’app si vous marchez, êtes à vélo ou dans un véhicule. Cela sert uniquement à reconnaître le moyen de transport. Tant que l’enregistrement est activé, l’app compte aussi les pas du téléphone lui-même, heure par heure ; ils restent sur l’appareil.</li>
 <li><b>Photos et vidéos.</b> Si vous l’autorisez, l’app lit la date et le lieu enregistrés dans les fichiers de votre galerie pour afficher les photos sur la carte. Les images ne sont ni copiées ni envoyées nulle part. L’app n’écrit rien dans vos photos ; elle peut seulement retirer un lieu écrit par une ancienne version, après qu’Android vous l’a demandé.</li>
 <li><b>Fichiers importés.</b> Les fichiers de vos trajets Google ou de Google Takeout que vous choisissez sont lus sur le téléphone.</li>
 <li><b>Lieux et réglages :</b> les noms que vous donnez aux lieux, la langue, le thème.</li>
+<li><b>Bilans de la semaine</b> <span class="opt">{opt}</span>: l’humeur et les mots que vous écrivez sur une semaine, et votre date de naissance si vous l’indiquez, pour montrer quelle part de votre vie la chronologie couvre.</li>
 </ul><p>Tout cela est stocké sur votre appareil.</p>` },
     { id: "internet", icon: "globe", title: "Ce qui passe par internet", html: `<ul>
 <li><b>Cartes.</b> Les tuiles de la carte sont chargées depuis OpenFreeMap (données OpenStreetMap), et les images satellite depuis Esri. Ces serveurs voient quelle zone est affichée, pas qui vous êtes.</li>
@@ -222,10 +227,11 @@ de: {
   sections: [
     { id: "data", icon: "pin", title: "Welche Daten die App hat", html: `<ul>
 <li><b>Standort.</b> Solange die Aufzeichnung eingeschaltet ist, zeichnet die App den Standort des Handys auf (auch im Hintergrund), um zu zeigen, wo du warst und wie du unterwegs warst.</li>
-<li><b>Körperliche Aktivität.</b> Wenn du es erlaubst, teilt Android der App mit, ob du gehst, Rad fährst oder in einem Fahrzeug bist. Das dient nur dazu, die Art der Fortbewegung zu erkennen.</li>
+<li><b>Körperliche Aktivität.</b> Wenn du es erlaubst, teilt Android der App mit, ob du gehst, Rad fährst oder in einem Fahrzeug bist. Das dient nur dazu, die Art der Fortbewegung zu erkennen. Solange die Aufzeichnung läuft, zählt die App auch die Schritte des Handys selbst, Stunde für Stunde; sie bleiben auf dem Gerät.</li>
 <li><b>Fotos und Videos.</b> Wenn du es erlaubst, liest die App Datum und Ort aus den Dateien deiner Galerie, um Fotos auf der Karte zu zeigen. Die Bilder werden nicht kopiert und nirgendwohin gesendet. Die App schreibt nichts in deine Fotos; sie kann nur einen Ort entfernen, den eine ältere Version hineingeschrieben hat, nachdem Android dich gefragt hat.</li>
 <li><b>Importierte Dateien.</b> Dateien aus der Google Zeitachse oder Google Takeout, die du auswählst, werden auf dem Handy gelesen.</li>
 <li><b>Orte und Einstellungen:</b> die Namen, die du Orten gibst, Sprache, Design.</li>
+<li><b>Wochenberichte</b> <span class="opt">{opt}</span>: die Stimmung und die Worte, die du über eine Woche schreibst, und dein Geburtsdatum, wenn du es angibst, um zu zeigen, wie viel deines Lebens die Zeitachse enthält.</li>
 </ul><p>All das wird auf deinem Gerät gespeichert.</p>` },
     { id: "internet", icon: "globe", title: "Was über das Internet geht", html: `<ul>
 <li><b>Karten.</b> Kartenkacheln werden von OpenFreeMap (Daten von OpenStreetMap) geladen, Satellitenbilder von Esri. Diese Server sehen, welches Gebiet gezeigt wird, nicht wer du bist.</li>
@@ -256,10 +262,11 @@ it: {
   sections: [
     { id: "data", icon: "pin", title: "Quali dati contiene l’app", html: `<ul>
 <li><b>Posizione.</b> Finché tieni attiva la registrazione, l’app registra la posizione del telefono (anche in background) per mostrare i luoghi visitati e i tuoi spostamenti.</li>
-<li><b>Attività fisica.</b> Se lo consenti, Android dice all’app se stai camminando, pedalando o viaggiando in un veicolo. Serve solo a capire il mezzo di trasporto.</li>
+<li><b>Attività fisica.</b> Se lo consenti, Android dice all’app se stai camminando, pedalando o viaggiando in un veicolo. Serve solo a capire il mezzo di trasporto. Finché la registrazione è attiva, l’app conta anche i passi del telefono stesso, ora per ora; restano sul dispositivo.</li>
 <li><b>Foto e video.</b> Se lo consenti, l’app legge la data e il luogo salvati nei file della galleria per mostrare le foto sulla mappa. Le immagini non vengono copiate né inviate da nessuna parte. L’app non scrive nulla nelle tue foto; può solo togliere un luogo scritto da una versione precedente, dopo che Android te lo ha chiesto.</li>
 <li><b>File importati.</b> I file degli Spostamenti di Google o di Google Takeout che scegli vengono letti sul telefono.</li>
 <li><b>Luoghi e impostazioni:</b> i nomi che dai ai luoghi, la lingua, il tema.</li>
+<li><b>Resoconti settimanali</b> <span class="opt">{opt}</span>: l’umore e le parole che scrivi su una settimana, e la data di nascita se la indichi, per mostrare quanta parte della tua vita copre la cronologia.</li>
 </ul><p>Tutto questo è salvato sul tuo dispositivo.</p>` },
     { id: "internet", icon: "globe", title: "Cosa passa da internet", html: `<ul>
 <li><b>Mappe.</b> I riquadri della mappa vengono caricati da OpenFreeMap (dati OpenStreetMap) e le immagini satellitari da Esri. Questi server vedono quale zona è mostrata, non chi sei.</li>
@@ -290,10 +297,11 @@ sv: {
   sections: [
     { id: "data", icon: "pin", title: "Vilka data appen har", html: `<ul>
 <li><b>Plats.</b> Så länge inspelningen är på registrerar appen telefonens plats (även i bakgrunden) för att visa var du har varit och hur du har tagit dig fram.</li>
-<li><b>Fysisk aktivitet.</b> Om du tillåter det talar Android om för appen om du går, cyklar eller åker i ett fordon. Det används bara för att avgöra hur du har tagit dig fram.</li>
+<li><b>Fysisk aktivitet.</b> Om du tillåter det talar Android om för appen om du går, cyklar eller åker i ett fordon. Det används bara för att avgöra hur du har tagit dig fram. Medan inspelningen är på räknar appen också telefonens egna steg timme för timme; de stannar på enheten.</li>
 <li><b>Foton och videor.</b> Om du tillåter det läser appen datum och plats som finns sparade i galleriets filer för att visa foton på kartan. Bilderna kopieras inte och skickas ingenstans. Appen skriver ingenting i dina foton; den kan bara ta bort en plats som en äldre version skrev in, efter att Android har frågat dig.</li>
 <li><b>Importerade filer.</b> Filer från Google Tidslinje eller Google Takeout som du väljer läses på telefonen.</li>
 <li><b>Platser och inställningar:</b> namnen du ger platser, språk, tema.</li>
+<li><b>Veckorapporter</b> <span class="opt">{opt}</span>: stämningen och orden du skriver om en vecka, och ditt födelsedatum om du anger det, för att visa hur stor del av ditt liv tidslinjen rymmer.</li>
 </ul><p>Allt detta sparas på din enhet.</p>` },
     { id: "internet", icon: "globe", title: "Vad som går via internet", html: `<ul>
 <li><b>Kartor.</b> Kartrutor hämtas från OpenFreeMap (data från OpenStreetMap) och satellitbilder från Esri. Dessa servrar ser vilket område som visas, inte vem du är.</li>
@@ -324,10 +332,11 @@ id: {
   sections: [
     { id: "data", icon: "pin", title: "Data apa yang disimpan aplikasi", html: `<ul>
 <li><b>Lokasi.</b> Selama perekaman aktif, aplikasi mencatat lokasi ponsel (juga di latar belakang) untuk menunjukkan tempat yang pernah dikunjungi dan cara perjalanannya.</li>
-<li><b>Aktivitas fisik.</b> Jika diizinkan, Android memberi tahu aplikasi apakah sedang berjalan, bersepeda, atau di dalam kendaraan. Ini hanya dipakai untuk mengetahui cara perjalanan.</li>
+<li><b>Aktivitas fisik.</b> Jika diizinkan, Android memberi tahu aplikasi apakah sedang berjalan, bersepeda, atau di dalam kendaraan. Ini hanya dipakai untuk mengetahui cara perjalanan. Selama perekaman aktif, aplikasi juga menghitung langkah dari ponsel itu sendiri per jam; data ini tetap di perangkat.</li>
 <li><b>Foto dan video.</b> Jika diizinkan, aplikasi membaca tanggal dan tempat yang tersimpan di file galeri untuk menampilkan foto di peta. Gambarnya tidak disalin atau dikirim ke mana pun. Aplikasi tidak menulis apa pun ke foto; aplikasi hanya dapat menghapus lokasi yang ditulis versi lama, setelah Android meminta izin.</li>
 <li><b>File yang diimpor.</b> File Linimasa Google atau Google Takeout yang dipilih dibaca di ponsel.</li>
 <li><b>Tempat dan pengaturan:</b> nama yang diberikan untuk tempat, bahasa, tema.</li>
+<li><b>Laporan mingguan</b> <span class="opt">{opt}</span>: suasana hati dan kata-kata yang ditulis tentang suatu minggu, serta tanggal lahir jika diisi, untuk menunjukkan seberapa banyak bagian hidup yang tercatat di linimasa.</li>
 </ul><p>Semua ini disimpan di perangkat.</p>` },
     { id: "internet", icon: "globe", title: "Apa yang dikirim lewat internet", html: `<ul>
 <li><b>Peta.</b> Petak peta dimuat dari OpenFreeMap (data OpenStreetMap), dan citra satelit dari Esri. Server ini melihat area yang ditampilkan, bukan siapa penggunanya.</li>
@@ -358,10 +367,11 @@ ja: {
   sections: [
     { id: "data", icon: "pin", title: "アプリが保持するデータ", html: `<ul>
 <li><b>位置情報。</b>記録をオンにしている間、アプリはスマートフォンの位置情報を（バックグラウンドでも）記録し、訪れた場所と移動手段を表示します。</li>
-<li><b>身体活動。</b>許可すると、Android が歩行中、自転車、乗り物での移動のいずれかをアプリに伝えます。これは移動手段の判定にのみ使われます。</li>
+<li><b>身体活動。</b>許可すると、Android が歩行中、自転車、乗り物での移動のいずれかをアプリに伝えます。これは移動手段の判定にのみ使われます。記録がオンの間、アプリはスマートフォン自体の歩数も 1 時間ごとに数えます。このデータはデバイスに残ります。</li>
 <li><b>写真と動画。</b>許可すると、アプリはギャラリーのファイルに保存された日付と場所を読み取り、写真を地図上に表示します。画像がコピーされたり、どこかに送信されたりすることはありません。アプリが写真に何かを書き込むことはなく、以前のバージョンが書き込んだ場所を、Android の確認を経て削除できるだけです。</li>
 <li><b>インポートしたファイル。</b>選択した Google タイムラインや Google Takeout のファイルは、スマートフォン上で読み取られます。</li>
 <li><b>場所と設定：</b>場所に付けた名前、言語、テーマ。</li>
+<li><b>週のレポート</b> <span class="opt">{opt}</span>：1 週間について記録した気分と言葉、そして入力した場合は生年月日（人生のどのくらいがタイムラインに記録されているかを表示するため）。</li>
 </ul><p>これらはすべてデバイスに保存されます。</p>` },
     { id: "internet", icon: "globe", title: "インターネット経由で送られるもの", html: `<ul>
 <li><b>地図。</b>地図タイルは OpenFreeMap（OpenStreetMap のデータ）から、航空写真は Esri から読み込まれます。これらのサーバーには表示中の地域はわかりますが、あなたが誰かはわかりません。</li>
@@ -392,10 +402,11 @@ kk: {
   sections: [
     { id: "data", icon: "pin", title: "Қолданбада қандай деректер бар", html: `<ul>
 <li><b>Орналасу.</b> Жазу қосулы тұрғанда қолданба телефонның орналасуын (фонда да) жазып отырады, сонда қайда болғаныңыз бен қалай жүргеніңіз көрінеді.</li>
-<li><b>Физикалық белсенділік.</b> Рұқсат етсеңіз, Android қолданбаға жаяу жүріп келе жатқаныңызды, велосипедпен немесе көлікпен келе жатқаныңызды айтады. Бұл тек жүру тәсілін анықтау үшін қолданылады.</li>
+<li><b>Физикалық белсенділік.</b> Рұқсат етсеңіз, Android қолданбаға жаяу жүріп келе жатқаныңызды, велосипедпен немесе көлікпен келе жатқаныңызды айтады. Бұл тек жүру тәсілін анықтау үшін қолданылады. Жазу қосулы тұрғанда қолданба телефонның өз қадамдарын да сағат сайын санайды; олар құрылғыда қалады.</li>
 <li><b>Фото мен бейне.</b> Рұқсат етсеңіз, қолданба фотоларды картада көрсету үшін галерея файлдарындағы күн мен орынды оқиды. Суреттердің өзі көшірілмейді және ешқайда жіберілмейді. Қолданба фотоларыңызға ештеңе жазбайды; ол Android сұрағаннан кейін тек ескі нұсқа жазған орынды алып тастай алады.</li>
 <li><b>Импортталған файлдар.</b> Сіз таңдаған Google хронологиясы немесе Google Takeout файлдары телефонда оқылады.</li>
 <li><b>Орындар мен баптаулар:</b> орындарға берген атауларыңыз, тіл, тақырып.</li>
+<li><b>Апта есептері</b> <span class="opt">{opt}</span>: апта туралы жазған көңіл күйіңіз бен сөздеріңіз, сондай-ақ хронология өміріңіздің қанша бөлігін қамтитынын көрсету үшін, егер көрсетсеңіз, туған күніңіз.</li>
 </ul><p>Мұның бәрі құрылғыңызда сақталады.</p>` },
     { id: "internet", icon: "globe", title: "Интернет арқылы не жіберіледі", html: `<ul>
 <li><b>Карталар.</b> Карта бөліктері OpenFreeMap-тен (OpenStreetMap деректері), жерсерік суреттері Esri-ден жүктеледі. Бұл серверлер қай аумақ көрсетілгенін көреді, бірақ сіздің кім екеніңізді көрмейді.</li>
@@ -426,10 +437,11 @@ ru: {
   sections: [
     { id: "data", icon: "pin", title: "Какие данные есть в приложении", html: `<ul>
 <li><b>Местоположение.</b> Пока запись включена, приложение записывает местоположение телефона (в том числе в фоне), чтобы показать, где ты бываешь и как передвигаешься.</li>
-<li><b>Физическая активность.</b> Если разрешишь, Android сообщает приложению, идёшь ли ты пешком, едешь на велосипеде или в транспорте. Это нужно только для определения способа передвижения.</li>
+<li><b>Физическая активность.</b> Если разрешишь, Android сообщает приложению, идёшь ли ты пешком, едешь на велосипеде или в транспорте. Это нужно только для определения способа передвижения. Пока запись включена, приложение также считает шаги самого телефона по часам; они остаются на устройстве.</li>
 <li><b>Фото и видео.</b> Если разрешишь, приложение читает из файлов галереи дату съёмки и место, чтобы показать фото на карте. Сами снимки никуда не копируются и не отправляются. Приложение ничего не записывает в твои фото; оно может только убрать место, которое записала более старая версия, после запроса Android.</li>
 <li><b>Импортированные файлы.</b> Файлы хронологии Google или Google Takeout, которые ты выберешь, читаются на телефоне.</li>
 <li><b>Места и настройки:</b> названия, которые ты даёшь местам, язык, тема.</li>
+<li><b>Отчёты недель</b> <span class="opt">{opt}</span>: настроение и слова, которые ты пишешь о неделе, а также дата рождения, если ты её укажешь, чтобы показать, какую часть жизни охватывает хронология.</li>
 </ul><p>Всё это хранится на твоём устройстве.</p>` },
     { id: "internet", icon: "globe", title: "Что отправляется в интернет", html: `<ul>
 <li><b>Карты.</b> Фрагменты карты загружаются с OpenFreeMap (данные OpenStreetMap), спутниковые снимки — с Esri. Эти серверы видят, какая местность показана, но не то, кто ты.</li>
