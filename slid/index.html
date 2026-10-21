@@ -1,33 +1,18 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" style="--accent:#E8552C;--accent2:#FF8A4C;--on-accent:#fff">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Slid — your timeline, day by day</title>
 <meta name="description" content="Slid records where you go and how you travel, brings in your Google Timeline and puts your photos on the map. Everything stays on your phone.">
+<meta name="theme-color" content="#ECEEF3">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
 <link rel="stylesheet" href="site.css">
-<style>
-.hero{display:grid;gap:22px;align-items:center;margin-top:12px}
-@media (min-width:720px){.hero{grid-template-columns:auto 1fr;gap:34px;margin-top:28px}}
-.hero .logo{width:112px;height:112px;border-radius:30px;display:block;box-shadow:0 12px 32px rgba(224,82,42,.28)}
-.hero .logo svg{width:100%;height:100%;border-radius:30px;display:block}
-.hero h1{margin:0 0 6px}
-.tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
-.tag svg.i{width:15px;height:15px}
-.features .tile .ic{background:var(--accentSoft);color:var(--accent)}
-.private{padding:22px;display:grid;gap:16px}
-@media (min-width:720px){.private{grid-template-columns:1fr 1fr 1fr}}
-.private>div{display:flex;gap:12px;align-items:flex-start}
-.private b{display:block}
-.private span{color:var(--ink2);font-size:14.5px}
-.more{margin-top:14px}
-.dl{font-size:17px;padding:14px 26px;box-shadow:0 8px 22px rgba(224,82,42,.30)}
-.dl svg.i{width:22px;height:22px}
-.dlrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:20px}
-.dlnote{color:var(--ink3);font-size:14px}
-.hero .row{margin-top:14px}
-@media (max-width:480px){.dl{width:100%;justify-content:center}}
-</style>
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </head>
 <body>
 <main id="page"></main>
@@ -37,7 +22,7 @@
 // Every language: the hero, the features and the privacy promise. Icons are names from site.js.
 // Newest APK: a static fallback, replaced by the url in ./update.json once it loads.
 let APK = { url: "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.2/Slid-0.9.2.apk", name: "0.9.2" };
-const DL_ICON = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
+const DL_ICON = '<svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
 function applyApk() {
   const a = document.getElementById("dl"), v = document.getElementById("dlver");
   if (a) a.href = APK.url;
@@ -360,21 +345,18 @@ ru: {
 
 startPage(T, "home", (l, t, brand) => {
   document.title = `${brand} — ${t.title}`;
-  const tile = ([i, b, s]) => `<div class="card tile"><div class="ic">${icon(i)}</div><b>${b}</b><span>${s}</span></div>`;
+  const card = ([i, b, s]) => `<div class="card"><span class="tile">${icon(i)}</span><h3>${b}</h3><p>${s}</p></div>`;
   document.getElementById("page").innerHTML =
-    `<div class="hero"><div class="logo">${LOGO}</div><div>` +
+    `<section class="hero"><img class="appicon" src="${LOGO}" alt="">` +
     `<span class="tag">${icon("phone")}${t.tag}</span><h1>${brand}</h1>` +
-    `<p class="lead" style="margin-top:4px"><b style="color:var(--ink)">${t.title}.</b> ${t.lead}</p>` +
-    `<div class="dlrow"><a class="btn main dl" id="dl" href="${APK.url}">${DL_ICON}${t.dlBtn}</a>` +
-    `<span class="dlnote">${t.dlNote}<span id="dlver"></span></span></div>` +
-    `<div class="row"><a class="btn" href="privacy.html?lang=${l}">${icon("shield")}${t.privacyBtn}</a>` +
+    `<p class="tagline">${t.title}</p><p class="lead">${t.lead}</p>` +
+    `<div class="actions"><a class="btn primary" id="dl" href="${APK.url}">${DL_ICON}${t.dlBtn}</a>` +
+    `<a class="btn" href="privacy.html?lang=${l}">${icon("shield")}${t.privacyBtn}</a>` +
     `<a class="btn" href="mailto:pegasohlib12@gmail.com">${icon("mail")}${t.mailBtn}</a></div>` +
-    `</div></div>` +
-    `<h2 class="big">${t.featuresTitle}</h2><div class="grid features">${t.features.map(tile).join("")}</div>` +
-    `<h2 class="big">${t.privateTitle}</h2><div class="card private">` +
-    t.private.map(([i, b, s]) => `<div><span class="ic good">${icon(i)}</span><div><b>${b}</b><span>${s}</span></div></div>`).join("") +
-    `</div><p class="more"><a href="privacy.html?lang=${l}">${t.privacyLink} →</a></p>` +
-    `<footer>${brand} · <a href="privacy.html?lang=${l}">${NAV[l][1]}</a> · ${MAIL}</footer>`;
+    `<p class="note">${t.dlNote}<span id="dlver"></span></p></section>` +
+    `<section class="section"><h2>${t.featuresTitle}</h2><div class="cards">${t.features.map(card).join("")}</div></section>` +
+    `<section class="section"><h2>${t.privateTitle}</h2><div class="cards">${t.private.map(card).join("")}</div>` +
+    `<p class="more"><a href="privacy.html?lang=${l}">${t.privacyLink} →</a></p></section>`;
   applyApk();
 });
 fetch("./update.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(u => {
