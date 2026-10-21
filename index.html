@@ -2,238 +2,598 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Khronometr — Screen time for all time</title>
-<meta name="description" content="How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.">
-<link rel="icon" href="icon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PegasoHlib — apps and games</title>
+<meta name="description" content="Khronometr, Kraplya, Slid, Kolys and KORDON — apps and games by PegasoHlib. Download for Android, in 12 languages.">
 <meta name="google-site-verification" content="_Rg4wkaTfzLuw4vni9R7_2KWx6EaCLvejYQPm5p3Urc" />
+<meta name="theme-color" content="#07070d" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f5fb" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://pegasohlib.github.io/">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/?lang=uk">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/?lang=en">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PegasoHlib">
+<meta property="og:url" content="https://pegasohlib.github.io/">
+<meta property="og:title" content="PegasoHlib — apps and games">
+<meta property="og:description" content="Khronometr, Kraplya, Slid, Kolys and KORDON — apps and games by PegasoHlib. Download for Android, in 12 languages.">
+<meta property="og:image" content="https://pegasohlib.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/mark-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700;800&display=swap">
+<script>document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Person","@id":"https://pegasohlib.github.io/#me","name":"PegasoHlib","url":"https://pegasohlib.github.io/","email":"mailto:pegasohlib12@gmail.com","sameAs":["https://github.com/PegasoHlib"]},{"@type":"SoftwareApplication","name":"Khronometr","description":"Screen time for all time","url":"https://pegasohlib.github.io/khronometr/","applicationCategory":"UtilitiesApplication","operatingSystem":"Android, Windows","author":{"@id":"https://pegasohlib.github.io/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"SoftwareApplication","name":"Kraplya","description":"Habit tracker with a timer","url":"https://pegasohlib.github.io/kraplya/","applicationCategory":"LifestyleApplication","operatingSystem":"Android","author":{"@id":"https://pegasohlib.github.io/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"SoftwareApplication","name":"Slid","description":"Your timeline, day by day","url":"https://pegasohlib.github.io/slid/","applicationCategory":"TravelApplication","operatingSystem":"Android","author":{"@id":"https://pegasohlib.github.io/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"SoftwareApplication","name":"Kolys","description":"A letter to your future self","url":"https://pegasohlib.github.io/kolys/","applicationCategory":"LifestyleApplication","operatingSystem":"Android","author":{"@id":"https://pegasohlib.github.io/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"VideoGame","name":"KORDON","description":"World history strategy","url":"https://pegasohlib.github.io/kordon/","applicationCategory":"GameApplication","operatingSystem":"Android","author":{"@id":"https://pegasohlib.github.io/#me"},"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}]}</script>
 <style>
-  :root { color-scheme: dark; --bg:#0B0B16; --bg2:#1A1440; --card:#151528; --card2:#1B1A33; --line:#2A2850; --text:#E8E6FF; --muted:#9A97C0;
-    --cyan:#00E5FF; --violet:#8A5CFF; --magenta:#FF2BD6; --shadow:rgba(138,92,255,.35); }
-  @media (prefers-color-scheme: light) {
-    :root { color-scheme: light; --bg:#F6F4FF; --bg2:#E9E3FF; --card:#FFFFFF; --card2:#F4F1FF; --line:#E1DCF7; --text:#1A1830; --muted:#5F5B80;
-      --cyan:#0089B3; --violet:#6A3BEA; --magenta:#C2128C; --shadow:rgba(106,59,234,.18); }
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; scroll-padding-top:72px; }
-  body { margin:0; background:radial-gradient(circle at 50% -10%, var(--bg2) 0%, var(--bg) 55%) fixed, var(--bg); color:var(--text);
-    font:16.5px/1.65 system-ui, "Segoe UI", Roboto, Arial, sans-serif; -webkit-text-size-adjust:100%; overflow-wrap:break-word; }
-  a { color:var(--cyan); }
-  .bar { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:10px; padding:10px 16px;
-    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-  .bar .home { display:flex; align-items:center; gap:8px; color:var(--text); text-decoration:none; font-weight:700; min-width:0; }
-  .bar .home img { width:28px; height:28px; border-radius:8px; }
-  .bar .home span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .lang { margin-left:auto; position:relative; }
-  .lang summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:12px;
-    background:var(--card); border:1px solid var(--line); font-weight:700; font-size:14px; white-space:nowrap; }
-  .lang summary::-webkit-details-marker { display:none; }
-  .lang[open] summary { border-color:var(--violet); }
-  .lang .menu { position:absolute; right:0; top:calc(100% + 6px); width:min(300px, calc(100vw - 32px)); display:grid; grid-template-columns:1fr 1fr; gap:6px;
-    padding:8px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 12px 40px var(--shadow); }
-  .lang button { display:flex; gap:8px; align-items:center; padding:8px 10px; border:1px solid transparent; border-radius:10px; background:var(--card2);
-    color:var(--text); font:inherit; font-size:14px; cursor:pointer; text-align:left; }
-  .lang button b { font-size:11px; letter-spacing:.06em; color:var(--muted); min-width:20px; }
-  .lang button[aria-current="true"] { border-color:var(--violet); background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  main { max-width:820px; margin:0 auto; padding:24px 16px 72px; }
-  .hero { text-align:center; padding:14px 0 6px; }
-  .logo { border-radius:26px; box-shadow:0 0 60px var(--shadow); }
-  .brand { margin:14px 0 0; font-weight:800; letter-spacing:.04em; color:var(--muted); }
-  h1 { margin:12px 0 4px; font-size:clamp(30px, 8vw, 46px); line-height:1.12; background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));
-    -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .lead { margin:0; font-size:20px; font-weight:700; }
-  .tagline { margin:8px auto 0; max-width:560px; color:var(--muted); }
-  .cta { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:22px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:16px; font-weight:700; text-decoration:none; color:#fff;
-    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); box-shadow:0 0 34px var(--shadow); }
-  .btn.big { font-size:18px; padding:16px 30px; }
-  .btn.ghost { color:var(--text); background:var(--card); border:1px solid var(--line); box-shadow:none; }
-  .btn:active { transform:scale(.98); }
-  .soon { margin:12px 0 0; color:var(--muted); font-size:14px; }
-  .label { margin:34px 0 12px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:12px; }
-  .grid.three { grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
-  .feat, .sum { padding:16px 18px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  .feat h3 { margin:10px 0 2px; font-size:17px; line-height:1.3; }
-  .feat p, .sum p { margin:2px 0 0; color:var(--muted); font-size:14.5px; line-height:1.55; }
-  .sum { display:flex; gap:12px; align-items:flex-start; }
-  .ico { flex:none; display:inline-grid; place-items:center; width:42px; height:42px; border-radius:13px; font-size:22px;
-    background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  .ico.sm { width:34px; height:34px; border-radius:10px; font-size:18px; }
-  .num { display:inline-grid; place-items:center; width:40px; height:40px; border-radius:50%; font-weight:800; color:#fff;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  .toclist { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:8px; }
-  .toclist a { display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:14px; background:var(--card); border:1px solid var(--line);
-    color:var(--text); text-decoration:none; font-weight:600; font-size:15px; line-height:1.3; min-height:52px; }
-  .toclist a:hover, .toclist a:focus-visible { border-color:var(--violet); }
-  .toclist .tt { flex:1; }
-  .toclist .go { color:var(--muted); font-size:22px; line-height:1; }
-  section { margin-top:16px; padding:6px 20px 16px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  section h2 { display:flex; align-items:center; gap:12px; margin:14px 0 6px; font-size:19px; line-height:1.3; }
-  section ul { padding-left:20px; margin:8px 0; }
-  section li { margin:6px 0; }
-  .private { margin-top:34px; }
-  .note { padding:10px 14px; border-radius:12px; background:var(--card2); color:var(--muted); font-size:14.5px; }
-  .note.center { text-align:center; background:none; padding:6px 0 0; }
-  code { font:13.5px/1.4 ui-monospace, Consolas, monospace; padding:1px 6px; border-radius:6px; background:var(--card2); border:1px solid var(--line); overflow-wrap:anywhere; }
-  .perms { margin:8px 0 0; display:grid; gap:8px; }
-  .perms dt { font-weight:700; }
-  .perms dd { margin:-6px 0 4px; color:var(--muted); font-size:15px; }
-  .perms dt::before { content:"✓"; color:var(--cyan); font-weight:900; margin-right:8px; }
-  ol.steps { list-style:none; padding:0; margin:4px 0 0; counter-reset:s; }
-  ol.steps > li { counter-increment:s; position:relative; padding:12px 0 12px 54px; border-top:1px solid var(--line); }
-  ol.steps > li:first-child { border-top:0; }
-  ol.steps > li::before { content:counter(s); position:absolute; left:0; top:12px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
-    font-weight:800; color:#fff; background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  b.key { color:var(--cyan); }
-  .smart { margin-top:12px; border-radius:10px; overflow:hidden; background:#0b4f8a; color:#fff; font:14px/1.45 "Segoe UI", system-ui, sans-serif; max-width:440px; }
-  .smart .in { padding:16px 18px 14px; }
-  .smart .t { font-size:20px; font-weight:600; margin-bottom:6px; }
-  .smart .link { display:inline-block; margin-top:8px; text-decoration:underline; outline:2px solid var(--magenta); outline-offset:3px; border-radius:3px; }
-  .smart .sbar { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; padding:10px 14px; background:#0a426f; }
-  .smart .sbtn { padding:5px 16px; border:1px solid #fff; border-radius:2px; }
-  .smart .sbtn.run { outline:2px solid var(--magenta); outline-offset:3px; }
-  footer { margin-top:36px; text-align:center; color:var(--muted); font-size:14px; line-height:2; }
-  .up { position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; text-decoration:none;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); color:#fff; font-size:20px; box-shadow:0 6px 24px var(--shadow); }
+:root{color-scheme:dark;--bg:#07070d;--card:rgba(255,255,255,.035);--card2:rgba(255,255,255,.065);--line:rgba(255,255,255,.085);--line2:rgba(255,255,255,.15);
+  --text:#f4f3fb;--muted:#a7a4be;--dim:#77748f;--c1:#22d3ee;--c2:#8b5cff;--c3:#ff4fd8;--c4:#ffb65c;--dots:rgba(255,255,255,.07);--blob:.5;--bar:rgba(7,7,13,.72);--shot:#0b1422}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){color-scheme:light;--bg:#f6f5fb;--card:rgba(255,255,255,.72);--card2:#fff;--line:rgba(24,18,52,.09);--line2:rgba(24,18,52,.16);
+  --text:#15121f;--muted:#57546d;--dim:#8a879e;--dots:rgba(24,18,52,.08);--blob:.22;--bar:rgba(246,245,251,.78);--shot:#dfe6f0}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+html[lang="ja"] body{font-family:Inter,"Hiragino Sans","Noto Sans JP","Yu Gothic UI",Meiryo,system-ui,sans-serif}
+a{color:inherit}
+img{max-width:100%}
+.i{width:20px;height:20px;flex:none;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.display,h1,h2,h3,.stats b,.n,.brand,.foot-brand{font-family:Unbounded,Inter,"Hiragino Sans","Noto Sans JP",system-ui,sans-serif}
+:focus-visible{outline:2px solid var(--c1);outline-offset:3px;border-radius:10px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 16px}
+@media (min-width:640px){.wrap{padding:0 24px}}
+
+/* sky: three soft color fields and a dot grid, fixed behind everything */
+.sky{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.sky i{position:absolute;width:70vmax;height:70vmax;border-radius:50%;opacity:var(--blob);will-change:transform}
+.sky .b1{background:radial-gradient(circle,#8b5cff 0,transparent 62%);top:-32vmax;left:-22vmax;animation:d1 28s ease-in-out infinite alternate}
+.sky .b2{background:radial-gradient(circle,#22d3ee 0,transparent 62%);top:-6vmax;right:-38vmax;animation:d2 34s ease-in-out infinite alternate;opacity:calc(var(--blob)*.75)}
+.sky .b3{background:radial-gradient(circle,#ff4fd8 0,transparent 62%);top:55vh;left:10vmax;animation:d3 40s ease-in-out infinite alternate;opacity:calc(var(--blob)*.55)}
+.sky::after{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--dots) 1px,transparent 1.4px);background-size:26px 26px;
+  -webkit-mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 80%);mask-image:radial-gradient(ellipse 90% 60% at 50% 0%,#000 25%,transparent 80%)}
+@keyframes d1{to{transform:translate(14vmax,10vmax) scale(1.1)}}
+@keyframes d2{to{transform:translate(-12vmax,14vmax) scale(.92)}}
+@keyframes d3{to{transform:translate(18vmax,-10vmax) scale(1.15)}}
+
+/* top bar */
+.bar{position:sticky;top:0;z-index:20;background:var(--bar);-webkit-backdrop-filter:blur(16px) saturate(150%);backdrop-filter:blur(16px) saturate(150%);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:12px;height:62px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:17px;text-decoration:none;letter-spacing:-.01em;margin-right:auto}
+.brand img{width:32px;height:32px;border-radius:10px}
+.nav{display:none;gap:4px}
+.nav a{padding:8px 12px;border-radius:12px;text-decoration:none;color:var(--muted);font-weight:600;font-size:14.5px;transition:color .2s,background .2s}
+.nav a:hover{color:var(--text);background:var(--card2)}
+@media (min-width:820px){.nav{display:flex}}
+.lang{position:relative}
+.lang summary{list-style:none;display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;border-radius:13px;border:1px solid var(--line2);background:var(--card);cursor:pointer;font-weight:600;font-size:14px;user-select:none}
+.lang summary::-webkit-details-marker{display:none}
+.lang summary .i{width:18px;height:18px;color:var(--muted)}
+.lang .menu{position:absolute;right:0;top:calc(100% + 8px);width:min(320px,calc(100vw - 32px));display:grid;grid-template-columns:1fr 1fr;gap:4px;padding:8px;border-radius:18px;
+  background:var(--bg);border:1px solid var(--line2);box-shadow:0 24px 60px -20px rgba(0,0,0,.55)}
+.lang button{all:unset;box-sizing:border-box;display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;cursor:pointer;font-size:14px;color:var(--text)}
+.lang button b{font:700 11px/1 Inter,system-ui,sans-serif;color:var(--muted);width:22px}
+.lang button:hover,.lang button:focus-visible{background:var(--card2)}
+.lang button[aria-current="true"]{background:color-mix(in srgb,var(--c2) 18%,transparent)}
+.lang button[aria-current="true"] b{color:var(--c1)}
+
+/* hero */
+.hero{display:grid;gap:28px;align-items:center;padding-top:44px;padding-bottom:24px}
+@media (min-width:900px){.hero{grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:40px;padding-top:84px;padding-bottom:48px}}
+.hero-text{container-type:inline-size;min-width:0}
+.kicker{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border-radius:99px;border:1px solid var(--line2);background:var(--card);font-size:13.5px;font-weight:600;color:var(--muted)}
+.dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--c1),var(--c3));box-shadow:0 0 0 0 rgba(139,92,255,.6);animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px rgba(139,92,255,0)}100%{box-shadow:0 0 0 0 rgba(139,92,255,0)}}
+.title{margin:20px 0 18px;font-weight:800;line-height:1;letter-spacing:-.035em;font-size:clamp(38px,10vw,88px);font-size:min(88px,13.2cqi)}
+.grad{background:linear-gradient(100deg,var(--c1),var(--c2) 30%,var(--c3) 60%,var(--c4) 85%,var(--c1));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 12s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+.lead{margin:0;max-width:34em;font-size:clamp(17px,2.1vw,20px);line-height:1.55;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.cta.center{justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 22px;border-radius:16px;font-weight:650;font-size:15.5px;text-decoration:none;
+  transition:transform .25s cubic-bezier(.2,.8,.2,1),box-shadow .25s,background .25s,border-color .25s;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:scale(.98)}
+.btn.primary{color:#fff;background:linear-gradient(100deg,var(--c2),var(--c3));box-shadow:0 14px 34px -14px rgba(139,92,255,.9),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.primary:hover{transform:translateY(-2px);box-shadow:0 20px 40px -14px rgba(255,79,216,.8),inset 0 1px 0 rgba(255,255,255,.25)}
+.btn.glass{background:var(--card2);border:1px solid var(--line2);color:var(--text)}
+.btn.glass:hover{transform:translateY(-2px);border-color:color-mix(in srgb,var(--c2) 50%,var(--line2))}
+@media (max-width:479px){.hero .cta .btn{flex:1 1 100%}}
+.stats{list-style:none;padding:0;margin:30px 0 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-width:460px}
+.stats li{padding:12px 14px;border-radius:18px;background:var(--card);border:1px solid var(--line);min-width:0}
+.stats b{display:block;font-size:26px;line-height:1.2;background:linear-gradient(135deg,var(--c1),var(--c2),var(--c3));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stats span{display:block;font-size:13px;color:var(--muted);overflow-wrap:anywhere;line-height:1.35}
+
+/* orbit: the five icons around the mark */
+.orbit{position:relative;width:min(100%,400px);aspect-ratio:1;margin:0 auto}
+.rings{position:absolute;inset:0;width:100%;height:100%;animation:spin 140s linear infinite}
+.rings circle{fill:none;stroke:var(--line2);stroke-width:.3;stroke-dasharray:1 2.2}
+.core{position:absolute;left:50%;top:50%;width:30%;height:auto;translate:-50% -50%;border-radius:27%;box-shadow:0 0 70px -6px rgba(139,92,255,.75),0 0 140px -20px rgba(255,79,216,.55)}
+.planet{position:absolute;width:21%;aspect-ratio:1;translate:-50% -50%;border-radius:24%;animation:float 7s ease-in-out infinite;transition:scale .3s}
+.planet img{display:block;width:100%;height:100%;border-radius:24%;box-shadow:0 16px 34px -14px var(--a),0 0 0 1px rgba(255,255,255,.08)}
+.planet.hex img,.ico.hex img{object-fit:contain;padding:9%;background:#0f1b2e}
+.planet:hover{scale:1.1}
+.planet .tip{position:absolute;left:50%;top:calc(100% + 8px);translate:-50% 0;white-space:nowrap;font-size:12.5px;font-weight:700;padding:4px 10px;border-radius:99px;
+  background:var(--bg);border:1px solid var(--line2);opacity:0;pointer-events:none;transition:opacity .2s}
+.planet:hover .tip,.planet:focus-visible .tip{opacity:1}
+.p0{left:50%;top:8%;animation-delay:0s}.p1{left:90%;top:37%;animation-delay:-1.4s}.p2{left:75%;top:84%;animation-delay:-2.8s}
+.p3{left:25%;top:84%;animation-delay:-4.2s}.p4{left:10%;top:37%;animation-delay:-5.6s}
+@keyframes float{50%{transform:translateY(-9px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* sections */
+.block{padding-top:56px}
+@media (min-width:900px){.block{padding-top:84px}}
+section[id]{scroll-margin-top:76px}
+.head{margin-bottom:22px}
+.head h2,.about h2,.contact h2{margin:0;font-weight:700;letter-spacing:-.02em;line-height:1.15;font-size:clamp(28px,4.6vw,44px)}
+.head p{margin:10px 0 0;color:var(--muted);font-size:17px;max-width:40em}
+
+/* app cards */
+.grid{display:grid;gap:16px}
+@media (min-width:780px){.grid{grid-template-columns:1fr 1fr;gap:18px}}
+.card{position:relative;isolation:isolate;overflow:hidden;display:flex;flex-direction:column;padding:22px;border-radius:26px;border:1px solid var(--line);
+  background:var(--card);background:linear-gradient(180deg,color-mix(in srgb,var(--a) 10%,var(--card)),var(--card) 70%);
+  transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s}
+@media (min-width:640px){.card{padding:26px}}
+.card::before{content:"";position:absolute;z-index:-1;right:-25%;top:-45%;width:75%;aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--a) 34%,transparent),transparent 66%);transition:opacity .4s;opacity:.75}
+.card::after{content:"";position:absolute;z-index:-1;inset:0;opacity:0;transition:opacity .3s;
+  background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--a) 12%,transparent),transparent 60%)}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--a) 45%,var(--line));box-shadow:0 30px 70px -36px color-mix(in srgb,var(--a) 70%,transparent)}
+.card:hover::before{opacity:1}
+.card:hover::after{opacity:1}
+.card-top{display:flex;align-items:center;gap:16px}
+.ico{flex:none;display:block;border-radius:22%}
+.ico img{display:block;width:68px;height:68px;border-radius:22%;box-shadow:0 14px 30px -12px var(--a),0 0 0 1px rgba(255,255,255,.08);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+.card:hover .ico img{transform:rotate(-4deg) scale(1.05)}
+.id{min-width:0}
+.cat{display:flex;flex-wrap:wrap;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:color-mix(in srgb,var(--a) 72%,var(--text))}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:99px;letter-spacing:.02em;text-transform:none;font-size:12px;
+  background:color-mix(in srgb,var(--a) 15%,transparent);border:1px solid color-mix(in srgb,var(--a) 40%,transparent)}
+.badge .i{width:14px;height:14px}
+.card h3{margin:3px 0 0;font-size:25px;line-height:1.2;font-weight:700;letter-spacing:-.015em}
+.card h3 a{text-decoration:none}
+.card h3 a::after{content:"";position:absolute;inset:0;z-index:0}
+.card .actions,.card .chips,.card .ico,.card .shot{position:relative;z-index:1}
+.tl{margin:18px 0 6px;font-size:18px;font-weight:650;line-height:1.4}
+.ld{margin:0;color:var(--muted);font-size:15.5px;line-height:1.6}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.chip{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:99px;background:var(--card2);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--muted)}
+.chip .i{width:15px;height:15px}
+.chip.ver{font-variant-numeric:tabular-nums}
+.chip:empty{display:none}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:auto;padding-top:20px}
+.wide .body{display:flex;flex-direction:column;height:100%}
+.btn.dl{color:var(--on);background:linear-gradient(100deg,var(--g1),var(--g2));box-shadow:0 14px 30px -16px var(--a),inset 0 1px 0 rgba(255,255,255,.3)}
+.btn.dl:hover{transform:translateY(-2px);box-shadow:0 20px 38px -16px var(--a),inset 0 1px 0 rgba(255,255,255,.3)}
+.more{position:relative;z-index:1;flex:none;align-self:flex-start;display:inline-flex;align-items:center;justify-content:center;gap:6px;height:44px;min-width:44px;padding:0 14px;margin-left:auto;
+  border-radius:14px;border:1px solid var(--line2);background:var(--card2);font-weight:650;font-size:14px;text-decoration:none;color:var(--text);white-space:nowrap;transition:border-color .25s,background .25s}
+.more .i{width:18px;height:18px;transition:transform .25s}
+.more:hover{border-color:color-mix(in srgb,var(--a) 55%,var(--line2))}
+.more:hover .i{transform:translateX(3px)}
+.more[hidden]{display:none}
+@media (max-width:599px){.more{padding:0;width:44px}.more span{display:none}}
+@media (max-width:479px){.actions .btn{flex:1 1 100%}}
+.card.wide{grid-column:1/-1;display:grid;gap:22px}
+@media (min-width:780px){.card.wide{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:30px}}
+.shot{display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line2);aspect-ratio:16/10;background:var(--shot);box-shadow:0 30px 60px -34px rgba(0,0,0,.8)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.8,.2,1)}
+.card.wide:hover .shot img{transform:scale(1.045)}
+
+/* how to install */
+.steps{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+@media (min-width:780px){.steps{grid-template-columns:repeat(3,1fr);gap:18px}}
+.step{position:relative;padding:22px;border-radius:24px;background:var(--card);border:1px solid var(--line)}
+.n{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;font-weight:700;font-size:18px;color:#fff;background:linear-gradient(135deg,var(--c1),var(--c2) 55%,var(--c3))}
+.step h3{margin:16px 0 4px;font-size:19px;font-weight:700}
+.step p{margin:0;color:var(--muted);font-size:15.5px}
+.soon{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 0;color:var(--muted);font-size:15px;text-align:center}
+.soon .i{width:17px;height:17px;color:var(--c1)}
+
+/* about */
+.about{display:grid;gap:26px;align-items:center;padding:26px;border-radius:30px;background:var(--card);border:1px solid var(--line)}
+@media (min-width:780px){.about{grid-template-columns:200px minmax(0,1fr);padding:38px;gap:40px}}
+.avatar{position:relative;width:150px;aspect-ratio:1;margin:8px auto;isolation:isolate}
+.avatar img{position:relative;display:block;width:100%;height:100%;border-radius:28%}
+.ring{position:absolute;inset:-12px;border-radius:34%;z-index:-1;opacity:.7;filter:blur(16px);background:conic-gradient(from 0deg,var(--c1),var(--c2),var(--c3),var(--c4),var(--c1));animation:spin 14s linear infinite}
+.eyebrow{display:block;margin-bottom:8px;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--c1)}
+.about-text p{margin:14px 0 0;font-size:17px;line-height:1.65}
+.about .note{display:flex;gap:10px;align-items:flex-start;color:var(--muted);font-size:15.5px}
+.about .note .i{margin-top:2px;color:var(--c1)}
+
+/* contact */
+.contact{position:relative;overflow:hidden;isolation:isolate;text-align:center;padding:48px 20px;border-radius:32px;border:1px solid var(--line);
+  background:radial-gradient(120% 140% at 50% 0%,color-mix(in srgb,var(--c2) 24%,transparent),transparent 62%),var(--card)}
+.contact p{margin:12px auto 0;color:var(--muted);font-size:17px;max-width:30em}
+@media (max-width:479px){.contact .btn{flex:1 1 100%}}
+
+/* footer */
+.foot{padding-top:56px;padding-bottom:64px;text-align:center;color:var(--dim);font-size:14px}
+.foot-brand{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:16px;color:var(--text);text-decoration:none}
+.foot-brand img{border-radius:9px}
+.foot p{margin:10px 0 0}
+.foot .copy{font-size:13px}
+.up{position:fixed;right:16px;bottom:16px;z-index:15;display:grid;place-items:center;width:46px;height:46px;border-radius:15px;text-decoration:none;color:#fff;
+  background:linear-gradient(135deg,var(--c2),var(--c3));box-shadow:0 12px 30px -10px rgba(139,92,255,.9);opacity:0;translate:0 12px;pointer-events:none;transition:opacity .3s,translate .3s}
+.up.show{opacity:1;translate:0 0;pointer-events:auto}
+.up .i{width:20px;height:20px}
+
+/* scroll reveal (only when JavaScript runs) */
+html.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease var(--d,0s),transform .8s cubic-bezier(.2,.8,.2,1) var(--d,0s)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .card.reveal.in{transition:transform .4s cubic-bezier(.2,.8,.2,1),border-color .4s,box-shadow .4s,opacity .8s ease var(--d,0s)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}html.js .reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="bar">
-  <a class="home" href="./"><img src="icon.png" alt=""><span id="brand">Khronometr</span></a>
-  <details class="lang" id="lang">
-    <summary><span aria-hidden="true">🌐</span> <span id="langName">English</span> ▾</summary>
-    <div class="menu">
-      <button type="button" data-lang="uk" lang="uk"><b>UK</b>Українська</button>
-      <button type="button" data-lang="en" lang="en"><b>EN</b>English</button>
-      <button type="button" data-lang="es" lang="es"><b>ES</b>Español</button>
-      <button type="button" data-lang="pt" lang="pt"><b>PT</b>Português</button>
-      <button type="button" data-lang="fr" lang="fr"><b>FR</b>Français</button>
-      <button type="button" data-lang="de" lang="de"><b>DE</b>Deutsch</button>
-      <button type="button" data-lang="it" lang="it"><b>IT</b>Italiano</button>
-      <button type="button" data-lang="sv" lang="sv"><b>SV</b>Svenska</button>
-      <button type="button" data-lang="id" lang="id"><b>ID</b>Bahasa Indonesia</button>
-      <button type="button" data-lang="ja" lang="ja"><b>JA</b>日本語</button>
-      <button type="button" data-lang="kk" lang="kk"><b>KK</b>Қазақ тілі</button>
-      <button type="button" data-lang="ru" lang="ru"><b>RU</b>Русский</button>
-    </div>
-  </details>
-</div>
+<div class="sky" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+<div id="sentinel" style="position:absolute;top:0;height:640px;width:1px;pointer-events:none" aria-hidden="true"></div>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/mark.svg" alt="" width="32" height="32">PegasoHlib</a>
+    <nav class="nav"><a href="#apps" data-nav="navApps">Apps</a><a href="#about" data-nav="navAbout">About</a><a href="#contact" data-nav="navContact">Contact</a></nav>
+    <details class="lang" id="lang" aria-label="Language">
+      <summary><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg><span id="langName">English</span></summary>
+      <div class="menu">
+        <button type="button" data-lang="uk" lang="uk"><b>UK</b>Українська</button>
+        <button type="button" data-lang="en" lang="en"><b>EN</b>English</button>
+        <button type="button" data-lang="es" lang="es"><b>ES</b>Español</button>
+        <button type="button" data-lang="pt" lang="pt"><b>PT</b>Português</button>
+        <button type="button" data-lang="fr" lang="fr"><b>FR</b>Français</button>
+        <button type="button" data-lang="de" lang="de"><b>DE</b>Deutsch</button>
+        <button type="button" data-lang="it" lang="it"><b>IT</b>Italiano</button>
+        <button type="button" data-lang="sv" lang="sv"><b>SV</b>Svenska</button>
+        <button type="button" data-lang="id" lang="id"><b>ID</b>Bahasa Indonesia</button>
+        <button type="button" data-lang="ja" lang="ja"><b>JA</b>日本語</button>
+        <button type="button" data-lang="kk" lang="kk"><b>KK</b>Қазақша</button>
+        <button type="button" data-lang="ru" lang="ru"><b>RU</b>Русский</button>
+      </div>
+    </details>
+  </div>
+</header>
 <main id="page">
-  <header class="hero" id="top">
-    <img class="logo" src="icon.png" alt="" width="120" height="120">
-    <h1>Khronometr</h1>
-    <p class="lead">Screen time for all time</p>
-    <p class="tagline">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
-    <div class="cta"><a class="btn big" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk">⬇&nbsp; Download for Android</a></div>
-    <p class="soon">🤖 Free · Android 8 or newer · after that the app updates itself</p>
+<section class="hero wrap" id="top">
+  <div class="hero-text">
+    <span class="kicker"><i class="dot"></i>Apps & games for Android</span>
+    <h1 class="title"><span class="grad">PegasoHlib</span></h1>
+    <p class="lead">I make the apps I miss myself — and share them with you. Free, no ads, in 12 languages.</p>
     <div class="cta">
-      <a class="btn ghost" href="pc/">💻 Khronometr for Windows</a>
-      <a class="btn ghost" href="privacy.html">🔒 Privacy Policy</a>
+      <a class="btn primary" href="#apps">See the apps<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+      <a class="btn glass" href="#contact"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>Write to me</a>
     </div>
-  </header>
+    <ul class="stats">
+      <li><b>5</b><span>projects</span></li>
+      <li><b>12</b><span>languages</span></li>
+      <li><b>0</b><span>ads</span></li>
+    </ul>
+  </div>
+  <div class="orbit">
+    <svg class="rings" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="27"/></svg>
+    <img class="core" src="assets/mark.svg" alt="" width="120" height="120">
+    <a class="planet p0" href="#khronometr" style="--a:#8B5CFF" aria-label="Khronometr"><img src="assets/khronometr.svg" alt="" width="84" height="84"><span class="tip">Khronometr</span></a>
+    <a class="planet p1" href="#kraplya" style="--a:#3A8DFF" aria-label="Kraplya"><img src="assets/kraplya.svg" alt="" width="84" height="84"><span class="tip">Kraplya</span></a>
+    <a class="planet p2" href="#slid" style="--a:#FF6A3D" aria-label="Slid"><img src="assets/slid.svg" alt="" width="84" height="84"><span class="tip">Slid</span></a>
+    <a class="planet p3" href="#kolys" style="--a:#FFB65C" aria-label="Kolys"><img src="assets/kolys.svg" alt="" width="84" height="84"><span class="tip">Kolys</span></a>
+    <a class="planet p4 hex" href="#kordon" style="--a:#F0C04A" aria-label="KORDON"><img src="assets/kordon.svg" alt="" width="84" height="84"><span class="tip">KORDON</span></a>
+  </div>
+</section>
 
-  <h2 class="label">What it can do</h2>
+<section class="wrap block" id="apps">
+  <div class="head reveal"><h2>Apps & games</h2><p>Download the APK once — after that every app keeps itself up to date.</p></div>
   <div class="grid">
-    <div class="feat"><span class="ico">♾️</span><h3>All-time history</h3><p>Every app and game, day by day, kept forever — with records, titles and your longest streaks.</p></div>
-    <div class="feat"><span class="ico">⏮️</span><h3>History from before</h3><p>On the first start it takes everything the phone still remembers, up to about two years back.</p></div>
-    <div class="feat"><span class="ico">📱</span><h3>All your devices</h3><p>Phones, tablets and a Windows PC in one place, through a hidden folder on your own Google Drive.</p></div>
-    <div class="feat"><span class="ico">⏳</span><h3>Limits that work</h3><p>Time per day, forbidden hours, a “Time’s up” screen — for one app, a category, your own group, on the devices you choose.</p></div>
-    <div class="feat"><span class="ico">🧩</span><h3>Widgets</h3><p>Today, the week, the top apps, one app, your limits and all-time totals right on the home screen.</p></div>
-    <div class="feat"><span class="ico">📶</span><h3>Traffic</h3><p>Wi-Fi and mobile data per app, for any days you pick.</p></div>
+<article class="card reveal" id="khronometr" style="--a:#8B5CFF;--g1:#8B5CFF;--g2:#FF4FD8;--on:#fff;--d:0s">
+      <div class="card-top">
+        <a class="ico" href="khronometr/?lang=en" tabindex="-1" aria-hidden="true"><img src="assets/khronometr.svg" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">Screen time</span>
+          <h3><a href="khronometr/?lang=en">Khronometr</a></h3>
+        </div>
+        <a class="more" data-page="khronometr" href="khronometr/?lang=en" title="About the app" aria-label="About the app"><span>About the app</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <p class="tl">Screen time for all time</p>
+      <p class="ld">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
+      <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>Android</span><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Windows</span><span class="chip ver" data-ver="khronometr">v0.29.1 · 14 MB</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download APK</span></a>
+        <a class="btn glass" href="khronometr/pc/?lang=en"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>For Windows</span></a>
+      </div></article>
+<article class="card reveal" id="kraplya" style="--a:#3A8DFF;--g1:#2F7BFF;--g2:#13A77E;--on:#fff;--d:0.08s">
+      <div class="card-top">
+        <a class="ico" href="kraplya/?lang=en" tabindex="-1" aria-hidden="true"><img src="assets/kraplya.svg" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">Habits</span>
+          <h3><a href="kraplya/?lang=en">Kraplya</a></h3>
+        </div>
+        <a class="more" data-page="kraplya" href="kraplya/?lang=en" title="About the app" aria-label="About the app"><span>About the app</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <p class="tl">Habit tracker with a timer</p>
+      <p class="ld">Set a goal for every habit, start the timer when you practise, and watch the week fill up drop by drop. Simple, calm and private.</p>
+      <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>Android</span><span class="chip ver" data-ver="kraplya">v0.9.7 · 16 MB</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.7/Kraplya-0.9.7.apk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download APK</span></a>
+        
+      </div></article>
+<article class="card reveal" id="slid" style="--a:#FF6A3D;--g1:#E8552C;--g2:#FF8A4C;--on:#fff;--d:0s">
+      <div class="card-top">
+        <a class="ico" href="slid/?lang=en" tabindex="-1" aria-hidden="true"><img src="assets/slid.svg" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">Timeline</span>
+          <h3><a href="slid/?lang=en">Slid</a></h3>
+        </div>
+        <a class="more" data-page="slid" href="slid/?lang=en" title="About the app" aria-label="About the app"><span>About the app</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <p class="tl">Your timeline, day by day</p>
+      <p class="ld">Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone.</p>
+      <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>Android</span><span class="chip ver" data-ver="slid">v0.9.3 · 39 MB</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.3/Slid-0.9.3.apk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download APK</span></a>
+        
+      </div></article>
+<article class="card reveal" id="kolys" style="--a:#FFB65C;--g1:#FFC673;--g2:#FF9550;--on:#2A1606;--d:0.08s">
+      <div class="card-top">
+        <a class="ico" href="kolys/?lang=en" tabindex="-1" aria-hidden="true"><img src="assets/kolys.svg" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">Time capsule</span>
+          <h3><a href="kolys/?lang=en">Kolys</a></h3>
+        </div>
+        <a class="more" data-page="kolys" href="kolys/?lang=en" title="About the app" aria-label="About the app"><span>About the app</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <p class="tl">A letter to your future self</p>
+      <p class="ld">Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.</p>
+      <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>Android</span><span class="chip ver" data-ver="kolys">v0.4.2 · 14 MB</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.2/Kolys-0.4.2.apk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download APK</span></a>
+        
+      </div></article>
+<article class="card wide reveal" id="kordon" style="--a:#F0C04A;--g1:#F7D46A;--g2:#E9A23B;--on:#1D1405;--d:0s"><div class="body">
+      <div class="card-top">
+        <a class="ico hex" href="kordon/?lang=en" tabindex="-1" aria-hidden="true"><img src="assets/kordon.svg" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">Strategy game<span class="badge"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6.2L4.8 18.6A2 2 0 0 0 6.6 21.5h10.8a2 2 0 0 0 1.8-2.9L14 9.2V3"/><path d="M7.4 15h9.2"/></svg>In development</span></span>
+          <h3><a href="kordon/?lang=en">KORDON</a></h3>
+        </div>
+        <a class="more" data-page="kordon" href="kordon/?lang=en" title="About the app" aria-label="About the app"><span>About the app</span><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></a>
+      </div>
+      <p class="tl">World history strategy</p>
+      <p class="ld">A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat map, merge provinces and redraw borders any way you like.</p>
+      <div class="chips"><span class="chip"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M11 18.5h2"/></svg>Android</span><span class="chip ver" data-ver="kordon">v0.4.0 · 160 MB</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg><span>Download test build</span></a>
+        
+      </div></div><a class="shot" href="kordon/?lang=en" data-shot="kordon" tabindex="-1" aria-hidden="true"><img src="assets/kordon-globe.webp" alt="" loading="lazy"></a></article>
   </div>
+</section>
 
-  <h2 class="label">How it works</h2>
-  <div class="grid three">
-    <div class="feat"><span class="num">1</span><h3>Install on the phone</h3><p>Give it “Usage access” once — it reads the history the phone keeps and counts from then on.</p></div>
-    <div class="feat"><span class="num">2</span><h3>Add your other devices</h3><p>Sign in with Google on each phone, tablet and the <a href="pc/">Windows app</a> — they find each other.</p></div>
-    <div class="feat"><span class="num">3</span><h3>Look back any time</h3><p>Days, weeks, months or years, every app or a category, one device or all of them.</p></div>
+<section class="wrap block" id="how">
+  <div class="head reveal"><h2>How to install</h2></div>
+  <ol class="steps">
+    <li class="step reveal" style="--d:0s"><span class="n">1</span><h3>Download</h3><p>Open this page on your Android phone and tap “Download APK”.</p></li>
+    <li class="step reveal" style="--d:0.08s"><span class="n">2</span><h3>Allow</h3><p>Open the file and allow installs from your browser. It is needed only once.</p></li>
+    <li class="step reveal" style="--d:0.16s"><span class="n">3</span><h3>Done</h3><p>That’s it: from now on the app updates itself.</p></li>
+  </ol>
+  <p class="soon reveal"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 3.8v16.4a.8.8 0 0 0 1.2.7l13-8.2a.8.8 0 0 0 0-1.4l-13-8.2a.8.8 0 0 0-1.2.7z"/></svg>Google Play versions are on the way.</p>
+</section>
+
+<section class="wrap block" id="about">
+  <div class="about reveal">
+    <div class="avatar"><i class="ring"></i><img src="assets/mark.svg" alt="" width="150" height="150" loading="lazy"></div>
+    <div class="about-text">
+      <span class="eyebrow">About me</span>
+      <h2>Hi, I’m PegasoHlib 👋</h2>
+      <p>I make apps and games: from the idea and design to the code, the translations and these pages. I build what I miss myself — screen time for all time, calm habits, a timeline of my own life, letters to the future and a strategy about the whole world.</p>
+      <p class="note"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.6 3.2 8 7.5 9.5 4.3-1.5 7.5-4.9 7.5-9.5V6z"/><path d="m9 12 2.2 2.2L15.5 10"/></svg><span>No ads and no tracking: what you record stays on your phone or in your own Google Drive.</span></p>
+    </div>
   </div>
+</section>
 
-  <section class="private">
-    <h2><span class="ico">🔒</span>Your data stays yours</h2>
-    <p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
-    <p><a href="privacy.html">Read the privacy policy →</a></p>
-  </section>
-  <footer><a href="./">Home</a> · <a href="pc/">💻 Windows app</a> · <a href="privacy.html">🔒 Privacy Policy</a><br><a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>
+<section class="wrap block" id="contact">
+  <div class="contact reveal">
+    <h2>An idea, a bug or just hi?</h2>
+    <p>Write to me — I’ll be glad to hear from you.</p>
+    <div class="cta center">
+      <a class="btn primary" href="mailto:pegasohlib12@gmail.com"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg>pegasohlib12@gmail.com</a>
+      <a class="btn glass" href="https://github.com/PegasoHlib" rel="noopener"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" stroke="none" d="M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-1.9c-3.12.68-3.78-1.5-3.78-1.5-.5-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.54 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.25-5.12 5.53.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8z"/></svg>GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap foot">
+  <a class="foot-brand" href="#top"><img src="assets/mark.svg" alt="" width="28" height="28">PegasoHlib</a>
+  <p>This site has no cookies, no ads and no tracking.</p>
+  <p class="copy">© 2026 PegasoHlib</p>
+</footer>
 </main>
-<a class="up" href="#top" id="up" aria-label="Back to top">↑</a>
+<a class="up" id="up" href="#top" aria-label="Back to top"><svg style="transform:rotate(180deg)" class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
 <script>
-// All languages of this page; the switch rebuilds the text in place and keeps ?lang= in the address.
-const D = {"uk":{"t":{"title":"Час у застосунках за весь час","tagline":"Скільки ти провів у кожному застосунку й грі — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом.","windows":"Хронометр для Windows","privacy":"Політика конфіденційності","download":"Завантажити для Android","android":"Безкоштовно · Android 8 і новіші · далі застосунок оновлюється сам","featuresTitle":"Що він уміє","features":[["♾️","Історія за весь час","Кожен застосунок і гра, день за днем, назавжди — з рекордами, титулами й найдовшими серіями."],["⏮️","Історія з минулого","На першому запуску забирає все, що телефон ще пам’ятає, — до приблизно двох років назад."],["📱","Усі твої пристрої","Телефони, планшети й ПК на Windows разом — через приховану папку на твоєму власному Google Диску."],["⏳","Ліміти, що працюють","Час на день, заборонені години, екран «Час вийшов» — для застосунку, категорії, своєї групи, на вибраних пристроях."],["🧩","Віджети","Сьогодні, тиждень, топ застосунків, один застосунок, ліміти й «весь час» просто на робочому столі."],["📶","Трафік","Wi-Fi і мобільний інтернет по застосунках — за будь-які дні."]],"howTitle":"Як це працює","how":[["1","Встанови на телефон","Один раз дай «Доступ до даних про використання» — він забере історію, яку зберігає телефон, і далі рахуватиме сам."],["2","Додай інші пристрої","Увійди через Google на кожному телефоні, планшеті й у <a href=\"pc/\">програмі для Windows</a> — вони знайдуть одне одного."],["3","Дивись будь-коли","Дні, тижні, місяці чи роки, кожен застосунок чи категорія, один пристрій або всі разом."]],"privateTitle":"Твої дані — твої","privateText":"Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.","privateMore":"Читати політику конфіденційності"},"c":{"name":"Українська","brand":"Хронометр","home":"Головна","windows":"Для Windows","privacy":"Політика конфіденційності","top":"Нагору","contents":"Зміст"}},"en":{"t":{"title":"Screen time for all time","tagline":"How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.","windows":"Khronometr for Windows","privacy":"Privacy Policy","download":"Download for Android","android":"Free · Android 8 or newer · after that the app updates itself","featuresTitle":"What it can do","features":[["♾️","All-time history","Every app and game, day by day, kept forever — with records, titles and your longest streaks."],["⏮️","History from before","On the first start it takes everything the phone still remembers, up to about two years back."],["📱","All your devices","Phones, tablets and a Windows PC in one place, through a hidden folder on your own Google Drive."],["⏳","Limits that work","Time per day, forbidden hours, a “Time’s up” screen — for one app, a category, your own group, on the devices you choose."],["🧩","Widgets","Today, the week, the top apps, one app, your limits and all-time totals right on the home screen."],["📶","Traffic","Wi-Fi and mobile data per app, for any days you pick."]],"howTitle":"How it works","how":[["1","Install on the phone","Give it “Usage access” once — it reads the history the phone keeps and counts from then on."],["2","Add your other devices","Sign in with Google on each phone, tablet and the <a href=\"pc/\">Windows app</a> — they find each other."],["3","Look back any time","Days, weeks, months or years, every app or a category, one device or all of them."]],"privateTitle":"Your data stays yours","privateText":"No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.","privateMore":"Read the privacy policy"},"c":{"name":"English","brand":"Khronometr","home":"Home","windows":"Windows app","privacy":"Privacy Policy","top":"Back to top","contents":"Contents"}},"es":{"t":{"title":"Tu tiempo de pantalla, desde siempre","tagline":"Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez.","windows":"Khronometr para Windows","privacy":"Política de privacidad","download":"Descargar para Android","android":"Gratis · Android 8 o posterior · después la app se actualiza sola","featuresTitle":"Qué puede hacer","features":[["♾️","Historial de siempre","Cada app y juego, día a día, guardado para siempre — con récords, títulos y tus rachas más largas."],["⏮️","Historial de antes","En el primer inicio recoge todo lo que el teléfono aún recuerda, hasta unos dos años atrás."],["📱","Todos tus dispositivos","Teléfonos, tablets y un PC con Windows en un solo lugar, mediante una carpeta oculta en tu propio Google Drive."],["⏳","Límites que funcionan","Tiempo por día, horas prohibidas, una pantalla «Se acabó el tiempo» — para una app, una categoría o tu propio grupo, en los dispositivos que elijas."],["🧩","Widgets","Hoy, la semana, las apps más usadas, una app, tus límites y los totales de siempre, directamente en la pantalla de inicio."],["📶","Tráfico","Wi-Fi y datos móviles por app, en los días que elijas."]],"howTitle":"Cómo funciona","how":[["1","Instálalo en el teléfono","Dale «Acceso a datos de uso» una vez: lee el historial que guarda el teléfono y desde entonces cuenta solo."],["2","Añade tus otros dispositivos","Inicia sesión con Google en cada teléfono, tablet y en la <a href=\"pc/\">app para Windows</a>: se encuentran entre sí."],["3","Mira atrás cuando quieras","Días, semanas, meses o años, cada app o una categoría, un dispositivo o todos."]],"privateTitle":"Tus datos son tuyos","privateText":"Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.","privateMore":"Leer la política de privacidad"},"c":{"name":"Español","brand":"Khronometr","home":"Inicio","windows":"App para Windows","privacy":"Política de privacidad","top":"Volver arriba","contents":"Contenido"}},"pt":{"t":{"title":"O teu tempo de ecrã, desde sempre","tagline":"Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto.","windows":"Khronometr para Windows","privacy":"Política de privacidade","download":"Transferir para Android","android":"Grátis · Android 8 ou mais recente · depois a app atualiza-se sozinha","featuresTitle":"O que consegue fazer","features":[["♾️","Histórico de sempre","Cada app e jogo, dia a dia, guardado para sempre — com recordes, títulos e as tuas sequências mais longas."],["⏮️","Histórico de antes","No primeiro arranque recolhe tudo o que o telemóvel ainda se lembra, até cerca de dois anos atrás."],["📱","Todos os teus dispositivos","Telemóveis, tablets e um PC com Windows num só sítio, através de uma pasta oculta no teu próprio Google Drive."],["⏳","Limites que funcionam","Tempo por dia, horas proibidas, um ecrã «Acabou o tempo» — para uma app, uma categoria ou um grupo teu, nos dispositivos que escolheres."],["🧩","Widgets","Hoje, a semana, as apps mais usadas, uma app, os teus limites e os totais de sempre, diretamente no ecrã principal."],["📶","Tráfego","Wi-Fi e dados móveis por app, nos dias que escolheres."]],"howTitle":"Como funciona","how":[["1","Instala no telemóvel","Dá uma vez o «Acesso a dados de utilização» — lê o histórico que o telemóvel guarda e a partir daí conta sozinho."],["2","Junta os outros dispositivos","Inicia sessão com Google em cada telemóvel, tablet e na <a href=\"pc/\">app para Windows</a> — encontram-se uns aos outros."],["3","Olha para trás quando quiseres","Dias, semanas, meses ou anos, cada app ou uma categoria, um dispositivo ou todos."]],"privateTitle":"Os teus dados são teus","privateText":"Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.","privateMore":"Ler a política de privacidade"},"c":{"name":"Português","brand":"Khronometr","home":"Início","windows":"App para Windows","privacy":"Política de privacidade","top":"Voltar ao topo","contents":"Índice"}},"fr":{"t":{"title":"Ton temps d’écran, depuis toujours","tagline":"Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis.","windows":"Khronometr pour Windows","privacy":"Politique de confidentialité","download":"Télécharger pour Android","android":"Gratuit · Android 8 ou plus récent · ensuite l’appli se met à jour toute seule","featuresTitle":"Ce qu’elle sait faire","features":[["♾️","Historique complet","Chaque appli et chaque jeu, jour après jour, conservés pour toujours — avec records, titres et tes plus longues séries."],["⏮️","L’historique d’avant","Au premier lancement, elle récupère tout ce dont le téléphone se souvient encore, jusqu’à environ deux ans en arrière."],["📱","Tous tes appareils","Téléphones, tablettes et PC Windows au même endroit, grâce à un dossier caché sur ton propre Google Drive."],["⏳","Des limites qui marchent","Temps par jour, heures interdites, écran « Temps écoulé » — pour une appli, une catégorie ou ton propre groupe, sur les appareils de ton choix."],["🧩","Widgets","Aujourd’hui, la semaine, le top des applis, une appli, tes limites et les totaux depuis toujours, directement sur l’écran d’accueil."],["📶","Trafic","Wi-Fi et données mobiles par appli, sur les jours de ton choix."]],"howTitle":"Comment ça marche","how":[["1","Installe-la sur le téléphone","Active une fois « Accès aux données d’utilisation » — elle lit l’historique gardé par le téléphone, puis compte toute seule."],["2","Ajoute tes autres appareils","Connecte-toi avec Google sur chaque téléphone, tablette et dans l’<a href=\"pc/\">appli Windows</a> — ils se trouvent tout seuls."],["3","Regarde en arrière quand tu veux","Jours, semaines, mois ou années, chaque appli ou une catégorie, un appareil ou tous."]],"privateTitle":"Tes données restent à toi","privateText":"Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.","privateMore":"Lire la politique de confidentialité"},"c":{"name":"Français","brand":"Khronometr","home":"Accueil","windows":"Appli Windows","privacy":"Politique de confidentialité","top":"Haut de page","contents":"Sommaire"}},"de":{"t":{"title":"Deine Bildschirmzeit seit jeher","tagline":"Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen.","windows":"Khronometr für Windows","privacy":"Datenschutzerklärung","download":"Für Android herunterladen","android":"Kostenlos · ab Android 8 · danach aktualisiert sich die App selbst","featuresTitle":"Was sie kann","features":[["♾️","Verlauf seit jeher","Jede App und jedes Spiel, Tag für Tag, für immer gespeichert — mit Rekorden, Titeln und deinen längsten Serien."],["⏮️","Verlauf von früher","Beim ersten Start holt sie alles, woran sich das Handy noch erinnert — bis etwa zwei Jahre zurück."],["📱","Alle deine Geräte","Handys, Tablets und ein Windows-PC an einem Ort — über einen versteckten Ordner in deinem eigenen Google Drive."],["⏳","Limits, die wirken","Zeit pro Tag, gesperrte Stunden, ein „Zeit ist um“-Bildschirm — für eine App, eine Kategorie oder deine eigene Gruppe, auf den Geräten deiner Wahl."],["🧩","Widgets","Heute, die Woche, die Top-Apps, eine einzelne App, deine Limits und die Gesamtzeit direkt auf dem Startbildschirm."],["📶","Datenverkehr","WLAN und mobile Daten pro App, für beliebige Tage."]],"howTitle":"So funktioniert’s","how":[["1","Aufs Handy installieren","Gib ihr einmal den „Nutzungsdatenzugriff“ — sie liest den Verlauf, den das Handy speichert, und zählt ab dann selbst."],["2","Weitere Geräte hinzufügen","Melde dich auf jedem Handy, Tablet und in der <a href=\"pc/\">Windows-App</a> mit Google an — sie finden sich gegenseitig."],["3","Jederzeit zurückblicken","Tage, Wochen, Monate oder Jahre, jede App oder eine Kategorie, ein Gerät oder alle."]],"privateTitle":"Deine Daten bleiben deine","privateText":"Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.","privateMore":"Datenschutzerklärung lesen"},"c":{"name":"Deutsch","brand":"Khronometr","home":"Startseite","windows":"Windows-App","privacy":"Datenschutzerklärung","top":"Nach oben","contents":"Inhalt"}},"it":{"t":{"title":"Il tuo tempo davanti allo schermo, da sempre","tagline":"Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme.","windows":"Khronometr per Windows","privacy":"Informativa sulla privacy","download":"Scarica per Android","android":"Gratis · Android 8 o successivo · poi l’app si aggiorna da sola","featuresTitle":"Cosa sa fare","features":[["♾️","Cronologia di sempre","Ogni app e gioco, giorno per giorno, conservati per sempre — con record, titoli e le tue serie più lunghe."],["⏮️","La cronologia di prima","Al primo avvio recupera tutto ciò che il telefono ricorda ancora, fino a circa due anni fa."],["📱","Tutti i tuoi dispositivi","Telefoni, tablet e un PC Windows in un unico posto, tramite una cartella nascosta nel tuo Google Drive."],["⏳","Limiti che funzionano","Tempo al giorno, ore vietate, una schermata «Tempo scaduto» — per un’app, una categoria o un tuo gruppo, sui dispositivi che scegli."],["🧩","Widget","Oggi, la settimana, le app più usate, una singola app, i tuoi limiti e i totali di sempre direttamente nella schermata Home."],["📶","Traffico","Wi-Fi e dati mobili per app, per i giorni che vuoi."]],"howTitle":"Come funziona","how":[["1","Installala sul telefono","Concedi una volta l’«Accesso ai dati di utilizzo» — legge la cronologia che il telefono conserva e da lì conta da sola."],["2","Aggiungi gli altri dispositivi","Accedi con Google su ogni telefono, tablet e nell’<a href=\"pc/\">app per Windows</a> — si trovano a vicenda."],["3","Guarda indietro quando vuoi","Giorni, settimane, mesi o anni, ogni app o una categoria, un dispositivo o tutti."]],"privateTitle":"I tuoi dati restano tuoi","privateText":"Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.","privateMore":"Leggi l’informativa sulla privacy"},"c":{"name":"Italiano","brand":"Khronometr","home":"Home","windows":"App per Windows","privacy":"Informativa sulla privacy","top":"Torna su","contents":"Indice"}},"sv":{"t":{"title":"Skärmtid för all tid","tagline":"Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans.","windows":"Khronometr för Windows","privacy":"Integritetspolicy","download":"Ladda ner för Android","android":"Gratis · Android 8 eller senare · sedan uppdaterar appen sig själv","featuresTitle":"Vad den kan","features":[["♾️","Historik för all tid","Varje app och spel, dag för dag, sparat för alltid — med rekord, titlar och dina längsta sviter."],["⏮️","Historik från förr","Vid första starten hämtar den allt telefonen fortfarande minns, upp till ungefär två år bakåt."],["📱","Alla dina enheter","Telefoner, surfplattor och en Windows-dator på ett ställe, via en dold mapp på din egen Google Drive."],["⏳","Gränser som fungerar","Tid per dag, förbjudna timmar, en ”Tiden är ute”-skärm — för en app, en kategori eller din egen grupp, på de enheter du väljer."],["🧩","Widgetar","I dag, veckan, toppapparna, en app, dina gränser och totalen för all tid direkt på hemskärmen."],["📶","Trafik","Wifi och mobildata per app, för vilka dagar du vill."]],"howTitle":"Så fungerar det","how":[["1","Installera på telefonen","Ge den ”Åtkomst till användningsdata” en gång — den läser historiken som telefonen sparar och räknar sedan själv."],["2","Lägg till dina andra enheter","Logga in med Google på varje telefon, surfplatta och i <a href=\"pc/\">Windows-appen</a> — de hittar varandra."],["3","Blicka bakåt när du vill","Dagar, veckor, månader eller år, varje app eller en kategori, en enhet eller alla."]],"privateTitle":"Dina data är dina","privateText":"Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.","privateMore":"Läs integritetspolicyn"},"c":{"name":"Svenska","brand":"Khronometr","home":"Start","windows":"Windows-app","privacy":"Integritetspolicy","top":"Till toppen","contents":"Innehåll"}},"id":{"t":{"title":"Waktu layar sepanjang masa","tagline":"Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus.","windows":"Khronometr untuk Windows","privacy":"Kebijakan Privasi","download":"Unduh untuk Android","android":"Gratis · Android 8 atau lebih baru · setelah itu aplikasi memperbarui diri sendiri","featuresTitle":"Apa saja yang bisa dilakukan","features":[["♾️","Riwayat sepanjang masa","Setiap aplikasi dan game, hari demi hari, tersimpan selamanya — dengan rekor, gelar, dan streak terpanjangmu."],["⏮️","Riwayat dari sebelumnya","Saat pertama dibuka, aplikasi mengambil semua yang masih diingat ponsel, hingga sekitar dua tahun ke belakang."],["📱","Semua perangkatmu","Ponsel, tablet, dan PC Windows di satu tempat, lewat folder tersembunyi di Google Drive milikmu sendiri."],["⏳","Batas yang benar-benar bekerja","Waktu per hari, jam terlarang, layar “Waktu habis” — untuk satu aplikasi, kategori, atau grupmu sendiri, di perangkat yang kamu pilih."],["🧩","Widget","Hari ini, minggu ini, aplikasi teratas, satu aplikasi, batasmu, dan total sepanjang masa langsung di layar utama."],["📶","Trafik","Wi-Fi dan data seluler per aplikasi, untuk hari apa pun yang kamu pilih."]],"howTitle":"Cara kerjanya","how":[["1","Pasang di ponsel","Berikan “Akses penggunaan” sekali — aplikasi membaca riwayat yang disimpan ponsel, lalu menghitung sendiri sejak itu."],["2","Tambahkan perangkat lain","Masuk dengan Google di setiap ponsel, tablet, dan <a href=\"pc/\">aplikasi Windows</a> — semuanya akan saling menemukan."],["3","Lihat ke belakang kapan saja","Hari, minggu, bulan, atau tahun, setiap aplikasi atau satu kategori, satu perangkat atau semuanya."]],"privateTitle":"Datamu tetap milikmu","privateText":"Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.","privateMore":"Baca kebijakan privasi"},"c":{"name":"Bahasa Indonesia","brand":"Khronometr","home":"Beranda","windows":"Aplikasi Windows","privacy":"Kebijakan Privasi","top":"Kembali ke atas","contents":"Isi"}},"ja":{"t":{"title":"ずっと残るスクリーンタイム","tagline":"すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。","windows":"Windows 版フロノメトル","privacy":"プライバシーポリシー","download":"Android 版をダウンロード","android":"無料 · Android 8 以降 · その後はアプリが自動で更新されます","featuresTitle":"できること","features":[["♾️","全期間の履歴","すべてのアプリとゲームを日ごとにずっと保存 — 記録、称号、最長の連続記録つき。"],["⏮️","以前の履歴も","初回起動時に、スマホがまだ覚えている履歴を最大約 2 年前まで取り込みます。"],["📱","すべてのデバイス","スマホ、タブレット、Windows PC をひとまとめに。あなた自身の Google ドライブの非表示フォルダを使います。"],["⏳","ちゃんと効く上限","1 日の時間、禁止時間帯、「時間切れ」画面 — アプリ、カテゴリ、自分で作ったグループごとに、選んだデバイスで。"],["🧩","ウィジェット","今日、今週、よく使うアプリ、1 つのアプリ、上限、全期間の合計をホーム画面に。"],["📶","通信量","アプリごとの Wi-Fi とモバイルデータを、好きな日について。"]],"howTitle":"使い方","how":[["1","スマホにインストール","「使用状況へのアクセス」を一度許可するだけ — スマホに残る履歴を読み込み、その後は自動で記録します。"],["2","他のデバイスを追加","各スマホ、タブレット、<a href=\"pc/\">Windows アプリ</a>で Google にログイン — 互いに自動でつながります。"],["3","いつでも振り返り","日、週、月、年ごとに。すべてのアプリやカテゴリ、1 台または全デバイスで。"]],"privateTitle":"あなたのデータはあなたのもの","privateText":"サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。","privateMore":"プライバシーポリシーを読む"},"c":{"name":"日本語","brand":"フロノメトル","home":"ホーム","windows":"Windows 版","privacy":"プライバシーポリシー","top":"トップへ戻る","contents":"目次"}},"kk":{"t":{"title":"Қолданбалардағы уақыт — бүкіл уақыт бойы","tagline":"Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге.","windows":"Windows-қа арналған Хронометр","privacy":"Құпиялылық саясаты","download":"Android үшін жүктеп алу","android":"Тегін · Android 8 және жаңарақ · кейін қолданба өзі жаңарады","featuresTitle":"Ол не істей алады","features":[["♾️","Бүкіл уақыттағы тарих","Әр қолданба мен ойын, күннен күнге, мәңгі сақталады — рекордтар, атақтар және ең ұзақ сериялармен."],["⏮️","Бұрынғы тарих","Алғаш іске қосқанда телефон әлі есінде сақтағанның бәрін алады — шамамен екі жылға дейін артқа."],["📱","Барлық құрылғыларың","Телефондар, планшеттер және Windows ДК бір жерде — өз Google Дискіңдегі жасырын қалта арқылы."],["⏳","Шын жұмыс істейтін лимиттер","Күндік уақыт, тыйым салынған сағаттар, «Уақыт бітті» экраны — бір қолданбаға, санатқа, өз тобыңа, таңдаған құрылғыларда."],["🧩","Виджеттер","Бүгін, апта, топ қолданбалар, бір қолданба, лимиттерің және бүкіл уақыттағы қорытынды — тікелей басты экранда."],["📶","Трафик","Әр қолданбаның Wi-Fi және мобильді интернеті — кез келген күндер үшін."]],"howTitle":"Бұл қалай жұмыс істейді","how":[["1","Телефонға орнат","Бір рет «Пайдалану деректеріне кіру рұқсатын» бер — ол телефон сақтаған тарихты алып, әрі қарай өзі санайды."],["2","Басқа құрылғыларды қос","Әр телефонда, планшетте және <a href=\"pc/\">Windows бағдарламасында</a> Google арқылы кір — олар бір-бірін табады."],["3","Кез келген уақытта қара","Күндер, апталар, айлар немесе жылдар, әр қолданба не санат, бір құрылғы не бәрі бірге."]],"privateTitle":"Деректерің — өзіңдікі","privateText":"Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.","privateMore":"Құпиялылық саясатын оқу"},"c":{"name":"Қазақ тілі","brand":"Хронометр","home":"Басты бет","windows":"Windows үшін","privacy":"Құпиялылық саясаты","top":"Жоғарыға","contents":"Мазмұны"}},"ru":{"t":{"title":"Время в приложениях за всё время","tagline":"Сколько ты провёл в каждом приложении и игре — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе.","windows":"Хронометр для Windows","privacy":"Политика конфиденциальности","download":"Скачать для Android","android":"Бесплатно · Android 8 и новее · дальше приложение обновляется само","featuresTitle":"Что он умеет","features":[["♾️","История за всё время","Каждое приложение и игра, день за днём, навсегда — с рекордами, титулами и самыми длинными сериями."],["⏮️","История из прошлого","При первом запуске забирает всё, что телефон ещё помнит, — примерно до двух лет назад."],["📱","Все твои устройства","Телефоны, планшеты и ПК на Windows вместе — через скрытую папку на твоём собственном Google Диске."],["⏳","Лимиты, которые работают","Время в день, запрещённые часы, экран «Время вышло» — для приложения, категории, своей группы, на выбранных устройствах."],["🧩","Виджеты","Сегодня, неделя, топ приложений, одно приложение, лимиты и «всё время» прямо на рабочем столе."],["📶","Трафик","Wi-Fi и мобильный интернет по приложениям — за любые дни."]],"howTitle":"Как это работает","how":[["1","Установи на телефон","Один раз дай «Доступ к истории использования» — он заберёт историю, которую хранит телефон, и дальше будет считать сам."],["2","Добавь другие устройства","Войди через Google на каждом телефоне, планшете и в <a href=\"pc/\">программе для Windows</a> — они найдут друг друга."],["3","Смотри когда угодно","Дни, недели, месяцы или годы, каждое приложение или категория, одно устройство или все вместе."]],"privateTitle":"Твои данные — твои","privateText":"Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.","privateMore":"Читать политику конфиденциальности"},"c":{"name":"Русский","brand":"Хронометр","home":"Главная","windows":"Для Windows","privacy":"Политика конфиденциальности","top":"Наверх","contents":"Содержание"}}};
-const R = "", DOWNLOAD_URL = "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe";
-const body = function homeBody(t, c, R) {
+const D = {"uk":{"t":{"lang":"Українська","langLabel":"Мова","top":"Нагору","metaTitle":"PegasoHlib — застосунки та ігри","metaDesc":"Хронометр, Крапля, Слід, Колись і KORDON — застосунки та ігри від PegasoHlib. Завантаж для Android, 12 мовами.","navApps":"Застосунки","navAbout":"Про мене","navContact":"Контакт","kicker":"Застосунки й ігри для Android","lead":"Я роблю застосунки, яких мені бракує, — і ділюся ними з тобою. Безкоштовно, без реклами, 12 мовами.","ctaApps":"Дивитися застосунки","ctaMail":"Написати мені","statProjects":"проєктів","statLangs":"мов","statAds":"реклами","appsTitle":"Застосунки й ігри","appsSub":"Завантаж APK один раз — далі кожен застосунок оновлюється сам.","cat":{"khronometr":"Екранний час","kraplya":"Звички","slid":"Хронологія","kolys":"Капсула часу","kordon":"Стратегія"},"download":"Завантажити APK","page":"Про застосунок","windows":"Для Windows","testApk":"Завантажити тестову версію","inDev":"У розробці","kordon":{"title":"Стратегія світової історії","lead":"Глобальна стратегія на справжній Землі із шестикутних сот. Грай на глобусі або на плоскій карті, об’єднуй провінції й перекроюй кордони як хочеш."},"howTitle":"Як встановити","how":[["Завантаж","Відкрий цю сторінку на телефоні з Android і натисни «Завантажити APK»."],["Дозволь","Відкрий файл і дозволь встановлення з браузера. Це треба лише один раз."],["Готово","Усе: далі застосунок оновлюється сам."]],"playSoon":"Версії в Google Play — уже незабаром.","aboutTitle":"Про мене","hi":"Привіт, я PegasoHlib 👋","about":"Я роблю застосунки й ігри: від ідеї та дизайну до коду, перекладів і цих сторінок. Роблю те, чого мені бракує, — екранний час за весь час, спокійні звички, хронологію власного життя, листи в майбутнє і стратегію про весь світ.","about2":"Без реклами й без стеження: усе, що ти записуєш, лишається на твоєму телефоні або у твоєму Google Диску.","contactTitle":"Ідея, баг чи просто привіт?","contactText":"Пиши — мені буде приємно.","footNote":"На цьому сайті немає cookie, реклами й стеження."},"apps":{"khronometr":{"name":"Хронометр","title":"Час у застосунках за весь час","lead":"Скільки ти провів у кожному застосунку й грі — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом."},"kraplya":{"name":"Крапля","title":"Трекер звичок із таймером","lead":"Постав ціль для кожної звички, вмикай таймер, коли займаєшся, і дивись, як тиждень наповнюється крапля за краплею. Просто, спокійно й приватно."},"slid":{"name":"Слід","title":"Твоя хронологія день за днем","lead":"Слід зберігає історію твоїх місць: куди ти ходиш і їздиш, шляхи між ними й фото, зроблені там, — і все це лишається на твоєму телефоні."},"kolys":{"name":"Колись","title":"Лист собі в майбутнє","lead":"Напиши собі лист, додай фото й запечатай до обраного дня. До того часу його ніхто не відкриє, навіть ти. А коли час настане, капсула відкриється сама."},"kordon":{"name":"KORDON","title":"Стратегія світової історії","lead":"Глобальна стратегія на справжній Землі із шестикутних сот. Грай на глобусі або на плоскій карті, об’єднуй провінції й перекроюй кордони як хочеш."}}},"en":{"t":{"lang":"English","langLabel":"Language","top":"Back to top","metaTitle":"PegasoHlib — apps and games","metaDesc":"Khronometr, Kraplya, Slid, Kolys and KORDON — apps and games by PegasoHlib. Download for Android, in 12 languages.","navApps":"Apps","navAbout":"About","navContact":"Contact","kicker":"Apps & games for Android","lead":"I make the apps I miss myself — and share them with you. Free, no ads, in 12 languages.","ctaApps":"See the apps","ctaMail":"Write to me","statProjects":"projects","statLangs":"languages","statAds":"ads","appsTitle":"Apps & games","appsSub":"Download the APK once — after that every app keeps itself up to date.","cat":{"khronometr":"Screen time","kraplya":"Habits","slid":"Timeline","kolys":"Time capsule","kordon":"Strategy game"},"download":"Download APK","page":"About the app","windows":"For Windows","testApk":"Download test build","inDev":"In development","kordon":{"title":"World history strategy","lead":"A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat map, merge provinces and redraw borders any way you like."},"howTitle":"How to install","how":[["Download","Open this page on your Android phone and tap “Download APK”."],["Allow","Open the file and allow installs from your browser. It is needed only once."],["Done","That’s it: from now on the app updates itself."]],"playSoon":"Google Play versions are on the way.","aboutTitle":"About me","hi":"Hi, I’m PegasoHlib 👋","about":"I make apps and games: from the idea and design to the code, the translations and these pages. I build what I miss myself — screen time for all time, calm habits, a timeline of my own life, letters to the future and a strategy about the whole world.","about2":"No ads and no tracking: what you record stays on your phone or in your own Google Drive.","contactTitle":"An idea, a bug or just hi?","contactText":"Write to me — I’ll be glad to hear from you.","footNote":"This site has no cookies, no ads and no tracking."},"apps":{"khronometr":{"name":"Khronometr","title":"Screen time for all time","lead":"How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together."},"kraplya":{"name":"Kraplya","title":"Habit tracker with a timer","lead":"Set a goal for every habit, start the timer when you practise, and watch the week fill up drop by drop. Simple, calm and private."},"slid":{"name":"Slid","title":"Your timeline, day by day","lead":"Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone."},"kolys":{"name":"Kolys","title":"A letter to your future self","lead":"Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself."},"kordon":{"name":"KORDON","title":"World history strategy","lead":"A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat map, merge provinces and redraw borders any way you like."}}},"es":{"t":{"lang":"Español","langLabel":"Idioma","top":"Volver arriba","metaTitle":"PegasoHlib — apps y juegos","metaDesc":"Khronometr, Kraplya, Slid, Kolys y KORDON: apps y juegos de PegasoHlib. Descárgalos para Android, en 12 idiomas.","navApps":"Apps","navAbout":"Sobre mí","navContact":"Contacto","kicker":"Apps y juegos para Android","lead":"Hago las apps que me faltan a mí y las comparto contigo. Gratis, sin anuncios y en 12 idiomas.","ctaApps":"Ver las apps","ctaMail":"Escríbeme","statProjects":"proyectos","statLangs":"idiomas","statAds":"anuncios","appsTitle":"Apps y juegos","appsSub":"Descarga el APK una vez: después cada app se actualiza sola.","cat":{"khronometr":"Tiempo de pantalla","kraplya":"Hábitos","slid":"Cronología","kolys":"Cápsula del tiempo","kordon":"Estrategia"},"download":"Descargar APK","page":"Sobre la app","windows":"Para Windows","testApk":"Descargar versión de prueba","inDev":"En desarrollo","kordon":{"title":"Estrategia de la historia mundial","lead":"Un gran juego de estrategia sobre la Tierra real hecha de celdas hexagonales. Juega en un globo o en un mapa plano, une provincias y redibuja fronteras como quieras."},"howTitle":"Cómo instalar","how":[["Descarga","Abre esta página en tu móvil Android y toca «Descargar APK»."],["Permite","Abre el archivo y permite instalar desde el navegador. Solo hace falta una vez."],["Listo","Eso es todo: a partir de ahora la app se actualiza sola."]],"playSoon":"Las versiones para Google Play están en camino.","aboutTitle":"Sobre mí","hi":"Hola, soy PegasoHlib 👋","about":"Hago apps y juegos: desde la idea y el diseño hasta el código, las traducciones y estas páginas. Hago lo que me falta a mí: el tiempo de pantalla de siempre, hábitos con calma, la cronología de mi propia vida, cartas al futuro y una estrategia sobre el mundo entero.","about2":"Sin anuncios ni rastreo: lo que guardas se queda en tu móvil o en tu propio Google Drive.","contactTitle":"¿Una idea, un fallo o solo un hola?","contactText":"Escríbeme, me hará ilusión.","footNote":"Este sitio no usa cookies, anuncios ni rastreo."},"apps":{"khronometr":{"name":"Khronometr","title":"Tu tiempo de pantalla, desde siempre","lead":"Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez."},"kraplya":{"name":"Kraplya","title":"Seguimiento de hábitos con temporizador","lead":"Ponte una meta para cada hábito, inicia el temporizador cuando practiques y mira cómo la semana se llena gota a gota. Sencillo, tranquilo y privado."},"slid":{"name":"Slid","title":"Tu cronología, día a día","lead":"Slid guarda la historia de tus lugares: adónde vas, los caminos entre ellos y las fotos que haces allí, y todo se queda en tu teléfono."},"kolys":{"name":"Kolys","title":"Una carta a tu yo del futuro","lead":"Escríbete una carta, añade fotos y séllala hasta el día que elijas. Hasta entonces nadie podrá abrirla, ni siquiera tú. Cuando llegue el momento, la cápsula se abrirá sola."},"kordon":{"name":"KORDON","title":"Estrategia de la historia mundial","lead":"Un gran juego de estrategia sobre la Tierra real hecha de celdas hexagonales. Juega en un globo o en un mapa plano, une provincias y redibuja fronteras como quieras."}}},"pt":{"t":{"lang":"Português","langLabel":"Língua","top":"Voltar ao topo","metaTitle":"PegasoHlib — apps e jogos","metaDesc":"Khronometr, Kraplya, Slid, Kolys e KORDON: apps e jogos de PegasoHlib. Descarrega para Android, em 12 línguas.","navApps":"Apps","navAbout":"Sobre mim","navContact":"Contacto","kicker":"Apps e jogos para Android","lead":"Faço as apps que me fazem falta e partilho-as contigo. Grátis, sem anúncios e em 12 línguas.","ctaApps":"Ver as apps","ctaMail":"Escreve-me","statProjects":"projetos","statLangs":"línguas","statAds":"anúncios","appsTitle":"Apps e jogos","appsSub":"Descarrega o APK uma vez: depois cada app atualiza-se sozinha.","cat":{"khronometr":"Tempo de ecrã","kraplya":"Hábitos","slid":"Cronologia","kolys":"Cápsula do tempo","kordon":"Estratégia"},"download":"Descarregar APK","page":"Sobre a app","windows":"Para Windows","testApk":"Descarregar versão de teste","inDev":"Em desenvolvimento","kordon":{"title":"Estratégia da história mundial","lead":"Um grande jogo de estratégia na Terra real feita de células hexagonais. Joga num globo ou num mapa plano, junta províncias e redesenha fronteiras como quiseres."},"howTitle":"Como instalar","how":[["Descarrega","Abre esta página no teu telemóvel Android e toca em «Descarregar APK»."],["Permite","Abre o ficheiro e permite instalar a partir do navegador. Só é preciso uma vez."],["Pronto","É só isso: a partir daí a app atualiza-se sozinha."]],"playSoon":"As versões no Google Play estão a caminho.","aboutTitle":"Sobre mim","hi":"Olá, eu sou PegasoHlib 👋","about":"Faço apps e jogos: da ideia e do design ao código, às traduções e a estas páginas. Faço o que me faz falta — o tempo de ecrã de sempre, hábitos com calma, a cronologia da minha vida, cartas para o futuro e uma estratégia sobre o mundo inteiro.","about2":"Sem anúncios e sem rastreio: o que registas fica no teu telemóvel ou no teu próprio Google Drive.","contactTitle":"Uma ideia, um erro ou só um olá?","contactText":"Escreve-me, vou gostar de saber de ti.","footNote":"Este site não usa cookies, anúncios nem rastreio."},"apps":{"khronometr":{"name":"Khronometr","title":"O teu tempo de ecrã, desde sempre","lead":"Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto."},"kraplya":{"name":"Kraplya","title":"Registo de hábitos com temporizador","lead":"Define um objetivo para cada hábito, inicia o temporizador quando praticas e vê a semana a encher-se gota a gota. Simples, tranquilo e privado."},"slid":{"name":"Slid","title":"A sua cronologia, dia a dia","lead":"O Slid guarda a história dos seus locais: por onde anda, os caminhos entre eles e as fotos que lá tira, e tudo fica no seu telemóvel."},"kolys":{"name":"Kolys","title":"Uma carta ao teu eu do futuro","lead":"Escreve uma carta para ti, junta fotos e sela-a até ao dia que escolheres. Até lá, ninguém a pode abrir, nem mesmo tu. Quando chegar a hora, a cápsula abre-se sozinha."},"kordon":{"name":"KORDON","title":"Estratégia da história mundial","lead":"Um grande jogo de estratégia na Terra real feita de células hexagonais. Joga num globo ou num mapa plano, junta províncias e redesenha fronteiras como quiseres."}}},"fr":{"t":{"lang":"Français","langLabel":"Langue","top":"Haut de page","metaTitle":"PegasoHlib — apps et jeux","metaDesc":"Khronometr, Kraplya, Slid, Kolys et KORDON : apps et jeux de PegasoHlib. À télécharger pour Android, en 12 langues.","navApps":"Apps","navAbout":"À propos","navContact":"Contact","kicker":"Apps et jeux pour Android","lead":"Je crée les apps qui me manquent et je les partage avec toi. Gratuites, sans pub, en 12 langues.","ctaApps":"Voir les apps","ctaMail":"M’écrire","statProjects":"projets","statLangs":"langues","statAds":"pub","appsTitle":"Apps et jeux","appsSub":"Télécharge l’APK une fois : ensuite chaque app se met à jour toute seule.","cat":{"khronometr":"Temps d’écran","kraplya":"Habitudes","slid":"Chronologie","kolys":"Capsule temporelle","kordon":"Stratégie"},"download":"Télécharger l’APK","page":"À propos de l’app","windows":"Pour Windows","testApk":"Télécharger la version test","inDev":"En développement","kordon":{"title":"Stratégie de l’histoire mondiale","lead":"Un grand jeu de stratégie sur la vraie Terre faite de cellules hexagonales. Joue sur un globe ou une carte plane, fusionne des provinces et redessine les frontières comme tu veux."},"howTitle":"Comment installer","how":[["Télécharge","Ouvre cette page sur ton téléphone Android et appuie sur « Télécharger l’APK »."],["Autorise","Ouvre le fichier et autorise l’installation depuis ton navigateur. Une seule fois suffit."],["C’est prêt","Et voilà : désormais l’app se met à jour toute seule."]],"playSoon":"Les versions Google Play arrivent bientôt.","aboutTitle":"À propos de moi","hi":"Salut, moi c’est PegasoHlib 👋","about":"Je crée des apps et des jeux : de l’idée et du design jusqu’au code, aux traductions et à ces pages. Je fais ce qui me manque : le temps d’écran depuis toujours, des habitudes en douceur, la chronologie de ma propre vie, des lettres au futur et une stratégie sur le monde entier.","about2":"Sans pub ni pistage : ce que tu enregistres reste sur ton téléphone ou dans ton propre Google Drive.","contactTitle":"Une idée, un bug ou juste un coucou ?","contactText":"Écris-moi, ça me fera plaisir.","footNote":"Ce site n’utilise ni cookies, ni pub, ni pistage."},"apps":{"khronometr":{"name":"Khronometr","title":"Ton temps d’écran, depuis toujours","lead":"Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis."},"kraplya":{"name":"Kraplya","title":"Suivi d’habitudes avec minuteur","lead":"Fixe un objectif pour chaque habitude, lance le minuteur quand tu pratiques et regarde la semaine se remplir goutte à goutte. Simple, calme et privé."},"slid":{"name":"Slid","title":"Votre chronologie, jour après jour","lead":"Slid garde l’histoire de vos lieux : où vous allez, les chemins entre eux et les photos que vous y prenez, et tout reste sur votre téléphone."},"kolys":{"name":"Kolys","title":"Une lettre à ton futur moi","lead":"Écris-toi une lettre, ajoute des photos et scelle-la jusqu’au jour de ton choix. D’ici là, personne ne peut l’ouvrir, pas même toi. Le moment venu, la capsule s’ouvre toute seule."},"kordon":{"name":"KORDON","title":"Stratégie de l’histoire mondiale","lead":"Un grand jeu de stratégie sur la vraie Terre faite de cellules hexagonales. Joue sur un globe ou une carte plane, fusionne des provinces et redessine les frontières comme tu veux."}}},"de":{"t":{"lang":"Deutsch","langLabel":"Sprache","top":"Nach oben","metaTitle":"PegasoHlib — Apps und Spiele","metaDesc":"Khronometr, Kraplya, Slid, Kolys und KORDON: Apps und Spiele von PegasoHlib. Für Android herunterladen, in 12 Sprachen.","navApps":"Apps","navAbout":"Über mich","navContact":"Kontakt","kicker":"Apps und Spiele für Android","lead":"Ich baue die Apps, die mir selbst fehlen – und teile sie mit dir. Kostenlos, ohne Werbung, in 12 Sprachen.","ctaApps":"Apps ansehen","ctaMail":"Schreib mir","statProjects":"Projekte","statLangs":"Sprachen","statAds":"Werbung","appsTitle":"Apps und Spiele","appsSub":"Lade die APK einmal – danach hält sich jede App selbst aktuell.","cat":{"khronometr":"Bildschirmzeit","kraplya":"Gewohnheiten","slid":"Zeitachse","kolys":"Zeitkapsel","kordon":"Strategiespiel"},"download":"APK herunterladen","page":"Zur App","windows":"Für Windows","testApk":"Testversion herunterladen","inDev":"In Entwicklung","kordon":{"title":"Strategie der Weltgeschichte","lead":"Ein großes Strategiespiel auf der echten Erde aus Sechseck-Zellen. Spiel auf einem Globus oder einer flachen Karte, vereine Provinzen und zieh Grenzen ganz nach Belieben neu."},"howTitle":"So installierst du","how":[["Herunterladen","Öffne diese Seite auf deinem Android-Handy und tippe auf „APK herunterladen“."],["Erlauben","Öffne die Datei und erlaube die Installation aus deinem Browser. Das ist nur einmal nötig."],["Fertig","Das war’s: Ab jetzt aktualisiert sich die App selbst."]],"playSoon":"Versionen bei Google Play sind unterwegs.","aboutTitle":"Über mich","hi":"Hi, ich bin PegasoHlib 👋","about":"Ich mache Apps und Spiele: von der Idee und dem Design bis zum Code, den Übersetzungen und diesen Seiten. Ich baue, was mir selbst fehlt – Bildschirmzeit für alle Zeit, ruhige Gewohnheiten, eine Zeitachse meines eigenen Lebens, Briefe an die Zukunft und ein Strategiespiel über die ganze Welt.","about2":"Ohne Werbung und ohne Tracking: Was du festhältst, bleibt auf deinem Handy oder in deinem eigenen Google Drive.","contactTitle":"Eine Idee, ein Fehler oder einfach Hallo?","contactText":"Schreib mir – ich freue mich.","footNote":"Diese Seite nutzt keine Cookies, keine Werbung und kein Tracking."},"apps":{"khronometr":{"name":"Khronometr","title":"Deine Bildschirmzeit seit jeher","lead":"Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen."},"kraplya":{"name":"Kraplya","title":"Gewohnheitstracker mit Timer","lead":"Setz dir für jede Gewohnheit ein Ziel, starte den Timer, wenn du übst, und sieh zu, wie sich die Woche Tropfen für Tropfen füllt. Einfach, ruhig und privat."},"slid":{"name":"Slid","title":"Deine Zeitachse, Tag für Tag","lead":"Slid bewahrt die Geschichte deiner Orte: wohin es dich zieht, die Wege dazwischen und die Fotos, die dort entstehen – und alles bleibt auf deinem Handy."},"kolys":{"name":"Kolys","title":"Ein Brief an dein zukünftiges Ich","lead":"Schreib dir selbst einen Brief, füge Fotos hinzu und versiegle ihn bis zu dem Tag, den du wählst. Bis dahin kann ihn niemand öffnen, nicht einmal du. Wenn es so weit ist, öffnet sich die Kapsel von selbst."},"kordon":{"name":"KORDON","title":"Strategie der Weltgeschichte","lead":"Ein großes Strategiespiel auf der echten Erde aus Sechseck-Zellen. Spiel auf einem Globus oder einer flachen Karte, vereine Provinzen und zieh Grenzen ganz nach Belieben neu."}}},"it":{"t":{"lang":"Italiano","langLabel":"Lingua","top":"Torna su","metaTitle":"PegasoHlib — app e giochi","metaDesc":"Khronometr, Kraplya, Slid, Kolys e KORDON: app e giochi di PegasoHlib. Scaricali per Android, in 12 lingue.","navApps":"App","navAbout":"Su di me","navContact":"Contatti","kicker":"App e giochi per Android","lead":"Creo le app che mancano a me e le condivido con te. Gratis, senza pubblicità, in 12 lingue.","ctaApps":"Guarda le app","ctaMail":"Scrivimi","statProjects":"progetti","statLangs":"lingue","statAds":"pubblicità","appsTitle":"App e giochi","appsSub":"Scarica l’APK una volta: poi ogni app si aggiorna da sola.","cat":{"khronometr":"Tempo di schermo","kraplya":"Abitudini","slid":"Cronologia","kolys":"Capsula del tempo","kordon":"Strategico"},"download":"Scarica l’APK","page":"Scopri l’app","windows":"Per Windows","testApk":"Scarica la versione di prova","inDev":"In sviluppo","kordon":{"title":"Strategia della storia mondiale","lead":"Un grande strategico sulla vera Terra fatta di celle esagonali. Gioca su un globo o su una mappa piatta, unisci province e ridisegna i confini come vuoi."},"howTitle":"Come installare","how":[["Scarica","Apri questa pagina sul telefono Android e tocca «Scarica l’APK»."],["Consenti","Apri il file e consenti l’installazione dal browser. Serve una volta sola."],["Fatto","Ecco fatto: da ora in poi l’app si aggiorna da sola."]],"playSoon":"Le versioni su Google Play sono in arrivo.","aboutTitle":"Su di me","hi":"Ciao, sono PegasoHlib 👋","about":"Creo app e giochi: dall’idea e dal design fino al codice, alle traduzioni e a queste pagine. Faccio ciò che manca a me: il tempo di schermo di sempre, abitudini con calma, la cronologia della mia vita, lettere al futuro e uno strategico sul mondo intero.","about2":"Niente pubblicità né tracciamento: ciò che registri resta sul tuo telefono o nel tuo Google Drive.","contactTitle":"Un’idea, un bug o solo un saluto?","contactText":"Scrivimi, mi farà piacere.","footNote":"Questo sito non usa cookie, pubblicità né tracciamento."},"apps":{"khronometr":{"name":"Khronometr","title":"Il tuo tempo davanti allo schermo, da sempre","lead":"Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme."},"kraplya":{"name":"Kraplya","title":"Tracker di abitudini con timer","lead":"Fissa un obiettivo per ogni abitudine, avvia il timer quando ti eserciti e guarda la settimana riempirsi goccia dopo goccia. Semplice, tranquilla e privata."},"slid":{"name":"Slid","title":"La tua cronologia, giorno per giorno","lead":"Slid conserva la storia dei tuoi luoghi: dove vai, le strade tra un posto e l’altro e le foto che scatti lì, e tutto resta sul tuo telefono."},"kolys":{"name":"Kolys","title":"Una lettera al te del futuro","lead":"Scriviti una lettera, aggiungi delle foto e sigillala fino al giorno che scegli. Fino ad allora nessuno potrà aprirla, nemmeno tu. Quando arriverà il momento, la capsula si aprirà da sola."},"kordon":{"name":"KORDON","title":"Strategia della storia mondiale","lead":"Un grande strategico sulla vera Terra fatta di celle esagonali. Gioca su un globo o su una mappa piatta, unisci province e ridisegna i confini come vuoi."}}},"sv":{"t":{"lang":"Svenska","langLabel":"Språk","top":"Till toppen","metaTitle":"PegasoHlib — appar och spel","metaDesc":"Khronometr, Kraplya, Slid, Kolys och KORDON: appar och spel av PegasoHlib. Ladda ner för Android, på 12 språk.","navApps":"Appar","navAbout":"Om mig","navContact":"Kontakt","kicker":"Appar och spel för Android","lead":"Jag gör de appar som jag själv saknar – och delar dem med dig. Gratis, utan reklam, på 12 språk.","ctaApps":"Se apparna","ctaMail":"Skriv till mig","statProjects":"projekt","statLangs":"språk","statAds":"reklam","appsTitle":"Appar och spel","appsSub":"Ladda ner APK:n en gång – sedan håller varje app sig uppdaterad själv.","cat":{"khronometr":"Skärmtid","kraplya":"Vanor","slid":"Tidslinje","kolys":"Tidskapsel","kordon":"Strategispel"},"download":"Ladda ner APK","page":"Om appen","windows":"För Windows","testApk":"Ladda ner testversionen","inDev":"Under utveckling","kordon":{"title":"Strategi genom världshistorien","lead":"Ett stort strategispel på den riktiga jorden, byggd av sexkantiga celler. Spela på en glob eller en platt karta, slå ihop provinser och rita om gränserna precis som du vill."},"howTitle":"Så installerar du","how":[["Ladda ner","Öppna sidan på din Android-telefon och tryck på ”Ladda ner APK”."],["Tillåt","Öppna filen och tillåt installation från webbläsaren. Det behövs bara en gång."],["Klart","Det var allt: från och med nu uppdaterar appen sig själv."]],"playSoon":"Versioner på Google Play är på väg.","aboutTitle":"Om mig","hi":"Hej, jag är PegasoHlib 👋","about":"Jag gör appar och spel: från idé och design till kod, översättningar och de här sidorna. Jag bygger det jag själv saknar – skärmtid för all tid, lugna vanor, en tidslinje över mitt eget liv, brev till framtiden och ett strategispel om hela världen.","about2":"Ingen reklam och ingen spårning: det du sparar stannar i din telefon eller i din egen Google Drive.","contactTitle":"En idé, en bugg eller bara ett hej?","contactText":"Skriv till mig – jag blir glad.","footNote":"Den här sidan använder inga cookies, ingen reklam och ingen spårning."},"apps":{"khronometr":{"name":"Khronometr","title":"Skärmtid för all tid","lead":"Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans."},"kraplya":{"name":"Kraplya","title":"Vanespårare med timer","lead":"Sätt ett mål för varje vana, starta timern när du övar och se veckan fyllas droppe för droppe. Enkelt, lugnt och privat."},"slid":{"name":"Slid","title":"Din tidslinje, dag för dag","lead":"Slid bevarar historien om dina platser: vart du åker, vägarna däremellan och fotona du tar där – och allt stannar på din telefon."},"kolys":{"name":"Kolys","title":"Ett brev till ditt framtida jag","lead":"Skriv ett brev till dig själv, lägg till foton och försegla det till den dag du väljer. Fram till dess kan ingen öppna det, inte ens du. När tiden är inne öppnas kapseln av sig själv."},"kordon":{"name":"KORDON","title":"Strategi genom världshistorien","lead":"Ett stort strategispel på den riktiga jorden, byggd av sexkantiga celler. Spela på en glob eller en platt karta, slå ihop provinser och rita om gränserna precis som du vill."}}},"id":{"t":{"lang":"Bahasa Indonesia","langLabel":"Bahasa","top":"Kembali ke atas","metaTitle":"PegasoHlib — aplikasi dan game","metaDesc":"Khronometr, Kraplya, Slid, Kolys, dan KORDON: aplikasi dan game dari PegasoHlib. Unduh untuk Android, dalam 12 bahasa.","navApps":"Aplikasi","navAbout":"Tentang","navContact":"Kontak","kicker":"Aplikasi & game untuk Android","lead":"Aku membuat aplikasi yang kubutuhkan sendiri — lalu membagikannya untukmu. Gratis, tanpa iklan, dalam 12 bahasa.","ctaApps":"Lihat aplikasinya","ctaMail":"Kirim pesan","statProjects":"proyek","statLangs":"bahasa","statAds":"iklan","appsTitle":"Aplikasi & game","appsSub":"Unduh APK sekali — setelah itu setiap aplikasi memperbarui dirinya sendiri.","cat":{"khronometr":"Waktu layar","kraplya":"Kebiasaan","slid":"Linimasa","kolys":"Kapsul waktu","kordon":"Game strategi"},"download":"Unduh APK","page":"Tentang aplikasi","windows":"Untuk Windows","testApk":"Unduh versi uji coba","inDev":"Dalam pengembangan","kordon":{"title":"Strategi sejarah dunia","lead":"Game strategi besar di Bumi sungguhan yang tersusun dari sel heksagonal. Main di bola dunia atau peta datar, gabungkan provinsi, dan gambar ulang perbatasan sesukamu."},"howTitle":"Cara memasang","how":[["Unduh","Buka halaman ini di ponsel Android dan ketuk “Unduh APK”."],["Izinkan","Buka filenya dan izinkan pemasangan dari browser. Cukup sekali saja."],["Selesai","Itu saja: mulai sekarang aplikasinya memperbarui diri sendiri."]],"playSoon":"Versi Google Play segera hadir.","aboutTitle":"Tentang aku","hi":"Hai, aku PegasoHlib 👋","about":"Aku membuat aplikasi dan game: dari ide dan desain sampai kode, terjemahan, dan halaman-halaman ini. Aku membuat apa yang kubutuhkan sendiri — waktu layar sepanjang masa, kebiasaan yang tenang, linimasa hidupku sendiri, surat untuk masa depan, dan game strategi tentang seluruh dunia.","about2":"Tanpa iklan dan tanpa pelacakan: apa yang kamu catat tetap di ponselmu atau di Google Drive milikmu sendiri.","contactTitle":"Punya ide, ketemu bug, atau sekadar menyapa?","contactText":"Kirim pesan — aku senang mendengarnya.","footNote":"Situs ini tidak memakai cookie, iklan, atau pelacakan."},"apps":{"khronometr":{"name":"Khronometr","title":"Waktu layar sepanjang masa","lead":"Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus."},"kraplya":{"name":"Kraplya","title":"Pelacak kebiasaan dengan timer","lead":"Tetapkan target untuk setiap kebiasaan, nyalakan timer saat kamu berlatih, dan lihat minggumu terisi setetes demi setetes. Sederhana, tenang, dan privat."},"slid":{"name":"Slid","title":"Linimasa, hari demi hari","lead":"Slid menyimpan kisah tempat-tempat yang dikunjungi: ke mana pergi, jalan di antaranya, dan foto yang diambil di sana — dan semuanya tetap di ponsel."},"kolys":{"name":"Kolys","title":"Surat untuk dirimu di masa depan","lead":"Tulis surat untuk dirimu sendiri, tambahkan foto, lalu segel hingga hari yang kamu pilih. Sampai saat itu tidak ada yang bisa membukanya, bahkan kamu sendiri. Saat waktunya tiba, kapsul akan terbuka dengan sendirinya."},"kordon":{"name":"KORDON","title":"Strategi sejarah dunia","lead":"Game strategi besar di Bumi sungguhan yang tersusun dari sel heksagonal. Main di bola dunia atau peta datar, gabungkan provinsi, dan gambar ulang perbatasan sesukamu."}}},"ja":{"t":{"lang":"日本語","langLabel":"言語","top":"トップへ","metaTitle":"PegasoHlib — アプリとゲーム","metaDesc":"フロノメトル、クラプリャ、スリド、コリス、KORDON — PegasoHlib のアプリとゲーム。Android 向けにダウンロードでき、12 言語に対応。","navApps":"アプリ","navAbout":"自己紹介","navContact":"連絡先","kicker":"Android 向けのアプリとゲーム","lead":"自分が欲しいアプリを作って、みんなと共有しています。無料・広告なし・12 言語対応。","ctaApps":"アプリを見る","ctaMail":"メールする","statProjects":"プロジェクト","statLangs":"言語","statAds":"広告","appsTitle":"アプリとゲーム","appsSub":"APK を一度ダウンロードすれば、あとは各アプリが自動で最新に保たれます。","cat":{"khronometr":"スクリーンタイム","kraplya":"習慣","slid":"タイムライン","kolys":"タイムカプセル","kordon":"ストラテジー"},"download":"APK をダウンロード","page":"アプリについて","windows":"Windows 版","testApk":"テスト版をダウンロード","inDev":"開発中","kordon":{"title":"世界史ストラテジー","lead":"六角形のセルでできた本物の地球で遊ぶ大戦略ゲーム。地球儀でも平面地図でもプレイでき、州を統合したり国境を自由に引き直したりできます。"},"howTitle":"インストール方法","how":[["ダウンロード","Android スマホでこのページを開き、「APK をダウンロード」をタップします。"],["許可する","ファイルを開き、ブラウザからのインストールを許可します。最初の一回だけです。"],["完了","これで OK。以降はアプリが自動でアップデートされます。"]],"playSoon":"Google Play 版も準備中です。","aboutTitle":"自己紹介","hi":"こんにちは、PegasoHlib です 👋","about":"アプリやゲームを作っています。アイデアやデザインから、コード、翻訳、このページまで。自分に足りないものを作っています — ずっと残るスクリーンタイム、穏やかな習慣づくり、自分の人生のタイムライン、未来への手紙、そして世界全体を舞台にしたストラテジー。","about2":"広告もトラッキングもありません。記録したものはあなたのスマホか、あなた自身の Google ドライブに残ります。","contactTitle":"アイデア、バグ報告、それともただのあいさつ？","contactText":"気軽にメールしてください。とてもうれしいです。","footNote":"このサイトは Cookie・広告・トラッキングを使用していません。"},"apps":{"khronometr":{"name":"フロノメトル","title":"ずっと残るスクリーンタイム","lead":"すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。"},"kraplya":{"name":"クラプリャ","title":"タイマー付き習慣トラッカー","lead":"習慣ごとに目標を決めて、取り組むときはタイマーをスタート。一週間が一滴ずつ満ちていくのを見守りましょう。シンプルで穏やか、そしてプライベートです。"},"slid":{"name":"スリド","title":"あなたのタイムラインを日ごとに","lead":"スリドは、訪れた場所の記録を残します。行き先、その間の道のり、そこで撮った写真。そしてそのすべてがスマートフォンの中だけに残ります。"},"kolys":{"name":"コリス","title":"未来の自分への手紙","lead":"自分に宛てて手紙を書き、写真を添えて、選んだ日まで封をしましょう。その日までは誰にも開けられません。あなた自身にもです。その時が来ると、カプセルはひとりでに開きます。"},"kordon":{"name":"KORDON","title":"世界史ストラテジー","lead":"六角形のセルでできた本物の地球で遊ぶ大戦略ゲーム。地球儀でも平面地図でもプレイでき、州を統合したり国境を自由に引き直したりできます。"}}},"kk":{"t":{"lang":"Қазақша","langLabel":"Тіл","top":"Жоғары","metaTitle":"PegasoHlib — қолданбалар мен ойындар","metaDesc":"Хронометр, Крапля, Слід, Колись және KORDON — PegasoHlib-тің қолданбалары мен ойындары. Android үшін жүкте, 12 тілде.","navApps":"Қолданбалар","navAbout":"Мен туралы","navContact":"Байланыс","kicker":"Android-қа арналған қолданбалар мен ойындар","lead":"Өзіме жетіспейтін қолданбаларды жасаймын да, сенімен бөлісемін. Тегін, жарнамасыз, 12 тілде.","ctaApps":"Қолданбаларды көру","ctaMail":"Маған жазу","statProjects":"жоба","statLangs":"тіл","statAds":"жарнама","appsTitle":"Қолданбалар мен ойындар","appsSub":"APK-ны бір рет жүкте — содан кейін әр қолданба өзін-өзі жаңартып отырады.","cat":{"khronometr":"Экран уақыты","kraplya":"Әдеттер","slid":"Хронология","kolys":"Уақыт капсуласы","kordon":"Стратегия"},"download":"APK жүктеу","page":"Қолданба туралы","windows":"Windows үшін","testApk":"Сынақ нұсқасын жүктеу","inDev":"Әзірленуде","kordon":{"title":"Әлем тарихы стратегиясы","lead":"Алтыбұрышты ұяшықтардан құралған нағыз Жердегі ауқымды стратегия. Глобуста немесе жазық картада ойна, провинцияларды біріктіріп, шекараларды қалауыңша қайта сыз."},"howTitle":"Қалай орнату керек","how":[["Жүкте","Бұл бетті Android телефонында ашып, «APK жүктеу» батырмасын бас."],["Рұқсат бер","Файлды ашып, браузерден орнатуға рұқсат бер. Бұл тек бір рет керек."],["Дайын","Болды: енді қолданба өзін-өзі жаңартады."]],"playSoon":"Google Play нұсқалары жақында шығады.","aboutTitle":"Мен туралы","hi":"Сәлем, мен PegasoHlib 👋","about":"Мен қолданбалар мен ойындар жасаймын: идея мен дизайннан бастап кодқа, аудармаларға және осы беттерге дейін. Өзіме жетіспейтін нәрсені жасаймын — бүкіл уақыттағы экран уақыты, байсалды әдеттер, өз өмірімнің хронологиясы, болашаққа хаттар және бүкіл әлем туралы стратегия.","about2":"Жарнама да, бақылау да жоқ: жазғаның телефоныңда немесе өз Google Drive-ыңда қалады.","contactTitle":"Идея, қате немесе жай сәлем бе?","contactText":"Жаз — қуана оқимын.","footNote":"Бұл сайтта cookie, жарнама және бақылау жоқ."},"apps":{"khronometr":{"name":"Хронометр","title":"Қолданбалардағы уақыт — бүкіл уақыт бойы","lead":"Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге."},"kraplya":{"name":"Крапля","title":"Таймері бар әдет трекері","lead":"Әр әдетке мақсат қой, айналысқанда таймерді қос және аптаның тамшылап толғанын көр. Қарапайым, сабырлы әрі жеке."},"slid":{"name":"Слід","title":"Хронологияңыз күн сайын","lead":"Слід сіз барған орындардың тарихын сақтайды: қайда барасыз, арасындағы жолдар және сол жерде түсірген фотолар, — бәрі телефоныңызда қалады."},"kolys":{"name":"Колись","title":"Болашақтағы өзіңе хат","lead":"Өзіңе хат жаз, фото қос та, таңдаған күніңе дейін мөрлеп қой. Оған дейін оны ешкім аша алмайды, тіпті сен де. Уақыты келгенде капсула өзі ашылады."},"kordon":{"name":"KORDON","title":"Әлем тарихы стратегиясы","lead":"Алтыбұрышты ұяшықтардан құралған нағыз Жердегі ауқымды стратегия. Глобуста немесе жазық картада ойна, провинцияларды біріктіріп, шекараларды қалауыңша қайта сыз."}}},"ru":{"t":{"lang":"Русский","langLabel":"Язык","top":"Наверх","metaTitle":"PegasoHlib — приложения и игры","metaDesc":"Хронометр, Крапля, Слід, Колись и KORDON — приложения и игры от PegasoHlib. Скачай для Android, на 12 языках.","navApps":"Приложения","navAbout":"Обо мне","navContact":"Контакт","kicker":"Приложения и игры для Android","lead":"Я делаю приложения, которых мне не хватает, — и делюсь ими с тобой. Бесплатно, без рекламы, на 12 языках.","ctaApps":"Смотреть приложения","ctaMail":"Написать мне","statProjects":"проектов","statLangs":"языков","statAds":"рекламы","appsTitle":"Приложения и игры","appsSub":"Скачай APK один раз — дальше каждое приложение обновляется само.","cat":{"khronometr":"Экранное время","kraplya":"Привычки","slid":"Хронология","kolys":"Капсула времени","kordon":"Стратегия"},"download":"Скачать APK","page":"О приложении","windows":"Для Windows","testApk":"Скачать тестовую версию","inDev":"В разработке","kordon":{"title":"Стратегия мировой истории","lead":"Глобальная стратегия на настоящей Земле из шестиугольных сот. Играй на глобусе или на плоской карте, объединяй провинции и перекраивай границы как хочешь."},"howTitle":"Как установить","how":[["Скачай","Открой эту страницу на телефоне с Android и нажми «Скачать APK»."],["Разреши","Открой файл и разреши установку из браузера. Это нужно только один раз."],["Готово","Всё: дальше приложение обновляется само."]],"playSoon":"Версии в Google Play — уже скоро.","aboutTitle":"Обо мне","hi":"Привет, я PegasoHlib 👋","about":"Я делаю приложения и игры: от идеи и дизайна до кода, переводов и этих страниц. Делаю то, чего мне не хватает, — экранное время за всё время, спокойные привычки, хронологию собственной жизни, письма в будущее и стратегию обо всём мире.","about2":"Без рекламы и без слежки: всё, что ты записываешь, остаётся на твоём телефоне или в твоём Google Диске.","contactTitle":"Идея, баг или просто привет?","contactText":"Пиши — мне будет приятно.","footNote":"На этом сайте нет cookie, рекламы и слежки."},"apps":{"khronometr":{"name":"Хронометр","title":"Время в приложениях за всё время","lead":"Сколько ты провёл в каждом приложении и игре — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе."},"kraplya":{"name":"Крапля","title":"Трекер привычек с таймером","lead":"Ставь цель для каждой привычки, включай таймер, когда занимаешься, и смотри, как неделя наполняется капля за каплей. Просто, спокойно и приватно."},"slid":{"name":"Слід","title":"Твоя хронология день за днём","lead":"Слід хранит историю твоих мест: куда ты ходишь и ездишь, пути между ними и фото, сделанные там, — и всё это остаётся на твоём телефоне."},"kolys":{"name":"Колись","title":"Письмо себе в будущее","lead":"Напиши себе письмо, добавь фото и запечатай его до выбранного дня. До тех пор его никто не откроет, даже ты. А когда время придёт, капсула откроется сама."},"kordon":{"name":"KORDON","title":"Стратегия мировой истории","lead":"Глобальная стратегия на настоящей Земле из шестиугольных сот. Играй на глобусе или на плоской карте, объединяй провинции и перекраивай границы как хочешь."}}}};
+const APPS = [{"id":"khronometr","icon":"assets/khronometr.svg","a":"#8B5CFF","g":["#8B5CFF","#FF4FD8"],"on":"#fff","page":"khronometr/","feed":"android/version.json","plats":["android","windows"],"pc":"khronometr/pc/"},{"id":"kraplya","icon":"assets/kraplya.svg","a":"#3A8DFF","g":["#2F7BFF","#13A77E"],"on":"#fff","page":"kraplya/","feed":"kraplya/update.json","plats":["android"]},{"id":"slid","icon":"assets/slid.svg","a":"#FF6A3D","g":["#E8552C","#FF8A4C"],"on":"#fff","page":"slid/","feed":"slid/update.json","plats":["android"]},{"id":"kolys","icon":"assets/kolys.svg","a":"#FFB65C","g":["#FFC673","#FF9550"],"on":"#2A1606","page":"kolys/","feed":"kolys/update.json","plats":["android"]},{"id":"kordon","icon":"assets/kordon.svg","a":"#F0C04A","g":["#F7D46A","#E9A23B"],"on":"#1D1405","page":"kordon/","feed":"kordon/version.json","plats":["android"],"test":true,"shot":"assets/kordon-globe.webp"}];
+const LIVE = {"khronometr":{"v":"0.29.1","url":"https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk","size":14182920,"page":true},"kraplya":{"v":"0.9.7","url":"https://github.com/PegasoHlib/kraplya/releases/download/v0.9.7/Kraplya-0.9.7.apk","size":16003239,"page":true},"slid":{"v":"0.9.3","url":"https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.3/Slid-0.9.3.apk","size":39193861,"page":true},"kolys":{"v":"0.4.2","url":"https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.2/Kolys-0.4.2.apk","size":14237360,"page":true},"kordon":{"v":"0.4.0","url":"https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk","size":160130983,"page":true}};
+const I = {"dl":"<path d=\"M12 3v12\"/><path d=\"m7 10 5 5 5-5\"/><path d=\"M5 21h14\"/>","down":"<path d=\"M12 5v14\"/><path d=\"m19 12-7 7-7-7\"/>","right":"<path d=\"M5 12h14\"/><path d=\"m13 6 6 6-6 6\"/>","mail":"<rect x=\"3\" y=\"5\" width=\"18\" height=\"14\" rx=\"3\"/><path d=\"m4 7 8 6 8-6\"/>","android":"<rect x=\"6\" y=\"2.5\" width=\"12\" height=\"19\" rx=\"3\"/><path d=\"M11 18.5h2\"/>","windows":"<rect x=\"2.5\" y=\"4\" width=\"19\" height=\"13\" rx=\"2\"/><path d=\"M8 21h8M12 17v4\"/>","shield":"<path d=\"M12 3 4.5 6v5.5c0 4.6 3.2 8 7.5 9.5 4.3-1.5 7.5-4.9 7.5-9.5V6z\"/><path d=\"m9 12 2.2 2.2L15.5 10\"/>","flask":"<path d=\"M9 3h6M10 3v6.2L4.8 18.6A2 2 0 0 0 6.6 21.5h10.8a2 2 0 0 0 1.8-2.9L14 9.2V3\"/><path d=\"M7.4 15h9.2\"/>","play":"<path d=\"M6.5 3.8v16.4a.8.8 0 0 0 1.2.7l13-8.2a.8.8 0 0 0 0-1.4l-13-8.2a.8.8 0 0 0-1.2.7z\"/>","globe":"<circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z\"/>","github":"<path fill=\"currentColor\" stroke=\"none\" d=\"M12 .8a11.2 11.2 0 0 0-3.54 21.83c.56.1.77-.24.77-.54v-1.9c-3.12.68-3.78-1.5-3.78-1.5-.5-1.3-1.24-1.64-1.24-1.64-1.02-.7.08-.68.08-.68 1.12.08 1.71 1.15 1.71 1.15 1 1.71 2.62 1.22 3.26.93.1-.72.39-1.22.71-1.5-2.49-.28-5.11-1.25-5.11-5.54 0-1.22.44-2.22 1.15-3-.11-.28-.5-1.42.11-2.96 0 0 .94-.3 3.08 1.15a10.7 10.7 0 0 1 5.6 0c2.14-1.45 3.08-1.15 3.08-1.15.61 1.54.23 2.68.11 2.96.72.78 1.15 1.78 1.15 3 0 4.3-2.62 5.25-5.12 5.53.4.35.76 1.03.76 2.08v3.08c0 .3.2.65.78.54A11.2 11.2 0 0 0 12 .8z\"/>"};
+const ic = (k, cls) => `<svg class="i${cls ? ' ' + cls : ''}" viewBox="0 0 24 24" aria-hidden="true">${I[k]}</svg>`;
+function verText(live, l) {
+  if (!live || !live.v) return '';
+  let size = '';
+  if (live.size > 0) {
+    const mb = live.size / 1e6;
+    try { size = new Intl.NumberFormat(l, { style: 'unit', unit: 'megabyte', maximumFractionDigits: mb < 10 ? 1 : 0 }).format(mb); } catch (e) { size = Math.round(mb) + ' MB'; }
+  }
+  return 'v' + live.v + (size ? ' · ' + size : '');
+}
+function render(d, l, APPS, LIVE) {
+  const t = d.t;
+  const q = '?lang=' + l;
+  const PLAT = { android: 'Android', windows: 'Windows' };
+  const card = (a, i) => {
+    const s = d.apps[a.id], live = LIVE[a.id] || {};
+    const style = `--a:${a.a};--g1:${a.g[0]};--g2:${a.g[1]};--on:${a.on};--d:${(i % 2) * 0.08}s`;
+    const pageLink = !a.test || live.page;
+    const head = `
+      <div class="card-top">
+        <a class="ico${a.test ? ' hex' : ''}" href="${pageLink ? a.page + q : live.url || '#'}" tabindex="-1" aria-hidden="true"><img src="${a.icon}" alt="" width="68" height="68" loading="lazy"></a>
+        <div class="id">
+          <span class="cat">${t.cat[a.id]}${a.test ? `<span class="badge">${ic('flask')}${t.inDev}</span>` : ''}</span>
+          <h3>${pageLink ? `<a href="${a.page + q}">${s.name}</a>` : s.name}</h3>
+        </div>
+        <a class="more" data-page="${a.id}" href="${a.page + q}" title="${t.page}" aria-label="${t.page}"${pageLink ? "" : " hidden"}><span>${t.page}</span>${ic("right")}</a>
+      </div>
+      <p class="tl">${s.title}</p>
+      <p class="ld">${s.lead}</p>
+      <div class="chips">${a.plats.map((p) => `<span class="chip">${ic(p)}${PLAT[p]}</span>`).join('')}<span class="chip ver" data-ver="${a.id}">${verText(live, l)}</span></div>
+      <div class="actions">
+        <a class="btn dl" data-dl="${a.id}" href="${live.url}">${ic('dl')}<span>${a.test ? t.testApk : t.download}</span></a>
+        ${a.pc ? `<a class="btn glass" href="${a.pc + q}">${ic('windows')}<span>${t.windows}</span></a>` : ''}
+      </div>`;
+    return a.shot
+      ? `<article class="card wide reveal" id="${a.id}" style="${style}"><div class="body">${head}</div><a class="shot" href="${pageLink ? a.page + q : live.url}" data-shot="${a.id}" tabindex="-1" aria-hidden="true"><img src="${a.shot}" alt="" loading="lazy"></a></article>`
+      : `<article class="card reveal" id="${a.id}" style="${style}">${head}</article>`;
+  };
   return `
-  <header class="hero" id="top">
-    <img class="logo" src="${R}icon.png" alt="" width="120" height="120">
-    <h1>${c.brand}</h1>
-    <p class="lead">${t.title}</p>
-    <p class="tagline">${t.tagline}</p>
-    <div class="cta"><a class="btn big" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk">⬇&nbsp; ${t.download}</a></div>
-    <p class="soon">🤖 ${t.android}</p>
+<section class="hero wrap" id="top">
+  <div class="hero-text">
+    <span class="kicker"><i class="dot"></i>${t.kicker}</span>
+    <h1 class="title"><span class="grad">PegasoHlib</span></h1>
+    <p class="lead">${t.lead}</p>
     <div class="cta">
-      <a class="btn ghost" href="${R}pc/">💻 ${t.windows}</a>
-      <a class="btn ghost" href="${R}privacy.html">🔒 ${t.privacy}</a>
+      <a class="btn primary" href="#apps">${t.ctaApps}${ic('down')}</a>
+      <a class="btn glass" href="#contact">${ic('mail')}${t.ctaMail}</a>
     </div>
-  </header>
+    <ul class="stats">
+      <li><b>${APPS.length}</b><span>${t.statProjects}</span></li>
+      <li><b>12</b><span>${t.statLangs}</span></li>
+      <li><b>0</b><span>${t.statAds}</span></li>
+    </ul>
+  </div>
+  <div class="orbit">
+    <svg class="rings" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="42"/><circle cx="50" cy="50" r="27"/></svg>
+    <img class="core" src="assets/mark.svg" alt="" width="120" height="120">
+${APPS.map((a, i) => `    <a class="planet p${i}${a.test ? ' hex' : ''}" href="#${a.id}" style="--a:${a.a}" aria-label="${d.apps[a.id].name}"><img src="${a.icon}" alt="" width="84" height="84"><span class="tip">${d.apps[a.id].name}</span></a>`).join('\n')}
+  </div>
+</section>
 
-  <h2 class="label">${t.featuresTitle}</h2>
+<section class="wrap block" id="apps">
+  <div class="head reveal"><h2>${t.appsTitle}</h2><p>${t.appsSub}</p></div>
   <div class="grid">
-${t.features.map(([i, h, p]) => `    <div class="feat"><span class="ico">${i}</span><h3>${h}</h3><p>${p}</p></div>`).join('\n')}
+${APPS.map(card).join('\n')}
   </div>
+</section>
 
-  <h2 class="label">${t.howTitle}</h2>
-  <div class="grid three">
-${t.how.map(([n, h, p]) => `    <div class="feat"><span class="num">${n}</span><h3>${h}</h3><p>${p}</p></div>`).join('\n')}
+<section class="wrap block" id="how">
+  <div class="head reveal"><h2>${t.howTitle}</h2></div>
+  <ol class="steps">
+${t.how.map(([h, p], i) => `    <li class="step reveal" style="--d:${i * 0.08}s"><span class="n">${i + 1}</span><h3>${h}</h3><p>${p}</p></li>`).join('\n')}
+  </ol>
+  <p class="soon reveal">${ic('play')}${t.playSoon}</p>
+</section>
+
+<section class="wrap block" id="about">
+  <div class="about reveal">
+    <div class="avatar"><i class="ring"></i><img src="assets/mark.svg" alt="" width="150" height="150" loading="lazy"></div>
+    <div class="about-text">
+      <span class="eyebrow">${t.aboutTitle}</span>
+      <h2>${t.hi}</h2>
+      <p>${t.about}</p>
+      <p class="note">${ic('shield')}<span>${t.about2}</span></p>
+    </div>
   </div>
+</section>
 
-  <section class="private">
-    <h2><span class="ico">🔒</span>${t.privateTitle}</h2>
-    <p>${t.privateText}</p>
-    <p><a href="${R}privacy.html">${t.privateMore} →</a></p>
-  </section>`;
-};
-const footer = function footer(c, R) {
-  return `<footer><a href="${R}./">${c.home}</a> · <a href="${R}pc/">💻 ${c.windows}</a> · <a href="${R}privacy.html">🔒 ${c.privacy}</a><br><a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>`;
-};
-const title = (t, c) => c.brand + ' — ' + t.title;
+<section class="wrap block" id="contact">
+  <div class="contact reveal">
+    <h2>${t.contactTitle}</h2>
+    <p>${t.contactText}</p>
+    <div class="cta center">
+      <a class="btn primary" href="mailto:pegasohlib12@gmail.com">${ic('mail')}pegasohlib12@gmail.com</a>
+      <a class="btn glass" href="https://github.com/PegasoHlib" rel="noopener">${ic('github')}GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap foot">
+  <a class="foot-brand" href="#top"><img src="assets/mark.svg" alt="" width="28" height="28">PegasoHlib</a>
+  <p>${t.footNote}</p>
+  <p class="copy">© 2026 PegasoHlib</p>
+</footer>`;
+}
 const page = document.getElementById('page');
-function show(k, keepScroll) {
-  const d = D[k] || D.en;
-  page.innerHTML = body(d.t, d.c, R) + '\n  ' + footer(d.c, R);
-  document.documentElement.lang = k;
-  document.title = title(d.t, d.c);
-  document.getElementById('brand').textContent = d.c.brand;
-  document.getElementById('langName').textContent = d.c.name;
-  document.getElementById('up').setAttribute('aria-label', d.c.top);
-  document.querySelectorAll('#lang button').forEach(b => b.setAttribute('aria-current', String(b.dataset.lang === k)));
-  try { localStorage.setItem('siteLang', k); } catch (e) {}
-  const u = new URL(location.href); u.searchParams.set('lang', k); history.replaceState(null, '', u);
-  if (!keepScroll && location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
+let cur = 'en', first = true;
+function show(l) {
+  const d = D[l] || D.en;
+  cur = D[l] ? l : 'en';
+  page.innerHTML = render(d, cur, APPS, LIVE);
+  document.documentElement.lang = cur;
+  document.title = d.t.metaTitle;
+  document.querySelector('meta[name="description"]').content = d.t.metaDesc;
+  document.getElementById('langName').textContent = d.t.lang;
+  document.getElementById('lang').setAttribute('aria-label', d.t.langLabel);
+  document.getElementById('up').setAttribute('aria-label', d.t.top);
+  document.querySelectorAll('[data-nav]').forEach(a => { a.textContent = d.t[a.dataset.nav]; });
+  document.querySelectorAll('#lang button').forEach(b => b.setAttribute('aria-current', String(b.dataset.lang === cur)));
+  try { localStorage.setItem('siteLang', cur); } catch (e) {}
+  const u = new URL(location.href);
+  if (u.searchParams.get('lang') !== cur) { u.searchParams.set('lang', cur); history.replaceState(null, '', u); }
+  watch(!first);
+  first = false;
 }
 function pick() {
   const q = new URLSearchParams(location.search).get('lang');
   if (q && D[q]) return q;
-  try { const s = localStorage.getItem('siteLang') || localStorage.getItem('privacyLang'); if (s && D[s]) return s; } catch (e) {}
+  try { const s = localStorage.getItem('siteLang'); if (s && D[s]) return s; } catch (e) {}
   for (const l of navigator.languages || [navigator.language || 'en']) {
-    const base = l.toLowerCase().split('-')[0];
+    const base = String(l).toLowerCase().split('-')[0];
     const k = base === 'in' ? 'id' : base;
     if (D[k]) return k;
   }
   return 'en';
 }
-document.querySelectorAll('#lang button').forEach(b => b.addEventListener('click', () => {
-  show(b.dataset.lang, true);
-  document.getElementById('lang').open = false;
-}));
-document.addEventListener('click', e => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
-// Links to the other pages carry the language along.
-document.addEventListener('click', e => {
-  const a = e.target.closest('a[href]');
-  if (!a || a.target || /^(mailto:|https?:|#)/.test(a.getAttribute('href'))) return;
-  const u = new URL(a.href); u.searchParams.set('lang', document.documentElement.lang); a.href = u;
+// Fade sections in as they scroll into view; after a language switch everything is shown at once.
+let io;
+function watch(all) {
+  const els = page.querySelectorAll('.reveal');
+  if (all || !('IntersectionObserver' in window)) { els.forEach(e => e.classList.add('in')); return; }
+  io = io || new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
+  els.forEach(e => io.observe(e));
+}
+// Fresh versions, sizes and links from each app's update feed.
+function applyLive(id) {
+  const live = LIVE[id];
+  page.querySelectorAll('[data-dl="' + id + '"]').forEach(a => { if (live.url) a.href = live.url; });
+  page.querySelectorAll('[data-ver="' + id + '"]').forEach(s => { s.textContent = verText(live, cur); });
+  if (live.page) page.querySelectorAll('[data-page="' + id + '"]').forEach(a => { a.hidden = false; });
+}
+APPS.forEach(a => {
+  fetch(a.feed, { cache: 'no-store' }).then(r => r.ok ? r.json() : null).then(j => {
+    if (!j) return;
+    Object.assign(LIVE[a.id], { v: j.versionName || j.name || LIVE[a.id].v, url: j.apk || j.url || LIVE[a.id].url, size: j.size || LIVE[a.id].size });
+    applyLive(a.id);
+  }).catch(() => {});
+  if (a.test && !LIVE[a.id].page) fetch(a.page, { method: 'HEAD', cache: 'no-store' }).then(r => { if (r.ok) { LIVE[a.id].page = true; show(cur); } }).catch(() => {});
 });
-show(pick(), false);
+document.querySelectorAll('#lang button').forEach(b => b.addEventListener('click', () => { show(b.dataset.lang); document.getElementById('lang').open = false; }));
+document.addEventListener('click', e => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('lang').open = false; });
+// A soft light that follows the pointer over a card.
+if (matchMedia('(hover: hover)').matches) page.addEventListener('pointermove', e => {
+  const c = e.target.closest && e.target.closest('.card');
+  if (!c) return;
+  const r = c.getBoundingClientRect();
+  c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+  c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+}, { passive: true });
+// The «up» button appears once the hero is out of sight.
+const up = document.getElementById('up');
+if ('IntersectionObserver' in window) new IntersectionObserver(es => { up.classList.toggle('show', !es[0].isIntersecting); }).observe(document.getElementById('sentinel'));
+show(pick());
 </script>
 </body>
 </html>
