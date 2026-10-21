@@ -1,11 +1,11 @@
 {
-  "versionCode": 31,
-  "versionName": "0.29.2",
+  "versionCode": 32,
+  "versionName": "0.29.3",
   "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk",
-  "sha256": "c3fd369d60cf3969088d08d7d980637b86b14a8c711b92147ce93af4680c7c09",
-  "size": 14586660,
+  "sha256": "ad190105170593e97e7db5554c8d0869a84dc300024292565bc8c3f6e5388f04",
+  "size": 5229832,
   "notes": {
-    "uk": "Розмір тексту в налаштуваннях, нові набори звуків і гучність. Посилання на сайт ведуть на нову адресу /khronometr/",
-    "en": "Text size in settings, new sound sets and volume. Site links point to the new address /khronometr/"
+    "uk": "Рівна галочка у виборі пристроїв, захищений і менший застосунок",
+    "en": "Straight check mark in the device picker, a protected and smaller app"
   }
 }
