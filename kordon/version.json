@@ -1,11 +1,11 @@
 {
-    "versionCode":  303,
-    "versionName":  "0.3.3",
+    "versionCode":  400,
+    "versionName":  "0.4.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "7009b17b704aba29de55b64a5c4eadce252f527408c774271d08c2d0186b7566",
-    "size":  142982998,
+    "sha256":  "1b5d9cd3703ed698cc16da983395d748a7510146449503ea281f01262444de01",
+    "size":  160130983,
     "notes":  {
-                  "uk":  "Рельєф: висота й місцевість кожної соти, кнопка «Рельєф»",
-                  "en":  "Relief: height and terrain of every cell, Relief button"
+                  "uk":  "Нове малювання мапи — швидше й легше на всіх рівнях; п\u0027ята, екстремальна мапа (сота ~10 км); тіні рельєфу й глибини морів; налаштування (мапа, кадри, роздільність, тіні) запам\u0027ятовуються; кнопки зуму",
+                  "en":  "New map renderer, faster and lighter on every level; a fifth, Extreme map (~10 km cells); relief shading and sea depths; settings (map, FPS, resolution, shading) are remembered; zoom buttons"
               }
 }
