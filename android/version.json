@@ -1,0 +1,11 @@
+{
+  "versionCode": 27,
+  "versionName": "0.27.0",
+  "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk",
+  "sha256": "6fc3bc87c01eaf6144b3355b258205ec65cd2003777459809f88c94548d4c334",
+  "size": 14178259,
+  "notes": {
+    "uk": "Застосунок тепер сам перевіряє й встановлює оновлення. Можна вказати дату народження, щоб бачити, з якого віку ведеться історія. Нова іконка, назва за мовою, віджети й ліміти на кількох пристроях.",
+    "en": "The app now checks for and installs updates by itself. Add your date of birth to see at what age your history starts. New icon, name by language, widgets and limits on several devices."
+  }
+}
