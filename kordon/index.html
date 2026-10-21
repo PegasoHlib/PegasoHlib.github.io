@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="uk">
+<html lang="uk" style="--accent:#F7D46A;--accent2:#E9A23B;--on-accent:#1D1405">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,62 +8,65 @@
   <meta property="og:title" content="KORDON: World History Strategy">
   <meta property="og:description" content="Grand strategy on the real Earth made of hex cells. Android test build.">
   <meta property="og:image" content="https://pegasohlib.github.io/kordon/logo.svg">
-  <meta name="theme-color" content="#0a1424">
+  <meta name="theme-color" content="#ECEEF3">
+  <script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
   <link rel="icon" href="logo.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
   <link rel="stylesheet" href="site.css">
+  <script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </head>
 <body>
-  <header class="top">
-    <a class="brand" href="#">
-      <img src="logo.svg" alt="" width="36" height="36">
-      <span>KORDON</span>
-    </a>
+  <div class="bar"><div class="in">
+    <a class="home" href="./"><img src="logo.svg" alt="" width="32" height="32"><span>KORDON</span></a>
     <nav class="links">
       <a href="#now" data-t="navNow"></a>
       <a href="#plan" data-t="navPlan"></a>
       <a href="#download" data-t="navDownload"></a>
     </nav>
-    <details class="lang" id="lang">
-      <summary aria-label="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langName">Українська</span></summary>
-      <div class="menu" id="langMenu"></div>
-    </details>
-  </header>
+    <label class="lang">
+      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
+      <span class="sr">Language</span>
+      <select id="lang"></select>
+      <svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+    </label>
+    <button class="theme" id="theme" type="button"></button>
+  </div></div>
 
   <main>
     <section class="hero">
-      <img class="hero-logo" src="logo.svg" alt="" width="112" height="112">
-      <p class="badge" data-t="badge"></p>
+      <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+      <p class="test-badge" data-t="badge"></p>
       <h1>KORDON<span>World History Strategy</span></h1>
-      <p class="tagline" data-t="tagline"></p>
-      <div class="cta">
-        <a class="button primary" id="heroDownload" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+      <p class="lead" data-t="tagline"></p>
+      <div class="actions">
+        <a class="btn primary" id="heroDownload" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
           <span data-t="downloadApk"></span>
         </a>
-        <a class="button ghost" href="#install" data-t="howInstall"></a>
+        <a class="btn" href="#install" data-t="howInstall"></a>
       </div>
-      <p class="req" data-t="requirements"></p>
+      <p class="note" data-t="requirements"></p>
     </section>
 
     <section class="gallery" id="gallery" hidden></section>
 
-    <section class="block" id="now">
+    <section class="section" id="now">
       <h2 data-t="nowTitle"></h2>
-      <p class="lead" data-t="nowLead"></p>
+      <p class="sub" data-t="nowLead"></p>
       <div class="cards" id="nowCards"></div>
     </section>
 
-    <section class="block" id="plan">
+    <section class="section" id="plan">
       <h2 data-t="planTitle"></h2>
-      <p class="lead" data-t="planLead"></p>
+      <p class="sub" data-t="planLead"></p>
       <ul class="plan" id="planList"></ul>
     </section>
 
     <div class="split">
-    <section class="block download" id="download">
+    <section class="section" id="download">
       <h2 data-t="downloadTitle"></h2>
       <div class="dl-card">
         <div class="dl-head">
@@ -77,8 +80,8 @@
           <p class="dl-notes-title" data-t="whatsNew"></p>
           <p id="dlNotesText"></p>
         </div>
-        <a class="button primary wide" id="dlButton" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+        <a class="btn primary" id="dlButton" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
+          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
           <span data-t="downloadApk"></span>
         </a>
         <p class="dl-small" data-t="selfUpdate"></p>
@@ -86,16 +89,16 @@
       </div>
     </section>
 
-    <section class="block" id="install">
+    <section class="section" id="install">
       <h2 data-t="installTitle"></h2>
       <ol class="steps" id="steps"></ol>
     </section>
     </div>
   </main>
 
-  <footer class="foot">
-    <p>© 2026 KORDON · <a id="hubLink" href="/">✦ PegasoHlib</a></p>
+  <footer>
     <p data-t="footer"></p>
+    <p>© 2026 KORDON · <a id="hubLink" href="https://pegasohlib.github.io/" data-t="hub"></a></p>
   </footer>
 
   <script src="texts.js"></script>
