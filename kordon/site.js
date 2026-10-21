@@ -1,4 +1,4 @@
-// KORDON site: texts in two languages, language switch, gallery, and the current test build from version.json.
+// KORDON site: texts in 12 languages (texts.js), language menu, gallery, and the current test build from version.json.
 'use strict';
 
 // Screenshots in img/; a missing file is simply not shown.
@@ -8,110 +8,12 @@ const SHOTS = [
   { file: 'img/shot-relief.webp', key: 'shotRelief' },
 ];
 
-const T = {
-  uk: {
-    langButton: 'English',
-    navNow: 'Що є',
-    navPlan: 'Що буде',
-    navDownload: 'Завантажити',
-    badge: 'Тестова версія для Android',
-    tagline: 'Глобальна стратегія на справжній Землі, складеній із шестикутних сот. Грай на глобусі або на плоскій карті, об\'єднуй провінції й перекроюй кордони як хочеш. Попереду — усі епохи, соло й мультиплеєр.',
-    downloadApk: 'Завантажити APK',
-    howInstall: 'Як встановити',
-    requirements: 'Android 10 або новіший · 64-бітний телефон чи планшет (arm64)',
-    shotGlobe: 'Глобус',
-    shotMap: 'Карта світу',
-    shotRelief: 'Рельєф',
-    nowTitle: 'Що вже є в тестовій версії',
-    nowLead: 'Зараз це рання збірка: карта світу й робота з провінціями. Економіки, війни й дипломатії ще немає.',
-    now: [
-      ['globe', 'Справжня Земля із сот', 'Увесь світ складено із шестикутників: країни, регіони й берегова лінія за справжніми картами.'],
-      ['layers', '5 рівнів деталізації', 'Від звичайної мапи із сотами по 60 км до екстремальної: 1,5 мільйона сот суші, кожна близько 10 км.'],
-      ['swap', 'Глобус ↔ карта', 'Одним дотиком глобус плавно розгортається в плоску карту світу й назад.'],
-      ['merge', 'Свої провінції', 'Об\'єднуй кілька провінцій одразу, вирізай нову, просто обвівши її пальцем, і скасовуй кроки.'],
-      ['mountain', 'Рельєф', 'Кожна сота знає свою висоту й місцевість: рівнина, пагорби, гори чи льодовик. Зверху — тіні гір і глибини морів зі справжніх даних про висоти Землі.'],
-      ['speed', 'До 120 кадрів', 'Плавна картинка на швидких екранах; частоту й роздільність можна вибрати.'],
-    ],
-    planTitle: 'Що буде далі',
-    planLead: 'Небагато механік, але кожна зроблена глибоко й пов\'язана з іншими.',
-    plan: [
-      'Економіка й розвиток провінцій: цінність землі = площа × розвиток',
-      'Карта війни й тактичні бої з фігурками, правила яких змінюються з епохою',
-      'Дипломатія й переговори',
-      'Сильний ШІ з характером, що грає за тими самими правилами',
-      'Мультиплеєр і два режими: реальний час або покроковий',
-      'Усі епохи й короткі сценарії',
-      'Редактор карт і моди',
-      'Фінальне випробування епохи, яке треба витримати',
-    ],
-    downloadTitle: 'Завантажити',
-    loadingVersion: 'Дізнаємося версію…',
-    versionLine: 'Версія {v} · {s} МБ',
-    versionFailed: 'Не вдалося дізнатися версію, але кнопка все одно веде до найновішої збірки.',
-    whatsNew: 'Що нового',
-    selfUpdate: 'Тестова версія оновлюється сама: на Wi‑Fi завантажує й ставить нову збірку, на мобільних даних показує кнопку.',
-    playLater: 'Версія в Google Play з\'явиться пізніше.',
-    installTitle: 'Як встановити',
-    steps: [
-      'Завантаж файл <b>Kordon.apk</b> кнопкою на цій сторінці.',
-      'Відкрий його зі сповіщення або з папки «Завантаження».',
-      'Якщо Android запитає, дозволь встановлення з цього джерела (браузера чи файлового менеджера) і повернися назад.',
-      'Натисни «Встановити». Далі нові версії прийдуть самі.',
-    ],
-    footer: 'Без реклами й без стеження. Сайт не збирає жодних даних.',
-  },
-  en: {
-    langButton: 'Українська',
-    navNow: 'Now',
-    navPlan: 'Planned',
-    navDownload: 'Download',
-    badge: 'Android test build',
-    tagline: 'A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat world map, merge provinces and redraw borders any way you like. All eras, solo and multiplayer are on the way.',
-    downloadApk: 'Download APK',
-    howInstall: 'How to install',
-    requirements: 'Android 10 or newer · 64-bit phone or tablet (arm64)',
-    shotGlobe: 'Globe',
-    shotMap: 'World map',
-    shotRelief: 'Relief',
-    nowTitle: 'In the test build now',
-    nowLead: 'This is an early build: the world map and province editing. There is no economy, war or diplomacy yet.',
-    now: [
-      ['globe', 'The real Earth in cells', 'The whole world is made of hexagons: countries, regions and coastlines follow real maps.'],
-      ['layers', '5 detail levels', 'From the normal map with 60 km cells to the extreme one: 1.5 million land cells, each about 10 km across.'],
-      ['swap', 'Globe ↔ map', 'One tap smoothly unrolls the globe into a flat world map and back.'],
-      ['merge', 'Your own provinces', 'Merge several provinces at once, cut out a new one by drawing its outline, undo any step.'],
-      ['mountain', 'Relief', 'Every cell knows its height and terrain: plains, hills, mountains or ice. On top, mountain shading and sea depths from real Earth elevation data.'],
-      ['speed', 'Up to 120 FPS', 'Smooth on fast screens; frame rate and resolution are up to you.'],
-    ],
-    planTitle: 'Planned',
-    planLead: 'Few mechanics, each one deep and tied to the others.',
-    plan: [
-      'Economy and province development: land value = area × development',
-      'War map and tactical figurine battles whose rules change with the era',
-      'Diplomacy and negotiations',
-      'A strong AI with personalities that plays by the same rules',
-      'Multiplayer and two modes: real time or turn-based',
-      'All eras and short scenarios',
-      'Map editor and mods',
-      'A final trial of the era to survive',
-    ],
-    downloadTitle: 'Download',
-    loadingVersion: 'Checking the version…',
-    versionLine: 'Version {v} · {s} MB',
-    versionFailed: 'Could not check the version, but the button still leads to the newest build.',
-    whatsNew: 'What\'s new',
-    selfUpdate: 'The test build updates itself: on Wi‑Fi it downloads and installs the new build, on mobile data it shows a button.',
-    playLater: 'The Google Play version comes later.',
-    installTitle: 'How to install',
-    steps: [
-      'Download <b>Kordon.apk</b> with the button on this page.',
-      'Open it from the notification or the Downloads folder.',
-      'If Android asks, allow installing from this source (your browser or file manager) and go back.',
-      'Tap «Install». New versions will come by themselves after that.',
-    ],
-    footer: 'No ads and no tracking. This site collects no data.',
-  },
-};
+// Texts: T in texts.js. The menu lists the languages that have texts, in this order: [key, code, own name].
+const LANGS = [
+  ['uk', 'UK', 'Українська'], ['en', 'EN', 'English'], ['es', 'ES', 'Español'], ['pt', 'PT', 'Português'],
+  ['fr', 'FR', 'Français'], ['de', 'DE', 'Deutsch'], ['it', 'IT', 'Italiano'], ['sv', 'SV', 'Svenska'],
+  ['id', 'ID', 'Bahasa Indonesia'], ['ja', 'JA', '日本語'], ['kk', 'KK', 'Қазақша'], ['ru', 'RU', 'Русский'],
+].filter(([k]) => T[k]);
 
 const ICONS = {
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/>',
@@ -125,15 +27,25 @@ const ICONS = {
 let lang = pickLanguage();
 let version = null; // version.json once loaded, false if it failed
 
+// ?lang= (the main site and the other pages pass it), the saved choice (own or the main site's), then the browser.
 function pickLanguage() {
   const asked = new URLSearchParams(location.search).get('lang');
   if (asked && T[asked]) return asked;
   try {
-    const saved = localStorage.getItem('kordon-lang');
+    const saved = localStorage.getItem('kordon-lang') || localStorage.getItem('siteLang');
     if (saved && T[saved]) return saved;
   } catch (e) { /* storage may be blocked */ }
-  const browser = (navigator.languages || [navigator.language || 'en']).map((l) => String(l).toLowerCase());
-  return browser.some((l) => l.startsWith('uk') || l.startsWith('ru')) ? 'uk' : 'en';
+  for (const l of navigator.languages || [navigator.language || 'en']) {
+    const base = String(l).toLowerCase().split('-')[0];
+    const k = base === 'in' ? 'id' : base;
+    if (T[k]) return k;
+  }
+  return 'en';
+}
+
+function buildLangMenu() {
+  document.getElementById('langMenu').innerHTML = LANGS.map(([k, code, name]) =>
+    `<button type="button" data-lang="${k}" lang="${k}"><b>${code}</b>${name}</button>`).join('');
 }
 
 function render() {
@@ -143,7 +55,11 @@ function render() {
     const value = t[el.dataset.t];
     if (typeof value === 'string') el.textContent = value;
   });
-  document.getElementById('lang').textContent = t.langButton;
+  document.getElementById('langName').textContent = (LANGS.find(([k]) => k === lang) || LANGS[0])[2];
+  document.querySelectorAll('#langMenu button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.lang === lang)));
+  document.getElementById('hubLink').href = '/?lang=' + lang;
+  const url = new URL(location.href);
+  if (url.searchParams.get('lang') !== lang) { url.searchParams.set('lang', lang); history.replaceState(null, '', url); }
 
   document.getElementById('nowCards').innerHTML = t.now.map(([icon, title, text]) =>
     `<article class="card"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[icon]}</svg>` +
@@ -208,12 +124,18 @@ async function loadVersion() {
   renderVersion();
 }
 
-document.getElementById('lang').addEventListener('click', () => {
-  lang = lang === 'uk' ? 'en' : 'uk';
-  try { localStorage.setItem('kordon-lang', lang); } catch (e) { /* ignore */ }
+document.getElementById('langMenu').addEventListener('click', (e) => {
+  const b = e.target.closest('button[data-lang]');
+  if (!b) return;
+  lang = b.dataset.lang;
+  try { localStorage.setItem('kordon-lang', lang); localStorage.setItem('siteLang', lang); } catch (e2) { /* ignore */ }
+  document.getElementById('lang').open = false;
   render();
 });
+document.addEventListener('click', (e) => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.getElementById('lang').open = false; });
 
+buildLangMenu();
 buildGallery();
 render();
 loadVersion();
