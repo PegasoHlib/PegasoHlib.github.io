@@ -26,7 +26,10 @@
       <a href="#plan" data-t="navPlan"></a>
       <a href="#download" data-t="navDownload"></a>
     </nav>
-    <button class="lang" id="lang" type="button" aria-label="Language"></button>
+    <details class="lang" id="lang">
+      <summary aria-label="Language"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span id="langName">Українська</span></summary>
+      <div class="menu" id="langMenu"></div>
+    </details>
   </header>
 
   <main>
@@ -91,10 +94,11 @@
   </main>
 
   <footer class="foot">
-    <p>© 2026 KORDON</p>
+    <p>© 2026 KORDON · <a id="hubLink" href="/">✦ PegasoHlib</a></p>
     <p data-t="footer"></p>
   </footer>
 
+  <script src="texts.js"></script>
   <script src="site.js"></script>
 </body>
 </html>
