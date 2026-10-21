@@ -24,9 +24,10 @@ const ICONS = {
   up: '<path d="m18 15-6-6-6 6"/>',
   list: '<path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/>',
 };
-const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
+const icon = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
 const MAIL = '<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>';
-const LOGO = '<svg viewBox="18 18 72 72" aria-hidden="true"><defs><linearGradient id="g" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#FF9A5A"/><stop offset="0.55" stop-color="#E8552C"/><stop offset="1" stop-color="#B8322B"/></linearGradient></defs><rect x="0" y="0" width="108" height="108" fill="url(#g)"/><circle cx="41.2" cy="70.6" r="2.6" fill="#fff" fill-opacity="0.8"/><circle cx="49.3" cy="67.4" r="2.9" fill="#fff" fill-opacity="0.88"/><circle cx="57.8" cy="63.2" r="3.2" fill="#fff" fill-opacity="0.94"/><path fill="#fff" fill-rule="evenodd" d="M69,66 C64.5,58.6 57.5,52.4 57.5,43.5 A11.5,11.5 0 1,1 80.5,43.5 C80.5,52.4 73.5,58.6 69,66 Z M69,38.6 A4.9,4.9 0 1,0 69,48.4 A4.9,4.9 0 1,0 69,38.6 Z"/></svg>';
+// The app icon as an image (header and hero).
+const LOGO = "data:image/svg+xml," + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="18 18 72 72"><defs><linearGradient id="g" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#FF9A5A"/><stop offset="0.55" stop-color="#E8552C"/><stop offset="1" stop-color="#B8322B"/></linearGradient></defs><rect x="0" y="0" width="108" height="108" fill="url(#g)"/><circle cx="41.2" cy="70.6" r="2.6" fill="#fff" fill-opacity="0.8"/><circle cx="49.3" cy="67.4" r="2.9" fill="#fff" fill-opacity="0.88"/><circle cx="57.8" cy="63.2" r="3.2" fill="#fff" fill-opacity="0.94"/><path fill="#fff" fill-rule="evenodd" d="M69,66 C64.5,58.6 57.5,52.4 57.5,43.5 A11.5,11.5 0 1,1 80.5,43.5 C80.5,52.4 73.5,58.6 69,66 Z M69,38.6 A4.9,4.9 0 1,0 69,48.4 A4.9,4.9 0 1,0 69,38.6 Z"/></svg>');
 
 const ORDER = ["en", "uk", "es", "pt", "fr", "de", "it", "sv", "id", "ja", "kk", "ru"];
 const NAMES = { en: "English", uk: "Українська", es: "Español", pt: "Português", fr: "Français", de: "Deutsch", it: "Italiano", sv: "Svenska", id: "Bahasa Indonesia", ja: "日本語", kk: "Қазақша", ru: "Русский" };
@@ -52,14 +53,25 @@ function pickLang(T) {
   return "en";
 }
 
-/** Draws the header (logo, page links, language menu) and keeps [render] in step with the chosen language. */
+// The footer link to the hub with all PegasoHlib apps.
+const HUB = {
+  en: "PegasoHlib — all apps", uk: "PegasoHlib — всі застосунки", es: "PegasoHlib — todas las apps", pt: "PegasoHlib — todos os apps",
+  fr: "PegasoHlib — toutes les applis", de: "PegasoHlib — alle Apps", it: "PegasoHlib — tutte le app", sv: "PegasoHlib — alla appar",
+  id: "PegasoHlib — semua aplikasi", ja: "PegasoHlib — すべてのアプリ", kk: "PegasoHlib — барлық қосымшалар", ru: "PegasoHlib — все приложения",
+};
+const CHEV = '<path d="m6 9 6 6 6-6"/>';
+
+/** Draws the header (logo, page links, language menu, theme button) and the footer, and keeps [render] in step with the chosen language. */
 function startPage(T, page, render) {
   const bar = document.createElement("div");
   bar.className = "bar";
-  bar.innerHTML = `<div class="in"><a class="home" href="./">${LOGO}<span id="brand"></span></a><span class="sp"></span>
-    <a class="nav" id="nav-home" href="./"></a><a class="nav" id="nav-privacy" href="privacy.html"></a>
-    <label class="lang"><select id="lang" aria-label="Language"></select></label></div>`;
+  bar.innerHTML = `<div class="in"><a class="home" href="./"><img src="${LOGO}" alt=""><span id="brand"></span></a>
+    <nav class="links"><a id="nav-home" href="./"></a><a id="nav-privacy" href="privacy.html"></a></nav>
+    <label class="lang">${icon("globe")}<select id="lang" aria-label="Language"></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true">${CHEV}</svg></label>
+    <button class="theme" id="theme" type="button"></button></div>`;
   document.body.prepend(bar);
+  const foot = document.createElement("footer");
+  document.getElementById("page").after(foot);
   const sel = bar.querySelector("#lang");
   for (const l of ORDER.filter(l => T[l])) {
     const o = document.createElement("option");
@@ -87,8 +99,11 @@ function startPage(T, page, render) {
     // Links carry the language to the other page.
     home.href = `./?lang=${l}`;
     priv.href = `privacy.html?lang=${l}`;
+    bar.querySelector(".home").href = `./?lang=${l}`;
     home.classList.toggle("on", page === "home");
     priv.classList.toggle("on", page === "privacy");
+    foot.innerHTML = `<p>${BRAND(l)}${page === "home" ? ` · <a href="privacy.html?lang=${l}">${NAV[l][1]}</a>` : ""} · ${MAIL}</p>` +
+      `<p><a href="https://pegasohlib.github.io/?lang=${l}">${HUB[l]}</a></p>`;
     render(l, t, BRAND(l));
   }
   sel.addEventListener("change", () => {
