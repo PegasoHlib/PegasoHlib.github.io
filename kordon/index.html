@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KORDON: World History Strategy</title>
+  <meta name="description" content="KORDON — глобальна стратегія на справжній Землі з шестикутних сот. Тестова версія для Android.">
+  <meta property="og:title" content="KORDON: World History Strategy">
+  <meta property="og:description" content="Grand strategy on the real Earth made of hex cells. Android test build.">
+  <meta property="og:image" content="https://pegasohlib.github.io/kordon/logo.svg">
+  <meta name="theme-color" content="#0a1424">
+  <link rel="icon" href="logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap">
+  <link rel="stylesheet" href="site.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">
+      <img src="logo.svg" alt="" width="36" height="36">
+      <span>KORDON</span>
+    </a>
+    <nav class="links">
+      <a href="#now" data-t="navNow"></a>
+      <a href="#plan" data-t="navPlan"></a>
+      <a href="#download" data-t="navDownload"></a>
+    </nav>
+    <button class="lang" id="lang" type="button" aria-label="Language"></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <img class="hero-logo" src="logo.svg" alt="" width="112" height="112">
+      <p class="badge" data-t="badge"></p>
+      <h1>KORDON<span>World History Strategy</span></h1>
+      <p class="tagline" data-t="tagline"></p>
+      <div class="cta">
+        <a class="button primary" id="heroDownload" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+          <span data-t="downloadApk"></span>
+        </a>
+        <a class="button ghost" href="#install" data-t="howInstall"></a>
+      </div>
+      <p class="req" data-t="requirements"></p>
+    </section>
+
+    <section class="gallery" id="gallery" hidden></section>
+
+    <section class="block" id="now">
+      <h2 data-t="nowTitle"></h2>
+      <p class="lead" data-t="nowLead"></p>
+      <div class="cards" id="nowCards"></div>
+    </section>
+
+    <section class="block" id="plan">
+      <h2 data-t="planTitle"></h2>
+      <p class="lead" data-t="planLead"></p>
+      <ul class="plan" id="planList"></ul>
+    </section>
+
+    <div class="split">
+    <section class="block download" id="download">
+      <h2 data-t="downloadTitle"></h2>
+      <div class="dl-card">
+        <div class="dl-head">
+          <img src="logo.svg" alt="" width="64" height="64">
+          <div>
+            <p class="dl-name">KORDON</p>
+            <p class="dl-meta" id="dlMeta" data-t="loadingVersion"></p>
+          </div>
+        </div>
+        <div class="dl-notes" id="dlNotes" hidden>
+          <p class="dl-notes-title" data-t="whatsNew"></p>
+          <p id="dlNotesText"></p>
+        </div>
+        <a class="button primary wide" id="dlButton" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
+          <span data-t="downloadApk"></span>
+        </a>
+        <p class="dl-small" data-t="selfUpdate"></p>
+        <p class="dl-small" data-t="playLater"></p>
+      </div>
+    </section>
+
+    <section class="block" id="install">
+      <h2 data-t="installTitle"></h2>
+      <ol class="steps" id="steps"></ol>
+    </section>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <p>© 2026 KORDON</p>
+    <p data-t="footer"></p>
+  </footer>
+
+  <script src="site.js"></script>
+</body>
+</html>
