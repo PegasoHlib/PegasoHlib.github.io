@@ -1,11 +1,11 @@
 {
-    "versionCode":  302,
-    "versionName":  "0.3.2",
+    "versionCode":  303,
+    "versionName":  "0.3.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "db438c5634f9825a4fc351ab9c615233cb497a386c28b51fd62fa78347df909b",
-    "size":  139515746,
+    "sha256":  "7009b17b704aba29de55b64a5c4eadce252f527408c774271d08c2d0186b7566",
+    "size":  142982998,
     "notes":  {
-                  "uk":  "Оновлення тепер встановлюється й на телефонах Xiaomi (кнопка «Встановити» і системний встановлювач як запасний шлях).",
-                  "en":  "The update now installs on Xiaomi phones too (an Install button and the system installer as a fallback)."
+                  "uk":  "Рельєф: висота й місцевість кожної соти, кнопка «Рельєф»",
+                  "en":  "Relief: height and terrain of every cell, Relief button"
               }
 }
