@@ -1,11 +1,11 @@
 {
-  "versionCode": 27,
-  "versionName": "0.27.0",
+  "versionCode": 28,
+  "versionName": "0.28.0",
   "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk",
-  "sha256": "6fc3bc87c01eaf6144b3355b258205ec65cd2003777459809f88c94548d4c334",
-  "size": 14178259,
+  "sha256": "d5c829d88f016156055a917bb0e3b3b23e3e4958c250c593f6dab66d13583979",
+  "size": 14181428,
   "notes": {
-    "uk": "Застосунок тепер сам перевіряє й встановлює оновлення. Можна вказати дату народження, щоб бачити, з якого віку ведеться історія. Нова іконка, назва за мовою, віджети й ліміти на кількох пристроях.",
-    "en": "The app now checks for and installs updates by itself. Add your date of birth to see at what age your history starts. New icon, name by language, widgets and limits on several devices."
+    "uk": "Оновлення тепер встановлюється й на телефонах Xiaomi (кнопка «Встановити» і системний встановлювач як запасний шлях).",
+    "en": "The update now installs on Xiaomi phones too (an Install button and the system installer as a fallback)."
   }
 }
