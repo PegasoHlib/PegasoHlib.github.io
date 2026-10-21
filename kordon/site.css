@@ -66,8 +66,12 @@ img, svg { display: block; }
 .links a { color: var(--muted); text-decoration: none; font-weight: 500; }
 .links a:hover { color: var(--text); }
 
-.lang {
-  margin-left: auto;
+.lang { position: relative; margin-left: auto; }
+.lang summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
@@ -75,8 +79,44 @@ img, svg { display: block; }
   color: var(--text);
   font: 500 14px/1 var(--font);
   cursor: pointer;
+  user-select: none;
 }
-.lang:hover { border-color: var(--accent); }
+.lang summary::-webkit-details-marker { display: none; }
+.lang summary svg { width: 16px; height: 16px; fill: none; stroke: var(--muted); stroke-width: 1.8; }
+.lang summary:hover, .lang[open] summary { border-color: var(--accent); }
+.lang .menu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 30;
+  width: min(320px, calc(100vw - 32px));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg2);
+  box-shadow: 0 24px 60px -20px rgba(0, 0, 0, 0.7);
+}
+.lang .menu button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border: 0;
+  border-radius: 10px;
+  background: none;
+  color: var(--text);
+  font: 500 14px/1.2 var(--font);
+  text-align: left;
+  cursor: pointer;
+}
+.lang .menu button b { width: 22px; font-size: 11px; color: var(--muted); }
+.lang .menu button:hover { background: var(--card2); }
+.lang .menu button[aria-current="true"] { background: var(--card); }
+.lang .menu button[aria-current="true"] b { color: var(--accent); }
+.foot a { color: var(--muted); }
 
 main { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
 
