@@ -1,11 +1,11 @@
 {
-  "versionCode": 28,
-  "versionName": "0.28.0",
+  "versionCode": 29,
+  "versionName": "0.29.0",
   "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk",
-  "sha256": "d5c829d88f016156055a917bb0e3b3b23e3e4958c250c593f6dab66d13583979",
-  "size": 14181428,
+  "sha256": "5f3a367b34e61e861f0bda429a1d0a5838aac6a117fb86b1ab45200a7cebf75a",
+  "size": 14182920,
   "notes": {
-    "uk": "Оновлення тепер встановлюється й на телефонах Xiaomi (кнопка «Встановити» і системний встановлювач як запасний шлях).",
-    "en": "The update now installs on Xiaomi phones too (an Install button and the system installer as a fallback)."
+    "uk": "Усі пристрої: час, коли телефон і ПК працювали одночасно, рахується один раз",
+    "en": "All devices: time when the phone and PC were used at once counts once"
   }
 }
