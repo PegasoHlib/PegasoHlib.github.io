@@ -1,4 +1,5 @@
-// KORDON site: texts in 12 languages (texts.js), language menu, gallery, and the current test build from version.json.
+// KORDON site: texts in 12 languages (texts.js), language select, gallery, and the current test build from version.json.
+// Look and theme button: the shared PegasoHlib kit (https://pegasohlib.github.io/assets/kit.css, kit.js).
 'use strict';
 
 // Screenshots in img/; a missing file is simply not shown.
@@ -44,8 +45,8 @@ function pickLanguage() {
 }
 
 function buildLangMenu() {
-  document.getElementById('langMenu').innerHTML = LANGS.map(([k, code, name]) =>
-    `<button type="button" data-lang="${k}" lang="${k}"><b>${code}</b>${name}</button>`).join('');
+  document.getElementById('lang').innerHTML = LANGS.map(([k, , name]) =>
+    `<option value="${k}" lang="${k}">${name}</option>`).join('');
 }
 
 function render() {
@@ -55,14 +56,13 @@ function render() {
     const value = t[el.dataset.t];
     if (typeof value === 'string') el.textContent = value;
   });
-  document.getElementById('langName').textContent = (LANGS.find(([k]) => k === lang) || LANGS[0])[2];
-  document.querySelectorAll('#langMenu button').forEach((b) => b.setAttribute('aria-current', String(b.dataset.lang === lang)));
-  document.getElementById('hubLink').href = '/?lang=' + lang;
+  document.getElementById('lang').value = lang;
+  document.getElementById('hubLink').href = 'https://pegasohlib.github.io/?lang=' + lang;
   const url = new URL(location.href);
   if (url.searchParams.get('lang') !== lang) { url.searchParams.set('lang', lang); history.replaceState(null, '', url); }
 
   document.getElementById('nowCards').innerHTML = t.now.map(([icon, title, text]) =>
-    `<article class="card"><svg viewBox="0 0 24 24" aria-hidden="true">${ICONS[icon]}</svg>` +
+    `<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${ICONS[icon]}</svg></span>` +
     `<h3>${title}</h3><p>${text}</p></article>`).join('');
   document.getElementById('planList').innerHTML = t.plan.map((p) => `<li>${p}</li>`).join('');
   document.getElementById('steps').innerHTML = t.steps.map((s) => `<li>${s}</li>`).join('');
@@ -124,16 +124,12 @@ async function loadVersion() {
   renderVersion();
 }
 
-document.getElementById('langMenu').addEventListener('click', (e) => {
-  const b = e.target.closest('button[data-lang]');
-  if (!b) return;
-  lang = b.dataset.lang;
+document.getElementById('lang').addEventListener('change', (e) => {
+  if (!T[e.target.value]) return;
+  lang = e.target.value;
   try { localStorage.setItem('kordon-lang', lang); localStorage.setItem('siteLang', lang); } catch (e2) { /* ignore */ }
-  document.getElementById('lang').open = false;
   render();
 });
-document.addEventListener('click', (e) => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') document.getElementById('lang').open = false; });
 
 buildLangMenu();
 buildGallery();
