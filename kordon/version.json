@@ -1,11 +1,11 @@
 {
-    "versionCode":  400,
-    "versionName":  "0.4.0",
+    "versionCode":  401,
+    "versionName":  "0.4.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "1b5d9cd3703ed698cc16da983395d748a7510146449503ea281f01262444de01",
-    "size":  160130983,
+    "sha256":  "49e7ff996df5b48f4fc7c766c28b6752cc9199886ca7771bfd6ba95872d6a00c",
+    "size":  160876797,
     "notes":  {
-                  "uk":  "Нове малювання мапи — швидше й легше на всіх рівнях; п\u0027ята, екстремальна мапа (сота ~10 км); тіні рельєфу й глибини морів; налаштування (мапа, кадри, роздільність, тіні) запам\u0027ятовуються; кнопки зуму",
-                  "en":  "New map renderer, faster and lighter on every level; a fifth, Extreme map (~10 km cells); relief shading and sea depths; settings (map, FPS, resolution, shading) are remembered; zoom buttons"
+                  "uk":  "Нова іконка гри: глобус із сот і кордон між країнами",
+                  "en":  "New game icon: a globe of hex cells with a border between countries"
               }
 }
