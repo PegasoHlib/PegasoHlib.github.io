@@ -21,6 +21,12 @@
 .private b{display:block}
 .private span{color:var(--ink2);font-size:14.5px}
 .more{margin-top:14px}
+.dl{font-size:17px;padding:14px 26px;box-shadow:0 8px 22px rgba(224,82,42,.30)}
+.dl svg.i{width:22px;height:22px}
+.dlrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:20px}
+.dlnote{color:var(--ink3);font-size:14px}
+.hero .row{margin-top:14px}
+@media (max-width:480px){.dl{width:100%;justify-content:center}}
 </style>
 </head>
 <body>
@@ -29,11 +35,20 @@
 <script src="site.js"></script>
 <script>
 // Every language: the hero, the features and the privacy promise. Icons are names from site.js.
+// Newest APK: a static fallback, replaced by the url in ./update.json once it loads.
+let APK = { url: "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.2/Slid-0.9.2.apk", name: "0.9.2" };
+const DL_ICON = '<svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>';
+function applyApk() {
+  const a = document.getElementById("dl"), v = document.getElementById("dlver");
+  if (a) a.href = APK.url;
+  if (v) v.textContent = APK.name ? " · v" + APK.name : "";
+}
 const T = {
 en: {
   title: "Your timeline, day by day",
   tag: "App for Android",
   lead: "Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone.",
+  dlBtn: "Download for Android", dlNote: "Free · Android 8.0 or newer",
   privacyBtn: "Privacy policy", mailBtn: "Write to me",
   featuresTitle: "What it does",
   features: [
@@ -59,6 +74,7 @@ uk: {
   title: "Твоя хронологія день за днем",
   tag: "Застосунок для Android",
   lead: "Слід зберігає історію твоїх місць: куди ти ходиш і їздиш, шляхи між ними й фото, зроблені там, — і все це лишається на твоєму телефоні.",
+  dlBtn: "Завантажити для Android", dlNote: "Безкоштовно · Android 8.0 або новіший",
   privacyBtn: "Політика конфіденційності", mailBtn: "Написати мені",
   featuresTitle: "Що він уміє",
   features: [
@@ -84,6 +100,7 @@ es: {
   title: "Tu cronología, día a día",
   tag: "App para Android",
   lead: "Slid guarda la historia de tus lugares: adónde vas, los caminos entre ellos y las fotos que haces allí, y todo se queda en tu teléfono.",
+  dlBtn: "Descargar para Android", dlNote: "Gratis · Android 8.0 o posterior",
   privacyBtn: "Política de privacidad", mailBtn: "Escríbeme",
   featuresTitle: "Qué hace",
   features: [
@@ -109,6 +126,7 @@ pt: {
   title: "A sua cronologia, dia a dia",
   tag: "App para Android",
   lead: "O Slid guarda a história dos seus locais: por onde anda, os caminhos entre eles e as fotos que lá tira, e tudo fica no seu telemóvel.",
+  dlBtn: "Baixar para Android", dlNote: "Grátis · Android 8.0 ou mais recente",
   privacyBtn: "Política de privacidade", mailBtn: "Escreva-me",
   featuresTitle: "O que faz",
   features: [
@@ -134,6 +152,7 @@ fr: {
   title: "Votre chronologie, jour après jour",
   tag: "App pour Android",
   lead: "Slid garde l’histoire de vos lieux : où vous allez, les chemins entre eux et les photos que vous y prenez, et tout reste sur votre téléphone.",
+  dlBtn: "Télécharger pour Android", dlNote: "Gratuit · Android 8.0 ou plus récent",
   privacyBtn: "Politique de confidentialité", mailBtn: "M’écrire",
   featuresTitle: "Ce qu’il fait",
   features: [
@@ -159,6 +178,7 @@ de: {
   title: "Deine Zeitachse, Tag für Tag",
   tag: "App für Android",
   lead: "Slid bewahrt die Geschichte deiner Orte: wohin es dich zieht, die Wege dazwischen und die Fotos, die dort entstehen – und alles bleibt auf deinem Handy.",
+  dlBtn: "Für Android herunterladen", dlNote: "Kostenlos · Android 8.0 oder neuer",
   privacyBtn: "Datenschutzerklärung", mailBtn: "Schreib mir",
   featuresTitle: "Was die App kann",
   features: [
@@ -184,6 +204,7 @@ it: {
   title: "La tua cronologia, giorno per giorno",
   tag: "App per Android",
   lead: "Slid conserva la storia dei tuoi luoghi: dove vai, le strade tra un posto e l’altro e le foto che scatti lì, e tutto resta sul tuo telefono.",
+  dlBtn: "Scarica per Android", dlNote: "Gratis · Android 8.0 o successivo",
   privacyBtn: "Informativa sulla privacy", mailBtn: "Scrivimi",
   featuresTitle: "Cosa fa",
   features: [
@@ -209,6 +230,7 @@ sv: {
   title: "Din tidslinje, dag för dag",
   tag: "App för Android",
   lead: "Slid bevarar historien om dina platser: vart du åker, vägarna däremellan och fotona du tar där – och allt stannar på din telefon.",
+  dlBtn: "Ladda ner för Android", dlNote: "Gratis · Android 8.0 eller senare",
   privacyBtn: "Integritetspolicy", mailBtn: "Skriv till mig",
   featuresTitle: "Vad den gör",
   features: [
@@ -234,6 +256,7 @@ id: {
   title: "Linimasa, hari demi hari",
   tag: "Aplikasi untuk Android",
   lead: "Slid menyimpan kisah tempat-tempat yang dikunjungi: ke mana pergi, jalan di antaranya, dan foto yang diambil di sana — dan semuanya tetap di ponsel.",
+  dlBtn: "Unduh untuk Android", dlNote: "Gratis · Android 8.0 atau lebih baru",
   privacyBtn: "Kebijakan privasi", mailBtn: "Kirim email",
   featuresTitle: "Fiturnya",
   features: [
@@ -259,6 +282,7 @@ ja: {
   title: "あなたのタイムラインを日ごとに",
   tag: "Android アプリ",
   lead: "スリドは、訪れた場所の記録を残します。行き先、その間の道のり、そこで撮った写真。そしてそのすべてがスマートフォンの中だけに残ります。",
+  dlBtn: "Android 版をダウンロード", dlNote: "無料 · Android 8.0 以降",
   privacyBtn: "プライバシー ポリシー", mailBtn: "メールで連絡",
   featuresTitle: "できること",
   features: [
@@ -284,6 +308,7 @@ kk: {
   title: "Хронологияңыз күн сайын",
   tag: "Android қолданбасы",
   lead: "Слід сіз барған орындардың тарихын сақтайды: қайда барасыз, арасындағы жолдар және сол жерде түсірген фотолар, — бәрі телефоныңызда қалады.",
+  dlBtn: "Android үшін жүктеп алу", dlNote: "Тегін · Android 8.0 немесе одан жаңа",
   privacyBtn: "Құпиялық саясаты", mailBtn: "Маған жазу",
   featuresTitle: "Не істей алады",
   features: [
@@ -309,6 +334,7 @@ ru: {
   title: "Твоя хронология день за днём",
   tag: "Приложение для Android",
   lead: "Слід хранит историю твоих мест: куда ты ходишь и ездишь, пути между ними и фото, сделанные там, — и всё это остаётся на твоём телефоне.",
+  dlBtn: "Скачать для Android", dlNote: "Бесплатно · Android 8.0 или новее",
   privacyBtn: "Политика конфиденциальности", mailBtn: "Написать мне",
   featuresTitle: "Что он умеет",
   features: [
@@ -339,7 +365,9 @@ startPage(T, "home", (l, t, brand) => {
     `<div class="hero"><div class="logo">${LOGO}</div><div>` +
     `<span class="tag">${icon("phone")}${t.tag}</span><h1>${brand}</h1>` +
     `<p class="lead" style="margin-top:4px"><b style="color:var(--ink)">${t.title}.</b> ${t.lead}</p>` +
-    `<div class="row"><a class="btn main" href="privacy.html?lang=${l}">${icon("shield")}${t.privacyBtn}</a>` +
+    `<div class="dlrow"><a class="btn main dl" id="dl" href="${APK.url}">${DL_ICON}${t.dlBtn}</a>` +
+    `<span class="dlnote">${t.dlNote}<span id="dlver"></span></span></div>` +
+    `<div class="row"><a class="btn" href="privacy.html?lang=${l}">${icon("shield")}${t.privacyBtn}</a>` +
     `<a class="btn" href="mailto:pegasohlib12@gmail.com">${icon("mail")}${t.mailBtn}</a></div>` +
     `</div></div>` +
     `<h2 class="big">${t.featuresTitle}</h2><div class="grid features">${t.features.map(tile).join("")}</div>` +
@@ -347,7 +375,11 @@ startPage(T, "home", (l, t, brand) => {
     t.private.map(([i, b, s]) => `<div><span class="ic good">${icon(i)}</span><div><b>${b}</b><span>${s}</span></div></div>`).join("") +
     `</div><p class="more"><a href="privacy.html?lang=${l}">${t.privacyLink} →</a></p>` +
     `<footer>${brand} · <a href="privacy.html?lang=${l}">${NAV[l][1]}</a> · ${MAIL}</footer>`;
+  applyApk();
 });
+fetch("./update.json", { cache: "no-store" }).then(r => r.ok ? r.json() : null).then(u => {
+  if (u && typeof u.url === "string" && u.url.startsWith("https://")) { APK = { url: u.url, name: typeof u.name === "string" ? u.name : "" }; applyApk(); }
+}).catch(() => {});
 </script>
 </body>
 </html>
