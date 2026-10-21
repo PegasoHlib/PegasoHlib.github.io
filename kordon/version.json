@@ -1,0 +1,11 @@
+{
+    "versionCode":  301,
+    "versionName":  "0.3.1",
+    "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
+    "sha256":  "f56cd96b1e2bab5a5d5b7ec66e9ffa511ed0b42dba2b4e3993e5fbb6e305d914",
+    "size":  139514633,
+    "notes":  {
+                  "uk":  "Автооновлення тестових збірок",
+                  "en":  "Self-update of test builds"
+              }
+}
