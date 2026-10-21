@@ -52,6 +52,7 @@ const T = {
       'Натисни «Встановити». Далі нові версії прийдуть самі.',
     ],
     footer: 'Без реклами й без стеження. Сайт не збирає жодних даних.',
+    hub: 'PegasoHlib — всі застосунки',
   },
   en: {
     navNow: 'Now',
@@ -102,6 +103,7 @@ const T = {
       'Tap «Install». New versions will come by themselves after that.',
     ],
     footer: 'No ads and no tracking. This site collects no data.',
+    hub: 'PegasoHlib — all apps',
   },
   es: {
     navNow: 'Qué hay',
@@ -152,6 +154,7 @@ const T = {
       'Toca «Instalar». A partir de ahí, las nuevas versiones llegarán solas.',
     ],
     footer: 'Sin anuncios ni rastreo. Este sitio no recopila ningún dato.',
+    hub: 'PegasoHlib — todas las apps',
   },
   pt: {
     navNow: 'O que há',
@@ -202,6 +205,7 @@ const T = {
       'Toca em «Instalar». Depois disso, as novas versões chegam sozinhas.',
     ],
     footer: 'Sem anúncios e sem rastreio. Este site não recolhe quaisquer dados.',
+    hub: 'PegasoHlib — todas as apps',
   },
   fr: {
     navNow: 'Déjà là',
@@ -252,6 +256,7 @@ const T = {
       'Appuie sur « Installer ». Ensuite, les nouvelles versions arriveront toutes seules.',
     ],
     footer: 'Pas de pub, pas de pistage. Ce site ne collecte aucune donnée.',
+    hub: 'PegasoHlib — toutes les applis',
   },
   de: {
     navNow: 'Jetzt',
@@ -302,6 +307,7 @@ const T = {
       'Tippe auf „Installieren“. Neue Versionen kommen danach von selbst.',
     ],
     footer: 'Keine Werbung, kein Tracking. Diese Website sammelt keine Daten.',
+    hub: 'PegasoHlib — alle Apps',
   },
   it: {
     navNow: 'Cosa c’è',
@@ -352,6 +358,7 @@ const T = {
       'Tocca «Installa». Da lì in poi le nuove versioni arriveranno da sole.',
     ],
     footer: 'Niente pubblicità e nessun tracciamento. Questo sito non raccoglie alcun dato.',
+    hub: 'PegasoHlib — tutte le app',
   },
   sv: {
     navNow: 'Nu',
@@ -402,6 +409,7 @@ const T = {
       'Tryck på ”Installera”. Sedan kommer nya versioner av sig själva.',
     ],
     footer: 'Inga annonser och ingen spårning. Webbplatsen samlar inte in några data.',
+    hub: 'PegasoHlib — alla appar',
   },
   id: {
     navNow: 'Sekarang',
@@ -452,6 +460,7 @@ const T = {
       'Ketuk “Instal”. Setelah itu, versi baru akan datang dengan sendirinya.',
     ],
     footer: 'Tanpa iklan dan tanpa pelacakan. Situs ini tidak mengumpulkan data apa pun.',
+    hub: 'PegasoHlib — semua aplikasi',
   },
   ja: {
     navNow: '現在の内容',
@@ -502,6 +511,7 @@ const T = {
       '「インストール」をタップします。以降、新しいバージョンは自動で届きます。',
     ],
     footer: '広告もトラッキングもありません。このサイトはデータを一切収集しません。',
+    hub: 'PegasoHlib — すべてのアプリ',
   },
   kk: {
     navNow: 'Не бар',
@@ -552,6 +562,7 @@ const T = {
       '«Орнату» түймесін бас. Бұдан кейін жаңа нұсқалар өздігінен келеді.',
     ],
     footer: 'Жарнамасыз әрі бақылаусыз. Сайт ешқандай дерек жинамайды.',
+    hub: 'PegasoHlib — барлық қолданбалар',
   },
   ru: {
     navNow: 'Что есть',
@@ -602,5 +613,6 @@ const T = {
       'Нажми «Установить». Дальше новые версии придут сами.',
     ],
     footer: 'Без рекламы и без слежки. Сайт не собирает никаких данных.',
+    hub: 'PegasoHlib — все приложения',
   },
 };
