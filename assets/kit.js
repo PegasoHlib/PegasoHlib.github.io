@@ -17,7 +17,12 @@
     it: ["Tema", "Auto", "Chiaro", "Scuro"], sv: ["Tema", "Auto", "Ljust", "Mörkt"], id: ["Tema", "Otomatis", "Terang", "Gelap"],
     ja: ["テーマ", "自動", "ライト", "ダーク"], kk: ["Тақырып", "Авто", "Ашық", "Қараңғы"], ru: ["Тема", "Авто", "Светлая", "Тёмная"],
   };
-  function get() { try { var t = localStorage.getItem(KEY); return ORDER.indexOf(t) >= 0 ? t : "auto"; } catch (e) { return "auto"; } }
+  // ?theme=light|dark in the address wins (for links and checks), then the saved choice.
+  var forced = new URLSearchParams(location.search).get("theme");
+  function get() {
+    if (ORDER.indexOf(forced) >= 0) return forced;
+    try { var t = localStorage.getItem(KEY); return ORDER.indexOf(t) >= 0 ? t : "auto"; } catch (e) { return "auto"; }
+  }
   function apply(t) {
     var root = document.documentElement;
     if (t === "auto") delete root.dataset.theme; else root.dataset.theme = t;
@@ -38,6 +43,7 @@
     apply(get());
     if (btn) btn.addEventListener("click", function () {
       var next = ORDER[(ORDER.indexOf(get()) + 1) % ORDER.length];
+      forced = null;
       try { localStorage.setItem(KEY, next); } catch (e) {}
       apply(next);
     });
