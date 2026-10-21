@@ -1,68 +1,353 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Слід — Slid</title>
-<meta name="description" content="Твоя хронологія день за днем: місця, маршрути й фото на карті. Your timeline day by day: places, routes and photos on a map.">
+<title>Slid — your timeline, day by day</title>
+<meta name="description" content="Slid records where you go and how you travel, brings in your Google Timeline and puts your photos on the map. Everything stays on your phone.">
+<link rel="stylesheet" href="site.css">
 <style>
-:root{--bg:#F3F1EC;--surface:#fff;--line:#E2DDD3;--ink:#191816;--ink2:#57534B;--accent:#E0522A}
-@media (prefers-color-scheme:dark){:root{--bg:#0F1012;--surface:#191A1D;--line:#303135;--ink:#F2F0EB;--ink2:#B8B3A9;--accent:#FF7448}}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:720px;margin:0 auto;padding:48px 16px 64px}
-.logo{width:96px;height:96px;border-radius:26px;display:block}
-h1{font-size:42px;line-height:1.1;margin:22px 0 6px}
-.sub{color:var(--ink2);margin:0 0 28px}
-section{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 22px 16px;margin-top:18px}
-h2{font-size:19px;margin:16px 0 4px}
-ul{padding-left:20px;margin:6px 0}
-li{color:var(--ink2)}
-a{color:var(--accent)}
-footer{color:var(--ink2);font-size:14px;margin-top:32px}
+.hero{display:grid;gap:22px;align-items:center;margin-top:12px}
+@media (min-width:720px){.hero{grid-template-columns:auto 1fr;gap:34px;margin-top:28px}}
+.hero .logo{width:112px;height:112px;border-radius:30px;display:block;box-shadow:0 12px 32px rgba(224,82,42,.28)}
+.hero .logo svg{width:100%;height:100%;border-radius:30px;display:block}
+.hero h1{margin:0 0 6px}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.tag svg.i{width:15px;height:15px}
+.features .tile .ic{background:var(--accentSoft);color:var(--accent)}
+.private{padding:22px;display:grid;gap:16px}
+@media (min-width:720px){.private{grid-template-columns:1fr 1fr 1fr}}
+.private>div{display:flex;gap:12px;align-items:flex-start}
+.private b{display:block}
+.private span{color:var(--ink2);font-size:14.5px}
+.more{margin-top:14px}
 </style>
 </head>
 <body>
-<main>
-<svg class="logo" viewBox="18 18 72 72" role="img" aria-label="Слід">
-  <defs><linearGradient id="g" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#FF9A5A"/><stop offset="0.55" stop-color="#E8552C"/><stop offset="1" stop-color="#B8322B"/></linearGradient></defs>
-  <rect x="0" y="0" width="108" height="108" fill="url(#g)"/>
-  <ellipse cx="69" cy="69" rx="9" ry="2.6" fill="#000" fill-opacity="0.2"/>
-  <circle cx="34.4" cy="76.5" r="2.2" fill="#fff" fill-opacity="0.7"/>
-  <circle cx="41.2" cy="70.6" r="2.6" fill="#fff" fill-opacity="0.8"/>
-  <circle cx="49.3" cy="67.4" r="2.9" fill="#fff" fill-opacity="0.88"/>
-  <circle cx="57.8" cy="63.2" r="3.2" fill="#fff" fill-opacity="0.94"/>
-  <path fill="#fff" fill-rule="evenodd" d="M69,66 C64.5,58.6 57.5,52.4 57.5,43.5 A11.5,11.5 0 1,1 80.5,43.5 C80.5,52.4 73.5,58.6 69,66 Z M69,38.6 A4.9,4.9 0 1,0 69,48.4 A4.9,4.9 0 1,0 69,38.6 Z"/>
-</svg>
-<h1>Слід</h1>
-<p class="sub">Твоя хронологія день за днем · Your timeline, day by day</p>
+<main id="page"></main>
+<noscript><main><h1>Slid</h1><p>Your timeline, day by day: places, routes and photos on a map. Everything stays on your phone. <a href="privacy.html">Privacy policy</a> · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p></main></noscript>
+<script src="site.js"></script>
+<script>
+// Every language: the hero, the features and the privacy promise. Icons are names from site.js.
+const T = {
+en: {
+  title: "Your timeline, day by day",
+  tag: "App for Android",
+  lead: "Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone.",
+  privacyBtn: "How your data is kept", mailBtn: "Write to me",
+  featuresTitle: "What it does",
+  features: [
+    ["history", "Every day, as it was", "Where you went and how: on foot, by bike, by car, train or plane. Precise on the move, thrifty while you stay."],
+    ["file", "Years from Google", "Brings in your whole Google Maps Timeline — the export file or Google Takeout."],
+    ["camera", "Photos on the map", "Gallery photos take their places, even those without GPS. Photos sent to you are left without one."],
+    ["globe", "The world you have seen", "A globe with your countries, a heat map and a fog of the world that clears where you go."],
+    ["flag", "Countries and cities", "How many, when first, how long — and the best moments of each year."],
+    ["heart", "Your watch too", "Steps, heart rate, sleep and workouts from your watch through Health Connect, next to the day."],
+    ["route", "Missed journeys", "Notices when a trip is missing between two places and lets you fill it in, or does it itself."],
+    ["widget", "Widgets", "Now, today, the week and the world explored, right on the home screen."],
+    ["devices", "Phone and tablet", "Your own backup in Google Drive, a new phone in a minute, and a tablet that shows the phone’s timeline."],
+  ],
+  privateTitle: "Private by design",
+  private: [
+    ["phone", "Stays on your phone", "No servers, no accounts, no ads, no analytics."],
+    ["hand", "You decide", "Every permission and online feature is optional."],
+    ["shield", "Your backup, your Drive", "Only Slid’s hidden folder in your own Google Drive."],
+  ],
+  privacyLink: "Read the privacy policy",
+},
+uk: {
+  title: "Твоя хронологія день за днем",
+  tag: "Застосунок для Android",
+  lead: "Слід зберігає історію твоїх місць: куди ти ходиш і їздиш, шляхи між ними й фото, зроблені там, — і все це лишається на твоєму телефоні.",
+  privacyBtn: "Як зберігаються дані", mailBtn: "Написати мені",
+  featuresTitle: "Що він уміє",
+  features: [
+    ["history", "Кожен день, як він був", "Куди й як: пішки, велосипедом, авто, потягом чи літаком. Точно в русі й економно на місці."],
+    ["file", "Роки з Google", "Переносить усю хронологію Google Карт — файл експорту або Google Takeout."],
+    ["camera", "Фото на карті", "Фото з галереї стають на свої місця, навіть ті, що без GPS. Надіслані тобі фото лишаються без місця."],
+    ["globe", "Світ, який ти бачиш", "Глобус із твоїми країнами, теплова карта й туман світу, що розвіюється там, де ти буваєш."],
+    ["flag", "Країни й міста", "Скільки, коли вперше, як довго — і найкращі моменти кожного року."],
+    ["heart", "І годинник теж", "Кроки, пульс, сон і тренування з годинника через Health Connect, поруч із днем."],
+    ["route", "Пропущені переїзди", "Помічає, коли між двома місцями бракує поїздки, і дає її додати — або розставляє сам."],
+    ["widget", "Віджети", "Зараз, сьогодні, тиждень і відкритий світ — просто на головному екрані."],
+    ["devices", "Телефон і планшет", "Власна копія в Google Диску, новий телефон за хвилину й планшет, що показує хронологію телефона."],
+  ],
+  privateTitle: "Приватний від початку",
+  private: [
+    ["phone", "Лишається на телефоні", "Ні серверів, ні акаунтів, ні реклами, ні аналітики."],
+    ["hand", "Вирішуєш ти", "Кожен дозвіл і кожна функція з інтернетом необов’язкові."],
+    ["shield", "Твоя копія — твій Диск", "Лише прихована папка Сліду у твоєму власному Google Диску."],
+  ],
+  privacyLink: "Прочитати політику конфіденційності",
+},
+es: {
+  title: "Tu cronología, día a día",
+  tag: "App para Android",
+  lead: "Slid guarda la historia de tus lugares: adónde vas, los caminos entre ellos y las fotos que haces allí, y todo se queda en tu teléfono.",
+  privacyBtn: "Cómo se guardan tus datos", mailBtn: "Escríbeme",
+  featuresTitle: "Qué hace",
+  features: [
+    ["history", "Cada día, tal como fue", "Adónde y cómo: a pie, en bici, en coche, en tren o en avión. Preciso en movimiento, ahorrador cuando no te mueves."],
+    ["file", "Años desde Google", "Trae toda tu Cronología de Google: el archivo de exportación o Google Takeout."],
+    ["camera", "Fotos en el mapa", "Las fotos de la galería ocupan su lugar, incluso las que no tienen GPS. Las fotos que te envían se quedan sin lugar."],
+    ["globe", "El mundo que has visto", "Un globo con tus países, un mapa de frecuencia y una niebla del mundo que se despeja por donde pasas."],
+    ["flag", "Países y ciudades", "Cuántos, cuándo por primera vez, cuánto tiempo, y los mejores momentos de cada año."],
+    ["heart", "También tu reloj", "Pasos, frecuencia cardíaca, sueño y entrenamientos del reloj a través de Health Connect, junto al día."],
+    ["route", "Trayectos perdidos", "Detecta cuándo falta un viaje entre dos lugares y te deja añadirlo, o lo hace por ti."],
+    ["widget", "Widgets", "Ahora, hoy, la semana y el mundo explorado, en la pantalla de inicio."],
+    ["devices", "Teléfono y tableta", "Tu propia copia en Google Drive, un teléfono nuevo en un minuto y una tableta que muestra la cronología del teléfono."],
+  ],
+  privateTitle: "Privado desde el diseño",
+  private: [
+    ["phone", "Se queda en tu teléfono", "Sin servidores, sin cuentas, sin anuncios, sin analítica."],
+    ["hand", "Tú decides", "Cada permiso y cada función en línea es opcional."],
+    ["shield", "Tu copia, tu Drive", "Solo la carpeta oculta de Slid en tu propio Google Drive."],
+  ],
+  privacyLink: "Leer la política de privacidad",
+},
+pt: {
+  title: "A sua cronologia, dia a dia",
+  tag: "App para Android",
+  lead: "O Slid guarda a história dos seus locais: por onde anda, os caminhos entre eles e as fotos que lá tira, e tudo fica no seu telemóvel.",
+  privacyBtn: "Como os dados são guardados", mailBtn: "Escreva-me",
+  featuresTitle: "O que faz",
+  features: [
+    ["history", "Cada dia, tal como foi", "Para onde e como: a pé, de bicicleta, de carro, de comboio ou de avião. Preciso em movimento, poupado quando está parado."],
+    ["file", "Anos vindos do Google", "Traz toda a sua Cronologia do Google: o ficheiro de exportação ou o Google Takeout."],
+    ["camera", "Fotos no mapa", "As fotos da galeria ocupam o seu lugar, mesmo as que não têm GPS. As fotos enviadas por outras pessoas ficam sem local."],
+    ["globe", "O mundo que já viu", "Um globo com os seus países, um mapa de frequência e um nevoeiro do mundo que se dissipa por onde passa."],
+    ["flag", "Países e cidades", "Quantos, quando pela primeira vez, quanto tempo, e os melhores momentos de cada ano."],
+    ["heart", "Também o relógio", "Passos, frequência cardíaca, sono e treinos do relógio através do Health Connect, ao lado do dia."],
+    ["route", "Percursos em falta", "Nota quando falta uma viagem entre dois locais e deixa-a adicionar, ou trata disso sozinho."],
+    ["widget", "Widgets", "Agora, hoje, a semana e o mundo explorado, diretamente no ecrã principal."],
+    ["devices", "Telemóvel e tablet", "A sua própria cópia no Google Drive, um telemóvel novo num minuto e um tablet que mostra a cronologia do telemóvel."],
+  ],
+  privateTitle: "Privado de raiz",
+  private: [
+    ["phone", "Fica no seu telemóvel", "Sem servidores, sem contas, sem anúncios, sem análises."],
+    ["hand", "Quem decide é você", "Cada permissão e cada funcionalidade online é opcional."],
+    ["shield", "A sua cópia, o seu Drive", "Apenas a pasta oculta do Slid no seu próprio Google Drive."],
+  ],
+  privacyLink: "Ler a política de privacidade",
+},
+fr: {
+  title: "Votre chronologie, jour après jour",
+  tag: "App pour Android",
+  lead: "Slid garde l’histoire de vos lieux : où vous allez, les chemins entre eux et les photos que vous y prenez, et tout reste sur votre téléphone.",
+  privacyBtn: "Comment vos données sont gardées", mailBtn: "M’écrire",
+  featuresTitle: "Ce qu’il fait",
+  features: [
+    ["history", "Chaque jour, tel qu’il a été", "Où et comment : à pied, à vélo, en voiture, en train ou en avion. Précis en mouvement, économe à l’arrêt."],
+    ["file", "Des années depuis Google", "Importe tous vos trajets Google : le fichier d’export ou Google Takeout."],
+    ["camera", "Les photos sur la carte", "Les photos de la galerie prennent leur place, même celles sans GPS. Les photos reçues restent sans lieu."],
+    ["globe", "Le monde que vous avez vu", "Un globe avec vos pays, une carte de fréquence et un brouillard du monde qui se lève là où vous passez."],
+    ["flag", "Pays et villes", "Combien, depuis quand, combien de temps, et les plus beaux moments de chaque année."],
+    ["heart", "Votre montre aussi", "Pas, fréquence cardiaque, sommeil et entraînements de la montre via Health Connect, à côté de la journée."],
+    ["route", "Trajets manqués", "Repère quand un trajet manque entre deux lieux et vous laisse l’ajouter, ou s’en charge lui-même."],
+    ["widget", "Widgets", "Maintenant, aujourd’hui, la semaine et le monde exploré, directement sur l’écran d’accueil."],
+    ["devices", "Téléphone et tablette", "Votre propre sauvegarde dans Google Drive, un nouveau téléphone en une minute et une tablette qui affiche la chronologie du téléphone."],
+  ],
+  privateTitle: "Privé par conception",
+  private: [
+    ["phone", "Reste sur votre téléphone", "Pas de serveurs, pas de comptes, pas de publicité, pas de statistiques."],
+    ["hand", "Vous décidez", "Chaque autorisation et chaque fonction en ligne est facultative."],
+    ["shield", "Votre sauvegarde, votre Drive", "Seulement le dossier caché de Slid dans votre propre Google Drive."],
+  ],
+  privacyLink: "Lire la politique de confidentialité",
+},
+de: {
+  title: "Deine Zeitachse, Tag für Tag",
+  tag: "App für Android",
+  lead: "Slid bewahrt die Geschichte deiner Orte: wohin es dich zieht, die Wege dazwischen und die Fotos, die dort entstehen – und alles bleibt auf deinem Handy.",
+  privacyBtn: "Wie deine Daten aufbewahrt werden", mailBtn: "Schreib mir",
+  featuresTitle: "Was die App kann",
+  features: [
+    ["history", "Jeder Tag, wie er war", "Wohin und wie: zu Fuß, mit dem Rad, Auto, Zug oder Flugzeug. Genau unterwegs, sparsam am Ort."],
+    ["file", "Jahre aus Google", "Holt deine ganze Google Zeitachse – die Exportdatei oder Google Takeout."],
+    ["camera", "Fotos auf der Karte", "Fotos aus der Galerie kommen an ihren Platz, auch die ohne GPS. Zugeschickte Fotos bleiben ohne Ort."],
+    ["globe", "Die Welt, die du gesehen hast", "Ein Globus mit deinen Ländern, eine Häufigkeitskarte und ein Nebel der Welt, der sich lichtet, wo du hinkommst."],
+    ["flag", "Länder und Städte", "Wie viele, wann zum ersten Mal, wie lange – und die schönsten Momente jedes Jahres."],
+    ["heart", "Auch deine Uhr", "Schritte, Herzfrequenz, Schlaf und Trainings von der Uhr über Health Connect, direkt beim Tag."],
+    ["route", "Fehlende Wege", "Merkt, wenn zwischen zwei Orten eine Fahrt fehlt, und lässt dich sie ergänzen – oder erledigt das selbst."],
+    ["widget", "Widgets", "Jetzt, heute, die Woche und die erkundete Welt, direkt auf dem Startbildschirm."],
+    ["devices", "Handy und Tablet", "Deine eigene Sicherung in Google Drive, ein neues Handy in einer Minute und ein Tablet, das die Zeitachse des Handys zeigt."],
+  ],
+  privateTitle: "Privat von Grund auf",
+  private: [
+    ["phone", "Bleibt auf deinem Handy", "Keine Server, keine Konten, keine Werbung, keine Analyse."],
+    ["hand", "Du entscheidest", "Jede Berechtigung und jede Online-Funktion ist optional."],
+    ["shield", "Deine Sicherung, dein Drive", "Nur der versteckte Ordner von Slid in deinem eigenen Google Drive."],
+  ],
+  privacyLink: "Datenschutzerklärung lesen",
+},
+it: {
+  title: "La tua cronologia, giorno per giorno",
+  tag: "App per Android",
+  lead: "Slid conserva la storia dei tuoi luoghi: dove vai, le strade tra un posto e l’altro e le foto che scatti lì, e tutto resta sul tuo telefono.",
+  privacyBtn: "Come vengono conservati i dati", mailBtn: "Scrivimi",
+  featuresTitle: "Cosa fa",
+  features: [
+    ["history", "Ogni giorno, com’è stato", "Dove e come: a piedi, in bici, in auto, in treno o in aereo. Preciso in movimento, parsimonioso da fermo."],
+    ["file", "Anni da Google", "Importa tutti i tuoi Spostamenti di Google: il file di esportazione o Google Takeout."],
+    ["camera", "Foto sulla mappa", "Le foto della galleria prendono il loro posto, anche quelle senza GPS. Le foto ricevute restano senza luogo."],
+    ["globe", "Il mondo che hai visto", "Un globo con i tuoi paesi, una mappa della frequenza e una nebbia del mondo che si dirada dove passi."],
+    ["flag", "Paesi e città", "Quanti, quando la prima volta, per quanto tempo, e i momenti migliori di ogni anno."],
+    ["heart", "Anche l’orologio", "Passi, frequenza cardiaca, sonno e allenamenti dall’orologio tramite Health Connect, accanto al giorno."],
+    ["route", "Spostamenti mancanti", "Si accorge quando manca un viaggio tra due luoghi e ti permette di aggiungerlo, oppure lo fa da sé."],
+    ["widget", "Widget", "Ora, oggi, la settimana e il mondo esplorato, direttamente nella schermata Home."],
+    ["devices", "Telefono e tablet", "Il tuo backup in Google Drive, un telefono nuovo in un minuto e un tablet che mostra la cronologia del telefono."],
+  ],
+  privateTitle: "Privato fin dall’inizio",
+  private: [
+    ["phone", "Resta sul tuo telefono", "Niente server, niente account, niente pubblicità, niente analisi."],
+    ["hand", "Decidi tu", "Ogni autorizzazione e ogni funzione online è facoltativa."],
+    ["shield", "Il tuo backup, il tuo Drive", "Solo la cartella nascosta di Slid nel tuo Google Drive."],
+  ],
+  privacyLink: "Leggi l’informativa sulla privacy",
+},
+sv: {
+  title: "Din tidslinje, dag för dag",
+  tag: "App för Android",
+  lead: "Slid bevarar historien om dina platser: vart du åker, vägarna däremellan och fotona du tar där – och allt stannar på din telefon.",
+  privacyBtn: "Hur dina data sparas", mailBtn: "Skriv till mig",
+  featuresTitle: "Vad den gör",
+  features: [
+    ["history", "Varje dag, som den var", "Vart och hur: till fots, med cykel, bil, tåg eller flyg. Exakt i rörelse, snål när du är still."],
+    ["file", "År från Google", "Hämtar hela din Google-tidslinje – exportfilen eller Google Takeout."],
+    ["camera", "Foton på kartan", "Foton i galleriet hamnar på sina platser, även de utan GPS. Foton du har fått lämnas utan plats."],
+    ["globe", "Världen du har sett", "En jordglob med dina länder, en frekvenskarta och en världens dimma som lättar där du är."],
+    ["flag", "Länder och städer", "Hur många, när första gången, hur länge – och de bästa ögonblicken varje år."],
+    ["heart", "Klockan också", "Steg, puls, sömn och träningspass från klockan via Health Connect, bredvid dagen."],
+    ["route", "Missade resor", "Märker när en resa saknas mellan två platser och låter dig fylla i den – eller gör det själv."],
+    ["widget", "Widgetar", "Nu, i dag, veckan och den utforskade världen, direkt på hemskärmen."],
+    ["devices", "Telefon och surfplatta", "Din egen säkerhetskopia på Google Drive, en ny telefon på en minut och en surfplatta som visar telefonens tidslinje."],
+  ],
+  privateTitle: "Privat från början",
+  private: [
+    ["phone", "Stannar på din telefon", "Inga servrar, inga konton, ingen reklam, ingen analys."],
+    ["hand", "Du bestämmer", "Varje behörighet och varje onlinefunktion är valfri."],
+    ["shield", "Din kopia, din Drive", "Bara Slids dolda mapp i din egen Google Drive."],
+  ],
+  privacyLink: "Läs integritetspolicyn",
+},
+id: {
+  title: "Linimasa, hari demi hari",
+  tag: "Aplikasi untuk Android",
+  lead: "Slid menyimpan kisah tempat-tempat yang dikunjungi: ke mana pergi, jalan di antaranya, dan foto yang diambil di sana — dan semuanya tetap di ponsel.",
+  privacyBtn: "Cara data disimpan", mailBtn: "Kirim email",
+  featuresTitle: "Fiturnya",
+  features: [
+    ["history", "Setiap hari, apa adanya", "Ke mana dan bagaimana: jalan kaki, bersepeda, mobil, kereta, atau pesawat. Akurat saat bergerak, hemat saat diam."],
+    ["file", "Bertahun-tahun dari Google", "Memindahkan seluruh Linimasa Google — file ekspor atau Google Takeout."],
+    ["camera", "Foto di peta", "Foto galeri menempati tempatnya, bahkan yang tanpa GPS. Foto kiriman orang lain dibiarkan tanpa lokasi."],
+    ["globe", "Dunia yang sudah dilihat", "Bola dunia dengan negara-negara yang dikunjungi, peta frekuensi, dan kabut dunia yang tersingkap di tempat yang didatangi."],
+    ["flag", "Negara dan kota", "Berapa banyak, kapan pertama kali, berapa lama — dan momen terbaik setiap tahun."],
+    ["heart", "Jam tangan juga", "Langkah, detak jantung, tidur, dan olahraga dari jam tangan melalui Health Connect, di samping harinya."],
+    ["route", "Perjalanan yang terlewat", "Mengetahui saat perjalanan hilang di antara dua tempat dan memungkinkan menambahkannya, atau mengaturnya sendiri."],
+    ["widget", "Widget", "Sekarang, hari ini, minggu ini, dan dunia yang dijelajahi, langsung di layar utama."],
+    ["devices", "Ponsel dan tablet", "Cadangan sendiri di Google Drive, ponsel baru dalam semenit, dan tablet yang menampilkan linimasa ponsel."],
+  ],
+  privateTitle: "Privat sejak awal",
+  private: [
+    ["phone", "Tetap di ponsel", "Tanpa server, tanpa akun, tanpa iklan, tanpa analitik."],
+    ["hand", "Kendali di tangan pengguna", "Setiap izin dan setiap fitur online bersifat opsional."],
+    ["shield", "Cadangan sendiri, Drive sendiri", "Hanya folder tersembunyi Slid di Google Drive milik sendiri."],
+  ],
+  privacyLink: "Baca kebijakan privasi",
+},
+ja: {
+  title: "あなたのタイムラインを日ごとに",
+  tag: "Android アプリ",
+  lead: "スリドは、訪れた場所の記録を残します。行き先、その間の道のり、そこで撮った写真。そしてそのすべてがスマートフォンの中だけに残ります。",
+  privacyBtn: "データの保管方法", mailBtn: "メールで連絡",
+  featuresTitle: "できること",
+  features: [
+    ["history", "毎日を、そのままに", "どこへ、どうやって。徒歩、自転車、車、電車、飛行機。移動中は正確に、滞在中は省電力で。"],
+    ["file", "Google から過去の年を", "Google タイムラインをまるごと読み込みます。エクスポート ファイルでも Google Takeout でも。"],
+    ["camera", "写真を地図に", "ギャラリーの写真が、GPS のないものも含めて撮影場所に並びます。受け取った写真には場所を付けません。"],
+    ["globe", "見てきた世界", "訪れた国の地球儀、頻度マップ、そして訪れた場所から晴れていく世界の霧。"],
+    ["flag", "国と都市", "いくつ、いつ初めて、どのくらい。そして毎年のハイライト。"],
+    ["heart", "ウォッチにも対応", "ウォッチの歩数、心拍数、睡眠、ワークアウトを Health Connect 経由で、その日の横に表示します。"],
+    ["route", "記録されなかった移動", "2 つの場所の間に移動が抜けているのを見つけ、追加できます。おまかせで設定することもできます。"],
+    ["widget", "ウィジェット", "現在地、今日、今週、探索した世界をホーム画面に。"],
+    ["devices", "スマートフォンとタブレット", "Google ドライブに自分だけのバックアップ。新しいスマートフォンへ 1 分で移行、タブレットにはスマートフォンのタイムラインを表示。"],
+  ],
+  privateTitle: "最初からプライベート",
+  private: [
+    ["phone", "スマートフォンの中だけに", "サーバーも、アカウントも、広告も、分析もありません。"],
+    ["hand", "決めるのはあなた", "すべての権限とオンライン機能は任意です。"],
+    ["shield", "バックアップはあなたのドライブに", "あなた自身の Google ドライブにある、スリド専用の非表示フォルダだけを使います。"],
+  ],
+  privacyLink: "プライバシー ポリシーを読む",
+},
+kk: {
+  title: "Хронологияңыз күн сайын",
+  tag: "Android қолданбасы",
+  lead: "Слід сіз барған орындардың тарихын сақтайды: қайда барасыз, арасындағы жолдар және сол жерде түсірген фотолар, — бәрі телефоныңызда қалады.",
+  privacyBtn: "Деректер қалай сақталады", mailBtn: "Маған жазу",
+  featuresTitle: "Не істей алады",
+  features: [
+    ["history", "Әр күн сол күйінде", "Қайда және қалай: жаяу, велосипедпен, көлікпен, пойызбен не ұшақпен. Жолда дәл, бір орында үнемді."],
+    ["file", "Google-дан жылдар", "Google хронологиясын толықтай әкеледі — экспорт файлы немесе Google Takeout."],
+    ["camera", "Фотолар картада", "Галерея фотолары, тіпті GPS-сіздері де, өз орындарына тұрады. Сізге жіберілген фотолар орынсыз қалады."],
+    ["globe", "Сіз көрген әлем", "Елдеріңіз бар глобус, жиілік картасы және сіз барған жерде сейілетін әлем тұманы."],
+    ["flag", "Елдер мен қалалар", "Қаншасы, алғаш қашан, қанша уақыт — және әр жылдың ең жақсы сәттері."],
+    ["heart", "Сағат та бар", "Сағаттағы қадамдар, пульс, ұйқы және жаттығулар Health Connect арқылы, күннің жанында."],
+    ["route", "Өткізіп алған сапарлар", "Екі орын арасында сапар жетіспесе, байқап, оны қосуға мүмкіндік береді — не өзі реттейді."],
+    ["widget", "Виджеттер", "Қазір, бүгін, апта және ашылған әлем — тікелей басты экранда."],
+    ["devices", "Телефон мен планшет", "Google Drive-тағы өз көшірмеңіз, жаңа телефон бір минутта және телефон хронологиясын көрсететін планшет."],
+  ],
+  privateTitle: "Басынан құпия",
+  private: [
+    ["phone", "Телефоныңызда қалады", "Сервер де, аккаунт та, жарнама да, аналитика да жоқ."],
+    ["hand", "Шешім сізде", "Әр рұқсат пен әр онлайн функция міндетті емес."],
+    ["shield", "Көшірмеңіз — өз Drive-ыңызда", "Тек өз Google Drive-ыңыздағы Слід-тің жасырын қалтасы."],
+  ],
+  privacyLink: "Құпиялық саясатын оқу",
+},
+ru: {
+  title: "Твоя хронология день за днём",
+  tag: "Приложение для Android",
+  lead: "Слід хранит историю твоих мест: куда ты ходишь и ездишь, пути между ними и фото, сделанные там, — и всё это остаётся на твоём телефоне.",
+  privacyBtn: "Как хранятся данные", mailBtn: "Написать мне",
+  featuresTitle: "Что он умеет",
+  features: [
+    ["history", "Каждый день, как он был", "Куда и как: пешком, на велосипеде, на машине, поезде или самолёте. Точно в движении и экономно на месте."],
+    ["file", "Годы из Google", "Переносит всю Хронологию Google — файл экспорта или Google Takeout."],
+    ["camera", "Фото на карте", "Фото из галереи встают на свои места, даже те, что без GPS. Присланные тебе фото остаются без места."],
+    ["globe", "Мир, который ты видишь", "Глобус с твоими странами, карта частоты и туман мира, который рассеивается там, где ты бываешь."],
+    ["flag", "Страны и города", "Сколько, когда впервые, как долго — и лучшие моменты каждого года."],
+    ["heart", "И часы тоже", "Шаги, пульс, сон и тренировки с часов через Health Connect, рядом с днём."],
+    ["route", "Пропущенные переезды", "Замечает, когда между двумя местами не хватает поездки, и даёт её добавить — или расставляет сам."],
+    ["widget", "Виджеты", "Сейчас, сегодня, неделя и открытый мир — прямо на главном экране."],
+    ["devices", "Телефон и планшет", "Своя копия на Google Диске, новый телефон за минуту и планшет, который показывает хронологию телефона."],
+  ],
+  privateTitle: "Приватный с самого начала",
+  private: [
+    ["phone", "Остаётся на телефоне", "Ни серверов, ни аккаунтов, ни рекламы, ни аналитики."],
+    ["hand", "Решаешь ты", "Каждое разрешение и каждая функция с интернетом необязательны."],
+    ["shield", "Твоя копия — твой Диск", "Только скрытая папка приложения Слід на твоём собственном Google Диске."],
+  ],
+  privacyLink: "Прочитать политику конфиденциальности",
+},
+};
 
-<section>
-  <h2>Що він робить</h2>
-  <ul>
-    <li>Записує, де ти буваєш і як пересуваєшся: пішки, велосипедом, транспортом. Точно в русі й економно на місці.</li>
-    <li>Переносить минулі роки з хронології Google Карт (файл експорту або Google Takeout).</li>
-    <li>Ставить фото з галереї на карту, навіть ті, що без GPS. У самі файли фото нічого не записує.</li>
-    <li>Теплова карта, країни, міста, кілометри, «цей день у минулі роки».</li>
-    <li>Усе зберігається на телефоні; резервна копія за бажанням іде у приховану папку твого Google Диска.</li>
-  </ul>
-</section>
-
-<section>
-  <h2>What it does</h2>
-  <ul>
-    <li>Records where you go and how you travel: on foot, by bike, by vehicle. Precise on the move, thrifty while you stay.</li>
-    <li>Brings in past years from your Google Maps Timeline (the export file or Google Takeout).</li>
-    <li>Puts gallery photos on the map, even those without GPS. It never writes into the photo files.</li>
-    <li>Heat map, countries, cities, distances, “this day in earlier years”.</li>
-    <li>Everything stays on the phone; an optional backup goes to a hidden folder of your own Google Drive.</li>
-  </ul>
-</section>
-
-<footer>
-  <a href="privacy.html">Політика конфіденційності · Privacy policy</a> ·
-  <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>
-</footer>
-</main>
+startPage(T, "home", (l, t, brand) => {
+  document.title = `${brand} — ${t.title}`;
+  const tile = ([i, b, s]) => `<div class="card tile"><div class="ic">${icon(i)}</div><b>${b}</b><span>${s}</span></div>`;
+  document.getElementById("page").innerHTML =
+    `<div class="hero"><div class="logo">${LOGO}</div><div>` +
+    `<span class="tag">${icon("phone")}${t.tag}</span><h1>${brand}</h1>` +
+    `<p class="lead" style="margin-top:4px"><b style="color:var(--ink)">${t.title}.</b> ${t.lead}</p>` +
+    `<div class="row"><a class="btn main" href="privacy.html?lang=${l}">${icon("shield")}${t.privacyBtn}</a>` +
+    `<a class="btn" href="mailto:pegasohlib12@gmail.com">${icon("mail")}${t.mailBtn}</a></div>` +
+    `</div></div>` +
+    `<h2 class="big">${t.featuresTitle}</h2><div class="grid features">${t.features.map(tile).join("")}</div>` +
+    `<h2 class="big">${t.privateTitle}</h2><div class="card private">` +
+    t.private.map(([i, b, s]) => `<div><span class="ic good">${icon(i)}</span><div><b>${b}</b><span>${s}</span></div></div>`).join("") +
+    `</div><p class="more"><a href="privacy.html?lang=${l}">${t.privacyLink} →</a></p>` +
+    `<footer>${brand} · <a href="privacy.html?lang=${l}">${NAV[l][1]}</a> · ${MAIL}</footer>`;
+});
+</script>
 </body>
 </html>
