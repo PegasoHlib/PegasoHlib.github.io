@@ -5,80 +5,37 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Slid — Privacy</title>
 <meta name="description" content="How the Slid timeline app handles your data: it stays on your phone.">
+<link rel="stylesheet" href="site.css">
 <style>
-:root{--bg:#F3F1EC;--surface:#fff;--line:#E5E0D6;--ink:#191816;--ink2:#57534B;--ink3:#8A847A;--accent:#E0522A;--accentSoft:#FCE7DE;--good:#2F9A5C;--goodSoft:#E1F3E8}
-@media (prefers-color-scheme:dark){:root{--bg:#0F1012;--surface:#18191C;--line:#2C2D31;--ink:#F2F0EB;--ink2:#B8B3A9;--ink3:#86827A;--accent:#FF7448;--accentSoft:#3A2018;--good:#5BC489;--goodSoft:#16301F}}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
-a{color:var(--accent)}
-.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.bar .in{max-width:760px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:12px}
-.home{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:650}
-.home svg{width:32px;height:32px;border-radius:9px;display:block}
-.sp{flex:1}
-.lang{position:relative}
-.lang select{appearance:none;-webkit-appearance:none;font:inherit;font-size:15px;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 34px 7px 14px;cursor:pointer;max-width:180px}
-.lang::after{content:"";position:absolute;right:14px;top:50%;width:7px;height:7px;border-right:2px solid var(--ink3);border-bottom:2px solid var(--ink3);transform:translateY(-70%) rotate(45deg);pointer-events:none}
-main{max-width:760px;margin:0 auto;padding:28px 16px 64px}
-h1{font-size:clamp(28px,6vw,40px);line-height:1.1;margin:8px 0 8px;letter-spacing:-.01em}
-.date{color:var(--ink3);font-size:14px;margin:0}
-.lead{font-size:18px;color:var(--ink2);margin:16px 0 0}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin:24px 0 8px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px}
-.card .ic{width:36px;height:36px;border-radius:11px;background:var(--goodSoft);color:var(--good);display:grid;place-items:center;margin-bottom:10px}
-.card b{display:block;font-size:16px;margin-bottom:2px}
-.card span{color:var(--ink2);font-size:14px;line-height:1.5}
-.toc{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px;padding:0;list-style:none}
-.toc a{display:block;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:6px 13px;font-size:14px}
-.toc a:hover{border-color:var(--accent)}
-section{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 20px 8px;margin-top:14px}
+.promises{margin:24px 0 0}
+.promises .tile{display:flex;gap:14px;align-items:flex-start}
+.promises .tile .ic{margin:0}
+.toc{margin-top:18px;padding:6px}
+.toc h2{font-size:15px;font-weight:650;color:var(--ink3);margin:10px 12px 4px;text-transform:none}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr}
+@media (min-width:640px){.toc ol{grid-template-columns:1fr 1fr}}
+.toc a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:14px;text-decoration:none;color:var(--ink)}
+.toc a:hover{background:var(--bg)}
+.toc a .ic{width:32px;height:32px;border-radius:10px}
+.toc a .t{flex:1;line-height:1.3}
+.toc a .go{color:var(--ink3)}
+section.card{padding:20px 20px 8px;margin-top:14px}
 section h2{display:flex;align-items:center;gap:12px;font-size:19px;line-height:1.3;margin:0 0 10px}
-section h2 .ic{flex:none;width:34px;height:34px;border-radius:10px;background:var(--accentSoft);color:var(--accent);display:grid;place-items:center}
 section p,section li{color:var(--ink2)}
 section ul{padding-left:20px;margin:0 0 12px}
 section li{margin:6px 0}
 section li b,section p b{color:var(--ink)}
-.opt{display:inline-block;font-size:12px;font-weight:600;color:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:2px;vertical-align:2px}
-footer{color:var(--ink3);font-size:14px;margin-top:28px;text-align:center}
-svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-@media (max-width:420px){section{padding:16px 16px 6px}.lang select{max-width:140px}}
+.opt{display:inline-block;font-size:12px;font-weight:600;color:var(--ink3);border:1px solid var(--line);border-radius:999px;padding:1px 8px;margin-left:4px;vertical-align:2px}
+.back{display:inline-flex;align-items:center;gap:4px;font-size:13px;color:var(--ink3);text-decoration:none;margin:0 0 12px}
+@media (max-width:420px){section.card{padding:16px 16px 6px}}
 </style>
 </head>
 <body>
-<div class="bar"><div class="in">
-  <a class="home" href="./">
-    <svg viewBox="18 18 72 72" aria-hidden="true"><defs><linearGradient id="g" x1="0.1" y1="0" x2="0.9" y2="1"><stop offset="0" stop-color="#FF9A5A"/><stop offset="0.55" stop-color="#E8552C"/><stop offset="1" stop-color="#B8322B"/></linearGradient></defs><rect x="0" y="0" width="108" height="108" fill="url(#g)"/><circle cx="41.2" cy="70.6" r="2.6" fill="#fff" fill-opacity="0.8"/><circle cx="49.3" cy="67.4" r="2.9" fill="#fff" fill-opacity="0.88"/><circle cx="57.8" cy="63.2" r="3.2" fill="#fff" fill-opacity="0.94"/><path fill="#fff" fill-rule="evenodd" d="M69,66 C64.5,58.6 57.5,52.4 57.5,43.5 A11.5,11.5 0 1,1 80.5,43.5 C80.5,52.4 73.5,58.6 69,66 Z M69,38.6 A4.9,4.9 0 1,0 69,48.4 A4.9,4.9 0 1,0 69,38.6 Z"/></svg>
-    <span id="app">Slid</span>
-  </a>
-  <span class="sp"></span>
-  <label class="lang"><select id="lang" aria-label="Language"></select></label>
-</div></div>
-
-<main id="page"></main>
-
+<main class="narrow" id="page"></main>
 <noscript><main><p>Slid keeps your timeline on your phone. No servers, accounts, ads or analytics. Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p></main></noscript>
-
+<script src="site.js"></script>
 <script>
-// Icons (Lucide-style strokes), by name.
-const ICONS = {
-  phone: '<rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/>',
-  off: '<path d="M2 2l20 20"/><path d="M8.5 8.5A5 5 0 0 0 12 17a5 5 0 0 0 3.5-1.5"/><path d="M12 7a5 5 0 0 1 5 5"/>',
-  hand: '<path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.86-5.99-2.34l-3.6-3.6a2 2 0 0 1 2.83-2.82L7 15"/>',
-  trash: '<path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>',
-  pin: '<path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
-  globe: '<circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/>',
-  cloud: '<path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>',
-  heart: '<path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>',
-  file: '<path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/>',
-  child: '<circle cx="12" cy="5" r="2"/><path d="M9 20l1-6-2-3h8l-2 3 1 6"/>',
-  edit: '<path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/>',
-  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>',
-};
-const icon = n => `<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n] || ""}</svg>`;
-const MAIL = '<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>';
-
-// Every language of the app. Each: names, the four promises at the top, and the sections.
+// Every language of the app: the four promises at the top and the sections.
 // {opt} in a section becomes that language's word for "optional"; {mail} the contact address.
 const T = {
 en: {
@@ -127,20 +84,20 @@ uk: {
   toc: "На цій сторінці", optional: "необов’язково",
   sections: [
     { id: "data", icon: "pin", title: "Які дані є в застосунку", html: `<ul>
-<li><b>Місцезнаходження.</b> Поки ти тримаєш запис увімкненим, застосунок записує місцезнаходження телефона (зокрема у фоні), щоб показати, де ти бував і як пересувався.</li>
+<li><b>Місцезнаходження.</b> Поки ти тримаєш запис увімкненим, застосунок записує місцезнаходження телефона (зокрема у фоні), щоб показати місця, де ти буваєш, і твої переїзди.</li>
 <li><b>Фізична активність.</b> Якщо дозволиш, Android повідомляє, чи ти йдеш, їдеш велосипедом або транспортом. Це потрібно лише для визначення способу пересування.</li>
 <li><b>Фото й відео.</b> Якщо дозволиш, застосунок читає з галереї дату зйомки й місце, записане у файлі, щоб показати фото на карті. Самі знімки нікуди не копіюються й не надсилаються. Застосунок нічого не записує у твої фото; він може лише прибрати місце, яке записала давніша версія, після запиту Android.</li>
-<li><b>Імпортовані файли.</b> Файли хронології Google чи Google Takeout, які ти сам вибереш, читаються на телефоні.</li>
+<li><b>Імпортовані файли.</b> Файли хронології Google чи Google Takeout, які ти вибереш, читаються на телефоні.</li>
 <li><b>Місця й налаштування:</b> назви, які ти даєш місцям, мова, тема.</li>
 </ul><p>Усе це зберігається на твоєму пристрої.</p>` },
     { id: "internet", icon: "globe", title: "Що надсилається в інтернет", html: `<ul>
 <li><b>Карти.</b> Шматки карти завантажуються з OpenFreeMap (дані OpenStreetMap), супутникові знімки — з Esri. Ці сервери бачать, яку місцевість показано, але не те, хто ти.</li>
-<li><b>Адреси й назви місць</b> <span class="opt">{opt}</span>. Координати місць, де ти зупинявся, надсилаються службі адрес Android і Nominatim (OpenStreetMap), щоб отримати адресу й назву. Нічого, що тебе ідентифікує, з ними не надсилається. Це можна вимкнути в налаштуваннях.</li>
+<li><b>Адреси й назви місць</b> <span class="opt">{opt}</span>. Координати місць, де були зупинки, надсилаються службі адрес Android і Nominatim (OpenStreetMap), щоб отримати адресу й назву. Нічого, що тебе ідентифікує, з ними не надсилається. Це можна вимкнути в налаштуваннях.</li>
 </ul>` },
     { id: "drive", icon: "cloud", title: "Копія в Google Диску", opt: true, html: `<p>Якщо ти підключиш Google Диск, застосунок отримує доступ лише до своєї прихованої папки на Диску (дозвіл drive.appdata) і не бачить жодних інших твоїх файлів. Туди записується копія хронології, по одній на пристрій, щоб її можна було відновити на новому телефоні чи показати на планшеті. Google Диск може якийсь час зберігати старіші версії цієї копії, і застосунок уміє їх відновити. Також застосунок читає адресу твоєї пошти, лише щоб показати, який акаунт підключено. Ці дані передаються тільки між твоїм пристроєм і Google; автор застосунку доступу до них не має. Від’єднати Диск можна в налаштуваннях.</p>
 <p>Використання даних, отриманих через Google API, відповідає Google API Services User Data Policy, зокрема вимогам Limited Use.</p>` },
     { id: "health", icon: "heart", title: "Дані годинника через Health Connect", opt: true, html: `<p>Якщо дозволиш, застосунок читає з Health Connect кроки, пульс, сон і тренування (з маршрутами), які туди записали застосунки годинників, наприклад Mi Fitness. Він лише читає ці дані й нічого не записує в Health Connect. Дані читаються на телефоні тільки для того, щоб показати їх у вкладці «Здоров’я» та у відповідному дні хронології; застосунок не зберігає їх у своїй базі, не додає в копії й нікуди не надсилає. Дозволи можна відкликати будь-коли в налаштуваннях Health Connect.</p>` },
-    { id: "files", icon: "file", title: "Файли копій і запасні копії", html: `<p>Файл копії створюється лише тоді, коли ти сам його збережеш, і там, де ти вибереш. Перед тим як копія замінить твою хронологію, застосунок зберігає попередню хронологію на пристрої (останні три), щоб помилкове відновлення можна було скасувати; ці копії ніколи не покидають телефон.</p>` },
+    { id: "files", icon: "file", title: "Файли копій і запасні копії", html: `<p>Файл копії створюється лише тоді, коли ти його збережеш, і там, де ти вибереш. Перед тим як копія замінить твою хронологію, застосунок зберігає попередню хронологію на пристрої (останні три), щоб помилкове відновлення можна було скасувати; ці копії ніколи не покидають телефон.</p>` },
     { id: "delete", icon: "trash", title: "Видалення даних", html: `<p>Будь-який запис можна видалити в хронології. Видали застосунок — і всі дані на пристрої зникнуть. Копію на Google Диску можна видалити в застосунку або в налаштуваннях Google Диска («Керування застосунками»).</p>` },
     { id: "children", icon: "child", title: "Діти", html: `<p>Застосунок не збирає даних ні про кого, зокрема про дітей: усе лишається на пристрої власника.</p>` },
     { id: "changes", icon: "edit", title: "Зміни", html: `<p>Якщо ця політика зміниться, нова версія з’явиться на цій сторінці з новою датою.</p>` },
@@ -379,9 +336,9 @@ id: {
   ],
 },
 ja: {
-  name: "日本語", app: "Slid", title: "プライバシー ポリシー",
-  date: "アプリ「Slid」（パッケージ dev.slid）。2026年10月21日より施行。",
-  lead: "Slid には独自のサーバー、アカウント、広告、分析機能がありません。タイムラインはお使いのスマートフォンの中にあり、開発者がそれを受け取ったり見たりすることはありません。",
+  name: "日本語", app: "スリド", title: "プライバシー ポリシー",
+  date: "アプリ「スリド」（Slid、パッケージ dev.slid）。2026年10月21日より施行。",
+  lead: "スリドには独自のサーバー、アカウント、広告、分析機能がありません。タイムラインはお使いのスマートフォンの中にあり、開発者がそれを受け取ったり見たりすることはありません。",
   cards: [
     ["phone", "スマートフォンの中だけに", "タイムライン、場所、写真の位置情報はデバイスにのみ保存されます。"],
     ["off", "あなたに関する情報は送信されません", "アカウントも、トラッキングも、広告も、分析もありません。"],
@@ -412,9 +369,9 @@ ja: {
   ],
 },
 kk: {
-  name: "Қазақша", app: "Slid", title: "Құпиялық саясаты",
-  date: "«Slid» қолданбасы (dev.slid бумасы). 2026 жылғы 21 қазаннан бастап күшінде.",
-  lead: "Slid-тің өз серверлері, аккаунттары, жарнамасы мен аналитикасы жоқ. Хронологияңыз телефоныңызда тұрады, әзірлеуші оны ешқашан алмайды және көрмейді.",
+  name: "Қазақша", app: "Слід", title: "Құпиялық саясаты",
+  date: "«Слід» қолданбасы (Slid, dev.slid бумасы). 2026 жылғы 21 қазаннан бастап күшінде.",
+  lead: "Слід-тің өз серверлері, аккаунттары, жарнамасы мен аналитикасы жоқ. Хронологияңыз телефоныңызда тұрады, әзірлеуші оны ешқашан алмайды және көрмейді.",
   cards: [
     ["phone", "Телефоныңызда қалады", "Хронология, орындар және фото орындары тек құрылғыда сақталады."],
     ["off", "Сіз туралы ештеңе жіберілмейді", "Аккаунт та, бақылау да, жарнама да, аналитика да жоқ."],
@@ -445,9 +402,9 @@ kk: {
   ],
 },
 ru: {
-  name: "Русский", app: "Slid", title: "Политика конфиденциальности",
-  date: "Приложение «Slid» (пакет dev.slid). Действует с 21 октября 2026 года.",
-  lead: "У Slid нет собственных серверов, аккаунтов, рекламы и аналитики. Твоя хронология живёт на твоём телефоне, и автор приложения никогда её не получает и не видит.",
+  name: "Русский", app: "Слід", title: "Политика конфиденциальности",
+  date: "Приложение «Слід» (Slid, пакет dev.slid). Действует с 21 октября 2026 года.",
+  lead: "У приложения Слід нет собственных серверов, аккаунтов, рекламы и аналитики. Твоя хронология живёт на твоём телефоне, и автор приложения никогда её не получает и не видит.",
   cards: [
     ["phone", "Остаётся на телефоне", "Хронология, места и места фото хранятся только на устройстве."],
     ["off", "О тебе ничего не отправляется", "Ни аккаунтов, ни слежки, ни рекламы, ни аналитики."],
@@ -479,58 +436,24 @@ ru: {
 },
 };
 
-const ORDER = ["en", "uk", "es", "pt", "fr", "de", "it", "sv", "id", "ja", "kk", "ru"];
-const sel = document.getElementById("lang");
-for (const l of ORDER.filter(l => T[l])) {
-  const o = document.createElement("option");
-  o.value = l;
-  o.textContent = T[l].name;
-  sel.appendChild(o);
-}
 
-function pick() {
-  const q = new URLSearchParams(location.search).get("lang");
-  if (q && T[q]) return q;
-  try { const s = localStorage.getItem("slid-privacy-lang"); if (s && T[s]) return s; } catch (e) {}
-  for (const n of navigator.languages || [navigator.language || "en"]) {
-    let c = n.toLowerCase().split("-")[0];
-    if (c === "in") c = "id";
-    if (T[c]) return c;
-  }
-  return "en";
-}
-
-function render(l) {
-  const t = T[l];
-  document.documentElement.lang = l;
-  document.title = `${t.app} — ${t.title}`;
-  document.getElementById("app").textContent = t.app;
-  sel.value = l;
+startPage(T, "privacy", (l, t, brand) => {
+  document.title = `${brand} — ${t.title}`;
   const fill = s => s.replaceAll("{opt}", t.optional).replaceAll("{mail}", MAIL);
-  const cards = t.cards.map(([i, b, s]) => `<div class="card"><div class="ic">${icon(i)}</div><b>${b}</b><span>${s}</span></div>`).join("");
-  const toc = t.sections.map(s => `<li><a href="#${s.id}">${s.title}</a></li>`).join("");
+  const promises = t.cards.map(([i, b, s]) => `<div class="card tile"><div class="ic good">${icon(i)}</div><div><b>${b}</b><span>${s}</span></div></div>`).join("");
+  const toc = t.sections.map(s => `<li><a href="#${s.id}"><span class="ic hot">${icon(s.icon)}</span><span class="t">${s.title}</span><span class="go">${icon("right")}</span></a></li>`).join("");
   const body = t.sections.map(s =>
-    `<section id="${s.id}"><h2><span class="ic">${icon(s.icon)}</span><span>${s.title}${s.opt ? ` <span class="opt">${t.optional}</span>` : ""}</span></h2>${fill(s.html)}</section>`,
+    `<section class="card" id="${s.id}"><h2><span class="ic hot">${icon(s.icon)}</span><span>${s.title}${s.opt ? ` <span class="opt">${t.optional}</span>` : ""}</span></h2>${fill(s.html)}<a class="back" href="#toc">${icon("up")}${t.toc}</a></section>`,
   ).join("");
   document.getElementById("page").innerHTML =
     `<h1>${t.title}</h1><p class="date">${t.date}</p><p class="lead">${t.lead}</p>` +
-    `<div class="cards">${cards}</div>` +
-    `<nav aria-label="${t.toc}"><ul class="toc">${toc}</ul></nav>${body}` +
-    `<footer>${t.app} · ${MAIL}</footer>`;
-}
-
-sel.addEventListener("change", () => {
-  try { localStorage.setItem("slid-privacy-lang", sel.value); } catch (e) {}
-  const u = new URL(location.href);
-  u.searchParams.set("lang", sel.value);
-  history.replaceState(null, "", u);
-  render(sel.value);
+    `<div class="grid promises">${promises}</div>` +
+    `<nav class="card toc" id="toc" aria-label="${t.toc}"><h2>${t.toc}</h2><ol>${toc}</ol></nav>${body}` +
+    `<footer>${brand} · ${MAIL}</footer>`;
+  // Old links (#health-en, #en) still land in the right place.
+  const h = location.hash.replace("-en", "");
+  if (h && h !== "#en" && h !== "#") document.querySelector(h)?.scrollIntoView();
 });
-
-render(pick());
-// Old links (#health-en, #en) still land in the right place.
-const h = location.hash.replace("-en", "");
-if (h && h !== "#en") document.querySelector(h)?.scrollIntoView();
 </script>
 </body>
 </html>
