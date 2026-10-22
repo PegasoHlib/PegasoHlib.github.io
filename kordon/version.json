@@ -1,11 +1,11 @@
 {
-    "versionCode":  406,
-    "versionName":  "0.4.6",
+    "versionCode":  407,
+    "versionName":  "0.4.7",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "912096648c00a06b8c46ee4220541cf9c32ef23c85ee2756cd73d1ce3a1a9563",
-    "size":  174507401,
+    "sha256":  "fa161727e4405988b25d7a0ed6fb435a0b8aeb9839aaccdbe84e8d0eaede86d3",
+    "size":  174703081,
     "notes":  {
-                  "uk":  "Векторна мапа: чіткі кордони, береги й ріки на будь-якому наближенні; ріки точно по кордонах; країни без синіх кольорів; спокійніше море; мікродержави видно",
-                  "en":  "Vector map: crisp borders, coasts and rivers at any zoom; rivers exactly on borders; no blue country colours; calmer sea; micro-states visible"
+                  "uk":  "Ріки не йдуть поверх озер і водосховищ, вливаються в море й одна в одну без розривів; острови можна вибрати; при виборі підсвічується й берег; мікродержави — справжні цятки; майже без шестикутників",
+                  "en":  "Rivers no longer run over lakes and reservoirs and flow into the sea and each other without gaps; islands can be selected; the selection outlines the coast too; micro-states are real dots; almost no hexagons left"
               }
 }
