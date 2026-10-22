@@ -1,11 +1,11 @@
 {
-    "versionCode":  413,
-    "versionName":  "0.4.13",
+    "versionCode":  500,
+    "versionName":  "0.5.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c7a0280985240163cde51ca5043ea1dcb9316ed3bb450409a0bbac6e8f2a72d8",
-    "size":  175420315,
+    "sha256":  "3dae09388ad44f288bf7325cf623cc310bbc829accf8b29aa642f0da27c491b3",
+    "size":  175455487,
     "notes":  {
-                  "uk":  "Глобус знову як раніше: північ завжди вгорі, зупиняється рівно на полюсі, тож полюс видно повністю.",
-                  "en":  "The globe is back to north-up: it stops right at the pole, so the pole is fully visible."
+                  "uk":  "Ділення провінцій: проведи лінію через провінцію або обведи частину — лінія стає справжнім кордоном, вздовж річки прилипає до неї. Відкат працює.",
+                  "en":  "Splitting provinces: draw a line across a province or circle a part - the line becomes a real border and sticks to a river you follow. Undo works."
               }
 }
