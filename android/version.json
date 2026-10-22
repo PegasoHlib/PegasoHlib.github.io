@@ -1,11 +1,11 @@
 {
-  "versionCode": 33,
-  "versionName": "0.29.4",
-  "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.4/Khronometr-0.29.4.apk",
-  "sha256": "983e3dd5847fe33c1bb25c39208a4afe26c9eee12bbbf61a42a0a38cb42f363c",
-  "size": 5282752,
+  "versionCode": 34,
+  "versionName": "0.29.5",
+  "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk",
+  "sha256": "42c89c960307b7727d4e445f203ca9261811cad6fe53903d1d9641eba547d3e8",
+  "size": 5283336,
   "notes": {
-    "uk": "Звуки: перший більше не губиться, тиша, коли звук вимкнено, рівніші набори й м’якші завершення",
-    "en": "Sounds: the first one is no longer lost, silence when sound is off, evener sets and softer endings"
+    "uk": "Великий трафік тепер у терабайтах",
+    "en": "Large traffic is now shown in terabytes"
   }
 }
