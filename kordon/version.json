@@ -1,11 +1,11 @@
 {
-    "versionCode":  500,
-    "versionName":  "0.5.0",
+    "versionCode":  501,
+    "versionName":  "0.5.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "3dae09388ad44f288bf7325cf623cc310bbc829accf8b29aa642f0da27c491b3",
-    "size":  175455487,
+    "sha256":  "234763d162350b68de4f3a5c000ede703c81cd01c431bcb8029099f42540a6a8",
+    "size":  175458479,
     "notes":  {
-                  "uk":  "Ділення провінцій: проведи лінію через провінцію або обведи частину — лінія стає справжнім кордоном, вздовж річки прилипає до неї. Відкат працює.",
-                  "en":  "Splitting provinces: draw a line across a province or circle a part - the line becomes a real border and sticks to a river you follow. Undo works."
+                  "uk":  "Ділення: закарлючки вирівнюються в рівну лінію, коло замикається саме без подвійних ліній, лінія вздовж річки прилипає надійніше.",
+                  "en":  "Splitting: scribbles become a straight line, a circle closes itself without double lines, a line along a river sticks to it more reliably."
               }
 }
