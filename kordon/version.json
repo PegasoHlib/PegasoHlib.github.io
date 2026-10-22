@@ -1,11 +1,11 @@
 {
-    "versionCode":  401,
-    "versionName":  "0.4.1",
+    "versionCode":  402,
+    "versionName":  "0.4.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "49e7ff996df5b48f4fc7c766c28b6752cc9199886ca7771bfd6ba95872d6a00c",
-    "size":  160876797,
+    "sha256":  "6debfff5ef8024f259de9ac27e24f471f0123f170df6192794ff80a5e9ce4d57",
+    "size":  164700451,
     "notes":  {
-                  "uk":  "Нова іконка гри: глобус із сот і кордон між країнами",
-                  "en":  "New game icon: a globe of hex cells with a border between countries"
+                  "uk":  "Справжній берег морів і річки на мапі",
+                  "en":  "Real coastlines and rivers on the map"
               }
 }
