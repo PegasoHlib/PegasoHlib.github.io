@@ -1,11 +1,11 @@
 {
-    "versionCode":  403,
-    "versionName":  "0.4.3",
+    "versionCode":  404,
+    "versionName":  "0.4.4",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9e5743a09d4978e8d73fee9554d5a2f7583adb51a487c64e6927e8267e9fd211",
-    "size":  165486778,
+    "sha256":  "db511a437aa16c9edd965a49bebeac8fbab465a9dfc2da84a8f7d8637fb1ab6a",
+    "size":  165698542,
     "notes":  {
-                  "uk":  "Плавний берег на всіх мапах, лише найбільші річки",
-                  "en":  "Smooth coastline on every map, only the biggest rivers"
+                  "uk":  "Новий вигляд берегів і річок: мілководдя, чистий контур, річки за величиною",
+                  "en":  "New look for coasts and rivers: shallows, clean shoreline, rivers sized by importance"
               }
 }
