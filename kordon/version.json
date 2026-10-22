@@ -1,11 +1,11 @@
 {
-    "versionCode":  407,
-    "versionName":  "0.4.7",
+    "versionCode":  408,
+    "versionName":  "0.4.8",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "fa161727e4405988b25d7a0ed6fb435a0b8aeb9839aaccdbe84e8d0eaede86d3",
-    "size":  174703081,
+    "sha256":  "a302663c6a4160466e56713034ed8974ecf6bb52691c489cd8508e44533efb24",
+    "size":  175153161,
     "notes":  {
-                  "uk":  "Ріки не йдуть поверх озер і водосховищ, вливаються в море й одна в одну без розривів; острови можна вибрати; при виборі підсвічується й берег; мікродержави — справжні цятки; майже без шестикутників",
-                  "en":  "Rivers no longer run over lakes and reservoirs and flow into the sea and each other without gaps; islands can be selected; the selection outlines the coast too; micro-states are real dots; almost no hexagons left"
+                  "uk":  "Дніпро й Сена доходять до моря; без острівців-уламків у лиманах; лід у рельєфі з природною межею замість шестикутників; прибрано «озеро» на полюсі Антарктиди; країни через вузькі протоки різних кольорів",
+                  "en":  "Dnipro and Seine reach the sea; no islet fragments in estuaries; ice in relief with a natural edge instead of hexagons; the Antarctic pole artefact is gone; countries across narrow straits get different colours"
               }
 }
