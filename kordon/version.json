@@ -1,11 +1,11 @@
 {
-    "versionCode":  405,
-    "versionName":  "0.4.5",
+    "versionCode":  406,
+    "versionName":  "0.4.6",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "7a4d209367c8cd23cbd3ab96a38359a009774a50a9f9968873f83abd5de7be89",
-    "size":  170450524,
+    "sha256":  "912096648c00a06b8c46ee4220541cf9c32ef23c85ee2756cd73d1ce3a1a9563",
+    "size":  174507401,
     "notes":  {
-                  "uk":  "Справжні кордони країн і областей, кордони по річках",
-                  "en":  "Real borders of countries and regions, borders along rivers"
+                  "uk":  "Векторна мапа: чіткі кордони, береги й ріки на будь-якому наближенні; ріки точно по кордонах; країни без синіх кольорів; спокійніше море; мікродержави видно",
+                  "en":  "Vector map: crisp borders, coasts and rivers at any zoom; rivers exactly on borders; no blue country colours; calmer sea; micro-states visible"
               }
 }
