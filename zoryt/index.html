@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>ZORYT: Anime Training Simulator</title>
+<meta name="description" content="ZORYT: Anime Training Simulator is an anime training adventure for Roblox, now in development: 8 worlds, combo boss fights, 50+ pets, the Endless Tower and houses of the Order.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ZORYT: Anime Training Simulator">
+<meta property="og:description" content="ZORYT: Anime Training Simulator is an anime training adventure for Roblox, now in development: 8 worlds, combo boss fights, 50+ pets, the Endless Tower and houses of the Order.">
+<meta property="og:url" content="https://pegasohlib.github.io/zoryt/">
+<meta property="og:image" content="https://pegasohlib.github.io/zoryt/icon-512.png">
+<link rel="icon" href="icon-256.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/zoryt/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/zoryt/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/zoryt/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/zoryt/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/zoryt/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/zoryt/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/zoryt/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/zoryt/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/zoryt/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/zoryt/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/zoryt/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/zoryt/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/zoryt/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/zoryt/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
+<style>
+:root{--g1:#FF7EB6;--g2:#A77BFF;--on-accent:#1E0F2E;--accent:#B02A6B;--accent2:#A77BFF;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#2C2148;--navy2:#120E20;--panel-line:transparent;--panel-ic:#FFC94D}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="home" href="index.html" data-keep-lang><img src="icon-256.png" alt="" width="32" height="32"><span id="appname">ZORYT</span></a>
+  
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">In development · coming to Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Your village burned down in a single night. Train with Sensei Hanzo, grow stronger with every minute, beat bosses in combo battles and free world after world from the darkness.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-en"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>What's in the game</span></a>
+    </div>
+    <p class="note">Roblox game for PC and phones · 11 languages</p>
+  </header>
+
+  <section class="show" aria-label="A first look">
+    <div class="showtext"><h2 class="display">A first look</h2><p>Early shots from the sea arc, taken straight from the game in development.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Training ground" width="960" height="540" loading="lazy"><figcaption>Training ground</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Harbor Leviathan" width="960" height="540" loading="lazy"><figcaption>Harbor Leviathan</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Storm Lighthouse" width="960" height="540" loading="lazy"><figcaption>Storm Lighthouse</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">Already in the game</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 ways to train</h3><p>Every training ground has its own mini-game: Classic, Bubbles, Timing, Memory, Fireflies, Pearls, Salvage and Taiko drums. Auto-training helps too.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Bosses with combos</h3><p>Every world has a great boss and a mini-boss guarding the gate. Dodge, strike, then land the combo with taps, swipes and rhythm right on time.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 worlds, 2 arcs</h3><p>From Sakura Village, Volcanic Wasteland, Astral Peaks and Mistwood to the sea arc: Shio Harbor, Coral Reef, Ship Graveyard and Storm Lighthouse.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Rebirth and the PATH</h3><p>Spend your Power on swords and auras, then rebirth stronger: it opens the next world and new branches of the PATH skill tree.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ pets</h3><p>One egg for every world: hatch otters, seagulls, crabs, little dragons, mantas, whales and more, and take your best team along.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Swords, auras, potions</h3><p>Over 25 swords and 25 auras that glow around you, plus Strength, Luck and Healing potions.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Tower, houses, PvP</h3><p>Climb the Endless Tower alone or with a team of up to 4, join a house of the Order of Sakura and test yourself in PvP arenas.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Events and invasions</h3><p>Every 3 days a 24-hour event: Double Training, Lucky Hatch, Double Coins or Shadow Night. Shadow bosses invade the worlds, and every world has events of its own.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-en">
+    <h2 class="eyebrow" id="m0-en">Between battles</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Fishing and diving</h3><p>Over 35 kinds of fish, sunken chests on the seabed and a ghost ship drifting through the fog.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Belt exams</h3><p>Seven belts from white to black: pass Sensei Hanzo's exams one by one.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>The Codex</h3><p>Monsters, worlds, pets, gear and secrets like the paper cranes: everything you find goes into the Codex, with rewards for full collections.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titles and emotes</h3><p>Earn titles for your feats, like Black Belt, and greet other players with emotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-en">
+    <h2 class="eyebrow" id="x-en">Also</h2>
+    <div class="chips"><span>11 languages in the game</span><span>PC and phones</span><span>Movable touch buttons</span><span>Auto-training</span><span>Low-effects mode for older phones</span><span>Music for worlds and bosses</span><span>Online Pass</span><span>Rewards and quests</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Still in development</h2><p>ZORYT is not on Roblox yet: the first two arcs are being polished for launch. Next comes arc 3: Mirage Oasis, Wind Canyons, Buried Archive and Eye of the Storm. The big plan is 60 worlds in three Books: Starblade, Star Hunters and Dawn. No dates yet.</p>
+    </div>
+  </section>
+
+  <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">У розробці · скоро в Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Твоє село згоріло за одну ніч. Тренуйся із сенсеєм Ханзо, ставай сильнішим щохвилини, перемагай босів у комбо-боях і звільняй від темряви світ за світом.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-uk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Що є в грі</span></a>
+    </div>
+    <p class="note">Гра в Roblox для ПК і телефонів · 11 мов</p>
+  </header>
+
+  <section class="show" aria-label="Перший погляд">
+    <div class="showtext"><h2 class="display">Перший погляд</h2><p>Ранні кадри з морської арки, зняті просто в грі, що ще розробляється.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Тренувальний майданчик" width="960" height="540" loading="lazy"><figcaption>Тренувальний майданчик</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Левіафан гавані" width="960" height="540" loading="lazy"><figcaption>Левіафан гавані</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Маяк Бурі" width="960" height="540" loading="lazy"><figcaption>Маяк Бурі</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що вже є в грі</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 видів тренування</h3><p>На кожному майданчику своя міні-гра: Класика, Бульбашки, Момент, Пам'ять, Світлячки, Перли, Підйом уламків і тайко-барабани. Допомагає й автотренування.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Боси з комбо</h3><p>У кожному світі є великий бос і міні-бос, що стереже браму. Ухиляйся, бий, а тоді влучно виконай комбо: натискання, свайпи й ритм — точно в мить.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 світів, 2 арки</h3><p>Від Села Сакура, Вулканічної пустки, Астральних піків і Туманного лісу до морської арки: Гавань Сіо, Кораловий риф, Кладовище кораблів і Маяк Бурі.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Переродження і ШЛЯХ</h3><p>Витрачай Силу на мечі й аури, а тоді переродися ще сильнішим: так відкриваються наступний світ і нові гілки дерева навичок ШЛЯХ.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ улюбленців</h3><p>Своє яйце в кожному світі: вилуплюй видр, чайок, крабів, дракончиків, мант, китів та інших і бери з собою найкращу команду.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Мечі, аури, зілля</h3><p>Понад 25 мечів і 25 аур, що сяють навколо тебе, а ще зілля сили, удачі й лікування.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Вежа, доми, PvP</h3><p>Підкорюй Нескінченну вежу самотужки або командою до 4 гравців, вступай до дому ордену Сакури й випробовуй себе на PvP-аренах.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Події й вторгнення</h3><p>Кожні 3 дні — подія на добу: Подвійне тренування, Щасливе вилуплення, Подвійні монети або Ніч тіней. Тіньові боси вторгаються у світи, а в кожного світу є й власні події.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-uk">
+    <h2 class="eyebrow" id="m0-uk">Між боями</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Рибалка й пірнання</h3><p>Понад 35 видів риб, затонулі скрині на дні й корабель-привид, що дрейфує в тумані.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Іспити на пояс</h3><p>Сім поясів від білого до чорного: складай іспити сенсея Ханзо один за одним.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Енциклопедія</h3><p>Монстри, світи, улюбленці, спорядження й таємниці на кшталт паперових журавликів: усе знайдене потрапляє до Енциклопедії, а за повні колекції є нагороди.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Титули й емоції</h3><p>Заробляй титули за досягнення, як-от Чорний пояс, і вітай інших гравців емоціями.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-uk">
+    <h2 class="eyebrow" id="x-uk">А ще</h2>
+    <div class="chips"><span>11 мов у грі</span><span>ПК і телефони</span><span>Сенсорні кнопки можна переставити</span><span>Автотренування</span><span>Режим легких ефектів для старих телефонів</span><span>Музика світів і босів</span><span>Онлайн-пропуск</span><span>Нагороди й завдання</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Гра ще в розробці</h2><p>ZORYT поки немає в Roblox: перші дві арки зараз доводяться до запуску. Далі — арка 3: Оаза Міраж, Каньйони вітру, Похований архів і Око бурі. Великий задум — 60 світів у трьох Книгах: Зоряний клинок, Мисливці на зорі й Світанок. Дат поки немає.</p>
+    </div>
+  </section>
+
+  <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">En desarrollo · pronto en Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Tu aldea ardió en una sola noche. Entrena con el Sensei Hanzo, hazte más fuerte cada minuto, vence a los jefes en combates de combos y libera de la oscuridad un mundo tras otro.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-es"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Qué hay en el juego</span></a>
+    </div>
+    <p class="note">Juego de Roblox para PC y móviles · 11 idiomas</p>
+  </header>
+
+  <section class="show" aria-label="Un primer vistazo">
+    <div class="showtext"><h2 class="display">Un primer vistazo</h2><p>Primeras imágenes del arco marino, sacadas directamente del juego en desarrollo.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Zona de entrenamiento" width="960" height="540" loading="lazy"><figcaption>Zona de entrenamiento</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Leviatán del Puerto" width="960" height="540" loading="lazy"><figcaption>Leviatán del Puerto</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Faro de la Tormenta" width="960" height="540" loading="lazy"><figcaption>Faro de la Tormenta</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Ya en el juego</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 formas de entrenar</h3><p>Cada zona de entrenamiento tiene su minijuego: Clásico, Burbujas, Precisión, Memoria, Luciérnagas, Perlas, Rescate y tambores taiko. El entrenamiento automático también ayuda.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Jefes con combos</h3><p>Cada mundo tiene un gran jefe y un minijefe que guarda la puerta. Esquiva, golpea y remata el combo con toques, deslizamientos y ritmo justo a tiempo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 mundos, 2 arcos</h3><p>De la Aldea Sakura, el Páramo Volcánico, los Picos Astrales y el Bosque Brumoso al arco marino: Puerto Shio, Arrecife de Coral, Cementerio de Barcos y Faro de la Tormenta.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Renacer y la SENDA</h3><p>Gasta tu Poder en espadas y auras y luego renace más fuerte: así se abren el siguiente mundo y nuevas ramas del árbol de habilidades SENDA.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Más de 50 mascotas</h3><p>Un huevo en cada mundo: haz nacer nutrias, gaviotas, cangrejos, dragoncitos, mantas, ballenas y más, y llévate a tu mejor equipo.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Espadas, auras, pociones</h3><p>Más de 25 espadas y 25 auras que brillan a tu alrededor, además de pociones de Fuerza, Suerte y Curación.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Torre, Casas, PvP</h3><p>Sube la Torre Infinita en solitario o en equipo de hasta 4, únete a una Casa de la Orden de Sakura y ponte a prueba en las arenas PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Eventos e invasiones</h3><p>Cada 3 días, un evento de 24 horas: Entrenamiento Doble, Eclosión Afortunada, Monedas Dobles o Noche de Sombras. Los jefes de sombra invaden los mundos, y cada mundo tiene sus propios eventos.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-es">
+    <h2 class="eyebrow" id="m0-es">Entre combates</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Pesca y buceo</h3><p>Más de 35 tipos de peces, cofres hundidos en el fondo del mar y un barco fantasma que vaga entre la niebla.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Exámenes de cinturón</h3><p>Siete cinturones del blanco al negro: supera uno a uno los exámenes del Sensei Hanzo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>El Códice</h3><p>Monstruos, mundos, mascotas, equipo y secretos como las grullas de papel: todo lo que encuentras va al Códice, con premios por completar colecciones.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Títulos y gestos</h3><p>Gana títulos por tus hazañas, como Cinturón negro, y saluda a otros jugadores con gestos.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-es">
+    <h2 class="eyebrow" id="x-es">Además</h2>
+    <div class="chips"><span>11 idiomas en el juego</span><span>PC y móviles</span><span>Botones táctiles movibles</span><span>Entrenamiento automático</span><span>Modo de efectos ligeros para móviles antiguos</span><span>Música para mundos y jefes</span><span>Pase en Línea</span><span>Recompensas y misiones</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Aún en desarrollo</h2><p>ZORYT todavía no está en Roblox: los dos primeros arcos se están puliendo para el lanzamiento. Después llega el arco 3: Oasis Espejismo, Cañones del Viento, Archivo Sepultado y Ojo de la Tormenta. El gran plan son 60 mundos en tres Libros: Espada Estelar, Cazadores de Estrellas y Amanecer. Aún no hay fechas.</p>
+    </div>
+  </section>
+
+  <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Em desenvolvimento · em breve no Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">A sua vila ardeu numa única noite. Treine com o Sensei Hanzo, fique mais forte a cada minuto, vença chefes em lutas de combos e liberte da escuridão um mundo após o outro.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-pt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>O que há no jogo</span></a>
+    </div>
+    <p class="note">Jogo do Roblox para PC e celular · 11 idiomas</p>
+  </header>
+
+  <section class="show" aria-label="Uma primeira olhada">
+    <div class="showtext"><h2 class="display">Uma primeira olhada</h2><p>Imagens iniciais do arco marítimo, tiradas diretamente do jogo em desenvolvimento.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Área de treino" width="960" height="540" loading="lazy"><figcaption>Área de treino</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Leviatã do Porto" width="960" height="540" loading="lazy"><figcaption>Leviatã do Porto</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Farol da Tempestade" width="960" height="540" loading="lazy"><figcaption>Farol da Tempestade</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">Já no jogo</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 formas de treinar</h3><p>Cada área de treino tem o seu minijogo: Clássico, Bolhas, Tempo, Memória, Pirilampos, Pérolas, Resgate e tambores taiko. O treino automático também ajuda.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Chefes com combos</h3><p>Cada mundo tem um grande chefe e um minichefe que guarda o portão. Esquive, ataque e feche o combo com toques, deslizes e ritmo na hora certa.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 mundos, 2 arcos</h3><p>Da Vila Sakura, do Ermo Vulcânico, dos Picos Astrais e do Bosque da Névoa até ao arco marítimo: Porto Shio, Recife de Coral, Cemitério de Navios e Farol da Tempestade.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Renascer e o CAMINHO</h3><p>Gaste o seu Poder em espadas e auras e depois renasça mais forte: assim se abrem o próximo mundo e novos ramos da árvore de habilidades CAMINHO.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Mais de 50 pets</h3><p>Um ovo em cada mundo: choque lontras, gaivotas, caranguejos, dragõezinhos, raias-manta, baleias e muito mais, e leve a sua melhor equipa.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Espadas, auras, poções</h3><p>Mais de 25 espadas e 25 auras que brilham à sua volta, além de poções de Força, Sorte e Cura.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Torre, Casas, PvP</h3><p>Suba a Torre Infinita sozinho ou em equipa de até 4, entre numa Casa da Ordem de Sakura e teste-se nas arenas PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Eventos e invasões</h3><p>A cada 3 dias, um evento de 24 horas: Treino em Dobro, Chocagem da Sorte, Moedas em Dobro ou Noite das Sombras. Chefes das sombras invadem os mundos, e cada mundo tem os seus próprios eventos.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-pt">
+    <h2 class="eyebrow" id="m0-pt">Entre as lutas</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Pesca e mergulho</h3><p>Mais de 35 espécies de peixes, baús afundados no fundo do mar e um navio fantasma à deriva no nevoeiro.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Exames de faixa</h3><p>Sete faixas, da branca à preta: passe um a um nos exames do Sensei Hanzo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>O Códice</h3><p>Monstros, mundos, pets, equipamento e segredos como os grous de papel: tudo o que encontra vai para o Códice, com prémios por coleções completas.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Títulos e emotes</h3><p>Ganhe títulos pelos seus feitos, como Faixa preta, e cumprimente outros jogadores com emotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-pt">
+    <h2 class="eyebrow" id="x-pt">E ainda</h2>
+    <div class="chips"><span>11 idiomas no jogo</span><span>PC e celular</span><span>Botões de toque móveis</span><span>Treino automático</span><span>Modo de efeitos leves para celulares antigos</span><span>Música para mundos e chefes</span><span>Passe Online</span><span>Recompensas e missões</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Ainda em desenvolvimento</h2><p>ZORYT ainda não está no Roblox: os dois primeiros arcos estão a ser polidos para o lançamento. A seguir vem o arco 3: Oásis Miragem, Desfiladeiros do Vento, Arquivo Soterrado e Olho da Tempestade. O grande plano são 60 mundos em três Livros: Lâmina Estelar, Caçadores de Estrelas e Alvorada. Ainda não há datas.</p>
+    </div>
+  </section>
+
+  <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">En développement · bientôt sur Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Ton village a brûlé en une seule nuit. Entraîne-toi avec le Sensei Hanzo, deviens plus fort à chaque minute, bats les boss en combats à combos et libère un monde après l'autre des ténèbres.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-fr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Ce qu'il y a dans le jeu</span></a>
+    </div>
+    <p class="note">Jeu Roblox pour PC et téléphones · 11 langues</p>
+  </header>
+
+  <section class="show" aria-label="Un premier aperçu">
+    <div class="showtext"><h2 class="display">Un premier aperçu</h2><p>Premières images de l'arc marin, prises directement dans le jeu en développement.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Terrain d'entraînement" width="960" height="540" loading="lazy"><figcaption>Terrain d'entraînement</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Léviathan du port" width="960" height="540" loading="lazy"><figcaption>Léviathan du port</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Phare des Tempêtes" width="960" height="540" loading="lazy"><figcaption>Phare des Tempêtes</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Déjà dans le jeu</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 façons de s'entraîner</h3><p>Chaque terrain a son mini-jeu : Classique, Bulles, Timing, Mémoire, Lucioles, Perles, Renflouage et tambours taiko. L'entraînement automatique aide aussi.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Des boss à combos</h3><p>Chaque monde a un grand boss et un mini-boss qui garde la porte. Esquive, frappe, puis réussis le combo avec des touches, des glissés et du rythme, pile au bon moment.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 mondes, 2 arcs</h3><p>Du Village Sakura, du Désert Volcanique, des Pics Astraux et du Bois des Brumes jusqu'à l'arc marin : Port de Shio, Récif de Corail, Cimetière des Navires et Phare des Tempêtes.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Renaissance et la VOIE</h3><p>Dépense ta Puissance en épées et en auras, puis renais plus fort : le monde suivant s'ouvre, avec de nouvelles branches de l'arbre de compétences VOIE.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Plus de 50 familiers</h3><p>Un œuf dans chaque monde : fais éclore loutres, mouettes, crabes, petits dragons, raies manta, baleines et bien d'autres, et emmène ta meilleure équipe.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Épées, auras, potions</h3><p>Plus de 25 épées et 25 auras qui brillent autour de toi, plus des potions de Force, de Chance et de Soin.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Tour, Maisons, PvP</h3><p>Gravis la Tour Infinie en solo ou en équipe jusqu'à 4, rejoins une Maison de l'Ordre de Sakura et mesure-toi aux autres dans les arènes PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Événements et invasions</h3><p>Tous les 3 jours, un événement de 24 heures : Entraînement double, Éclosion chanceuse, Pièces doubles ou Nuit des ombres. Des boss des ombres envahissent les mondes, et chaque monde a ses propres événements.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-fr">
+    <h2 class="eyebrow" id="m0-fr">Entre deux combats</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Pêche et plongée</h3><p>Plus de 35 espèces de poissons, des coffres engloutis au fond de la mer et un navire fantôme qui dérive dans la brume.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Examens de ceinture</h3><p>Sept ceintures, de la blanche à la noire : réussis un à un les examens du Sensei Hanzo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Le Codex</h3><p>Monstres, mondes, familiers, équipement et secrets comme les grues en papier : tout ce que tu trouves rejoint le Codex, avec des récompenses pour chaque collection complète.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titres et émotes</h3><p>Gagne des titres pour tes exploits, comme Ceinture noire, et salue les autres joueurs avec des émotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-fr">
+    <h2 class="eyebrow" id="x-fr">Et aussi</h2>
+    <div class="chips"><span>11 langues dans le jeu</span><span>PC et téléphones</span><span>Boutons tactiles déplaçables</span><span>Entraînement automatique</span><span>Mode effets légers pour anciens téléphones</span><span>Musique pour les mondes et les boss</span><span>Passe en ligne</span><span>Récompenses et quêtes</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Toujours en développement</h2><p>ZORYT n'est pas encore sur Roblox : les deux premiers arcs sont peaufinés pour le lancement. Ensuite vient l'arc 3 : Oasis Mirage, Canyons du Vent, Archives Ensevelies et Œil de la Tempête. Le grand projet, ce sont 60 mondes en trois Livres : Lame Stellaire, Chasseurs d'Étoiles et Aube. Pas encore de dates.</p>
+    </div>
+  </section>
+
+  <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">In Entwicklung · bald auf Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Dein Dorf ist in einer einzigen Nacht niedergebrannt. Trainiere mit Sensei Hanzo, werde mit jeder Minute stärker, besiege Bosse in Kombo-Kämpfen und befreie Welt um Welt von der Dunkelheit.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-de"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Was im Spiel steckt</span></a>
+    </div>
+    <p class="note">Roblox-Spiel für PC und Handy · 11 Sprachen</p>
+  </header>
+
+  <section class="show" aria-label="Ein erster Blick">
+    <div class="showtext"><h2 class="display">Ein erster Blick</h2><p>Frühe Bilder aus dem Meeres-Arc, direkt im Spiel aufgenommen, das noch entsteht.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Trainingsplatz" width="960" height="540" loading="lazy"><figcaption>Trainingsplatz</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Hafen-Leviathan" width="960" height="540" loading="lazy"><figcaption>Hafen-Leviathan</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Sturmleuchtturm" width="960" height="540" loading="lazy"><figcaption>Sturmleuchtturm</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Schon im Spiel</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 Arten zu trainieren</h3><p>Jeder Trainingsplatz hat sein eigenes Minispiel: Klassisch, Blasen, Timing, Gedächtnis, Glühwürmchen, Perlen, Bergung und Taiko-Trommeln. Auto-Training hilft auch.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Bosse mit Kombos</h3><p>Jede Welt hat einen großen Boss und einen Mini-Boss, der das Tor bewacht. Ausweichen, zuschlagen, dann die Kombo landen: Tippen, Wischen und Rhythmus genau im richtigen Moment.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 Welten, 2 Arcs</h3><p>Vom Sakura-Dorf, Vulkanödland, den Astralgipfeln und dem Nebelwald bis zum Meeres-Arc: Hafen Shio, Korallenriff, Schiffsfriedhof und Sturmleuchtturm.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Wiedergeburt und PFAD</h3><p>Gib deine Kraft für Schwerter und Auren aus und werde dann stärker wiedergeboren: Das öffnet die nächste Welt und neue Zweige des Fähigkeitsbaums PFAD.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ Haustiere</h3><p>Ein Ei in jeder Welt: Brüte Otter, Möwen, Krabben, kleine Drachen, Mantas, Wale und mehr aus und nimm dein bestes Team mit.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Schwerter, Auren, Tränke</h3><p>Über 25 Schwerter und 25 Auren, die um dich herum leuchten, dazu Stärke-, Glücks- und Heiltränke.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Turm, Häuser, PvP</h3><p>Erklimme den Endlosen Turm allein oder im Team mit bis zu 4, tritt einem Haus des Ordens von Sakura bei und miss dich in PvP-Arenen.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Events und Invasionen</h3><p>Alle 3 Tage ein 24-Stunden-Event: Doppeltes Training, Glücksbrüten, Doppelte Münzen oder Schattennacht. Schattenbosse fallen in die Welten ein, und jede Welt hat ihre eigenen Events.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-de">
+    <h2 class="eyebrow" id="m0-de">Zwischen den Kämpfen</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Angeln und Tauchen</h3><p>Über 35 Fischarten, versunkene Truhen am Meeresgrund und ein Geisterschiff, das durch den Nebel treibt.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Gürtelprüfungen</h3><p>Sieben Gürtel von Weiß bis Schwarz: Bestehe die Prüfungen von Sensei Hanzo eine nach der anderen.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Der Kodex</h3><p>Monster, Welten, Haustiere, Ausrüstung und Geheimnisse wie die Papierkraniche: Alles, was du findest, landet im Kodex, mit Belohnungen für volle Sammlungen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titel und Emotes</h3><p>Verdiene Titel für deine Taten, etwa Schwarzer Gürtel, und begrüße andere Spieler mit Emotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-de">
+    <h2 class="eyebrow" id="x-de">Außerdem</h2>
+    <div class="chips"><span>11 Sprachen im Spiel</span><span>PC und Handy</span><span>Verschiebbare Touch-Tasten</span><span>Auto-Training</span><span>Modus mit leichten Effekten für ältere Handys</span><span>Musik für Welten und Bosse</span><span>Online-Pass</span><span>Belohnungen und Quests</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Noch in Entwicklung</h2><p>ZORYT ist noch nicht auf Roblox: Die ersten zwei Arcs werden gerade für den Start poliert. Danach kommt Arc 3: Trugbild-Oase, Windschluchten, Verschüttetes Archiv und Auge des Sturms. Der große Plan sind 60 Welten in drei Büchern: Sternenklinge, Sternenjäger und Morgendämmerung. Termine gibt es noch keine.</p>
+    </div>
+  </section>
+
+  <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">In sviluppo · presto su Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Il tuo villaggio è bruciato in una sola notte. Allenati con il Sensei Hanzo, diventa più forte a ogni minuto, sconfiggi i boss in battaglie a combo e libera dall'oscurità un mondo dopo l'altro.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Cosa c'è nel gioco</span></a>
+    </div>
+    <p class="note">Gioco Roblox per PC e telefono · 11 lingue</p>
+  </header>
+
+  <section class="show" aria-label="Un primo sguardo">
+    <div class="showtext"><h2 class="display">Un primo sguardo</h2><p>Prime immagini dell'arco marino, catturate direttamente nel gioco in sviluppo.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Campo di allenamento" width="960" height="540" loading="lazy"><figcaption>Campo di allenamento</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Leviatano del Porto" width="960" height="540" loading="lazy"><figcaption>Leviatano del Porto</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Faro della Tempesta" width="960" height="540" loading="lazy"><figcaption>Faro della Tempesta</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Già nel gioco</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 modi di allenarsi</h3><p>Ogni campo di allenamento ha il suo minigioco: Classico, Bolle, Tempismo, Memoria, Lucciole, Perle, Recupero e tamburi taiko. Aiuta anche l'allenamento automatico.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Boss con combo</h3><p>Ogni mondo ha un grande boss e un mini-boss a guardia del cancello. Schiva, colpisci, poi chiudi la combo con tocchi, swipe e ritmo al momento giusto.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 mondi, 2 archi</h3><p>Dal Villaggio Sakura, la Landa Vulcanica, i Picchi Astrali e il Bosco delle Nebbie fino all'arco marino: Porto di Shio, Barriera Corallina, Cimitero delle Navi e Faro della Tempesta.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Rinascita e SENTIERO</h3><p>Spendi il tuo Potere in spade e aure, poi rinasci più forte: si aprono il mondo successivo e nuovi rami dell'albero delle abilità SENTIERO.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Oltre 50 animaletti</h3><p>Un uovo in ogni mondo: fai schiudere lontre, gabbiani, granchi, draghetti, mante, balene e altro ancora, e porta con te la squadra migliore.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Spade, aure, pozioni</h3><p>Oltre 25 spade e 25 aure che brillano intorno a te, più pozioni di Forza, Fortuna e Cura.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Torre, Casate, PvP</h3><p>Scala la Torre Infinita da solo o in squadra fino a 4, entra in una Casata dell'Ordine di Sakura e mettiti alla prova nelle arene PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Eventi e invasioni</h3><p>Ogni 3 giorni un evento di 24 ore: Allenamento Doppio, Schiusa Fortunata, Monete Doppie o Notte delle Ombre. I boss d'ombra invadono i mondi, e ogni mondo ha anche eventi tutti suoi.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-it">
+    <h2 class="eyebrow" id="m0-it">Tra una battaglia e l'altra</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Pesca e immersioni</h3><p>Oltre 35 specie di pesci, forzieri sommersi sul fondale e una nave fantasma che vaga nella nebbia.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Esami di cintura</h3><p>Sette cinture dalla bianca alla nera: supera uno dopo l'altro gli esami del Sensei Hanzo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Il Codex</h3><p>Mostri, mondi, animaletti, equipaggiamento e segreti come le gru di carta: tutto ciò che trovi finisce nel Codex, con premi per le collezioni complete.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titoli ed emote</h3><p>Ottieni titoli per le tue imprese, come Cintura nera, e saluta gli altri giocatori con le emote.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-it">
+    <h2 class="eyebrow" id="x-it">E inoltre</h2>
+    <div class="chips"><span>11 lingue nel gioco</span><span>PC e telefono</span><span>Pulsanti touch spostabili</span><span>Allenamento automatico</span><span>Modalità effetti leggeri per telefoni datati</span><span>Musica per mondi e boss</span><span>Pass Online</span><span>Ricompense e missioni</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Ancora in sviluppo</h2><p>ZORYT non è ancora su Roblox: i primi due archi vengono rifiniti per il lancio. Poi arriva l'arco 3: Oasi del Miraggio, Canyon del Vento, Archivio Sepolto e Occhio della Tempesta. Il grande piano sono 60 mondi in tre Libri: Lama Stellare, Cacciatori di Stelle e Alba. Ancora nessuna data.</p>
+    </div>
+  </section>
+
+  <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Under utveckling · snart på Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Din by brann ner på en enda natt. Träna med Sensei Hanzo, bli starkare för varje minut, besegra bossar i kombostrider och befria värld efter värld från mörkret.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-sv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Vad som finns i spelet</span></a>
+    </div>
+    <p class="note">Roblox-spel för dator och mobil · 11 språk</p>
+  </header>
+
+  <section class="show" aria-label="En första titt">
+    <div class="showtext"><h2 class="display">En första titt</h2><p>Tidiga bilder från havsbågen, tagna direkt i spelet som fortfarande utvecklas.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Träningsplats" width="960" height="540" loading="lazy"><figcaption>Träningsplats</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Hamnleviatan" width="960" height="540" loading="lazy"><figcaption>Hamnleviatan</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Stormfyren" width="960" height="540" loading="lazy"><figcaption>Stormfyren</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Redan i spelet</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 sätt att träna</h3><p>Varje träningsplats har sitt eget minispel: Klassisk, Bubblor, Timing, Minne, Eldflugor, Pärlor, Bärgning och taikotrummor. Autoträning hjälper också till.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Bossar med kombos</h3><p>Varje värld har en stor boss och en miniboss som vaktar porten. Undvik, slå till och sätt sedan kombon med tryck, svep och rytm precis i tid.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 världar, 2 bågar</h3><p>Från Sakurabyn, Vulkanödemarken, Astraltopparna och Dimskogen till havsbågen: Shiohamnen, Korallrevet, Skeppskyrkogården och Stormfyren.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Återfödelse och VÄG</h3><p>Lägg din Kraft på svärd och auror och återföds sedan starkare: då öppnas nästa värld och nya grenar i färdighetsträdet VÄG.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ husdjur</h3><p>Ett ägg i varje värld: kläck uttrar, måsar, krabbor, små drakar, mantor, valar och mer, och ta med ditt bästa lag.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Svärd, auror, drycker</h3><p>Över 25 svärd och 25 auror som lyser runt dig, plus styrke-, tur- och läkedrycker.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Torn, hus, PvP</h3><p>Bestig Ändlösa tornet ensam eller i lag med upp till 4, gå med i ett hus i Sakuraorden och pröva dig själv på PvP-arenor.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Event och invasioner</h3><p>Var tredje dag ett event på 24 timmar: Dubbel träning, Turkläckning, Dubbla mynt eller Skuggnatt. Skuggbossar invaderar världarna, och varje värld har egna event.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-sv">
+    <h2 class="eyebrow" id="m0-sv">Mellan striderna</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Fiske och dykning</h3><p>Över 35 fiskarter, sjunkna kistor på havsbotten och ett spökskepp som driver genom dimman.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Bältesprov</h3><p>Sju bälten från vitt till svart: klara Sensei Hanzos prov ett efter ett.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Kodexen</h3><p>Monster, världar, husdjur, utrustning och hemligheter som papperstranorna: allt du hittar hamnar i Kodexen, med belöningar för fulla samlingar.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titlar och emotes</h3><p>Förtjäna titlar för dina bedrifter, som Svart bälte, och hälsa på andra spelare med emotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-sv">
+    <h2 class="eyebrow" id="x-sv">Dessutom</h2>
+    <div class="chips"><span>11 språk i spelet</span><span>Dator och mobil</span><span>Flyttbara pekknappar</span><span>Autoträning</span><span>Läge med lätta effekter för äldre mobiler</span><span>Musik för världar och bossar</span><span>Onlinepass</span><span>Belöningar och uppdrag</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Fortfarande under utveckling</h2><p>ZORYT finns inte på Roblox än: de två första bågarna putsas inför lanseringen. Sedan kommer båge 3: Hägringsoasen, Vindkanjonerna, Det begravda arkivet och Stormens öga. Den stora planen är 60 världar i tre böcker: Stjärnklingan, Stjärnjägarna och Gryning. Inga datum än.</p>
+    </div>
+  </section>
+
+  <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Sedang dikembangkan · segera di Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Desamu terbakar dalam satu malam. Berlatihlah bersama Sensei Hanzo, jadilah lebih kuat setiap menit, kalahkan bos dalam pertarungan kombo, dan bebaskan dunia demi dunia dari kegelapan.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-id"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Isi gimnya</span></a>
+    </div>
+    <p class="note">Gim Roblox untuk PC dan ponsel · 11 bahasa</p>
+  </header>
+
+  <section class="show" aria-label="Sekilas pandang">
+    <div class="showtext"><h2 class="display">Sekilas pandang</h2><p>Cuplikan awal dari arc laut, diambil langsung dari gim yang masih dikembangkan.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Arena latihan" width="960" height="540" loading="lazy"><figcaption>Arena latihan</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Leviathan Pelabuhan" width="960" height="540" loading="lazy"><figcaption>Leviathan Pelabuhan</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Mercusuar Badai" width="960" height="540" loading="lazy"><figcaption>Mercusuar Badai</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Sudah ada di gim</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 cara berlatih</h3><p>Setiap arena latihan punya mini-gim sendiri: Klasik, Gelembung, Waktu, Ingatan, Kunang-kunang, Mutiara, Penyelamatan, dan gendang taiko. Latihan otomatis juga membantu.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Bos dengan kombo</h3><p>Setiap dunia punya bos besar dan mini-bos yang menjaga gerbang. Menghindar, menyerang, lalu tuntaskan kombo dengan ketukan, usapan, dan ritme tepat waktu.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 dunia, 2 arc</h3><p>Dari Desa Sakura, Gurun Vulkanik, Puncak Astral, dan Hutan Kabut sampai arc laut: Pelabuhan Shio, Terumbu Karang, Kuburan Kapal, dan Mercusuar Badai.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Rebirth dan JALAN</h3><p>Habiskan Kekuatanmu untuk pedang dan aura, lalu rebirth jadi lebih kuat: dunia berikutnya terbuka, juga cabang baru di pohon keahlian JALAN.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ pet</h3><p>Satu telur di setiap dunia: tetaskan berang-berang, camar, kepiting, naga kecil, pari manta, paus, dan lainnya, lalu bawa tim terbaikmu.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Pedang, aura, ramuan</h3><p>Lebih dari 25 pedang dan 25 aura yang bersinar di sekitarmu, plus ramuan Kekuatan, Keberuntungan, dan Penyembuh.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Menara, wangsa, PvP</h3><p>Daki Menara Tanpa Akhir sendirian atau bersama tim hingga 4 orang, gabung ke wangsa Ordo Sakura, dan uji dirimu di arena PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Event dan invasi</h3><p>Setiap 3 hari ada event 24 jam: Latihan Ganda, Tetas Hoki, Koin Ganda, atau Malam Bayangan. Bos bayangan menyerbu dunia, dan setiap dunia juga punya event sendiri.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-id">
+    <h2 class="eyebrow" id="m0-id">Di sela pertarungan</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Memancing dan menyelam</h3><p>Lebih dari 35 jenis ikan, peti karam di dasar laut, dan kapal hantu yang hanyut di tengah kabut.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Ujian sabuk</h3><p>Tujuh sabuk dari putih sampai hitam: lulus ujian Sensei Hanzo satu per satu.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Kodeks</h3><p>Monster, dunia, pet, perlengkapan, dan rahasia seperti bangau kertas: semua yang kamu temukan masuk ke Kodeks, dengan hadiah untuk koleksi yang lengkap.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Gelar dan emote</h3><p>Raih gelar untuk prestasimu, seperti Sabuk Hitam, dan sapa pemain lain dengan emote.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-id">
+    <h2 class="eyebrow" id="x-id">Selain itu</h2>
+    <div class="chips"><span>11 bahasa di gim</span><span>PC dan ponsel</span><span>Tombol sentuh bisa dipindah</span><span>Latihan otomatis</span><span>Mode efek ringan untuk ponsel lama</span><span>Musik untuk dunia dan bos</span><span>Pass Online</span><span>Hadiah dan misi</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Masih dikembangkan</h2><p>ZORYT belum ada di Roblox: dua arc pertama sedang dipoles untuk peluncuran. Berikutnya arc 3: Oasis Fatamorgana, Ngarai Angin, Arsip Terkubur, dan Mata Badai. Rencana besarnya 60 dunia dalam tiga Buku: Pedang Bintang, Pemburu Bintang, dan Fajar. Belum ada tanggal.</p>
+    </div>
+  </section>
+
+  <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">開発中・Robloxに近日登場</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">ある夜、故郷の村が炎に包まれた。ハンゾウ先生のもとで修行し、一分ごとに強くなり、コンボバトルでボスを倒して、闇に覆われた世界をひとつずつ解き放とう。</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-ja"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>ゲームの中身</span></a>
+    </div>
+    <p class="note">PCとスマホで遊べるRobloxゲーム・11言語</p>
+  </header>
+
+  <section class="show" aria-label="ファーストルック">
+    <div class="showtext"><h2 class="display">ファーストルック</h2><p>開発中のゲームからそのまま撮った、海のアークの初期画面。</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="トレーニング場" width="960" height="540" loading="lazy"><figcaption>トレーニング場</figcaption></figure><figure><img src="img/shot-boss.webp" alt="港のリヴァイアサン" width="960" height="540" loading="lazy"><figcaption>港のリヴァイアサン</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="嵐の灯台" width="960" height="540" loading="lazy"><figcaption>嵐の灯台</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">すでにゲームにあるもの</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8つのトレーニング</h3><p>トレーニング場ごとにミニゲームが違う：クラシック、バブル、タイミング、メモリー、ホタル、真珠、サルベージ、そして和太鼓。オートトレーニングも。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>コンボで挑むボス</h3><p>どの世界にも大ボスと、門を守る中ボスがいる。攻撃をかわして斬り込み、タップ、スワイプ、リズムをタイミングよく決めてコンボを完成させよう。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8つの世界、2つのアーク</h3><p>桜の村、火山の荒野、アストラル峰、霧の森から、海のアークへ：潮の港、サンゴ礁、船の墓場、嵐の灯台。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>転生と「道」</h3><p>パワーを剣やオーラに使い、さらに強くなって転生。次の世界と、スキルツリー「道」の新しい枝が開く。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50種以上のペット</h3><p>世界ごとにひとつの卵から、カワウソ、カモメ、カニ、小さなドラゴン、マンタ、クジラなどをふ化させて、最強のチームを連れて行こう。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>剣、オーラ、ポーション</h3><p>25本以上の剣と、きみのまわりで輝く25のオーラ。力・幸運・回復のポーションも。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>塔、一門、PvP</h3><p>無限の塔にひとりで、または最大4人のチームで挑み、桜の流派の一門に入って、PvPアリーナで腕試し。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>イベントと侵攻</h3><p>3日ごとに24時間のイベント：トレーニング2倍、ラッキーふ化、コイン2倍、シャドウナイト。影のボスが世界に侵攻し、世界ごとの独自イベントもある。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ja">
+    <h2 class="eyebrow" id="m0-ja">戦いの合間に</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>釣りとダイビング</h3><p>35種以上の魚、海底に沈んだ宝箱、霧の中をさまよう幽霊船。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>帯の試験</h3><p>白から黒まで7つの帯。ハンゾウ先生の試験をひとつずつ合格しよう。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>図鑑</h3><p>モンスター、世界、ペット、装備、折り鶴のような秘密まで、見つけたものはすべて図鑑に。コレクションを集めきると報酬も。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>称号とエモート</h3><p>「黒帯」などの称号を手に入れ、エモートでほかのプレイヤーにあいさつしよう。</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-ja">
+    <h2 class="eyebrow" id="x-ja">ほかにも</h2>
+    <div class="chips"><span>ゲーム内11言語</span><span>PCとスマホ</span><span>動かせるタッチボタン</span><span>オートトレーニング</span><span>古いスマホ向けの軽量エフェクト</span><span>世界とボスごとの音楽</span><span>オンラインパス</span><span>報酬とクエスト</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">まだ開発中</h2><p>ZORYTはまだRobloxで公開されていません。最初の2つのアークをリリースに向けて仕上げているところです。次はアーク3：蜃気楼のオアシス、風の峡谷、埋もれた書庫、嵐の目。大きな構想は、3冊の書「星の剣」「星狩り」「夜明け」にわたる60の世界。日程はまだ未定です。</p>
+    </div>
+  </section>
+
+  <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Әзірленуде · жақында Roblox-та</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Ауылың бір түнде өртеніп кетті. Сэнсэй Хандзомен жаттық, әр минут сайын күшейе түс, комбо шайқастарында босстарды жең және әлемдерді бірінен соң бірін қараңғылықтан азат ет.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-kk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Ойында не бар</span></a>
+    </div>
+    <p class="note">ДК мен телефонға арналған Roblox ойыны · 11 тіл</p>
+  </header>
+
+  <section class="show" aria-label="Алғашқы көрініс">
+    <div class="showtext"><h2 class="display">Алғашқы көрініс</h2><p>Теңіз доғасынан алғашқы кадрлар — әлі әзірленіп жатқан ойынның өзінен түсірілген.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Жаттығу алаңы" width="960" height="540" loading="lazy"><figcaption>Жаттығу алаңы</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Айлақ Левиафаны" width="960" height="540" loading="lazy"><figcaption>Айлақ Левиафаны</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Дауыл маяғы" width="960" height="540" loading="lazy"><figcaption>Дауыл маяғы</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Ойында бар</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Жаттығудың 8 түрі</h3><p>Әр алаңның өз мини-ойыны бар: Классика, Көпіршіктер, Дәл сәт, Есте сақтау, Жарқырауықтар, Інжулер, Қиранды көтеру және тайко дабылдары. Автожаттығу да көмектеседі.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Комбосы бар босстар</h3><p>Әр әлемде үлкен босс пен қақпаны күзететін мини-босс бар. Шегін, соқ, сосын түрту, сырғыту және ырғақпен комбоны дәл уақытында орында.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 әлем, 2 доға</h3><p>Сакура ауылы, Жанартау шөлі, Астрал шыңдары мен Тұманды орманнан теңіз доғасына дейін: Сио айлағы, Маржан рифі, Кемелер зираты және Дауыл маяғы.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Қайта туу және ЖОЛ</h3><p>Күшіңді семсерлер мен аураларға жұмса, сосын күштірек болып қайта ту: келесі әлем мен ЖОЛ дағдылар ағашының жаңа бұтақтары ашылады.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ үй жануары</h3><p>Әр әлемде бір жұмыртқа: құндыз, шағала, шаян, кішкентай айдаһар, манта, кит және басқаларын шығарып, ең мықты командаңды ертіп жүр.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Семсерлер, аура, сусындар</h3><p>25-тен астам семсер мен айналаңда жарқырайтын 25 аура, оған қоса күш, сәттілік және емдік сусындар.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Мұнара, үйлер, PvP</h3><p>Шексіз мұнараға жалғыз немесе 4 ойыншыға дейінгі командамен шық, Сакура орденінің үйіне кір және PvP аренасында өзіңді сына.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Оқиғалар мен шабуылдар</h3><p>Әр 3 күн сайын бір тәулікке оқиға: Қос жаттығу, Сәтті жару, Қос тиын немесе Көлеңкелер түні. Көлеңке босстары әлемдерге шабуыл жасайды, ал әр әлемнің өз оқиғалары бар.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-kk">
+    <h2 class="eyebrow" id="m0-kk">Шайқас арасында</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Балық аулау және сүңгу</h3><p>35-тен астам балық түрі, теңіз түбіндегі батып кеткен сандықтар және тұманда қалқыған елес кеме.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Белбеу емтихандары</h3><p>Ақтан қараға дейін жеті белбеу: сэнсэй Хандзоның емтихандарын бірінен соң бірін тапсыр.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Энциклопедия</h3><p>Құбыжықтар, әлемдер, үй жануарлары, жабдық және қағаз тырналар сияқты құпиялар: тапқанның бәрі Энциклопедияға түседі, толық жинақтар үшін сыйлық бар.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Атақтар мен эмоциялар</h3><p>Ерліктерің үшін Қара белбеу сияқты атақтар ал және басқа ойыншыларға эмоциялармен сәлем бер.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-kk">
+    <h2 class="eyebrow" id="x-kk">Тағы да</h2>
+    <div class="chips"><span>Ойында 11 тіл</span><span>ДК мен телефондар</span><span>Сенсорлық түймелерді жылжытуға болады</span><span>Автожаттығу</span><span>Ескі телефондарға жеңіл эффектілер режимі</span><span>Әлемдер мен босстардың музыкасы</span><span>Онлайн пас</span><span>Сыйлықтар мен тапсырмалар</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Ойын әлі әзірленуде</h2><p>ZORYT әзірге Roblox-та жоқ: алғашқы екі доға қазір шығаруға дайындалып жатыр. Одан кейін — 3-доға: Сағым оазисі, Жел шатқалдары, Көмілген мұрағат және Дауыл көзі. Үлкен жоспар — үш Кітаптағы 60 әлем: Жұлдыз жүзі, Жұлдыз аңшылары және Таң. Күні әлі белгісіз.</p>
+    </div>
+  </section>
+
+  <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">В разработке · скоро в Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Твою деревню сожгли за одну ночь. Тренируйся с сэнсэем Ханзо, становись сильнее с каждой минутой, побеждай боссов в комбо-боях и освобождай от тьмы мир за миром.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-ru"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Что есть в игре</span></a>
+    </div>
+    <p class="note">Игра в Roblox для ПК и телефонов · 11 языков</p>
+  </header>
+
+  <section class="show" aria-label="Первый взгляд">
+    <div class="showtext"><h2 class="display">Первый взгляд</h2><p>Ранние кадры из морской арки, снятые прямо в игре, которая ещё в разработке.</p></div>
+    <div class="shots"><figure><img src="img/shot-training.webp" alt="Тренировочная площадка" width="960" height="540" loading="lazy"><figcaption>Тренировочная площадка</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Левиафан гавани" width="960" height="540" loading="lazy"><figcaption>Левиафан гавани</figcaption></figure><figure><img src="img/shot-lighthouse.webp" alt="Маяк Бури" width="960" height="540" loading="lazy"><figcaption>Маяк Бури</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что уже есть в игре</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>8 видов тренировки</h3><p>На каждой площадке своя мини-игра: Классика, Пузыри, Момент, Память, Светлячки, Жемчуг, Подъём обломков и барабаны тайко. Помогает и автотренировка.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Боссы с комбо</h3><p>В каждом мире есть большой босс и мини-босс, который стережёт врата. Уклоняйся, бей, а потом проведи комбо: нажатия, свайпы и ритм — точно в момент.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>8 миров, 2 арки</h3><p>От Деревни Сакура, Вулканической пустоши, Астральных пиков и Туманного леса до морской арки: Гавань Сио, Коралловый риф, Кладбище кораблей и Маяк Бури.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Перерождение и ПУТЬ</h3><p>Трать Силу на мечи и ауры, а потом переродись ещё сильнее: так открываются следующий мир и новые ветви дерева навыков ПУТЬ.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>50+ питомцев</h3><p>Своё яйцо в каждом мире: выводи выдр, чаек, крабов, дракончиков, скатов-мант, китов и других и бери с собой лучшую команду.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Мечи, ауры, зелья</h3><p>Больше 25 мечей и 25 аур, которые сияют вокруг тебя, а ещё зелья силы, удачи и лечения.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Башня, дома, PvP</h3><p>Покоряй Бесконечную башню в одиночку или командой до 4 игроков, вступай в дом ордена Сакуры и испытывай себя на PvP-аренах.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>События и вторжения</h3><p>Каждые 3 дня — событие на сутки: Двойная тренировка, Удачное вылупление, Двойные монеты или Ночь теней. Теневые боссы вторгаются в миры, а у каждого мира есть и свои события.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ru">
+    <h2 class="eyebrow" id="m0-ru">Между боями</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Рыбалка и ныряние</h3><p>Больше 35 видов рыб, затонувшие сундуки на дне и корабль-призрак, дрейфующий в тумане.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Экзамены на пояс</h3><p>Семь поясов от белого до чёрного: сдавай экзамены сэнсэя Ханзо один за другим.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Энциклопедия</h3><p>Монстры, миры, питомцы, снаряжение и тайны вроде бумажных журавликов: всё найденное попадает в Энциклопедию, а за полные коллекции есть награды.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Титулы и эмоции</h3><p>Зарабатывай титулы за достижения, например Чёрный пояс, и приветствуй других игроков эмоциями.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-ru">
+    <h2 class="eyebrow" id="x-ru">А ещё</h2>
+    <div class="chips"><span>11 языков в игре</span><span>ПК и телефоны</span><span>Сенсорные кнопки можно переставить</span><span>Автотренировка</span><span>Режим лёгких эффектов для старых телефонов</span><span>Музыка миров и боссов</span><span>Онлайн-пропуск</span><span>Награды и задания</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">Игра ещё в разработке</h2><p>ZORYT пока нет в Roblox: первые две арки сейчас доводятся до запуска. Дальше — арка 3: Оазис Мираж, Каньоны ветра, Погребённый архив и Око бури. Большой замысел — 60 миров в трёх Книгах: Звёздный клинок, Охотники за звёздами и Рассвет. Дат пока нет.</p>
+    </div>
+  </section>
+
+  <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
+<script>
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
+  }
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
+</script>
+
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
+</body>
+</html>

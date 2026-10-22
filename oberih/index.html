@@ -1,0 +1,694 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Oberih: a handy companion for Microsoft Defender</title>
+<meta name="description" content="Oberih is a free Windows app that shows the status of Microsoft Defender, runs scans, explains every setting in plain words and gives security tips.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oberih: a handy companion for Microsoft Defender">
+<meta property="og:description" content="Oberih is a free Windows app that shows the status of Microsoft Defender, runs scans, explains every setting in plain words and gives security tips.">
+<meta property="og:url" content="https://pegasohlib.github.io/oberih/">
+<meta property="og:image" content="https://pegasohlib.github.io/oberih/icon-512.png">
+<link rel="icon" href="icon-512.png">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/oberih/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/oberih/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/oberih/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/oberih/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/oberih/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/oberih/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/oberih/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/oberih/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/oberih/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/oberih/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/oberih/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/oberih/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/oberih/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/oberih/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
+<style>
+:root{--g1:#2FD9FF;--g2:#2BF5A0;--on-accent:#04131A;--accent:#007A6A;--accent2:#2BF5A0;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#14304A;--navy2:#0A1622;--panel-line:transparent;--panel-ic:#5FF5C0}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="home" href="index.html" data-keep-lang><img src="icon-512.png" alt="" width="32" height="32"><span id="appname">Oberih</span></a>
+  <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="Oberih: a handy companion for Microsoft Defender" data-app="Oberih" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">For Windows 10 and 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">A handy companion for Microsoft Defender</p>
+    <p class="lead">Microsoft Defender, the antivirus built into Windows, does the protecting. Oberih shows its status, runs scans, explains every setting in plain words and suggests how to stay safer.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download for Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
+    </div>
+    <p class="note">After installing, the app updates itself.<br>Free · no ads · 12 languages</p>
+  </header>
+
+  <section class="show" aria-label="How it works">
+    <div class="showtext"><h2 class="display">How it works</h2><p>Defender protects, and Oberih makes it easier to use.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Download and run</h3><p><b>Download</b> the file with the button above and run it. If Windows warns you, click <b>More info</b>, then <b>Run anyway</b>.</p></div></li><li><span class="num">2</span><div><h3>Install</h3><p>Oberih offers to install itself: Start menu and desktop shortcuts, an entry in the Windows app list, self-updates. No administrator rights needed.</p></div></li><li><span class="num">3</span><div><h3>See the status</h3><p>The Overview shows at once whether the PC is protected and what to fix. The buttons run scans, update definitions and turn on the right settings.</p></div></li><li><span class="num">4</span><div><h3>Unlock to change</h3><p>To change something, press <b>Unlock</b>: Windows asks for permission once, and the rights last only until you close the window.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">What it can do</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status at a glance</h3><p>A shield with the protection status and tiles for real-time and cloud protection, Tamper Protection, the firewall, memory integrity, definitions, Windows Update, SmartScreen and more.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Scans with progress</h3><p>Quick, full, custom (a folder or a file) and offline scans. A percent and the time left, estimated from earlier scans on this PC. Scans started elsewhere show up too.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Threats and quarantine</h3><p>What Defender found, the detection history, quarantine and allowed threats. Remove, allow or restore, with a clear warning before anything risky.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Every setting explained</h3><p>All Microsoft Defender settings in one place, in plain words: cloud, unwanted apps, network, scanning, schedule, exclusions. “Recommended” shows the safe choice.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Tips with one-click fixes</h3><p>Oberih checks this PC and says what to improve, with a button that turns it on or opens the right place. Plus 16 tips on passwords, 2FA, phishing, cheats and scams.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Ransomware protection</h3><p>Controlled folder access keeps unknown apps from changing Documents, Pictures and other folders. If a game can no longer save, you can allow it.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Your language, your look</h3><p>12 languages, a light or dark theme or the same as Windows, and text size from 90 to 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Safe self-updates</h3><p>It checks for a new version at start and every 12 hours and installs it only when you press the button. Updates are signed with the author’s key: Oberih won’t install a forged one.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-en">
+    <h2 class="eyebrow" id="x-en">And also</h2>
+    <div class="chips"><span>Free</span><span>No ads, no tracking</span><span>No background service</span><span>Respects Tamper Protection</span><span>Offline scan before Windows starts</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-en">
+    <h2 class="eyebrow" id="q-en">Questions</h2>
+    <div class="faqs"><details class="card"><summary>Windows says “Windows protected your PC”. Is that OK?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Yes. Windows shows this for apps without a paid code-signing certificate, and Oberih doesn’t have one. Click <b>More info</b> under the text, then <b>Run anyway</b>, not <b>Don’t run</b>. Oberih’s own updates are signed with the author’s key and checked before they are installed.</p></details><details class="card"><summary>Is Oberih an antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Microsoft Defender, the antivirus built into Windows, does all the scanning and protecting. Oberih shows its status, manages its settings and explains them in plain words. If another antivirus is in charge, Defender is on standby, and Oberih tells you so.</p></details><details class="card"><summary>Why does it ask for administrator rights?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Only to change settings: viewing works without them (except the exclusion list and quarantine). Press <b>Unlock</b>, Windows asks once, and the rights last until you close the window. Oberih has no background service that could change settings at someone else’s request, and before unlocking it checks that its own file hasn’t been replaced.</p></details><details class="card"><summary>What if Tamper Protection blocks a setting?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih doesn’t bypass it. Settings it guards are shown with a lock and can be changed only in Windows Security. That’s good: a virus can’t turn protection off either.</p></details><details class="card"><summary>How do I remove it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>In Windows Settings → <b>Apps</b>, find Oberih and choose <b>Uninstall</b>, or use the button in Oberih’s Settings. The app, its shortcuts and its settings are removed; Microsoft Defender and all its settings stay as they are. If you only ran the downloaded file without installing, delete it and the folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Your data stays on your PC</h2><p>Oberih collects no data and has no servers, ads or tracking. It goes online only to check for updates and download them from GitHub, and you can turn the check off.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="Оберіг: зручний помічник для Microsoft Defender" data-app="Оберіг" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Для Windows 10 і 11</p>
+    <h1>Оберіг</h1>
+    <p class="tagline">Зручний помічник для Microsoft Defender</p>
+    <p class="lead">Захищає Microsoft Defender — вбудований антивірус Windows. Оберіг показує його стан, запускає сканування, пояснює кожне налаштування простими словами й підказує, як захиститися краще.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Завантажити для Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
+    </div>
+    <p class="note">Після встановлення застосунок оновлюється сам.<br>Безкоштовно · без реклами · 12 мов</p>
+  </header>
+
+  <section class="show" aria-label="Як це працює">
+    <div class="showtext"><h2 class="display">Як це працює</h2><p>Захищає Defender, а Оберіг робить його зручнішим.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Завантаж і запусти</h3><p><b>Завантаж</b> файл кнопкою вище й запусти його. Якщо Windows попередить — натисни <b>Докладніше</b>, потім <b>Виконати все одно</b>.</p></div></li><li><span class="num">2</span><div><h3>Встанови</h3><p>Оберіг запропонує встановитися: ярлики в меню «Пуск» і на робочому столі, запис у списку програм Windows, самооновлення. Права адміністратора не потрібні.</p></div></li><li><span class="num">3</span><div><h3>Дивись стан</h3><p>В «Огляді» одразу видно, чи захищений ПК і що виправити. Кнопки запускають сканування, оновлюють бази й вмикають потрібні налаштування.</p></div></li><li><span class="num">4</span><div><h3>Розблокуй для змін</h3><p>Щоб щось змінити, натисни <b>Розблокувати</b>: Windows один раз попросить дозвіл, а права діють лише до закриття вікна.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що вміє Оберіг</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Стан з першого погляду</h3><p>Щит зі статусом захисту й плитки: захист у реальному часі й хмарний, захист від втручання, брандмауер, цілісність пам'яті, бази, Windows Update, SmartScreen та інше.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Сканування з прогресом</h3><p>Швидке, повне, вибіркове (папка чи файл) і офлайн-сканування. Відсоток і час, що залишився, — за минулими перевірками на цьому ПК. Видно й сканування, запущені деінде.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Загрози й карантин</h3><p>Що знайшов Defender, історія виявлень, карантин і дозволені загрози. Видалити, дозволити чи відновити — із чітким попередженням перед усім ризикованим.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Кожне налаштування пояснено</h3><p>Усі налаштування Microsoft Defender в одному місці, простими словами: хмара, небажані програми, мережа, сканування, розклад, винятки. Позначка «Рекомендовано» підкаже безпечний вибір.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Поради з виправленням в один клік</h3><p>Оберіг перевіряє цей ПК і каже, що покращити, з кнопкою, яка вмикає потрібне або відкриває правильне місце. А ще 16 порад про паролі, 2FA, фішинг, читі й шахрайство.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Захист від шифрувальників</h3><p>Контрольований доступ до папок не дає невідомим програмам змінювати Документи, Фото та інші папки. Якщо гра перестане зберігатися, її можна дозволити.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Твоя мова, твій вигляд</h3><p>12 мов, світла чи темна тема або як у Windows і розмір тексту від 90 до 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Безпечне самооновлення</h3><p>Нову версію шукає під час запуску й раз на 12 годин, а встановлює лише після твого натискання. Оновлення підписані ключем автора: підмінене оновлення Оберіг не встановить.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-uk">
+    <h2 class="eyebrow" id="x-uk">А ще</h2>
+    <div class="chips"><span>Безкоштовно</span><span>Без реклами й стеження</span><span>Без фонової служби</span><span>Поважає захист від втручання</span><span>Офлайн-сканування до запуску Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-uk">
+    <h2 class="eyebrow" id="q-uk">Питання</h2>
+    <div class="faqs"><details class="card"><summary>Windows пише «Windows захистив ваш ПК». Це нормально?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Так. Windows показує це для програм без платного сертифіката підпису коду, а в Оберега його немає. Натисни <b>Докладніше</b> під текстом, потім <b>Виконати все одно</b>, а не <b>Не запускати</b>. Власні оновлення Оберега підписані ключем автора й перевіряються перед встановленням.</p></details><details class="card"><summary>Оберіг — це антивірус?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ні. Усе сканування й захист робить Microsoft Defender — вбудований антивірус Windows. Оберіг показує його стан, керує налаштуваннями й пояснює їх простими словами. Якщо головний інший антивірус, Defender чекає в резерві, і Оберіг про це скаже.</p></details><details class="card"><summary>Навіщо йому права адміністратора?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Лише щоб змінювати налаштування: переглядати можна й без них (крім списку винятків і карантину). Натисни <b>Розблокувати</b>, Windows один раз спитає, і права діють до закриття вікна. В Оберега немає фонової служби, яка могла б змінити налаштування на чужий запит, а перед розблокуванням він перевіряє, що його власний файл не підмінили.</p></details><details class="card"><summary>А якщо налаштування блокує захист від втручання?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг його не обходить. Налаштування, які він стереже, позначені замком і змінюються лише в «Безпеці Windows». Це добре: вірус теж не зможе вимкнути захист.</p></details><details class="card"><summary>Як його видалити?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>У Параметрах Windows → <b>Програми</b> знайди Оберіг і вибери <b>Видалити</b> або натисни кнопку в налаштуваннях Оберега. Застосунок, ярлики й налаштування буде видалено; Microsoft Defender і всі його налаштування залишаться як є. Якщо файл просто запускали без встановлення, видали його й папку <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твої дані лишаються на твоєму ПК</h2><p>Оберіг не збирає даних, не має серверів, реклами й стеження. В інтернет він звертається лише щоб перевірити оновлення й завантажити їх із GitHub, і перевірку можна вимкнути.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="Oberih: un práctico compañero para Microsoft Defender" data-app="Oberih" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Para Windows 10 y 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Un práctico compañero para Microsoft Defender</p>
+    <p class="lead">Quien te protege es Microsoft Defender, el antivirus integrado en Windows. Oberih muestra su estado, inicia exámenes, explica cada ajuste con palabras sencillas y te sugiere cómo protegerte mejor.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Descargar para Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
+    </div>
+    <p class="note">Después de instalarla, la app se actualiza sola.<br>Gratis · sin anuncios · 12 idiomas</p>
+  </header>
+
+  <section class="show" aria-label="Cómo funciona">
+    <div class="showtext"><h2 class="display">Cómo funciona</h2><p>Defender protege, y Oberih lo hace más fácil de usar.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Descarga y ejecuta</h3><p><b>Descarga</b> el archivo con el botón de arriba y ejecútalo. Si Windows te avisa, haz clic en <b>Más información</b> y luego en <b>Ejecutar de todas formas</b>.</p></div></li><li><span class="num">2</span><div><h3>Instala</h3><p>Oberih se ofrece a instalarse: accesos directos en el menú Inicio y el escritorio, una entrada en la lista de aplicaciones de Windows, actualizaciones automáticas. No hacen falta permisos de administrador.</p></div></li><li><span class="num">3</span><div><h3>Mira el estado</h3><p>El Resumen muestra al instante si el PC está protegido y qué hay que arreglar. Los botones inician exámenes, actualizan las definiciones y activan los ajustes adecuados.</p></div></li><li><span class="num">4</span><div><h3>Desbloquea para cambiar</h3><p>Para cambiar algo, pulsa <b>Desbloquear</b>: Windows te pedirá permiso una vez, y los permisos duran solo hasta que cierres la ventana.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Qué puede hacer</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>El estado de un vistazo</h3><p>Un escudo con el estado de la protección y mosaicos para la protección en tiempo real y en la nube, la protección contra alteraciones, el firewall, la integridad de memoria, las definiciones, Windows Update, SmartScreen y más.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Exámenes con progreso</h3><p>Examen rápido, completo, personalizado (una carpeta o un archivo) y sin conexión. Porcentaje y tiempo restante, calculados a partir de exámenes anteriores en este PC. También aparecen los exámenes iniciados en otro lugar.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Amenazas y cuarentena</h3><p>Lo que encontró Defender, el historial de detecciones, la cuarentena y las amenazas permitidas. Quitar, permitir o restaurar, con un aviso claro antes de cualquier cosa arriesgada.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Cada ajuste explicado</h3><p>Todos los ajustes de Microsoft Defender en un solo sitio, en palabras sencillas: nube, apps no deseadas, red, exámenes, programación, exclusiones. «Recomendado» indica la opción segura.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Consejos que se aplican con un clic</h3><p>Oberih revisa este PC y te dice qué mejorar, con un botón que lo activa o abre el lugar adecuado. Además, 16 consejos sobre contraseñas, 2FA, phishing, cheats y estafas.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Protección contra ransomware</h3><p>El acceso controlado a carpetas impide que apps desconocidas cambien Documentos, Imágenes y otras carpetas. Si un juego ya no puede guardar, puedes permitirlo.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Tu idioma, tu estilo</h3><p>12 idiomas, tema claro u oscuro o como Windows, y tamaño del texto del 90 al 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Actualizaciones seguras</h3><p>Busca una versión nueva al iniciar y cada 12 horas, y solo la instala cuando pulsas el botón. Las actualizaciones están firmadas con la clave del autor: Oberih no instalará una falsa.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-es">
+    <h2 class="eyebrow" id="x-es">Y además</h2>
+    <div class="chips"><span>Gratis</span><span>Sin anuncios ni rastreo</span><span>Sin servicio en segundo plano</span><span>Respeta la protección contra alteraciones</span><span>Examen sin conexión antes de que arranque Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-es">
+    <h2 class="eyebrow" id="q-es">Preguntas</h2>
+    <div class="faqs"><details class="card"><summary>Windows dice «Windows protegió su PC». ¿Es normal?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Sí. Windows lo muestra con las apps que no tienen un certificado de firma de código de pago, y Oberih no lo tiene. Haz clic en <b>Más información</b> debajo del texto y luego en <b>Ejecutar de todas formas</b>, no en <b>No ejecutar</b>. Las actualizaciones de Oberih están firmadas con la clave del autor y se comprueban antes de instalarse.</p></details><details class="card"><summary>¿Oberih es un antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Todos los exámenes y la protección los hace Microsoft Defender, el antivirus integrado en Windows. Oberih muestra su estado, gestiona sus ajustes y los explica con palabras sencillas. Si otro antivirus está al mando, Defender queda en reserva y Oberih te lo dice.</p></details><details class="card"><summary>¿Por qué pide permisos de administrador?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Solo para cambiar ajustes: para ver no hacen falta (salvo la lista de exclusiones y la cuarentena). Pulsa <b>Desbloquear</b>, Windows pregunta una vez y los permisos duran hasta que cierres la ventana. Oberih no tiene ningún servicio en segundo plano que pueda cambiar ajustes a petición de otro, y antes de desbloquear comprueba que nadie ha reemplazado su propio archivo.</p></details><details class="card"><summary>¿Y si la protección contra alteraciones bloquea un ajuste?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih no la esquiva. Los ajustes que protege se muestran con un candado y solo se cambian en Seguridad de Windows. Es bueno: así un virus tampoco puede desactivar la protección.</p></details><details class="card"><summary>¿Cómo lo desinstalo?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>En Configuración de Windows → <b>Aplicaciones</b>, busca Oberih y elige <b>Desinstalar</b>, o usa el botón de los Ajustes de Oberih. Se quitan la app, sus accesos directos y sus ajustes; Microsoft Defender y todos sus ajustes se quedan como están. Si solo ejecutaste el archivo descargado sin instalarlo, borra el archivo y la carpeta <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tus datos se quedan en tu PC</h2><p>Oberih no recopila datos ni tiene servidores, anuncios o rastreo. Solo se conecta a internet para buscar actualizaciones y descargarlas de GitHub, y puedes desactivar esa comprobación.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lee la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="Oberih: um companheiro prático para o Microsoft Defender" data-app="Oberih" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Para Windows 10 e 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Um companheiro prático para o Microsoft Defender</p>
+    <p class="lead">Quem protege é o Microsoft Defender, o antivírus integrado ao Windows. O Oberih mostra o status dele, inicia verificações, explica cada configuração em palavras simples e sugere como ficar mais seguro.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Baixar para Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
+    </div>
+    <p class="note">Depois de instalado, o app se atualiza sozinho.<br>Grátis · sem anúncios · 12 idiomas</p>
+  </header>
+
+  <section class="show" aria-label="Como funciona">
+    <div class="showtext"><h2 class="display">Como funciona</h2><p>O Defender protege, e o Oberih o torna mais fácil de usar.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Baixe e execute</h3><p><b>Baixe</b> o arquivo com o botão acima e execute-o. Se o Windows avisar, clique em <b>Mais informações</b> e depois em <b>Executar assim mesmo</b>.</p></div></li><li><span class="num">2</span><div><h3>Instale</h3><p>O Oberih oferece a instalação: atalhos no menu Iniciar e na área de trabalho, uma entrada na lista de aplicativos do Windows, atualização automática. Não precisa de permissões de administrador.</p></div></li><li><span class="num">3</span><div><h3>Veja o status</h3><p>A Visão geral mostra na hora se o PC está protegido e o que corrigir. Os botões iniciam verificações, atualizam as definições e ativam as configurações certas.</p></div></li><li><span class="num">4</span><div><h3>Desbloqueie para mudar</h3><p>Para mudar algo, clique em <b>Desbloquear</b>: o Windows pede permissão uma vez, e as permissões valem só até você fechar a janela.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">O que ele faz</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status num relance</h3><p>Um escudo com o status da proteção e blocos para proteção em tempo real e na nuvem, proteção contra adulterações, firewall, integridade da memória, definições, Windows Update, SmartScreen e mais.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Verificações com progresso</h3><p>Verificação rápida, completa, personalizada (uma pasta ou um arquivo) e offline. Porcentagem e tempo restante, estimados com base nas verificações anteriores neste PC. Verificações iniciadas em outro lugar também aparecem.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Ameaças e quarentena</h3><p>O que o Defender encontrou, o histórico de detecções, a quarentena e as ameaças permitidas. Remover, permitir ou restaurar, com um aviso claro antes de qualquer coisa arriscada.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Cada configuração explicada</h3><p>Todas as configurações do Microsoft Defender em um só lugar, em palavras simples: nuvem, apps indesejados, rede, verificação, agendamento, exclusões. “Recomendado” mostra a escolha segura.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Dicas resolvidas com um clique</h3><p>O Oberih confere este PC e diz o que melhorar, com um botão que ativa o que falta ou abre o lugar certo. Além disso, 16 dicas sobre senhas, 2FA, phishing, cheats e golpes.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Proteção contra ransomware</h3><p>O acesso controlado a pastas impede que apps desconhecidos alterem Documentos, Imagens e outras pastas. Se um jogo não conseguir mais salvar, você pode permiti-lo.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Seu idioma, seu visual</h3><p>12 idiomas, tema claro ou escuro ou igual ao Windows, e tamanho do texto de 90 a 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Atualizações seguras</h3><p>Procura uma versão nova ao iniciar e a cada 12 horas, e só instala quando você clica no botão. As atualizações são assinadas com a chave do autor: o Oberih não instala uma falsa.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-pt">
+    <h2 class="eyebrow" id="x-pt">E ainda</h2>
+    <div class="chips"><span>Grátis</span><span>Sem anúncios nem rastreamento</span><span>Sem serviço em segundo plano</span><span>Respeita a proteção contra adulterações</span><span>Verificação offline antes de o Windows iniciar</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-pt">
+    <h2 class="eyebrow" id="q-pt">Perguntas</h2>
+    <div class="faqs"><details class="card"><summary>O Windows diz “O Windows protegeu o computador”. Isso é normal?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Sim. O Windows mostra isso para apps sem um certificado pago de assinatura de código, e o Oberih não tem um. Clique em <b>Mais informações</b> abaixo do texto e depois em <b>Executar assim mesmo</b>, não em <b>Não executar</b>. As atualizações do próprio Oberih são assinadas com a chave do autor e conferidas antes de serem instaladas.</p></details><details class="card"><summary>O Oberih é um antivírus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Não. Toda a verificação e a proteção são feitas pelo Microsoft Defender, o antivírus integrado ao Windows. O Oberih mostra o status dele, gerencia as configurações e as explica em palavras simples. Se outro antivírus estiver no comando, o Defender fica de reserva, e o Oberih avisa.</p></details><details class="card"><summary>Por que ele pede permissões de administrador?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Só para mudar configurações: para ver, não precisa (exceto a lista de exclusões e a quarentena). Clique em <b>Desbloquear</b>, o Windows pergunta uma vez, e as permissões valem até você fechar a janela. O Oberih não tem serviço em segundo plano que possa mudar configurações a pedido de outro programa, e antes de desbloquear confere se o próprio arquivo não foi substituído.</p></details><details class="card"><summary>E se a proteção contra adulterações bloquear uma configuração?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>O Oberih não a contorna. As configurações que ela protege aparecem com um cadeado e só podem ser alteradas na Segurança do Windows. Isso é bom: um vírus também não consegue desligar a proteção.</p></details><details class="card"><summary>Como removo o app?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Em Configurações do Windows → <b>Aplicativos</b>, encontre o Oberih e escolha <b>Desinstalar</b>, ou use o botão nas Configurações do Oberih. O app, os atalhos e as configurações dele são removidos; o Microsoft Defender e todas as configurações dele continuam como estão. Se você só executou o arquivo baixado sem instalar, apague-o e a pasta <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Seus dados ficam no seu PC</h2><p>O Oberih não coleta dados e não tem servidores, anúncios nem rastreamento. Ele só se conecta à internet para procurar atualizações e baixá-las do GitHub, e você pode desativar essa verificação.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leia a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="Oberih : un compagnon pratique pour Microsoft Defender" data-app="Oberih" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Pour Windows 10 et 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Un compagnon pratique pour Microsoft Defender</p>
+    <p class="lead">C’est Microsoft Defender, l’antivirus intégré à Windows, qui te protège. Oberih affiche son état, lance les analyses, explique chaque paramètre avec des mots simples et te conseille pour être mieux protégé.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Télécharger pour Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
+    </div>
+    <p class="note">Une fois installée, l’appli se met à jour toute seule.<br>Gratuit · sans pub · 12 langues</p>
+  </header>
+
+  <section class="show" aria-label="Comment ça marche">
+    <div class="showtext"><h2 class="display">Comment ça marche</h2><p>Defender protège, et Oberih le rend plus simple à utiliser.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Télécharge et lance</h3><p><b>Télécharge</b> le fichier avec le bouton ci-dessus et lance-le. Si Windows t’avertit, clique sur <b>Informations complémentaires</b>, puis sur <b>Exécuter quand même</b>.</p></div></li><li><span class="num">2</span><div><h3>Installe</h3><p>Oberih propose de s’installer : raccourcis dans le menu Démarrer et sur le Bureau, une entrée dans la liste des applications Windows, mises à jour automatiques. Aucun droit d’administrateur nécessaire.</p></div></li><li><span class="num">3</span><div><h3>Vois l’état</h3><p>L’Aperçu montre tout de suite si le PC est protégé et ce qu’il faut corriger. Les boutons lancent les analyses, mettent à jour les définitions et activent les bons paramètres.</p></div></li><li><span class="num">4</span><div><h3>Déverrouille pour modifier</h3><p>Pour changer quelque chose, clique sur <b>Déverrouiller</b> : Windows demande l’autorisation une fois, et ces droits durent seulement jusqu’à la fermeture de la fenêtre.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Ce qu’Oberih sait faire</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>L’état en un coup d’œil</h3><p>Un bouclier avec l’état de la protection et des tuiles : protection en temps réel et cloud, protection contre les falsifications, pare-feu, intégrité de la mémoire, définitions, Windows Update, SmartScreen et plus.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Analyses avec progression</h3><p>Analyse rapide, complète, personnalisée (un dossier ou un fichier) et hors ligne. Un pourcentage et le temps restant, estimés d’après les analyses précédentes sur ce PC. Les analyses lancées ailleurs s’affichent aussi.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Menaces et quarantaine</h3><p>Ce que Defender a trouvé, l’historique des détections, la quarantaine et les menaces autorisées. Supprimer, autoriser ou restaurer, avec un avertissement clair avant tout ce qui est risqué.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Chaque paramètre expliqué</h3><p>Tous les paramètres de Microsoft Defender au même endroit, avec des mots simples : cloud, applis indésirables, réseau, analyse, planification, exclusions. « Recommandé » indique le choix sûr.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Des conseils corrigés en un clic</h3><p>Oberih vérifie ce PC et dit quoi améliorer, avec un bouton qui active ce qu’il faut ou ouvre le bon endroit. Plus 16 conseils sur les mots de passe, la 2FA, le phishing, les triches et les arnaques.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Protection contre les ransomwares</h3><p>L’accès contrôlé aux dossiers empêche les applis inconnues de modifier Documents, Images et d’autres dossiers. Si un jeu ne peut plus enregistrer, tu peux l’autoriser.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Ta langue, ton style</h3><p>12 langues, un thème clair ou sombre ou comme Windows, et une taille de texte de 90 à 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Mises à jour sûres</h3><p>Il cherche une nouvelle version au démarrage et toutes les 12 heures, et ne l’installe que quand tu cliques sur le bouton. Les mises à jour sont signées avec la clé de l’auteur : Oberih n’installera pas une fausse mise à jour.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-fr">
+    <h2 class="eyebrow" id="x-fr">Et aussi</h2>
+    <div class="chips"><span>Gratuit</span><span>Sans pub ni pistage</span><span>Aucun service en arrière-plan</span><span>Respecte la protection contre les falsifications</span><span>Analyse hors ligne avant le démarrage de Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-fr">
+    <h2 class="eyebrow" id="q-fr">Questions</h2>
+    <div class="faqs"><details class="card"><summary>Windows affiche « Windows a protégé votre ordinateur ». C’est normal ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oui. Windows l’affiche pour les applis sans certificat de signature de code payant, et Oberih n’en a pas. Clique sur <b>Informations complémentaires</b> sous le texte, puis sur <b>Exécuter quand même</b>, pas sur <b>Ne pas exécuter</b>. Les mises à jour d’Oberih sont signées avec la clé de l’auteur et vérifiées avant d’être installées.</p></details><details class="card"><summary>Oberih est-il un antivirus ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Non. Toutes les analyses et la protection sont assurées par Microsoft Defender, l’antivirus intégré à Windows. Oberih affiche son état, gère ses paramètres et les explique avec des mots simples. Si un autre antivirus est aux commandes, Defender reste en réserve, et Oberih te le signale.</p></details><details class="card"><summary>Pourquoi demande-t-il les droits d’administrateur ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Seulement pour modifier les paramètres : pour consulter, ils ne sont pas nécessaires (sauf la liste des exclusions et la quarantaine). Clique sur <b>Déverrouiller</b>, Windows demande une fois, et les droits durent jusqu’à la fermeture de la fenêtre. Oberih n’a aucun service en arrière-plan qui pourrait modifier les paramètres à la demande d’un autre programme, et avant de déverrouiller, il vérifie que son propre fichier n’a pas été remplacé.</p></details><details class="card"><summary>Et si la protection contre les falsifications bloque un paramètre ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih ne la contourne pas. Les paramètres qu’elle protège sont affichés avec un cadenas et ne se modifient que dans Sécurité Windows. C’est bien : un virus ne peut pas non plus désactiver la protection.</p></details><details class="card"><summary>Comment le désinstaller ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Dans Paramètres Windows → <b>Applications</b>, trouve Oberih et choisis <b>Désinstaller</b>, ou utilise le bouton dans les Paramètres d’Oberih. L’appli, ses raccourcis et ses paramètres sont supprimés ; Microsoft Defender et tous ses paramètres restent tels quels. Si le fichier téléchargé a seulement été lancé sans installation, supprime-le ainsi que le dossier <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tes données restent sur ton PC</h2><p>Oberih ne collecte aucune donnée et n’a ni serveurs, ni pub, ni pistage. Il ne va sur Internet que pour chercher des mises à jour et les télécharger depuis GitHub, et tu peux désactiver cette vérification.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="Oberih: ein praktischer Begleiter für Microsoft Defender" data-app="Oberih" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Für Windows 10 und 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Ein praktischer Begleiter für Microsoft Defender</p>
+    <p class="lead">Geschützt wirst du von Microsoft Defender, dem in Windows integrierten Antivirenprogramm. Oberih zeigt seinen Status, startet Überprüfungen, erklärt jede Einstellung in einfachen Worten und gibt Tipps, wie du sicherer bleibst.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Für Windows herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
+    </div>
+    <p class="note">Nach der Installation aktualisiert sich die App selbst.<br>Kostenlos · ohne Werbung · 12 Sprachen</p>
+  </header>
+
+  <section class="show" aria-label="So funktioniert es">
+    <div class="showtext"><h2 class="display">So funktioniert es</h2><p>Defender schützt, und Oberih macht ihn einfacher zu bedienen.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Herunterladen und starten</h3><p><b>Lade</b> die Datei mit der Schaltfläche oben herunter und starte sie. Falls Windows warnt, klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>.</p></div></li><li><span class="num">2</span><div><h3>Installieren</h3><p>Oberih bietet an, sich zu installieren: Verknüpfungen im Startmenü und auf dem Desktop, ein Eintrag in der Windows-App-Liste, automatische Updates. Keine Administratorrechte nötig.</p></div></li><li><span class="num">3</span><div><h3>Status ansehen</h3><p>Die Übersicht zeigt sofort, ob der PC geschützt ist und was zu tun ist. Die Schaltflächen starten Überprüfungen, aktualisieren Definitionen und schalten die richtigen Einstellungen ein.</p></div></li><li><span class="num">4</span><div><h3>Zum Ändern entsperren</h3><p>Um etwas zu ändern, klicke auf <b>Entsperren</b>: Windows fragt einmal nach der Erlaubnis, und die Rechte gelten nur, bis du das Fenster schließt.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Was Oberih kann</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status auf einen Blick</h3><p>Ein Schild mit dem Schutzstatus und Kacheln für Echtzeit- und Cloudschutz, Manipulationsschutz, Firewall, Speicher-Integrität, Definitionen, Windows Update, SmartScreen und mehr.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Überprüfungen mit Fortschritt</h3><p>Schnelle, vollständige, benutzerdefinierte (ein Ordner oder eine Datei) und Offlineüberprüfung. Prozentwert und Restzeit, geschätzt nach früheren Überprüfungen auf diesem PC. Auch anderswo gestartete Überprüfungen werden angezeigt.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Bedrohungen und Quarantäne</h3><p>Was Defender gefunden hat, der Erkennungsverlauf, die Quarantäne und zugelassene Bedrohungen. Entfernen, zulassen oder wiederherstellen, mit einer klaren Warnung vor allem Riskanten.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Jede Einstellung erklärt</h3><p>Alle Einstellungen von Microsoft Defender an einem Ort, in einfachen Worten: Cloud, unerwünschte Apps, Netzwerk, Überprüfung, Zeitplan, Ausschlüsse. „Empfohlen“ zeigt die sichere Wahl.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Tipps mit Lösung per Klick</h3><p>Oberih prüft diesen PC und sagt, was sich verbessern lässt, mit einer Schaltfläche, die es einschaltet oder die richtige Stelle öffnet. Dazu 16 Tipps zu Passwörtern, 2FA, Phishing, Cheats und Betrug.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Ransomware-Schutz</h3><p>Der überwachte Ordnerzugriff hindert unbekannte Apps daran, Dokumente, Bilder und andere Ordner zu ändern. Wenn ein Spiel nicht mehr speichern kann, kannst du es zulassen.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Deine Sprache, dein Look</h3><p>12 Sprachen, helles oder dunkles Design oder wie Windows und eine Textgröße von 90 bis 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Sichere Updates</h3><p>Sucht beim Start und alle 12 Stunden nach einer neuen Version und installiert sie nur, wenn du auf die Schaltfläche klickst. Updates sind mit dem Schlüssel des Autors signiert: Ein gefälschtes Update installiert Oberih nicht.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-de">
+    <h2 class="eyebrow" id="x-de">Außerdem</h2>
+    <div class="chips"><span>Kostenlos</span><span>Ohne Werbung und Tracking</span><span>Kein Hintergrunddienst</span><span>Respektiert den Manipulationsschutz</span><span>Offlineüberprüfung vor dem Start von Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-de">
+    <h2 class="eyebrow" id="q-de">Fragen</h2>
+    <div class="faqs"><details class="card"><summary>Windows meldet „Der Computer wurde durch Windows geschützt“. Ist das in Ordnung?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ja. Windows zeigt das bei Apps ohne kostenpflichtiges Codesignaturzertifikat, und Oberih hat keins. Klicke unter dem Text auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>, nicht auf <b>Nicht ausführen</b>. Die eigenen Updates von Oberih sind mit dem Schlüssel des Autors signiert und werden vor der Installation geprüft.</p></details><details class="card"><summary>Ist Oberih ein Antivirenprogramm?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nein. Alle Überprüfungen und den Schutz übernimmt Microsoft Defender, das in Windows integrierte Antivirenprogramm. Oberih zeigt seinen Status, verwaltet seine Einstellungen und erklärt sie in einfachen Worten. Wenn ein anderes Antivirenprogramm zuständig ist, steht Defender in Bereitschaft, und Oberih sagt dir das.</p></details><details class="card"><summary>Warum fragt es nach Administratorrechten?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nur um Einstellungen zu ändern: Zum Ansehen braucht es sie nicht (außer für die Ausschlussliste und die Quarantäne). Klicke auf <b>Entsperren</b>, Windows fragt einmal, und die Rechte gelten, bis du das Fenster schließt. Oberih hat keinen Hintergrunddienst, der Einstellungen auf fremde Anfrage ändern könnte, und vor dem Entsperren prüft es, dass seine eigene Datei nicht ersetzt wurde.</p></details><details class="card"><summary>Und wenn der Manipulationsschutz eine Einstellung sperrt?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih umgeht ihn nicht. Einstellungen, die er schützt, werden mit einem Schloss angezeigt und lassen sich nur in der Windows-Sicherheit ändern. Das ist gut: So kann auch ein Virus den Schutz nicht ausschalten.</p></details><details class="card"><summary>Wie entferne ich es?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>In den Windows-Einstellungen → <b>Apps</b> Oberih suchen und <b>Deinstallieren</b> wählen, oder die Schaltfläche in den Einstellungen von Oberih nutzen. Die App, ihre Verknüpfungen und ihre Einstellungen werden entfernt; Microsoft Defender und alle seine Einstellungen bleiben, wie sie sind. Wurde die heruntergeladene Datei nur gestartet und nicht installiert, lösche sie und den Ordner <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Deine Daten bleiben auf deinem PC</h2><p>Oberih sammelt keine Daten und hat keine Server, keine Werbung und kein Tracking. Online geht es nur, um nach Updates zu suchen und sie von GitHub zu laden, und die Suche kannst du abschalten.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="Oberih: un comodo aiutante per Microsoft Defender" data-app="Oberih" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Per Windows 10 e 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Un comodo aiutante per Microsoft Defender</p>
+    <p class="lead">A proteggerti è Microsoft Defender, l’antivirus integrato in Windows. Oberih ne mostra lo stato, avvia le analisi, spiega ogni impostazione con parole semplici e suggerisce come stare più al sicuro.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Scarica per Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
+    </div>
+    <p class="note">Dopo l’installazione, l’app si aggiorna da sola.<br>Gratis · senza pubblicità · 12 lingue</p>
+  </header>
+
+  <section class="show" aria-label="Come funziona">
+    <div class="showtext"><h2 class="display">Come funziona</h2><p>Defender protegge, e Oberih lo rende più comodo da usare.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Scarica e avvia</h3><p><b>Scarica</b> il file con il pulsante qui sopra e avvialo. Se Windows ti avvisa, fai clic su <b>Ulteriori informazioni</b>, poi su <b>Esegui comunque</b>.</p></div></li><li><span class="num">2</span><div><h3>Installa</h3><p>Oberih propone di installarsi: collegamenti nel menu Start e sul desktop, una voce nell’elenco delle app di Windows, aggiornamenti automatici. Non servono diritti di amministratore.</p></div></li><li><span class="num">3</span><div><h3>Guarda lo stato</h3><p>La Panoramica mostra subito se il PC è protetto e cosa sistemare. I pulsanti avviano le analisi, aggiornano le definizioni e attivano le impostazioni giuste.</p></div></li><li><span class="num">4</span><div><h3>Sblocca per modificare</h3><p>Per cambiare qualcosa, premi <b>Sblocca</b>: Windows chiede il permesso una volta sola, e i diritti valgono solo finché non chiudi la finestra.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Cosa sa fare</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Lo stato a colpo d’occhio</h3><p>Uno scudo con lo stato della protezione e riquadri per la protezione in tempo reale e cloud, la protezione antimanomissione, il firewall, l’integrità della memoria, le definizioni, Windows Update, SmartScreen e altro.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Analisi con avanzamento</h3><p>Analisi veloce, completa, personalizzata (una cartella o un file) e offline. Percentuale e tempo rimanente, stimati in base alle analisi precedenti su questo PC. Compaiono anche le analisi avviate altrove.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Minacce e quarantena</h3><p>Cosa ha trovato Defender, la cronologia dei rilevamenti, la quarantena e le minacce consentite. Rimuovi, consenti o ripristina, con un avviso chiaro prima di tutto ciò che è rischioso.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Ogni impostazione spiegata</h3><p>Tutte le impostazioni di Microsoft Defender in un unico posto, con parole semplici: cloud, app indesiderate, rete, analisi, pianificazione, esclusioni. “Consigliato” indica la scelta sicura.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Consigli risolti con un clic</h3><p>Oberih controlla questo PC e dice cosa migliorare, con un pulsante che attiva ciò che serve o apre il posto giusto. In più, 16 consigli su password, 2FA, phishing, cheat e truffe.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Protezione da ransomware</h3><p>L’accesso alle cartelle controllato impedisce alle app sconosciute di modificare Documenti, Immagini e altre cartelle. Se un gioco non riesce più a salvare, puoi consentirlo.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>La tua lingua, il tuo stile</h3><p>12 lingue, tema chiaro o scuro o come Windows, e dimensione del testo dal 90 al 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Aggiornamenti sicuri</h3><p>Cerca una nuova versione all’avvio e ogni 12 ore e la installa solo quando premi il pulsante. Gli aggiornamenti sono firmati con la chiave dell’autore: Oberih non installerà un aggiornamento falso.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-it">
+    <h2 class="eyebrow" id="x-it">E inoltre</h2>
+    <div class="chips"><span>Gratis</span><span>Niente pubblicità né tracciamento</span><span>Nessun servizio in background</span><span>Rispetta la protezione antimanomissione</span><span>Analisi offline prima dell’avvio di Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-it">
+    <h2 class="eyebrow" id="q-it">Domande</h2>
+    <div class="faqs"><details class="card"><summary>Windows dice «PC protetto da Windows». È normale?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Sì. Windows lo mostra per le app senza un certificato di firma del codice a pagamento, e Oberih non ce l’ha. Fai clic su <b>Ulteriori informazioni</b> sotto il testo, poi su <b>Esegui comunque</b>, non su <b>Non eseguire</b>. Gli aggiornamenti di Oberih sono firmati con la chiave dell’autore e controllati prima dell’installazione.</p></details><details class="card"><summary>Oberih è un antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Tutte le analisi e la protezione le fa Microsoft Defender, l’antivirus integrato in Windows. Oberih ne mostra lo stato, ne gestisce le impostazioni e le spiega con parole semplici. Se a comandare è un altro antivirus, Defender resta in riserva e Oberih te lo dice.</p></details><details class="card"><summary>Perché chiede i diritti di amministratore?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Solo per modificare le impostazioni: per vedere non servono (tranne l’elenco delle esclusioni e la quarantena). Premi <b>Sblocca</b>, Windows chiede una volta e i diritti valgono finché non chiudi la finestra. Oberih non ha alcun servizio in background che potrebbe cambiare le impostazioni su richiesta di altri, e prima di sbloccare controlla che il suo file non sia stato sostituito.</p></details><details class="card"><summary>E se la protezione antimanomissione blocca un’impostazione?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih non la aggira. Le impostazioni che protegge sono mostrate con un lucchetto e si cambiano solo in Sicurezza di Windows. È un bene: neanche un virus può disattivare la protezione.</p></details><details class="card"><summary>Come lo rimuovo?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>In Impostazioni di Windows → <b>App</b>, trova Oberih e scegli <b>Disinstalla</b>, oppure usa il pulsante nelle Impostazioni di Oberih. Vengono rimossi l’app, i suoi collegamenti e le sue impostazioni; Microsoft Defender e tutte le sue impostazioni restano come sono. Se il file scaricato è stato solo avviato senza installarlo, eliminalo insieme alla cartella <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">I tuoi dati restano sul tuo PC</h2><p>Oberih non raccoglie dati e non ha server, pubblicità né tracciamento. Si collega a internet solo per cercare aggiornamenti e scaricarli da GitHub, e puoi disattivare questo controllo.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="Oberih: en smidig följeslagare till Microsoft Defender" data-app="Oberih" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">För Windows 10 och 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">En smidig följeslagare till Microsoft Defender</p>
+    <p class="lead">Det är Microsoft Defender, antivirusprogrammet som är inbyggt i Windows, som skyddar. Oberih visar dess status, startar genomsökningar, förklarar varje inställning med enkla ord och föreslår hur du kan vara säkrare.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Ladda ned för Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
+    </div>
+    <p class="note">Efter installationen uppdaterar appen sig själv.<br>Gratis · ingen reklam · 12 språk</p>
+  </header>
+
+  <section class="show" aria-label="Så fungerar det">
+    <div class="showtext"><h2 class="display">Så fungerar det</h2><p>Defender skyddar, och Oberih gör det enklare att använda.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Ladda ned och kör</h3><p><b>Ladda ned</b> filen med knappen ovan och kör den. Om Windows varnar, klicka på <b>Mer information</b> och sedan på <b>Kör ändå</b>.</p></div></li><li><span class="num">2</span><div><h3>Installera</h3><p>Oberih erbjuder sig att installeras: genvägar på Start-menyn och skrivbordet, en post i Windows lista över appar, självuppdatering. Ingen administratörsbehörighet krävs.</p></div></li><li><span class="num">3</span><div><h3>Se statusen</h3><p>Översikten visar direkt om datorn är skyddad och vad som behöver åtgärdas. Knapparna startar genomsökningar, uppdaterar definitioner och aktiverar rätt inställningar.</p></div></li><li><span class="num">4</span><div><h3>Lås upp för att ändra</h3><p>Klicka på <b>Lås upp</b> för att ändra något: Windows ber om tillåtelse en gång, och behörigheten gäller bara tills du stänger fönstret.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Vad appen kan</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status med en blick</h3><p>En sköld med skyddsstatus och rutor för realtids- och molnbaserat skydd, manipuleringsskydd, brandvägg, minnesintegritet, definitioner, Windows Update, SmartScreen med mera.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Genomsökningar med förlopp</h3><p>Snabb, fullständig, anpassad (en mapp eller en fil) och offline-genomsökning. Procent och återstående tid, uppskattade från tidigare genomsökningar på den här datorn. Genomsökningar som startats på annat håll syns också.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Hot och karantän</h3><p>Vad Defender har hittat, identifieringshistoriken, karantänen och tillåtna hot. Ta bort, tillåt eller återställ, med en tydlig varning före allt riskabelt.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Varje inställning förklarad</h3><p>Alla inställningar för Microsoft Defender på ett ställe, med enkla ord: moln, oönskade appar, nätverk, genomsökning, schema, undantag. ”Rekommenderas” visar det säkra valet.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Tips som åtgärdas med ett klick</h3><p>Oberih kontrollerar den här datorn och säger vad som kan förbättras, med en knapp som aktiverar det eller öppnar rätt ställe. Dessutom 16 tips om lösenord, 2FA, nätfiske, fusk och bedrägerier.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Skydd mot ransomware</h3><p>Kontrollerad mappåtkomst hindrar okända appar från att ändra Dokument, Bilder och andra mappar. Om ett spel inte längre kan spara kan du tillåta det.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Ditt språk, ditt utseende</h3><p>12 språk, ljust eller mörkt tema eller som Windows, och textstorlek från 90 till 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Säkra uppdateringar</h3><p>Söker efter en ny version vid start och var 12:e timme och installerar den bara när du klickar på knappen. Uppdateringar är signerade med upphovspersonens nyckel: Oberih installerar inte en förfalskad uppdatering.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-sv">
+    <h2 class="eyebrow" id="x-sv">Dessutom</h2>
+    <div class="chips"><span>Gratis</span><span>Ingen reklam eller spårning</span><span>Ingen bakgrundstjänst</span><span>Respekterar manipuleringsskyddet</span><span>Offline-genomsökning innan Windows startar</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-sv">
+    <h2 class="eyebrow" id="q-sv">Frågor</h2>
+    <div class="faqs"><details class="card"><summary>Windows visar ”Windows skyddade datorn”. Är det okej?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ja. Windows visar det för appar utan ett betalt kodsigneringscertifikat, och Oberih har inget. Klicka på <b>Mer information</b> under texten och sedan på <b>Kör ändå</b>, inte på <b>Kör inte</b>. Oberihs egna uppdateringar är signerade med upphovspersonens nyckel och kontrolleras innan de installeras.</p></details><details class="card"><summary>Är Oberih ett antivirusprogram?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. All genomsökning och allt skydd sköts av Microsoft Defender, antivirusprogrammet som är inbyggt i Windows. Oberih visar dess status, hanterar dess inställningar och förklarar dem med enkla ord. Om ett annat antivirusprogram har ansvaret står Defender i beredskap, och Oberih säger det.</p></details><details class="card"><summary>Varför ber den om administratörsbehörighet?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Bara för att ändra inställningar: att titta går utan (utom undantagslistan och karantänen). Klicka på <b>Lås upp</b>, Windows frågar en gång, och behörigheten gäller tills du stänger fönstret. Oberih har ingen bakgrundstjänst som skulle kunna ändra inställningar på någon annans begäran, och innan upplåsningen kontrollerar den att dess egen fil inte har bytts ut.</p></details><details class="card"><summary>Vad händer om manipuleringsskyddet låser en inställning?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih kringgår det inte. Inställningar som det skyddar visas med ett lås och kan bara ändras i Windows-säkerhet. Det är bra: inte heller ett virus kan stänga av skyddet.</p></details><details class="card"><summary>Hur tar jag bort den?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>I Windows Inställningar → <b>Appar</b>, leta upp Oberih och välj <b>Avinstallera</b>, eller använd knappen i Oberihs inställningar. Appen, dess genvägar och dess inställningar tas bort; Microsoft Defender och alla dess inställningar förblir som de är. Om den nedladdade filen bara kördes utan installation, ta bort den och mappen <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Dina data stannar på din dator</h2><p>Oberih samlar inte in några data och har inga servrar, ingen reklam och ingen spårning. Den går ut på internet bara för att söka efter uppdateringar och ladda ned dem från GitHub, och den kontrollen kan du stänga av.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="Oberih: pendamping praktis untuk Microsoft Defender" data-app="Oberih" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Untuk Windows 10 dan 11</p>
+    <h1>Oberih</h1>
+    <p class="tagline">Pendamping praktis untuk Microsoft Defender</p>
+    <p class="lead">Yang melindungi adalah Microsoft Defender, antivirus bawaan Windows. Oberih menampilkan statusnya, menjalankan pemindaian, menjelaskan setiap pengaturan dengan kata-kata sederhana, dan memberi saran agar kamu lebih aman.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Unduh untuk Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
+    </div>
+    <p class="note">Setelah dipasang, aplikasi memperbarui dirinya sendiri.<br>Gratis · tanpa iklan · 12 bahasa</p>
+  </header>
+
+  <section class="show" aria-label="Cara kerjanya">
+    <div class="showtext"><h2 class="display">Cara kerjanya</h2><p>Defender melindungi, dan Oberih membuatnya lebih mudah dipakai.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Unduh dan jalankan</h3><p><b>Unduh</b> file dengan tombol di atas lalu jalankan. Jika Windows memperingatkan, klik <b>Info selengkapnya</b>, lalu <b>Tetap jalankan</b>.</p></div></li><li><span class="num">2</span><div><h3>Pasang</h3><p>Oberih menawarkan untuk memasang dirinya: pintasan di menu Mulai dan desktop, entri di daftar aplikasi Windows, pembaruan otomatis. Tidak perlu hak administrator.</p></div></li><li><span class="num">3</span><div><h3>Lihat statusnya</h3><p>Ringkasan langsung menunjukkan apakah PC terlindungi dan apa yang perlu diperbaiki. Tombol-tombolnya menjalankan pemindaian, memperbarui definisi, serta menyalakan pengaturan yang tepat.</p></div></li><li><span class="num">4</span><div><h3>Buka kunci untuk mengubah</h3><p>Untuk mengubah sesuatu, tekan <b>Buka kunci</b>: Windows akan meminta izin sekali, dan hak ini hanya berlaku sampai jendela ditutup.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Apa yang bisa dilakukannya</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status dalam sekejap</h3><p>Perisai dengan status perlindungan dan ubin untuk perlindungan real-time dan cloud, perlindungan perusakan, firewall, integritas memori, definisi, Windows Update, SmartScreen, dan lainnya.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Pemindaian dengan kemajuan</h3><p>Pemindaian cepat, penuh, kustom (folder atau file), dan offline. Persentase dan sisa waktu, diperkirakan dari pemindaian sebelumnya di PC ini. Pemindaian yang dimulai di tempat lain juga terlihat.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Ancaman dan karantina</h3><p>Apa yang ditemukan Defender, riwayat deteksi, karantina, dan ancaman yang diizinkan. Hapus, izinkan, atau pulihkan, dengan peringatan jelas sebelum tindakan berisiko.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Setiap pengaturan dijelaskan</h3><p>Semua pengaturan Microsoft Defender di satu tempat, dengan kata-kata sederhana: cloud, aplikasi tak diinginkan, jaringan, pemindaian, jadwal, pengecualian. Tanda “Disarankan” menunjukkan pilihan yang aman.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Kiat yang beres dengan sekali klik</h3><p>Oberih memeriksa PC ini dan memberi tahu apa yang perlu ditingkatkan, dengan tombol yang menyalakannya atau membuka tempat yang tepat. Ditambah 16 kiat tentang kata sandi, 2FA, phishing, cheat, dan penipuan.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Perlindungan ransomware</h3><p>Akses folder terkontrol mencegah aplikasi tak dikenal mengubah Dokumen, Gambar, dan folder lain. Jika game jadi tidak bisa menyimpan, kamu bisa mengizinkannya.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Bahasamu, tampilanmu</h3><p>12 bahasa, tema terang atau gelap atau ikuti Windows, dan ukuran teks dari 90 hingga 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Pembaruan yang aman</h3><p>Mencari versi baru saat dibuka dan setiap 12 jam, dan memasangnya hanya setelah kamu menekan tombolnya. Pembaruan ditandatangani dengan kunci pembuat: Oberih tidak akan memasang pembaruan palsu.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-id">
+    <h2 class="eyebrow" id="x-id">Selain itu</h2>
+    <div class="chips"><span>Gratis</span><span>Tanpa iklan dan pelacakan</span><span>Tanpa layanan latar belakang</span><span>Menghormati perlindungan perusakan</span><span>Pemindaian offline sebelum Windows dimulai</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-id">
+    <h2 class="eyebrow" id="q-id">Pertanyaan</h2>
+    <div class="faqs"><details class="card"><summary>Windows menampilkan “Windows melindungi PC Anda”. Apakah itu wajar?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ya. Windows menampilkannya untuk aplikasi tanpa sertifikat penandatanganan kode berbayar, dan Oberih tidak memilikinya. Klik <b>Info selengkapnya</b> di bawah teks, lalu <b>Tetap jalankan</b>, bukan <b>Jangan jalankan</b>. Pembaruan Oberih sendiri ditandatangani dengan kunci pembuat dan diperiksa sebelum dipasang.</p></details><details class="card"><summary>Apakah Oberih sebuah antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Bukan. Semua pemindaian dan perlindungan dilakukan oleh Microsoft Defender, antivirus bawaan Windows. Oberih menampilkan statusnya, mengelola pengaturannya, dan menjelaskannya dengan kata-kata sederhana. Jika antivirus lain yang berwenang, Defender bersiaga, dan Oberih akan memberitahumu.</p></details><details class="card"><summary>Mengapa ia meminta hak administrator?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Hanya untuk mengubah pengaturan: untuk melihat, hak itu tidak diperlukan (kecuali daftar pengecualian dan karantina). Tekan <b>Buka kunci</b>, Windows bertanya sekali, dan hak berlaku sampai jendela ditutup. Oberih tidak punya layanan latar belakang yang bisa mengubah pengaturan atas permintaan pihak lain, dan sebelum membuka kunci ia memeriksa bahwa file-nya sendiri tidak diganti.</p></details><details class="card"><summary>Bagaimana jika perlindungan perusakan memblokir suatu pengaturan?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih tidak mengakalinya. Pengaturan yang dijaganya ditampilkan dengan gembok dan hanya bisa diubah di Keamanan Windows. Itu bagus: virus juga tidak bisa mematikan perlindungan.</p></details><details class="card"><summary>Bagaimana cara menghapusnya?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Di Pengaturan Windows → <b>Aplikasi</b>, cari Oberih dan pilih <b>Copot pemasangan</b>, atau gunakan tombol di Pengaturan Oberih. Aplikasi, pintasan, dan pengaturannya dihapus; Microsoft Defender dan semua pengaturannya tetap seperti semula. Jika file unduhan hanya dijalankan tanpa dipasang, hapus file itu dan folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Datamu tetap di PC-mu</h2><p>Oberih tidak mengumpulkan data dan tidak punya server, iklan, atau pelacakan. Ia hanya terhubung ke internet untuk memeriksa pembaruan dan mengunduhnya dari GitHub, dan pemeriksaan itu bisa kamu matikan.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="オベリフ：Microsoft Defender の便利なパートナー" data-app="オベリフ" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Windows 10 / 11 対応</p>
+    <h1>オベリフ</h1>
+    <p class="tagline">Microsoft Defender の便利なパートナー</p>
+    <p class="lead">PC を守っているのは、Windows に組み込まれたウイルス対策ソフト Microsoft Defender です。オベリフはその状態を表示し、スキャンを実行し、すべての設定をわかりやすく説明して、より安全に使うためのヒントを提案します。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
+    </div>
+    <p class="note">インストール後は、アプリが自動で更新されます。<br>無料 · 広告なし · 12 言語</p>
+  </header>
+
+  <section class="show" aria-label="しくみ">
+    <div class="showtext"><h2 class="display">しくみ</h2><p>守るのは Defender、オベリフはそれを使いやすくします。</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>ダウンロードして実行</h3><p>上のボタンでファイルを<b>ダウンロード</b>して実行します。Windows の警告が出たら、<b>詳細情報</b>をクリックし、次に<b>実行</b>をクリックします。</p></div></li><li><span class="num">2</span><div><h3>インストール</h3><p>オベリフがインストールを提案します。スタート メニューとデスクトップのショートカット、Windows のアプリ一覧への登録、自動アップデート。管理者権限は不要です。</p></div></li><li><span class="num">3</span><div><h3>状態を確認</h3><p>「概要」で、PC が保護されているか、何を直せばよいかがすぐにわかります。ボタンでスキャンの実行、定義ファイルの更新、必要な設定のオンができます。</p></div></li><li><span class="num">4</span><div><h3>ロック解除して変更</h3><p>何かを変更するには<b>ロック解除</b>を押します。Windows が一度だけ許可を求め、権限はウィンドウを閉じるまで有効です。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">できること</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>状態がひと目でわかる</h3><p>保護の状態を示すシールドと、リアルタイム保護、クラウド提供の保護、改ざん防止、ファイアウォール、メモリ整合性、定義ファイル、Windows Update、SmartScreen などのタイル。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>進み具合がわかるスキャン</h3><p>クイック、フル、カスタム（フォルダーまたはファイル）、オフラインのスキャン。この PC での過去のスキャンから、パーセントと残り時間を推定します。ほかの場所で始まったスキャンも表示されます。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>脅威と検疫</h3><p>Defender が見つけたもの、検出履歴、検疫、許可した脅威。削除・許可・復元ができ、危険な操作の前にははっきり警告します。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>すべての設定を解説</h3><p>Microsoft Defender の設定をすべて 1 か所で、わかりやすく。クラウド、望ましくないアプリ、ネットワーク、スキャン、スケジュール、除外。「推奨」で安全な選択がわかります。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>ワンクリックで直せるヒント</h3><p>オベリフがこの PC をチェックして改善点を伝え、ボタンで設定をオンにしたり適切な画面を開いたりします。さらにパスワード、2FA、フィッシング、チート、詐欺についての 16 のヒント。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>ランサムウェア防止</h3><p>コントロールされたフォルダー アクセスで、不明なアプリがドキュメントやピクチャなどのフォルダーを変更するのを防ぎます。ゲームが保存できなくなったら、そのアプリを許可できます。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>言語も見た目も自由に</h3><p>12 言語、ライト・ダーク・Windows と同じテーマ、文字サイズは 90〜150 %。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>安全な自動アップデート</h3><p>起動時と 12 時間ごとに新しいバージョンを確認し、ボタンを押したときだけインストールします。更新は作者の鍵で署名されており、偽の更新をインストールすることはありません。</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ja">
+    <h2 class="eyebrow" id="x-ja">さらに</h2>
+    <div class="chips"><span>無料</span><span>広告・追跡なし</span><span>バックグラウンド サービスなし</span><span>改ざん防止を尊重</span><span>Windows 起動前のオフライン スキャン</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-ja">
+    <h2 class="eyebrow" id="q-ja">よくある質問</h2>
+    <div class="faqs"><details class="card"><summary>「Windows によって PC が保護されました」と表示されます。大丈夫？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい。有料のコード署名証明書がないアプリでは Windows がこう表示します。オベリフにはその証明書がありません。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックしてください。オベリフ自身の更新は作者の鍵で署名され、インストール前に確認されます。</p></details><details class="card"><summary>オベリフはウイルス対策ソフトですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。スキャンと保護はすべて、Windows に組み込まれたウイルス対策ソフト Microsoft Defender が行います。オベリフはその状態を表示し、設定を管理し、わかりやすく説明します。ほかのウイルス対策ソフトが使われている場合、Defender は待機状態になり、オベリフがそれを知らせます。</p></details><details class="card"><summary>なぜ管理者権限を求めるのですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>設定を変更するときだけです。表示だけなら不要です（除外リストと検疫を除く）。<b>ロック解除</b>を押すと Windows が一度だけ確認し、権限はウィンドウを閉じるまで有効です。オベリフには、ほかのプログラムの依頼で設定を変えられるようなバックグラウンド サービスはありません。また、ロック解除の前に自分のファイルが置き換えられていないかを確認します。</p></details><details class="card"><summary>改ざん防止が設定をブロックしたら？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフはそれを回避しません。改ざん防止で守られている設定は鍵マークで表示され、「Windows セキュリティ」でのみ変更できます。これは良いことで、ウイルスも保護をオフにできません。</p></details><details class="card"><summary>削除するには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows の設定 → <b>アプリ</b>でオベリフを探して<b>アンインストール</b>を選ぶか、オベリフの設定にあるボタンを使います。アプリ、ショートカット、設定が削除され、Microsoft Defender とそのすべての設定はそのまま残ります。ダウンロードしたファイルをインストールせずに実行しただけなら、そのファイルと <code>%LOCALAPPDATA%\Oberih</code> フォルダーを削除してください。</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">データはあなたの PC に</h2><p>オベリフはデータを収集せず、サーバーも広告も追跡もありません。インターネットに接続するのは、更新を確認して GitHub からダウンロードするときだけで、確認はオフにできます。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="Оберіг: Microsoft Defender үшін ыңғайлы көмекші" data-app="Оберіг" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Windows 10 және 11 үшін</p>
+    <h1>Оберіг</h1>
+    <p class="tagline">Microsoft Defender үшін ыңғайлы көмекші</p>
+    <p class="lead">Сені Windows-қа кірістірілген антивирус Microsoft Defender қорғайды. Оберіг оның күйін көрсетеді, тексерулерді іске қосады, әр баптауды қарапайым тілмен түсіндіреді және қалай қауіпсіздірек болуға болатынын айтады.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
+    </div>
+    <p class="note">Орнатқаннан кейін қолданба өздігінен жаңарады.<br>Тегін · жарнамасыз · 12 тіл</p>
+  </header>
+
+  <section class="show" aria-label="Қалай жұмыс істейді">
+    <div class="showtext"><h2 class="display">Қалай жұмыс істейді</h2><p>Defender қорғайды, ал Оберіг оны қолдануды ыңғайлы етеді.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Жүктеп ал да іске қос</h3><p>Жоғарыдағы батырмамен файлды <b>жүктеп ал</b> да, іске қос. Егер Windows ескертсе, <b>Қосымша ақпарат</b>, содан кейін <b>Бәрібір іске қосу</b> батырмасын бас.</p></div></li><li><span class="num">2</span><div><h3>Орнат</h3><p>Оберіг орнатуды ұсынады: «Бастау» мәзірі мен жұмыс үстеліндегі таңбашалар, Windows бағдарламалар тізіміндегі жазба, өздігінен жаңару. Әкімші құқықтары керек емес.</p></div></li><li><span class="num">3</span><div><h3>Күйін көр</h3><p>«Шолу» бөлімінде компьютер қорғалған ба және нені түзету керек екені бірден көрінеді. Батырмалар тексеруді іске қосады, базаларды жаңартады және қажетті баптауларды қосады.</p></div></li><li><span class="num">4</span><div><h3>Өзгерту үшін құлпын аш</h3><p>Бірдеңені өзгерту үшін <b>Құлыпты аш</b> батырмасын бас: Windows бір рет рұқсат сұрайды, ал құқықтар терезе жабылғанша ғана әрекет етеді.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Оберіг не істей алады</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Күйі бір қарағанда</h3><p>Қорғаныс күйі бар қалқан және тақтайшалар: нақты уақыттағы және бұлттық қорғау, араласудан қорғау, брандмауэр, жад тұтастығы, базалар, Windows Update, SmartScreen және т.б.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Барысы көрінетін тексерулер</h3><p>Жылдам, толық, таңдамалы (қалта не файл) және офлайн тексеру. Пайыз бен қалған уақыт осы компьютердегі бұрынғы тексерулер бойынша есептеледі. Басқа жерден іске қосылған тексерулер де көрінеді.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Қауіптер және карантин</h3><p>Defender не тапты, анықтау тарихы, карантин және рұқсат етілген қауіптер. Жою, рұқсат беру не қалпына келтіру — қатерлі әрекет алдында анық ескертумен.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Әр баптау түсіндірілген</h3><p>Microsoft Defender баптауларының бәрі бір жерде, қарапайым тілмен: бұлт, қажетсіз бағдарламалар, желі, тексеру, кесте, ерекшеліктер. «Ұсынылады» белгісі қауіпсіз таңдауды көрсетеді.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Бір басумен түзететін кеңестер</h3><p>Оберіг осы компьютерді тексеріп, нені жақсартуға болатынын айтады, ал батырма керегін қосады немесе дұрыс жерді ашады. Сондай-ақ құпиясөздер, 2FA, фишинг, читтер мен алаяқтық туралы 16 кеңес.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Шифрлаушылардан қорғау</h3><p>Қалталарға басқарылатын қатынас белгісіз бағдарламаларға Құжаттар, Суреттер және басқа қалталарды өзгертуге жол бермейді. Ойын сақтай алмай қалса, оған рұқсат беруге болады.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Өз тілің, өз көрінісің</h3><p>12 тіл, ашық не қараңғы тақырып немесе Windows-тағыдай, мәтін өлшемі 90-нан 150 %-ға дейін.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Қауіпсіз өздігінен жаңару</h3><p>Жаңа нұсқаны іске қосқанда және 12 сағат сайын іздейді, ал тек сен батырманы басқанда орнатады. Жаңартулар автордың кілтімен қол қойылған: Оберіг жалған жаңартуды орнатпайды.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-kk">
+    <h2 class="eyebrow" id="x-kk">Тағы да</h2>
+    <div class="chips"><span>Тегін</span><span>Жарнамасыз, бақылаусыз</span><span>Фондық қызметсіз</span><span>Араласудан қорғауды бұзбайды</span><span>Windows іске қосылғанға дейінгі офлайн тексеру</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-kk">
+    <h2 class="eyebrow" id="q-kk">Сұрақтар</h2>
+    <div class="faqs"><details class="card"><summary>Windows «Windows компьютеріңізді қорғады» деп жазады. Бұл қалыпты ма?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Иә. Windows мұны ақылы код қолтаңбасы сертификаты жоқ бағдарламаларға көрсетеді, ал Оберігте ол жоқ. Мәтіннің астындағы <b>Қосымша ақпарат</b> дегенді бас, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір іске қосу</b> батырмасын бас. Оберігтің өз жаңартулары автордың кілтімен қол қойылған және орнатар алдында тексеріледі.</p></details><details class="card"><summary>Оберіг антивирус па?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жоқ. Барлық тексеру мен қорғауды Windows-қа кірістірілген антивирус Microsoft Defender атқарады. Оберіг оның күйін көрсетеді, баптауларын басқарады және оларды қарапайым тілмен түсіндіреді. Егер басқа антивирус басты болса, Defender күту режимінде тұрады, және Оберіг бұл туралы айтады.</p></details><details class="card"><summary>Оған әкімші құқықтары не үшін керек?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Тек баптауларды өзгерту үшін: қарауға оларсыз да болады (ерекшеліктер тізімі мен карантиннен басқа). <b>Құлыпты аш</b> батырмасын бас, Windows бір рет сұрайды, ал құқықтар терезе жабылғанша әрекет етеді. Оберігте бөтен сұрау бойынша баптауларды өзгерте алатын фондық қызмет жоқ, ал құлыпты ашар алдында ол өз файлының ауыстырылмағанын тексереді.</p></details><details class="card"><summary>Баптауды араласудан қорғау бұғаттаса ше?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг оны айналып өтпейді. Ол күзететін баптаулар құлып белгісімен көрсетіледі және тек «Windows қауіпсіздігі» ішінде өзгертіледі. Бұл жақсы: вирус та қорғауды өшіре алмайды.</p></details><details class="card"><summary>Оны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows параметрлері → <b>Қолданбалар</b> бөлімінде Оберігті тауып, <b>Жою</b> батырмасын таңда немесе Оберіг баптауларындағы батырманы бас. Қолданба, таңбашалары мен баптаулары жойылады; Microsoft Defender және оның барлық баптаулары сол күйінде қалады. Егер файл орнатусыз жай іске қосылған болса, оны және <code>%LOCALAPPDATA%\Oberih</code> қалтасын жой.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Деректерің компьютеріңде қалады</h2><p>Оберіг деректер жинамайды, оның серверлері, жарнамасы және бақылауы жоқ. Интернетке тек жаңартуларды тексеріп, оларды GitHub-тан жүктеу үшін шығады, ал тексеруді өшіруге болады.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="Обериг: удобный помощник для Microsoft Defender" data-app="Обериг" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Для Windows 10 и 11</p>
+    <h1>Обериг</h1>
+    <p class="tagline">Удобный помощник для Microsoft Defender</p>
+    <p class="lead">Защищает Microsoft Defender — встроенный антивирус Windows. Обериг показывает его состояние, запускает проверки, объясняет каждую настройку простыми словами и подсказывает, как защититься лучше.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Скачать для Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
+    </div>
+    <p class="note">После установки приложение обновляется само.<br>Бесплатно · без рекламы · 12 языков</p>
+  </header>
+
+  <section class="show" aria-label="Как это работает">
+    <div class="showtext"><h2 class="display">Как это работает</h2><p>Защищает Defender, а Обериг делает его удобнее.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Скачай и запусти</h3><p><b>Скачай</b> файл кнопкой выше и запусти его. Если Windows предупредит — нажми <b>Подробнее</b>, потом <b>Выполнить в любом случае</b>.</p></div></li><li><span class="num">2</span><div><h3>Установи</h3><p>Обериг предложит установиться: ярлыки в меню «Пуск» и на рабочем столе, запись в списке программ Windows, самообновление. Права администратора не нужны.</p></div></li><li><span class="num">3</span><div><h3>Смотри состояние</h3><p>В «Обзоре» сразу видно, защищён ли ПК и что исправить. Кнопки запускают проверку, обновляют базы и включают нужные настройки.</p></div></li><li><span class="num">4</span><div><h3>Разблокируй для изменений</h3><p>Чтобы что-то изменить, нажми <b>Разблокировать</b>: Windows один раз попросит разрешение, а права действуют только до закрытия окна.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что умеет Обериг</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Состояние с первого взгляда</h3><p>Щит со статусом защиты и плитки: защита в реальном времени и облачная, защита от подделки, брандмауэр, целостность памяти, базы, Windows Update, SmartScreen и другое.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Проверки с прогрессом</h3><p>Быстрая, полная, выборочная (папка или файл) и автономная проверка. Процент и оставшееся время — по прошлым проверкам на этом ПК. Видны и проверки, запущенные в другом месте.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Угрозы и карантин</h3><p>Что нашёл Defender, история обнаружений, карантин и разрешённые угрозы. Удалить, разрешить или восстановить — с понятным предупреждением перед всем рискованным.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Каждая настройка объяснена</h3><p>Все настройки Microsoft Defender в одном месте, простыми словами: облако, нежелательные программы, сеть, проверка, расписание, исключения. Отметка «Рекомендуется» подскажет безопасный выбор.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Советы с исправлением в один клик</h3><p>Обериг проверяет этот ПК и говорит, что улучшить, с кнопкой, которая включает нужное или открывает правильное место. А ещё 16 советов о паролях, 2FA, фишинге, читах и мошенничестве.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Защита от шифровальщиков</h3><p>Контролируемый доступ к папкам не даёт неизвестным программам менять Документы, Изображения и другие папки. Если игра перестанет сохраняться, её можно разрешить.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Твой язык, твой вид</h3><p>12 языков, светлая или тёмная тема либо как в Windows и размер текста от 90 до 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Безопасное самообновление</h3><p>Новую версию ищет при запуске и раз в 12 часов, а устанавливает только после твоего нажатия. Обновления подписаны ключом автора: поддельное обновление Обериг не установит.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ru">
+    <h2 class="eyebrow" id="x-ru">А ещё</h2>
+    <div class="chips"><span>Бесплатно</span><span>Без рекламы и слежки</span><span>Без фоновой службы</span><span>Уважает защиту от подделки</span><span>Автономная проверка до запуска Windows</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-ru">
+    <h2 class="eyebrow" id="q-ru">Вопросы</h2>
+    <div class="faqs"><details class="card"><summary>Windows пишет «Система Windows защитила ваш компьютер». Это нормально?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Да. Windows показывает это для программ без платного сертификата подписи кода, а у Оберига его нет. Нажми <b>Подробнее</b> под текстом, потом <b>Выполнить в любом случае</b>, а не <b>Не выполнять</b>. Собственные обновления Оберига подписаны ключом автора и проверяются перед установкой.</p></details><details class="card"><summary>Обериг — это антивирус?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Нет. Всю проверку и защиту выполняет Microsoft Defender — встроенный антивирус Windows. Обериг показывает его состояние, управляет настройками и объясняет их простыми словами. Если главный другой антивирус, Defender ждёт в резерве, и Обериг об этом скажет.</p></details><details class="card"><summary>Зачем ему права администратора?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Только чтобы менять настройки: смотреть можно и без них (кроме списка исключений и карантина). Нажми <b>Разблокировать</b>, Windows один раз спросит, и права действуют до закрытия окна. У Оберига нет фоновой службы, которая могла бы изменить настройки по чужому запросу, а перед разблокировкой он проверяет, что его собственный файл не подменили.</p></details><details class="card"><summary>А если настройку блокирует защита от подделки?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Обериг её не обходит. Настройки, которые она охраняет, отмечены замком и меняются только в «Безопасности Windows». Это хорошо: вирус тоже не сможет отключить защиту.</p></details><details class="card"><summary>Как его удалить?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>В Параметрах Windows → <b>Приложения</b> найди Обериг и выбери <b>Удалить</b> или нажми кнопку в настройках Оберига. Приложение, ярлыки и настройки будут удалены; Microsoft Defender и все его настройки останутся как есть. Если файл просто запускали без установки, удали его и папку <code>%LOCALAPPDATA%\Oberih</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твои данные остаются на твоём ПК</h2><p>Обериг не собирает данных, у него нет серверов, рекламы и слежки. В интернет он выходит только чтобы проверить обновления и скачать их с GitHub, и проверку можно отключить.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
+<script>
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
+  }
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
+</script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+  }).catch(function () {});
+})();
+</script>
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
+</body>
+</html>

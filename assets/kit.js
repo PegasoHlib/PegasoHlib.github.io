@@ -42,9 +42,27 @@
     var btn = document.getElementById("theme");
     if (btn) btn.addEventListener("click", function () {
       var next = current() === "dark" ? "light" : "dark";
-      forced = null;
-      try { localStorage.setItem(KEY, next); } catch (e) {}
-      apply();
+      function flip() {
+        forced = null;
+        try { localStorage.setItem(KEY, next); } catch (e) {}
+        apply();
+        var ic = btn.querySelector(".ic"); if (ic) ic.classList.add("spin");
+      }
+      if (matchMedia("(prefers-reduced-motion: reduce)").matches) return flip();
+      // The new theme spreads from the button as a growing circle; browsers without view transitions fade the colours instead.
+      if (document.startViewTransition) {
+        var r = btn.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2;
+        var end = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+        document.startViewTransition(flip).ready.then(function () {
+          document.documentElement.animate({ clipPath: ["circle(0px at " + x + "px " + y + "px)", "circle(" + end + "px at " + x + "px " + y + "px)"] },
+            { duration: 550, easing: "cubic-bezier(.4,0,.2,1)", pseudoElement: "::view-transition-new(root)" });
+        }).catch(function () {});
+      } else {
+        var root = document.documentElement;
+        root.classList.add("theme-fade");
+        flip();
+        setTimeout(function () { root.classList.remove("theme-fade"); }, 450);
+      }
     });
     // Labels follow a language switch on the page; the phone's mode counts until a choice is made.
     new MutationObserver(apply).observe(document.documentElement, { attributes: true, attributeFilter: ["lang"] });
