@@ -59,11 +59,18 @@ code{font:.88em ui-monospace,SFMono-Regular,Consolas,monospace;background:var(--
 .theme{flex:none;width:42px;height:42px;display:grid;place-items:center;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink2);cursor:pointer;padding:0}
 .theme:hover{color:var(--ink)}
 .theme .ic{width:20px;height:20px}
+/* Switching the theme: a circle grows from the button (kit.js, view transitions) or the colours fade; the icon turns in. */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+html.theme-fade,html.theme-fade *{transition:background-color .4s ease,color .4s ease,border-color .4s ease,fill .4s ease,stroke .4s ease!important}
+.theme .ic.spin{animation:theme-spin .55s cubic-bezier(.3,1.4,.5,1)}
+@keyframes theme-spin{from{transform:rotate(-120deg) scale(.4);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.theme .ic.spin{animation:none}}
 /* Narrow phones: page links take their own row under the logo. */
 @media (max-width:620px){
   .links{order:5;width:100%;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
   .links::-webkit-scrollbar{display:none}
-  .links a{font-size:14px;padding:6px 10px}
+  .links{gap:2px}
+  .links a{font-size:14px;padding:6px 9px}
   .lang select{font-size:14px;padding-right:30px;max-width:40vw}
 }
 
@@ -115,3 +122,4 @@ h2{font-family:Unbounded,Onest,system-ui,sans-serif;font-weight:700;font-size:cl
 /* Footer */
 footer{max-width:1040px;margin:0 auto;padding:24px 16px 40px;color:var(--ink3);font-size:14px;text-align:center;border-top:1px solid var(--line)}
 footer a{color:var(--ink2)}
+@media (max-width:380px){.links a{font-size:13.5px;padding:6px 8px}}
