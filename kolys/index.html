@@ -1,118 +1,646 @@
 <!doctype html>
-<html lang="en" style="--accent:#FFC673;--accent2:#FF9550;--on-accent:#2A1606">
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kolys: A letter to your future self</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Kolys: a letter to your future self</title>
 <meta name="description" content="Kolys is an Android app for writing letters to your future self: seal a time capsule and it opens on the day you choose.">
 <meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kolys: a letter to your future self">
+<meta property="og:description" content="Kolys is an Android app for writing letters to your future self: seal a time capsule and it opens on the day you choose.">
+<meta property="og:url" content="https://pegasohlib.github.io/kolys/">
+<meta property="og:image" content="https://pegasohlib.github.io/kolys/icon-512.png">
 <link rel="icon" href="icon.svg" type="image/svg+xml">
-<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/kolys/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/kolys/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/kolys/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/kolys/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/kolys/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kolys/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kolys/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kolys/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kolys/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kolys/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kolys/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kolys/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/kolys/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/kolys/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
-<style>:root{--gold-ink:#A4520A}
-@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--gold-ink:#FFC673}}
-:root[data-theme=dark]{--gold-ink:#FFC673}
-a,.tagline,.links a.on,.btn:hover,.doc .toc a:hover{color:var(--gold-ink)}
-.tile{color:var(--on-accent)}
-.hero .appicon{border-radius:28px}
-.avail{display:flex;gap:8px;align-items:center;justify-content:center;margin-top:16px}
-.avail .ic{width:18px;height:18px}
-.private{display:flex;gap:16px;align-items:flex-start;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 16%,var(--surface)),var(--surface) 70%);border-color:color-mix(in srgb,var(--accent) 40%,var(--line))}
-.private h3{margin:4px 0 6px}
-.private p{margin:0 0 16px}
-.private .btn{width:auto;min-height:46px}
-.doc .lead{max-width:none;margin:16px 0 0;text-align:left}
-.doc .toc{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:14px 18px;box-shadow:var(--shadow)}
-.doc h2{margin:0 0 8px}
-.doc h2 .ic{color:var(--gold-ink);width:22px;height:22px}
-.doc ul{padding-left:20px;margin:8px 0}
-footer p{margin:4px 0}
-@media (max-width:560px){.private{flex-direction:column}}</style>
-<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
+<style>
+:root{--g1:#FFC673;--g2:#FF9550;--on-accent:#2A1606;--accent:#9A5208;--accent2:#FF9550;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#1E2A5C;--navy2:#080B1F;--panel-line:transparent;--panel-ic:#FFD79A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
 </head>
 <body>
 <div class="bar"><div class="in">
-  <a class="home" id="home" href="./"><img src="icon.svg" alt=""><span id="brand">Kolys</span></a>
-  <nav class="links"><a class="on" id="nav-home" href="./">Home</a><a class="" id="nav-privacy" href="privacy.html">Privacy</a></nav>
-  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg><span class="sr">Language</span><select id="lang"><option value="en" selected>English</option><option value="uk">Українська</option><option value="es">Español</option><option value="pt">Português</option><option value="fr">Français</option><option value="de">Deutsch</option><option value="it">Italiano</option><option value="sv">Svenska</option><option value="id">Bahasa Indonesia</option><option value="ja">日本語</option><option value="kk">Қазақша</option><option value="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></label>
-  <button class="theme" id="theme" type="button" aria-label="Theme"></button>
+  <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Kolys</span></a>
+  <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
 </div></div>
-<main id="main">
-<section class="hero">
-  <img class="appicon" src="icon.svg" alt="" width="112" height="112">
-  <h1>Kolys</h1>
-  <p class="tagline">A letter to your future self</p>
-  <p class="lead">Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.</p>
-  <div class="actions"><a class="btn primary" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys/Kolys.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3"/><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/></svg>Download for Android</a></div>
-  <p class="note avail"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>An app for Android phones</p>
-</section>
-<section class="section"><div class="cards">
-<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z"/></svg></span><h3>Write</h3><p>A letter in your own words, with up to 10 photos. Gentle questions help when the page is blank.</p></article>
-<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span><h3>Seal</h3><p>In a month, a year, ten years or on any date. The date is checked online, so moving the phone’s clock won’t open it early.</p></article>
-<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.27 21a2 2 0 0 0 3.46 0"/><path d="M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33"/></svg></span><h3>Open</h3><p>On the day a notification arrives, the capsule opens with a little light show, and the letter is yours to read.</p></article>
-<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><h3>Keep</h3><p>Capsules are saved in a hidden folder on your own Google Drive. On a new phone, sign in with the same account and every capsule comes back.</p></article>
-<article class="card"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18"/><path d="M12 14v4"/><path d="M10 16h4"/></svg></span><h3>Remember</h3><p>One tap adds the opening day to your calendar, so the reminder finds you even years later on another phone.</p></article>
-</div></section>
-<section class="section"><div class="card private"><span class="tile"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></span><div><h3>Private by design</h3><p>No accounts of ours, no servers, no ads, no tracking. Your letters stay on your phone and, if you choose, in your own Google Drive.</p><a class="btn" href="privacy.html?lang=en">Privacy policy</a></div></div></section>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="Kolys: a letter to your future self" data-app="Kolys" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">A letter to your future self</p>
+    <p class="lead">Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
+    </div>
+    <p class="note">After installing, the app updates itself.<br>An app for Android phones · Android 8 and newer</p>
+  </header>
+
+  <section class="show" aria-label="How a time capsule works">
+    <div class="showtext"><h2 class="display">How a time capsule works</h2><p>Write today, and read it on the day you choose.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Write</h3><p>A letter in your own words, with up to 12 photos and videos and up to 3 voice messages. Gentle questions help when the page is blank.</p></div></li><li><span class="num">2</span><div><h3>Seal</h3><p>In a month, a year, ten years or on any date. The date is checked online, so moving the phone’s clock won’t open it early.</p></div></li><li><span class="num">3</span><div><h3>Open</h3><p>On the day a notification arrives, the capsule opens with a little light show, and the letter is yours to read.</p></div></li><li><span class="num">4</span><div><h3>Keep</h3><p>Capsules are saved in a hidden folder on your own Google Drive. On a new phone, sign in with the same account and every capsule comes back.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">What it can do</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Voice and video</h3><p>Voice messages up to 5 minutes, videos with a player of their own and photos that zoom with two fingers or a double tap. Once a letter opens, Memories shows them as a slideshow.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>This moment</h3><p>Your mood, the song that’s playing, the city and the weather. Years from now it will be fun to remember what this day was like.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>A capsule as a gift</h3><p>Write to someone close, seal it and send it as a file in any messenger. It can be opened in Kolys only on the chosen day.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Special dates</h3><p>Seal a capsule until a birthday, until New Year or for 1000 days, not just for a month, a year or ten.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Reminders along the way</h3><p>A note when a capsule has waited half its time, and another a week before it opens. You can turn them off in Settings.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Remember</h3><p>One tap adds the opening day to your calendar, so the reminder finds you even years later on another phone.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Your nearest capsule on the home screen, with the days left until it opens. In three sizes.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Drafts and replies</h3><p>Drafts save themselves as you write. Once a letter opens, reply to yourself: the reply is a new capsule that keeps the earlier letter.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-en">
+    <h2 class="eyebrow" id="x-en">And also</h2>
+    <div class="chips"><span>12 languages</span><span>Light and dark theme</span><span>Three opening sounds</span><span>Text size in five steps</span><span>A seal in your colour</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Private by design</h2><p>No accounts of ours, no servers, no ads, no tracking. Your letters stay on your phone and, if you choose, in your own Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="Колись: лист собі в майбутнє" data-app="Колись" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Колись</h1>
+    <p class="tagline">Лист собі в майбутнє</p>
+    <p class="lead">Напиши собі лист, додай фото й запечатай до обраного дня. До того часу його ніхто не відкриє, навіть ти. А коли час настане, капсула відкриється сама.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
+    </div>
+    <p class="note">Після встановлення застосунок оновлюється сам.<br>Застосунок для телефонів на Android · Android 8 і новіші</p>
+  </header>
+
+  <section class="show" aria-label="Як працює капсула часу">
+    <div class="showtext"><h2 class="display">Як працює капсула часу</h2><p>Напиши сьогодні, а прочитай в обраний день.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Напиши</h3><p>Лист своїми словами, до 12 фото й відео та до 3 голосових повідомлень. Якщо сторінка порожня, допоможуть питання-підказки.</p></div></li><li><span class="num">2</span><div><h3>Запечатай</h3><p>На місяць, рік, десять років або до будь-якої дати. Дата перевіряється через інтернет, тож переведений годинник не відкриє капсулу раніше.</p></div></li><li><span class="num">3</span><div><h3>Відкрий</h3><p>У потрібний день прийде сповіщення, капсула відкриється з маленьким святом світла, і лист можна буде прочитати.</p></div></li><li><span class="num">4</span><div><h3>Збережи</h3><p>Капсули лежать у прихованій папці на твоєму власному Google Диску. На новому телефоні увійди тим самим акаунтом, і всі капсули повернуться.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що вміє Колись</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Голос і відео</h3><p>Голосові повідомлення до 5 хвилин, відео з власним плеєром і фото, які наближаються двома пальцями або подвійним дотиком. Коли лист відкриється, «Спогади» покажуть їх слайд-шоу.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Цей момент</h3><p>Настрій, пісня, що зараз грає, місто й погода. Через роки буде цікаво згадати, яким був цей день.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Капсула в подарунок</h3><p>Напиши комусь близькому, запечатай і надішли файлом у будь-якому месенджері. Відкрити її в Колись можна буде лише в обраний день.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Особливі дати</h3><p>Запечатай до дня народження, до Нового року чи на 1000 днів, а не лише на місяць, рік чи десять.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Нагадування по дорозі</h3><p>Сповіщення, коли капсула чекає вже половину строку, і ще одне за тиждень до відкриття. Їх можна вимкнути в Налаштуваннях.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Не забудь</h3><p>Одним дотиком день відкриття додається в календар, тож нагадування знайде тебе навіть через роки й на іншому телефоні.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Віджет</h3><p>Найближча капсула на головному екрані й скільки днів лишилося до відкриття. У трьох розмірах.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Чернетки й відповіді</h3><p>Чернетки зберігаються самі, поки ти пишеш. Коли лист відкриється, відповідай собі: відповідь стане новою капсулою, що зберігає попередній лист.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-uk">
+    <h2 class="eyebrow" id="x-uk">А ще</h2>
+    <div class="chips"><span>12 мов</span><span>Світла й темна тема</span><span>Три звуки відкриття</span><span>Розмір тексту в п’ять кроків</span><span>Печатка твого кольору</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Приватність від початку</h2><p>Без наших акаунтів, серверів, реклами й стеження. Твої листи лишаються на телефоні й, якщо захочеш, на твоєму власному Google Диску.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Зв’язок: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="Kolys: una carta a tu yo del futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Una carta a tu yo del futuro</p>
+    <p class="lead">Escríbete una carta, añade fotos y séllala hasta el día que elijas. Hasta entonces nadie podrá abrirla, ni siquiera tú. Cuando llegue el momento, la cápsula se abrirá sola.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
+    </div>
+    <p class="note">Una vez instalada, la app se actualiza sola.<br>Una aplicación para teléfonos Android · Android 8 o posterior</p>
+  </header>
+
+  <section class="show" aria-label="Cómo funciona una cápsula del tiempo">
+    <div class="showtext"><h2 class="display">Cómo funciona una cápsula del tiempo</h2><p>Escribe hoy y lee la carta el día que elijas.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Escribe</h3><p>Una carta con tus propias palabras, hasta 12 fotos y vídeos y hasta 3 mensajes de voz. Si la página está en blanco, unas preguntas amables te ayudan.</p></div></li><li><span class="num">2</span><div><h3>Sella</h3><p>Para dentro de un mes, un año, diez años o para cualquier fecha. La fecha se comprueba por internet, así que cambiar la hora del teléfono no la abrirá antes.</p></div></li><li><span class="num">3</span><div><h3>Abre</h3><p>Ese día te llega una notificación, la cápsula se abre con un pequeño espectáculo de luz y la carta queda lista para que la leas.</p></div></li><li><span class="num">4</span><div><h3>Guarda</h3><p>Las cápsulas se guardan en una carpeta oculta de tu propio Google Drive. En un teléfono nuevo, inicia sesión con la misma cuenta y todas las cápsulas volverán.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Qué puede hacer</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Voz y vídeo</h3><p>Mensajes de voz de hasta 5 minutos, vídeos con su propio reproductor y fotos que se amplían con dos dedos o con un doble toque. Cuando la carta se abre, Recuerdos lo reúne todo en una presentación.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Este momento</h3><p>Tu estado de ánimo, la canción que está sonando, la ciudad y el tiempo. Dentro de unos años será bonito recordar cómo fue este día.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Una cápsula de regalo</h3><p>Escribe a alguien cercano, séllala y envíala como archivo por cualquier app de mensajería. Solo podrá abrirse en Kolys el día elegido.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Fechas especiales</h3><p>Sella la cápsula hasta un cumpleaños, hasta Año Nuevo o para dentro de 1000 días, no solo para un mes, un año o diez.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Recordatorios por el camino</h3><p>Un aviso cuando la cápsula lleva esperando la mitad de su tiempo y otro una semana antes de abrirse. Puedes desactivarlos en Ajustes.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Recuerda</h3><p>Con un toque añades el día de apertura a tu calendario, para que el recordatorio te encuentre incluso años después en otro teléfono.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Tu próxima cápsula en la pantalla de inicio, con los días que faltan para que se abra. En tres tamaños.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Borradores y respuestas</h3><p>Los borradores se guardan solos mientras escribes. Cuando una carta se abre, respóndete: la respuesta es una cápsula nueva que conserva la carta anterior.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-es">
+    <h2 class="eyebrow" id="x-es">Y además</h2>
+    <div class="chips"><span>12 idiomas</span><span>Tema claro y oscuro</span><span>Tres sonidos de apertura</span><span>Tamaño del texto en cinco pasos</span><span>Un sello de tu color</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privacidad desde el diseño</h2><p>Sin cuentas nuestras, sin servidores, sin anuncios, sin rastreo. Tus cartas se quedan en tu teléfono y, si quieres, en tu propio Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lee la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contacto: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="Kolys: uma carta ao teu eu do futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Uma carta ao teu eu do futuro</p>
+    <p class="lead">Escreve uma carta para ti, junta fotos e sela-a até ao dia que escolheres. Até lá, ninguém a pode abrir, nem mesmo tu. Quando chegar a hora, a cápsula abre-se sozinha.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
+    </div>
+    <p class="note">Depois de instalada, a app atualiza-se sozinha.<br>Uma app para telemóveis Android · Android 8 ou mais recente</p>
+  </header>
+
+  <section class="show" aria-label="Como funciona uma cápsula do tempo">
+    <div class="showtext"><h2 class="display">Como funciona uma cápsula do tempo</h2><p>Escreve hoje e lê a carta no dia que escolheres.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Escreve</h3><p>Uma carta com as tuas palavras, com até 12 fotos e vídeos e até 3 mensagens de voz. Quando a página está em branco, há perguntas suaves que ajudam.</p></div></li><li><span class="num">2</span><div><h3>Sela</h3><p>Por um mês, um ano, dez anos ou até qualquer data. A data é verificada online, por isso mudar o relógio do telemóvel não a abre mais cedo.</p></div></li><li><span class="num">3</span><div><h3>Abre</h3><p>No dia certo chega uma notificação, a cápsula abre-se com um pequeno espetáculo de luz e a carta fica pronta para leres.</p></div></li><li><span class="num">4</span><div><h3>Guarda</h3><p>As cápsulas ficam guardadas numa pasta oculta no teu próprio Google Drive. Num telemóvel novo, inicia sessão com a mesma conta e todas as cápsulas voltam.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">O que faz</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Voz e vídeo</h3><p>Mensagens de voz até 5 minutos, vídeos com leitor próprio e fotos que se ampliam com dois dedos ou um toque duplo. Quando a carta se abre, as Recordações mostram tudo numa apresentação.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Este momento</h3><p>O teu estado de espírito, a música que está a tocar, a cidade e o tempo. Daqui a uns anos vai ser giro lembrar como foi este dia.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Uma cápsula para oferecer</h3><p>Escreve a alguém próximo, sela a cápsula e envia-a como ficheiro em qualquer app de mensagens. Só pode ser aberta no Kolys no dia escolhido.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Datas especiais</h3><p>Sela a cápsula até um aniversário, até ao Ano Novo ou por 1000 dias, e não só por um mês, um ano ou dez.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Lembretes pelo caminho</h3><p>Um aviso quando a cápsula já esperou metade do tempo e outro uma semana antes da abertura. Podes desativá-los nas Definições.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Recorda</h3><p>Com um toque, o dia de abertura é adicionado ao teu calendário, para que o lembrete te encontre mesmo anos depois, noutro telemóvel.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>A tua próxima cápsula no ecrã principal, com os dias que faltam até abrir. Em três tamanhos.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Rascunhos e respostas</h3><p>Os rascunhos guardam-se sozinhos enquanto escreves. Quando uma carta se abre, responde-te: a resposta é uma nova cápsula que guarda a carta anterior.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-pt">
+    <h2 class="eyebrow" id="x-pt">E ainda</h2>
+    <div class="chips"><span>12 idiomas</span><span>Tema claro e escuro</span><span>Três sons de abertura</span><span>Tamanho do texto em cinco níveis</span><span>Um selo da tua cor</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privacidade desde a conceção</h2><p>Sem contas nossas, sem servidores, sem anúncios, sem rastreio. As tuas cartas ficam no teu telemóvel e, se quiseres, no teu próprio Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lê a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contacto: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="Kolys: une lettre à ton futur moi" data-app="Kolys" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Une lettre à ton futur moi</p>
+    <p class="lead">Écris-toi une lettre, ajoute des photos et scelle-la jusqu’au jour de ton choix. D’ici là, personne ne peut l’ouvrir, pas même toi. Le moment venu, la capsule s’ouvre toute seule.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
+    </div>
+    <p class="note">Une fois installée, l’appli se met à jour seule.<br>Une application pour téléphones Android · Android 8 et versions ultérieures</p>
+  </header>
+
+  <section class="show" aria-label="Comment fonctionne une capsule temporelle">
+    <div class="showtext"><h2 class="display">Comment fonctionne une capsule temporelle</h2><p>Écris aujourd’hui, et lis ta lettre le jour de ton choix.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Écris</h3><p>Une lettre avec tes propres mots, jusqu’à 12 photos et vidéos et jusqu’à 3 messages vocaux. Quand la page reste blanche, des questions douces t’aident à commencer.</p></div></li><li><span class="num">2</span><div><h3>Scelle</h3><p>Pour dans un mois, un an, dix ans ou à la date de ton choix. La date est vérifiée en ligne : changer l’heure du téléphone ne l’ouvrira pas plus tôt.</p></div></li><li><span class="num">3</span><div><h3>Ouvre</h3><p>Le jour venu, une notification arrive, la capsule s’ouvre dans un petit jeu de lumière, et la lettre est à toi, prête à être lue.</p></div></li><li><span class="num">4</span><div><h3>Garde</h3><p>Les capsules sont enregistrées dans un dossier caché de ton propre Google Drive. Sur un nouveau téléphone, connecte-toi avec le même compte et toutes les capsules reviennent.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Ce que l’appli sait faire</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Voix et vidéo</h3><p>Des messages vocaux jusqu’à 5 minutes, des vidéos avec leur propre lecteur et des photos qui s’agrandissent à deux doigts ou d’un double appui. Quand la lettre s’ouvre, Souvenirs les montre en diaporama.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Cet instant</h3><p>Ton humeur, la chanson qui passe, la ville et la météo. Dans quelques années, ce sera chouette de se rappeler à quoi ressemblait ce jour.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Une capsule en cadeau</h3><p>Écris à quelqu’un de proche, scelle la capsule et envoie-la en fichier dans n’importe quelle messagerie. Elle ne s’ouvre dans Kolys que le jour choisi.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Dates spéciales</h3><p>Scelle la capsule jusqu’à un anniversaire, jusqu’au Nouvel An ou pour 1000 jours, pas seulement pour un mois, un an ou dix.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Rappels en chemin</h3><p>Un mot quand la capsule a attendu la moitié de son temps, puis une semaine avant l’ouverture. Tu peux les désactiver dans Paramètres.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Souviens-toi</h3><p>D’un geste, le jour d’ouverture s’ajoute à ton agenda : le rappel te retrouvera même des années plus tard, sur un autre téléphone.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Ta prochaine capsule sur l’écran d’accueil, avec les jours qui restent avant son ouverture. En trois tailles.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Brouillons et réponses</h3><p>Les brouillons s’enregistrent tout seuls pendant que tu écris. Quand une lettre s’ouvre, réponds-toi : la réponse devient une nouvelle capsule qui garde la lettre d’avant.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-fr">
+    <h2 class="eyebrow" id="x-fr">Et aussi</h2>
+    <div class="chips"><span>12 langues</span><span>Thème clair et sombre</span><span>Trois sons d’ouverture</span><span>Taille du texte en cinq niveaux</span><span>Un sceau à ta couleur</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Confidentialité dès la conception</h2><p>Pas de compte chez nous, pas de serveurs, pas de pub, pas de pistage. Tes lettres restent sur ton téléphone et, si tu le souhaites, dans ton propre Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="Kolys: ein Brief an dein zukünftiges Ich" data-app="Kolys" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Ein Brief an dein zukünftiges Ich</p>
+    <p class="lead">Schreib dir selbst einen Brief, füge Fotos hinzu und versiegle ihn bis zu dem Tag, den du wählst. Bis dahin kann ihn niemand öffnen, nicht einmal du. Wenn es so weit ist, öffnet sich die Kapsel von selbst.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
+    </div>
+    <p class="note">Die App aktualisiert sich dann von selbst.<br>Eine App für Android-Smartphones · Android 8 und neuer</p>
+  </header>
+
+  <section class="show" aria-label="So funktioniert eine Zeitkapsel">
+    <div class="showtext"><h2 class="display">So funktioniert eine Zeitkapsel</h2><p>Heute schreiben, am gewählten Tag lesen.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Schreiben</h3><p>Ein Brief in deinen eigenen Worten, mit bis zu 12 Fotos und Videos und bis zu 3 Sprachnachrichten. Ist die Seite noch leer, helfen behutsame Fragen.</p></div></li><li><span class="num">2</span><div><h3>Versiegeln</h3><p>Für einen Monat, ein Jahr, zehn Jahre oder bis zu einem beliebigen Datum. Das Datum wird online geprüft, daher öffnet ein Verstellen der Handyuhr die Kapsel nicht früher.</p></div></li><li><span class="num">3</span><div><h3>Öffnen</h3><p>An dem Tag kommt eine Benachrichtigung, die Kapsel öffnet sich mit einer kleinen Lichtshow, und du kannst den Brief lesen.</p></div></li><li><span class="num">4</span><div><h3>Aufbewahren</h3><p>Kapseln werden in einem versteckten Ordner in deinem eigenen Google Drive gespeichert. Auf einem neuen Handy meldest du dich mit demselben Konto an, und alle Kapseln sind wieder da.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Was die App kann</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Stimme und Video</h3><p>Sprachnachrichten bis 5 Minuten, Videos mit eigenem Player und Fotos, die sich mit zwei Fingern oder einem Doppeltipp vergrößern lassen. Öffnet sich der Brief, zeigt „Erinnerungen“ alles als Diashow.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Dieser Moment</h3><p>Deine Stimmung, das Lied, das gerade läuft, die Stadt und das Wetter. In ein paar Jahren wird es schön sein, sich zu erinnern, wie dieser Tag war.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Eine Kapsel als Geschenk</h3><p>Schreib einem lieben Menschen, versiegle die Kapsel und schick sie als Datei über einen beliebigen Messenger. In Kolys lässt sie sich erst am gewählten Tag öffnen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Besondere Tage</h3><p>Versiegle die Kapsel bis zu einem Geburtstag, bis Neujahr oder für 1000 Tage, nicht nur für einen Monat, ein Jahr oder zehn.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Erinnerungen unterwegs</h3><p>Eine Nachricht, wenn eine Kapsel die Hälfte ihrer Zeit gewartet hat, und eine weitere eine Woche vor dem Öffnen. Abschalten kannst du sie in den Einstellungen.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Erinnern</h3><p>Mit einem Tipp landet der Öffnungstag in deinem Kalender, damit die Erinnerung dich auch Jahre später auf einem anderen Handy findet.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Deine nächste Kapsel auf dem Startbildschirm, mit den Tagen bis zum Öffnen. In drei Größen.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Entwürfe und Antworten</h3><p>Entwürfe speichern sich beim Schreiben von selbst. Öffnet sich ein Brief, antworte dir selbst: Die Antwort wird eine neue Kapsel, die den früheren Brief bewahrt.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-de">
+    <h2 class="eyebrow" id="x-de">Außerdem</h2>
+    <div class="chips"><span>12 Sprachen</span><span>Helles und dunkles Design</span><span>Drei Klänge beim Öffnen</span><span>Textgröße in fünf Stufen</span><span>Ein Siegel in deiner Farbe</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Von Grund auf privat</h2><p>Keine Konten bei uns, keine Server, keine Werbung, kein Tracking. Deine Briefe bleiben auf deinem Handy und, wenn du willst, in deinem eigenen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="Kolys: una lettera al te del futuro" data-app="Kolys" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Una lettera al te del futuro</p>
+    <p class="lead">Scriviti una lettera, aggiungi delle foto e sigillala fino al giorno che scegli. Fino ad allora nessuno potrà aprirla, nemmeno tu. Quando arriverà il momento, la capsula si aprirà da sola.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
+    </div>
+    <p class="note">Dopo l’installazione l’app si aggiorna da sola.<br>Un’app per smartphone Android · Android 8 e successivi</p>
+  </header>
+
+  <section class="show" aria-label="Come funziona una capsula del tempo">
+    <div class="showtext"><h2 class="display">Come funziona una capsula del tempo</h2><p>Scrivi oggi e leggi la lettera nel giorno che scegli.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Scrivi</h3><p>Una lettera con parole tue, con fino a 12 foto e video e fino a 3 messaggi vocali. Quando la pagina è bianca, qualche domanda gentile ti dà una mano.</p></div></li><li><span class="num">2</span><div><h3>Sigilla</h3><p>Per un mese, un anno, dieci anni o fino a qualsiasi data. La data viene verificata online, quindi spostare l’orologio del telefono non la aprirà prima.</p></div></li><li><span class="num">3</span><div><h3>Apri</h3><p>Quel giorno arriva una notifica, la capsula si apre con un piccolo gioco di luci e la lettera è lì, tutta da leggere.</p></div></li><li><span class="num">4</span><div><h3>Conserva</h3><p>Le capsule vengono salvate in una cartella nascosta del tuo Google Drive personale. Su un nuovo telefono, accedi con lo stesso account e tutte le capsule tornano.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Cosa sa fare</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Voce e video</h3><p>Messaggi vocali fino a 5 minuti, video con un lettore tutto loro e foto che si ingrandiscono con due dita o un doppio tocco. Quando la lettera si apre, Ricordi li mostra in una presentazione.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Questo momento</h3><p>Il tuo umore, la canzone che sta suonando, la città e il meteo. Tra qualche anno sarà bello ricordare com’era questo giorno.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Una capsula in regalo</h3><p>Scrivi a una persona cara, sigilla la capsula e inviala come file con qualsiasi app di messaggi. Si potrà aprire in Kolys solo nel giorno scelto.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Date speciali</h3><p>Sigilla la capsula fino a un compleanno, fino a Capodanno o per 1000 giorni, non solo per un mese, un anno o dieci.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Promemoria lungo la strada</h3><p>Un avviso quando la capsula ha atteso metà del suo tempo e un altro una settimana prima dell’apertura. Puoi disattivarli nelle Impostazioni.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Ricorda</h3><p>Con un tocco aggiungi il giorno di apertura al tuo calendario, così il promemoria ti troverà anche anni dopo, su un altro telefono.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>La tua prossima capsula nella schermata Home, con i giorni che mancano all’apertura. In tre dimensioni.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Bozze e risposte</h3><p>Le bozze si salvano da sole mentre scrivi. Quando una lettera si apre, rispondi al te del passato: la risposta diventa una nuova capsula che conserva la lettera precedente.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-it">
+    <h2 class="eyebrow" id="x-it">E inoltre</h2>
+    <div class="chips"><span>12 lingue</span><span>Tema chiaro e scuro</span><span>Tre suoni di apertura</span><span>Dimensione del testo in cinque livelli</span><span>Un sigillo del tuo colore</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privacy fin dalla progettazione</h2><p>Nessun nostro account, nessun server, niente pubblicità, nessun tracciamento. Le tue lettere restano sul tuo telefono e, se vuoi, nel tuo Google Drive personale.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contatti: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="Kolys: ett brev till ditt framtida jag" data-app="Kolys" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Ett brev till ditt framtida jag</p>
+    <p class="lead">Skriv ett brev till dig själv, lägg till foton och försegla det till den dag du väljer. Fram till dess kan ingen öppna det, inte ens du. När tiden är inne öppnas kapseln av sig själv.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
+    </div>
+    <p class="note">Efter installationen uppdaterar appen sig själv.<br>En app för Android-telefoner · Android 8 och senare</p>
+  </header>
+
+  <section class="show" aria-label="Så fungerar en tidskapsel">
+    <div class="showtext"><h2 class="display">Så fungerar en tidskapsel</h2><p>Skriv i dag och läs brevet den dag du väljer.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Skriv</h3><p>Ett brev med dina egna ord, med upp till 12 foton och videor och upp till 3 röstmeddelanden. Varsamma frågor hjälper till när sidan är tom.</p></div></li><li><span class="num">2</span><div><h3>Försegla</h3><p>Om en månad, ett år, tio år eller till vilket datum som helst. Datumet kontrolleras online, så att ställa om telefonens klocka öppnar den inte i förväg.</p></div></li><li><span class="num">3</span><div><h3>Öppna</h3><p>På dagen kommer en avisering, kapseln öppnas med en liten ljusshow och brevet är ditt att läsa.</p></div></li><li><span class="num">4</span><div><h3>Spara</h3><p>Kapslarna sparas i en dold mapp i din egen Google Drive. På en ny telefon loggar du in med samma konto, och alla kapslar kommer tillbaka.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Vad appen kan</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Röst och video</h3><p>Röstmeddelanden på upp till 5 minuter, videor med egen spelare och foton som zoomas med två fingrar eller ett dubbeltryck. När brevet öppnas visar Minnen allt som ett bildspel.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Det här ögonblicket</h3><p>Ditt humör, låten som spelas, staden och vädret. Om några år blir det kul att minnas hur den här dagen var.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>En kapsel i present</h3><p>Skriv till någon som står dig nära, försegla kapseln och skicka den som en fil i valfri chattapp. Den kan bara öppnas i Kolys på den valda dagen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Speciella datum</h3><p>Försegla kapseln till en födelsedag, till nyår eller i 1000 dagar, inte bara för en månad, ett år eller tio.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Påminnelser längs vägen</h3><p>En avisering när en kapsel har väntat halva tiden och en till en vecka före öppningen. Du kan stänga av dem i Inställningar.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Kom ihåg</h3><p>Med ett tryck läggs öppningsdagen till i din kalender, så att påminnelsen hittar dig även flera år senare på en annan telefon.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Din närmaste kapsel på hemskärmen, med dagarna kvar tills den öppnas. I tre storlekar.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Utkast och svar</h3><p>Utkast sparas av sig själva medan du skriver. När ett brev öppnas kan du svara dig själv: svaret blir en ny kapsel som behåller det tidigare brevet.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-sv">
+    <h2 class="eyebrow" id="x-sv">Dessutom</h2>
+    <div class="chips"><span>12 språk</span><span>Ljust och mörkt tema</span><span>Tre ljud vid öppning</span><span>Textstorlek i fem steg</span><span>Ett sigill i din färg</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privat från grunden</h2><p>Inga konton hos oss, inga servrar, ingen reklam, ingen spårning. Dina brev stannar på din telefon och, om du vill, i din egen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="Kolys: surat untuk dirimu di masa depan" data-app="Kolys" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Surat untuk dirimu di masa depan</p>
+    <p class="lead">Tulis surat untuk dirimu sendiri, tambahkan foto, lalu segel hingga hari yang kamu pilih. Sampai saat itu tidak ada yang bisa membukanya, bahkan kamu sendiri. Saat waktunya tiba, kapsul akan terbuka dengan sendirinya.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan privasi</span></a>
+    </div>
+    <p class="note">Setelah dipasang, aplikasi diperbarui otomatis.<br>Aplikasi untuk ponsel Android · Android 8 dan yang lebih baru</p>
+  </header>
+
+  <section class="show" aria-label="Cara kerja kapsul waktu">
+    <div class="showtext"><h2 class="display">Cara kerja kapsul waktu</h2><p>Tulis hari ini, baca pada hari yang kamu pilih.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Tulis</h3><p>Surat dengan kata-katamu sendiri, dengan hingga 12 foto dan video serta hingga 3 pesan suara. Pertanyaan-pertanyaan ringan akan membantu saat halaman masih kosong.</p></div></li><li><span class="num">2</span><div><h3>Segel</h3><p>Untuk sebulan, setahun, sepuluh tahun, atau sampai tanggal berapa pun. Tanggal diperiksa secara online, jadi mengubah jam ponsel tidak akan membukanya lebih awal.</p></div></li><li><span class="num">3</span><div><h3>Buka</h3><p>Pada hari itu sebuah notifikasi datang, kapsul terbuka dengan pertunjukan cahaya kecil, dan suratnya siap kamu baca.</p></div></li><li><span class="num">4</span><div><h3>Simpan</h3><p>Kapsul disimpan di folder tersembunyi di Google Drive milikmu sendiri. Di ponsel baru, masuk dengan akun yang sama dan semua kapsul akan kembali.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Apa yang bisa dilakukannya</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Suara dan video</h3><p>Pesan suara hingga 5 menit, video dengan pemutarnya sendiri, dan foto yang bisa diperbesar dengan dua jari atau ketuk dua kali. Saat surat terbuka, Kenangan menampilkan semuanya sebagai tayangan slide.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Momen ini</h3><p>Suasana hatimu, lagu yang sedang diputar, kota, dan cuaca. Bertahun-tahun lagi, pasti seru mengingat seperti apa hari ini.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Kapsul sebagai hadiah</h3><p>Tulis untuk orang terdekat, segel, lalu kirim sebagai file lewat aplikasi pesan apa pun. Kapsul hanya bisa dibuka di Kolys pada hari yang dipilih.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Tanggal istimewa</h3><p>Segel sampai hari ulang tahun, sampai Tahun Baru, atau selama 1000 hari, bukan hanya sebulan, setahun, atau sepuluh tahun.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Pengingat di sepanjang jalan</h3><p>Notifikasi saat kapsul sudah menunggu separuh waktunya, dan satu lagi seminggu sebelum dibuka. Kamu bisa mematikannya di Setelan.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Ingat</h3><p>Sekali ketuk, hari pembukaan ditambahkan ke kalendermu, jadi pengingatnya tetap menemukanmu bahkan bertahun-tahun kemudian di ponsel lain.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Kapsul terdekatmu di layar utama, lengkap dengan sisa hari sampai dibuka. Dalam tiga ukuran.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Draf dan balasan</h3><p>Draf tersimpan sendiri saat kamu menulis. Saat surat terbuka, balas dirimu sendiri: balasannya menjadi kapsul baru yang menyimpan surat sebelumnya.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-id">
+    <h2 class="eyebrow" id="x-id">Selain itu</h2>
+    <div class="chips"><span>12 bahasa</span><span>Tema terang dan gelap</span><span>Tiga suara pembukaan</span><span>Ukuran teks dalam lima tingkat</span><span>Segel dengan warna pilihanmu</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privat sejak awal</h2><p>Tanpa akun dari kami, tanpa server, tanpa iklan, tanpa pelacakan. Surat-suratmu tetap di ponselmu dan, jika kamu mau, di Google Drive milikmu sendiri.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Kontak: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="コリス：未来の自分への手紙" data-app="コリス" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>コリス</h1>
+    <p class="tagline">未来の自分への手紙</p>
+    <p class="lead">自分に宛てて手紙を書き、写真を添えて、選んだ日まで封をしましょう。その日までは誰にも開けられません。あなた自身にもです。その時が来ると、カプセルはひとりでに開きます。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
+    </div>
+    <p class="note">インストール後は自動でアップデートされます。<br>Android スマートフォン向けアプリ · Android 8 以降</p>
+  </header>
+
+  <section class="show" aria-label="タイムカプセルのしくみ">
+    <div class="showtext"><h2 class="display">タイムカプセルのしくみ</h2><p>今日書いて、選んだ日に読む。</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>書く</h3><p>自分の言葉でつづる手紙に、写真と動画を 12 件まで、ボイスメッセージを 3 件まで添えられます。何も書けないときは、やさしい問いかけがヒントになります。</p></div></li><li><span class="num">2</span><div><h3>封をする</h3><p>1 か月後、1 年後、10 年後、または好きな日付まで。日付はオンラインで確認されるため、スマホの時計を動かしても早く開くことはありません。</p></div></li><li><span class="num">3</span><div><h3>開く</h3><p>その日が来ると通知が届き、カプセルが小さな光の演出とともに開いて、手紙を読めるようになります。</p></div></li><li><span class="num">4</span><div><h3>残す</h3><p>カプセルは、あなた自身の Google ドライブ内の非表示フォルダに保存されます。新しいスマホでも同じアカウントでログインすれば、すべてのカプセルが戻ってきます。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">できること</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>声と動画</h3><p>5 分までのボイスメッセージ、専用プレーヤー付きの動画、2 本指やダブルタップで拡大できる写真。手紙が開くと、「思い出」がスライドショーで見せてくれます。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>今この瞬間</h3><p>気分、いま流れている曲、街と天気。何年か後、この日がどんな日だったか思い出すのはきっと楽しいはず。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>プレゼントのカプセル</h3><p>大切な人に手紙を書いて封をし、好きなメッセージアプリでファイルとして送れます。開けるのは、選んだ日にコリスの中だけです。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>特別な日</h3><p>1 か月、1 年、10 年だけでなく、誕生日や新年まで、または 1000 日後まで封をできます。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>途中のリマインダー</h3><p>カプセルが待ち時間の半分を過ぎたときと、開封の 1 週間前にお知らせします。「設定」でオフにできます。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>忘れない</h3><p>ワンタップで開封日をカレンダーに追加できるので、何年後でも、別のスマホでも、リマインダーがあなたに届きます。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>ウィジェット</h3><p>次のカプセルと開封までの日数をホーム画面に表示。サイズは 3 種類です。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>下書きと返信</h3><p>下書きは書いている間に自動で保存されます。手紙が開いたら自分に返信でき、その返信は前の手紙を添えた新しいカプセルになります。</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ja">
+    <h2 class="eyebrow" id="x-ja">さらに</h2>
+    <div class="chips"><span>12言語に対応</span><span>ライト・ダークテーマ</span><span>3種類の開封の音</span><span>5段階の文字サイズ</span><span>好きな色の封蝋</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">プライバシー重視の設計</h2><p>独自のアカウントもサーバーもなく、広告もトラッキングもありません。手紙はあなたのスマホに残り、希望すればあなた自身の Google ドライブにも保存されます。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">お問い合わせ: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="Колись: болашақтағы өзіңе хат" data-app="Колись" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Колись</h1>
+    <p class="tagline">Болашақтағы өзіңе хат</p>
+    <p class="lead">Өзіңе хат жаз, фото қос та, таңдаған күніңе дейін мөрлеп қой. Оған дейін оны ешкім аша алмайды, тіпті сен де. Уақыты келгенде капсула өзі ашылады.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялық саясаты</span></a>
+    </div>
+    <p class="note">Орнатқаннан кейін қолданба өзі жаңарып отырады.<br>Android телефондарына арналған қолданба · Android 8 және одан жаңа</p>
+  </header>
+
+  <section class="show" aria-label="Уақыт капсуласы қалай жұмыс істейді">
+    <div class="showtext"><h2 class="display">Уақыт капсуласы қалай жұмыс істейді</h2><p>Бүгін жаз, ал таңдаған күніңде оқы.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Жаз</h3><p>Өз сөзіңмен жазылған хат, 12-ге дейін фото мен бейне және 3-ке дейін дауыстық хабар. Бет бос тұрса, көмекші сұрақтар жол көрсетеді.</p></div></li><li><span class="num">2</span><div><h3>Мөрле</h3><p>Бір айға, бір жылға, он жылға немесе кез келген күнге дейін. Күн интернет арқылы тексеріледі, сондықтан телефон сағатын жылжыту капсуланы ертерек ашпайды.</p></div></li><li><span class="num">3</span><div><h3>Аш</h3><p>Сол күні хабарландыру келеді, капсула шағын жарық шоуымен ашылады, сөйтіп хатты оқи аласың.</p></div></li><li><span class="num">4</span><div><h3>Сақта</h3><p>Капсулалар өзіңнің Google Drive-ыңдағы жасырын қалтада сақталады. Жаңа телефонда сол аккаунтпен кірсең, барлық капсула қайта оралады.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Не істей алады</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Дауыс пен бейне</h3><p>5 минутқа дейінгі дауыстық хабарлар, өз ойнатқышы бар бейнелер және екі саусақпен не екі рет түрту арқылы үлкейтілетін фотолар. Хат ашылғанда «Естеліктер» бәрін слайд-шоу етіп көрсетеді.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Осы сәт</h3><p>Көңіл-күйің, қазір ойнап тұрған ән, қала мен ауа райы. Жылдар өткен соң бұл күннің қандай болғанын еске алу қызық болады.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Сыйлыққа капсула</h3><p>Жақын адамыңа жазып, мөрле де, кез келген мессенджерде файл етіп жібер. Оны Колись қолданбасында тек таңдалған күні ашуға болады.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Ерекше күндер</h3><p>Бір айға, бір жылға не он жылға ғана емес, туған күнге, Жаңа жылға дейін немесе 1000 күнге мөрлей аласың.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Жол бойы еске салу</h3><p>Капсула мерзімінің жартысын күткенде және ашылуға бір апта қалғанда хабарландыру келеді. Оларды Баптауларда өшіре аласың.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Ұмытпа</h3><p>Бір түртсең болды, ашылу күні күнтізбеңе қосылады, сондықтан еске салғыш сені жылдар өтсе де, басқа телефонда да табады.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Виджет</h3><p>Ең жақын капсула және оның ашылуына қанша күн қалғаны — басты экранда. Үш өлшемде.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Жобалар мен жауаптар</h3><p>Жобалар жазып отырғанда өздігінен сақталады. Хат ашылғанда өзіңе жауап жаз: жауап алдыңғы хатты сақтайтын жаңа капсулаға айналады.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-kk">
+    <h2 class="eyebrow" id="x-kk">Тағы да</h2>
+    <div class="chips"><span>12 тіл</span><span>Ашық және қараңғы тақырып</span><span>Үш түрлі ашылу дыбысы</span><span>Мәтін өлшемі бес деңгейде</span><span>Өзің таңдаған түстегі мөр</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Құпиялық басынан ойластырылған</h2><p>Біздің аккаунттарымыз да, серверлеріміз де, жарнама да, бақылау да жоқ. Хаттарың телефоныңда қалады, ал қаласаң, өзіңнің Google Drive-ыңда да сақталады.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Байланыс: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="Колись: письмо себе в будущее" data-app="Колись" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Колись</h1>
+    <p class="tagline">Письмо себе в будущее</p>
+    <p class="lead">Напиши себе письмо, добавь фото и запечатай его до выбранного дня. До тех пор его никто не откроет, даже ты. А когда время придёт, капсула откроется сама.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
+    </div>
+    <p class="note">После установки приложение обновляется само.<br>Приложение для телефонов на Android · Android 8 и новее</p>
+  </header>
+
+  <section class="show" aria-label="Как работает капсула времени">
+    <div class="showtext"><h2 class="display">Как работает капсула времени</h2><p>Напиши сегодня, а прочитай в выбранный день.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Напиши</h3><p>Письмо своими словами, до 12 фото и видео и до 3 голосовых сообщений. Если страница пустая, помогут вопросы-подсказки.</p></div></li><li><span class="num">2</span><div><h3>Запечатай</h3><p>На месяц, год, десять лет или до любой даты. Дата проверяется через интернет, поэтому переведённые часы не откроют капсулу раньше.</p></div></li><li><span class="num">3</span><div><h3>Открой</h3><p>В нужный день придёт уведомление, капсула откроется с маленьким световым шоу, и письмо можно будет прочитать.</p></div></li><li><span class="num">4</span><div><h3>Сохрани</h3><p>Капсулы хранятся в скрытой папке на твоём собственном Google Диске. На новом телефоне войди в тот же аккаунт, и все капсулы вернутся.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что умеет Колись</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Голос и видео</h3><p>Голосовые сообщения до 5 минут, видео со своим плеером и фото, которые приближаются двумя пальцами или двойным касанием. Когда письмо откроется, «Воспоминания» покажут их слайд-шоу.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Этот момент</h3><p>Настроение, песня, которая сейчас играет, город и погода. Через годы будет интересно вспомнить, каким был этот день.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Капсула в подарок</h3><p>Напиши кому-то близкому, запечатай и отправь файлом в любом мессенджере. Открыть её в Колись можно будет только в выбранный день.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Особые даты</h3><p>Запечатай до дня рождения, до Нового года или на 1000 дней, а не только на месяц, год или десять.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Напоминания по пути</h3><p>Уведомление, когда капсула ждёт уже половину срока, и ещё одно за неделю до открытия. Их можно выключить в Настройках.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Не забудь</h3><p>Одним касанием день открытия добавляется в календарь, так что напоминание найдёт тебя даже через годы и на другом телефоне.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Виджет</h3><p>Ближайшая капсула на главном экране и сколько дней осталось до открытия. В трёх размерах.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Черновики и ответы</h3><p>Черновики сохраняются сами, пока ты пишешь. Когда письмо откроется, ответь себе: ответ станет новой капсулой, которая хранит прежнее письмо.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ru">
+    <h2 class="eyebrow" id="x-ru">А ещё</h2>
+    <div class="chips"><span>12 языков</span><span>Светлая и тёмная тема</span><span>Три звука открытия</span><span>Размер текста в пять шагов</span><span>Печать твоего цвета</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Приватность с самого начала</h2><p>Без наших аккаунтов, серверов, рекламы и слежки. Твои письма остаются на телефоне и, если захочешь, на твоём собственном Google Диске.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Связь: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
 </main>
-<footer id="foot"><p>Kolys · a letter to your future self · Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p><p><a href="https://pegasohlib.github.io/?lang=en">PegasoHlib — all apps</a></p></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
 <script>
-const I = {"pen":"<path d=\"M12 20h9\"/><path d=\"M16.5 3.5a2.1 2.1 0 1 1 3 3L7 19l-4 1 1-4Z\"/>","lock":"<rect x=\"3\" y=\"11\" width=\"18\" height=\"11\" rx=\"2\"/><path d=\"M7 11V7a5 5 0 0 1 10 0v4\"/>","bell":"<path d=\"M10.27 21a2 2 0 0 0 3.46 0\"/><path d=\"M3.26 15.33A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.67C19.41 13.96 18 12.5 18 8A6 6 0 0 0 6 8c0 4.5-1.41 5.96-2.74 7.33\"/>","cloud":"<path d=\"M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z\"/>","calendar":"<path d=\"M8 2v4\"/><path d=\"M16 2v4\"/><rect x=\"3\" y=\"4\" width=\"18\" height=\"18\" rx=\"2\"/><path d=\"M3 10h18\"/><path d=\"M12 14v4\"/><path d=\"M10 16h4\"/>","shield":"<path d=\"M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z\"/>","phone":"<rect x=\"7\" y=\"2\" width=\"10\" height=\"20\" rx=\"2\"/><path d=\"M11 18h2\"/>","clock":"<circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 6v6l4 2\"/>","off":"<path d=\"M2 2l20 20\"/><path d=\"M8.5 8.5A5 5 0 0 0 12 17a5 5 0 0 0 3.5-1.5\"/><path d=\"M12 7a5 5 0 0 1 5 5\"/>","trash":"<path d=\"M3 6h18\"/><path d=\"M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6\"/><path d=\"M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2\"/>","user":"<circle cx=\"12\" cy=\"8\" r=\"4\"/><path d=\"M4 21a8 8 0 0 1 16 0\"/>","edit":"<path d=\"M21 12a9 9 0 1 1-9-9\"/><path d=\"M21 3v6h-6\"/>","mail":"<rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"/><path d=\"m22 7-10 6L2 7\"/>","download":"<path d=\"M12 15V3\"/><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"/><path d=\"m7 10 5 5 5-5\"/>","pin":"<path d=\"M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0\"/><circle cx=\"12\" cy=\"10\" r=\"3\"/>","music":"<path d=\"M9 18V5l12-2v13\"/><circle cx=\"6\" cy=\"18\" r=\"3\"/><circle cx=\"18\" cy=\"16\" r=\"3\"/>","gift":"<rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/><path d=\"M12 8v13\"/><path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/><path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\"/>","image":"<rect x=\"3\" y=\"3\" width=\"18\" height=\"18\" rx=\"2\"/><circle cx=\"9\" cy=\"9\" r=\"2\"/><path d=\"m21 15-3.09-3.09a2 2 0 0 0-2.82 0L6 21\"/>"};
-const D = {"en":{"common":{"brand":"Kolys","navHome":"Home","navPrivacy":"Privacy","metaDesc":"Kolys is an Android app for writing letters to your future self: seal a time capsule and it opens on the day you choose.","footer":"Kolys · a letter to your future self · Contact: {mail}","hub":"PegasoHlib — all apps"},"page":{"tagline":"A letter to your future self","lead":"Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.","avail":"An app for Android phones","download":"Download for Android","features":[{"icon":"pen","title":"Write","text":"A letter in your own words, with up to 10 photos. Gentle questions help when the page is blank."},{"icon":"lock","title":"Seal","text":"In a month, a year, ten years or on any date. The date is checked online, so moving the phone’s clock won’t open it early."},{"icon":"bell","title":"Open","text":"On the day a notification arrives, the capsule opens with a little light show, and the letter is yours to read."},{"icon":"cloud","title":"Keep","text":"Capsules are saved in a hidden folder on your own Google Drive. On a new phone, sign in with the same account and every capsule comes back."},{"icon":"calendar","title":"Remember","text":"One tap adds the opening day to your calendar, so the reminder finds you even years later on another phone."}],"privateTitle":"Private by design","privateText":"No accounts of ours, no servers, no ads, no tracking. Your letters stay on your phone and, if you choose, in your own Google Drive.","privacyLink":"Privacy policy","brand":"Kolys"}},"uk":{"common":{"brand":"Колись","navHome":"Головна","navPrivacy":"Конфіденційність","metaDesc":"Колись — застосунок для Android, щоб писати листи собі в майбутнє: запечатай капсулу часу, і вона відкриється в обраний день.","footer":"Колись · лист собі в майбутнє · Зв’язок: {mail}","hub":"PegasoHlib — всі застосунки"},"page":{"tagline":"Лист собі в майбутнє","lead":"Напиши собі лист, додай фото й запечатай до обраного дня. До того часу його ніхто не відкриє, навіть ти. А коли час настане, капсула відкриється сама.","avail":"Застосунок для телефонів на Android","download":"Завантажити для Android","features":[{"icon":"pen","title":"Напиши","text":"Лист своїми словами, до 10 фото. Якщо сторінка порожня, допоможуть питання-підказки."},{"icon":"lock","title":"Запечатай","text":"На місяць, рік, десять років або до будь-якої дати. Дата перевіряється через інтернет, тож переведений годинник не відкриє капсулу раніше."},{"icon":"bell","title":"Відкрий","text":"У потрібний день прийде сповіщення, капсула відкриється з маленьким святом світла, і лист можна буде прочитати."},{"icon":"cloud","title":"Збережи","text":"Капсули лежать у прихованій папці на твоєму власному Google Диску. На новому телефоні увійди тим самим акаунтом, і всі капсули повернуться."},{"icon":"calendar","title":"Не забудь","text":"Одним дотиком день відкриття додається в календар, тож нагадування знайде тебе навіть через роки й на іншому телефоні."}],"privateTitle":"Приватність від початку","privateText":"Без наших акаунтів, серверів, реклами й стеження. Твої листи лишаються на телефоні й, якщо захочеш, на твоєму власному Google Диску.","privacyLink":"Політика конфіденційності","brand":"Колись"}},"es":{"common":{"brand":"Kolys","navHome":"Inicio","navPrivacy":"Privacidad","metaDesc":"Kolys es una aplicación de Android para escribir cartas a tu yo del futuro: sella una cápsula del tiempo y se abrirá el día que elijas.","footer":"Kolys · una carta a tu yo del futuro · Contacto: {mail}","hub":"PegasoHlib — todas las apps"},"page":{"tagline":"Una carta a tu yo del futuro","lead":"Escríbete una carta, añade fotos y séllala hasta el día que elijas. Hasta entonces nadie podrá abrirla, ni siquiera tú. Cuando llegue el momento, la cápsula se abrirá sola.","avail":"Una aplicación para teléfonos Android","download":"Descargar para Android","features":[{"icon":"pen","title":"Escribe","text":"Una carta con tus propias palabras y hasta 10 fotos. Si la página está en blanco, unas preguntas amables te ayudan."},{"icon":"lock","title":"Sella","text":"Para dentro de un mes, un año, diez años o para cualquier fecha. La fecha se comprueba por internet, así que cambiar la hora del teléfono no la abrirá antes."},{"icon":"bell","title":"Abre","text":"Ese día te llega una notificación, la cápsula se abre con un pequeño espectáculo de luz y la carta queda lista para que la leas."},{"icon":"cloud","title":"Guarda","text":"Las cápsulas se guardan en una carpeta oculta de tu propio Google Drive. En un teléfono nuevo, inicia sesión con la misma cuenta y todas las cápsulas volverán."},{"icon":"calendar","title":"Recuerda","text":"Con un toque añades el día de apertura a tu calendario, para que el recordatorio te encuentre incluso años después en otro teléfono."}],"privateTitle":"Privacidad desde el diseño","privateText":"Sin cuentas nuestras, sin servidores, sin anuncios, sin rastreo. Tus cartas se quedan en tu teléfono y, si quieres, en tu propio Google Drive.","privacyLink":"Política de privacidad","brand":"Kolys"}},"pt":{"common":{"brand":"Kolys","navHome":"Início","navPrivacy":"Privacidade","metaDesc":"Kolys é uma app para Android para escreveres cartas ao teu eu do futuro: sela uma cápsula do tempo e ela abre-se no dia que escolheres.","footer":"Kolys · uma carta ao teu eu do futuro · Contacto: {mail}","hub":"PegasoHlib — todas as apps"},"page":{"tagline":"Uma carta ao teu eu do futuro","lead":"Escreve uma carta para ti, junta fotos e sela-a até ao dia que escolheres. Até lá, ninguém a pode abrir, nem mesmo tu. Quando chegar a hora, a cápsula abre-se sozinha.","avail":"Uma app para telemóveis Android","download":"Descarregar para Android","features":[{"icon":"pen","title":"Escreve","text":"Uma carta com as tuas palavras, com até 10 fotos. Quando a página está em branco, há perguntas suaves que ajudam."},{"icon":"lock","title":"Sela","text":"Por um mês, um ano, dez anos ou até qualquer data. A data é verificada online, por isso mudar o relógio do telemóvel não a abre mais cedo."},{"icon":"bell","title":"Abre","text":"No dia certo chega uma notificação, a cápsula abre-se com um pequeno espetáculo de luz e a carta fica pronta para leres."},{"icon":"cloud","title":"Guarda","text":"As cápsulas ficam guardadas numa pasta oculta no teu próprio Google Drive. Num telemóvel novo, inicia sessão com a mesma conta e todas as cápsulas voltam."},{"icon":"calendar","title":"Recorda","text":"Com um toque, o dia de abertura é adicionado ao teu calendário, para que o lembrete te encontre mesmo anos depois, noutro telemóvel."}],"privateTitle":"Privacidade desde a conceção","privateText":"Sem contas nossas, sem servidores, sem anúncios, sem rastreio. As tuas cartas ficam no teu telemóvel e, se quiseres, no teu próprio Google Drive.","privacyLink":"Política de privacidade","brand":"Kolys"}},"fr":{"common":{"brand":"Kolys","navHome":"Accueil","navPrivacy":"Confidentialité","metaDesc":"Kolys est une application Android pour écrire des lettres à ton futur moi : scelle une capsule temporelle et elle s’ouvrira le jour de ton choix.","footer":"Kolys · une lettre à ton futur moi · Contact : {mail}","hub":"PegasoHlib — toutes les applis"},"page":{"tagline":"Une lettre à ton futur moi","lead":"Écris-toi une lettre, ajoute des photos et scelle-la jusqu’au jour de ton choix. D’ici là, personne ne peut l’ouvrir, pas même toi. Le moment venu, la capsule s’ouvre toute seule.","avail":"Une application pour téléphones Android","download":"Télécharger pour Android","features":[{"icon":"pen","title":"Écris","text":"Une lettre avec tes propres mots et jusqu’à 10 photos. Quand la page reste blanche, des questions douces t’aident à commencer."},{"icon":"lock","title":"Scelle","text":"Pour dans un mois, un an, dix ans ou à la date de ton choix. La date est vérifiée en ligne : changer l’heure du téléphone ne l’ouvrira pas plus tôt."},{"icon":"bell","title":"Ouvre","text":"Le jour venu, une notification arrive, la capsule s’ouvre dans un petit jeu de lumière, et la lettre est à toi, prête à être lue."},{"icon":"cloud","title":"Garde","text":"Les capsules sont enregistrées dans un dossier caché de ton propre Google Drive. Sur un nouveau téléphone, connecte-toi avec le même compte et toutes les capsules reviennent."},{"icon":"calendar","title":"Souviens-toi","text":"D’un geste, le jour d’ouverture s’ajoute à ton agenda : le rappel te retrouvera même des années plus tard, sur un autre téléphone."}],"privateTitle":"Confidentialité dès la conception","privateText":"Pas de compte chez nous, pas de serveurs, pas de pub, pas de pistage. Tes lettres restent sur ton téléphone et, si tu le souhaites, dans ton propre Google Drive.","privacyLink":"Politique de confidentialité","brand":"Kolys"}},"de":{"common":{"brand":"Kolys","navHome":"Start","navPrivacy":"Datenschutz","metaDesc":"Kolys ist eine Android-App für Briefe an dein zukünftiges Ich: Versiegle eine Zeitkapsel, und sie öffnet sich an dem Tag, den du wählst.","footer":"Kolys · ein Brief an dein zukünftiges Ich · Kontakt: {mail}","hub":"PegasoHlib — alle Apps"},"page":{"tagline":"Ein Brief an dein zukünftiges Ich","lead":"Schreib dir selbst einen Brief, füge Fotos hinzu und versiegle ihn bis zu dem Tag, den du wählst. Bis dahin kann ihn niemand öffnen, nicht einmal du. Wenn es so weit ist, öffnet sich die Kapsel von selbst.","avail":"Eine App für Android-Smartphones","download":"Für Android herunterladen","features":[{"icon":"pen","title":"Schreiben","text":"Ein Brief in deinen eigenen Worten, mit bis zu 10 Fotos. Ist die Seite noch leer, helfen behutsame Fragen."},{"icon":"lock","title":"Versiegeln","text":"Für einen Monat, ein Jahr, zehn Jahre oder bis zu einem beliebigen Datum. Das Datum wird online geprüft, daher öffnet ein Verstellen der Handyuhr die Kapsel nicht früher."},{"icon":"bell","title":"Öffnen","text":"An dem Tag kommt eine Benachrichtigung, die Kapsel öffnet sich mit einer kleinen Lichtshow, und du kannst den Brief lesen."},{"icon":"cloud","title":"Aufbewahren","text":"Kapseln werden in einem versteckten Ordner in deinem eigenen Google Drive gespeichert. Auf einem neuen Handy meldest du dich mit demselben Konto an, und alle Kapseln sind wieder da."},{"icon":"calendar","title":"Erinnern","text":"Mit einem Tipp landet der Öffnungstag in deinem Kalender, damit die Erinnerung dich auch Jahre später auf einem anderen Handy findet."}],"privateTitle":"Von Grund auf privat","privateText":"Keine Konten bei uns, keine Server, keine Werbung, kein Tracking. Deine Briefe bleiben auf deinem Handy und, wenn du willst, in deinem eigenen Google Drive.","privacyLink":"Datenschutzerklärung","brand":"Kolys"}},"it":{"common":{"brand":"Kolys","navHome":"Home","navPrivacy":"Privacy","metaDesc":"Kolys è un’app Android per scrivere lettere al te del futuro: sigilla una capsula del tempo e si aprirà nel giorno che scegli.","footer":"Kolys · una lettera al te del futuro · Contatti: {mail}","hub":"PegasoHlib — tutte le app"},"page":{"tagline":"Una lettera al te del futuro","lead":"Scriviti una lettera, aggiungi delle foto e sigillala fino al giorno che scegli. Fino ad allora nessuno potrà aprirla, nemmeno tu. Quando arriverà il momento, la capsula si aprirà da sola.","avail":"Un’app per smartphone Android","download":"Scarica per Android","features":[{"icon":"pen","title":"Scrivi","text":"Una lettera con parole tue, con fino a 10 foto. Quando la pagina è bianca, qualche domanda gentile ti dà una mano."},{"icon":"lock","title":"Sigilla","text":"Per un mese, un anno, dieci anni o fino a qualsiasi data. La data viene verificata online, quindi spostare l’orologio del telefono non la aprirà prima."},{"icon":"bell","title":"Apri","text":"Quel giorno arriva una notifica, la capsula si apre con un piccolo gioco di luci e la lettera è lì, tutta da leggere."},{"icon":"cloud","title":"Conserva","text":"Le capsule vengono salvate in una cartella nascosta del tuo Google Drive personale. Su un nuovo telefono, accedi con lo stesso account e tutte le capsule tornano."},{"icon":"calendar","title":"Ricorda","text":"Con un tocco aggiungi il giorno di apertura al tuo calendario, così il promemoria ti troverà anche anni dopo, su un altro telefono."}],"privateTitle":"Privacy fin dalla progettazione","privateText":"Nessun nostro account, nessun server, niente pubblicità, nessun tracciamento. Le tue lettere restano sul tuo telefono e, se vuoi, nel tuo Google Drive personale.","privacyLink":"Informativa sulla privacy","brand":"Kolys"}},"sv":{"common":{"brand":"Kolys","navHome":"Hem","navPrivacy":"Integritet","metaDesc":"Kolys är en Android-app för att skriva brev till ditt framtida jag: försegla en tidskapsel så öppnas den den dag du väljer.","footer":"Kolys · ett brev till ditt framtida jag · Kontakt: {mail}","hub":"PegasoHlib — alla appar"},"page":{"tagline":"Ett brev till ditt framtida jag","lead":"Skriv ett brev till dig själv, lägg till foton och försegla det till den dag du väljer. Fram till dess kan ingen öppna det, inte ens du. När tiden är inne öppnas kapseln av sig själv.","avail":"En app för Android-telefoner","download":"Ladda ner för Android","features":[{"icon":"pen","title":"Skriv","text":"Ett brev med dina egna ord, med upp till 10 foton. Varsamma frågor hjälper till när sidan är tom."},{"icon":"lock","title":"Försegla","text":"Om en månad, ett år, tio år eller till vilket datum som helst. Datumet kontrolleras online, så att ställa om telefonens klocka öppnar den inte i förväg."},{"icon":"bell","title":"Öppna","text":"På dagen kommer en avisering, kapseln öppnas med en liten ljusshow och brevet är ditt att läsa."},{"icon":"cloud","title":"Spara","text":"Kapslarna sparas i en dold mapp i din egen Google Drive. På en ny telefon loggar du in med samma konto, och alla kapslar kommer tillbaka."},{"icon":"calendar","title":"Kom ihåg","text":"Med ett tryck läggs öppningsdagen till i din kalender, så att påminnelsen hittar dig även flera år senare på en annan telefon."}],"privateTitle":"Privat från grunden","privateText":"Inga konton hos oss, inga servrar, ingen reklam, ingen spårning. Dina brev stannar på din telefon och, om du vill, i din egen Google Drive.","privacyLink":"Integritetspolicy","brand":"Kolys"}},"id":{"common":{"brand":"Kolys","navHome":"Beranda","navPrivacy":"Privasi","metaDesc":"Kolys adalah aplikasi Android untuk menulis surat kepada dirimu di masa depan: segel kapsul waktu, dan kapsul itu akan terbuka pada hari yang kamu pilih.","footer":"Kolys · surat untuk dirimu di masa depan · Kontak: {mail}","hub":"PegasoHlib — semua aplikasi"},"page":{"tagline":"Surat untuk dirimu di masa depan","lead":"Tulis surat untuk dirimu sendiri, tambahkan foto, lalu segel hingga hari yang kamu pilih. Sampai saat itu tidak ada yang bisa membukanya, bahkan kamu sendiri. Saat waktunya tiba, kapsul akan terbuka dengan sendirinya.","avail":"Aplikasi untuk ponsel Android","download":"Unduh untuk Android","features":[{"icon":"pen","title":"Tulis","text":"Surat dengan kata-katamu sendiri, dengan hingga 10 foto. Pertanyaan-pertanyaan ringan akan membantu saat halaman masih kosong."},{"icon":"lock","title":"Segel","text":"Untuk sebulan, setahun, sepuluh tahun, atau sampai tanggal berapa pun. Tanggal diperiksa secara online, jadi mengubah jam ponsel tidak akan membukanya lebih awal."},{"icon":"bell","title":"Buka","text":"Pada hari itu sebuah notifikasi datang, kapsul terbuka dengan pertunjukan cahaya kecil, dan suratnya siap kamu baca."},{"icon":"cloud","title":"Simpan","text":"Kapsul disimpan di folder tersembunyi di Google Drive milikmu sendiri. Di ponsel baru, masuk dengan akun yang sama dan semua kapsul akan kembali."},{"icon":"calendar","title":"Ingat","text":"Sekali ketuk, hari pembukaan ditambahkan ke kalendermu, jadi pengingatnya tetap menemukanmu bahkan bertahun-tahun kemudian di ponsel lain."}],"privateTitle":"Privat sejak awal","privateText":"Tanpa akun dari kami, tanpa server, tanpa iklan, tanpa pelacakan. Surat-suratmu tetap di ponselmu dan, jika kamu mau, di Google Drive milikmu sendiri.","privacyLink":"Kebijakan privasi","brand":"Kolys"}},"ja":{"common":{"brand":"コリス","navHome":"ホーム","navPrivacy":"プライバシー","metaDesc":"コリスは、未来の自分に手紙を書く Android アプリです。タイムカプセルに封をすると、選んだ日に開きます。","footer":"コリス · 未来の自分への手紙 · お問い合わせ：{mail}","hub":"PegasoHlib — すべてのアプリ"},"page":{"tagline":"未来の自分への手紙","lead":"自分に宛てて手紙を書き、写真を添えて、選んだ日まで封をしましょう。その日までは誰にも開けられません。あなた自身にもです。その時が来ると、カプセルはひとりでに開きます。","avail":"Android スマートフォン向けアプリ","download":"Android 版をダウンロード","features":[{"icon":"pen","title":"書く","text":"自分の言葉でつづる手紙に、写真を 10 枚まで添えられます。何も書けないときは、やさしい問いかけがヒントになります。"},{"icon":"lock","title":"封をする","text":"1 か月後、1 年後、10 年後、または好きな日付まで。日付はオンラインで確認されるため、スマホの時計を動かしても早く開くことはありません。"},{"icon":"bell","title":"開く","text":"その日が来ると通知が届き、カプセルが小さな光の演出とともに開いて、手紙を読めるようになります。"},{"icon":"cloud","title":"残す","text":"カプセルは、あなた自身の Google ドライブ内の非表示フォルダに保存されます。新しいスマホでも同じアカウントでログインすれば、すべてのカプセルが戻ってきます。"},{"icon":"calendar","title":"忘れない","text":"ワンタップで開封日をカレンダーに追加できるので、何年後でも、別のスマホでも、リマインダーがあなたに届きます。"}],"privateTitle":"プライバシー重視の設計","privateText":"独自のアカウントもサーバーもなく、広告もトラッキングもありません。手紙はあなたのスマホに残り、希望すればあなた自身の Google ドライブにも保存されます。","privacyLink":"プライバシーポリシー","brand":"コリス"}},"kk":{"common":{"brand":"Колись","navHome":"Басты бет","navPrivacy":"Құпиялық","metaDesc":"Колись — болашақтағы өзіңе хат жазуға арналған Android қолданбасы: уақыт капсуласын мөрле, сонда ол сен таңдаған күні ашылады.","footer":"Колись · болашақтағы өзіңе хат · Байланыс: {mail}","hub":"PegasoHlib — барлық қолданбалар"},"page":{"tagline":"Болашақтағы өзіңе хат","lead":"Өзіңе хат жаз, фото қос та, таңдаған күніңе дейін мөрлеп қой. Оған дейін оны ешкім аша алмайды, тіпті сен де. Уақыты келгенде капсула өзі ашылады.","avail":"Android телефондарына арналған қолданба","download":"Android үшін жүктеп алу","features":[{"icon":"pen","title":"Жаз","text":"Өз сөзіңмен жазылған хат және 10 фотоға дейін. Бет бос тұрса, көмекші сұрақтар жол көрсетеді."},{"icon":"lock","title":"Мөрле","text":"Бір айға, бір жылға, он жылға немесе кез келген күнге дейін. Күн интернет арқылы тексеріледі, сондықтан телефон сағатын жылжыту капсуланы ертерек ашпайды."},{"icon":"bell","title":"Аш","text":"Сол күні хабарландыру келеді, капсула шағын жарық шоуымен ашылады, сөйтіп хатты оқи аласың."},{"icon":"cloud","title":"Сақта","text":"Капсулалар өзіңнің Google Drive-ыңдағы жасырын қалтада сақталады. Жаңа телефонда сол аккаунтпен кірсең, барлық капсула қайта оралады."},{"icon":"calendar","title":"Ұмытпа","text":"Бір түртсең болды, ашылу күні күнтізбеңе қосылады, сондықтан еске салғыш сені жылдар өтсе де, басқа телефонда да табады."}],"privateTitle":"Құпиялық басынан ойластырылған","privateText":"Біздің аккаунттарымыз да, серверлеріміз де, жарнама да, бақылау да жоқ. Хаттарың телефоныңда қалады, ал қаласаң, өзіңнің Google Drive-ыңда да сақталады.","privacyLink":"Құпиялық саясаты","brand":"Колись"}},"ru":{"common":{"brand":"Колись","navHome":"Главная","navPrivacy":"Конфиденциальность","metaDesc":"Колись — приложение для Android, чтобы писать письма себе в будущее: запечатай капсулу времени, и она откроется в выбранный день.","footer":"Колись · письмо себе в будущее · Связь: {mail}","hub":"PegasoHlib — все приложения"},"page":{"tagline":"Письмо себе в будущее","lead":"Напиши себе письмо, добавь фото и запечатай его до выбранного дня. До тех пор его никто не откроет, даже ты. А когда время придёт, капсула откроется сама.","avail":"Приложение для телефонов на Android","download":"Скачать для Android","features":[{"icon":"pen","title":"Напиши","text":"Письмо своими словами, до 10 фото. Если страница пустая, помогут вопросы-подсказки."},{"icon":"lock","title":"Запечатай","text":"На месяц, год, десять лет или до любой даты. Дата проверяется через интернет, поэтому переведённые часы не откроют капсулу раньше."},{"icon":"bell","title":"Открой","text":"В нужный день придёт уведомление, капсула откроется с маленьким световым шоу, и письмо можно будет прочитать."},{"icon":"cloud","title":"Сохрани","text":"Капсулы хранятся в скрытой папке на твоём собственном Google Диске. На новом телефоне войди в тот же аккаунт, и все капсулы вернутся."},{"icon":"calendar","title":"Не забудь","text":"Одним касанием день открытия добавляется в календарь, так что напоминание найдёт тебя даже через годы и на другом телефоне."}],"privateTitle":"Приватность с самого начала","privateText":"Без наших аккаунтов, серверов, рекламы и слежки. Твои письма остаются на телефоне и, если захочешь, на твоём собственном Google Диске.","privacyLink":"Политика конфиденциальности","brand":"Колись"}}};
-const MAIL = "pegasohlib12@gmail.com";
-const render = function renderHome(t, lang, I) {
-  const ic = n => `<svg class="ic" viewBox="0 0 24 24" aria-hidden="true">${I[n] || ""}</svg>`;
-  return `<section class="hero">
-  <img class="appicon" src="icon.svg" alt="" width="112" height="112">
-  <h1>${t.brand}</h1>
-  <p class="tagline">${t.tagline}</p>
-  <p class="lead">${t.lead}</p>
-  <div class="actions"><a class="btn primary" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys/Kolys.apk">${ic("download")}${t.download}</a></div>
-  <p class="note avail">${ic("phone")}${t.avail}</p>
-</section>
-<section class="section"><div class="cards">
-${t.features.map(f => `<article class="card"><span class="tile">${ic(f.icon)}</span><h3>${f.title}</h3><p>${f.text}</p></article>`).join("\n")}
-</div></section>
-<section class="section"><div class="card private"><span class="tile">${ic("shield")}</span><div><h3>${t.privateTitle}</h3><p>${t.privateText}</p><a class="btn" href="privacy.html?lang=${lang}">${t.privacyLink}</a></div></div></section>`;
-};
-const foot = function foot(c, lang, mail, hub) {
-  return `<p>${c.footer.replace("{mail}", `<a href="mailto:${mail}">${mail}</a>`)}</p><p><a href="https://pegasohlib.github.io/?lang=${lang}">${hub}</a></p>`;
-};
-function pick() {
-  const q = new URLSearchParams(location.search).get("lang");
-  if (q && D[q]) return q;
-  try { const s = localStorage.getItem("kolys-lang"); if (s && D[s]) return s; } catch (e) {}
-  for (const n of navigator.languages || [navigator.language || "en"]) {
-    let c = n.toLowerCase().split("-")[0];
-    if (c === "in") c = "id";
-    if (D[c]) return c;
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang","kolys-lang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
   }
-  return "en";
-}
-function show(l) {
-  const d = D[l];
-  document.documentElement.lang = l;
-  document.getElementById("main").innerHTML = render(d.page, l, I);
-  document.getElementById("brand").textContent = d.common.brand;
-  document.getElementById("home").href = "./?lang=" + l;
-  document.getElementById("nav-home").textContent = d.common.navHome;
-  document.getElementById("nav-home").href = "./?lang=" + l;
-  document.getElementById("nav-privacy").textContent = d.common.navPrivacy;
-  document.getElementById("nav-privacy").href = "privacy.html?lang=" + l;
-  document.getElementById("foot").innerHTML = foot(d.common, l, MAIL, d.common.hub);
-  document.title = d.common.brand + ": " + d.page.tagline;
-  document.getElementById("lang").value = l;
-}
-const first = pick();
-if (first !== "en") show(first);
-document.getElementById("lang").addEventListener("change", e => {
-  try { localStorage.setItem("kolys-lang", e.target.value); } catch (x) {}
-  const u = new URL(location.href); u.searchParams.set("lang", e.target.value); history.replaceState(null, "", u);
-  show(e.target.value);
-});
-if (location.hash) setTimeout(() => { const el = document.querySelector(location.hash); if (el) el.scrollIntoView(); }, 0);
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
 </script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+  }).catch(function () {});
+})();
+</script>
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </body>
 </html>

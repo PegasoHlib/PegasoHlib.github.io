@@ -2,237 +2,609 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <title>Khronometr — Screen time for all time</title>
 <meta name="description" content="How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.">
-<link rel="icon" href="icon.png">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Khronometr — Screen time for all time">
+<meta property="og:description" content="How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.">
+<meta property="og:url" content="https://pegasohlib.github.io/khronometr/">
+<meta property="og:image" content="https://pegasohlib.github.io/khronometr/icon.png">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="canonical" href="https://pegasohlib.github.io/khronometr/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/khronometr/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/khronometr/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/khronometr/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/khronometr/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/khronometr/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/khronometr/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/khronometr/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/khronometr/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/khronometr/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/khronometr/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/khronometr/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/khronometr/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/khronometr/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
 <style>
-  :root { color-scheme: dark; --bg:#0B0B16; --bg2:#1A1440; --card:#151528; --card2:#1B1A33; --line:#2A2850; --text:#E8E6FF; --muted:#9A97C0;
-    --cyan:#00E5FF; --violet:#8A5CFF; --magenta:#FF2BD6; --shadow:rgba(138,92,255,.35); }
-  @media (prefers-color-scheme: light) {
-    :root { color-scheme: light; --bg:#F6F4FF; --bg2:#E9E3FF; --card:#FFFFFF; --card2:#F4F1FF; --line:#E1DCF7; --text:#1A1830; --muted:#5F5B80;
-      --cyan:#0089B3; --violet:#6A3BEA; --magenta:#C2128C; --shadow:rgba(106,59,234,.18); }
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; scroll-padding-top:72px; }
-  body { margin:0; background:radial-gradient(circle at 50% -10%, var(--bg2) 0%, var(--bg) 55%) fixed, var(--bg); color:var(--text);
-    font:16.5px/1.65 system-ui, "Segoe UI", Roboto, Arial, sans-serif; -webkit-text-size-adjust:100%; overflow-wrap:break-word; }
-  a { color:var(--cyan); }
-  .bar { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:10px; padding:10px 16px;
-    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-  .bar .home { display:flex; align-items:center; gap:8px; color:var(--text); text-decoration:none; font-weight:700; min-width:0; }
-  .bar .home img { width:28px; height:28px; border-radius:8px; }
-  .bar .home span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .lang { margin-left:auto; position:relative; }
-  .lang summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:12px;
-    background:var(--card); border:1px solid var(--line); font-weight:700; font-size:14px; white-space:nowrap; }
-  .lang summary::-webkit-details-marker { display:none; }
-  .lang[open] summary { border-color:var(--violet); }
-  .lang .menu { position:absolute; right:0; top:calc(100% + 6px); width:min(300px, calc(100vw - 32px)); display:grid; grid-template-columns:1fr 1fr; gap:6px;
-    padding:8px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 12px 40px var(--shadow); }
-  .lang button { display:flex; gap:8px; align-items:center; padding:8px 10px; border:1px solid transparent; border-radius:10px; background:var(--card2);
-    color:var(--text); font:inherit; font-size:14px; cursor:pointer; text-align:left; }
-  .lang button b { font-size:11px; letter-spacing:.06em; color:var(--muted); min-width:20px; }
-  .lang button[aria-current="true"] { border-color:var(--violet); background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  main { max-width:820px; margin:0 auto; padding:24px 16px 72px; }
-  .hero { text-align:center; padding:14px 0 6px; }
-  .logo { border-radius:26px; box-shadow:0 0 60px var(--shadow); }
-  .brand { margin:14px 0 0; font-weight:800; letter-spacing:.04em; color:var(--muted); }
-  h1 { margin:12px 0 4px; font-size:clamp(30px, 8vw, 46px); line-height:1.12; background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));
-    -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .lead { margin:0; font-size:20px; font-weight:700; }
-  .tagline { margin:8px auto 0; max-width:560px; color:var(--muted); }
-  .cta { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:22px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:16px; font-weight:700; text-decoration:none; color:#fff;
-    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); box-shadow:0 0 34px var(--shadow); }
-  .btn.big { font-size:18px; padding:16px 30px; }
-  .btn.ghost { color:var(--text); background:var(--card); border:1px solid var(--line); box-shadow:none; }
-  .btn:active { transform:scale(.98); }
-  .soon { margin:12px 0 0; color:var(--muted); font-size:14px; }
-  .label { margin:34px 0 12px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:12px; }
-  .grid.three { grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
-  .feat, .sum { padding:16px 18px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  .feat h3 { margin:10px 0 2px; font-size:17px; line-height:1.3; }
-  .feat p, .sum p { margin:2px 0 0; color:var(--muted); font-size:14.5px; line-height:1.55; }
-  .sum { display:flex; gap:12px; align-items:flex-start; }
-  .ico { flex:none; display:inline-grid; place-items:center; width:42px; height:42px; border-radius:13px; font-size:22px;
-    background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  .ico.sm { width:34px; height:34px; border-radius:10px; font-size:18px; }
-  .num { display:inline-grid; place-items:center; width:40px; height:40px; border-radius:50%; font-weight:800; color:#fff;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  .toclist { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:8px; }
-  .toclist a { display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:14px; background:var(--card); border:1px solid var(--line);
-    color:var(--text); text-decoration:none; font-weight:600; font-size:15px; line-height:1.3; min-height:52px; }
-  .toclist a:hover, .toclist a:focus-visible { border-color:var(--violet); }
-  .toclist .tt { flex:1; }
-  .toclist .go { color:var(--muted); font-size:22px; line-height:1; }
-  section { margin-top:16px; padding:6px 20px 16px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  section h2 { display:flex; align-items:center; gap:12px; margin:14px 0 6px; font-size:19px; line-height:1.3; }
-  section ul { padding-left:20px; margin:8px 0; }
-  section li { margin:6px 0; }
-  .private { margin-top:34px; }
-  .note { padding:10px 14px; border-radius:12px; background:var(--card2); color:var(--muted); font-size:14.5px; }
-  .note.center { text-align:center; background:none; padding:6px 0 0; }
-  code { font:13.5px/1.4 ui-monospace, Consolas, monospace; padding:1px 6px; border-radius:6px; background:var(--card2); border:1px solid var(--line); overflow-wrap:anywhere; }
-  .perms { margin:8px 0 0; display:grid; gap:8px; }
-  .perms dt { font-weight:700; }
-  .perms dd { margin:-6px 0 4px; color:var(--muted); font-size:15px; }
-  .perms dt::before { content:"✓"; color:var(--cyan); font-weight:900; margin-right:8px; }
-  ol.steps { list-style:none; padding:0; margin:4px 0 0; counter-reset:s; }
-  ol.steps > li { counter-increment:s; position:relative; padding:12px 0 12px 54px; border-top:1px solid var(--line); }
-  ol.steps > li:first-child { border-top:0; }
-  ol.steps > li::before { content:counter(s); position:absolute; left:0; top:12px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
-    font-weight:800; color:#fff; background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  b.key { color:var(--cyan); }
-  .smart { margin-top:12px; border-radius:10px; overflow:hidden; background:#0b4f8a; color:#fff; font:14px/1.45 "Segoe UI", system-ui, sans-serif; max-width:440px; }
-  .smart .in { padding:16px 18px 14px; }
-  .smart .t { font-size:20px; font-weight:600; margin-bottom:6px; }
-  .smart .link { display:inline-block; margin-top:8px; text-decoration:underline; outline:2px solid var(--magenta); outline-offset:3px; border-radius:3px; }
-  .smart .sbar { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; padding:10px 14px; background:#0a426f; }
-  .smart .sbtn { padding:5px 16px; border:1px solid #fff; border-radius:2px; }
-  .smart .sbtn.run { outline:2px solid var(--magenta); outline-offset:3px; }
-  footer { margin-top:36px; text-align:center; color:var(--muted); font-size:14px; line-height:2; }
-  .up { position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; text-decoration:none;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); color:#fff; font-size:20px; box-shadow:0 6px 24px var(--shadow); }
-</style>
+:root{--g1:#8B5CFF;--g2:#FF4FD8;--on-accent:#fff;--accent:#6D3AE8;--accent2:#FF4FD8;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#3A2178;--navy2:#0E0820;--panel-line:transparent;--panel-ic:#C4A8FF}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
 </head>
 <body>
-<div class="bar">
-  <a class="home" href="./"><img src="icon.png" alt=""><span id="brand">Khronometr</span></a>
-  <details class="lang" id="lang">
-    <summary><span aria-hidden="true">🌐</span> <span id="langName">English</span> ▾</summary>
-    <div class="menu">
-      <button type="button" data-lang="uk" lang="uk"><b>UK</b>Українська</button>
-      <button type="button" data-lang="en" lang="en"><b>EN</b>English</button>
-      <button type="button" data-lang="es" lang="es"><b>ES</b>Español</button>
-      <button type="button" data-lang="pt" lang="pt"><b>PT</b>Português</button>
-      <button type="button" data-lang="fr" lang="fr"><b>FR</b>Français</button>
-      <button type="button" data-lang="de" lang="de"><b>DE</b>Deutsch</button>
-      <button type="button" data-lang="it" lang="it"><b>IT</b>Italiano</button>
-      <button type="button" data-lang="sv" lang="sv"><b>SV</b>Svenska</button>
-      <button type="button" data-lang="id" lang="id"><b>ID</b>Bahasa Indonesia</button>
-      <button type="button" data-lang="ja" lang="ja"><b>JA</b>日本語</button>
-      <button type="button" data-lang="kk" lang="kk"><b>KK</b>Қазақ тілі</button>
-      <button type="button" data-lang="ru" lang="ru"><b>RU</b>Русский</button>
-    </div>
-  </details>
-</div>
-<main id="page">
-  <header class="hero" id="top">
-    <img class="logo" src="icon.png" alt="" width="120" height="120">
+<div class="bar"><div class="in">
+  <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Khronometr</span></a>
+  <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="pc/index.html" data-keep-lang>Windows</a><a data-nav="2" href="privacy.html" data-keep-lang>Privacy</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="Khronometr — Screen time for all time" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
     <h1>Khronometr</h1>
-    <p class="lead">Screen time for all time</p>
-    <p class="tagline">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
-    <div class="cta"><a class="btn big" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk">⬇&nbsp; Download for Android</a></div>
-    <p class="soon">🤖 Free · Android 8 or newer · after that the app updates itself</p>
-    <div class="cta">
-      <a class="btn ghost" href="pc/">💻 Khronometr for Windows</a>
-      <a class="btn ghost" href="privacy.html">🔒 Privacy Policy</a>
+    <p class="tagline">Screen time for all time</p>
+    <p class="lead">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr for Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy Policy</span></a>
     </div>
+    <p class="note">Free · Android 8 or newer · after that the app updates itself</p>
   </header>
 
-  <h2 class="label">What it can do</h2>
-  <div class="grid">
-    <div class="feat"><span class="ico">♾️</span><h3>All-time history</h3><p>Every app and game, day by day, kept forever — with records, titles and your longest streaks.</p></div>
-    <div class="feat"><span class="ico">⏮️</span><h3>History from before</h3><p>On the first start it takes everything the phone still remembers, up to about two years back.</p></div>
-    <div class="feat"><span class="ico">📱</span><h3>All your devices</h3><p>Phones, tablets and a Windows PC in one place, through a hidden folder on your own Google Drive.</p></div>
-    <div class="feat"><span class="ico">⏳</span><h3>Limits that work</h3><p>Time per day, forbidden hours, a “Time’s up” screen — for one app, a category, your own group, on the devices you choose.</p></div>
-    <div class="feat"><span class="ico">🧩</span><h3>Widgets</h3><p>Today, the week, the top apps, one app, your limits and all-time totals right on the home screen.</p></div>
-    <div class="feat"><span class="ico">📶</span><h3>Traffic</h3><p>Wi-Fi and mobile data per app, for any days you pick.</p></div>
-  </div>
-
-  <h2 class="label">How it works</h2>
-  <div class="grid three">
-    <div class="feat"><span class="num">1</span><h3>Install on the phone</h3><p>Give it “Usage access” once — it reads the history the phone keeps and counts from then on.</p></div>
-    <div class="feat"><span class="num">2</span><h3>Add your other devices</h3><p>Sign in with Google on each phone, tablet and the <a href="pc/">Windows app</a> — they find each other.</p></div>
-    <div class="feat"><span class="num">3</span><h3>Look back any time</h3><p>Days, weeks, months or years, every app or a category, one device or all of them.</p></div>
-  </div>
-
-  <section class="private">
-    <h2><span class="ico">🔒</span>Your data stays yours</h2>
-    <p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
-    <p><a href="privacy.html">Read the privacy policy →</a></p>
+  <section class="show" aria-label="How it works">
+    <div class="showtext"><h2 class="display">How it works</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Install on the phone</h3><p>Give it “Usage access” once — it reads the history the phone keeps and counts from then on.</p></div></li><li><span class="num">2</span><div><h3>Add your other devices</h3><p>Sign in with Google on each phone, tablet and the <a href="pc/">Windows app</a> — they find each other.</p></div></li><li><span class="num">3</span><div><h3>Look back any time</h3><p>Days, weeks, months or years, every app or a category, one device or all of them.</p></div></li></ol>
   </section>
-  <footer><a href="./">Home</a> · <a href="pc/">💻 Windows app</a> · <a href="privacy.html">🔒 Privacy Policy</a><br><a href="/">✦ PegasoHlib</a> · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>
-</main>
-<a class="up" href="#top" id="up" aria-label="Back to top">↑</a>
-<script>
-// All languages of this page; the switch rebuilds the text in place and keeps ?lang= in the address.
-const D = {"uk":{"t":{"title":"Час у застосунках за весь час","tagline":"Скільки ти провів у кожному застосунку й грі — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом.","windows":"Хронометр для Windows","privacy":"Політика конфіденційності","download":"Завантажити для Android","android":"Безкоштовно · Android 8 і новіші · далі застосунок оновлюється сам","featuresTitle":"Що він уміє","features":[["♾️","Історія за весь час","Кожен застосунок і гра, день за днем, назавжди — з рекордами, титулами й найдовшими серіями."],["⏮️","Історія з минулого","На першому запуску забирає все, що телефон ще пам’ятає, — до приблизно двох років назад."],["📱","Усі твої пристрої","Телефони, планшети й ПК на Windows разом — через приховану папку на твоєму власному Google Диску."],["⏳","Ліміти, що працюють","Час на день, заборонені години, екран «Час вийшов» — для застосунку, категорії, своєї групи, на вибраних пристроях."],["🧩","Віджети","Сьогодні, тиждень, топ застосунків, один застосунок, ліміти й «весь час» просто на робочому столі."],["📶","Трафік","Wi-Fi і мобільний інтернет по застосунках — за будь-які дні."]],"howTitle":"Як це працює","how":[["1","Встанови на телефон","Один раз дай «Доступ до даних про використання» — він забере історію, яку зберігає телефон, і далі рахуватиме сам."],["2","Додай інші пристрої","Увійди через Google на кожному телефоні, планшеті й у <a href=\"pc/\">програмі для Windows</a> — вони знайдуть одне одного."],["3","Дивись будь-коли","Дні, тижні, місяці чи роки, кожен застосунок чи категорія, один пристрій або всі разом."]],"privateTitle":"Твої дані — твої","privateText":"Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.","privateMore":"Читати політику конфіденційності"},"c":{"name":"Українська","brand":"Хронометр","home":"Головна","windows":"Для Windows","privacy":"Політика конфіденційності","top":"Нагору","contents":"Зміст"}},"en":{"t":{"title":"Screen time for all time","tagline":"How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.","windows":"Khronometr for Windows","privacy":"Privacy Policy","download":"Download for Android","android":"Free · Android 8 or newer · after that the app updates itself","featuresTitle":"What it can do","features":[["♾️","All-time history","Every app and game, day by day, kept forever — with records, titles and your longest streaks."],["⏮️","History from before","On the first start it takes everything the phone still remembers, up to about two years back."],["📱","All your devices","Phones, tablets and a Windows PC in one place, through a hidden folder on your own Google Drive."],["⏳","Limits that work","Time per day, forbidden hours, a “Time’s up” screen — for one app, a category, your own group, on the devices you choose."],["🧩","Widgets","Today, the week, the top apps, one app, your limits and all-time totals right on the home screen."],["📶","Traffic","Wi-Fi and mobile data per app, for any days you pick."]],"howTitle":"How it works","how":[["1","Install on the phone","Give it “Usage access” once — it reads the history the phone keeps and counts from then on."],["2","Add your other devices","Sign in with Google on each phone, tablet and the <a href=\"pc/\">Windows app</a> — they find each other."],["3","Look back any time","Days, weeks, months or years, every app or a category, one device or all of them."]],"privateTitle":"Your data stays yours","privateText":"No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.","privateMore":"Read the privacy policy"},"c":{"name":"English","brand":"Khronometr","home":"Home","windows":"Windows app","privacy":"Privacy Policy","top":"Back to top","contents":"Contents"}},"es":{"t":{"title":"Tu tiempo de pantalla, desde siempre","tagline":"Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez.","windows":"Khronometr para Windows","privacy":"Política de privacidad","download":"Descargar para Android","android":"Gratis · Android 8 o posterior · después la app se actualiza sola","featuresTitle":"Qué puede hacer","features":[["♾️","Historial de siempre","Cada app y juego, día a día, guardado para siempre — con récords, títulos y tus rachas más largas."],["⏮️","Historial de antes","En el primer inicio recoge todo lo que el teléfono aún recuerda, hasta unos dos años atrás."],["📱","Todos tus dispositivos","Teléfonos, tablets y un PC con Windows en un solo lugar, mediante una carpeta oculta en tu propio Google Drive."],["⏳","Límites que funcionan","Tiempo por día, horas prohibidas, una pantalla «Se acabó el tiempo» — para una app, una categoría o tu propio grupo, en los dispositivos que elijas."],["🧩","Widgets","Hoy, la semana, las apps más usadas, una app, tus límites y los totales de siempre, directamente en la pantalla de inicio."],["📶","Tráfico","Wi-Fi y datos móviles por app, en los días que elijas."]],"howTitle":"Cómo funciona","how":[["1","Instálalo en el teléfono","Dale «Acceso a datos de uso» una vez: lee el historial que guarda el teléfono y desde entonces cuenta solo."],["2","Añade tus otros dispositivos","Inicia sesión con Google en cada teléfono, tablet y en la <a href=\"pc/\">app para Windows</a>: se encuentran entre sí."],["3","Mira atrás cuando quieras","Días, semanas, meses o años, cada app o una categoría, un dispositivo o todos."]],"privateTitle":"Tus datos son tuyos","privateText":"Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.","privateMore":"Leer la política de privacidad"},"c":{"name":"Español","brand":"Khronometr","home":"Inicio","windows":"App para Windows","privacy":"Política de privacidad","top":"Volver arriba","contents":"Contenido"}},"pt":{"t":{"title":"O teu tempo de ecrã, desde sempre","tagline":"Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto.","windows":"Khronometr para Windows","privacy":"Política de privacidade","download":"Transferir para Android","android":"Grátis · Android 8 ou mais recente · depois a app atualiza-se sozinha","featuresTitle":"O que consegue fazer","features":[["♾️","Histórico de sempre","Cada app e jogo, dia a dia, guardado para sempre — com recordes, títulos e as tuas sequências mais longas."],["⏮️","Histórico de antes","No primeiro arranque recolhe tudo o que o telemóvel ainda se lembra, até cerca de dois anos atrás."],["📱","Todos os teus dispositivos","Telemóveis, tablets e um PC com Windows num só sítio, através de uma pasta oculta no teu próprio Google Drive."],["⏳","Limites que funcionam","Tempo por dia, horas proibidas, um ecrã «Acabou o tempo» — para uma app, uma categoria ou um grupo teu, nos dispositivos que escolheres."],["🧩","Widgets","Hoje, a semana, as apps mais usadas, uma app, os teus limites e os totais de sempre, diretamente no ecrã principal."],["📶","Tráfego","Wi-Fi e dados móveis por app, nos dias que escolheres."]],"howTitle":"Como funciona","how":[["1","Instala no telemóvel","Dá uma vez o «Acesso a dados de utilização» — lê o histórico que o telemóvel guarda e a partir daí conta sozinho."],["2","Junta os outros dispositivos","Inicia sessão com Google em cada telemóvel, tablet e na <a href=\"pc/\">app para Windows</a> — encontram-se uns aos outros."],["3","Olha para trás quando quiseres","Dias, semanas, meses ou anos, cada app ou uma categoria, um dispositivo ou todos."]],"privateTitle":"Os teus dados são teus","privateText":"Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.","privateMore":"Ler a política de privacidade"},"c":{"name":"Português","brand":"Khronometr","home":"Início","windows":"App para Windows","privacy":"Política de privacidade","top":"Voltar ao topo","contents":"Índice"}},"fr":{"t":{"title":"Ton temps d’écran, depuis toujours","tagline":"Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis.","windows":"Khronometr pour Windows","privacy":"Politique de confidentialité","download":"Télécharger pour Android","android":"Gratuit · Android 8 ou plus récent · ensuite l’appli se met à jour toute seule","featuresTitle":"Ce qu’elle sait faire","features":[["♾️","Historique complet","Chaque appli et chaque jeu, jour après jour, conservés pour toujours — avec records, titres et tes plus longues séries."],["⏮️","L’historique d’avant","Au premier lancement, elle récupère tout ce dont le téléphone se souvient encore, jusqu’à environ deux ans en arrière."],["📱","Tous tes appareils","Téléphones, tablettes et PC Windows au même endroit, grâce à un dossier caché sur ton propre Google Drive."],["⏳","Des limites qui marchent","Temps par jour, heures interdites, écran « Temps écoulé » — pour une appli, une catégorie ou ton propre groupe, sur les appareils de ton choix."],["🧩","Widgets","Aujourd’hui, la semaine, le top des applis, une appli, tes limites et les totaux depuis toujours, directement sur l’écran d’accueil."],["📶","Trafic","Wi-Fi et données mobiles par appli, sur les jours de ton choix."]],"howTitle":"Comment ça marche","how":[["1","Installe-la sur le téléphone","Active une fois « Accès aux données d’utilisation » — elle lit l’historique gardé par le téléphone, puis compte toute seule."],["2","Ajoute tes autres appareils","Connecte-toi avec Google sur chaque téléphone, tablette et dans l’<a href=\"pc/\">appli Windows</a> — ils se trouvent tout seuls."],["3","Regarde en arrière quand tu veux","Jours, semaines, mois ou années, chaque appli ou une catégorie, un appareil ou tous."]],"privateTitle":"Tes données restent à toi","privateText":"Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.","privateMore":"Lire la politique de confidentialité"},"c":{"name":"Français","brand":"Khronometr","home":"Accueil","windows":"Appli Windows","privacy":"Politique de confidentialité","top":"Haut de page","contents":"Sommaire"}},"de":{"t":{"title":"Deine Bildschirmzeit seit jeher","tagline":"Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen.","windows":"Khronometr für Windows","privacy":"Datenschutzerklärung","download":"Für Android herunterladen","android":"Kostenlos · ab Android 8 · danach aktualisiert sich die App selbst","featuresTitle":"Was sie kann","features":[["♾️","Verlauf seit jeher","Jede App und jedes Spiel, Tag für Tag, für immer gespeichert — mit Rekorden, Titeln und deinen längsten Serien."],["⏮️","Verlauf von früher","Beim ersten Start holt sie alles, woran sich das Handy noch erinnert — bis etwa zwei Jahre zurück."],["📱","Alle deine Geräte","Handys, Tablets und ein Windows-PC an einem Ort — über einen versteckten Ordner in deinem eigenen Google Drive."],["⏳","Limits, die wirken","Zeit pro Tag, gesperrte Stunden, ein „Zeit ist um“-Bildschirm — für eine App, eine Kategorie oder deine eigene Gruppe, auf den Geräten deiner Wahl."],["🧩","Widgets","Heute, die Woche, die Top-Apps, eine einzelne App, deine Limits und die Gesamtzeit direkt auf dem Startbildschirm."],["📶","Datenverkehr","WLAN und mobile Daten pro App, für beliebige Tage."]],"howTitle":"So funktioniert’s","how":[["1","Aufs Handy installieren","Gib ihr einmal den „Nutzungsdatenzugriff“ — sie liest den Verlauf, den das Handy speichert, und zählt ab dann selbst."],["2","Weitere Geräte hinzufügen","Melde dich auf jedem Handy, Tablet und in der <a href=\"pc/\">Windows-App</a> mit Google an — sie finden sich gegenseitig."],["3","Jederzeit zurückblicken","Tage, Wochen, Monate oder Jahre, jede App oder eine Kategorie, ein Gerät oder alle."]],"privateTitle":"Deine Daten bleiben deine","privateText":"Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.","privateMore":"Datenschutzerklärung lesen"},"c":{"name":"Deutsch","brand":"Khronometr","home":"Startseite","windows":"Windows-App","privacy":"Datenschutzerklärung","top":"Nach oben","contents":"Inhalt"}},"it":{"t":{"title":"Il tuo tempo davanti allo schermo, da sempre","tagline":"Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme.","windows":"Khronometr per Windows","privacy":"Informativa sulla privacy","download":"Scarica per Android","android":"Gratis · Android 8 o successivo · poi l’app si aggiorna da sola","featuresTitle":"Cosa sa fare","features":[["♾️","Cronologia di sempre","Ogni app e gioco, giorno per giorno, conservati per sempre — con record, titoli e le tue serie più lunghe."],["⏮️","La cronologia di prima","Al primo avvio recupera tutto ciò che il telefono ricorda ancora, fino a circa due anni fa."],["📱","Tutti i tuoi dispositivi","Telefoni, tablet e un PC Windows in un unico posto, tramite una cartella nascosta nel tuo Google Drive."],["⏳","Limiti che funzionano","Tempo al giorno, ore vietate, una schermata «Tempo scaduto» — per un’app, una categoria o un tuo gruppo, sui dispositivi che scegli."],["🧩","Widget","Oggi, la settimana, le app più usate, una singola app, i tuoi limiti e i totali di sempre direttamente nella schermata Home."],["📶","Traffico","Wi-Fi e dati mobili per app, per i giorni che vuoi."]],"howTitle":"Come funziona","how":[["1","Installala sul telefono","Concedi una volta l’«Accesso ai dati di utilizzo» — legge la cronologia che il telefono conserva e da lì conta da sola."],["2","Aggiungi gli altri dispositivi","Accedi con Google su ogni telefono, tablet e nell’<a href=\"pc/\">app per Windows</a> — si trovano a vicenda."],["3","Guarda indietro quando vuoi","Giorni, settimane, mesi o anni, ogni app o una categoria, un dispositivo o tutti."]],"privateTitle":"I tuoi dati restano tuoi","privateText":"Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.","privateMore":"Leggi l’informativa sulla privacy"},"c":{"name":"Italiano","brand":"Khronometr","home":"Home","windows":"App per Windows","privacy":"Informativa sulla privacy","top":"Torna su","contents":"Indice"}},"sv":{"t":{"title":"Skärmtid för all tid","tagline":"Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans.","windows":"Khronometr för Windows","privacy":"Integritetspolicy","download":"Ladda ner för Android","android":"Gratis · Android 8 eller senare · sedan uppdaterar appen sig själv","featuresTitle":"Vad den kan","features":[["♾️","Historik för all tid","Varje app och spel, dag för dag, sparat för alltid — med rekord, titlar och dina längsta sviter."],["⏮️","Historik från förr","Vid första starten hämtar den allt telefonen fortfarande minns, upp till ungefär två år bakåt."],["📱","Alla dina enheter","Telefoner, surfplattor och en Windows-dator på ett ställe, via en dold mapp på din egen Google Drive."],["⏳","Gränser som fungerar","Tid per dag, förbjudna timmar, en ”Tiden är ute”-skärm — för en app, en kategori eller din egen grupp, på de enheter du väljer."],["🧩","Widgetar","I dag, veckan, toppapparna, en app, dina gränser och totalen för all tid direkt på hemskärmen."],["📶","Trafik","Wifi och mobildata per app, för vilka dagar du vill."]],"howTitle":"Så fungerar det","how":[["1","Installera på telefonen","Ge den ”Åtkomst till användningsdata” en gång — den läser historiken som telefonen sparar och räknar sedan själv."],["2","Lägg till dina andra enheter","Logga in med Google på varje telefon, surfplatta och i <a href=\"pc/\">Windows-appen</a> — de hittar varandra."],["3","Blicka bakåt när du vill","Dagar, veckor, månader eller år, varje app eller en kategori, en enhet eller alla."]],"privateTitle":"Dina data är dina","privateText":"Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.","privateMore":"Läs integritetspolicyn"},"c":{"name":"Svenska","brand":"Khronometr","home":"Start","windows":"Windows-app","privacy":"Integritetspolicy","top":"Till toppen","contents":"Innehåll"}},"id":{"t":{"title":"Waktu layar sepanjang masa","tagline":"Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus.","windows":"Khronometr untuk Windows","privacy":"Kebijakan Privasi","download":"Unduh untuk Android","android":"Gratis · Android 8 atau lebih baru · setelah itu aplikasi memperbarui diri sendiri","featuresTitle":"Apa saja yang bisa dilakukan","features":[["♾️","Riwayat sepanjang masa","Setiap aplikasi dan game, hari demi hari, tersimpan selamanya — dengan rekor, gelar, dan streak terpanjangmu."],["⏮️","Riwayat dari sebelumnya","Saat pertama dibuka, aplikasi mengambil semua yang masih diingat ponsel, hingga sekitar dua tahun ke belakang."],["📱","Semua perangkatmu","Ponsel, tablet, dan PC Windows di satu tempat, lewat folder tersembunyi di Google Drive milikmu sendiri."],["⏳","Batas yang benar-benar bekerja","Waktu per hari, jam terlarang, layar “Waktu habis” — untuk satu aplikasi, kategori, atau grupmu sendiri, di perangkat yang kamu pilih."],["🧩","Widget","Hari ini, minggu ini, aplikasi teratas, satu aplikasi, batasmu, dan total sepanjang masa langsung di layar utama."],["📶","Trafik","Wi-Fi dan data seluler per aplikasi, untuk hari apa pun yang kamu pilih."]],"howTitle":"Cara kerjanya","how":[["1","Pasang di ponsel","Berikan “Akses penggunaan” sekali — aplikasi membaca riwayat yang disimpan ponsel, lalu menghitung sendiri sejak itu."],["2","Tambahkan perangkat lain","Masuk dengan Google di setiap ponsel, tablet, dan <a href=\"pc/\">aplikasi Windows</a> — semuanya akan saling menemukan."],["3","Lihat ke belakang kapan saja","Hari, minggu, bulan, atau tahun, setiap aplikasi atau satu kategori, satu perangkat atau semuanya."]],"privateTitle":"Datamu tetap milikmu","privateText":"Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.","privateMore":"Baca kebijakan privasi"},"c":{"name":"Bahasa Indonesia","brand":"Khronometr","home":"Beranda","windows":"Aplikasi Windows","privacy":"Kebijakan Privasi","top":"Kembali ke atas","contents":"Isi"}},"ja":{"t":{"title":"ずっと残るスクリーンタイム","tagline":"すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。","windows":"Windows 版フロノメトル","privacy":"プライバシーポリシー","download":"Android 版をダウンロード","android":"無料 · Android 8 以降 · その後はアプリが自動で更新されます","featuresTitle":"できること","features":[["♾️","全期間の履歴","すべてのアプリとゲームを日ごとにずっと保存 — 記録、称号、最長の連続記録つき。"],["⏮️","以前の履歴も","初回起動時に、スマホがまだ覚えている履歴を最大約 2 年前まで取り込みます。"],["📱","すべてのデバイス","スマホ、タブレット、Windows PC をひとまとめに。あなた自身の Google ドライブの非表示フォルダを使います。"],["⏳","ちゃんと効く上限","1 日の時間、禁止時間帯、「時間切れ」画面 — アプリ、カテゴリ、自分で作ったグループごとに、選んだデバイスで。"],["🧩","ウィジェット","今日、今週、よく使うアプリ、1 つのアプリ、上限、全期間の合計をホーム画面に。"],["📶","通信量","アプリごとの Wi-Fi とモバイルデータを、好きな日について。"]],"howTitle":"使い方","how":[["1","スマホにインストール","「使用状況へのアクセス」を一度許可するだけ — スマホに残る履歴を読み込み、その後は自動で記録します。"],["2","他のデバイスを追加","各スマホ、タブレット、<a href=\"pc/\">Windows アプリ</a>で Google にログイン — 互いに自動でつながります。"],["3","いつでも振り返り","日、週、月、年ごとに。すべてのアプリやカテゴリ、1 台または全デバイスで。"]],"privateTitle":"あなたのデータはあなたのもの","privateText":"サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。","privateMore":"プライバシーポリシーを読む"},"c":{"name":"日本語","brand":"フロノメトル","home":"ホーム","windows":"Windows 版","privacy":"プライバシーポリシー","top":"トップへ戻る","contents":"目次"}},"kk":{"t":{"title":"Қолданбалардағы уақыт — бүкіл уақыт бойы","tagline":"Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге.","windows":"Windows-қа арналған Хронометр","privacy":"Құпиялылық саясаты","download":"Android үшін жүктеп алу","android":"Тегін · Android 8 және жаңарақ · кейін қолданба өзі жаңарады","featuresTitle":"Ол не істей алады","features":[["♾️","Бүкіл уақыттағы тарих","Әр қолданба мен ойын, күннен күнге, мәңгі сақталады — рекордтар, атақтар және ең ұзақ сериялармен."],["⏮️","Бұрынғы тарих","Алғаш іске қосқанда телефон әлі есінде сақтағанның бәрін алады — шамамен екі жылға дейін артқа."],["📱","Барлық құрылғыларың","Телефондар, планшеттер және Windows ДК бір жерде — өз Google Дискіңдегі жасырын қалта арқылы."],["⏳","Шын жұмыс істейтін лимиттер","Күндік уақыт, тыйым салынған сағаттар, «Уақыт бітті» экраны — бір қолданбаға, санатқа, өз тобыңа, таңдаған құрылғыларда."],["🧩","Виджеттер","Бүгін, апта, топ қолданбалар, бір қолданба, лимиттерің және бүкіл уақыттағы қорытынды — тікелей басты экранда."],["📶","Трафик","Әр қолданбаның Wi-Fi және мобильді интернеті — кез келген күндер үшін."]],"howTitle":"Бұл қалай жұмыс істейді","how":[["1","Телефонға орнат","Бір рет «Пайдалану деректеріне кіру рұқсатын» бер — ол телефон сақтаған тарихты алып, әрі қарай өзі санайды."],["2","Басқа құрылғыларды қос","Әр телефонда, планшетте және <a href=\"pc/\">Windows бағдарламасында</a> Google арқылы кір — олар бір-бірін табады."],["3","Кез келген уақытта қара","Күндер, апталар, айлар немесе жылдар, әр қолданба не санат, бір құрылғы не бәрі бірге."]],"privateTitle":"Деректерің — өзіңдікі","privateText":"Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.","privateMore":"Құпиялылық саясатын оқу"},"c":{"name":"Қазақ тілі","brand":"Хронометр","home":"Басты бет","windows":"Windows үшін","privacy":"Құпиялылық саясаты","top":"Жоғарыға","contents":"Мазмұны"}},"ru":{"t":{"title":"Время в приложениях за всё время","tagline":"Сколько ты провёл в каждом приложении и игре — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе.","windows":"Хронометр для Windows","privacy":"Политика конфиденциальности","download":"Скачать для Android","android":"Бесплатно · Android 8 и новее · дальше приложение обновляется само","featuresTitle":"Что он умеет","features":[["♾️","История за всё время","Каждое приложение и игра, день за днём, навсегда — с рекордами, титулами и самыми длинными сериями."],["⏮️","История из прошлого","При первом запуске забирает всё, что телефон ещё помнит, — примерно до двух лет назад."],["📱","Все твои устройства","Телефоны, планшеты и ПК на Windows вместе — через скрытую папку на твоём собственном Google Диске."],["⏳","Лимиты, которые работают","Время в день, запрещённые часы, экран «Время вышло» — для приложения, категории, своей группы, на выбранных устройствах."],["🧩","Виджеты","Сегодня, неделя, топ приложений, одно приложение, лимиты и «всё время» прямо на рабочем столе."],["📶","Трафик","Wi-Fi и мобильный интернет по приложениям — за любые дни."]],"howTitle":"Как это работает","how":[["1","Установи на телефон","Один раз дай «Доступ к истории использования» — он заберёт историю, которую хранит телефон, и дальше будет считать сам."],["2","Добавь другие устройства","Войди через Google на каждом телефоне, планшете и в <a href=\"pc/\">программе для Windows</a> — они найдут друг друга."],["3","Смотри когда угодно","Дни, недели, месяцы или годы, каждое приложение или категория, одно устройство или все вместе."]],"privateTitle":"Твои данные — твои","privateText":"Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.","privateMore":"Читать политику конфиденциальности"},"c":{"name":"Русский","brand":"Хронометр","home":"Главная","windows":"Для Windows","privacy":"Политика конфиденциальности","top":"Наверх","contents":"Содержание"}}};
-const R = "", DOWNLOAD_URL = "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe";
-const body = function homeBody(t, c, R) {
-  return `
-  <header class="hero" id="top">
-    <img class="logo" src="${R}icon.png" alt="" width="120" height="120">
-    <h1>${c.brand}</h1>
-    <p class="lead">${t.title}</p>
-    <p class="tagline">${t.tagline}</p>
-    <div class="cta"><a class="btn big" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk">⬇&nbsp; ${t.download}</a></div>
-    <p class="soon">🤖 ${t.android}</p>
-    <div class="cta">
-      <a class="btn ghost" href="${R}pc/">💻 ${t.windows}</a>
-      <a class="btn ghost" href="${R}privacy.html">🔒 ${t.privacy}</a>
-    </div>
-  </header>
 
-  <h2 class="label">${t.featuresTitle}</h2>
-  <div class="grid">
-${t.features.map(([i, h, p]) => `    <div class="feat"><span class="ico">${i}</span><h3>${h}</h3><p>${p}</p></div>`).join('\n')}
-  </div>
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">What it can do</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>All-time history</h3><p>Every app and game, day by day, kept forever — with records, titles and your longest streaks.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>History from before</h3><p>On the first start it takes everything the phone still remembers, up to about two years back.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>All your devices</h3><p>Phones, tablets and a Windows PC in one place, through a hidden folder on your own Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Limits that work</h3><p>Time per day, forbidden hours, a “Time’s up” screen — for one app, a category, your own group, on the devices you choose.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Today, the week, the top apps, one app, your limits and all-time totals right on the home screen.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Traffic</h3><p>Wi-Fi and mobile data per app, for any days you pick.</p></div></div>
+  </section>
 
-  <h2 class="label">${t.howTitle}</h2>
-  <div class="grid three">
-${t.how.map(([n, h, p]) => `    <div class="feat"><span class="num">${n}</span><h3>${h}</h3><p>${p}</p></div>`).join('\n')}
-  </div>
+
+
 
   <section class="private">
-    <h2><span class="ico">🔒</span>${t.privateTitle}</h2>
-    <p>${t.privateText}</p>
-    <p><a href="${R}privacy.html">${t.privateMore} →</a></p>
-  </section>`;
-};
-const footer = function footer(c, R) {
-  return `<footer><a href="${R}./">${c.home}</a> · <a href="${R}pc/">💻 ${c.windows}</a> · <a href="${R}privacy.html">🔒 ${c.privacy}</a><br><a href="/">✦ PegasoHlib</a> · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>`;
-};
-const title = (t, c) => c.brand + ' — ' + t.title;
-const page = document.getElementById('page');
-function show(k, keepScroll) {
-  const d = D[k] || D.en;
-  page.innerHTML = body(d.t, d.c, R) + '\n  ' + footer(d.c, R);
-  document.documentElement.lang = k;
-  document.title = title(d.t, d.c);
-  document.getElementById('brand').textContent = d.c.brand;
-  document.getElementById('langName').textContent = d.c.name;
-  document.getElementById('up').setAttribute('aria-label', d.c.top);
-  document.querySelectorAll('#lang button').forEach(b => b.setAttribute('aria-current', String(b.dataset.lang === k)));
-  try { localStorage.setItem('siteLang', k); } catch (e) {}
-  const u = new URL(location.href); u.searchParams.set('lang', k); history.replaceState(null, '', u);
-  if (!keepScroll && location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
-}
-function pick() {
-  const q = new URLSearchParams(location.search).get('lang');
-  if (q && D[q]) return q;
-  try { const s = localStorage.getItem('siteLang') || localStorage.getItem('privacyLang'); if (s && D[s]) return s; } catch (e) {}
-  for (const l of navigator.languages || [navigator.language || 'en']) {
-    const base = l.toLowerCase().split('-')[0];
-    const k = base === 'in' ? 'id' : base;
-    if (D[k]) return k;
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Your data stays yours</h2><p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="Хронометр — Час у застосунках за весь час" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Приватність" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Хронометр</h1>
+    <p class="tagline">Час у застосунках за весь час</p>
+    <p class="lead">Скільки часу пішло на кожен застосунок і гру — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Хронометр для Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
+    </div>
+    <p class="note">Безкоштовно · Android 8 і новіші · далі застосунок оновлюється сам</p>
+  </header>
+
+  <section class="show" aria-label="Як це працює">
+    <div class="showtext"><h2 class="display">Як це працює</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Встанови на телефон</h3><p>Один раз дай «Доступ до даних про використання» — він забере історію, яку зберігає телефон, і далі рахуватиме сам.</p></div></li><li><span class="num">2</span><div><h3>Додай інші пристрої</h3><p>Увійди через Google на кожному телефоні, планшеті й у <a href="pc/">програмі для Windows</a> — вони знайдуть одне одного.</p></div></li><li><span class="num">3</span><div><h3>Дивись будь-коли</h3><p>Дні, тижні, місяці чи роки, кожен застосунок чи категорія, один пристрій або всі разом.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що він уміє</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Історія за весь час</h3><p>Кожен застосунок і гра, день за днем, назавжди — з рекордами, титулами й найдовшими серіями.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Історія з минулого</h3><p>На першому запуску забирає все, що телефон ще пам’ятає, — до приблизно двох років назад.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Усі твої пристрої</h3><p>Телефони, планшети й ПК на Windows разом — через приховану папку на твоєму власному Google Диску.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Ліміти, що працюють</h3><p>Час на день, заборонені години, екран «Час вийшов» — для застосунку, категорії, своєї групи, на вибраних пристроях.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Віджети</h3><p>Сьогодні, тиждень, топ застосунків, один застосунок, ліміти й «весь час» просто на робочому столі.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Трафік</h3><p>Wi-Fi і мобільний інтернет по застосунках — за будь-які дні.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твої дані — твої</h2><p>Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="Khronometr — Tu tiempo de pantalla, desde siempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Tu tiempo de pantalla, desde siempre</p>
+    <p class="lead">Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr para Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
+    </div>
+    <p class="note">Gratis · Android 8 o posterior · después la app se actualiza sola</p>
+  </header>
+
+  <section class="show" aria-label="Cómo funciona">
+    <div class="showtext"><h2 class="display">Cómo funciona</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Instálalo en el teléfono</h3><p>Dale «Acceso a datos de uso» una vez: lee el historial que guarda el teléfono y desde entonces cuenta solo.</p></div></li><li><span class="num">2</span><div><h3>Añade tus otros dispositivos</h3><p>Inicia sesión con Google en cada teléfono, tablet y en la <a href="pc/">app para Windows</a>: se encuentran entre sí.</p></div></li><li><span class="num">3</span><div><h3>Mira atrás cuando quieras</h3><p>Días, semanas, meses o años, cada app o una categoría, un dispositivo o todos.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Qué puede hacer</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Historial de siempre</h3><p>Cada app y juego, día a día, guardado para siempre — con récords, títulos y tus rachas más largas.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Historial de antes</h3><p>En el primer inicio recoge todo lo que el teléfono aún recuerda, hasta unos dos años atrás.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Todos tus dispositivos</h3><p>Teléfonos, tablets y un PC con Windows en un solo lugar, mediante una carpeta oculta en tu propio Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Límites que funcionan</h3><p>Tiempo por día, horas prohibidas, una pantalla «Se acabó el tiempo» — para una app, una categoría o tu propio grupo, en los dispositivos que elijas.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Hoy, la semana, las apps más usadas, una app, tus límites y los totales de siempre, directamente en la pantalla de inicio.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Tráfico</h3><p>Wi-Fi y datos móviles por app, en los días que elijas.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tus datos son tuyos</h2><p>Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="Khronometr — O teu tempo de ecrã, desde sempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">O teu tempo de ecrã, desde sempre</p>
+    <p class="lead">Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Transferir para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr para Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
+    </div>
+    <p class="note">Grátis · Android 8 ou mais recente · depois a app atualiza-se sozinha</p>
+  </header>
+
+  <section class="show" aria-label="Como funciona">
+    <div class="showtext"><h2 class="display">Como funciona</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Instala no telemóvel</h3><p>Dá uma vez o «Acesso a dados de utilização» — lê o histórico que o telemóvel guarda e a partir daí conta sozinho.</p></div></li><li><span class="num">2</span><div><h3>Junta os outros dispositivos</h3><p>Inicia sessão com Google em cada telemóvel, tablet e na <a href="pc/">app para Windows</a> — encontram-se uns aos outros.</p></div></li><li><span class="num">3</span><div><h3>Olha para trás quando quiseres</h3><p>Dias, semanas, meses ou anos, cada app ou uma categoria, um dispositivo ou todos.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">O que consegue fazer</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Histórico de sempre</h3><p>Cada app e jogo, dia a dia, guardado para sempre — com recordes, títulos e as tuas sequências mais longas.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Histórico de antes</h3><p>No primeiro arranque recolhe tudo o que o telemóvel ainda se lembra, até cerca de dois anos atrás.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Todos os teus dispositivos</h3><p>Telemóveis, tablets e um PC com Windows num só sítio, através de uma pasta oculta no teu próprio Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Limites que funcionam</h3><p>Tempo por dia, horas proibidas, um ecrã «Acabou o tempo» — para uma app, uma categoria ou um grupo teu, nos dispositivos que escolheres.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Hoje, a semana, as apps mais usadas, uma app, os teus limites e os totais de sempre, diretamente no ecrã principal.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Tráfego</h3><p>Wi-Fi e dados móveis por app, nos dias que escolheres.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Os teus dados são teus</h2><p>Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="Khronometr — Ton temps d’écran, depuis toujours" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Ton temps d’écran, depuis toujours</p>
+    <p class="lead">Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr pour Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
+    </div>
+    <p class="note">Gratuit · Android 8 ou plus récent · ensuite l’appli se met à jour toute seule</p>
+  </header>
+
+  <section class="show" aria-label="Comment ça marche">
+    <div class="showtext"><h2 class="display">Comment ça marche</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Installe-la sur le téléphone</h3><p>Active une fois « Accès aux données d’utilisation » — elle lit l’historique gardé par le téléphone, puis compte toute seule.</p></div></li><li><span class="num">2</span><div><h3>Ajoute tes autres appareils</h3><p>Connecte-toi avec Google sur chaque téléphone, tablette et dans l’<a href="pc/">appli Windows</a> — ils se trouvent tout seuls.</p></div></li><li><span class="num">3</span><div><h3>Regarde en arrière quand tu veux</h3><p>Jours, semaines, mois ou années, chaque appli ou une catégorie, un appareil ou tous.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Ce qu’elle sait faire</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Historique complet</h3><p>Chaque appli et chaque jeu, jour après jour, conservés pour toujours — avec records, titres et tes plus longues séries.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>L’historique d’avant</h3><p>Au premier lancement, elle récupère tout ce dont le téléphone se souvient encore, jusqu’à environ deux ans en arrière.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Tous tes appareils</h3><p>Téléphones, tablettes et PC Windows au même endroit, grâce à un dossier caché sur ton propre Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Des limites qui marchent</h3><p>Temps par jour, heures interdites, écran « Temps écoulé » — pour une appli, une catégorie ou ton propre groupe, sur les appareils de ton choix.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Aujourd’hui, la semaine, le top des applis, une appli, tes limites et les totaux depuis toujours, directement sur l’écran d’accueil.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Trafic</h3><p>Wi-Fi et données mobiles par appli, sur les jours de ton choix.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tes données restent à toi</h2><p>Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="Khronometr — Deine Bildschirmzeit seit jeher" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Deine Bildschirmzeit seit jeher</p>
+    <p class="lead">Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr für Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
+    </div>
+    <p class="note">Kostenlos · ab Android 8 · danach aktualisiert sich die App selbst</p>
+  </header>
+
+  <section class="show" aria-label="So funktioniert’s">
+    <div class="showtext"><h2 class="display">So funktioniert’s</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Aufs Handy installieren</h3><p>Gib ihr einmal den „Nutzungsdatenzugriff“ — sie liest den Verlauf, den das Handy speichert, und zählt ab dann selbst.</p></div></li><li><span class="num">2</span><div><h3>Weitere Geräte hinzufügen</h3><p>Melde dich auf jedem Handy, Tablet und in der <a href="pc/">Windows-App</a> mit Google an — sie finden sich gegenseitig.</p></div></li><li><span class="num">3</span><div><h3>Jederzeit zurückblicken</h3><p>Tage, Wochen, Monate oder Jahre, jede App oder eine Kategorie, ein Gerät oder alle.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Was sie kann</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Verlauf seit jeher</h3><p>Jede App und jedes Spiel, Tag für Tag, für immer gespeichert — mit Rekorden, Titeln und deinen längsten Serien.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Verlauf von früher</h3><p>Beim ersten Start holt sie alles, woran sich das Handy noch erinnert — bis etwa zwei Jahre zurück.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Alle deine Geräte</h3><p>Handys, Tablets und ein Windows-PC an einem Ort — über einen versteckten Ordner in deinem eigenen Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Limits, die wirken</h3><p>Zeit pro Tag, gesperrte Stunden, ein „Zeit ist um“-Bildschirm — für eine App, eine Kategorie oder deine eigene Gruppe, auf den Geräten deiner Wahl.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Heute, die Woche, die Top-Apps, eine einzelne App, deine Limits und die Gesamtzeit direkt auf dem Startbildschirm.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Datenverkehr</h3><p>WLAN und mobile Daten pro App, für beliebige Tage.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Deine Daten bleiben deine</h2><p>Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="Khronometr — Il tuo tempo davanti allo schermo, da sempre" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Il tuo tempo davanti allo schermo, da sempre</p>
+    <p class="lead">Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr per Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
+    </div>
+    <p class="note">Gratis · Android 8 o successivo · poi l’app si aggiorna da sola</p>
+  </header>
+
+  <section class="show" aria-label="Come funziona">
+    <div class="showtext"><h2 class="display">Come funziona</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Installala sul telefono</h3><p>Concedi una volta l’«Accesso ai dati di utilizzo» — legge la cronologia che il telefono conserva e da lì conta da sola.</p></div></li><li><span class="num">2</span><div><h3>Aggiungi gli altri dispositivi</h3><p>Accedi con Google su ogni telefono, tablet e nell’<a href="pc/">app per Windows</a> — si trovano a vicenda.</p></div></li><li><span class="num">3</span><div><h3>Guarda indietro quando vuoi</h3><p>Giorni, settimane, mesi o anni, ogni app o una categoria, un dispositivo o tutti.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Cosa sa fare</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Cronologia di sempre</h3><p>Ogni app e gioco, giorno per giorno, conservati per sempre — con record, titoli e le tue serie più lunghe.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>La cronologia di prima</h3><p>Al primo avvio recupera tutto ciò che il telefono ricorda ancora, fino a circa due anni fa.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Tutti i tuoi dispositivi</h3><p>Telefoni, tablet e un PC Windows in un unico posto, tramite una cartella nascosta nel tuo Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Limiti che funzionano</h3><p>Tempo al giorno, ore vietate, una schermata «Tempo scaduto» — per un’app, una categoria o un tuo gruppo, sui dispositivi che scegli.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Oggi, la settimana, le app più usate, una singola app, i tuoi limiti e i totali di sempre direttamente nella schermata Home.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Traffico</h3><p>Wi-Fi e dati mobili per app, per i giorni che vuoi.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">I tuoi dati restano tuoi</h2><p>Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="Khronometr — Skärmtid för all tid" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Skärmtid för all tid</p>
+    <p class="lead">Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr för Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
+    </div>
+    <p class="note">Gratis · Android 8 eller senare · sedan uppdaterar appen sig själv</p>
+  </header>
+
+  <section class="show" aria-label="Så fungerar det">
+    <div class="showtext"><h2 class="display">Så fungerar det</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Installera på telefonen</h3><p>Ge den ”Åtkomst till användningsdata” en gång — den läser historiken som telefonen sparar och räknar sedan själv.</p></div></li><li><span class="num">2</span><div><h3>Lägg till dina andra enheter</h3><p>Logga in med Google på varje telefon, surfplatta och i <a href="pc/">Windows-appen</a> — de hittar varandra.</p></div></li><li><span class="num">3</span><div><h3>Blicka bakåt när du vill</h3><p>Dagar, veckor, månader eller år, varje app eller en kategori, en enhet eller alla.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Vad den kan</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Historik för all tid</h3><p>Varje app och spel, dag för dag, sparat för alltid — med rekord, titlar och dina längsta sviter.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Historik från förr</h3><p>Vid första starten hämtar den allt telefonen fortfarande minns, upp till ungefär två år bakåt.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Alla dina enheter</h3><p>Telefoner, surfplattor och en Windows-dator på ett ställe, via en dold mapp på din egen Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Gränser som fungerar</h3><p>Tid per dag, förbjudna timmar, en ”Tiden är ute”-skärm — för en app, en kategori eller din egen grupp, på de enheter du väljer.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgetar</h3><p>I dag, veckan, toppapparna, en app, dina gränser och totalen för all tid direkt på hemskärmen.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Trafik</h3><p>Wifi och mobildata per app, för vilka dagar du vill.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Dina data är dina</h2><p>Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="Khronometr — Waktu layar sepanjang masa" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Waktu layar sepanjang masa</p>
+    <p class="lead">Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr untuk Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
+    </div>
+    <p class="note">Gratis · Android 8 atau lebih baru · setelah itu aplikasi memperbarui diri sendiri</p>
+  </header>
+
+  <section class="show" aria-label="Cara kerjanya">
+    <div class="showtext"><h2 class="display">Cara kerjanya</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Pasang di ponsel</h3><p>Berikan “Akses penggunaan” sekali — aplikasi membaca riwayat yang disimpan ponsel, lalu menghitung sendiri sejak itu.</p></div></li><li><span class="num">2</span><div><h3>Tambahkan perangkat lain</h3><p>Masuk dengan Google di setiap ponsel, tablet, dan <a href="pc/">aplikasi Windows</a> — semuanya akan saling menemukan.</p></div></li><li><span class="num">3</span><div><h3>Lihat ke belakang kapan saja</h3><p>Hari, minggu, bulan, atau tahun, setiap aplikasi atau satu kategori, satu perangkat atau semuanya.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Apa saja yang bisa dilakukan</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Riwayat sepanjang masa</h3><p>Setiap aplikasi dan game, hari demi hari, tersimpan selamanya — dengan rekor, gelar, dan streak terpanjangmu.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Riwayat dari sebelumnya</h3><p>Saat pertama dibuka, aplikasi mengambil semua yang masih diingat ponsel, hingga sekitar dua tahun ke belakang.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Semua perangkatmu</h3><p>Ponsel, tablet, dan PC Windows di satu tempat, lewat folder tersembunyi di Google Drive milikmu sendiri.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Batas yang benar-benar bekerja</h3><p>Waktu per hari, jam terlarang, layar “Waktu habis” — untuk satu aplikasi, kategori, atau grupmu sendiri, di perangkat yang kamu pilih.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Hari ini, minggu ini, aplikasi teratas, satu aplikasi, batasmu, dan total sepanjang masa langsung di layar utama.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Trafik</h3><p>Wi-Fi dan data seluler per aplikasi, untuk hari apa pun yang kamu pilih.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Datamu tetap milikmu</h2><p>Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="フロノメトル — ずっと残るスクリーンタイム" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>フロノメトル</h1>
+    <p class="tagline">ずっと残るスクリーンタイム</p>
+    <p class="lead">すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版フロノメトル</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
+    </div>
+    <p class="note">無料 · Android 8 以降 · その後はアプリが自動で更新されます</p>
+  </header>
+
+  <section class="show" aria-label="使い方">
+    <div class="showtext"><h2 class="display">使い方</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>スマホにインストール</h3><p>「使用状況へのアクセス」を一度許可するだけ — スマホに残る履歴を読み込み、その後は自動で記録します。</p></div></li><li><span class="num">2</span><div><h3>他のデバイスを追加</h3><p>各スマホ、タブレット、<a href="pc/">Windows アプリ</a>で Google にログイン — 互いに自動でつながります。</p></div></li><li><span class="num">3</span><div><h3>いつでも振り返り</h3><p>日、週、月、年ごとに。すべてのアプリやカテゴリ、1 台または全デバイスで。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">できること</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>全期間の履歴</h3><p>すべてのアプリとゲームを日ごとにずっと保存 — 記録、称号、最長の連続記録つき。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>以前の履歴も</h3><p>初回起動時に、スマホがまだ覚えている履歴を最大約 2 年前まで取り込みます。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>すべてのデバイス</h3><p>スマホ、タブレット、Windows PC をひとまとめに。あなた自身の Google ドライブの非表示フォルダを使います。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>ちゃんと効く上限</h3><p>1 日の時間、禁止時間帯、「時間切れ」画面 — アプリ、カテゴリ、自分で作ったグループごとに、選んだデバイスで。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>ウィジェット</h3><p>今日、今週、よく使うアプリ、1 つのアプリ、上限、全期間の合計をホーム画面に。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>通信量</h3><p>アプリごとの Wi-Fi とモバイルデータを、好きな日について。</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">あなたのデータはあなたのもの</h2><p>サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="Хронометр — Қолданбалардағы уақыт — бүкіл уақыт бойы" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Хронометр</h1>
+    <p class="tagline">Қолданбалардағы уақыт — бүкіл уақыт бойы</p>
+    <p class="lead">Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows-қа арналған Хронометр</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
+    </div>
+    <p class="note">Тегін · Android 8 және жаңарақ · кейін қолданба өзі жаңарады</p>
+  </header>
+
+  <section class="show" aria-label="Бұл қалай жұмыс істейді">
+    <div class="showtext"><h2 class="display">Бұл қалай жұмыс істейді</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Телефонға орнат</h3><p>Бір рет «Пайдалану деректеріне кіру рұқсатын» бер — ол телефон сақтаған тарихты алып, әрі қарай өзі санайды.</p></div></li><li><span class="num">2</span><div><h3>Басқа құрылғыларды қос</h3><p>Әр телефонда, планшетте және <a href="pc/">Windows бағдарламасында</a> Google арқылы кір — олар бір-бірін табады.</p></div></li><li><span class="num">3</span><div><h3>Кез келген уақытта қара</h3><p>Күндер, апталар, айлар немесе жылдар, әр қолданба не санат, бір құрылғы не бәрі бірге.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Ол не істей алады</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Бүкіл уақыттағы тарих</h3><p>Әр қолданба мен ойын, күннен күнге, мәңгі сақталады — рекордтар, атақтар және ең ұзақ сериялармен.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Бұрынғы тарих</h3><p>Алғаш іске қосқанда телефон әлі есінде сақтағанның бәрін алады — шамамен екі жылға дейін артқа.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Барлық құрылғыларың</h3><p>Телефондар, планшеттер және Windows ДК бір жерде — өз Google Дискіңдегі жасырын қалта арқылы.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Шын жұмыс істейтін лимиттер</h3><p>Күндік уақыт, тыйым салынған сағаттар, «Уақыт бітті» экраны — бір қолданбаға, санатқа, өз тобыңа, таңдаған құрылғыларда.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Виджеттер</h3><p>Бүгін, апта, топ қолданбалар, бір қолданба, лимиттерің және бүкіл уақыттағы қорытынды — тікелей басты экранда.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Трафик</h3><p>Әр қолданбаның Wi-Fi және мобильді интернеті — кез келген күндер үшін.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Деректерің — өзіңдікі</h2><p>Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="Хронометр — Время в приложениях за всё время" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Приватность" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Хронометр</h1>
+    <p class="tagline">Время в приложениях за всё время</p>
+    <p class="lead">Сколько времени ушло на каждое приложение и игру — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Хронометр для Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
+    </div>
+    <p class="note">Бесплатно · Android 8 и новее · дальше приложение обновляется само</p>
+  </header>
+
+  <section class="show" aria-label="Как это работает">
+    <div class="showtext"><h2 class="display">Как это работает</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Установи на телефон</h3><p>Один раз дай «Доступ к истории использования» — он заберёт историю, которую хранит телефон, и дальше будет считать сам.</p></div></li><li><span class="num">2</span><div><h3>Добавь другие устройства</h3><p>Войди через Google на каждом телефоне, планшете и в <a href="pc/">программе для Windows</a> — они найдут друг друга.</p></div></li><li><span class="num">3</span><div><h3>Смотри когда угодно</h3><p>Дни, недели, месяцы или годы, каждое приложение или категория, одно устройство или все вместе.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что он умеет</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>История за всё время</h3><p>Каждое приложение и игра, день за днём, навсегда — с рекордами, титулами и самыми длинными сериями.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>История из прошлого</h3><p>При первом запуске забирает всё, что телефон ещё помнит, — примерно до двух лет назад.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Все твои устройства</h3><p>Телефоны, планшеты и ПК на Windows вместе — через скрытую папку на твоём собственном Google Диске.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Лимиты, которые работают</h3><p>Время в день, запрещённые часы, экран «Время вышло» — для приложения, категории, своей группы, на выбранных устройствах.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Виджеты</h3><p>Сегодня, неделя, топ приложений, одно приложение, лимиты и «всё время» прямо на рабочем столе.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Трафик</h3><p>Wi-Fi и мобильный интернет по приложениям — за любые дни.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твои данные — твои</h2><p>Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
+<script>
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
   }
-  return 'en';
-}
-document.querySelectorAll('#lang button').forEach(b => b.addEventListener('click', () => {
-  show(b.dataset.lang, true);
-  document.getElementById('lang').open = false;
-}));
-document.addEventListener('click', e => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
-// Links to the other pages carry the language along.
-document.addEventListener('click', e => {
-  const a = e.target.closest('a[href]');
-  if (!a || a.target || /^(mailto:|https?:|#)/.test(a.getAttribute('href'))) return;
-  const u = new URL(a.href); u.searchParams.set('lang', document.documentElement.lang); a.href = u;
-});
-show(pick(), false);
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
 </script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("https://pegasohlib.github.io/android/version.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+  }).catch(function () {});
+})();
+</script>
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </body>
 </html>
