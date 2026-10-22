@@ -1,11 +1,11 @@
 {
-    "versionCode":  501,
-    "versionName":  "0.5.1",
+    "versionCode":  502,
+    "versionName":  "0.5.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "234763d162350b68de4f3a5c000ede703c81cd01c431bcb8029099f42540a6a8",
-    "size":  175458479,
+    "sha256":  "3bdfd51bbe6cf183676b17e5ab5f5cbc5d939c97b9cc49c78c1ee2d4942ab272",
+    "size":  175459935,
     "notes":  {
-                  "uk":  "Ділення: закарлючки вирівнюються в рівну лінію, коло замикається саме без подвійних ліній, лінія вздовж річки прилипає надійніше.",
-                  "en":  "Splitting: scribbles become a straight line, a circle closes itself without double lines, a line along a river sticks to it more reliably."
+                  "uk":  "Ділення: під розрізаними місцями більше не просвічує море (сині цятки), коло із заїздом за початок замикається без другої лінії.",
+                  "en":  "Splitting: no more sea specks showing through along cuts, a circle drawn past its start closes without a second line."
               }
 }
