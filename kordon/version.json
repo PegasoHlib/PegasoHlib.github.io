@@ -1,11 +1,11 @@
 {
-    "versionCode":  410,
-    "versionName":  "0.4.10",
+    "versionCode":  411,
+    "versionName":  "0.4.11",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "af63babd2d585a6eae8a9267c9c62ac6cd221acf39abf7148a946b697c99adc7",
-    "size":  175069987,
+    "sha256":  "478de8a5881d73a8e3ad4fce6031608d7751345d03f520745db7be44ba9e6e62",
+    "size":  175419983,
     "notes":  {
-                  "uk":  "Прибрано сіру цятку на полюсі; кольори країн однакові на всіх рівнях деталізації",
-                  "en":  "The grey speck at the pole is gone; country colours are the same on every detail level"
+                  "uk":  "Камера доходить до полюсів (глобус і карта). Байконур — частина Кизилординської області. Шельфові льодовики Антарктиди тепер лід, а не море.",
+                  "en":  "The camera reaches the poles (globe and map). Baikonur is part of Kyzylorda region. Antarctic ice shelves are now ice, not sea."
               }
 }
