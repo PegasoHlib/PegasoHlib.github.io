@@ -2,239 +2,632 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
 <title>Khronometr for Windows</title>
 <meta name="description" content="Time in programs and games on your computer — together with your phone.">
-<link rel="icon" href="../icon.png">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Khronometr for Windows">
+<meta property="og:description" content="Time in programs and games on your computer — together with your phone.">
+<meta property="og:url" content="https://pegasohlib.github.io/khronometr/pc/">
+<meta property="og:image" content="https://pegasohlib.github.io/khronometr/icon.png">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon.png">
+<link rel="canonical" href="https://pegasohlib.github.io/khronometr/pc/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/khronometr/pc/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/khronometr/pc/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/khronometr/pc/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/khronometr/pc/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/khronometr/pc/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/khronometr/pc/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/khronometr/pc/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/khronometr/pc/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/khronometr/pc/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/khronometr/pc/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/khronometr/pc/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/khronometr/pc/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/khronometr/pc/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
 <style>
-  :root { color-scheme: dark; --bg:#0B0B16; --bg2:#1A1440; --card:#151528; --card2:#1B1A33; --line:#2A2850; --text:#E8E6FF; --muted:#9A97C0;
-    --cyan:#00E5FF; --violet:#8A5CFF; --magenta:#FF2BD6; --shadow:rgba(138,92,255,.35); }
-  @media (prefers-color-scheme: light) {
-    :root { color-scheme: light; --bg:#F6F4FF; --bg2:#E9E3FF; --card:#FFFFFF; --card2:#F4F1FF; --line:#E1DCF7; --text:#1A1830; --muted:#5F5B80;
-      --cyan:#0089B3; --violet:#6A3BEA; --magenta:#C2128C; --shadow:rgba(106,59,234,.18); }
-  }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; scroll-padding-top:72px; }
-  body { margin:0; background:radial-gradient(circle at 50% -10%, var(--bg2) 0%, var(--bg) 55%) fixed, var(--bg); color:var(--text);
-    font:16.5px/1.65 system-ui, "Segoe UI", Roboto, Arial, sans-serif; -webkit-text-size-adjust:100%; overflow-wrap:break-word; }
-  a { color:var(--cyan); }
-  .bar { position:sticky; top:0; z-index:5; display:flex; align-items:center; gap:10px; padding:10px 16px;
-    background:color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
-  .bar .home { display:flex; align-items:center; gap:8px; color:var(--text); text-decoration:none; font-weight:700; min-width:0; }
-  .bar .home img { width:28px; height:28px; border-radius:8px; }
-  .bar .home span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  .lang { margin-left:auto; position:relative; }
-  .lang summary { list-style:none; cursor:pointer; display:flex; align-items:center; gap:6px; padding:7px 12px; border-radius:12px;
-    background:var(--card); border:1px solid var(--line); font-weight:700; font-size:14px; white-space:nowrap; }
-  .lang summary::-webkit-details-marker { display:none; }
-  .lang[open] summary { border-color:var(--violet); }
-  .lang .menu { position:absolute; right:0; top:calc(100% + 6px); width:min(300px, calc(100vw - 32px)); display:grid; grid-template-columns:1fr 1fr; gap:6px;
-    padding:8px; background:var(--card); border:1px solid var(--line); border-radius:16px; box-shadow:0 12px 40px var(--shadow); }
-  .lang button { display:flex; gap:8px; align-items:center; padding:8px 10px; border:1px solid transparent; border-radius:10px; background:var(--card2);
-    color:var(--text); font:inherit; font-size:14px; cursor:pointer; text-align:left; }
-  .lang button b { font-size:11px; letter-spacing:.06em; color:var(--muted); min-width:20px; }
-  .lang button[aria-current="true"] { border-color:var(--violet); background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  main { max-width:820px; margin:0 auto; padding:24px 16px 72px; }
-  .hero { text-align:center; padding:14px 0 6px; }
-  .logo { border-radius:26px; box-shadow:0 0 60px var(--shadow); }
-  .brand { margin:14px 0 0; font-weight:800; letter-spacing:.04em; color:var(--muted); }
-  h1 { margin:12px 0 4px; font-size:clamp(30px, 8vw, 46px); line-height:1.12; background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta));
-    -webkit-background-clip:text; background-clip:text; color:transparent; }
-  .lead { margin:0; font-size:20px; font-weight:700; }
-  .tagline { margin:8px auto 0; max-width:560px; color:var(--muted); }
-  .cta { display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:22px; }
-  .btn { display:inline-flex; align-items:center; gap:8px; padding:13px 22px; border-radius:16px; font-weight:700; text-decoration:none; color:#fff;
-    background:linear-gradient(90deg,var(--cyan),var(--violet),var(--magenta)); box-shadow:0 0 34px var(--shadow); }
-  .btn.big { font-size:18px; padding:16px 30px; }
-  .btn.ghost { color:var(--text); background:var(--card); border:1px solid var(--line); box-shadow:none; }
-  .btn:active { transform:scale(.98); }
-  .soon { margin:12px 0 0; color:var(--muted); font-size:14px; }
-  .label { margin:34px 0 12px; font-size:13px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); }
-  .grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:12px; }
-  .grid.three { grid-template-columns:repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
-  .feat, .sum { padding:16px 18px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  .feat h3 { margin:10px 0 2px; font-size:17px; line-height:1.3; }
-  .feat p, .sum p { margin:2px 0 0; color:var(--muted); font-size:14.5px; line-height:1.55; }
-  .sum { display:flex; gap:12px; align-items:flex-start; }
-  .ico { flex:none; display:inline-grid; place-items:center; width:42px; height:42px; border-radius:13px; font-size:22px;
-    background:color-mix(in srgb, var(--violet) 16%, var(--card)); }
-  .ico.sm { width:34px; height:34px; border-radius:10px; font-size:18px; }
-  .num { display:inline-grid; place-items:center; width:40px; height:40px; border-radius:50%; font-weight:800; color:#fff;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  .toclist { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap:8px; }
-  .toclist a { display:flex; align-items:center; gap:12px; padding:9px 12px; border-radius:14px; background:var(--card); border:1px solid var(--line);
-    color:var(--text); text-decoration:none; font-weight:600; font-size:15px; line-height:1.3; min-height:52px; }
-  .toclist a:hover, .toclist a:focus-visible { border-color:var(--violet); }
-  .toclist .tt { flex:1; }
-  .toclist .go { color:var(--muted); font-size:22px; line-height:1; }
-  section { margin-top:16px; padding:6px 20px 16px; border-radius:20px; background:var(--card); border:1px solid var(--line); }
-  section h2 { display:flex; align-items:center; gap:12px; margin:14px 0 6px; font-size:19px; line-height:1.3; }
-  section ul { padding-left:20px; margin:8px 0; }
-  section li { margin:6px 0; }
-  .private { margin-top:34px; }
-  .note { padding:10px 14px; border-radius:12px; background:var(--card2); color:var(--muted); font-size:14.5px; }
-  .note.center { text-align:center; background:none; padding:6px 0 0; }
-  code { font:13.5px/1.4 ui-monospace, Consolas, monospace; padding:1px 6px; border-radius:6px; background:var(--card2); border:1px solid var(--line); overflow-wrap:anywhere; }
-  .perms { margin:8px 0 0; display:grid; gap:8px; }
-  .perms dt { font-weight:700; }
-  .perms dd { margin:-6px 0 4px; color:var(--muted); font-size:15px; }
-  .perms dt::before { content:"✓"; color:var(--cyan); font-weight:900; margin-right:8px; }
-  ol.steps { list-style:none; padding:0; margin:4px 0 0; counter-reset:s; }
-  ol.steps > li { counter-increment:s; position:relative; padding:12px 0 12px 54px; border-top:1px solid var(--line); }
-  ol.steps > li:first-child { border-top:0; }
-  ol.steps > li::before { content:counter(s); position:absolute; left:0; top:12px; width:38px; height:38px; border-radius:50%; display:grid; place-items:center;
-    font-weight:800; color:#fff; background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); }
-  b.key { color:var(--cyan); }
-  .smart { margin-top:12px; border-radius:10px; overflow:hidden; background:#0b4f8a; color:#fff; font:14px/1.45 "Segoe UI", system-ui, sans-serif; max-width:440px; }
-  .smart .in { padding:16px 18px 14px; }
-  .smart .t { font-size:20px; font-weight:600; margin-bottom:6px; }
-  .smart .link { display:inline-block; margin-top:8px; text-decoration:underline; outline:2px solid var(--magenta); outline-offset:3px; border-radius:3px; }
-  .smart .sbar { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:8px; padding:10px 14px; background:#0a426f; }
-  .smart .sbtn { padding:5px 16px; border:1px solid #fff; border-radius:2px; }
-  .smart .sbtn.run { outline:2px solid var(--magenta); outline-offset:3px; }
-  footer { margin-top:36px; text-align:center; color:var(--muted); font-size:14px; line-height:2; }
-  .up { position:fixed; right:16px; bottom:16px; width:44px; height:44px; border-radius:50%; display:grid; place-items:center; text-decoration:none;
-    background:linear-gradient(135deg,var(--cyan),var(--violet),var(--magenta)); color:#fff; font-size:20px; box-shadow:0 6px 24px var(--shadow); }
-</style>
+:root{--g1:#8B5CFF;--g2:#FF4FD8;--on-accent:#fff;--accent:#6D3AE8;--accent2:#FF4FD8;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#3A2178;--navy2:#0E0820;--panel-line:transparent;--panel-ic:#C4A8FF}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
 </head>
 <body>
-<div class="bar">
-  <a class="home" href=".././"><img src="../icon.png" alt=""><span id="brand">Khronometr</span></a>
-  <details class="lang" id="lang">
-    <summary><span aria-hidden="true">🌐</span> <span id="langName">English</span> ▾</summary>
-    <div class="menu">
-      <button type="button" data-lang="uk" lang="uk"><b>UK</b>Українська</button>
-      <button type="button" data-lang="en" lang="en"><b>EN</b>English</button>
-      <button type="button" data-lang="es" lang="es"><b>ES</b>Español</button>
-      <button type="button" data-lang="pt" lang="pt"><b>PT</b>Português</button>
-      <button type="button" data-lang="fr" lang="fr"><b>FR</b>Français</button>
-      <button type="button" data-lang="de" lang="de"><b>DE</b>Deutsch</button>
-      <button type="button" data-lang="it" lang="it"><b>IT</b>Italiano</button>
-      <button type="button" data-lang="sv" lang="sv"><b>SV</b>Svenska</button>
-      <button type="button" data-lang="id" lang="id"><b>ID</b>Bahasa Indonesia</button>
-      <button type="button" data-lang="ja" lang="ja"><b>JA</b>日本語</button>
-      <button type="button" data-lang="kk" lang="kk"><b>KK</b>Қазақ тілі</button>
-      <button type="button" data-lang="ru" lang="ru"><b>RU</b>Русский</button>
-    </div>
-  </details>
-</div>
-<main id="page">
-  <header class="hero" id="top">
-    <img class="logo" src="../icon.png" alt="" width="112" height="112">
+<div class="bar"><div class="in">
+  <a class="home" href="../index.html" data-keep-lang><img src="../icon.svg" alt="" width="32" height="32"><span id="appname">Khronometr</span></a>
+  <nav class="links"><a data-nav="0" href="../index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="../pc/index.html" data-keep-lang>Windows</a><a data-nav="2" href="../privacy.html" data-keep-lang>Privacy</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="Khronometr for Windows" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
     <h1>Khronometr for Windows</h1>
-    <p class="tagline">Time in programs and games on your computer — together with your phone.</p>
-    <div class="cta"><a class="btn big" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe">⬇&nbsp; Download for Windows</a></div>
-    <p class="soon">Windows 10 / 11 · 0.3 MB · free</p>
+    <p class="tagline">Screen time for all time</p>
+    <p class="lead">Time in programs and games on your computer — together with your phone.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download for Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy Policy</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0.3 MB · free<br>The PC app’s menu is in English or Ukrainian, depending on your Windows language.</p>
   </header>
 
-  <section>
-    <h2><span class="ico">🧭</span>How to install</h2>
-    <ol class="steps">
-      <li><b>Download</b> the file with the button above and <b>run</b> it.</li>
-      <li>If Windows says “Windows protected your PC”, click <b class="key">More info</b>, then <b class="key">Run anyway</b>. This happens to apps without a paid signature; Khronometr installs nothing outside its own folder.
-        <div class="smart" aria-hidden="true">
-          <div class="in"><div class="t">Windows protected your PC</div>Microsoft Defender SmartScreen prevented an unrecognised app from starting…<div><span class="link">More info</span></div></div>
-          <div class="sbar"><span class="sbtn run">Run anyway</span><span class="sbtn">Don’t run</span></div>
-        </div></li>
-      <li>Khronometr appears <b>next to the clock</b> (in the tray). Click its icon → <b class="key">Sign in with Google…</b> with the same account as on your phone.</li>
-      <li>Done: the PC shows up on the phone in the <b>Devices</b> tab. It starts with Windows by itself.</li>
-    </ol>
+  <section class="show" aria-label="How to install">
+    <div class="showtext"><h2 class="display">How to install</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Download and run</h3><p><b>Download</b> the file with the button above and <b>run</b> it.</p></div></li><li><span class="num">2</span><div><h3>If Windows warns you</h3><p>If Windows says “Windows protected your PC”, click <b>More info</b>, then <b>Run anyway</b>. This happens to apps without a paid signature; Khronometr installs nothing outside its own folder.</p></div></li><li><span class="num">3</span><div><h3>Sign in with Google</h3><p>Khronometr appears <b>next to the clock</b> (in the tray). Click its icon → <b>Sign in with Google…</b> with the same account as on your phone.</p></div></li><li><span class="num">4</span><div><h3>Done</h3><p>The PC shows up on the phone in the <b>Devices</b> tab. It starts with Windows by itself.</p></div></li></ol>
   </section>
 
-  <h2 class="label">What it does</h2>
-  <div class="grid">
-    <div class="feat"><span class="ico">🖥️</span><h3>Counts every program</h3><p>Time in each program and game while its window is in front.</p></div>
-    <div class="feat"><span class="ico">🎮</span><h3>Steam and traffic</h3><p>Adds your Steam playtime and network use per program from Windows’ journal.</p></div>
-    <div class="feat"><span class="ico">⏳</span><h3>Your limits apply here too</h3><p>When time is up, a “Time’s up” screen covers the window — you can always close it.</p></div>
-    <div class="feat"><span class="ico">☁️</span><h3>Only your Google Drive</h3><p>It syncs through a hidden folder on your own Drive. No servers, no ads.</p></div>
-  </div>
-  <p class="note center">The PC app’s menu is in English or Ukrainian, depending on your Windows language.</p>
-
-  <section>
-    <h2><span class="ico">🗑️</span>How to remove it</h2>
-    <p>Tray icon → <b>Exit</b>, switch off <b>Start with Windows</b>, then delete <code>%LOCALAPPDATA%\Programs\Khronometr</code> and its data <code>%LOCALAPPDATA%\Khronometr</code>.</p>
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">What it does</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Counts every program</h3><p>Time in each program and game while its window is in front.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam and traffic</h3><p>Adds your Steam playtime and network use per program from Windows’ journal.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Your limits apply here too</h3><p>When time is up, a “Time’s up” screen covers the window — you can always close it.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Only your Google Drive</h3><p>It syncs through a hidden folder on your own Drive. No servers, no ads.</p></div></div>
   </section>
-  <footer><a href=".././">Home</a> · <a href="../pc/">💻 Windows app</a> · <a href="../privacy.html">🔒 Privacy Policy</a><br><a href="/">✦ PegasoHlib</a> · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>
+
+
+
+  <section class="section faq" aria-labelledby="q-en">
+    <h2 class="eyebrow" id="q-en">Questions</h2>
+    <div class="faqs"><details class="card"><summary>What does the Windows warning look like?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>A blue window titled <b>Windows protected your PC</b> with the text “Microsoft Defender SmartScreen prevented an unrecognised app from starting…”. Click <b>More info</b> under the text, then <b>Run anyway</b>, not <b>Don’t run</b>.</p></details><details class="card"><summary>How do I remove it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Tray icon → <b>Exit</b>, switch off <b>Start with Windows</b>, then delete <code>%LOCALAPPDATA%\Programs\Khronometr</code> and its data <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Your data stays yours</h2><p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Приватність" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Хронометр для Windows</h1>
+    <p class="tagline">Час у застосунках за весь час</p>
+    <p class="lead">Час у програмах та іграх на комп’ютері — разом із телефоном.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Завантажити для Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 МБ · безкоштовно<br>Меню програми на ПК — українською чи англійською, залежно від мови Windows.</p>
+  </header>
+
+  <section class="show" aria-label="Як встановити">
+    <div class="showtext"><h2 class="display">Як встановити</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Завантаж і запусти</h3><p><b>Завантаж</b> файл кнопкою вище й <b>запусти</b> його.</p></div></li><li><span class="num">2</span><div><h3>Якщо Windows попередить</h3><p>Якщо Windows покаже «Windows захистив ваш ПК» — натисни <b>Докладніше</b>, потім <b>Виконати все одно</b>. Так буває з програмами без платного підпису; Хронометр нічого не встановлює поза своєю папкою.</p></div></li><li><span class="num">3</span><div><h3>Увійди через Google</h3><p>Хронометр з’явиться <b>біля годинника</b> (у треї). Натисни на його іконку → <b>Увійти через Google…</b> — тим самим акаунтом, що й на телефоні.</p></div></li><li><span class="num">4</span><div><h3>Готово</h3><p>Комп’ютер з’явиться на телефоні на вкладці <b>«Пристрої»</b>. Програма сама запускатиметься з Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що він робить</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Рахує кожну програму</h3><p>Час у кожній програмі й грі, поки її вікно перед тобою.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam і трафік</h3><p>Додає час ігор зі Steam і трафік по програмах із журналу Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Твої ліміти діють і тут</h3><p>Коли час вийшов, вікно закриває екран «Час вийшов» — його завжди можна закрити.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Лише твій Google Диск</h3><p>Синхронізація через приховану папку на твоєму власному Диску. Без серверів і реклами.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-uk">
+    <h2 class="eyebrow" id="q-uk">Питання</h2>
+    <div class="faqs"><details class="card"><summary>Як виглядає попередження Windows?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Синє вікно із заголовком <b>«Windows захистив ваш ПК»</b> і текстом «Microsoft Defender SmartScreen запобіг запуску нерозпізнаної програми…». Натисни <b>Докладніше</b> під текстом, потім <b>Виконати все одно</b>, а не <b>Не запускати</b>.</p></details><details class="card"><summary>Як видалити програму?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Іконка в треї → <b>Вийти</b>, вимкни <b>Запускати з Windows</b>, потім видали <code>%LOCALAPPDATA%\Programs\Khronometr</code> і його дані <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твої дані — твої</h2><p>Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr para Windows</h1>
+    <p class="tagline">Tu tiempo de pantalla, desde siempre</p>
+    <p class="lead">El tiempo en los programas y juegos de tu PC, junto con tu teléfono.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Descargar para Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · gratis<br>El menú de la app para PC está en inglés (en ucraniano si tu Windows está en ucraniano).</p>
+  </header>
+
+  <section class="show" aria-label="Cómo instalarlo">
+    <div class="showtext"><h2 class="display">Cómo instalarlo</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Descarga y ejecuta</h3><p><b>Descarga</b> el archivo con el botón de arriba y <b>ejecútalo</b>.</p></div></li><li><span class="num">2</span><div><h3>Si Windows te avisa</h3><p>Si Windows dice «Windows protegió su PC», haz clic en <b>Más información</b> y luego en <b>Ejecutar de todas formas</b>. Pasa con las apps sin firma de pago; Khronometr no instala nada fuera de su propia carpeta.</p></div></li><li><span class="num">3</span><div><h3>Inicia sesión con Google</h3><p>Khronometr aparece <b>junto al reloj</b> (en la bandeja del sistema). Haz clic en su icono → <b>Sign in with Google…</b> con la misma cuenta que en tu teléfono.</p></div></li><li><span class="num">4</span><div><h3>Listo</h3><p>El PC aparece en el teléfono, en la pestaña <b>«Dispositivos»</b>. Se inicia solo con Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Qué hace</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Cuenta cada programa</h3><p>El tiempo en cada programa y juego mientras su ventana está delante.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam y tráfico</h3><p>Añade tu tiempo de juego de Steam y el uso de red por programa del registro de Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Tus límites también valen aquí</h3><p>Cuando se acaba el tiempo, una pantalla «Se acabó el tiempo» cubre la ventana; siempre puedes cerrarla.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Solo tu Google Drive</h3><p>Se sincroniza mediante una carpeta oculta en tu propio Drive. Sin servidores ni anuncios.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-es">
+    <h2 class="eyebrow" id="q-es">Preguntas</h2>
+    <div class="faqs"><details class="card"><summary>¿Cómo es el aviso de Windows?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Una ventana azul con el título <b>«Windows protegió su PC»</b> y el texto «Microsoft Defender SmartScreen impidió el inicio de una aplicación no reconocida…». Haz clic en <b>Más información</b> debajo del texto y luego en <b>Ejecutar de todas formas</b>, no en <b>No ejecutar</b>.</p></details><details class="card"><summary>¿Cómo lo desinstalo?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Icono de la bandeja → <b>Exit</b>, desactiva <b>Start with Windows</b> y luego borra <code>%LOCALAPPDATA%\Programs\Khronometr</code> y sus datos <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tus datos son tuyos</h2><p>Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr para Windows</h1>
+    <p class="tagline">O teu tempo de ecrã, desde sempre</p>
+    <p class="lead">O tempo nos programas e jogos do teu computador — junto com o telemóvel.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Transferir para Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · grátis<br>O menu da app para PC está em inglês (em ucraniano, se o teu Windows estiver em ucraniano).</p>
+  </header>
+
+  <section class="show" aria-label="Como instalar">
+    <div class="showtext"><h2 class="display">Como instalar</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Transfere e executa</h3><p><b>Transfere</b> o ficheiro com o botão acima e <b>executa-o</b>.</p></div></li><li><span class="num">2</span><div><h3>Se o Windows avisar</h3><p>Se o Windows mostrar «O Windows protegeu o seu PC», clica em <b>Mais informações</b> e depois em <b>Executar mesmo assim</b>. Acontece com apps sem assinatura paga; o Khronometr não instala nada fora da sua própria pasta.</p></div></li><li><span class="num">3</span><div><h3>Inicia sessão com Google</h3><p>O Khronometr aparece <b>junto ao relógio</b> (na área de notificação). Clica no ícone → <b>Sign in with Google…</b> com a mesma conta do telemóvel.</p></div></li><li><span class="num">4</span><div><h3>Pronto</h3><p>O PC aparece no telemóvel, no separador <b>«Dispositivos»</b>. Arranca sozinho com o Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">O que faz</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Conta cada programa</h3><p>O tempo em cada programa e jogo enquanto a janela dele está à frente.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam e tráfego</h3><p>Junta o tempo de jogo do Steam e a utilização de rede por programa, a partir do registo do Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Os teus limites também valem aqui</h3><p>Quando o tempo acaba, um ecrã «Acabou o tempo» cobre a janela — podes sempre fechá-lo.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Só o teu Google Drive</h3><p>Sincroniza através de uma pasta oculta no teu próprio Drive. Sem servidores, sem anúncios.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-pt">
+    <h2 class="eyebrow" id="q-pt">Perguntas</h2>
+    <div class="faqs"><details class="card"><summary>Como é o aviso do Windows?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Uma janela azul com o título <b>«O Windows protegeu o seu PC»</b> e o texto «O Microsoft Defender SmartScreen impediu o arranque de uma aplicação não reconhecida…». Clica em <b>Mais informações</b> por baixo do texto e depois em <b>Executar mesmo assim</b>, não em <b>Não executar</b>.</p></details><details class="card"><summary>Como o removo?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ícone na área de notificação → <b>Exit</b>, desliga <b>Start with Windows</b> e depois apaga <code>%LOCALAPPDATA%\Programs\Khronometr</code> e os dados em <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Os teus dados são teus</h2><p>Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="Khronometr pour Windows" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr pour Windows</h1>
+    <p class="tagline">Ton temps d’écran, depuis toujours</p>
+    <p class="lead">Le temps passé dans les programmes et les jeux de ton ordinateur — avec ton téléphone.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Télécharger pour Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 Mo · gratuit<br>Le menu de l’appli PC est en anglais (en ukrainien si ton Windows est en ukrainien).</p>
+  </header>
+
+  <section class="show" aria-label="Comment l’installer">
+    <div class="showtext"><h2 class="display">Comment l’installer</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Télécharge et lance</h3><p><b>Télécharge</b> le fichier avec le bouton ci-dessus et <b>lance-le</b>.</p></div></li><li><span class="num">2</span><div><h3>Si Windows t’avertit</h3><p>Si Windows affiche « Windows a protégé votre ordinateur », clique sur <b>Informations complémentaires</b>, puis sur <b>Exécuter quand même</b>. Ça arrive avec les applis sans signature payante ; Khronometr n’installe rien en dehors de son propre dossier.</p></div></li><li><span class="num">3</span><div><h3>Connecte-toi avec Google</h3><p>Khronometr apparaît <b>à côté de l’horloge</b> (dans la zone de notification). Clique sur son icône → <b>Sign in with Google…</b> avec le même compte que sur ton téléphone.</p></div></li><li><span class="num">4</span><div><h3>C’est fait</h3><p>Le PC apparaît sur le téléphone, dans l’onglet <b>« Appareils »</b>. Il démarre tout seul avec Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Ce qu’il fait</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Compte chaque programme</h3><p>Le temps dans chaque programme et jeu tant que sa fenêtre est au premier plan.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam et trafic</h3><p>Ajoute ton temps de jeu Steam et l’utilisation réseau par programme, tirée du journal de Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Tes limites s’appliquent ici aussi</h3><p>Quand le temps est écoulé, un écran « Temps écoulé » couvre la fenêtre — tu peux toujours le fermer.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Uniquement ton Google Drive</h3><p>Il se synchronise via un dossier caché sur ton propre Drive. Pas de serveurs, pas de pub.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-fr">
+    <h2 class="eyebrow" id="q-fr">Questions</h2>
+    <div class="faqs"><details class="card"><summary>À quoi ressemble l’avertissement de Windows ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Une fenêtre bleue intitulée <b>« Windows a protégé votre ordinateur »</b>, avec le texte « Microsoft Defender SmartScreen a empêché le démarrage d’une application non reconnue… ». Clique sur <b>Informations complémentaires</b> sous le texte, puis sur <b>Exécuter quand même</b>, pas sur <b>Ne pas exécuter</b>.</p></details><details class="card"><summary>Comment le désinstaller ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Icône dans la zone de notification → <b>Exit</b>, désactive <b>Start with Windows</b>, puis supprime <code>%LOCALAPPDATA%\Programs\Khronometr</code> et ses données <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Tes données restent à toi</h2><p>Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="Khronometr für Windows" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr für Windows</h1>
+    <p class="tagline">Deine Bildschirmzeit seit jeher</p>
+    <p class="lead">Zeit in Programmen und Spielen auf deinem Computer — zusammen mit deinem Handy.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Für Windows herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · kostenlos<br>Das Menü der PC-App ist auf Englisch (auf Ukrainisch, wenn dein Windows auf Ukrainisch ist).</p>
+  </header>
+
+  <section class="show" aria-label="So installierst du es">
+    <div class="showtext"><h2 class="display">So installierst du es</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Herunterladen und starten</h3><p><b>Lade</b> die Datei über den Button oben herunter und <b>starte</b> sie.</p></div></li><li><span class="num">2</span><div><h3>Falls Windows warnt</h3><p>Wenn Windows „Der Computer wurde durch Windows geschützt“ meldet, klicke auf <b>Weitere Informationen</b> und dann auf <b>Trotzdem ausführen</b>. Das passiert bei Apps ohne kostenpflichtige Signatur; Khronometr installiert nichts außerhalb seines eigenen Ordners.</p></div></li><li><span class="num">3</span><div><h3>Mit Google anmelden</h3><p>Khronometr erscheint <b>neben der Uhr</b> (im Infobereich). Klicke auf sein Symbol → <b>Sign in with Google…</b> mit demselben Konto wie auf dem Handy.</p></div></li><li><span class="num">4</span><div><h3>Fertig</h3><p>Der PC erscheint auf dem Handy im Tab <b>„Geräte“</b>. Khronometr startet von selbst mit Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Was es macht</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Zählt jedes Programm</h3><p>Zeit in jedem Programm und Spiel, solange sein Fenster im Vordergrund ist.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam und Datenverkehr</h3><p>Ergänzt deine Steam-Spielzeit und die Netzwerknutzung pro Programm aus dem Windows-Protokoll.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Deine Limits gelten auch hier</h3><p>Ist die Zeit um, verdeckt ein „Zeit ist um“-Bildschirm das Fenster — du kannst ihn immer schließen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Nur dein Google Drive</h3><p>Es synchronisiert über einen versteckten Ordner in deinem eigenen Drive. Keine Server, keine Werbung.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-de">
+    <h2 class="eyebrow" id="q-de">Fragen</h2>
+    <div class="faqs"><details class="card"><summary>Wie sieht die Windows-Warnung aus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ein blaues Fenster mit dem Titel <b>„Der Computer wurde durch Windows geschützt“</b> und dem Text „Von Microsoft Defender SmartScreen wurde der Start einer unbekannten App verhindert…“. Klicke unter dem Text auf <b>Weitere Informationen</b>, dann auf <b>Trotzdem ausführen</b>, nicht auf <b>Nicht ausführen</b>.</p></details><details class="card"><summary>Wie entferne ich es?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Symbol im Infobereich → <b>Exit</b>, <b>Start with Windows</b> ausschalten, dann <code>%LOCALAPPDATA%\Programs\Khronometr</code> und seine Daten <code>%LOCALAPPDATA%\Khronometr</code> löschen.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Deine Daten bleiben deine</h2><p>Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="Khronometr per Windows" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr per Windows</h1>
+    <p class="tagline">Il tuo tempo davanti allo schermo, da sempre</p>
+    <p class="lead">Il tempo nei programmi e nei giochi del tuo computer — insieme al telefono.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Scarica per Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · gratis<br>Il menu dell’app per PC è in inglese (in ucraino se il tuo Windows è in ucraino).</p>
+  </header>
+
+  <section class="show" aria-label="Come installarlo">
+    <div class="showtext"><h2 class="display">Come installarlo</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Scarica e avvia</h3><p><b>Scarica</b> il file con il pulsante qui sopra e <b>avvialo</b>.</p></div></li><li><span class="num">2</span><div><h3>Se Windows ti avvisa</h3><p>Se Windows mostra «PC protetto da Windows», fai clic su <b>Ulteriori informazioni</b>, poi su <b>Esegui comunque</b>. Succede con le app senza firma a pagamento; Khronometr non installa nulla fuori dalla sua cartella.</p></div></li><li><span class="num">3</span><div><h3>Accedi con Google</h3><p>Khronometr compare <b>accanto all’orologio</b> (nell’area di notifica). Fai clic sulla sua icona → <b>Sign in with Google…</b> con lo stesso account del telefono.</p></div></li><li><span class="num">4</span><div><h3>Fatto</h3><p>Il PC compare sul telefono nella scheda <b>«Dispositivi»</b>. Si avvia da solo con Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Cosa fa</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Conta ogni programma</h3><p>Il tempo in ogni programma e gioco mentre la sua finestra è in primo piano.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam e traffico</h3><p>Aggiunge il tempo di gioco di Steam e l’uso della rete per programma dal registro di Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>I tuoi limiti valgono anche qui</h3><p>Quando il tempo è finito, una schermata «Tempo scaduto» copre la finestra — puoi sempre chiuderla.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Solo il tuo Google Drive</h3><p>Si sincronizza tramite una cartella nascosta nel tuo Drive. Niente server, niente pubblicità.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-it">
+    <h2 class="eyebrow" id="q-it">Domande</h2>
+    <div class="faqs"><details class="card"><summary>Com’è fatto l’avviso di Windows?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Una finestra blu con il titolo <b>«PC protetto da Windows»</b> e il testo «Microsoft Defender SmartScreen ha impedito l’avvio di un’app non riconosciuta…». Fai clic su <b>Ulteriori informazioni</b> sotto il testo, poi su <b>Esegui comunque</b>, non su <b>Non eseguire</b>.</p></details><details class="card"><summary>Come lo rimuovo?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Icona nell’area di notifica → <b>Exit</b>, disattiva <b>Start with Windows</b>, poi elimina <code>%LOCALAPPDATA%\Programs\Khronometr</code> e i suoi dati <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">I tuoi dati restano tuoi</h2><p>Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="Khronometr för Windows" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr för Windows</h1>
+    <p class="tagline">Skärmtid för all tid</p>
+    <p class="lead">Tiden i program och spel på din dator — tillsammans med din telefon.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Ladda ned för Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · gratis<br>Datorappens meny är på engelska (på ukrainska om din Windows är på ukrainska).</p>
+  </header>
+
+  <section class="show" aria-label="Så installerar du">
+    <div class="showtext"><h2 class="display">Så installerar du</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Ladda ned och kör</h3><p><b>Ladda ned</b> filen med knappen ovan och <b>kör</b> den.</p></div></li><li><span class="num">2</span><div><h3>Om Windows varnar</h3><p>Om Windows visar ”Windows skyddade datorn”, klicka på <b>Mer information</b> och sedan på <b>Kör ändå</b>. Det händer med appar utan betald signatur; Khronometr installerar inget utanför sin egen mapp.</p></div></li><li><span class="num">3</span><div><h3>Logga in med Google</h3><p>Khronometr dyker upp <b>bredvid klockan</b> (i meddelandefältet). Klicka på ikonen → <b>Sign in with Google…</b> med samma konto som på telefonen.</p></div></li><li><span class="num">4</span><div><h3>Klart</h3><p>Datorn syns på telefonen under fliken <b>”Enheter”</b>. Den startar av sig själv med Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Vad den gör</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Räknar varje program</h3><p>Tiden i varje program och spel medan dess fönster ligger överst.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam och trafik</h3><p>Lägger till din speltid från Steam och nätverksanvändning per program från Windows logg.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Dina gränser gäller även här</h3><p>När tiden är slut täcker en ”Tiden är ute”-skärm fönstret — du kan alltid stänga den.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Bara din Google Drive</h3><p>Den synkar via en dold mapp på din egen Drive. Inga servrar, ingen reklam.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-sv">
+    <h2 class="eyebrow" id="q-sv">Frågor</h2>
+    <div class="faqs"><details class="card"><summary>Hur ser Windows varning ut?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ett blått fönster med rubriken <b>”Windows skyddade datorn”</b> och texten ”Microsoft Defender SmartScreen förhindrade att en okänd app startades…”. Klicka på <b>Mer information</b> under texten och sedan på <b>Kör ändå</b>, inte på <b>Kör inte</b>.</p></details><details class="card"><summary>Hur tar jag bort den?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ikonen i meddelandefältet → <b>Exit</b>, stäng av <b>Start with Windows</b> och radera sedan <code>%LOCALAPPDATA%\Programs\Khronometr</code> och dess data <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Dina data är dina</h2><p>Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="Khronometr untuk Windows" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr untuk Windows</h1>
+    <p class="tagline">Waktu layar sepanjang masa</p>
+    <p class="lead">Waktu di program dan game di komputermu — bersama ponselmu.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Unduh untuk Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 MB · gratis<br>Menu aplikasi PC berbahasa Inggris (berbahasa Ukraina jika Windows-mu berbahasa Ukraina).</p>
+  </header>
+
+  <section class="show" aria-label="Cara memasang">
+    <div class="showtext"><h2 class="display">Cara memasang</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Unduh dan jalankan</h3><p><b>Unduh</b> file dengan tombol di atas, lalu <b>jalankan</b>.</p></div></li><li><span class="num">2</span><div><h3>Jika Windows memperingatkan</h3><p>Jika Windows menampilkan “Windows melindungi PC Anda”, klik <b>Info selengkapnya</b>, lalu <b>Tetap jalankan</b>. Ini terjadi pada aplikasi tanpa tanda tangan berbayar; Khronometr tidak memasang apa pun di luar foldernya sendiri.</p></div></li><li><span class="num">3</span><div><h3>Masuk dengan Google</h3><p>Khronometr muncul <b>di dekat jam</b> (di system tray). Klik ikonnya → <b>Sign in with Google…</b> dengan akun yang sama seperti di ponselmu.</p></div></li><li><span class="num">4</span><div><h3>Selesai</h3><p>PC muncul di ponsel pada tab <b>“Perangkat”</b>. Aplikasinya otomatis berjalan bersama Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Apa yang dilakukannya</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Menghitung setiap program</h3><p>Waktu di setiap program dan game selama jendelanya ada di depan.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam dan trafik</h3><p>Menambahkan waktu bermain Steam dan penggunaan jaringan per program dari jurnal Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Batasmu juga berlaku di sini</h3><p>Saat waktu habis, layar “Waktu habis” menutupi jendela — kamu selalu bisa menutupnya.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Hanya Google Drive milikmu</h3><p>Sinkronisasi lewat folder tersembunyi di Drive milikmu sendiri. Tanpa server, tanpa iklan.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-id">
+    <h2 class="eyebrow" id="q-id">Pertanyaan</h2>
+    <div class="faqs"><details class="card"><summary>Seperti apa peringatan Windows itu?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Jendela biru berjudul <b>“Windows melindungi PC Anda”</b> dengan teks “Microsoft Defender SmartScreen mencegah aplikasi yang tidak dikenal dimulai…”. Klik <b>Info selengkapnya</b> di bawah teks, lalu <b>Tetap jalankan</b>, bukan <b>Jangan jalankan</b>.</p></details><details class="card"><summary>Bagaimana cara menghapusnya?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ikon di system tray → <b>Exit</b>, matikan <b>Start with Windows</b>, lalu hapus <code>%LOCALAPPDATA%\Programs\Khronometr</code> dan datanya di <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Datamu tetap milikmu</h2><p>Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="Windows 版フロノメトル" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Windows 版フロノメトル</h1>
+    <p class="tagline">ずっと残るスクリーンタイム</p>
+    <p class="lead">パソコンのプログラムやゲームの時間を、スマホと一緒に。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0.3 MB · 無料<br>PC アプリのメニューは英語です(Windows がウクライナ語ならウクライナ語)。</p>
+  </header>
+
+  <section class="show" aria-label="インストール方法">
+    <div class="showtext"><h2 class="display">インストール方法</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>ダウンロードして実行</h3><p>上のボタンでファイルを<b>ダウンロード</b>して<b>実行</b>します。</p></div></li><li><span class="num">2</span><div><h3>Windows の警告が出たら</h3><p>「Windows によって PC が保護されました」と表示されたら、<b>詳細情報</b>をクリックし、次に <b>実行</b> をクリックします。有料の署名がないアプリではこう表示されます。フロノメトルは自分のフォルダ以外には何もインストールしません。</p></div></li><li><span class="num">3</span><div><h3>Google でログイン</h3><p>フロノメトルが<b>時計の横</b>(タスクトレイ)に表示されます。アイコンをクリック → <b>Sign in with Google…</b> で、スマホと同じアカウントでログインします。</p></div></li><li><span class="num">4</span><div><h3>完了</h3><p>スマホの<b>「デバイス」</b>タブに PC が表示されます。Windows の起動時に自動で起動します。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">できること</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>すべてのプログラムを計測</h3><p>各プログラムとゲームの時間を、ウィンドウが前面にある間だけ計測します。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam と通信量</h3><p>Steam のプレイ時間と、Windows のログからプログラムごとの通信量を追加します。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>上限は PC でも有効</h3><p>時間になると「時間切れ」画面がウィンドウを覆います — いつでも閉じられます。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>あなたの Google ドライブだけ</h3><p>あなた自身のドライブの非表示フォルダで同期します。サーバーも広告もありません。</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-ja">
+    <h2 class="eyebrow" id="q-ja">よくある質問</h2>
+    <div class="faqs"><details class="card"><summary>Windows の警告はどんな画面？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>「Windows によって PC が保護されました」</b>という青いウィンドウに「Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…」と表示されます。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックします。</p></details><details class="card"><summary>アンインストールするには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>トレイのアイコン → <b>Exit</b>、<b>Start with Windows</b> をオフにしてから、<code>%LOCALAPPDATA%\Programs\Khronometr</code> とデータ <code>%LOCALAPPDATA%\Khronometr</code> を削除します。</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">あなたのデータはあなたのもの</h2><p>サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="Windows-қа арналған Хронометр" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Windows-қа арналған Хронометр</h1>
+    <p class="tagline">Қолданбалардағы уақыт — бүкіл уақыт бойы</p>
+    <p class="lead">Компьютердегі бағдарламалар мен ойындардағы уақыт — телефонмен бірге.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 МБ · тегін<br>ДК бағдарламасының мәзірі ағылшын тілінде (Windows украин тілінде болса — украинша).</p>
+  </header>
+
+  <section class="show" aria-label="Қалай орнату керек">
+    <div class="showtext"><h2 class="display">Қалай орнату керек</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Жүктеп ал да, іске қос</h3><p>Жоғарыдағы батырмамен файлды <b>жүктеп ал</b> да, оны <b>іске қос</b>.</p></div></li><li><span class="num">2</span><div><h3>Windows ескертсе</h3><p>Егер Windows «Windows компьютеріңізді қорғады» деп көрсетсе, <b>Қосымша ақпарат</b>, содан кейін <b>Бәрібір іске қосу</b> батырмасын бас. Бұл ақылы қолтаңбасы жоқ бағдарламаларда болады; Хронометр өз қалтасынан тыс ештеңе орнатпайды.</p></div></li><li><span class="num">3</span><div><h3>Google арқылы кір</h3><p>Хронометр <b>сағаттың жанында</b> (хабарландыру аймағында) пайда болады. Оның белгішесін бас → <b>Sign in with Google…</b> — телефондағы сол аккаунтпен.</p></div></li><li><span class="num">4</span><div><h3>Дайын</h3><p>ДК телефондағы <b>«Құрылғылар»</b> қойындысында пайда болады. Бағдарлама Windows-пен бірге өзі іске қосылады.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Ол не істейді</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Әр бағдарламаны санайды</h3><p>Әр бағдарлама мен ойындағы уақыт — терезесі алдыңда тұрғанда.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam және трафик</h3><p>Steam ойындарының уақытын және Windows журналынан бағдарламалар бойынша трафикті қосады.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Лимиттерің мұнда да жұмыс істейді</h3><p>Уақыт біткенде терезені «Уақыт бітті» экраны жабады — оны әрқашан жабуға болады.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Тек өз Google Дискің</h3><p>Синхрондау өз Дискіңдегі жасырын қалта арқылы жүреді. Сервер де, жарнама да жоқ.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-kk">
+    <h2 class="eyebrow" id="q-kk">Сұрақтар</h2>
+    <div class="faqs"><details class="card"><summary>Windows ескертуі қандай болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>«Windows компьютеріңізді қорғады»</b> деген тақырыбы бар көк терезе, мәтіні: «Microsoft Defender SmartScreen танылмаған қолданбаның іске қосылуына жол бермеді…». Мәтіннің астындағы <b>Қосымша ақпарат</b> дегенді бас, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір іске қосу</b> батырмасын бас.</p></details><details class="card"><summary>Бағдарламаны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Хабарландыру аймағындағы белгіше → <b>Exit</b>, <b>Start with Windows</b> дегенді өшір, содан кейін <code>%LOCALAPPDATA%\Programs\Khronometr</code> қалтасын және оның деректерін <code>%LOCALAPPDATA%\Khronometr</code> жой.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Деректерің — өзіңдікі</h2><p>Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Приватность" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Хронометр для Windows</h1>
+    <p class="tagline">Время в приложениях за всё время</p>
+    <p class="lead">Время в программах и играх на компьютере — вместе с телефоном.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Скачать для Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 0,3 МБ · бесплатно<br>Меню программы на ПК — на английском (на украинском, если Windows на украинском).</p>
+  </header>
+
+  <section class="show" aria-label="Как установить">
+    <div class="showtext"><h2 class="display">Как установить</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Скачай и запусти</h3><p><b>Скачай</b> файл кнопкой выше и <b>запусти</b> его.</p></div></li><li><span class="num">2</span><div><h3>Если Windows предупредит</h3><p>Если Windows покажет «Система Windows защитила ваш компьютер» — нажми <b>Подробнее</b>, потом <b>Выполнить в любом случае</b>. Так бывает с программами без платной подписи; Хронометр ничего не устанавливает за пределами своей папки.</p></div></li><li><span class="num">3</span><div><h3>Войди через Google</h3><p>Хронометр появится <b>возле часов</b> (в трее). Нажми на его значок → <b>Sign in with Google…</b> — тем же аккаунтом, что и на телефоне.</p></div></li><li><span class="num">4</span><div><h3>Готово</h3><p>Компьютер появится на телефоне на вкладке <b>«Устройства»</b>. Программа сама будет запускаться вместе с Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что он делает</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h3>Считает каждую программу</h3><p>Время в каждой программе и игре, пока её окно перед тобой.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><h3>Steam и трафик</h3><p>Добавляет время игр из Steam и трафик по программам из журнала Windows.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Твои лимиты действуют и здесь</h3><p>Когда время вышло, окно закрывает экран «Время вышло» — его всегда можно закрыть.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Только твой Google Диск</h3><p>Синхронизация через скрытую папку на твоём собственном Диске. Без серверов и рекламы.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-ru">
+    <h2 class="eyebrow" id="q-ru">Вопросы</h2>
+    <div class="faqs"><details class="card"><summary>Как выглядит предупреждение Windows?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Синее окно с заголовком <b>«Система Windows защитила ваш компьютер»</b> и текстом «Microsoft Defender SmartScreen предотвратил запуск неопознанного приложения…». Нажми <b>Подробнее</b> под текстом, потом <b>Выполнить в любом случае</b>, а не <b>Не выполнять</b>.</p></details><details class="card"><summary>Как удалить программу?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Значок в трее → <b>Exit</b>, выключи <b>Start with Windows</b>, затем удали <code>%LOCALAPPDATA%\Programs\Khronometr</code> и его данные <code>%LOCALAPPDATA%\Khronometr</code>.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Твои данные — твои</h2><p>Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.</p>
+    <a class="btn light" href="../privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
 </main>
-<a class="up" href="#top" id="up" aria-label="Back to top">↑</a>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
 <script>
-// All languages of this page; the switch rebuilds the text in place and keeps ?lang= in the address.
-const D = {"uk":{"t":{"title":"Хронометр для Windows","tagline":"Час у програмах та іграх на комп’ютері — разом із телефоном.","download":"Завантажити для Windows","meta":"Windows 10 / 11 · 0,3 МБ · безкоштовно","stepsTitle":"Як встановити","steps":["<b>Завантаж</b> файл кнопкою вище й <b>запусти</b> його.","Якщо Windows покаже «Windows захистив ваш ПК» — натисни <b class=\"key\">Докладніше</b>, потім <b class=\"key\">Виконати все одно</b>. Так буває з програмами без платного підпису; Хронометр нічого не встановлює поза своєю папкою.","Хронометр з’явиться <b>біля годинника</b> (у треї). Натисни на його іконку → <b class=\"key\">Увійти через Google…</b> — тим самим акаунтом, що й на телефоні.","Готово: комп’ютер з’явиться на телефоні на вкладці <b>«Пристрої»</b>. Програма сама запускатиметься з Windows."],"smart":["Windows захистив ваш ПК","Microsoft Defender SmartScreen запобіг запуску нерозпізнаної програми…","Докладніше","Виконати все одно","Не запускати"],"whatTitle":"Що він робить","what":[["🖥️","Рахує кожну програму","Час у кожній програмі й грі, поки її вікно перед тобою."],["🎮","Steam і трафік","Додає час ігор зі Steam і трафік по програмах із журналу Windows."],["⏳","Твої ліміти діють і тут","Коли час вийшов, вікно закриває екран «Час вийшов» — його завжди можна закрити."],["☁️","Лише твій Google Диск","Синхронізація через приховану папку на твоєму власному Диску. Без серверів і реклами."]],"trayNote":"Меню програми на ПК — українською чи англійською, залежно від мови Windows.","removeTitle":"Як видалити","remove":"Іконка в треї → <b>Вийти</b>, вимкни <b>Запускати з Windows</b>, потім видали <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> і його дані <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Українська","brand":"Хронометр","home":"Головна","windows":"Для Windows","privacy":"Політика конфіденційності","top":"Нагору","contents":"Зміст"}},"en":{"t":{"title":"Khronometr for Windows","tagline":"Time in programs and games on your computer — together with your phone.","download":"Download for Windows","meta":"Windows 10 / 11 · 0.3 MB · free","stepsTitle":"How to install","steps":["<b>Download</b> the file with the button above and <b>run</b> it.","If Windows says “Windows protected your PC”, click <b class=\"key\">More info</b>, then <b class=\"key\">Run anyway</b>. This happens to apps without a paid signature; Khronometr installs nothing outside its own folder.","Khronometr appears <b>next to the clock</b> (in the tray). Click its icon → <b class=\"key\">Sign in with Google…</b> with the same account as on your phone.","Done: the PC shows up on the phone in the <b>Devices</b> tab. It starts with Windows by itself."],"smart":["Windows protected your PC","Microsoft Defender SmartScreen prevented an unrecognised app from starting…","More info","Run anyway","Don’t run"],"whatTitle":"What it does","what":[["🖥️","Counts every program","Time in each program and game while its window is in front."],["🎮","Steam and traffic","Adds your Steam playtime and network use per program from Windows’ journal."],["⏳","Your limits apply here too","When time is up, a “Time’s up” screen covers the window — you can always close it."],["☁️","Only your Google Drive","It syncs through a hidden folder on your own Drive. No servers, no ads."]],"trayNote":"The PC app’s menu is in English or Ukrainian, depending on your Windows language.","removeTitle":"How to remove it","remove":"Tray icon → <b>Exit</b>, switch off <b>Start with Windows</b>, then delete <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> and its data <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"English","brand":"Khronometr","home":"Home","windows":"Windows app","privacy":"Privacy Policy","top":"Back to top","contents":"Contents"}},"es":{"t":{"title":"Khronometr para Windows","tagline":"El tiempo en los programas y juegos de tu PC, junto con tu teléfono.","download":"Descargar para Windows","meta":"Windows 10 / 11 · 0,3 MB · gratis","stepsTitle":"Cómo instalarlo","steps":["<b>Descarga</b> el archivo con el botón de arriba y <b>ejecútalo</b>.","Si Windows dice «Windows protegió su PC», haz clic en <b class=\"key\">Más información</b> y luego en <b class=\"key\">Ejecutar de todas formas</b>. Pasa con las apps sin firma de pago; Khronometr no instala nada fuera de su propia carpeta.","Khronometr aparece <b>junto al reloj</b> (en la bandeja del sistema). Haz clic en su icono → <b class=\"key\">Sign in with Google…</b> con la misma cuenta que en tu teléfono.","Listo: el PC aparece en el teléfono, en la pestaña <b>«Dispositivos»</b>. Se inicia solo con Windows."],"smart":["Windows protegió su PC","Microsoft Defender SmartScreen impidió el inicio de una aplicación no reconocida…","Más información","Ejecutar de todas formas","No ejecutar"],"whatTitle":"Qué hace","what":[["🖥️","Cuenta cada programa","El tiempo en cada programa y juego mientras su ventana está delante."],["🎮","Steam y tráfico","Añade tu tiempo de juego de Steam y el uso de red por programa del registro de Windows."],["⏳","Tus límites también valen aquí","Cuando se acaba el tiempo, una pantalla «Se acabó el tiempo» cubre la ventana; siempre puedes cerrarla."],["☁️","Solo tu Google Drive","Se sincroniza mediante una carpeta oculta en tu propio Drive. Sin servidores ni anuncios."]],"trayNote":"El menú de la app para PC está en inglés (en ucraniano si tu Windows está en ucraniano).","removeTitle":"Cómo desinstalarlo","remove":"Icono de la bandeja → <b>Exit</b>, desactiva <b>Start with Windows</b> y luego borra <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> y sus datos <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Español","brand":"Khronometr","home":"Inicio","windows":"App para Windows","privacy":"Política de privacidad","top":"Volver arriba","contents":"Contenido"}},"pt":{"t":{"title":"Khronometr para Windows","tagline":"O tempo nos programas e jogos do teu computador — junto com o telemóvel.","download":"Transferir para Windows","meta":"Windows 10 / 11 · 0,3 MB · grátis","stepsTitle":"Como instalar","steps":["<b>Transfere</b> o ficheiro com o botão acima e <b>executa-o</b>.","Se o Windows mostrar «O Windows protegeu o seu PC», clica em <b class=\"key\">Mais informações</b> e depois em <b class=\"key\">Executar mesmo assim</b>. Acontece com apps sem assinatura paga; o Khronometr não instala nada fora da sua própria pasta.","O Khronometr aparece <b>junto ao relógio</b> (na área de notificação). Clica no ícone → <b class=\"key\">Sign in with Google…</b> com a mesma conta do telemóvel.","Pronto: o PC aparece no telemóvel, no separador <b>«Dispositivos»</b>. Arranca sozinho com o Windows."],"smart":["O Windows protegeu o seu PC","O Microsoft Defender SmartScreen impediu o arranque de uma aplicação não reconhecida…","Mais informações","Executar mesmo assim","Não executar"],"whatTitle":"O que faz","what":[["🖥️","Conta cada programa","O tempo em cada programa e jogo enquanto a janela dele está à frente."],["🎮","Steam e tráfego","Junta o tempo de jogo do Steam e a utilização de rede por programa, a partir do registo do Windows."],["⏳","Os teus limites também valem aqui","Quando o tempo acaba, um ecrã «Acabou o tempo» cobre a janela — podes sempre fechá-lo."],["☁️","Só o teu Google Drive","Sincroniza através de uma pasta oculta no teu próprio Drive. Sem servidores, sem anúncios."]],"trayNote":"O menu da app para PC está em inglês (em ucraniano, se o teu Windows estiver em ucraniano).","removeTitle":"Como remover","remove":"Ícone na área de notificação → <b>Exit</b>, desliga <b>Start with Windows</b> e depois apaga <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> e os dados em <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Português","brand":"Khronometr","home":"Início","windows":"App para Windows","privacy":"Política de privacidade","top":"Voltar ao topo","contents":"Índice"}},"fr":{"t":{"title":"Khronometr pour Windows","tagline":"Le temps passé dans les programmes et les jeux de ton ordinateur — avec ton téléphone.","download":"Télécharger pour Windows","meta":"Windows 10 / 11 · 0,3 Mo · gratuit","stepsTitle":"Comment l’installer","steps":["<b>Télécharge</b> le fichier avec le bouton ci-dessus et <b>lance-le</b>.","Si Windows affiche « Windows a protégé votre ordinateur », clique sur <b class=\"key\">Informations complémentaires</b>, puis sur <b class=\"key\">Exécuter quand même</b>. Ça arrive avec les applis sans signature payante ; Khronometr n’installe rien en dehors de son propre dossier.","Khronometr apparaît <b>à côté de l’horloge</b> (dans la zone de notification). Clique sur son icône → <b class=\"key\">Sign in with Google…</b> avec le même compte que sur ton téléphone.","C’est fait : le PC apparaît sur le téléphone, dans l’onglet <b>« Appareils »</b>. Il démarre tout seul avec Windows."],"smart":["Windows a protégé votre ordinateur","Microsoft Defender SmartScreen a empêché le démarrage d’une application non reconnue…","Informations complémentaires","Exécuter quand même","Ne pas exécuter"],"whatTitle":"Ce qu’il fait","what":[["🖥️","Compte chaque programme","Le temps dans chaque programme et jeu tant que sa fenêtre est au premier plan."],["🎮","Steam et trafic","Ajoute ton temps de jeu Steam et l’utilisation réseau par programme, tirée du journal de Windows."],["⏳","Tes limites s’appliquent ici aussi","Quand le temps est écoulé, un écran « Temps écoulé » couvre la fenêtre — tu peux toujours le fermer."],["☁️","Uniquement ton Google Drive","Il se synchronise via un dossier caché sur ton propre Drive. Pas de serveurs, pas de pub."]],"trayNote":"Le menu de l’appli PC est en anglais (en ukrainien si ton Windows est en ukrainien).","removeTitle":"Comment le désinstaller","remove":"Icône dans la zone de notification → <b>Exit</b>, désactive <b>Start with Windows</b>, puis supprime <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> et ses données <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Français","brand":"Khronometr","home":"Accueil","windows":"Appli Windows","privacy":"Politique de confidentialité","top":"Haut de page","contents":"Sommaire"}},"de":{"t":{"title":"Khronometr für Windows","tagline":"Zeit in Programmen und Spielen auf deinem Computer — zusammen mit deinem Handy.","download":"Für Windows herunterladen","meta":"Windows 10 / 11 · 0,3 MB · kostenlos","stepsTitle":"So installierst du es","steps":["<b>Lade</b> die Datei über den Button oben herunter und <b>starte</b> sie.","Wenn Windows „Der Computer wurde durch Windows geschützt“ meldet, klicke auf <b class=\"key\">Weitere Informationen</b> und dann auf <b class=\"key\">Trotzdem ausführen</b>. Das passiert bei Apps ohne kostenpflichtige Signatur; Khronometr installiert nichts außerhalb seines eigenen Ordners.","Khronometr erscheint <b>neben der Uhr</b> (im Infobereich). Klicke auf sein Symbol → <b class=\"key\">Sign in with Google…</b> mit demselben Konto wie auf dem Handy.","Fertig: Der PC erscheint auf dem Handy im Tab <b>„Geräte“</b>. Khronometr startet von selbst mit Windows."],"smart":["Der Computer wurde durch Windows geschützt","Von Microsoft Defender SmartScreen wurde der Start einer unbekannten App verhindert…","Weitere Informationen","Trotzdem ausführen","Nicht ausführen"],"whatTitle":"Was es macht","what":[["🖥️","Zählt jedes Programm","Zeit in jedem Programm und Spiel, solange sein Fenster im Vordergrund ist."],["🎮","Steam und Datenverkehr","Ergänzt deine Steam-Spielzeit und die Netzwerknutzung pro Programm aus dem Windows-Protokoll."],["⏳","Deine Limits gelten auch hier","Ist die Zeit um, verdeckt ein „Zeit ist um“-Bildschirm das Fenster — du kannst ihn immer schließen."],["☁️","Nur dein Google Drive","Es synchronisiert über einen versteckten Ordner in deinem eigenen Drive. Keine Server, keine Werbung."]],"trayNote":"Das Menü der PC-App ist auf Englisch (auf Ukrainisch, wenn dein Windows auf Ukrainisch ist).","removeTitle":"So entfernst du es","remove":"Symbol im Infobereich → <b>Exit</b>, <b>Start with Windows</b> ausschalten, dann <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> und seine Daten <code>%LOCALAPPDATA%\\Khronometr</code> löschen."},"c":{"name":"Deutsch","brand":"Khronometr","home":"Startseite","windows":"Windows-App","privacy":"Datenschutzerklärung","top":"Nach oben","contents":"Inhalt"}},"it":{"t":{"title":"Khronometr per Windows","tagline":"Il tempo nei programmi e nei giochi del tuo computer — insieme al telefono.","download":"Scarica per Windows","meta":"Windows 10 / 11 · 0,3 MB · gratis","stepsTitle":"Come installarlo","steps":["<b>Scarica</b> il file con il pulsante qui sopra e <b>avvialo</b>.","Se Windows mostra «PC protetto da Windows», fai clic su <b class=\"key\">Ulteriori informazioni</b>, poi su <b class=\"key\">Esegui comunque</b>. Succede con le app senza firma a pagamento; Khronometr non installa nulla fuori dalla sua cartella.","Khronometr compare <b>accanto all’orologio</b> (nell’area di notifica). Fai clic sulla sua icona → <b class=\"key\">Sign in with Google…</b> con lo stesso account del telefono.","Fatto: il PC compare sul telefono nella scheda <b>«Dispositivi»</b>. Si avvia da solo con Windows."],"smart":["PC protetto da Windows","Microsoft Defender SmartScreen ha impedito l’avvio di un’app non riconosciuta…","Ulteriori informazioni","Esegui comunque","Non eseguire"],"whatTitle":"Cosa fa","what":[["🖥️","Conta ogni programma","Il tempo in ogni programma e gioco mentre la sua finestra è in primo piano."],["🎮","Steam e traffico","Aggiunge il tempo di gioco di Steam e l’uso della rete per programma dal registro di Windows."],["⏳","I tuoi limiti valgono anche qui","Quando il tempo è finito, una schermata «Tempo scaduto» copre la finestra — puoi sempre chiuderla."],["☁️","Solo il tuo Google Drive","Si sincronizza tramite una cartella nascosta nel tuo Drive. Niente server, niente pubblicità."]],"trayNote":"Il menu dell’app per PC è in inglese (in ucraino se il tuo Windows è in ucraino).","removeTitle":"Come rimuoverlo","remove":"Icona nell’area di notifica → <b>Exit</b>, disattiva <b>Start with Windows</b>, poi elimina <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> e i suoi dati <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Italiano","brand":"Khronometr","home":"Home","windows":"App per Windows","privacy":"Informativa sulla privacy","top":"Torna su","contents":"Indice"}},"sv":{"t":{"title":"Khronometr för Windows","tagline":"Tiden i program och spel på din dator — tillsammans med din telefon.","download":"Ladda ned för Windows","meta":"Windows 10 / 11 · 0,3 MB · gratis","stepsTitle":"Så installerar du","steps":["<b>Ladda ned</b> filen med knappen ovan och <b>kör</b> den.","Om Windows visar ”Windows skyddade datorn”, klicka på <b class=\"key\">Mer information</b> och sedan på <b class=\"key\">Kör ändå</b>. Det händer med appar utan betald signatur; Khronometr installerar inget utanför sin egen mapp.","Khronometr dyker upp <b>bredvid klockan</b> (i meddelandefältet). Klicka på ikonen → <b class=\"key\">Sign in with Google…</b> med samma konto som på telefonen.","Klart: datorn syns på telefonen under fliken <b>”Enheter”</b>. Den startar av sig själv med Windows."],"smart":["Windows skyddade datorn","Microsoft Defender SmartScreen förhindrade att en okänd app startades…","Mer information","Kör ändå","Kör inte"],"whatTitle":"Vad den gör","what":[["🖥️","Räknar varje program","Tiden i varje program och spel medan dess fönster ligger överst."],["🎮","Steam och trafik","Lägger till din speltid från Steam och nätverksanvändning per program från Windows logg."],["⏳","Dina gränser gäller även här","När tiden är slut täcker en ”Tiden är ute”-skärm fönstret — du kan alltid stänga den."],["☁️","Bara din Google Drive","Den synkar via en dold mapp på din egen Drive. Inga servrar, ingen reklam."]],"trayNote":"Datorappens meny är på engelska (på ukrainska om din Windows är på ukrainska).","removeTitle":"Så tar du bort den","remove":"Ikonen i meddelandefältet → <b>Exit</b>, stäng av <b>Start with Windows</b> och radera sedan <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> och dess data <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Svenska","brand":"Khronometr","home":"Start","windows":"Windows-app","privacy":"Integritetspolicy","top":"Till toppen","contents":"Innehåll"}},"id":{"t":{"title":"Khronometr untuk Windows","tagline":"Waktu di program dan game di komputermu — bersama ponselmu.","download":"Unduh untuk Windows","meta":"Windows 10 / 11 · 0,3 MB · gratis","stepsTitle":"Cara memasang","steps":["<b>Unduh</b> file dengan tombol di atas, lalu <b>jalankan</b>.","Jika Windows menampilkan “Windows melindungi PC Anda”, klik <b class=\"key\">Info selengkapnya</b>, lalu <b class=\"key\">Tetap jalankan</b>. Ini terjadi pada aplikasi tanpa tanda tangan berbayar; Khronometr tidak memasang apa pun di luar foldernya sendiri.","Khronometr muncul <b>di dekat jam</b> (di system tray). Klik ikonnya → <b class=\"key\">Sign in with Google…</b> dengan akun yang sama seperti di ponselmu.","Selesai: PC muncul di ponsel pada tab <b>“Perangkat”</b>. Aplikasinya otomatis berjalan bersama Windows."],"smart":["Windows melindungi PC Anda","Microsoft Defender SmartScreen mencegah aplikasi yang tidak dikenal dimulai…","Info selengkapnya","Tetap jalankan","Jangan jalankan"],"whatTitle":"Apa yang dilakukannya","what":[["🖥️","Menghitung setiap program","Waktu di setiap program dan game selama jendelanya ada di depan."],["🎮","Steam dan trafik","Menambahkan waktu bermain Steam dan penggunaan jaringan per program dari jurnal Windows."],["⏳","Batasmu juga berlaku di sini","Saat waktu habis, layar “Waktu habis” menutupi jendela — kamu selalu bisa menutupnya."],["☁️","Hanya Google Drive milikmu","Sinkronisasi lewat folder tersembunyi di Drive milikmu sendiri. Tanpa server, tanpa iklan."]],"trayNote":"Menu aplikasi PC berbahasa Inggris (berbahasa Ukraina jika Windows-mu berbahasa Ukraina).","removeTitle":"Cara menghapus","remove":"Ikon di system tray → <b>Exit</b>, matikan <b>Start with Windows</b>, lalu hapus <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> dan datanya di <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Bahasa Indonesia","brand":"Khronometr","home":"Beranda","windows":"Aplikasi Windows","privacy":"Kebijakan Privasi","top":"Kembali ke atas","contents":"Isi"}},"ja":{"t":{"title":"Windows 版フロノメトル","tagline":"パソコンのプログラムやゲームの時間を、スマホと一緒に。","download":"Windows 版をダウンロード","meta":"Windows 10 / 11 · 0.3 MB · 無料","stepsTitle":"インストール方法","steps":["上のボタンでファイルを<b>ダウンロード</b>して<b>実行</b>します。","「Windows によって PC が保護されました」と表示されたら、<b class=\"key\">詳細情報</b>をクリックし、次に <b class=\"key\">実行</b> をクリックします。有料の署名がないアプリではこう表示されます。フロノメトルは自分のフォルダ以外には何もインストールしません。","フロノメトルが<b>時計の横</b>(タスクトレイ)に表示されます。アイコンをクリック → <b class=\"key\">Sign in with Google…</b> で、スマホと同じアカウントでログインします。","完了: スマホの<b>「デバイス」</b>タブに PC が表示されます。Windows の起動時に自動で起動します。"],"smart":["Windows によって PC が保護されました","Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…","詳細情報","実行","実行しない"],"whatTitle":"できること","what":[["🖥️","すべてのプログラムを計測","各プログラムとゲームの時間を、ウィンドウが前面にある間だけ計測します。"],["🎮","Steam と通信量","Steam のプレイ時間と、Windows のログからプログラムごとの通信量を追加します。"],["⏳","上限は PC でも有効","時間になると「時間切れ」画面がウィンドウを覆います — いつでも閉じられます。"],["☁️","あなたの Google ドライブだけ","あなた自身のドライブの非表示フォルダで同期します。サーバーも広告もありません。"]],"trayNote":"PC アプリのメニューは英語です(Windows がウクライナ語ならウクライナ語)。","removeTitle":"アンインストール方法","remove":"トレイのアイコン → <b>Exit</b>、<b>Start with Windows</b> をオフにしてから、<code>%LOCALAPPDATA%\\Programs\\Khronometr</code> とデータ <code>%LOCALAPPDATA%\\Khronometr</code> を削除します。"},"c":{"name":"日本語","brand":"フロノメトル","home":"ホーム","windows":"Windows 版","privacy":"プライバシーポリシー","top":"トップへ戻る","contents":"目次"}},"kk":{"t":{"title":"Windows-қа арналған Хронометр","tagline":"Компьютердегі бағдарламалар мен ойындардағы уақыт — телефонмен бірге.","download":"Windows үшін жүктеп алу","meta":"Windows 10 / 11 · 0,3 МБ · тегін","stepsTitle":"Қалай орнату керек","steps":["Жоғарыдағы батырмамен файлды <b>жүктеп ал</b> да, оны <b>іске қос</b>.","Егер Windows «Windows компьютеріңізді қорғады» деп көрсетсе, <b class=\"key\">Қосымша ақпарат</b>, содан кейін <b class=\"key\">Бәрібір іске қосу</b> батырмасын бас. Бұл ақылы қолтаңбасы жоқ бағдарламаларда болады; Хронометр өз қалтасынан тыс ештеңе орнатпайды.","Хронометр <b>сағаттың жанында</b> (хабарландыру аймағында) пайда болады. Оның белгішесін бас → <b class=\"key\">Sign in with Google…</b> — телефондағы сол аккаунтпен.","Дайын: ДК телефондағы <b>«Құрылғылар»</b> қойындысында пайда болады. Бағдарлама Windows-пен бірге өзі іске қосылады."],"smart":["Windows компьютеріңізді қорғады","Microsoft Defender SmartScreen танылмаған қолданбаның іске қосылуына жол бермеді…","Қосымша ақпарат","Бәрібір іске қосу","Іске қоспау"],"whatTitle":"Ол не істейді","what":[["🖥️","Әр бағдарламаны санайды","Әр бағдарлама мен ойындағы уақыт — терезесі алдыңда тұрғанда."],["🎮","Steam және трафик","Steam ойындарының уақытын және Windows журналынан бағдарламалар бойынша трафикті қосады."],["⏳","Лимиттерің мұнда да жұмыс істейді","Уақыт біткенде терезені «Уақыт бітті» экраны жабады — оны әрқашан жабуға болады."],["☁️","Тек өз Google Дискің","Синхрондау өз Дискіңдегі жасырын қалта арқылы жүреді. Сервер де, жарнама да жоқ."]],"trayNote":"ДК бағдарламасының мәзірі ағылшын тілінде (Windows украин тілінде болса — украинша).","removeTitle":"Қалай жою керек","remove":"Хабарландыру аймағындағы белгіше → <b>Exit</b>, <b>Start with Windows</b> дегенді өшір, содан кейін <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> қалтасын және оның деректерін <code>%LOCALAPPDATA%\\Khronometr</code> жой."},"c":{"name":"Қазақ тілі","brand":"Хронометр","home":"Басты бет","windows":"Windows үшін","privacy":"Құпиялылық саясаты","top":"Жоғарыға","contents":"Мазмұны"}},"ru":{"t":{"title":"Хронометр для Windows","tagline":"Время в программах и играх на компьютере — вместе с телефоном.","download":"Скачать для Windows","meta":"Windows 10 / 11 · 0,3 МБ · бесплатно","stepsTitle":"Как установить","steps":["<b>Скачай</b> файл кнопкой выше и <b>запусти</b> его.","Если Windows покажет «Система Windows защитила ваш компьютер» — нажми <b class=\"key\">Подробнее</b>, потом <b class=\"key\">Выполнить в любом случае</b>. Так бывает с программами без платной подписи; Хронометр ничего не устанавливает за пределами своей папки.","Хронометр появится <b>возле часов</b> (в трее). Нажми на его значок → <b class=\"key\">Sign in with Google…</b> — тем же аккаунтом, что и на телефоне.","Готово: компьютер появится на телефоне на вкладке <b>«Устройства»</b>. Программа сама будет запускаться вместе с Windows."],"smart":["Система Windows защитила ваш компьютер","Microsoft Defender SmartScreen предотвратил запуск неопознанного приложения…","Подробнее","Выполнить в любом случае","Не выполнять"],"whatTitle":"Что он делает","what":[["🖥️","Считает каждую программу","Время в каждой программе и игре, пока её окно перед тобой."],["🎮","Steam и трафик","Добавляет время игр из Steam и трафик по программам из журнала Windows."],["⏳","Твои лимиты действуют и здесь","Когда время вышло, окно закрывает экран «Время вышло» — его всегда можно закрыть."],["☁️","Только твой Google Диск","Синхронизация через скрытую папку на твоём собственном Диске. Без серверов и рекламы."]],"trayNote":"Меню программы на ПК — на английском (на украинском, если Windows на украинском).","removeTitle":"Как удалить","remove":"Значок в трее → <b>Exit</b>, выключи <b>Start with Windows</b>, затем удали <code>%LOCALAPPDATA%\\Programs\\Khronometr</code> и его данные <code>%LOCALAPPDATA%\\Khronometr</code>."},"c":{"name":"Русский","brand":"Хронометр","home":"Главная","windows":"Для Windows","privacy":"Политика конфиденциальности","top":"Наверх","contents":"Содержание"}}};
-const R = "../", DOWNLOAD_URL = "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe";
-const body = function pcBody(t, c, R) {
-  const smart = `
-        <div class="smart" aria-hidden="true">
-          <div class="in"><div class="t">${t.smart[0]}</div>${t.smart[1]}<div><span class="link">${t.smart[2]}</span></div></div>
-          <div class="sbar"><span class="sbtn run">${t.smart[3]}</span><span class="sbtn">${t.smart[4]}</span></div>
-        </div>`;
-  return `
-  <header class="hero" id="top">
-    <img class="logo" src="${R}icon.png" alt="" width="112" height="112">
-    <h1>${t.title}</h1>
-    <p class="tagline">${t.tagline}</p>
-    <div class="cta"><a class="btn big" href="${DOWNLOAD_URL}">⬇&nbsp; ${t.download}</a></div>
-    <p class="soon">${t.meta}</p>
-  </header>
-
-  <section>
-    <h2><span class="ico">🧭</span>${t.stepsTitle}</h2>
-    <ol class="steps">
-${t.steps.map((s, i) => `      <li>${s}${i === 1 ? smart : ''}</li>`).join('\n')}
-    </ol>
-  </section>
-
-  <h2 class="label">${t.whatTitle}</h2>
-  <div class="grid">
-${t.what.map(([i, h, p]) => `    <div class="feat"><span class="ico">${i}</span><h3>${h}</h3><p>${p}</p></div>`).join('\n')}
-  </div>
-  <p class="note center">${t.trayNote}</p>
-
-  <section>
-    <h2><span class="ico">🗑️</span>${t.removeTitle}</h2>
-    <p>${t.remove}</p>
-  </section>`;
-};
-const footer = function footer(c, R) {
-  return `<footer><a href="${R}./">${c.home}</a> · <a href="${R}pc/">💻 ${c.windows}</a> · <a href="${R}privacy.html">🔒 ${c.privacy}</a><br><a href="/">✦ PegasoHlib</a> · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></footer>`;
-};
-const title = (t) => t.title;
-const page = document.getElementById('page');
-function show(k, keepScroll) {
-  const d = D[k] || D.en;
-  page.innerHTML = body(d.t, d.c, R) + '\n  ' + footer(d.c, R);
-  document.documentElement.lang = k;
-  document.title = title(d.t, d.c);
-  document.getElementById('brand').textContent = d.c.brand;
-  document.getElementById('langName').textContent = d.c.name;
-  document.getElementById('up').setAttribute('aria-label', d.c.top);
-  document.querySelectorAll('#lang button').forEach(b => b.setAttribute('aria-current', String(b.dataset.lang === k)));
-  try { localStorage.setItem('siteLang', k); } catch (e) {}
-  const u = new URL(location.href); u.searchParams.set('lang', k); history.replaceState(null, '', u);
-  if (!keepScroll && location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
-}
-function pick() {
-  const q = new URLSearchParams(location.search).get('lang');
-  if (q && D[q]) return q;
-  try { const s = localStorage.getItem('siteLang') || localStorage.getItem('privacyLang'); if (s && D[s]) return s; } catch (e) {}
-  for (const l of navigator.languages || [navigator.language || 'en']) {
-    const base = l.toLowerCase().split('-')[0];
-    const k = base === 'in' ? 'id' : base;
-    if (D[k]) return k;
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
   }
-  return 'en';
-}
-document.querySelectorAll('#lang button').forEach(b => b.addEventListener('click', () => {
-  show(b.dataset.lang, true);
-  document.getElementById('lang').open = false;
-}));
-document.addEventListener('click', e => { const l = document.getElementById('lang'); if (l.open && !l.contains(e.target)) l.open = false; });
-// Links to the other pages carry the language along.
-document.addEventListener('click', e => {
-  const a = e.target.closest('a[href]');
-  if (!a || a.target || /^(mailto:|https?:|#)/.test(a.getAttribute('href'))) return;
-  const u = new URL(a.href); u.searchParams.set('lang', document.documentElement.lang); a.href = u;
-});
-show(pick(), false);
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
 </script>
+
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </body>
 </html>

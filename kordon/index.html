@@ -1,107 +1,718 @@
 <!doctype html>
-<html lang="uk" style="--accent:#F7D46A;--accent2:#E9A23B;--on-accent:#1D1405">
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KORDON: World History Strategy</title>
-  <meta name="description" content="KORDON — глобальна стратегія на справжній Землі з шестикутних сот. Тестова версія для Android.">
-  <meta property="og:title" content="KORDON: World History Strategy">
-  <meta property="og:description" content="Grand strategy on the real Earth made of hex cells. Android test build.">
-  <meta property="og:image" content="https://pegasohlib.github.io/kordon/logo.svg">
-  <meta name="theme-color" content="#ECEEF3">
-  <script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
-  <link rel="icon" href="logo.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap">
-  <link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
-  <link rel="stylesheet" href="site.css">
-  <script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>KORDON: World History Strategy</title>
+<meta name="description" content="A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat world map, merge provinces and redraw borders any way you like. All eras, solo and multiplayer are on the way.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="KORDON: World History Strategy">
+<meta property="og:description" content="A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat world map, merge provinces and redraw borders any way you like. All eras, solo and multiplayer are on the way.">
+<meta property="og:url" content="https://pegasohlib.github.io/kordon/">
+<meta property="og:image" content="https://pegasohlib.github.io/kordon/icon-512.png">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/kordon/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/kordon/?lang=en">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/kordon/?lang=uk">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/kordon/?lang=es">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/kordon/?lang=pt">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kordon/?lang=fr">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kordon/?lang=de">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kordon/?lang=it">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kordon/?lang=sv">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kordon/?lang=id">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kordon/?lang=ja">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kordon/?lang=kk">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/kordon/?lang=ru">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/kordon/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://pegasohlib.github.io/assets/kit.css">
+<style>
+:root{--g1:#F7D46A;--g2:#E9A23B;--on-accent:#1D1405;--accent:#7D5900;--accent2:#E9A23B;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#3A2F12;--navy2:#0F0C05;--panel-line:transparent;--panel-ic:#F7D46A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#F7D46A}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#F7D46A}
+.tile{width:40px;height:40px;padding:9px;background:var(--h0)}
+.t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--g1),var(--g2));color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
 </head>
 <body>
-  <div class="bar"><div class="in">
-    <a class="home" href="./"><img src="logo.svg" alt="" width="32" height="32"><span>KORDON</span></a>
-    <nav class="links">
-      <a href="#now" data-t="navNow"></a>
-      <a href="#plan" data-t="navPlan"></a>
-      <a href="#download" data-t="navDownload"></a>
-    </nav>
-    <label class="lang">
-      <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg>
-      <span class="sr">Language</span>
-      <select id="lang"></select>
-      <svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-    </label>
-    <button class="theme" id="theme" type="button"></button>
-  </div></div>
-
-  <main>
-    <section class="hero">
-      <img class="appicon" src="logo.svg" alt="" width="112" height="112">
-      <p class="test-badge" data-t="badge"></p>
-      <h1>KORDON<span>World History Strategy</span></h1>
-      <p class="lead" data-t="tagline"></p>
-      <div class="actions">
-        <a class="btn primary" id="heroDownload" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
-          <span data-t="downloadApk"></span>
-        </a>
-        <a class="btn" href="#install" data-t="howInstall"></a>
-      </div>
-      <p class="note" data-t="requirements"></p>
-    </section>
-
-    <section class="gallery" id="gallery" hidden></section>
-
-    <section class="section" id="now">
-      <h2 data-t="nowTitle"></h2>
-      <p class="sub" data-t="nowLead"></p>
-      <div class="cards" id="nowCards"></div>
-    </section>
-
-    <section class="section" id="plan">
-      <h2 data-t="planTitle"></h2>
-      <p class="sub" data-t="planLead"></p>
-      <ul class="plan" id="planList"></ul>
-    </section>
-
-    <div class="split">
-    <section class="section" id="download">
-      <h2 data-t="downloadTitle"></h2>
-      <div class="dl-card">
-        <div class="dl-head">
-          <img src="logo.svg" alt="" width="64" height="64">
-          <div>
-            <p class="dl-name">KORDON</p>
-            <p class="dl-meta" id="dlMeta" data-t="loadingVersion"></p>
-          </div>
-        </div>
-        <div class="dl-notes" id="dlNotes" hidden>
-          <p class="dl-notes-title" data-t="whatsNew"></p>
-          <p id="dlNotesText"></p>
-        </div>
-        <a class="btn primary" id="dlButton" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk">
-          <svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14"/></svg>
-          <span data-t="downloadApk"></span>
-        </a>
-        <p class="dl-small" data-t="selfUpdate"></p>
-        <p class="dl-small" data-t="playLater"></p>
-      </div>
-    </section>
-
-    <section class="section" id="install">
-      <h2 data-t="installTitle"></h2>
-      <ol class="steps" id="steps"></ol>
-    </section>
+<div class="bar"><div class="in">
+  <a class="home" href="index.html" data-keep-lang><img src="logo.svg" alt="" width="32" height="32"><span id="appname">KORDON</span></a>
+  
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="en" data-lang="en" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android test build</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat world map, merge provinces and redraw borders any way you like. All eras, solo and multiplayer are on the way.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-en"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>How to install</span></a>
     </div>
-  </main>
+    <p class="note">Android 10 or newer · 64-bit phone or tablet (arm64)<br>No ads and no tracking. This site collects no data.</p>
+  </header>
 
-  <footer>
-    <p data-t="footer"></p>
-    <p>© 2026 KORDON · <a id="hubLink" href="https://pegasohlib.github.io/" data-t="hub"></a></p>
-  </footer>
+  <section class="show" aria-label="A first look">
+    <div class="showtext"><h2 class="display">A first look</h2><p>This is an early build: the world map and province editing. There is no economy, war or diplomacy yet.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globe" width="1280" height="720" loading="lazy"><figcaption>Globe</figcaption></figure><figure><img src="img/shot-map.webp" alt="World map" width="1280" height="720" loading="lazy"><figcaption>World map</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relief" width="1280" height="720" loading="lazy"><figcaption>Relief</figcaption></figure></div>
+  </section>
 
-  <script src="texts.js"></script>
-  <script src="site.js"></script>
+  <section class="section features" aria-labelledby="f-en">
+    <h2 class="eyebrow" id="f-en">In the test build now</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>The real Earth in cells</h3><p>The whole world is made of hexagons: countries, regions and coastlines follow real maps.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 detail levels</h3><p>From the normal map with 60 km cells to the extreme one: 1.5 million land cells, each about 10 km across.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globe ↔ map</h3><p>One tap smoothly unrolls the globe into a flat world map and back.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Your own provinces</h3><p>Merge several provinces at once, cut out a new one by drawing its outline, undo any step.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relief</h3><p>Every cell knows its height and terrain: plains, hills, mountains or ice. On top, mountain shading and sea depths from real Earth elevation data.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Up to 120 FPS</h3><p>Smooth on fast screens; frame rate and resolution are up to you.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-en">
+    <h2 class="eyebrow" id="m0-en">Planned</h2>
+    <p class="sub">Few mechanics, each one deep and tied to the others.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Economy</h3><p>Province development: land value = area × development.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>War</h3><p>A war map and tactical figurine battles whose rules change with the era.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomacy</h3><p>Negotiations with other countries.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Strong AI</h3><p>Opponents with personalities that play by the same rules.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multiplayer</h3><p>Two modes: real time or turn-based.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Eras and scenarios</h3><p>All eras of history and short scenarios.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor and mods</h3><p>Make your own maps and mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Final trial</h3><p>Every era ends with a trial you have to survive.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-en">
+    <h2 class="eyebrow" id="m1-en">How to install</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Download</h3><p>Download <b>Kordon.apk</b> with the button on this page.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Open</h3><p>Open it from the notification or the Downloads folder.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Allow</h3><p>If Android asks, allow installing from this source (your browser or file manager) and go back.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Install</h3><p>Tap «Install». New versions will come by themselves after that.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Always the newest build</h2><p>The test build updates itself: on Wi‑Fi it downloads and installs the new build, on mobile data it shows a button. The Google Play version comes later.</p>
+    </div>
+  </section>
+
+  <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="uk" data-lang="uk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Тестова версія для Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Глобальна стратегія на справжній Землі, складеній із шестикутних сот. Грай на глобусі або на плоскій карті, об'єднуй провінції й перекроюй кордони як хочеш. Попереду — усі епохи, соло й мультиплеєр.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-uk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Як встановити</span></a>
+    </div>
+    <p class="note">Android 10 або новіший · 64-бітний телефон чи планшет (arm64)<br>Без реклами й без стеження. Сайт не збирає жодних даних.</p>
+  </header>
+
+  <section class="show" aria-label="Перший погляд">
+    <div class="showtext"><h2 class="display">Перший погляд</h2><p>Зараз це рання збірка: карта світу й робота з провінціями. Економіки, війни й дипломатії ще немає.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Глобус" width="1280" height="720" loading="lazy"><figcaption>Глобус</figcaption></figure><figure><img src="img/shot-map.webp" alt="Карта світу" width="1280" height="720" loading="lazy"><figcaption>Карта світу</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Рельєф" width="1280" height="720" loading="lazy"><figcaption>Рельєф</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-uk">
+    <h2 class="eyebrow" id="f-uk">Що вже є в тестовій версії</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Справжня Земля із сот</h3><p>Увесь світ складено із шестикутників: країни, регіони й берегова лінія за справжніми картами.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 рівнів деталізації</h3><p>Від звичайної мапи із сотами по 60 км до екстремальної: 1,5 мільйона сот суші, кожна близько 10 км.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Глобус ↔ карта</h3><p>Одним дотиком глобус плавно розгортається в плоску карту світу й назад.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Свої провінції</h3><p>Об'єднуй кілька провінцій одразу, вирізай нову, просто обвівши її пальцем, і скасовуй кроки.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Рельєф</h3><p>Кожна сота знає свою висоту й місцевість: рівнина, пагорби, гори чи льодовик. Зверху — тіні гір і глибини морів зі справжніх даних про висоти Землі.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>До 120 кадрів</h3><p>Плавна картинка на швидких екранах; частоту й роздільність можна вибрати.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-uk">
+    <h2 class="eyebrow" id="m0-uk">Що буде далі</h2>
+    <p class="sub">Небагато механік, але кожна зроблена глибоко й пов'язана з іншими.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Економіка</h3><p>Розвиток провінцій: цінність землі = площа × розвиток.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Війна</h3><p>Карта війни й тактичні бої з фігурками, правила яких змінюються з епохою.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Дипломатія</h3><p>Переговори з іншими країнами.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Сильний ШІ</h3><p>Суперники з характером, що грають за тими самими правилами.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Мультиплеєр</h3><p>Два режими: реальний час або покроковий.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Епохи й сценарії</h3><p>Усі епохи історії й короткі сценарії.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Редактор і моди</h3><p>Створюй власні карти й моди.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Фінальне випробування</h3><p>Кожна епоха завершується випробуванням, яке треба витримати.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-uk">
+    <h2 class="eyebrow" id="m1-uk">Як встановити</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Завантаж</h3><p>Завантаж файл <b>Kordon.apk</b> кнопкою на цій сторінці.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Відкрий</h3><p>Відкрий його зі сповіщення або з папки «Завантаження».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Дозволь</h3><p>Якщо Android запитає, дозволь встановлення з цього джерела (браузера чи файлового менеджера) і повернися назад.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Встанови</h3><p>Натисни «Встановити». Далі нові версії прийдуть самі.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Завжди найновіша збірка</h2><p>Тестова версія оновлюється сама: на Wi‑Fi завантажує й ставить нову збірку, на мобільних даних показує кнопку. Версія в Google Play з'явиться пізніше.</p>
+    </div>
+  </section>
+
+  <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="es" data-lang="es" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Versión de prueba para Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Un juego de gran estrategia en la Tierra real, formada por celdas hexagonales. Juega en un globo terráqueo o en un mapa plano del mundo, une provincias y redibuja las fronteras como quieras. Llegarán todas las épocas, el modo individual y el multijugador.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-es"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cómo instalar</span></a>
+    </div>
+    <p class="note">Android 10 o posterior · teléfono o tableta de 64 bits (arm64)<br>Sin anuncios ni rastreo. Este sitio no recopila ningún dato.</p>
+  </header>
+
+  <section class="show" aria-label="Un primer vistazo">
+    <div class="showtext"><h2 class="display">Un primer vistazo</h2><p>Es una versión temprana: el mapa del mundo y la edición de provincias. Todavía no hay economía, guerra ni diplomacia.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globo" width="1280" height="720" loading="lazy"><figcaption>Globo</figcaption></figure><figure><img src="img/shot-map.webp" alt="Mapa del mundo" width="1280" height="720" loading="lazy"><figcaption>Mapa del mundo</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relieve" width="1280" height="720" loading="lazy"><figcaption>Relieve</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-es">
+    <h2 class="eyebrow" id="f-es">Lo que ya trae la versión de prueba</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>La Tierra real en celdas</h3><p>Todo el mundo está hecho de hexágonos: países, regiones y costas siguen mapas reales.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 niveles de detalle</h3><p>Desde el mapa normal con celdas de 60 km hasta el extremo: 1,5 millones de celdas de tierra, de unos 10 km cada una.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globo ↔ mapa</h3><p>Con un toque, el globo se despliega suavemente en un mapa plano del mundo y vuelve a cerrarse.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Tus propias provincias</h3><p>Une varias provincias a la vez, recorta una nueva dibujando su contorno con el dedo y deshaz cualquier paso.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relieve</h3><p>Cada celda conoce su altura y su terreno: llanura, colinas, montañas o hielo. Encima, el sombreado de las montañas y la profundidad de los mares, con datos reales de elevación de la Tierra.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Hasta 120 FPS</h3><p>Imagen fluida en pantallas rápidas; tú eliges la frecuencia de fotogramas y la resolución.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-es">
+    <h2 class="eyebrow" id="m0-es">Lo que viene</h2>
+    <p class="sub">Pocas mecánicas, pero cada una profunda y conectada con las demás.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Economía</h3><p>Desarrollo de las provincias: valor de la tierra = superficie × desarrollo.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Guerra</h3><p>Mapa de guerra y batallas tácticas con figuras, cuyas reglas cambian con la época.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomacia</h3><p>Negociaciones con otros países.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>IA fuerte</h3><p>Rivales con personalidad que juegan con las mismas reglas.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multijugador</h3><p>Dos modos: tiempo real o por turnos.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Épocas y escenarios</h3><p>Todas las épocas de la historia y escenarios cortos.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor y mods</h3><p>Crea tus propios mapas y mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Prueba final</h3><p>Cada época termina con una prueba que tendrás que superar.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-es">
+    <h2 class="eyebrow" id="m1-es">Cómo instalar</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Descarga</h3><p>Descarga <b>Kordon.apk</b> con el botón de esta página.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Abre</h3><p>Ábrelo desde la notificación o desde la carpeta «Descargas».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Permite</h3><p>Si Android te lo pide, permite instalar desde este origen (tu navegador o gestor de archivos) y vuelve atrás.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Instala</h3><p>Toca «Instalar». A partir de ahí, las nuevas versiones llegarán solas.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Siempre la versión más reciente</h2><p>La versión de prueba se actualiza sola: con Wi‑Fi descarga e instala la nueva versión; con datos móviles muestra un botón. La versión de Google Play llegará más adelante.</p>
+    </div>
+  </section>
+
+  <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt" data-lang="pt" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Versão de teste para Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Um jogo de grande estratégia na Terra real, feita de células hexagonais. Joga num globo ou num mapa-múndi plano, junta províncias e redesenha as fronteiras como quiseres. Vêm aí todas as épocas, o modo a solo e o multijogador.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-pt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
+    </div>
+    <p class="note">Android 10 ou mais recente · telemóvel ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreio. Este site não recolhe quaisquer dados.</p>
+  </header>
+
+  <section class="show" aria-label="Um primeiro olhar">
+    <div class="showtext"><h2 class="display">Um primeiro olhar</h2><p>Esta é uma versão inicial: o mapa-múndi e a edição de províncias. Ainda não há economia, guerra nem diplomacia.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globo" width="1280" height="720" loading="lazy"><figcaption>Globo</figcaption></figure><figure><img src="img/shot-map.webp" alt="Mapa-múndi" width="1280" height="720" loading="lazy"><figcaption>Mapa-múndi</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relevo" width="1280" height="720" loading="lazy"><figcaption>Relevo</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt">
+    <h2 class="eyebrow" id="f-pt">O que já há na versão de teste</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>A Terra real em células</h3><p>O mundo inteiro é feito de hexágonos: países, regiões e linhas de costa seguem mapas reais.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 níveis de detalhe</h3><p>Do mapa normal, com células de 60 km, ao extremo: 1,5 milhões de células de terra, cada uma com cerca de 10 km.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globo ↔ mapa</h3><p>Com um toque, o globo desenrola-se suavemente num mapa-múndi plano e volta atrás.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>As tuas províncias</h3><p>Junta várias províncias de uma vez, recorta uma nova desenhando o contorno com o dedo e anula qualquer passo.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relevo</h3><p>Cada célula conhece a sua altitude e o seu terreno: planície, colinas, montanhas ou gelo. Por cima, o sombreado das montanhas e a profundidade dos mares, com dados reais de elevação da Terra.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Até 120 FPS</h3><p>Imagem fluida em ecrãs rápidos; tu escolhes a taxa de fotogramas e a resolução.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-pt">
+    <h2 class="eyebrow" id="m0-pt">O que vem a seguir</h2>
+    <p class="sub">Poucas mecânicas, mas cada uma profunda e ligada às outras.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Economia</h3><p>Desenvolvimento das províncias: valor da terra = área × desenvolvimento.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Guerra</h3><p>Mapa de guerra e batalhas táticas com figuras, com regras que mudam com a época.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomacia</h3><p>Negociações com outros países.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>IA forte</h3><p>Rivais com personalidade, que jogam pelas mesmas regras.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multijogador</h3><p>Dois modos: tempo real ou por turnos.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Épocas e cenários</h3><p>Todas as épocas da história e cenários curtos.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor e mods</h3><p>Cria os teus próprios mapas e mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Prova final</h3><p>Cada época termina com uma prova à qual vais ter de sobreviver.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-pt">
+    <h2 class="eyebrow" id="m1-pt">Como instalar</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Descarrega</h3><p>Descarrega o ficheiro <b>Kordon.apk</b> com o botão desta página.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Abre</h3><p>Abre-o a partir da notificação ou da pasta «Transferências».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Permite</h3><p>Se o Android pedir, permite a instalação a partir desta origem (o teu navegador ou gestor de ficheiros) e volta atrás.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Instala</h3><p>Toca em «Instalar». Depois disso, as novas versões chegam sozinhas.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Sempre a versão mais recente</h2><p>A versão de teste atualiza-se sozinha: com Wi‑Fi descarrega e instala a nova versão; com dados móveis mostra um botão. A versão no Google Play chega mais tarde.</p>
+    </div>
+  </section>
+
+  <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="fr" data-lang="fr" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Version de test Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Un jeu de grande stratégie sur la vraie Terre, faite de cellules hexagonales. Joue sur un globe ou sur une carte du monde à plat, fusionne des provinces et redessine les frontières comme tu veux. Toutes les époques, le solo et le multijoueur arrivent.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger l’APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-fr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Comment installer</span></a>
+    </div>
+    <p class="note">Android 10 ou plus récent · téléphone ou tablette 64 bits (arm64)<br>Pas de pub, pas de pistage. Ce site ne collecte aucune donnée.</p>
+  </header>
+
+  <section class="show" aria-label="Un premier aperçu">
+    <div class="showtext"><h2 class="display">Un premier aperçu</h2><p>C’est une version précoce : la carte du monde et l’édition des provinces. Pas encore d’économie, de guerre ni de diplomatie.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globe" width="1280" height="720" loading="lazy"><figcaption>Globe</figcaption></figure><figure><img src="img/shot-map.webp" alt="Carte du monde" width="1280" height="720" loading="lazy"><figcaption>Carte du monde</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relief" width="1280" height="720" loading="lazy"><figcaption>Relief</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-fr">
+    <h2 class="eyebrow" id="f-fr">Déjà dans la version de test</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>La vraie Terre en cellules</h3><p>Le monde entier est fait d’hexagones : pays, régions et côtes suivent de vraies cartes.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 niveaux de détail</h3><p>De la carte normale aux cellules de 60 km jusqu’au niveau extrême : 1,5 million de cellules de terre, d’environ 10 km chacune.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globe ↔ carte</h3><p>D’une simple touche, le globe se déroule en douceur en carte du monde à plat, et inversement.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Tes propres provinces</h3><p>Fusionne plusieurs provinces d’un coup, découpe une nouvelle province en traçant son contour au doigt, annule n’importe quelle étape.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relief</h3><p>Chaque cellule connaît son altitude et son terrain : plaine, collines, montagnes ou glace. Par-dessus, l’ombrage des montagnes et la profondeur des mers, tirés de vraies données d’altitude de la Terre.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Jusqu’à 120 FPS</h3><p>Fluide sur les écrans rapides ; c’est toi qui choisis la fréquence d’images et la résolution.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-fr">
+    <h2 class="eyebrow" id="m0-fr">Et ensuite</h2>
+    <p class="sub">Peu de mécaniques, mais chacune est profonde et liée aux autres.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Économie</h3><p>Développement des provinces : valeur d’une terre = superficie × développement.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Guerre</h3><p>Carte de guerre et batailles tactiques avec figurines, dont les règles changent selon l’époque.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomatie</h3><p>Négociations avec les autres pays.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>IA solide</h3><p>Des adversaires avec du caractère, qui jouent selon les mêmes règles.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multijoueur</h3><p>Deux modes : temps réel ou tour par tour.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Époques et scénarios</h3><p>Toutes les époques de l’histoire et des scénarios courts.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Éditeur et mods</h3><p>Crée tes propres cartes et mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Épreuve finale</h3><p>Chaque époque se termine par une épreuve à laquelle il faudra survivre.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-fr">
+    <h2 class="eyebrow" id="m1-fr">Comment installer</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Télécharge</h3><p>Télécharge <b>Kordon.apk</b> avec le bouton de cette page.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Ouvre</h3><p>Ouvre-le depuis la notification ou le dossier « Téléchargements ».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Autorise</h3><p>Si Android le demande, autorise l’installation depuis cette source (ton navigateur ou ton gestionnaire de fichiers), puis reviens en arrière.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Installe</h3><p>Appuie sur « Installer ». Ensuite, les nouvelles versions arriveront toutes seules.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Toujours la dernière version</h2><p>La version de test se met à jour toute seule : en Wi‑Fi, elle télécharge et installe la nouvelle version ; en données mobiles, elle affiche un bouton. La version Google Play arrivera plus tard.</p>
+    </div>
+  </section>
+
+  <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="de" data-lang="de" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android-Testversion</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Ein Grand-Strategy-Spiel auf der echten Erde aus Sechseckfeldern. Spiel auf dem Globus oder auf einer flachen Weltkarte, leg Provinzen zusammen und zieh die Grenzen ganz nach deinem Geschmack neu. Alle Epochen, Solo und Mehrspieler sind in Arbeit.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-de"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Installation</span></a>
+    </div>
+    <p class="note">Android 10 oder neuer · 64-Bit-Smartphone oder -Tablet (arm64)<br>Keine Werbung, kein Tracking. Diese Website sammelt keine Daten.</p>
+  </header>
+
+  <section class="show" aria-label="Ein erster Blick">
+    <div class="showtext"><h2 class="display">Ein erster Blick</h2><p>Das ist eine frühe Version: die Weltkarte und das Bearbeiten von Provinzen. Wirtschaft, Krieg und Diplomatie gibt es noch nicht.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globus" width="1280" height="720" loading="lazy"><figcaption>Globus</figcaption></figure><figure><img src="img/shot-map.webp" alt="Weltkarte" width="1280" height="720" loading="lazy"><figcaption>Weltkarte</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relief" width="1280" height="720" loading="lazy"><figcaption>Relief</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-de">
+    <h2 class="eyebrow" id="f-de">Schon in der Testversion</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Die echte Erde aus Feldern</h3><p>Die ganze Welt besteht aus Sechsecken: Länder, Regionen und Küsten folgen echten Karten.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 Detailstufen</h3><p>Von der normalen Karte mit 60-km-Feldern bis zur extremen Stufe: 1,5 Millionen Landfelder, jedes etwa 10 km groß.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globus ↔ Karte</h3><p>Ein Tippen, und der Globus rollt sich sanft zur flachen Weltkarte aus – und wieder zurück.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Eigene Provinzen</h3><p>Leg mehrere Provinzen auf einmal zusammen, schneide eine neue aus, indem du ihren Umriss mit dem Finger ziehst, und mach jeden Schritt rückgängig.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relief</h3><p>Jedes Feld kennt seine Höhe und sein Gelände: Ebene, Hügel, Gebirge oder Eis. Darüber liegen Bergschatten und Meerestiefen aus echten Höhendaten der Erde.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Bis zu 120 FPS</h3><p>Flüssig auf schnellen Bildschirmen; Bildrate und Auflösung wählst du selbst.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-de">
+    <h2 class="eyebrow" id="m0-de">Wie es weitergeht</h2>
+    <p class="sub">Wenige Mechaniken, aber jede davon tief und mit den anderen verzahnt.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Wirtschaft</h3><p>Entwicklung der Provinzen: Wert des Landes = Fläche × Entwicklung.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Krieg</h3><p>Kriegskarte und taktische Schlachten mit Spielfiguren, deren Regeln sich mit der Epoche ändern.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomatie</h3><p>Verhandlungen mit anderen Ländern.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Starke KI</h3><p>Gegner mit Charakter, die nach denselben Regeln spielen.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Mehrspieler</h3><p>Zwei Modi: Echtzeit oder rundenbasiert.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Epochen und Szenarien</h3><p>Alle Epochen der Geschichte und kurze Szenarien.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor und Mods</h3><p>Erstell eigene Karten und Mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Letzte Prüfung</h3><p>Jede Epoche endet mit einer Prüfung, die du überstehen musst.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-de">
+    <h2 class="eyebrow" id="m1-de">Installation</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Herunterladen</h3><p>Lade <b>Kordon.apk</b> mit dem Button auf dieser Seite herunter.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Öffnen</h3><p>Öffne die Datei über die Benachrichtigung oder im Ordner „Downloads“.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Erlauben</h3><p>Wenn Android fragt, erlaube die Installation aus dieser Quelle (deinem Browser oder Dateimanager) und geh zurück.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Installieren</h3><p>Tippe auf „Installieren“. Neue Versionen kommen danach von selbst.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Immer die neueste Version</h2><p>Die Testversion aktualisiert sich selbst: Über Wi‑Fi lädt sie die neue Version herunter und installiert sie, bei mobilen Daten zeigt sie einen Button. Die Version für Google Play kommt später.</p>
+    </div>
+  </section>
+
+  <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" data-lang="it" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Versione di prova per Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Un gioco di grande strategia sulla vera Terra, fatta di celle esagonali. Gioca su un globo o su una mappa del mondo piatta, unisci province e ridisegna i confini come preferisci. In arrivo tutte le epoche, la modalità in solitario e il multigiocatore.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica l’APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Come installare</span></a>
+    </div>
+    <p class="note">Android 10 o successivo · telefono o tablet a 64 bit (arm64)<br>Niente pubblicità e nessun tracciamento. Questo sito non raccoglie alcun dato.</p>
+  </header>
+
+  <section class="show" aria-label="Un primo sguardo">
+    <div class="showtext"><h2 class="display">Un primo sguardo</h2><p>È una versione iniziale: la mappa del mondo e la modifica delle province. Economia, guerra e diplomazia non ci sono ancora.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globo" width="1280" height="720" loading="lazy"><figcaption>Globo</figcaption></figure><figure><img src="img/shot-map.webp" alt="Mappa del mondo" width="1280" height="720" loading="lazy"><figcaption>Mappa del mondo</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Rilievo" width="1280" height="720" loading="lazy"><figcaption>Rilievo</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-it">
+    <h2 class="eyebrow" id="f-it">Cosa c’è già nella versione di prova</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>La vera Terra in celle</h3><p>Il mondo intero è fatto di esagoni: paesi, regioni e coste seguono mappe reali.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 livelli di dettaglio</h3><p>Dalla mappa normale con celle da 60 km a quella estrema: 1,5 milioni di celle di terraferma, ciascuna di circa 10 km.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globo ↔ mappa</h3><p>Con un tocco il globo si srotola dolcemente in una mappa del mondo piatta, e viceversa.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Le tue province</h3><p>Unisci più province in una volta, ritagliane una nuova disegnandone il contorno con il dito e annulla qualsiasi passaggio.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Rilievo</h3><p>Ogni cella conosce la sua altitudine e il suo terreno: pianura, colline, montagne o ghiaccio. Sopra, l’ombreggiatura dei monti e la profondità dei mari, da dati reali sull’altitudine della Terra.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Fino a 120 FPS</h3><p>Immagine fluida sugli schermi veloci; frequenza dei fotogrammi e risoluzione le scegli tu.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-it">
+    <h2 class="eyebrow" id="m0-it">Cosa arriverà</h2>
+    <p class="sub">Poche meccaniche, ma ognuna profonda e collegata alle altre.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Economia</h3><p>Sviluppo delle province: valore della terra = superficie × sviluppo.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Guerra</h3><p>Mappa di guerra e battaglie tattiche con le pedine, con regole che cambiano a seconda dell’epoca.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomazia</h3><p>Trattative con gli altri paesi.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>IA forte</h3><p>Avversari con carattere, che giocano con le stesse regole.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multigiocatore</h3><p>Due modalità: tempo reale o a turni.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Epoche e scenari</h3><p>Tutte le epoche della storia e scenari brevi.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor e mod</h3><p>Crea le tue mappe e le tue mod.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Prova finale</h3><p>Ogni epoca si chiude con una prova a cui dovrai sopravvivere.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-it">
+    <h2 class="eyebrow" id="m1-it">Come installare</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Scarica</h3><p>Scarica <b>Kordon.apk</b> con il pulsante in questa pagina.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Apri</h3><p>Aprilo dalla notifica o dalla cartella «Download».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Consenti</h3><p>Se Android lo chiede, consenti l’installazione da questa origine (il tuo browser o file manager) e torna indietro.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Installa</h3><p>Tocca «Installa». Da lì in poi le nuove versioni arriveranno da sole.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Sempre l’ultima versione</h2><p>La versione di prova si aggiorna da sola: con il Wi‑Fi scarica e installa la nuova versione, con i dati mobili mostra un pulsante. La versione su Google Play arriverà più avanti.</p>
+    </div>
+  </section>
+
+  <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sv" data-lang="sv" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Testversion för Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Ett storstrategispel på den riktiga jorden, uppbyggd av sexkantiga celler. Spela på en jordglob eller en platt världskarta, slå ihop provinser och rita om gränserna precis som du vill. Alla epoker, solo och flerspelarläge är på väg.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-sv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Så installerar du</span></a>
+    </div>
+    <p class="note">Android 10 eller senare · 64-bitars telefon eller surfplatta (arm64)<br>Inga annonser och ingen spårning. Webbplatsen samlar inte in några data.</p>
+  </header>
+
+  <section class="show" aria-label="En första titt">
+    <div class="showtext"><h2 class="display">En första titt</h2><p>Det här är en tidig version: världskartan och redigering av provinser. Ekonomi, krig och diplomati finns inte än.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Jordglob" width="1280" height="720" loading="lazy"><figcaption>Jordglob</figcaption></figure><figure><img src="img/shot-map.webp" alt="Världskarta" width="1280" height="720" loading="lazy"><figcaption>Världskarta</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Terräng" width="1280" height="720" loading="lazy"><figcaption>Terräng</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sv">
+    <h2 class="eyebrow" id="f-sv">Det här finns i testversionen nu</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Den riktiga jorden i celler</h3><p>Hela världen består av sexhörningar: länder, regioner och kuster följer riktiga kartor.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 detaljnivåer</h3><p>Från den vanliga kartan med 60 km stora celler till den extrema: 1,5 miljoner landceller, var och en ungefär 10 km bred.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Glob ↔ karta</h3><p>Med ett tryck rullas globen mjukt ut till en platt världskarta och tillbaka.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Egna provinser</h3><p>Slå ihop flera provinser på en gång, skär ut en ny genom att rita dess kontur med fingret och ångra vilket steg som helst.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Terräng</h3><p>Varje cell vet sin höjd och terräng: slätt, kullar, berg eller is. Ovanpå finns bergsskuggor och havsdjup från riktiga höjddata för jorden.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Upp till 120 FPS</h3><p>Mjukt på snabba skärmar; bildfrekvens och upplösning väljer du själv.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-sv">
+    <h2 class="eyebrow" id="m0-sv">Det här kommer</h2>
+    <p class="sub">Få mekaniker, men var och en djup och sammankopplad med de andra.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Ekonomi</h3><p>Utveckling av provinser: markens värde = yta × utveckling.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Krig</h3><p>Krigskarta och taktiska strider med spelpjäser, där reglerna ändras med epoken.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomati</h3><p>Förhandlingar med andra länder.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Stark AI</h3><p>Motståndare med personlighet som spelar efter samma regler.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Flerspelarläge</h3><p>Två lägen: realtid eller turordning.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Epoker och scenarier</h3><p>Historiens alla epoker och korta scenarier.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Redigerare och moddar</h3><p>Skapa egna kartor och moddar.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Slutprov</h3><p>Varje epok slutar med ett prov som du måste klara dig igenom.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-sv">
+    <h2 class="eyebrow" id="m1-sv">Så installerar du</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Ladda ner</h3><p>Ladda ner <b>Kordon.apk</b> med knappen på den här sidan.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Öppna</h3><p>Öppna filen från aviseringen eller från mappen ”Nedladdningar”.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Tillåt</h3><p>Om Android frågar, tillåt installation från den här källan (din webbläsare eller filhanterare) och gå tillbaka.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Installera</h3><p>Tryck på ”Installera”. Sedan kommer nya versioner av sig själva.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Alltid den senaste versionen</h2><p>Testversionen uppdaterar sig själv: på Wi‑Fi laddar den ner och installerar den nya versionen, på mobildata visar den en knapp. Versionen på Google Play kommer senare.</p>
+    </div>
+  </section>
+
+  <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" data-lang="id" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Versi uji Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Game strategi besar di Bumi yang nyata, tersusun dari sel-sel heksagonal. Main di bola dunia atau di peta dunia datar, gabungkan provinsi, dan gambar ulang perbatasan sesuka kamu. Semua era, mode solo, dan multipemain sedang disiapkan.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-id"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cara memasang</span></a>
+    </div>
+    <p class="note">Android 10 atau lebih baru · ponsel atau tablet 64-bit (arm64)<br>Tanpa iklan dan tanpa pelacakan. Situs ini tidak mengumpulkan data apa pun.</p>
+  </header>
+
+  <section class="show" aria-label="Lihat sekilas">
+    <div class="showtext"><h2 class="display">Lihat sekilas</h2><p>Ini masih versi awal: peta dunia dan pengeditan provinsi. Belum ada ekonomi, perang, atau diplomasi.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Bola dunia" width="1280" height="720" loading="lazy"><figcaption>Bola dunia</figcaption></figure><figure><img src="img/shot-map.webp" alt="Peta dunia" width="1280" height="720" loading="lazy"><figcaption>Peta dunia</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Relief" width="1280" height="720" loading="lazy"><figcaption>Relief</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-id">
+    <h2 class="eyebrow" id="f-id">Yang sudah ada di versi uji</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Bumi nyata dari sel</h3><p>Seluruh dunia tersusun dari segi enam: negara, wilayah, dan garis pantai mengikuti peta asli.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 tingkat detail</h3><p>Dari peta normal dengan sel 60 km hingga yang ekstrem: 1,5 juta sel daratan, masing-masing sekitar 10 km.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Bola dunia ↔ peta</h3><p>Sekali ketuk, bola dunia terbuka mulus menjadi peta dunia datar, lalu kembali lagi.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Provinsi buatanmu</h3><p>Gabungkan beberapa provinsi sekaligus, potong provinsi baru dengan menggambar garis batasnya pakai jari, dan batalkan langkah mana pun.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Relief</h3><p>Setiap sel tahu ketinggian dan medannya: dataran, perbukitan, pegunungan, atau es. Di atasnya ada bayangan gunung dan kedalaman laut dari data ketinggian Bumi yang asli.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Hingga 120 FPS</h3><p>Mulus di layar cepat; frame rate dan resolusi bisa kamu pilih sendiri.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-id">
+    <h2 class="eyebrow" id="m0-id">Yang akan datang</h2>
+    <p class="sub">Mekaniknya tidak banyak, tapi masing-masing mendalam dan saling terkait.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Ekonomi</h3><p>Pembangunan provinsi: nilai tanah = luas × pembangunan.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Perang</h3><p>Peta perang dan pertempuran taktis dengan bidak, yang aturannya berubah sesuai era.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomasi</h3><p>Negosiasi dengan negara lain.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>AI tangguh</h3><p>Lawan dengan karakter yang bermain dengan aturan yang sama.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multipemain</h3><p>Dua mode: real-time atau berbasis giliran.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Era dan skenario</h3><p>Semua era dalam sejarah dan skenario singkat.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor dan mod</h3><p>Buat peta dan mod sendiri.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Ujian terakhir</h3><p>Setiap era berakhir dengan ujian yang harus kamu lalui.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-id">
+    <h2 class="eyebrow" id="m1-id">Cara memasang</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Unduh</h3><p>Unduh <b>Kordon.apk</b> dengan tombol di halaman ini.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Buka</h3><p>Buka file itu dari notifikasi atau dari folder “Download”.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Izinkan</h3><p>Kalau Android bertanya, izinkan pemasangan dari sumber ini (browser atau pengelola file kamu), lalu kembali.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Instal</h3><p>Ketuk “Instal”. Setelah itu, versi baru akan datang dengan sendirinya.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Selalu versi terbaru</h2><p>Versi uji memperbarui dirinya sendiri: lewat Wi‑Fi, build baru diunduh dan dipasang otomatis; lewat data seluler, muncul sebuah tombol. Versi Google Play akan hadir nanti.</p>
+    </div>
+  </section>
+
+  <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ja" data-lang="ja" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Androidテスト版</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">六角形のセルでできた本物の地球で遊ぶグランドストラテジーです。地球儀でも平面の世界地図でもプレイでき、州を統合したり、国境を自由に引き直したりできます。すべての時代、ソロプレイ、マルチプレイも準備中です。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APKをダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-ja"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>インストール方法</span></a>
+    </div>
+    <p class="note">Android 10以降 · 64ビットのスマートフォンまたはタブレット（arm64）<br>広告もトラッキングもありません。このサイトはデータを一切収集しません。</p>
+  </header>
+
+  <section class="show" aria-label="ゲーム画面">
+    <div class="showtext"><h2 class="display">ゲーム画面</h2><p>まだ初期のビルドで、できるのは世界地図と州の編集です。経済、戦争、外交はまだありません。</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="地球儀" width="1280" height="720" loading="lazy"><figcaption>地球儀</figcaption></figure><figure><img src="img/shot-map.webp" alt="世界地図" width="1280" height="720" loading="lazy"><figcaption>世界地図</figcaption></figure><figure><img src="img/shot-relief.webp" alt="地形" width="1280" height="720" loading="lazy"><figcaption>地形</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ja">
+    <h2 class="eyebrow" id="f-ja">テスト版で今できること</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>セルでできた本物の地球</h3><p>世界全体が六角形でできています。国、地域、海岸線は実際の地図どおりです。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5段階の詳細度</h3><p>1セル60kmの標準マップから、陸地だけで150万セル・1セル約10kmのエクストリームまで。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>地球儀 ↔ 地図</h3><p>ワンタップで地球儀がなめらかに平面の世界地図へ広がり、また元に戻ります。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>自分だけの州</h3><p>複数の州を一度に統合したり、指で輪郭をなぞって新しい州を切り出したりできます。どの操作も元に戻せます。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>地形</h3><p>どのセルにも標高と地形（平野、丘陵、山地、氷）があります。その上に、地球の実際の標高データから作った山の陰影と海の深さを重ねています。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>最大120FPS</h3><p>高速な画面でもなめらかに動きます。フレームレートと解像度は自由に選べます。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ja">
+    <h2 class="eyebrow" id="m0-ja">今後の予定</h2>
+    <p class="sub">メカニクスは多くありませんが、どれも奥が深く、互いにつながっています。</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>経済</h3><p>州の発展：土地の価値＝面積×発展度。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>戦争</h3><p>時代とともにルールが変わる、戦争マップと駒による戦術バトル。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>外交</h3><p>他国との交渉。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>強いAI</h3><p>同じルールでプレイする、個性のある対戦相手。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>マルチプレイ</h3><p>2つのモード：リアルタイムまたはターン制。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>時代とシナリオ</h3><p>歴史のすべての時代と、短いシナリオ。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>エディターとMOD</h3><p>自分だけのマップやMODを作れます。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>最後の試練</h3><p>時代の最後には、乗り越えるべき試練が待ち受けています。</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-ja">
+    <h2 class="eyebrow" id="m1-ja">インストール方法</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. ダウンロード</h3><p>このページのボタンから<b>Kordon.apk</b>をダウンロードします。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. 開く</h3><p>通知、または「ダウンロード」フォルダからファイルを開きます。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. 許可する</h3><p>Androidに確認された場合は、この提供元（ブラウザやファイルマネージャー）からのインストールを許可して、元の画面に戻ります。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. インストール</h3><p>「インストール」をタップします。以降、新しいバージョンは自動で届きます。</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">いつも最新のビルド</h2><p>テスト版は自動で更新されます。Wi‑Fi接続時は新しいビルドをダウンロードしてインストールし、モバイルデータ通信時はボタンを表示します。 Google Play版は後日公開予定です。</p>
+    </div>
+  </section>
+
+  <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="kk" data-lang="kk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android-ға арналған тест нұсқасы</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Алтыбұрышты ұяшықтардан құралған нақты Жердегі жаһандық стратегия. Глобуста немесе жалпақ әлем картасында ойна, провинцияларды біріктір және шекараларды қалағаныңдай қайта сыз. Алда — барлық дәуірлер, жеке ойын және мультиплеер.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-kk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Қалай орнатуға болады</span></a>
+    </div>
+    <p class="note">Android 10 немесе одан жаңа · 64 биттік телефон не планшет (arm64)<br>Жарнамасыз әрі бақылаусыз. Сайт ешқандай дерек жинамайды.</p>
+  </header>
+
+  <section class="show" aria-label="Алғашқы танысу">
+    <div class="showtext"><h2 class="display">Алғашқы танысу</h2><p>Бұл — ерте нұсқа: әлем картасы және провинциялармен жұмыс. Экономика, соғыс және дипломатия әзірге жоқ.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Глобус" width="1280" height="720" loading="lazy"><figcaption>Глобус</figcaption></figure><figure><img src="img/shot-map.webp" alt="Әлем картасы" width="1280" height="720" loading="lazy"><figcaption>Әлем картасы</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Жер бедері" width="1280" height="720" loading="lazy"><figcaption>Жер бедері</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-kk">
+    <h2 class="eyebrow" id="f-kk">Тест нұсқасында қазір не бар</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Ұяшықтардан құралған нақты Жер</h3><p>Бүкіл әлем алтыбұрыштардан құралған: елдер, аймақтар және жағалау сызығы нақты карталар бойынша.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Егжей-тегжейдің 5 деңгейі</h3><p>Ұяшықтары 60 км болатын қалыпты картадан экстремалды деңгейге дейін: құрлықта 1,5 млн ұяшық, әрқайсысы шамамен 10 км.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Глобус ↔ карта</h3><p>Бір рет түрту жеткілікті: глобус жалпақ әлем картасына біркелкі жайылып, қайта оралады.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Өз провинцияларың</h3><p>Бірнеше провинцияны бірден біріктір, жаңасын саусақпен шекарасын сызып қиып ал, кез келген қадамды болдырма.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Жер бедері</h3><p>Әр ұяшық өз биіктігі мен жер түрін біледі: жазық, төбелер, таулар немесе мұздық. Үстінде — Жердің нақты биіктік деректерінен алынған тау көлеңкелері мен теңіз тереңдіктері.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>120 кадрға дейін</h3><p>Жылдам экрандарда кескін біркелкі; кадр жиілігі мен ажыратымдылықты өзің таңдайсың.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-kk">
+    <h2 class="eyebrow" id="m0-kk">Әрі қарай не болады</h2>
+    <p class="sub">Механика көп емес, бірақ әрқайсысы терең әрі басқаларымен байланысты.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Экономика</h3><p>Провинциялардың дамуы: жердің құны = аумақ × даму.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Соғыс</h3><p>Соғыс картасы және ережелері дәуірге қарай өзгеретін фигуралармен тактикалық шайқастар.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Дипломатия</h3><p>Басқа елдермен келіссөздер.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Күшті ЖИ</h3><p>Сол ережелермен ойнайтын, мінезі бар қарсыластар.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Мультиплеер</h3><p>Екі режим: нақты уақыт немесе кезекпен.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Дәуірлер мен сценарийлер</h3><p>Тарихтың барлық дәуірлері және қысқа сценарийлер.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Редактор және модтар</h3><p>Өз карталарың мен модтарыңды жаса.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Соңғы сынақ</h3><p>Әр дәуір төтеп беру керек сынақпен аяқталады.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-kk">
+    <h2 class="eyebrow" id="m1-kk">Қалай орнатуға болады</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Жүктеп ал</h3><p>Осы беттегі түйме арқылы <b>Kordon.apk</b> файлын жүктеп ал.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Аш</h3><p>Оны хабарландырудан немесе «Жүктеулер» қалтасынан аш.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Рұқсат бер</h3><p>Android сұраса, осы көзден (браузерден не файл менеджерінен) орнатуға рұқсат беріп, артқа қайт.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Орнат</h3><p>«Орнату» түймесін бас. Бұдан кейін жаңа нұсқалар өздігінен келеді.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Әрқашан ең жаңа нұсқа</h2><p>Тест нұсқасы өзі жаңарады: Wi‑Fi арқылы жаңа нұсқаны жүктеп алып, орнатады, ал мобильді интернетте түйме көрсетеді. Google Play-дегі нұсқа кейінірек шығады.</p>
+    </div>
+  </section>
+
+  <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ru" data-lang="ru" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Тестовая версия для Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Глобальная стратегия на настоящей Земле, собранной из шестиугольных сот. Играй на глобусе или на плоской карте мира, объединяй провинции и перекраивай границы как хочешь. Впереди — все эпохи, одиночная игра и мультиплеер.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-ru"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Как установить</span></a>
+    </div>
+    <p class="note">Android 10 или новее · 64-битный телефон или планшет (arm64)<br>Без рекламы и без слежки. Сайт не собирает никаких данных.</p>
+  </header>
+
+  <section class="show" aria-label="Первый взгляд">
+    <div class="showtext"><h2 class="display">Первый взгляд</h2><p>Пока это ранняя сборка: карта мира и работа с провинциями. Экономики, войн и дипломатии ещё нет.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Глобус" width="1280" height="720" loading="lazy"><figcaption>Глобус</figcaption></figure><figure><img src="img/shot-map.webp" alt="Карта мира" width="1280" height="720" loading="lazy"><figcaption>Карта мира</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Рельеф" width="1280" height="720" loading="lazy"><figcaption>Рельеф</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ru">
+    <h2 class="eyebrow" id="f-ru">Что уже есть в тестовой версии</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Настоящая Земля из сот</h3><p>Весь мир собран из шестиугольников: страны, регионы и береговая линия — по настоящим картам.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>5 уровней детализации</h3><p>От обычной карты с сотами по 60 км до экстремальной: 1,5 млн сот суши, каждая около 10 км.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Глобус ↔ карта</h3><p>Одно касание — и глобус плавно разворачивается в плоскую карту мира и обратно.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Свои провинции</h3><p>Объединяй сразу несколько провинций, вырезай новую, просто обведя её пальцем, и отменяй шаги.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Рельеф</h3><p>Каждая сота знает свою высоту и местность: равнина, холмы, горы или ледник. Сверху — тени гор и глубины морей из настоящих данных о высотах Земли.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>До 120 кадров</h3><p>Плавная картинка на быстрых экранах; частоту кадров и разрешение можно выбрать.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ru">
+    <h2 class="eyebrow" id="m0-ru">Что будет дальше</h2>
+    <p class="sub">Механик немного, но каждая проработана глубоко и связана с остальными.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Экономика</h3><p>Развитие провинций: ценность земли = площадь × развитие.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Война</h3><p>Карта войны и тактические бои с фигурками, правила которых меняются с эпохой.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Дипломатия</h3><p>Переговоры с другими странами.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Сильный ИИ</h3><p>Соперники с характером, которые играют по тем же правилам.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Мультиплеер</h3><p>Два режима: реальное время или пошаговый.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Эпохи и сценарии</h3><p>Все эпохи истории и короткие сценарии.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Редактор и моды</h3><p>Создавай свои карты и моды.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Финальное испытание</h3><p>Каждая эпоха завершается испытанием, которое нужно выдержать.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-ru">
+    <h2 class="eyebrow" id="m1-ru">Как установить</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Скачай</h3><p>Скачай файл <b>Kordon.apk</b> кнопкой на этой странице.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Открой</h3><p>Открой его из уведомления или из папки «Загрузки».</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Разреши</h3><p>Если Android спросит, разреши установку из этого источника (браузера или файлового менеджера) и вернись назад.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Установи</h3><p>Нажми «Установить». Дальше новые версии придут сами.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Всегда самая свежая сборка</h2><p>Тестовая версия обновляется сама: по Wi‑Fi скачивает и ставит новую сборку, на мобильном интернете показывает кнопку. Версия в Google Play появится позже.</p>
+    </div>
+  </section>
+
+  <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a id="hublink" href="https://pegasohlib.github.io/?lang=en" data-keep-lang>PegasoHlib — all apps</a></footer>
+<script>
+(function () {
+  var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
+  var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
+  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang","kordon-lang"];
+  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  function pick() {
+    var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
+    var h = location.hash.slice(1); if (norm(h)) return norm(h);
+    if (h && have[h.split("-")[0]]) return h.split("-")[0];
+    for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
+    var nav = navigator.languages || [navigator.language];
+    for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
+    return "en";
+  }
+  function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
+  function show(c, save) {
+    for (var k in have) have[k].hidden = k !== c;
+    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    sel.value = c;
+    text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
+    var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
+    for (var n = 0; n < nav.length; n++) nav[n].textContent = names[+nav[n].dataset.nav] || nav[n].textContent;
+    var links = document.querySelectorAll("a[data-keep-lang]");
+    for (var m = 0; m < links.length; m++) { var u0 = new URL(links[m].getAttribute("href"), location.href); u0.searchParams.set("lang", c); links[m].href = u0.href; }
+    if (save) {
+      try { localStorage.setItem(KEYS[0], c); } catch (e) {}
+      var u = new URL(location.href); u.searchParams.set("lang", c); u.hash = ""; history.replaceState(null, "", u);
+    }
+  }
+  show(pick(), false);
+  var h = location.hash.slice(1), t = h && document.getElementById(h); if (t && !t.closest("[hidden]")) setTimeout(function () { t.scrollIntoView(); }, 60);
+  sel.addEventListener("change", function () { show(sel.value, true); window.scrollTo(0, 0); });
+})();
+</script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("version.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+  }).catch(function () {});
+})();
+</script>
+<script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
 </body>
 </html>
