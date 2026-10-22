@@ -1,11 +1,11 @@
 {
-    "versionCode":  408,
-    "versionName":  "0.4.8",
+    "versionCode":  409,
+    "versionName":  "0.4.9",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "a302663c6a4160466e56713034ed8974ecf6bb52691c489cd8508e44533efb24",
-    "size":  175153161,
+    "sha256":  "7ae1633177293932636977338682c6f6d85c86e722f82e4e25a7598012a4664e",
+    "size":  175067633,
     "notes":  {
-                  "uk":  "Дніпро й Сена доходять до моря; без острівців-уламків у лиманах; лід у рельєфі з природною межею замість шестикутників; прибрано «озеро» на полюсі Антарктиди; країни через вузькі протоки різних кольорів",
-                  "en":  "Dnipro and Seine reach the sea; no islet fragments in estuaries; ice in relief with a natural edge instead of hexagons; the Antarctic pole artefact is gone; countries across narrow straits get different colours"
+                  "uk":  "Антарктида — одна область; прибрано дрібні острівці-уламки біля Нілу, Туреччини, Китаю, Джерсі; острівні країни (Науру, Тувалу, Мальта…) намальовані й вибираються без шестикутників",
+                  "en":  "Antarctica is one region; stray islet fragments near the Nile, Turkey, China and Jersey are gone; island countries (Nauru, Tuvalu, Malta…) are drawn and selectable without hexagons"
               }
 }
