@@ -1,11 +1,11 @@
 {
-    "versionCode":  404,
-    "versionName":  "0.4.4",
+    "versionCode":  405,
+    "versionName":  "0.4.5",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "db511a437aa16c9edd965a49bebeac8fbab465a9dfc2da84a8f7d8637fb1ab6a",
-    "size":  165698542,
+    "sha256":  "7a4d209367c8cd23cbd3ab96a38359a009774a50a9f9968873f83abd5de7be89",
+    "size":  170450524,
     "notes":  {
-                  "uk":  "Новий вигляд берегів і річок: мілководдя, чистий контур, річки за величиною",
-                  "en":  "New look for coasts and rivers: shallows, clean shoreline, rivers sized by importance"
+                  "uk":  "Справжні кордони країн і областей, кордони по річках",
+                  "en":  "Real borders of countries and regions, borders along rivers"
               }
 }
