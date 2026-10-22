@@ -11,7 +11,7 @@
 <meta property="og:title" content="Kolys: a letter to your future self">
 <meta property="og:description" content="Kolys is an Android app for writing letters to your future self: seal a time capsule and it opens on the day you choose.">
 <meta property="og:url" content="https://pegasohlib.github.io/kolys/">
-<meta property="og:image" content="https://pegasohlib.github.io/kolys/og.png">
+<meta property="og:image" content="https://pegasohlib.github.io/kolys/og.png?v=e027c5fc">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -662,11 +662,11 @@ main{max-width:960px}
 </script><script>
 (function () {
   var els = document.querySelectorAll("[data-count]"); if (!els.length || !window.fetch) return;
-  var P = {"khronometr":"Khronometr","kraplya":"Kraplya","slid":"Slid","kolys":"Kolys","kordon":"Kordon","oberih":"Oberih"}, R = ["PegasoHlib/PegasoHlib.github.io","PegasoHlib/kraplya"];
+  var P = {"khronometr-android":["Khronometr",".apk"],"khronometr-pc":["Khronometr-PC",".exe"],"khronometr":["Khronometr",""],"kraplya":["Kraplya",""],"slid":["Slid",""],"kolys":["Kolys",""],"kordon":["Kordon",""],"oberih":["Oberih",""]}, R = ["PegasoHlib/PegasoHlib.github.io","PegasoHlib/kraplya"];
   Promise.all(R.map(function (r) { return fetch("https://api.github.com/repos/" + r + "/releases?per_page=100").then(function (x) { if (!x.ok) throw 0; return x.json(); }); }))
     .then(function (lists) {
       var n = {}; for (var k in P) n[k] = 0;
-      lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k]) === 0) n[k] += a.download_count; }); }); });
+      lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k][0]) === 0 && a.name.slice(a.name.length - P[k][1].length) === P[k][1]) n[k] += a.download_count; }); }); });
       els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
     }).catch(function () {});
 })();
