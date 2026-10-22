@@ -1,11 +1,11 @@
 {
-    "versionCode":  409,
-    "versionName":  "0.4.9",
+    "versionCode":  410,
+    "versionName":  "0.4.10",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "7ae1633177293932636977338682c6f6d85c86e722f82e4e25a7598012a4664e",
-    "size":  175067633,
+    "sha256":  "af63babd2d585a6eae8a9267c9c62ac6cd221acf39abf7148a946b697c99adc7",
+    "size":  175069987,
     "notes":  {
-                  "uk":  "Антарктида — одна область; прибрано дрібні острівці-уламки біля Нілу, Туреччини, Китаю, Джерсі; острівні країни (Науру, Тувалу, Мальта…) намальовані й вибираються без шестикутників",
-                  "en":  "Antarctica is one region; stray islet fragments near the Nile, Turkey, China and Jersey are gone; island countries (Nauru, Tuvalu, Malta…) are drawn and selectable without hexagons"
+                  "uk":  "Прибрано сіру цятку на полюсі; кольори країн однакові на всіх рівнях деталізації",
+                  "en":  "The grey speck at the pole is gone; country colours are the same on every detail level"
               }
 }
