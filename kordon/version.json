@@ -1,11 +1,11 @@
 {
-    "versionCode":  402,
-    "versionName":  "0.4.2",
+    "versionCode":  403,
+    "versionName":  "0.4.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6debfff5ef8024f259de9ac27e24f471f0123f170df6192794ff80a5e9ce4d57",
-    "size":  164700451,
+    "sha256":  "9e5743a09d4978e8d73fee9554d5a2f7583adb51a487c64e6927e8267e9fd211",
+    "size":  165486778,
     "notes":  {
-                  "uk":  "Справжній берег морів і річки на мапі",
-                  "en":  "Real coastlines and rivers on the map"
+                  "uk":  "Плавний берег на всіх мапах, лише найбільші річки",
+                  "en":  "Smooth coastline on every map, only the biggest rivers"
               }
 }
