@@ -56,6 +56,10 @@ main{max-width:960px}
 /* On phones the version goes under the button text instead of squeezing it onto two lines. */
 @media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
 .note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.count[hidden]{display:none}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
 .pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
 .pill+h1{margin-top:10px}
 /* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
@@ -142,7 +146,8 @@ main{max-width:960px}
 .card.app .chips span{display:inline-flex;align-items:center;gap:6px;font-size:13px;color:var(--ink2);background:var(--surface2);padding:4px 12px}
 .card.app .chips .ic{width:15px;height:15px}
 .card.app .chips .ver{font-variant-numeric:tabular-nums}
-.card.app .chips .ver:empty{display:none}
+.card.app .chips .ver:empty,.card.app .chips span[hidden]{display:none}
+.card.app .chips .count b{font-weight:600;font-variant-numeric:tabular-nums}
 .acts{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:18px}
 .acts .btn{width:auto;flex:1 1 180px;min-height:50px;font-size:15.5px}
 .acts .btn.primary{min-height:52px;font-size:16px;flex-basis:100%}
@@ -203,7 +208,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Screen time for all time</p>
       <p class="ld">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5.3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5.3 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download APK</span></a>
         <a class="btn" href="khronometr/?lang=en" data-keep-lang><span>About the app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -219,7 +224,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Habit tracker with a timer</p>
       <p class="ld">Set a goal for every habit, start the timer when you practise, and watch the week fill up drop by drop. Simple, calm and private.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7.2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7.2 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download APK</span></a>
         <a class="btn" href="kraplya/?lang=en" data-keep-lang><span>About the app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -235,7 +240,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Your timeline, day by day</p>
       <p class="ld">Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download APK</span></a>
         <a class="btn" href="slid/?lang=en" data-keep-lang><span>About the app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -251,7 +256,7 @@ main{max-width:960px}
       </div>
       <p class="tl">A letter to your future self</p>
       <p class="ld">Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4.9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4.9 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download APK</span></a>
         <a class="btn" href="kolys/?lang=en" data-keep-lang><span>About the app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -267,7 +272,7 @@ main{max-width:960px}
       </div>
       <p class="tl">A handy companion for Microsoft Defender</p>
       <p class="ld">Microsoft Defender, the antivirus built into Windows, does the protecting. Oberih shows its status, runs scans, explains every setting in plain words and suggests how to stay safer.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download for Windows</span></a>
         <a class="btn" href="oberih/?lang=en" data-keep-lang><span>About the app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -299,7 +304,7 @@ main{max-width:960px}
       </div>
       <p class="tl">World history strategy</p>
       <p class="ld">A grand strategy on the real Earth made of hexagonal cells. Play on a globe or a flat map, merge provinces and redraw borders any way you like.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download test build</span></a>
         <a class="btn" href="kordon/?lang=en" data-keep-lang><span>About the game</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -351,7 +356,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Час у застосунках за весь час</p>
       <p class="ld">Скільки часу пішло на кожен застосунок і гру — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити APK</span></a>
         <a class="btn" href="khronometr/?lang=uk" data-keep-lang><span>Про застосунок</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -367,7 +372,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Трекер звичок із таймером</p>
       <p class="ld">Постав ціль для кожної звички, вмикай таймер, коли займаєшся, і дивись, як тиждень наповнюється крапля за краплею. Просто, спокійно й приватно.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити APK</span></a>
         <a class="btn" href="kraplya/?lang=uk" data-keep-lang><span>Про застосунок</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -383,7 +388,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Твоя хронологія день за днем</p>
       <p class="ld">Слід зберігає історію твоїх місць: куди ти ходиш і їздиш, шляхи між ними й фото, зроблені там, — і все це лишається на твоєму телефоні.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити APK</span></a>
         <a class="btn" href="slid/?lang=uk" data-keep-lang><span>Про застосунок</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -399,7 +404,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Лист собі в майбутнє</p>
       <p class="ld">Напиши собі лист, додай фото й запечатай до обраного дня. До того часу його ніхто не відкриє, навіть ти. А коли час настане, капсула відкриється сама.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити APK</span></a>
         <a class="btn" href="kolys/?lang=uk" data-keep-lang><span>Про застосунок</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -415,7 +420,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Зручний помічник для Microsoft Defender</p>
       <p class="ld">Захищає Microsoft Defender — вбудований антивірус Windows. Оберіг показує його стан, запускає сканування, пояснює кожне налаштування простими словами й підказує, як захиститися краще.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Завантажити для Windows</span></a>
         <a class="btn" href="oberih/?lang=uk" data-keep-lang><span>Про застосунок</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -447,7 +452,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Стратегія світової історії</p>
       <p class="ld">Глобальна стратегія на справжній Землі із шестикутних сот. Грай на глобусі або на плоскій карті, об’єднуй провінції й перекроюй кордони як хочеш.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 МБ</span><span class="count" title="Завантажень"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити тестову версію</span></a>
         <a class="btn" href="kordon/?lang=uk" data-keep-lang><span>Про гру</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -499,7 +504,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Tu tiempo de pantalla, desde siempre</p>
       <p class="ld">Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar APK</span></a>
         <a class="btn" href="khronometr/?lang=es" data-keep-lang><span>Sobre la app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -515,7 +520,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Seguimiento de hábitos con temporizador</p>
       <p class="ld">Ponte una meta para cada hábito, inicia el temporizador cuando practiques y mira cómo la semana se llena gota a gota. Sencillo, tranquilo y privado.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar APK</span></a>
         <a class="btn" href="kraplya/?lang=es" data-keep-lang><span>Sobre la app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -531,7 +536,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Tu cronología, día a día</p>
       <p class="ld">Slid guarda la historia de tus lugares: adónde vas, los caminos entre ellos y las fotos que haces allí, y todo se queda en tu teléfono.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar APK</span></a>
         <a class="btn" href="slid/?lang=es" data-keep-lang><span>Sobre la app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -547,7 +552,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Una carta a tu yo del futuro</p>
       <p class="ld">Escríbete una carta, añade fotos y séllala hasta el día que elijas. Hasta entonces nadie podrá abrirla, ni siquiera tú. Cuando llegue el momento, la cápsula se abrirá sola.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar APK</span></a>
         <a class="btn" href="kolys/?lang=es" data-keep-lang><span>Sobre la app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -563,7 +568,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Un práctico compañero para Microsoft Defender</p>
       <p class="ld">Quien te protege es Microsoft Defender, el antivirus integrado en Windows. Oberih muestra su estado, inicia exámenes, explica cada ajuste con palabras sencillas y te sugiere cómo protegerte mejor.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Descargar para Windows</span></a>
         <a class="btn" href="oberih/?lang=es" data-keep-lang><span>Sobre la app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -595,7 +600,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Estrategia de la historia mundial</p>
       <p class="ld">Un gran juego de estrategia sobre la Tierra real hecha de celdas hexagonales. Juega en un globo o en un mapa plano, une provincias y redibuja fronteras como quieras.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Descargas"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar versión de prueba</span></a>
         <a class="btn" href="kordon/?lang=es" data-keep-lang><span>Sobre el juego</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -647,7 +652,7 @@ main{max-width:960px}
       </div>
       <p class="tl">O teu tempo de ecrã, desde sempre</p>
       <p class="ld">Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar APK</span></a>
         <a class="btn" href="khronometr/?lang=pt" data-keep-lang><span>Sobre a app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -663,7 +668,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Registo de hábitos com temporizador</p>
       <p class="ld">Define um objetivo para cada hábito, inicia o temporizador quando praticas e vê a semana a encher-se gota a gota. Simples, tranquilo e privado.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar APK</span></a>
         <a class="btn" href="kraplya/?lang=pt" data-keep-lang><span>Sobre a app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -679,7 +684,7 @@ main{max-width:960px}
       </div>
       <p class="tl">A sua cronologia, dia a dia</p>
       <p class="ld">O Slid guarda a história dos seus locais: por onde anda, os caminhos entre eles e as fotos que lá tira, e tudo fica no seu telemóvel.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar APK</span></a>
         <a class="btn" href="slid/?lang=pt" data-keep-lang><span>Sobre a app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -695,7 +700,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Uma carta ao teu eu do futuro</p>
       <p class="ld">Escreve uma carta para ti, junta fotos e sela-a até ao dia que escolheres. Até lá, ninguém a pode abrir, nem mesmo tu. Quando chegar a hora, a cápsula abre-se sozinha.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar APK</span></a>
         <a class="btn" href="kolys/?lang=pt" data-keep-lang><span>Sobre a app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -711,7 +716,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Um companheiro prático para o Microsoft Defender</p>
       <p class="ld">Quem protege é o Microsoft Defender, o antivírus integrado ao Windows. O Oberih mostra o status dele, inicia verificações, explica cada configuração em palavras simples e sugere como ficar mais seguro.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Descarregar para Windows</span></a>
         <a class="btn" href="oberih/?lang=pt" data-keep-lang><span>Sobre a app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -743,7 +748,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Estratégia da história mundial</p>
       <p class="ld">Um grande jogo de estratégia na Terra real feita de células hexagonais. Joga num globo ou num mapa plano, junta províncias e redesenha fronteiras como quiseres.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Transferências"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar versão de teste</span></a>
         <a class="btn" href="kordon/?lang=pt" data-keep-lang><span>Sobre o jogo</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -795,7 +800,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Ton temps d’écran, depuis toujours</p>
       <p class="ld">Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger l’APK</span></a>
         <a class="btn" href="khronometr/?lang=fr" data-keep-lang><span>À propos de l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -811,7 +816,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Suivi d’habitudes avec minuteur</p>
       <p class="ld">Fixe un objectif pour chaque habitude, lance le minuteur quand tu pratiques et regarde la semaine se remplir goutte à goutte. Simple, calme et privé.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger l’APK</span></a>
         <a class="btn" href="kraplya/?lang=fr" data-keep-lang><span>À propos de l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -827,7 +832,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Votre chronologie, jour après jour</p>
       <p class="ld">Slid garde l’histoire de vos lieux : où vous allez, les chemins entre eux et les photos que vous y prenez, et tout reste sur votre téléphone.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger l’APK</span></a>
         <a class="btn" href="slid/?lang=fr" data-keep-lang><span>À propos de l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -843,7 +848,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Une lettre à ton futur moi</p>
       <p class="ld">Écris-toi une lettre, ajoute des photos et scelle-la jusqu’au jour de ton choix. D’ici là, personne ne peut l’ouvrir, pas même toi. Le moment venu, la capsule s’ouvre toute seule.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger l’APK</span></a>
         <a class="btn" href="kolys/?lang=fr" data-keep-lang><span>À propos de l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -859,7 +864,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Un compagnon pratique pour Microsoft Defender</p>
       <p class="ld">C’est Microsoft Defender, l’antivirus intégré à Windows, qui te protège. Oberih affiche son état, lance les analyses, explique chaque paramètre avec des mots simples et te conseille pour être mieux protégé.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Télécharger pour Windows</span></a>
         <a class="btn" href="oberih/?lang=fr" data-keep-lang><span>À propos de l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -891,7 +896,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Stratégie de l’histoire mondiale</p>
       <p class="ld">Un grand jeu de stratégie sur la vraie Terre faite de cellules hexagonales. Joue sur un globe ou une carte plane, fusionne des provinces et redessine les frontières comme tu veux.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 Mo</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 Mo</span><span class="count" title="Téléchargements"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger la version test</span></a>
         <a class="btn" href="kordon/?lang=fr" data-keep-lang><span>À propos du jeu</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -943,7 +948,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Deine Bildschirmzeit seit jeher</p>
       <p class="ld">Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK herunterladen</span></a>
         <a class="btn" href="khronometr/?lang=de" data-keep-lang><span>Zur App</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -959,7 +964,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Gewohnheitstracker mit Timer</p>
       <p class="ld">Setz dir für jede Gewohnheit ein Ziel, starte den Timer, wenn du übst, und sieh zu, wie sich die Woche Tropfen für Tropfen füllt. Einfach, ruhig und privat.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK herunterladen</span></a>
         <a class="btn" href="kraplya/?lang=de" data-keep-lang><span>Zur App</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -975,7 +980,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Deine Zeitachse, Tag für Tag</p>
       <p class="ld">Slid bewahrt die Geschichte deiner Orte: wohin es dich zieht, die Wege dazwischen und die Fotos, die dort entstehen – und alles bleibt auf deinem Handy.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK herunterladen</span></a>
         <a class="btn" href="slid/?lang=de" data-keep-lang><span>Zur App</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -991,7 +996,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Ein Brief an dein zukünftiges Ich</p>
       <p class="ld">Schreib dir selbst einen Brief, füge Fotos hinzu und versiegle ihn bis zu dem Tag, den du wählst. Bis dahin kann ihn niemand öffnen, nicht einmal du. Wenn es so weit ist, öffnet sich die Kapsel von selbst.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK herunterladen</span></a>
         <a class="btn" href="kolys/?lang=de" data-keep-lang><span>Zur App</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1007,7 +1012,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Ein praktischer Begleiter für Microsoft Defender</p>
       <p class="ld">Geschützt wirst du von Microsoft Defender, dem in Windows integrierten Antivirenprogramm. Oberih zeigt seinen Status, startet Überprüfungen, erklärt jede Einstellung in einfachen Worten und gibt Tipps, wie du sicherer bleibst.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Für Windows herunterladen</span></a>
         <a class="btn" href="oberih/?lang=de" data-keep-lang><span>Zur App</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1039,7 +1044,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Strategie der Weltgeschichte</p>
       <p class="ld">Ein großes Strategiespiel auf der echten Erde aus Sechseck-Zellen. Spiel auf einem Globus oder einer flachen Karte, vereine Provinzen und zieh Grenzen ganz nach Belieben neu.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Downloads"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Testversion herunterladen</span></a>
         <a class="btn" href="kordon/?lang=de" data-keep-lang><span>Zum Spiel</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1091,7 +1096,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Il tuo tempo davanti allo schermo, da sempre</p>
       <p class="ld">Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica l’APK</span></a>
         <a class="btn" href="khronometr/?lang=it" data-keep-lang><span>Scopri l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1107,7 +1112,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Tracker di abitudini con timer</p>
       <p class="ld">Fissa un obiettivo per ogni abitudine, avvia il timer quando ti eserciti e guarda la settimana riempirsi goccia dopo goccia. Semplice, tranquilla e privata.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica l’APK</span></a>
         <a class="btn" href="kraplya/?lang=it" data-keep-lang><span>Scopri l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1123,7 +1128,7 @@ main{max-width:960px}
       </div>
       <p class="tl">La tua cronologia, giorno per giorno</p>
       <p class="ld">Slid conserva la storia dei tuoi luoghi: dove vai, le strade tra un posto e l’altro e le foto che scatti lì, e tutto resta sul tuo telefono.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica l’APK</span></a>
         <a class="btn" href="slid/?lang=it" data-keep-lang><span>Scopri l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1139,7 +1144,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Una lettera al te del futuro</p>
       <p class="ld">Scriviti una lettera, aggiungi delle foto e sigillala fino al giorno che scegli. Fino ad allora nessuno potrà aprirla, nemmeno tu. Quando arriverà il momento, la capsula si aprirà da sola.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica l’APK</span></a>
         <a class="btn" href="kolys/?lang=it" data-keep-lang><span>Scopri l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1155,7 +1160,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Un comodo aiutante per Microsoft Defender</p>
       <p class="ld">A proteggerti è Microsoft Defender, l’antivirus integrato in Windows. Oberih ne mostra lo stato, avvia le analisi, spiega ogni impostazione con parole semplici e suggerisce come stare più al sicuro.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Scarica per Windows</span></a>
         <a class="btn" href="oberih/?lang=it" data-keep-lang><span>Scopri l’app</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1187,7 +1192,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Strategia della storia mondiale</p>
       <p class="ld">Un grande strategico sulla vera Terra fatta di celle esagonali. Gioca su un globo o su una mappa piatta, unisci province e ridisegna i confini come vuoi.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Download"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica la versione di prova</span></a>
         <a class="btn" href="kordon/?lang=it" data-keep-lang><span>Scopri il gioco</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1239,7 +1244,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Skärmtid för all tid</p>
       <p class="ld">Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner APK</span></a>
         <a class="btn" href="khronometr/?lang=sv" data-keep-lang><span>Om appen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1255,7 +1260,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Vanespårare med timer</p>
       <p class="ld">Sätt ett mål för varje vana, starta timern när du övar och se veckan fyllas droppe för droppe. Enkelt, lugnt och privat.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner APK</span></a>
         <a class="btn" href="kraplya/?lang=sv" data-keep-lang><span>Om appen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1271,7 +1276,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Din tidslinje, dag för dag</p>
       <p class="ld">Slid bevarar historien om dina platser: vart du åker, vägarna däremellan och fotona du tar där – och allt stannar på din telefon.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner APK</span></a>
         <a class="btn" href="slid/?lang=sv" data-keep-lang><span>Om appen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1287,7 +1292,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Ett brev till ditt framtida jag</p>
       <p class="ld">Skriv ett brev till dig själv, lägg till foton och försegla det till den dag du väljer. Fram till dess kan ingen öppna det, inte ens du. När tiden är inne öppnas kapseln av sig själv.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner APK</span></a>
         <a class="btn" href="kolys/?lang=sv" data-keep-lang><span>Om appen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1303,7 +1308,7 @@ main{max-width:960px}
       </div>
       <p class="tl">En smidig följeslagare till Microsoft Defender</p>
       <p class="ld">Det är Microsoft Defender, antivirusprogrammet som är inbyggt i Windows, som skyddar. Oberih visar dess status, startar genomsökningar, förklarar varje inställning med enkla ord och föreslår hur du kan vara säkrare.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Ladda ner för Windows</span></a>
         <a class="btn" href="oberih/?lang=sv" data-keep-lang><span>Om appen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1335,7 +1340,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Strategi genom världshistorien</p>
       <p class="ld">Ett stort strategispel på den riktiga jorden, byggd av sexkantiga celler. Spela på en glob eller en platt karta, slå ihop provinser och rita om gränserna precis som du vill.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Nedladdningar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner testversionen</span></a>
         <a class="btn" href="kordon/?lang=sv" data-keep-lang><span>Om spelet</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1387,7 +1392,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Waktu layar sepanjang masa</p>
       <p class="ld">Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh APK</span></a>
         <a class="btn" href="khronometr/?lang=id" data-keep-lang><span>Tentang aplikasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1403,7 +1408,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Pelacak kebiasaan dengan timer</p>
       <p class="ld">Tetapkan target untuk setiap kebiasaan, nyalakan timer saat kamu berlatih, dan lihat minggumu terisi setetes demi setetes. Sederhana, tenang, dan privat.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh APK</span></a>
         <a class="btn" href="kraplya/?lang=id" data-keep-lang><span>Tentang aplikasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1419,7 +1424,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Linimasa, hari demi hari</p>
       <p class="ld">Slid menyimpan kisah tempat-tempat yang dikunjungi: ke mana pergi, jalan di antaranya, dan foto yang diambil di sana — dan semuanya tetap di ponsel.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh APK</span></a>
         <a class="btn" href="slid/?lang=id" data-keep-lang><span>Tentang aplikasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1435,7 +1440,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Surat untuk dirimu di masa depan</p>
       <p class="ld">Tulis surat untuk dirimu sendiri, tambahkan foto, lalu segel hingga hari yang kamu pilih. Sampai saat itu tidak ada yang bisa membukanya, bahkan kamu sendiri. Saat waktunya tiba, kapsul akan terbuka dengan sendirinya.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh APK</span></a>
         <a class="btn" href="kolys/?lang=id" data-keep-lang><span>Tentang aplikasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1451,7 +1456,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Pendamping praktis untuk Microsoft Defender</p>
       <p class="ld">Yang melindungi adalah Microsoft Defender, antivirus bawaan Windows. Oberih menampilkan statusnya, menjalankan pemindaian, menjelaskan setiap pengaturan dengan kata-kata sederhana, dan memberi saran agar kamu lebih aman.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Unduh untuk Windows</span></a>
         <a class="btn" href="oberih/?lang=id" data-keep-lang><span>Tentang aplikasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1483,7 +1488,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Strategi sejarah dunia</p>
       <p class="ld">Game strategi besar di Bumi sungguhan yang tersusun dari sel heksagonal. Main di bola dunia atau peta datar, gabungkan provinsi, dan gambar ulang perbatasan sesukamu.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="Unduhan"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh versi uji coba</span></a>
         <a class="btn" href="kordon/?lang=id" data-keep-lang><span>Tentang game</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1535,7 +1540,7 @@ main{max-width:960px}
       </div>
       <p class="tl">ずっと残るスクリーンタイム</p>
       <p class="ld">すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5.3 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5.3 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK をダウンロード</span></a>
         <a class="btn" href="khronometr/?lang=ja" data-keep-lang><span>アプリについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1551,7 +1556,7 @@ main{max-width:960px}
       </div>
       <p class="tl">タイマー付き習慣トラッカー</p>
       <p class="ld">習慣ごとに目標を決めて、取り組むときはタイマーをスタート。一週間が一滴ずつ満ちていくのを見守りましょう。シンプルで穏やか、そしてプライベートです。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7.2 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7.2 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK をダウンロード</span></a>
         <a class="btn" href="kraplya/?lang=ja" data-keep-lang><span>アプリについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1567,7 +1572,7 @@ main{max-width:960px}
       </div>
       <p class="tl">あなたのタイムラインを日ごとに</p>
       <p class="ld">スリドは、訪れた場所の記録を残します。行き先、その間の道のり、そこで撮った写真。そしてそのすべてがスマートフォンの中だけに残ります。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK をダウンロード</span></a>
         <a class="btn" href="slid/?lang=ja" data-keep-lang><span>アプリについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1583,7 +1588,7 @@ main{max-width:960px}
       </div>
       <p class="tl">未来の自分への手紙</p>
       <p class="ld">自分に宛てて手紙を書き、写真を添えて、選んだ日まで封をしましょう。その日までは誰にも開けられません。あなた自身にもです。その時が来ると、カプセルはひとりでに開きます。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4.9 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4.9 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK をダウンロード</span></a>
         <a class="btn" href="kolys/?lang=ja" data-keep-lang><span>アプリについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1599,7 +1604,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Microsoft Defender の便利なパートナー</p>
       <p class="ld">PC を守っているのは、Windows に組み込まれたウイルス対策ソフト Microsoft Defender です。オベリフはその状態を表示し、スキャンを実行し、すべての設定をわかりやすく説明して、より安全に使うためのヒントを提案します。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span></a>
         <a class="btn" href="oberih/?lang=ja" data-keep-lang><span>アプリについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1631,7 +1636,7 @@ main{max-width:960px}
       </div>
       <p class="tl">世界史ストラテジー</p>
       <p class="ld">六角形のセルでできた本物の地球で遊ぶ大戦略ゲーム。地球儀でも平面地図でもプレイでき、州を統合したり国境を自由に引き直したりできます。</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MB</span><span class="count" title="ダウンロード数"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>テスト版をダウンロード</span></a>
         <a class="btn" href="kordon/?lang=ja" data-keep-lang><span>ゲームについて</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1683,7 +1688,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Қолданбалардағы уақыт — бүкіл уақыт бойы</p>
       <p class="ld">Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK жүктеу</span></a>
         <a class="btn" href="khronometr/?lang=kk" data-keep-lang><span>Қолданба туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1699,7 +1704,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Таймері бар әдет трекері</p>
       <p class="ld">Әр әдетке мақсат қой, айналысқанда таймерді қос және аптаның тамшылап толғанын көр. Қарапайым, сабырлы әрі жеке.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK жүктеу</span></a>
         <a class="btn" href="kraplya/?lang=kk" data-keep-lang><span>Қолданба туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1715,7 +1720,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Хронологияңыз күн сайын</p>
       <p class="ld">Слід сіз барған орындардың тарихын сақтайды: қайда барасыз, арасындағы жолдар және сол жерде түсірген фотолар, — бәрі телефоныңызда қалады.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK жүктеу</span></a>
         <a class="btn" href="slid/?lang=kk" data-keep-lang><span>Қолданба туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1731,7 +1736,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Болашақтағы өзіңе хат</p>
       <p class="ld">Өзіңе хат жаз, фото қос та, таңдаған күніңе дейін мөрлеп қой. Оған дейін оны ешкім аша алмайды, тіпті сен де. Уақыты келгенде капсула өзі ашылады.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK жүктеу</span></a>
         <a class="btn" href="kolys/?lang=kk" data-keep-lang><span>Қолданба туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1747,7 +1752,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Microsoft Defender үшін ыңғайлы көмекші</p>
       <p class="ld">Сені Windows-қа кірістірілген антивирус Microsoft Defender қорғайды. Оберіг оның күйін көрсетеді, тексерулерді іске қосады, әр баптауды қарапайым тілмен түсіндіреді және қалай қауіпсіздірек болуға болатынын айтады.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows үшін жүктеу</span></a>
         <a class="btn" href="oberih/?lang=kk" data-keep-lang><span>Қолданба туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1779,7 +1784,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Әлем тарихы стратегиясы</p>
       <p class="ld">Алтыбұрышты ұяшықтардан құралған нағыз Жердегі ауқымды стратегия. Глобуста немесе жазық картада ойна, провинцияларды біріктіріп, шекараларды қалауыңша қайта сыз.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 MБ</span><span class="count" title="Жүктеулер"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Сынақ нұсқасын жүктеу</span></a>
         <a class="btn" href="kordon/?lang=kk" data-keep-lang><span>Ойын туралы</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1831,7 +1836,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Время в приложениях за всё время</p>
       <p class="ld">Сколько времени ушло на каждое приложение и игру — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="khronometr">v0.29.4 · 5,3 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="khronometr">2</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="khronometr" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/android/Khronometr.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать APK</span></a>
         <a class="btn" href="khronometr/?lang=ru" data-keep-lang><span>О приложении</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1847,7 +1852,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Трекер привычек с таймером</p>
       <p class="ld">Ставь цель для каждой привычки, включай таймер, когда занимаешься, и смотри, как неделя наполняется капля за каплей. Просто, спокойно и приватно.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kraplya">v0.9.10 · 7,2 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kraplya">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kraplya" href="https://github.com/PegasoHlib/kraplya/releases/download/v0.9.10/Kraplya-0.9.10.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать APK</span></a>
         <a class="btn" href="kraplya/?lang=ru" data-keep-lang><span>О приложении</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1863,7 +1868,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Твоя хронология день за днём</p>
       <p class="ld">Слід хранит историю твоих мест: куда ты ходишь и ездишь, пути между ними и фото, сделанные там, — и всё это остаётся на твоём телефоне.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="slid">v0.9.6 · 28 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="slid">20</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="slid" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать APK</span></a>
         <a class="btn" href="slid/?lang=ru" data-keep-lang><span>О приложении</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1879,7 +1884,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Письмо себе в будущее</p>
       <p class="ld">Напиши себе письмо, добавь фото и запечатай его до выбранного дня. До тех пор его никто не откроет, даже ты. А когда время придёт, капсула откроется сама.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kolys">v0.4.4 · 4,9 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kolys">13</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kolys" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.4.4/Kolys-0.4.4.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать APK</span></a>
         <a class="btn" href="kolys/?lang=ru" data-keep-lang><span>О приложении</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1895,7 +1900,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Удобный помощник для Microsoft Defender</p>
       <p class="ld">Защищает Microsoft Defender — встроенный антивирус Windows. Обериг показывает его состояние, запускает проверки, объясняет каждую настройку простыми словами и подсказывает, как защититься лучше.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Windows</span><span class="ver" data-ver="oberih">v0.2.3 · 63 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="oberih">3</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="oberih" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.2.3/Oberih-0.2.3.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Скачать для Windows</span></a>
         <a class="btn" href="oberih/?lang=ru" data-keep-lang><span>О приложении</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1927,7 +1932,7 @@ main{max-width:960px}
       </div>
       <p class="tl">Стратегия мировой истории</p>
       <p class="ld">Глобальная стратегия на настоящей Земле из шестиугольных сот. Играй на глобусе или на плоской карте, объединяй провинции и перекраивай границы как хочешь.</p>
-      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 МБ</span></div>
+      <div class="chips"><span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 10.5a6 6 0 0 1 12 0v7H6z"/><path d="M8 5l1.3 2M16 5l-1.3 2M9.5 13.5h.01M14.5 13.5h.01M3.5 11v5M20.5 11v5M9 17.5v3M15 17.5v3"/></svg>Android</span><span class="ver" data-ver="kordon">v0.4.1 · 161 МБ</span><span class="count" title="Загрузок"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>≈ <b data-count="kordon">7</b></span></div>
       <div class="acts">
         <a class="btn primary" data-dl="kordon" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать тестовую версию</span></a>
         <a class="btn" href="kordon/?lang=ru" data-keep-lang><span>Об игре</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
@@ -1990,6 +1995,17 @@ main{max-width:960px}
 })();
 </script>
 <script>
+(function () {
+  var els = document.querySelectorAll("[data-count]"); if (!els.length || !window.fetch) return;
+  var P = {"khronometr":"Khronometr","kraplya":"Kraplya","slid":"Slid","kolys":"Kolys","kordon":"Kordon","oberih":"Oberih"}, R = ["PegasoHlib/PegasoHlib.github.io","PegasoHlib/kraplya"];
+  Promise.all(R.map(function (r) { return fetch("https://api.github.com/repos/" + r + "/releases?per_page=100").then(function (x) { if (!x.ok) throw 0; return x.json(); }); }))
+    .then(function (lists) {
+      var n = {}; for (var k in P) n[k] = 0;
+      lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k]) === 0) n[k] += a.download_count; }); }); });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+    }).catch(function () {});
+})();
+</script><script>
 (function () {
   if (!window.fetch) return;
   function verText(live, l) {

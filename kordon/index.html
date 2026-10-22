@@ -53,6 +53,10 @@ main{max-width:960px}
 /* On phones the version goes under the button text instead of squeezing it onto two lines. */
 @media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
 .note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.count[hidden]{display:none}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
 .pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
 .pill+h1{margin-top:10px}
 /* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
@@ -137,6 +141,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-en"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>How to install</span></a>
     </div>
     <p class="note">Android 10 or newer · 64-bit phone or tablet (arm64)<br>No ads and no tracking. This site collects no data.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="A first look">
@@ -182,6 +187,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-uk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Як встановити</span></a>
     </div>
     <p class="note">Android 10 або новіший · 64-бітний телефон чи планшет (arm64)<br>Без реклами й без стеження. Сайт не збирає жодних даних.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Перший погляд">
@@ -227,6 +233,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-es"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cómo instalar</span></a>
     </div>
     <p class="note">Android 10 o posterior · teléfono o tableta de 64 bits (arm64)<br>Sin anuncios ni rastreo. Este sitio no recopila ningún dato.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Un primer vistazo">
@@ -272,6 +279,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
     </div>
     <p class="note">Android 10 ou mais recente · telemóvel ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreio. Este site não recolhe quaisquer dados.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Um primeiro olhar">
@@ -317,6 +325,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-fr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Comment installer</span></a>
     </div>
     <p class="note">Android 10 ou plus récent · téléphone ou tablette 64 bits (arm64)<br>Pas de pub, pas de pistage. Ce site ne collecte aucune donnée.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Un premier aperçu">
@@ -362,6 +371,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-de"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Installation</span></a>
     </div>
     <p class="note">Android 10 oder neuer · 64-Bit-Smartphone oder -Tablet (arm64)<br>Keine Werbung, kein Tracking. Diese Website sammelt keine Daten.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Ein erster Blick">
@@ -407,6 +417,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Come installare</span></a>
     </div>
     <p class="note">Android 10 o successivo · telefono o tablet a 64 bit (arm64)<br>Niente pubblicità e nessun tracciamento. Questo sito non raccoglie alcun dato.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Un primo sguardo">
@@ -452,6 +463,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-sv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Så installerar du</span></a>
     </div>
     <p class="note">Android 10 eller senare · 64-bitars telefon eller surfplatta (arm64)<br>Inga annonser och ingen spårning. Webbplatsen samlar inte in några data.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="En första titt">
@@ -497,6 +509,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-id"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cara memasang</span></a>
     </div>
     <p class="note">Android 10 atau lebih baru · ponsel atau tablet 64-bit (arm64)<br>Tanpa iklan dan tanpa pelacakan. Situs ini tidak mengumpulkan data apa pun.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Lihat sekilas">
@@ -542,6 +555,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ja"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>インストール方法</span></a>
     </div>
     <p class="note">Android 10以降 · 64ビットのスマートフォンまたはタブレット（arm64）<br>広告もトラッキングもありません。このサイトはデータを一切収集しません。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="ゲーム画面">
@@ -587,6 +601,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-kk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Қалай орнатуға болады</span></a>
     </div>
     <p class="note">Android 10 немесе одан жаңа · 64 биттік телефон не планшет (arm64)<br>Жарнамасыз әрі бақылаусыз. Сайт ешқандай дерек жинамайды.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Алғашқы танысу">
@@ -632,6 +647,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ru"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Как установить</span></a>
     </div>
     <p class="note">Android 10 или новее · 64-битный телефон или планшет (arm64)<br>Без рекламы и без слежки. Сайт не собирает никаких данных.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kordon">7</b></p>
   </header>
 
   <section class="show" aria-label="Первый взгляд">
@@ -714,6 +730,17 @@ main{max-width:960px}
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
   }).catch(function () {});
+})();
+</script><script>
+(function () {
+  var els = document.querySelectorAll("[data-count]"); if (!els.length || !window.fetch) return;
+  var P = {"khronometr":"Khronometr","kraplya":"Kraplya","slid":"Slid","kolys":"Kolys","kordon":"Kordon","oberih":"Oberih"}, R = ["PegasoHlib/PegasoHlib.github.io","PegasoHlib/kraplya"];
+  Promise.all(R.map(function (r) { return fetch("https://api.github.com/repos/" + r + "/releases?per_page=100").then(function (x) { if (!x.ok) throw 0; return x.json(); }); }))
+    .then(function (lists) {
+      var n = {}; for (var k in P) n[k] = 0;
+      lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k]) === 0) n[k] += a.download_count; }); }); });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+    }).catch(function () {});
 })();
 </script>
 <script src="https://pegasohlib.github.io/assets/kit.js" defer></script>

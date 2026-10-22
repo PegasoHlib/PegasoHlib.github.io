@@ -53,6 +53,10 @@ main{max-width:960px}
 /* On phones the version goes under the button text instead of squeezing it onto two lines. */
 @media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
 .note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.count[hidden]{display:none}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
 .pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
 .pill+h1{margin-top:10px}
 /* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
@@ -137,6 +141,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
     </div>
     <p class="note">After installing, the app updates itself.<br>Free · no ads · 12 languages</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="How it works">
@@ -180,6 +185,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
     <p class="note">Після встановлення застосунок оновлюється сам.<br>Безкоштовно · без реклами · 12 мов</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Як це працює">
@@ -223,6 +229,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
     <p class="note">Después de instalarla, la app se actualiza sola.<br>Gratis · sin anuncios · 12 idiomas</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Cómo funciona">
@@ -266,6 +273,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Depois de instalado, o app se atualiza sozinho.<br>Grátis · sem anúncios · 12 idiomas</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -309,6 +317,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
     <p class="note">Une fois installée, l’appli se met à jour toute seule.<br>Gratuit · sans pub · 12 langues</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Comment ça marche">
@@ -352,6 +361,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
     <p class="note">Nach der Installation aktualisiert sich die App selbst.<br>Kostenlos · ohne Werbung · 12 Sprachen</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="So funktioniert es">
@@ -395,6 +405,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
     <p class="note">Dopo l’installazione, l’app si aggiorna da sola.<br>Gratis · senza pubblicità · 12 lingue</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Come funziona">
@@ -438,6 +449,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
     <p class="note">Efter installationen uppdaterar appen sig själv.<br>Gratis · ingen reklam · 12 språk</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Så fungerar det">
@@ -481,6 +493,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
     </div>
     <p class="note">Setelah dipasang, aplikasi memperbarui dirinya sendiri.<br>Gratis · tanpa iklan · 12 bahasa</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Cara kerjanya">
@@ -524,6 +537,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
     </div>
     <p class="note">インストール後は、アプリが自動で更新されます。<br>無料 · 広告なし · 12 言語</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="しくみ">
@@ -567,6 +581,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
     </div>
     <p class="note">Орнатқаннан кейін қолданба өздігінен жаңарады.<br>Тегін · жарнамасыз · 12 тіл</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Қалай жұмыс істейді">
@@ -610,6 +625,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
     <p class="note">После установки приложение обновляется само.<br>Бесплатно · без рекламы · 12 языков</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="oberih">3</b></p>
   </header>
 
   <section class="show" aria-label="Как это работает">
@@ -690,6 +706,17 @@ main{max-width:960px}
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
   }).catch(function () {});
+})();
+</script><script>
+(function () {
+  var els = document.querySelectorAll("[data-count]"); if (!els.length || !window.fetch) return;
+  var P = {"khronometr":"Khronometr","kraplya":"Kraplya","slid":"Slid","kolys":"Kolys","kordon":"Kordon","oberih":"Oberih"}, R = ["PegasoHlib/PegasoHlib.github.io","PegasoHlib/kraplya"];
+  Promise.all(R.map(function (r) { return fetch("https://api.github.com/repos/" + r + "/releases?per_page=100").then(function (x) { if (!x.ok) throw 0; return x.json(); }); }))
+    .then(function (lists) {
+      var n = {}; for (var k in P) n[k] = 0;
+      lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k]) === 0) n[k] += a.download_count; }); }); });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+    }).catch(function () {});
 })();
 </script>
 <script src="https://pegasohlib.github.io/assets/kit.js" defer></script>
