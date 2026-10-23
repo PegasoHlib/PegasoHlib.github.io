@@ -1,11 +1,11 @@
 {
-    "versionCode":  700,
-    "versionName":  "0.7.0",
+    "versionCode":  800,
+    "versionName":  "0.8.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "474fbece54c33d66bd112b67d532030dcedd39766c3ae3c66cf7c76fa4db1cfa",
-    "size":  175785610,
+    "sha256":  "285b4a5f5b9bb26553e8cb46a00c0524045544a1a4f85e7cc2d84899372bbd27",
+    "size":  175793011,
     "notes":  {
-                  "uk":  "Країни: столиці, назви українською, картка країни (кнопка з назвою вгорі), режим «Моя країна», змінювати можна лише свої провінції, тестова кнопка «Забрати».",
-                  "en":  "Countries: capitals, names in Ukrainian, a country card (the name button at the top), «My country» map, only your own provinces can be changed, a test «Take» button."
+                  "uk":  "Дві мови з прапорами (українська, англійська) — у налаштуваннях і в меню. Торкання вибирає країну, друге торкання в ній — провінцію; кнопка «Країна» повертає до країни. Гагаузія та інші ексклави тепер окремі провінції.",
+                  "en":  "Two languages with flags (Ukrainian, English) - in Settings and the menu. A tap picks a country, a second tap in it a province; «Country» goes back. Gagauzia and other exclaves are provinces of their own."
               }
 }
