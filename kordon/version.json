@@ -1,11 +1,11 @@
 {
-    "versionCode":  1001,
-    "versionName":  "0.10.1",
+    "versionCode":  1002,
+    "versionName":  "0.10.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "11b2df9018bcfdc41d079efb8a2b1aa7a6ae79e6706d7296ecf0d336e9f86f29",
-    "size":  145285279,
+    "sha256":  "0463c49c78fb0318162ca0912b240b0631935793a05a1f8c1cb496678a11f462",
+    "size":  145291180,
     "notes":  {
-                  "uk":  "Швидше малювання здалеку: при віддаленні GPU навантажений приблизно на 40% менше (на «Абсолютній» мапі), картинка та сама.",
-                  "en":  "Faster far view: about 40% less GPU work when zoomed out (on the Ultimate map), the same picture."
+                  "uk":  "Титри в головному меню: автор, рушій Godot, дані мапи, рельєф, прапори, шрифт і повні тексти ліцензій.",
+                  "en":  "Credits in the main menu: author, Godot engine, map data, relief, flags, font and the full licence texts."
               }
 }
