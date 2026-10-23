@@ -1,11 +1,11 @@
 {
-    "versionCode":  601,
-    "versionName":  "0.6.1",
+    "versionCode":  700,
+    "versionName":  "0.7.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "d18b9da725c1d60b9e4c4b1f751a29be68e79e9c45d3847ff0350b7dddac2cda",
-    "size":  175468641,
+    "sha256":  "474fbece54c33d66bd112b67d532030dcedd39766c3ae3c66cf7c76fa4db1cfa",
+    "size":  175785610,
     "notes":  {
-                  "uk":  "Виправлено: країни в Азії (Індія, Китай, Таїланд та інші) мали плями кольорів сусідів.",
-                  "en":  "Fixed: countries in Asia (India, China, Thailand and others) had patches in their neighbours\u0027 colours."
+                  "uk":  "Країни: столиці, назви українською, картка країни (кнопка з назвою вгорі), режим «Моя країна», змінювати можна лише свої провінції, тестова кнопка «Забрати».",
+                  "en":  "Countries: capitals, names in Ukrainian, a country card (the name button at the top), «My country» map, only your own provinces can be changed, a test «Take» button."
               }
 }
