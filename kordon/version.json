@@ -1,8 +1,8 @@
 {
-    "versionCode":  800,
-    "versionName":  "0.8.0",
+    "versionCode":  801,
+    "versionName":  "0.8.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "32af6b5ab3800b265a969c31a087ddda5d077500dbecb150e82baf51056095a6",
+    "sha256":  "54992e8b31e2eb88017dccd0f52d1ded52595c41113d02ca45c06e4b2e04d385",
     "size":  175794503,
     "notes":  {
                   "uk":  "Тестова кнопка «Віддати»: вибери свою провінцію, натисни «Віддати (тест)» і торкнись країни, якій її віддати.",
