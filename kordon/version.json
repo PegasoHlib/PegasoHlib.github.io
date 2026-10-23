@@ -1,11 +1,11 @@
 {
-    "versionCode":  503,
-    "versionName":  "0.5.3",
+    "versionCode":  600,
+    "versionName":  "0.6.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "03d22a518df9042ac3ef553ba96834be927f9bfd2864364534b5bd4b3382dd45",
-    "size":  175461331,
+    "sha256":  "72b1d540c7b2a4b8be70acf744253f69fab121a43ddbc1cf528da87ab3b94d5a",
+    "size":  175468509,
     "notes":  {
-                  "uk":  "Ділення: лінія вздовж кордону чи берега прилипає до нього — більше немає подвійних ліній і тонких смужок біля кордону.",
-                  "en":  "Splitting: a line along a border or the coast sticks to it - no more doubled lines and thin slivers beside borders."
+                  "uk":  "Головне меню: нова гра (деталізація мапи для партії), вибір країни на мапі, налаштування, версія, екран завантаження. У грі кнопка «Меню», «Назад» на телефоні працює.",
+                  "en":  "Main menu: new game (map detail per game), choosing your country on the map, settings, version, loading screen. In the game a Menu button; the phone\u0027s Back works."
               }
 }
