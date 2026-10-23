@@ -1,11 +1,11 @@
 {
-    "versionCode":  900,
-    "versionName":  "0.9.0",
+    "versionCode":  901,
+    "versionName":  "0.9.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "aebe8e2326379c19fc60bf1c2fcd12c3b44e4eafb75dab25d3e61899df719426",
-    "size":  175802181,
+    "sha256":  "832e230eea9d7c89aefb3a62adeb5a448299aa247fd56e00250473efd22d5e03",
+    "size":  175809661,
     "notes":  {
-                  "uk":  "Збереження: гра зберігається сама після кожної зміни, при виході в меню і коли згортаєш застосунок; «Продовжити» в меню повертає гру. Нова гра замінює збереження.",
-                  "en":  "Saving: the game saves itself after every change, on the way to the menu and when the app is put away; «Continue» in the menu brings it back. A new game replaces the save."
+                  "uk":  "Виправлено: смуги чужого кольору після незамкненого кола. Сан-Марино й Ліхтенштейн тепер справжньої форми. Нова тестова кнопка «Звіт» угорі: знімок, дані й збереження — одразу надіслати.",
+                  "en":  "Fixed: stripes of the wrong colour after an unclosed circle. San Marino and Liechtenstein now have their real shape. A new test «Report» button at the top: screenshot, data and the save, to send at once."
               }
 }
