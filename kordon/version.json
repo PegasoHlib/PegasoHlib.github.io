@@ -1,11 +1,11 @@
 {
-    "versionCode":  1000,
-    "versionName":  "0.10.0",
+    "versionCode":  1001,
+    "versionName":  "0.10.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "f2590c71025b1287b7e8fbd96c785fabf4b709e0acaeedc6b71cdbba511d5533",
-    "size":  145283427,
+    "sha256":  "11b2df9018bcfdc41d079efb8a2b1aa7a6ae79e6706d7296ecf0d336e9f86f29",
+    "size":  145285279,
     "notes":  {
-                  "uk":  "Нова мапа «Абсолютна» (≈3 млн сот, ~7 км). Прапори всіх країн. Острів Мен і малі острови — рівна кількість сот на всіх мапах. Ер більше не заходить за Сену, частини Гагаузії — окремі провінції. Мапи в 2.5 раза менші й швидше вантажаться. Компактніша верхня панель. Старе збереження не відкриється (нові мапи).",
-                  "en":  "New «Ultimate» map (≈3 M cells, ~7 km). Flags of every country. Small islands get consistent cells on every map. Eure no longer crosses the Seine; Gagauzia\u0027s pieces are provinces of their own. Maps 2.5x smaller and load faster. Compact top bar. Old saves will not open (new maps)."
+                  "uk":  "Швидше малювання здалеку: при віддаленні GPU навантажений приблизно на 40% менше (на «Абсолютній» мапі), картинка та сама.",
+                  "en":  "Faster far view: about 40% less GPU work when zoomed out (on the Ultimate map), the same picture."
               }
 }
