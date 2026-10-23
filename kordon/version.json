@@ -2,10 +2,10 @@
     "versionCode":  800,
     "versionName":  "0.8.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "285b4a5f5b9bb26553e8cb46a00c0524045544a1a4f85e7cc2d84899372bbd27",
-    "size":  175793011,
+    "sha256":  "32af6b5ab3800b265a969c31a087ddda5d077500dbecb150e82baf51056095a6",
+    "size":  175794503,
     "notes":  {
-                  "uk":  "Дві мови з прапорами (українська, англійська) — у налаштуваннях і в меню. Торкання вибирає країну, друге торкання в ній — провінцію; кнопка «Країна» повертає до країни. Гагаузія та інші ексклави тепер окремі провінції.",
-                  "en":  "Two languages with flags (Ukrainian, English) - in Settings and the menu. A tap picks a country, a second tap in it a province; «Country» goes back. Gagauzia and other exclaves are provinces of their own."
+                  "uk":  "Тестова кнопка «Віддати»: вибери свою провінцію, натисни «Віддати (тест)» і торкнись країни, якій її віддати.",
+                  "en":  "A test «Give away» button: pick your province, press «Give away (test)» and tap the country to give it to."
               }
 }
