@@ -1,11 +1,11 @@
 {
-    "versionCode":  502,
-    "versionName":  "0.5.2",
+    "versionCode":  503,
+    "versionName":  "0.5.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "3bdfd51bbe6cf183676b17e5ab5f5cbc5d939c97b9cc49c78c1ee2d4942ab272",
-    "size":  175459935,
+    "sha256":  "03d22a518df9042ac3ef553ba96834be927f9bfd2864364534b5bd4b3382dd45",
+    "size":  175461331,
     "notes":  {
-                  "uk":  "Ділення: під розрізаними місцями більше не просвічує море (сині цятки), коло із заїздом за початок замикається без другої лінії.",
-                  "en":  "Splitting: no more sea specks showing through along cuts, a circle drawn past its start closes without a second line."
+                  "uk":  "Ділення: лінія вздовж кордону чи берега прилипає до нього — більше немає подвійних ліній і тонких смужок біля кордону.",
+                  "en":  "Splitting: a line along a border or the coast sticks to it - no more doubled lines and thin slivers beside borders."
               }
 }
