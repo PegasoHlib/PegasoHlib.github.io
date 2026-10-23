@@ -1,11 +1,11 @@
 {
-    "versionCode":  901,
-    "versionName":  "0.9.1",
+    "versionCode":  1000,
+    "versionName":  "0.10.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "832e230eea9d7c89aefb3a62adeb5a448299aa247fd56e00250473efd22d5e03",
-    "size":  175809661,
+    "sha256":  "f2590c71025b1287b7e8fbd96c785fabf4b709e0acaeedc6b71cdbba511d5533",
+    "size":  145283427,
     "notes":  {
-                  "uk":  "Виправлено: смуги чужого кольору після незамкненого кола. Сан-Марино й Ліхтенштейн тепер справжньої форми. Нова тестова кнопка «Звіт» угорі: знімок, дані й збереження — одразу надіслати.",
-                  "en":  "Fixed: stripes of the wrong colour after an unclosed circle. San Marino and Liechtenstein now have their real shape. A new test «Report» button at the top: screenshot, data and the save, to send at once."
+                  "uk":  "Нова мапа «Абсолютна» (≈3 млн сот, ~7 км). Прапори всіх країн. Острів Мен і малі острови — рівна кількість сот на всіх мапах. Ер більше не заходить за Сену, частини Гагаузії — окремі провінції. Мапи в 2.5 раза менші й швидше вантажаться. Компактніша верхня панель. Старе збереження не відкриється (нові мапи).",
+                  "en":  "New «Ultimate» map (≈3 M cells, ~7 km). Flags of every country. Small islands get consistent cells on every map. Eure no longer crosses the Seine; Gagauzia\u0027s pieces are provinces of their own. Maps 2.5x smaller and load faster. Compact top bar. Old saves will not open (new maps)."
               }
 }
