@@ -1,11 +1,11 @@
 {
-    "versionCode":  801,
-    "versionName":  "0.8.1",
+    "versionCode":  900,
+    "versionName":  "0.9.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "54992e8b31e2eb88017dccd0f52d1ded52595c41113d02ca45c06e4b2e04d385",
-    "size":  175794503,
+    "sha256":  "aebe8e2326379c19fc60bf1c2fcd12c3b44e4eafb75dab25d3e61899df719426",
+    "size":  175802181,
     "notes":  {
-                  "uk":  "Тестова кнопка «Віддати»: вибери свою провінцію, натисни «Віддати (тест)» і торкнись країни, якій її віддати.",
-                  "en":  "A test «Give away» button: pick your province, press «Give away (test)» and tap the country to give it to."
+                  "uk":  "Збереження: гра зберігається сама після кожної зміни, при виході в меню і коли згортаєш застосунок; «Продовжити» в меню повертає гру. Нова гра замінює збереження.",
+                  "en":  "Saving: the game saves itself after every change, on the way to the menu and when the app is put away; «Continue» in the menu brings it back. A new game replaces the save."
               }
 }
