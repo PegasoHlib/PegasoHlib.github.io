@@ -1,11 +1,11 @@
 {
-    "versionCode":  1002,
-    "versionName":  "0.10.2",
+    "versionCode":  1100,
+    "versionName":  "0.11.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "0463c49c78fb0318162ca0912b240b0631935793a05a1f8c1cb496678a11f462",
-    "size":  145291180,
+    "sha256":  "c64846e9d29f8760c8ad5d92e776aa8cb9439dff393dc74f817e1da1b3b42c8c",
+    "size":  151515294,
     "notes":  {
-                  "uk":  "Титри в головному меню: автор, рушій Godot, дані мапи, рельєф, прапори, шрифт і повні тексти ліцензій.",
-                  "en":  "Credits in the main menu: author, Godot engine, map data, relief, flags, font and the full licence texts."
+                  "uk":  "Час і економіка: дата, пауза й швидкості x1-x8 (1 день = 1 с), справжнє населення, розвиток, скарбниця й дохід",
+                  "en":  "Time and economy: date, pause and speeds x1-x8 (1 day = 1 s), real population, development, treasury and income"
               }
 }
