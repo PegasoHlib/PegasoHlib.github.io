@@ -1,11 +1,11 @@
 {
-    "versionCode":  1200,
-    "versionName":  "0.12.0",
+    "versionCode":  1300,
+    "versionName":  "0.13.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "49c7d3412f5036728071a9c353a78e41493ed5e0fbe0ab7a7d38872ef04c75ed",
-    "size":  151522979,
+    "sha256":  "23360283e2783d2ef9e8142b4619e0aed89733fc8249386824817d05c543fbde",
+    "size":  151529959,
     "notes":  {
-                  "uk":  "Витрати й розвиток: чиновники провінцій, борги з відсотками, розбудова провінцій, платне перекроювання (відкат повертає гроші)",
-                  "en":  "Expenses and development: province officials, debt with interest, investing in provinces, paid redrawing (Undo refunds)"
+                  "uk":  "Стабільність: борги й чужі землі знижують її, низька стабільність — менше податків, падіння розвитку, повстання чужих провінцій. Етап 2 завершено",
+                  "en":  "Stability: debt and foreign land lower it; low stability means less tax, falling development and foreign provinces rising. Stage 2 done"
               }
 }
