@@ -2,8 +2,8 @@
     "versionCode":  601,
     "versionName":  "0.6.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "72b1d540c7b2a4b8be70acf744253f69fab121a43ddbc1cf528da87ab3b94d5a",
-    "size":  175468509,
+    "sha256":  "d18b9da725c1d60b9e4c4b1f751a29be68e79e9c45d3847ff0350b7dddac2cda",
+    "size":  175468641,
     "notes":  {
                   "uk":  "Виправлено: країни в Азії (Індія, Китай, Таїланд та інші) мали плями кольорів сусідів.",
                   "en":  "Fixed: countries in Asia (India, China, Thailand and others) had patches in their neighbours\u0027 colours."
