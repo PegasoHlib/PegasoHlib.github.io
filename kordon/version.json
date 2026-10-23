@@ -1,11 +1,11 @@
 {
-    "versionCode":  600,
-    "versionName":  "0.6.0",
+    "versionCode":  601,
+    "versionName":  "0.6.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
     "sha256":  "72b1d540c7b2a4b8be70acf744253f69fab121a43ddbc1cf528da87ab3b94d5a",
     "size":  175468509,
     "notes":  {
-                  "uk":  "Головне меню: нова гра (деталізація мапи для партії), вибір країни на мапі, налаштування, версія, екран завантаження. У грі кнопка «Меню», «Назад» на телефоні працює.",
-                  "en":  "Main menu: new game (map detail per game), choosing your country on the map, settings, version, loading screen. In the game a Menu button; the phone\u0027s Back works."
+                  "uk":  "Виправлено: країни в Азії (Індія, Китай, Таїланд та інші) мали плями кольорів сусідів.",
+                  "en":  "Fixed: countries in Asia (India, China, Thailand and others) had patches in their neighbours\u0027 colours."
               }
 }
