@@ -50,6 +50,7 @@ addEventListener("DOMContentLoaded", function () {
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/slid/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/slid/?lang=th">
 <link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/slid/?lang=zh">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/slid/?lang=zh-Hant">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/slid/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/slid/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/slid/?lang=kk">
@@ -74,6 +75,8 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
 :root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
 :root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
@@ -165,7 +168,7 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Slid</span></a>
   <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
@@ -178,11 +181,11 @@ main{max-width:960px}
     <p class="tagline">Your timeline, day by day</p>
     <p class="lead">Slid keeps the story of your places: where you go, the ways in between and the photos you take there — and all of it stays on your phone.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
     </div>
     <p class="note">Free · Android 8.0 or newer<br>After installing, the app updates itself.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="How it works">
@@ -198,7 +201,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-en">
     <h2 class="eyebrow" id="x-en">And also</h2>
-    <div class="chips"><span>25 languages</span><span>Light and dark theme</span><span>Adjustable text size</span><span>Weekly reports</span><span>Buses, trams, trains and metro</span><span>Personal step goal</span><span>Backups to a file</span></div>
+    <div class="chips"><span>26 languages</span><span>Light and dark theme</span><span>Adjustable text size</span><span>Weekly reports</span><span>Buses, trams, trains and metro</span><span>Personal step goal</span><span>Backups to a file</span></div>
   </section>
 
 
@@ -218,11 +221,11 @@ main{max-width:960px}
     <p class="tagline">Твоя хронологія день за днем</p>
     <p class="lead">Слід зберігає історію твоїх місць: куди ти ходиш і їздиш, шляхи між ними й фото, зроблені там, — і все це лишається на твоєму телефоні.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
     <p class="note">Безкоштовно · Android 8.0 або новіший<br>Після встановлення застосунок оновлюється сам.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Як це працює">
@@ -238,7 +241,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-uk">
     <h2 class="eyebrow" id="x-uk">А ще</h2>
-    <div class="chips"><span>25 мов</span><span>Світла й темна тема</span><span>Розмір тексту на вибір</span><span>Звіти тижнів</span><span>Автобуси, трамваї, потяги й метро</span><span>Своя ціль кроків</span><span>Резервна копія у файл</span></div>
+    <div class="chips"><span>26 мов</span><span>Світла й темна тема</span><span>Розмір тексту на вибір</span><span>Звіти тижнів</span><span>Автобуси, трамваї, потяги й метро</span><span>Своя ціль кроків</span><span>Резервна копія у файл</span></div>
   </section>
 
 
@@ -258,11 +261,11 @@ main{max-width:960px}
     <p class="tagline">Tu cronología, día a día</p>
     <p class="lead">Slid guarda la historia de tus lugares: adónde vas, los caminos entre ellos y las fotos que haces allí, y todo se queda en tu teléfono.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 o posterior<br>Una vez instalada, la app se actualiza sola.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Cómo funciona">
@@ -278,7 +281,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-es">
     <h2 class="eyebrow" id="x-es">Y además</h2>
-    <div class="chips"><span>25 idiomas</span><span>Tema claro y oscuro</span><span>Tamaño de texto ajustable</span><span>Resúmenes semanales</span><span>Autobuses, tranvías, trenes y metro</span><span>Meta de pasos personal</span><span>Copias de seguridad en un archivo</span></div>
+    <div class="chips"><span>26 idiomas</span><span>Tema claro y oscuro</span><span>Tamaño de texto ajustable</span><span>Resúmenes semanales</span><span>Autobuses, tranvías, trenes y metro</span><span>Meta de pasos personal</span><span>Copias de seguridad en un archivo</span></div>
   </section>
 
 
@@ -298,11 +301,11 @@ main{max-width:960px}
     <p class="tagline">A sua cronologia, dia a dia</p>
     <p class="lead">O Slid guarda a história dos seus locais: por onde anda, os caminhos entre eles e as fotos que lá tira, e tudo fica no seu telemóvel.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Grátis · Android 8.0 ou mais recente<br>Depois de instalada, a app atualiza-se sozinha.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -318,7 +321,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pt">
     <h2 class="eyebrow" id="x-pt">E ainda</h2>
-    <div class="chips"><span>25 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Resumos semanais</span><span>Autocarros, elétricos, comboios e metro</span><span>Meta de passos pessoal</span><span>Cópias de segurança num ficheiro</span></div>
+    <div class="chips"><span>26 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Resumos semanais</span><span>Autocarros, elétricos, comboios e metro</span><span>Meta de passos pessoal</span><span>Cópias de segurança num ficheiro</span></div>
   </section>
 
 
@@ -338,11 +341,11 @@ main{max-width:960px}
     <p class="tagline">Sua linha do tempo, dia após dia</p>
     <p class="lead">O Slid guarda a história dos seus lugares: aonde você vai, os caminhos entre eles e as fotos que você tira por lá — e tudo isso fica no seu celular.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Grátis · Android 8.0 ou mais recente<br>Depois de instalado, o app se atualiza sozinho.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -358,7 +361,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pt-BR">
     <h2 class="eyebrow" id="x-pt-BR">E mais</h2>
-    <div class="chips"><span>25 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Relatórios semanais</span><span>Ônibus, bondes, trens e metrô</span><span>Meta de passos pessoal</span><span>Backups em arquivo</span></div>
+    <div class="chips"><span>26 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Relatórios semanais</span><span>Ônibus, bondes, trens e metrô</span><span>Meta de passos pessoal</span><span>Backups em arquivo</span></div>
   </section>
 
 
@@ -378,11 +381,11 @@ main{max-width:960px}
     <p class="tagline">Votre chronologie, jour après jour</p>
     <p class="lead">Slid garde l’histoire de vos lieux : où vous allez, les chemins entre eux et les photos que vous y prenez, et tout reste sur votre téléphone.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
     <p class="note">Gratuit · Android 8.0 ou plus récent<br>Une fois installée, l’appli se met à jour toute seule.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Comment ça marche">
@@ -398,7 +401,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-fr">
     <h2 class="eyebrow" id="x-fr">Et aussi</h2>
-    <div class="chips"><span>25 langues</span><span>Thème clair et sombre</span><span>Taille du texte réglable</span><span>Bilans de la semaine</span><span>Bus, trams, trains et métro</span><span>Objectif de pas personnalisé</span><span>Sauvegardes dans un fichier</span></div>
+    <div class="chips"><span>26 langues</span><span>Thème clair et sombre</span><span>Taille du texte réglable</span><span>Bilans de la semaine</span><span>Bus, trams, trains et métro</span><span>Objectif de pas personnalisé</span><span>Sauvegardes dans un fichier</span></div>
   </section>
 
 
@@ -418,11 +421,11 @@ main{max-width:960px}
     <p class="tagline">Deine Zeitachse, Tag für Tag</p>
     <p class="lead">Slid bewahrt die Geschichte deiner Orte: wohin es dich zieht, die Wege dazwischen und die Fotos, die dort entstehen – und alles bleibt auf deinem Handy.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
     <p class="note">Kostenlos · Android 8.0 oder neuer<br>Nach der Installation aktualisiert sich die App von selbst.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="So funktioniert’s">
@@ -438,7 +441,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-de">
     <h2 class="eyebrow" id="x-de">Außerdem</h2>
-    <div class="chips"><span>25 Sprachen</span><span>Helles und dunkles Design</span><span>Anpassbare Textgröße</span><span>Wochenberichte</span><span>Bus, Tram, Zug und U-Bahn</span><span>Persönliches Schrittziel</span><span>Sicherungen in eine Datei</span></div>
+    <div class="chips"><span>26 Sprachen</span><span>Helles und dunkles Design</span><span>Anpassbare Textgröße</span><span>Wochenberichte</span><span>Bus, Tram, Zug und U-Bahn</span><span>Persönliches Schrittziel</span><span>Sicherungen in eine Datei</span></div>
   </section>
 
 
@@ -458,11 +461,11 @@ main{max-width:960px}
     <p class="tagline">Je tijdlijn, dag voor dag</p>
     <p class="lead">Slid bewaart het verhaal van je plekken: waar je naartoe gaat, de wegen daartussen en de foto’s die je daar maakt — en alles blijft op je telefoon.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Downloaden voor Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Downloaden voor Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacybeleid</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 of nieuwer<br>Na de installatie werkt de app zichzelf bij.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Zo werkt het">
@@ -478,7 +481,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-nl">
     <h2 class="eyebrow" id="x-nl">En verder</h2>
-    <div class="chips"><span>25 talen</span><span>Licht en donker thema</span><span>Instelbare tekstgrootte</span><span>Weekrapporten</span><span>Bussen, trams, treinen en metro</span><span>Persoonlijk stappendoel</span><span>Back-ups naar een bestand</span></div>
+    <div class="chips"><span>26 talen</span><span>Licht en donker thema</span><span>Instelbare tekstgrootte</span><span>Weekrapporten</span><span>Bussen, trams, treinen en metro</span><span>Persoonlijk stappendoel</span><span>Back-ups naar een bestand</span></div>
   </section>
 
 
@@ -498,11 +501,11 @@ main{max-width:960px}
     <p class="tagline">La tua cronologia, giorno per giorno</p>
     <p class="lead">Slid conserva la storia dei tuoi luoghi: dove vai, le strade tra un posto e l’altro e le foto che scatti lì, e tutto resta sul tuo telefono.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 o successivo<br>Dopo l’installazione l’app si aggiorna da sola.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Come funziona">
@@ -518,7 +521,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-it">
     <h2 class="eyebrow" id="x-it">E inoltre</h2>
-    <div class="chips"><span>25 lingue</span><span>Tema chiaro e scuro</span><span>Dimensione del testo regolabile</span><span>Resoconti settimanali</span><span>Autobus, tram, treni e metro</span><span>Obiettivo di passi personale</span><span>Backup su file</span></div>
+    <div class="chips"><span>26 lingue</span><span>Tema chiaro e scuro</span><span>Dimensione del testo regolabile</span><span>Resoconti settimanali</span><span>Autobus, tram, treni e metro</span><span>Obiettivo di passi personale</span><span>Backup su file</span></div>
   </section>
 
 
@@ -538,11 +541,11 @@ main{max-width:960px}
     <p class="tagline">Twoja oś czasu, dzień po dniu</p>
     <p class="lead">Slid przechowuje historię Twoich miejsc: dokąd chodzisz, drogi pomiędzy nimi i zdjęcia, które tam robisz — a wszystko to zostaje na Twoim telefonie.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Polityka prywatności</span></a>
     </div>
     <p class="note">Za darmo · Android 8.0 lub nowszy<br>Po instalacji aplikacja aktualizuje się sama.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Jak to działa">
@@ -558,7 +561,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pl">
     <h2 class="eyebrow" id="x-pl">A także</h2>
-    <div class="chips"><span>25 języków</span><span>Jasny i ciemny motyw</span><span>Regulowany rozmiar tekstu</span><span>Raporty tygodniowe</span><span>Autobusy, tramwaje, pociągi i metro</span><span>Własny cel kroków</span><span>Kopie zapasowe do pliku</span></div>
+    <div class="chips"><span>26 języków</span><span>Jasny i ciemny motyw</span><span>Regulowany rozmiar tekstu</span><span>Raporty tygodniowe</span><span>Autobusy, tramwaje, pociągi i metro</span><span>Własny cel kroków</span><span>Kopie zapasowe do pliku</span></div>
   </section>
 
 
@@ -578,11 +581,11 @@ main{max-width:960px}
     <p class="tagline">Tvoje časová osa, den po dni</p>
     <p class="lead">Slid uchovává příběh tvých míst: kam chodíš, cesty mezi nimi a fotky, které tam pořídíš — a to všechno zůstává v tvém telefonu.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany soukromí</span></a>
     </div>
     <p class="note">Zdarma · Android 8.0 nebo novější<br>Po instalaci se aplikace aktualizuje sama.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Jak to funguje">
@@ -598,7 +601,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-cs">
     <h2 class="eyebrow" id="x-cs">A také</h2>
-    <div class="chips"><span>25 jazyků</span><span>Světlý a tmavý motiv</span><span>Nastavitelná velikost textu</span><span>Týdenní přehledy</span><span>Autobusy, tramvaje, vlaky a metro</span><span>Vlastní cíl kroků</span><span>Zálohy do souboru</span></div>
+    <div class="chips"><span>26 jazyků</span><span>Světlý a tmavý motiv</span><span>Nastavitelná velikost textu</span><span>Týdenní přehledy</span><span>Autobusy, tramvaje, vlaky a metro</span><span>Vlastní cíl kroků</span><span>Zálohy do souboru</span></div>
   </section>
 
 
@@ -618,11 +621,11 @@ main{max-width:960px}
     <p class="tagline">Tvoja časová os, deň po dni</p>
     <p class="lead">Slid uchováva príbeh tvojich miest: kam chodíš, cesty medzi nimi a fotky, ktoré tam odfotíš — a to všetko zostáva v tvojom telefóne.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany súkromia</span></a>
     </div>
     <p class="note">Zadarmo · Android 8.0 alebo novší<br>Po inštalácii sa aplikácia aktualizuje sama.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Ako to funguje">
@@ -638,7 +641,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-sk">
     <h2 class="eyebrow" id="x-sk">A tiež</h2>
-    <div class="chips"><span>25 jazykov</span><span>Svetlý a tmavý motív</span><span>Nastaviteľná veľkosť textu</span><span>Týždenné prehľady</span><span>Autobusy, električky, vlaky a metro</span><span>Vlastný cieľ krokov</span><span>Zálohy do súboru</span></div>
+    <div class="chips"><span>26 jazykov</span><span>Svetlý a tmavý motív</span><span>Nastaviteľná veľkosť textu</span><span>Týždenné prehľady</span><span>Autobusy, električky, vlaky a metro</span><span>Vlastný cieľ krokov</span><span>Zálohy do súboru</span></div>
   </section>
 
 
@@ -658,11 +661,11 @@ main{max-width:960px}
     <p class="tagline">Din tidslinje, dag for dag</p>
     <p class="lead">Slid gemmer historien om dine steder: hvor du tager hen, vejene imellem og de billeder, du tager undervejs — og det hele bliver på din telefon.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privatlivspolitik</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 eller nyere<br>Efter installationen opdaterer appen sig selv.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Sådan virker det">
@@ -678,7 +681,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-da">
     <h2 class="eyebrow" id="x-da">Og desuden</h2>
-    <div class="chips"><span>25 sprog</span><span>Lyst og mørkt tema</span><span>Justerbar tekststørrelse</span><span>Ugentlige rapporter</span><span>Busser, sporvogne, tog og metro</span><span>Personligt skridtmål</span><span>Backup til en fil</span></div>
+    <div class="chips"><span>26 sprog</span><span>Lyst og mørkt tema</span><span>Justerbar tekststørrelse</span><span>Ugentlige rapporter</span><span>Busser, sporvogne, tog og metro</span><span>Personligt skridtmål</span><span>Backup til en fil</span></div>
   </section>
 
 
@@ -698,11 +701,11 @@ main{max-width:960px}
     <p class="tagline">Din tidslinje, dag för dag</p>
     <p class="lead">Slid bevarar historien om dina platser: vart du åker, vägarna däremellan och fotona du tar där – och allt stannar på din telefon.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 eller senare<br>Efter installationen uppdaterar appen sig själv.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Så fungerar det">
@@ -718,7 +721,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-sv">
     <h2 class="eyebrow" id="x-sv">Dessutom</h2>
-    <div class="chips"><span>25 språk</span><span>Ljust och mörkt tema</span><span>Justerbar textstorlek</span><span>Veckorapporter</span><span>Buss, spårvagn, tåg och tunnelbana</span><span>Personligt stegmål</span><span>Säkerhetskopior till fil</span></div>
+    <div class="chips"><span>26 språk</span><span>Ljust och mörkt tema</span><span>Justerbar textstorlek</span><span>Veckorapporter</span><span>Buss, spårvagn, tåg och tunnelbana</span><span>Personligt stegmål</span><span>Säkerhetskopior till fil</span></div>
   </section>
 
 
@@ -738,11 +741,11 @@ main{max-width:960px}
     <p class="tagline">Gün gün zaman çizelgen</p>
     <p class="lead">Slid, yerlerinin hikâyesini saklar: nereye gittiğini, aradaki yolları ve oralarda çektiğin fotoğrafları — ve hepsi telefonunda kalır.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Gizlilik politikası</span></a>
     </div>
     <p class="note">Ücretsiz · Android 8.0 veya üzeri<br>Kurulumdan sonra uygulama kendini günceller.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Nasıl çalışır">
@@ -758,7 +761,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-tr">
     <h2 class="eyebrow" id="x-tr">Ayrıca</h2>
-    <div class="chips"><span>25 dil</span><span>Açık ve koyu tema</span><span>Ayarlanabilir yazı boyutu</span><span>Haftalık raporlar</span><span>Otobüs, tramvay, tren ve metro</span><span>Kişisel adım hedefi</span><span>Dosyaya yedekleme</span></div>
+    <div class="chips"><span>26 dil</span><span>Açık ve koyu tema</span><span>Ayarlanabilir yazı boyutu</span><span>Haftalık raporlar</span><span>Otobüs, tramvay, tren ve metro</span><span>Kişisel adım hedefi</span><span>Dosyaya yedekleme</span></div>
   </section>
 
 
@@ -778,11 +781,11 @@ main{max-width:960px}
     <p class="tagline">خطك الزمني، يومًا بيوم</p>
     <p class="lead">يحفظ Slid حكاية أماكنك: إلى أين تذهب، والطرق بينها، والصور التي تلتقطها هناك — وكل ذلك يبقى على هاتفك.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>تنزيل لنظام Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>تنزيل لنظام Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>سياسة الخصوصية</span></a>
     </div>
     <p class="note">مجاني · Android 8.0 أو أحدث<br>بعد التثبيت، يحدّث التطبيق نفسه بنفسه.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="كيف يعمل">
@@ -798,7 +801,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ar">
     <h2 class="eyebrow" id="x-ar">وأيضًا</h2>
-    <div class="chips"><span>25 لغة</span><span>سمة فاتحة وداكنة</span><span>حجم نص قابل للتعديل</span><span>تقارير أسبوعية</span><span>الحافلات والترام والقطارات والمترو</span><span>هدف خطوات شخصي</span><span>نسخ احتياطية إلى ملف</span></div>
+    <div class="chips"><span>26 لغة</span><span>سمة فاتحة وداكنة</span><span>حجم نص قابل للتعديل</span><span>تقارير أسبوعية</span><span>الحافلات والترام والقطارات والمترو</span><span>هدف خطوات شخصي</span><span>نسخ احتياطية إلى ملف</span></div>
   </section>
 
 
@@ -818,11 +821,11 @@ main{max-width:960px}
     <p class="tagline">आपकी टाइमलाइन, दिन-ब-दिन</p>
     <p class="lead">Slid आपकी जगहों की कहानी सँजोता है: आप कहाँ जाते हैं, बीच के रास्ते और वहाँ ली गई तस्वीरें — और यह सब आपके फ़ोन पर ही रहता है।</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>गोपनीयता नीति</span></a>
     </div>
     <p class="note">मुफ़्त · Android 8.0 या नया<br>इंस्टॉल करने के बाद ऐप ख़ुद अपडेट होता है।</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="यह कैसे काम करता है">
@@ -838,7 +841,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-hi">
     <h2 class="eyebrow" id="x-hi">और भी</h2>
-    <div class="chips"><span>25 भाषाएँ</span><span>लाइट और डार्क थीम</span><span>बदला जा सकने वाला टेक्स्ट साइज़</span><span>हफ़्ते की रिपोर्ट</span><span>बस, ट्राम, ट्रेन और मेट्रो</span><span>निजी कदम लक्ष्य</span><span>फ़ाइल में बैकअप</span></div>
+    <div class="chips"><span>26 भाषाएँ</span><span>लाइट और डार्क थीम</span><span>बदला जा सकने वाला टेक्स्ट साइज़</span><span>हफ़्ते की रिपोर्ट</span><span>बस, ट्राम, ट्रेन और मेट्रो</span><span>निजी कदम लक्ष्य</span><span>फ़ाइल में बैकअप</span></div>
   </section>
 
 
@@ -858,11 +861,11 @@ main{max-width:960px}
     <p class="tagline">Linimasa, hari demi hari</p>
     <p class="lead">Slid menyimpan kisah tempat-tempat yang dikunjungi: ke mana pergi, jalan di antaranya, dan foto yang diambil di sana — dan semuanya tetap di ponsel.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan privasi</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 atau lebih baru<br>Setelah dipasang, aplikasi memperbarui dirinya sendiri.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Cara kerjanya">
@@ -878,7 +881,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-id">
     <h2 class="eyebrow" id="x-id">Selain itu</h2>
-    <div class="chips"><span>25 bahasa</span><span>Tema terang dan gelap</span><span>Ukuran teks bisa diatur</span><span>Laporan mingguan</span><span>Bus, trem, kereta, dan MRT</span><span>Target langkah pribadi</span><span>Cadangan ke file</span></div>
+    <div class="chips"><span>26 bahasa</span><span>Tema terang dan gelap</span><span>Ukuran teks bisa diatur</span><span>Laporan mingguan</span><span>Bus, trem, kereta, dan MRT</span><span>Target langkah pribadi</span><span>Cadangan ke file</span></div>
   </section>
 
 
@@ -898,11 +901,11 @@ main{max-width:960px}
     <p class="tagline">Dòng thời gian của bạn, từng ngày một</p>
     <p class="lead">Slid lưu giữ câu chuyện về những nơi bạn đến: bạn đi đâu, những chặng đường ở giữa và những bức ảnh bạn chụp ở đó — và tất cả đều ở lại trên điện thoại của bạn.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải về cho Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải về cho Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Chính sách quyền riêng tư</span></a>
     </div>
     <p class="note">Miễn phí · Android 8.0 trở lên<br>Sau khi cài đặt, ứng dụng tự cập nhật.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Cách hoạt động">
@@ -918,7 +921,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-vi">
     <h2 class="eyebrow" id="x-vi">Và còn nữa</h2>
-    <div class="chips"><span>25 ngôn ngữ</span><span>Giao diện sáng và tối</span><span>Cỡ chữ tùy chỉnh</span><span>Báo cáo hằng tuần</span><span>Xe buýt, xe điện, tàu hỏa và tàu điện ngầm</span><span>Mục tiêu số bước riêng</span><span>Sao lưu ra tệp</span></div>
+    <div class="chips"><span>26 ngôn ngữ</span><span>Giao diện sáng và tối</span><span>Cỡ chữ tùy chỉnh</span><span>Báo cáo hằng tuần</span><span>Xe buýt, xe điện, tàu hỏa và tàu điện ngầm</span><span>Mục tiêu số bước riêng</span><span>Sao lưu ra tệp</span></div>
   </section>
 
 
@@ -938,11 +941,11 @@ main{max-width:960px}
     <p class="tagline">ไทม์ไลน์ของคุณ ทีละวัน</p>
     <p class="lead">Slid เก็บเรื่องราวของสถานที่ต่าง ๆ ของคุณ: ที่ที่คุณไป เส้นทางระหว่างทาง และรูปที่คุณถ่ายไว้ที่นั่น — และทั้งหมดอยู่ในโทรศัพท์ของคุณเท่านั้น</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>นโยบายความเป็นส่วนตัว</span></a>
     </div>
     <p class="note">ฟรี · Android 8.0 ขึ้นไป<br>หลังติดตั้งแล้ว แอปจะอัปเดตตัวเองโดยอัตโนมัติ</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="ทำงานอย่างไร">
@@ -958,7 +961,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-th">
     <h2 class="eyebrow" id="x-th">และยังมี</h2>
-    <div class="chips"><span>25 ภาษา</span><span>ธีมสว่างและมืด</span><span>ปรับขนาดตัวอักษรได้</span><span>รายงานประจำสัปดาห์</span><span>รถเมล์ รถราง รถไฟ และรถไฟใต้ดิน</span><span>เป้าหมายจำนวนก้าวส่วนตัว</span><span>สำรองข้อมูลเป็นไฟล์</span></div>
+    <div class="chips"><span>26 ภาษา</span><span>ธีมสว่างและมืด</span><span>ปรับขนาดตัวอักษรได้</span><span>รายงานประจำสัปดาห์</span><span>รถเมล์ รถราง รถไฟ และรถไฟใต้ดิน</span><span>เป้าหมายจำนวนก้าวส่วนตัว</span><span>สำรองข้อมูลเป็นไฟล์</span></div>
   </section>
 
 
@@ -978,11 +981,11 @@ main{max-width:960px}
     <p class="tagline">你的时间线，一天又一天</p>
     <p class="lead">Slid 记录你足迹的故事：你去过的地方、途中的路线，以及你在那里拍下的照片——而且全部都留在你的手机上。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下载 Android 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下载 Android 版</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>隐私政策</span></a>
     </div>
     <p class="note">免费 · Android 8.0 或更高版本<br>安装后，应用会自动更新。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="使用方法">
@@ -998,7 +1001,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-zh">
     <h2 class="eyebrow" id="x-zh">此外</h2>
-    <div class="chips"><span>25 种语言</span><span>浅色和深色主题</span><span>可调文字大小</span><span>每周报告</span><span>公交、有轨电车、火车和地铁</span><span>个人步数目标</span><span>备份到文件</span></div>
+    <div class="chips"><span>26 种语言</span><span>浅色和深色主题</span><span>可调文字大小</span><span>每周报告</span><span>公交、有轨电车、火车和地铁</span><span>个人步数目标</span><span>备份到文件</span></div>
   </section>
 
 
@@ -1010,6 +1013,46 @@ main{max-width:960px}
 
   <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
+<article class="langdoc" lang="zh-Hant" dir="ltr" data-lang="zh-Hant" data-title="Slid — 你的時間軸，一天又一天" data-app="Slid" data-langlabel="語言" data-nav="首頁|隱私權" data-hub="PegasoHlib — 所有應用程式" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Android 應用程式</p>
+    <h1>Slid</h1>
+    <p class="tagline">你的時間軸，一天又一天</p>
+    <p class="lead">Slid 記錄你足跡的故事：你去過的地方、途中的路線，以及你在那裡拍下的相片——而且全部都留在你的手機上。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下載 Android 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>隱私權政策</span></a>
+    </div>
+    <p class="note">免費 · Android 8.0 以上版本<br>安裝後，應用程式會自動更新。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下載次數: ≈ <b data-count="slid">34</b></p>
+  </header>
+
+  <section class="show" aria-label="使用方式">
+    <div class="showtext"><h2 class="display">使用方式</h2><p>三個步驟，從一張空白地圖到你的完整故事。</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>記錄新的日子</h3><p>手機會記下你所在的位置，幾乎不耗電。</p></div></li><li><span class="num">2</span><div><h3>從 Google 匯入過去</h3><p>你的 Google 地圖時間軸，所有儲存過的年份。</p></div></li><li><span class="num">3</span><div><h3>相片上地圖</h3><p>相簿裡的相片各就各位，即使沒有 GPS 資訊的也一樣。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh-Hant">
+    <h2 class="eyebrow" id="f-zh-Hant">它能做什麼</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>每一天，原原本本</h3><p>你去了哪裡、怎麼去的：步行、騎單車、開車、搭火車或搭飛機。移動時精確，停留時省電。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>來自 Google 的多年紀錄</h3><p>匯入你完整的 Google 地圖時間軸——匯出檔案或 Google Takeout 都可以。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>相片上地圖</h3><p>相簿裡的相片各就各位，即使沒有 GPS 資訊的也一樣。別人傳給你的相片則不會被定位。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>你見過的世界</h3><p>標出你去過的國家的地球儀、熱度圖，以及在你到過的地方逐漸散去的世界迷霧。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>國家和城市</h3><p>去過多少、第一次是什麼時候、待了多久——以及每一年的精彩時刻。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>還有你的手錶</h3><p>透過 Health Connect 取得手錶記錄的步數、心率、睡眠和運動，顯示在當天旁邊。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>遺漏的行程</h3><p>發現兩個地點之間少了一段行程時會提醒你補上，或者自動補齊。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>小工具</h3><p>此刻、今天、本週和已探索的世界，直接顯示在主畫面上。</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>手機和平板</h3><p>備份在你自己的 Google 雲端硬碟中，一分鐘換好新手機，平板也能顯示手機上的時間軸。</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-zh-Hant">
+    <h2 class="eyebrow" id="x-zh-Hant">此外</h2>
+    <div class="chips"><span>26 種語言</span><span>淺色和深色主題</span><span>可調整文字大小</span><span>每週報告</span><span>公車、路面電車、火車和捷運</span><span>個人步數目標</span><span>備份成檔案</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">從設計上保護隱私</h2><p><b>留在你的手機上。</b>沒有伺服器，沒有帳號，沒有廣告，沒有分析。<br><b>由你決定。</b>每項權限和每個連網功能都是選用的。<br><b>你的備份，你的雲端硬碟。</b>只使用你自己 Google 雲端硬碟中 Slid 的隱藏資料夾。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>閱讀隱私權政策</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">問題與建議: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
 <article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="Slid — 하루하루 쌓이는 나의 타임라인" data-app="Slid" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
@@ -1018,11 +1061,11 @@ main{max-width:960px}
     <p class="tagline">하루하루 쌓이는 나의 타임라인</p>
     <p class="lead">Slid는 내가 다닌 곳의 이야기를 간직해요. 어디에 갔는지, 그 사이의 길, 그곳에서 찍은 사진까지 — 그리고 모든 것이 내 휴대폰에만 남아요.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>개인정보처리방침</span></a>
     </div>
     <p class="note">무료 · Android 8.0 이상<br>설치 후에는 앱이 스스로 업데이트돼요.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="이렇게 작동해요">
@@ -1038,7 +1081,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ko">
     <h2 class="eyebrow" id="x-ko">그 밖에도</h2>
-    <div class="chips"><span>25개 언어</span><span>라이트·다크 테마</span><span>글자 크기 조절</span><span>주간 리포트</span><span>버스, 트램, 기차, 지하철</span><span>나만의 걸음 수 목표</span><span>파일로 백업</span></div>
+    <div class="chips"><span>26개 언어</span><span>라이트·다크 테마</span><span>글자 크기 조절</span><span>주간 리포트</span><span>버스, 트램, 기차, 지하철</span><span>나만의 걸음 수 목표</span><span>파일로 백업</span></div>
   </section>
 
 
@@ -1058,11 +1101,11 @@ main{max-width:960px}
     <p class="tagline">あなたのタイムラインを日ごとに</p>
     <p class="lead">スリドは、訪れた場所の記録を残します。行き先、その間の道のり、そこで撮った写真。そしてそのすべてがスマートフォンの中だけに残ります。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシー ポリシー</span></a>
     </div>
     <p class="note">無料 · Android 8.0 以降<br>インストール後は、アプリが自動でアップデートされます。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="使い方">
@@ -1078,7 +1121,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ja">
     <h2 class="eyebrow" id="x-ja">さらに</h2>
-    <div class="chips"><span>25言語に対応</span><span>ライト・ダークテーマ</span><span>文字サイズを調整可能</span><span>週のレポート</span><span>バス・路面電車・電車・地下鉄</span><span>あなたに合った歩数目標</span><span>ファイルへのバックアップ</span></div>
+    <div class="chips"><span>26言語に対応</span><span>ライト・ダークテーマ</span><span>文字サイズを調整可能</span><span>週のレポート</span><span>バス・路面電車・電車・地下鉄</span><span>あなたに合った歩数目標</span><span>ファイルへのバックアップ</span></div>
   </section>
 
 
@@ -1098,11 +1141,11 @@ main{max-width:960px}
     <p class="tagline">Хронологияңыз күн сайын</p>
     <p class="lead">Слід сіз барған орындардың тарихын сақтайды: қайда барасыз, арасындағы жолдар және сол жерде түсірген фотолар, — бәрі телефоныңызда қалады.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялық саясаты</span></a>
     </div>
     <p class="note">Тегін · Android 8.0 немесе одан жаңа<br>Орнатқаннан кейін қолданба өзі жаңарып отырады.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Қалай жұмыс істейді">
@@ -1118,7 +1161,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-kk">
     <h2 class="eyebrow" id="x-kk">Тағы да</h2>
-    <div class="chips"><span>25 тіл</span><span>Ашық және қараңғы тақырып</span><span>Мәтін өлшемін баптау</span><span>Апта есептері</span><span>Автобус, трамвай, пойыз және метро</span><span>Жеке қадам мақсаты</span><span>Файлға сақтық көшірме</span></div>
+    <div class="chips"><span>26 тіл</span><span>Ашық және қараңғы тақырып</span><span>Мәтін өлшемін баптау</span><span>Апта есептері</span><span>Автобус, трамвай, пойыз және метро</span><span>Жеке қадам мақсаты</span><span>Файлға сақтық көшірме</span></div>
   </section>
 
 
@@ -1138,11 +1181,11 @@ main{max-width:960px}
     <p class="tagline">Твоя хронология день за днём</p>
     <p class="lead">Слід хранит историю твоих мест: куда ты ходишь и ездишь, пути между ними и фото, сделанные там, — и всё это остаётся на твоём телефоне.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.7/Slid-0.9.7.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.9/Slid-0.9.9.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
     <p class="note">Бесплатно · Android 8.0 или новее<br>После установки приложение обновляется само.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="slid">33</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="slid">34</b></p>
   </header>
 
   <section class="show" aria-label="Как это работает">
@@ -1158,7 +1201,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ru">
     <h2 class="eyebrow" id="x-ru">А ещё</h2>
-    <div class="chips"><span>25 языков</span><span>Светлая и тёмная тема</span><span>Размер текста на выбор</span><span>Отчёты недель</span><span>Автобусы, трамваи, поезда и метро</span><span>Своя цель по шагам</span><span>Резервные копии в файл</span></div>
+    <div class="chips"><span>26 языков</span><span>Светлая и тёмная тема</span><span>Размер текста на выбор</span><span>Отчёты недель</span><span>Автобусы, трамваи, поезда и метро</span><span>Своя цель по шагам</span><span>Резервные копии в файл</span></div>
   </section>
 
 
@@ -1176,8 +1219,9 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], RTL = ["ar"], low = {};
+  // Chinese: zh-TW, zh-HK, zh-MO and zh-Hant… take "zh-Hant" (Traditional); zh-CN, zh-Hans, zh-SG and plain zh take "zh"
+  // (Simplified) through the first part of the code, and so does Traditional on a site without zh-Hant.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv", "zh-tw": "zh-hant", "zh-hk": "zh-hant", "zh-mo": "zh-hant" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
