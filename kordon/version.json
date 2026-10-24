@@ -1,11 +1,11 @@
 {
-    "versionCode":  1602,
-    "versionName":  "0.16.2",
+    "versionCode":  1700,
+    "versionName":  "0.17.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "a130403f750d328da1d95b215b38870681300912e8d1906b030e00e6a69c77e3",
-    "size":  181540049,
+    "sha256":  "a1ff4c661901b4e8185fc01f182e0abffcd09ad4be0ff1f9f6d0193945941e3f",
+    "size":  181551745,
     "notes":  {
-                  "uk":  "Менший розмір: дані землі стиснуті.",
-                  "en":  "Smaller download: land data compressed."
+                  "uk":  "Армії: набір з людей провінції, утримання, марш по сотах (ліс, болота, гори й річки повільніші). Країни стартують із запасом грошей. Тестові «Забрати / Віддати» прибрано.",
+                  "en":  "Armies: raised from a province\u0027s people, upkeep, marching over cells (forests, marshes, mountains and rivers slower). Countries start with savings. Test Take / Give removed."
               }
 }
