@@ -1,11 +1,11 @@
 {
-    "versionCode":  1601,
-    "versionName":  "0.16.1",
+    "versionCode":  1602,
+    "versionName":  "0.16.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "ed3d2ef119c42a47e4d40938538ad7d9debaf2b67f1be873a5eec5a461a303b9",
-    "size":  194299761,
+    "sha256":  "a130403f750d328da1d95b215b38870681300912e8d1906b030e00e6a69c77e3",
+    "size":  181540049,
     "notes":  {
-                  "uk":  "16 типів землі за справжньою рослинністю (ліси, степи, болота, гірські луки…), температура й опади кожної соти, родючість від тепла, води й ґрунту.",
-                  "en":  "16 kinds of land from real vegetation (forests, steppes, marshes, mountain meadows…), each cell\u0027s temperature and rain, food from warmth, water and soil."
+                  "uk":  "Менший розмір: дані землі стиснуті.",
+                  "en":  "Smaller download: land data compressed."
               }
 }
