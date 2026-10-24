@@ -1,11 +1,31 @@
 {
-  "versionCode": 34,
-  "versionName": "0.29.5",
-  "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk",
-  "sha256": "42c89c960307b7727d4e445f203ca9261811cad6fe53903d1d9641eba547d3e8",
-  "size": 5283336,
+  "versionCode": 35,
+  "versionName": "0.30.0",
+  "apk": "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk",
+  "sha256": "69fc9dd3feda10006cf9f7d8b78b0b13a678d6d071dd9ea95c13ba3344db5bf1",
+  "size": 5494564,
   "notes": {
-    "uk": "Великий трафік тепер у терабайтах",
-    "en": "Large traffic is now shown in terabytes"
+    "en": "New languages: Portuguese (Brazil), Turkish, Polish, Vietnamese, Thai, Korean, Czech, Slovak, Danish.",
+    "uk": "Нові мови: португальська (Бразилія), турецька, польська, в'єтнамська, тайська, корейська, чеська, словацька, данська.",
+    "ru": "Новые языки: португальский (Бразилия), турецкий, польский, вьетнамский, тайский, корейский, чешский, словацкий, датский.",
+    "es": "Nuevos idiomas: portugués (Brasil), turco, polaco, vietnamita, tailandés, coreano, checo, eslovaco, danés.",
+    "pt": "Novos idiomas: português (Brasil), turco, polaco, vietnamita, tailandês, coreano, checo, eslovaco, dinamarquês.",
+    "pt-BR": "Novos idiomas: português (Brasil), turco, polonês, vietnamita, tailandês, coreano, tcheco, eslovaco, dinamarquês.",
+    "fr": "Nouvelles langues : portugais (Brésil), turc, polonais, vietnamien, thaï, coréen, tchèque, slovaque, danois.",
+    "de": "Neue Sprachen: Portugiesisch (Brasilien), Türkisch, Polnisch, Vietnamesisch, Thailändisch, Koreanisch, Tschechisch, Slowakisch, Dänisch.",
+    "it": "Nuove lingue: portoghese (Brasile), turco, polacco, vietnamita, thailandese, coreano, ceco, slovacco, danese.",
+    "sv": "Nya språk: portugisiska (Brasilien), turkiska, polska, vietnamesiska, thailändska, koreanska, tjeckiska, slovakiska, danska.",
+    "da": "Nye sprog: portugisisk (Brasilien), tyrkisk, polsk, vietnamesisk, thai, koreansk, tjekkisk, slovakisk, dansk.",
+    "pl": "Nowe języki: portugalski (Brazylia), turecki, polski, wietnamski, tajski, koreański, czeski, słowacki, duński.",
+    "cs": "Nové jazyky: portugalština (Brazílie), turečtina, polština, vietnamština, thajština, korejština, čeština, slovenština, dánština.",
+    "sk": "Nové jazyky: portugalčina (Brazília), turečtina, poľština, vietnamčina, thajčina, kórejčina, čeština, slovenčina, dánčina.",
+    "tr": "Yeni diller: Portekizce (Brezilya), Türkçe, Lehçe, Vietnamca, Tayca, Korece, Çekçe, Slovakça, Danca.",
+    "id": "Bahasa baru: Portugis (Brasil), Turki, Polandia, Vietnam, Thai, Korea, Ceko, Slovakia, Denmark.",
+    "in": "Bahasa baru: Portugis (Brasil), Turki, Polandia, Vietnam, Thai, Korea, Ceko, Slovakia, Denmark.",
+    "vi": "Ngôn ngữ mới: tiếng Bồ Đào Nha (Brazil), tiếng Thổ Nhĩ Kỳ, tiếng Ba Lan, tiếng Việt, tiếng Thái, tiếng Hàn, tiếng Séc, tiếng Slovakia, tiếng Đan Mạch.",
+    "th": "ภาษาใหม่: โปรตุเกส (บราซิล), ตุรกี, โปแลนด์, เวียดนาม, ไทย, เกาหลี, เช็ก, สโลวัก, เดนมาร์ก",
+    "ko": "새 언어: 포르투갈어(브라질), 튀르키예어, 폴란드어, 베트남어, 태국어, 한국어, 체코어, 슬로바키아어, 덴마크어.",
+    "ja": "新しい言語：ポルトガル語（ブラジル）、トルコ語、ポーランド語、ベトナム語、タイ語、韓国語、チェコ語、スロバキア語、デンマーク語。",
+    "kk": "Жаңа тілдер: португал (Бразилия), түрік, поляк, вьетнам, тай, корей, чех, словак, дат тілдері."
   }
 }
