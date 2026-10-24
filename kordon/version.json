@@ -1,11 +1,11 @@
 {
-    "versionCode":  1702,
-    "versionName":  "0.17.2",
+    "versionCode":  1703,
+    "versionName":  "0.17.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "a043fe408229f609a18cfd622a447728c1dbe8c6f84082c2db597b8b236ecf7e",
-    "size":  181558509,
+    "sha256":  "214e955bbd052d55b2df7c879040d3ccadea867c0261d84c110cbba712f16f83",
+    "size":  181885239,
     "notes":  {
-                  "uk":  "Армії можна об\u0027єднувати. Регіон вибирається лише при сильнішому наближенні, інакше — країна.",
-                  "en":  "Armies can join. A province is picked only close up, otherwise the country."
+                  "uk":  "Нова іконка гри.",
+                  "en":  "New game icon."
               }
 }
