@@ -33,11 +33,20 @@ addEventListener("DOMContentLoaded", function () {
 <link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/slid/privacy.html?lang=uk">
 <link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/slid/privacy.html?lang=es">
 <link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/slid/privacy.html?lang=pt">
+<link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/slid/privacy.html?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/slid/privacy.html?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/slid/privacy.html?lang=de">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/slid/privacy.html?lang=it">
+<link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/slid/privacy.html?lang=pl">
+<link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/slid/privacy.html?lang=cs">
+<link rel="alternate" hreflang="sk" href="https://pegasohlib.github.io/slid/privacy.html?lang=sk">
+<link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/slid/privacy.html?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/slid/privacy.html?lang=sv">
+<link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/slid/privacy.html?lang=tr">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/slid/privacy.html?lang=id">
+<link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/slid/privacy.html?lang=vi">
+<link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/slid/privacy.html?lang=th">
+<link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/slid/privacy.html?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/slid/privacy.html?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/slid/privacy.html?lang=kk">
 <link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/slid/privacy.html?lang=ru">
@@ -53,6 +62,10 @@ addEventListener("DOMContentLoaded", function () {
 .tile{width:40px;height:40px;padding:9px;background:var(--h0)}
 .t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
 h2.eyebrow{font-family:inherit;line-height:1.4}
+:root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
+:root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
+:root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -121,7 +134,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Slid</span></a>
   <nav class="links"><a data-nav="0" href="index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
@@ -438,6 +451,84 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
+<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Política de privacidade · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Política de privacidade</h1>
+    <p class="date">Em vigor desde 22 de outubro de 2026</p>
+    <p class="lead">Esta política se aplica ao app “Slid” (pacote dev.slid). O Slid não tem servidores próprios, nem contas, nem anúncios, nem análises. Sua linha do tempo fica no seu celular, e o desenvolvedor nunca a recebe nem a vê.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="pt-BR-glance">
+    <h2 id="pt-BR-glance" class="eyebrow">Resumindo</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Fica no seu celular</b><br>A linha do tempo, os lugares e os locais das fotos ficam salvos só no aparelho.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Nada sobre você é enviado</b><br>Sem contas, sem rastreamento, sem anúncios, sem análises.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Você decide</b><br>Toda permissão e todo recurso online são opcionais e podem ser desativados.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Fácil de apagar</b><br>Apague qualquer registro — ou desinstale o app e tudo some.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Seu backup, seu Drive</b><br>Só a pasta oculta do Slid no seu próprio Google Drive.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Nesta página">
+    <p class="eyebrow">Nesta página</p>
+    <div class="chips"><a href="#pt-BR-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Quais dados o app guarda</a><a href="#pt-BR-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>O que passa pela internet</a><a href="#pt-BR-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Backup no Google Drive (opcional)</a><a href="#pt-BR-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Dados do relógio pelo Health Connect (opcional)</a><a href="#pt-BR-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Arquivos de backup e cópias de segurança</a><a href="#pt-BR-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Atualizações</a><a href="#pt-BR-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Exclusão de dados</a><a href="#pt-BR-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Crianças</a><a href="#pt-BR-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Alterações</a><a href="#pt-BR-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Contato</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="pt-BR-table">
+    <h2 id="pt-BR-table">Quais dados, onde ficam e quem os vê</h2>
+    <table>
+      <thead><tr><th scope="col">Dados</th><th scope="col">Onde ficam</th><th scope="col">Quem pode ver</th></tr></thead>
+      <tbody><tr><th scope="row">Sua linha do tempo: localizações, atividade e passos, histórico importado do Google, nomes de lugares, relatórios semanais, configurações</th><td data-label="Onde ficam">No seu aparelho</td><td data-label="Quem pode ver">Só você</td></tr><tr><th scope="row">Datas e locais das suas fotos</th><td data-label="Onde ficam">Lidos dos arquivos da sua galeria; as imagens não são copiadas</td><td data-label="Quem pode ver">Só você, no aparelho</td></tr><tr><th scope="row">Dados do relógio vindos do Health Connect</th><td data-label="Onde ficam">Não são armazenados: são lidos na hora para serem exibidos</td><td data-label="Quem pode ver">Só você, no aparelho</td></tr><tr><th scope="row">Área do mapa exibida; coordenadas dos lugares onde você parou e trajetos de viagens em veículo (opcional)</th><td data-label="Onde ficam">Enviados a serviços de mapas, endereços e transporte, sem nada que identifique você</td><td data-label="Quem pode ver">OpenFreeMap, Esri, serviço de endereços do Android, Nominatim, Overpass</td></tr><tr><th scope="row">Uma cópia da sua linha do tempo (opcional)</th><td data-label="Onde ficam">A pasta oculta do app no seu próprio Google Drive</td><td data-label="Quem pode ver">Só você</td></tr><tr><th scope="row">Arquivos de backup</th><td data-label="Onde ficam">Onde você os salvar</td><td data-label="Quem pode ver">Quem receber o arquivo de você</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="pt-BR-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Quais dados o app guarda</h2></div>
+    <ul><li><b>Localização.</b> Enquanto a gravação estiver ligada, o app registra a localização do celular (também em segundo plano) para mostrar onde você esteve e como se deslocou.</li><li><b>Atividade física.</b> Se você permitir, o Android informa ao app se você está andando, pedalando ou em um veículo. Isso é usado apenas para saber como você se deslocou. Enquanto a gravação estiver ligada, o app também conta os passos do próprio celular hora a hora; eles ficam no aparelho.</li><li><b>Fotos e vídeos.</b> Se você permitir, o app lê a data e o local salvos nos arquivos da sua galeria para mostrar as fotos no mapa. As imagens não são copiadas nem enviadas a lugar nenhum. O app não grava nada nos seus arquivos de foto; ele só pode remover um local que uma versão mais antiga gravou, depois que o Android pedir sua autorização.</li><li><b>Arquivos importados.</b> Os arquivos da Linha do tempo do Google ou do Google Takeout que você escolher são lidos no celular.</li><li><b>Lugares e configurações:</b> os nomes que você dá aos lugares, o idioma, o tema.</li><li><b>Relatórios semanais</b> (opcional): o humor e as palavras que você escreve sobre uma semana, e seu aniversário, se você informar, para mostrar quanto da sua vida a linha do tempo abrange.</li><li><b>Meta de passos</b> (opcional): sua altura e seu peso, se você informar, para calcular uma meta diária de passos e o comprimento do passo. Eles ficam no aparelho.</li></ul><p>Tudo isso fica armazenado no seu aparelho.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>O que passa pela internet</h2></div>
+    <ul><li><b>Mapas.</b> Os blocos do mapa são carregados do OpenFreeMap (dados do OpenStreetMap), e as imagens de satélite, da Esri. Esses servidores veem qual área está sendo exibida, não quem você é.</li><li><b>Endereços e nomes de lugares</b> (opcional). As coordenadas dos lugares onde você parou são enviadas ao serviço de endereços do Android e ao Nominatim (OpenStreetMap) para obter um endereço e um nome. Nada que identifique você é enviado junto. Isso pode ser desativado nas configurações.</li><li><b>Transporte público</b> (opcional). Para distinguir ônibus, bonde, trem ou metrô, o trajeto de uma viagem em veículo já concluída é enviado ao serviço Overpass do OpenStreetMap, que responde com os trilhos e as paradas ao longo dele. Nada que identifique você é enviado junto. Isso pode ser desativado nas configurações.</li></ul>
+    
+  </section>
+  <section class="card sec" id="pt-BR-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Backup no Google Drive (opcional)</h2></div>
+    <p>Se você conectar o Google Drive, o app recebe acesso apenas à própria pasta oculta no seu Drive (a permissão drive.appdata) e não consegue ver nenhum dos seus outros arquivos. Uma cópia da sua linha do tempo é gravada lá, uma por aparelho, para que possa ser restaurada em um celular novo ou exibida em um tablet. O Google Drive pode guardar versões mais antigas dessa cópia por algum tempo, que o app consegue restaurar. O app também lê seu endereço de e-mail, apenas para mostrar qual conta está conectada. Esses dados trafegam só entre o seu aparelho e o Google; o desenvolvedor não tem acesso a eles. Você pode desconectar o Drive nas configurações.</p><p>O uso, pelo app, das informações recebidas das APIs do Google segue a <a href="https://developers.google.com/terms/api-services-user-data-policy">Política de dados do usuário dos serviços de API do Google</a>, incluindo os requisitos de Uso limitado.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Dados do relógio pelo Health Connect (opcional)</h2></div>
+    <p>Se você permitir, o app lê passos, frequência cardíaca, sono e treinos (com os trajetos) do Health Connect, gravados lá por apps de relógio como o Mi Fitness. Ele apenas lê esses dados e nunca grava nada no Health Connect. Os dados são lidos no celular só para serem exibidos na aba Saúde e no dia correspondente da sua linha do tempo; o app não os armazena no banco de dados dele, não os inclui nos backups e não os envia a lugar nenhum. Você pode revogar as permissões a qualquer momento nas configurações do Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Arquivos de backup e cópias de segurança</h2></div>
+    <p>Um arquivo de backup só é criado quando você mesmo salva um, no lugar que escolher. Antes de um backup substituir sua linha do tempo, o app guarda a linha do tempo anterior no aparelho (as três últimas), para que uma restauração errada possa ser desfeita; essas cópias nunca saem do celular.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Atualizações</h2></div>
+    <p>A versão do Slid distribuída no site dele verifica pegasohlib.github.io a cada poucas horas em busca de uma nova versão e a baixa do GitHub quando você toca em Atualizar. Como qualquer site, o GitHub vê o endereço IP do seu aparelho; nada mais é enviado, e nenhum dado do app.</p><p>Você pode desativar as verificações automáticas nas Configurações.</p><p>O GitHub também conta quantas vezes cada arquivo foi baixado. É apenas um número, sem nada sobre quem baixou; o site mostra esse número como uma quantidade aproximada de downloads.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Exclusão de dados</h2></div>
+    <p>Qualquer registro pode ser apagado na linha do tempo. Desinstale o app e todos os dados no aparelho somem. A cópia no Google Drive pode ser apagada no app ou em Gerenciar apps, nas configurações do Google Drive.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Crianças</h2></div>
+    <p>O app não coleta dados de ninguém, inclusive de crianças: tudo fica no aparelho do dono.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Alterações</h2></div>
+    <p>Se esta política mudar, a nova versão aparecerá nesta página com uma nova data.</p>
+    
+  </section>
+  <section class="card sec" id="pt-BR-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Contato</h2></div>
+    <p>Dúvidas sobre privacidade: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
 <article class="langdoc" lang="fr" data-lang="fr" data-title="Politique de confidentialité · Slid" data-app="Slid" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
@@ -672,6 +763,318 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
+<article class="langdoc" lang="pl" data-lang="pl" data-title="Polityka prywatności · Slid" data-app="Slid" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Polityka prywatności</h1>
+    <p class="date">Obowiązuje od 22 października 2026 r.</p>
+    <p class="lead">Niniejsza polityka dotyczy aplikacji „Slid” (pakiet dev.slid). Slid nie ma własnych serwerów, kont, reklam ani analityki. Twoja oś czasu jest przechowywana na Twoim telefonie, a deweloper nigdy jej nie otrzymuje ani nie widzi.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="pl-glance">
+    <h2 id="pl-glance" class="eyebrow">W skrócie</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Zostaje na Twoim telefonie</b><br>Oś czasu, miejsca i lokalizacje zdjęć są przechowywane wyłącznie na urządzeniu.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Nic o Tobie nie jest wysyłane</b><br>Bez kont, bez śledzenia, bez reklam, bez analityki.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Ty decydujesz</b><br>Każde uprawnienie i każda funkcja online są opcjonalne i można je wyłączyć.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Łatwe usuwanie</b><br>Usuń dowolny wpis albo odinstaluj aplikację, a wszystko zniknie.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Twoja kopia, Twój Dysk</b><br>Tylko ukryty folder Slid na Twoim własnym Dysku Google.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Na tej stronie">
+    <p class="eyebrow">Na tej stronie</p>
+    <div class="chips"><a href="#pl-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Jakie dane przechowuje aplikacja</a><a href="#pl-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Co jest przesyłane przez internet</a><a href="#pl-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Kopia zapasowa na Dysku Google (opcjonalnie)</a><a href="#pl-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Dane z zegarka przez Health Connect (opcjonalnie)</a><a href="#pl-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Pliki kopii zapasowych i kopie bezpieczeństwa</a><a href="#pl-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Aktualizacje</a><a href="#pl-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Usuwanie danych</a><a href="#pl-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Dzieci</a><a href="#pl-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Zmiany</a><a href="#pl-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Kontakt</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="pl-table">
+    <h2 id="pl-table">Jakie dane, gdzie są i kto je widzi</h2>
+    <table>
+      <thead><tr><th scope="col">Dane</th><th scope="col">Gdzie są przechowywane</th><th scope="col">Kto może je zobaczyć</th></tr></thead>
+      <tbody><tr><th scope="row">Twoja oś czasu: lokalizacje, aktywność i kroki, historia zaimportowana z Google, nazwy miejsc, raporty tygodniowe, ustawienia</th><td data-label="Gdzie są przechowywane">Na Twoim urządzeniu</td><td data-label="Kto może je zobaczyć">Tylko Ty</td></tr><tr><th scope="row">Daty i miejsca Twoich zdjęć</th><td data-label="Gdzie są przechowywane">Odczytywane z plików galerii; zdjęcia nie są kopiowane</td><td data-label="Kto może je zobaczyć">Tylko Ty, na urządzeniu</td></tr><tr><th scope="row">Dane z zegarka z Health Connect</th><td data-label="Gdzie są przechowywane">Nie są przechowywane: odczytywane na bieżąco, aby je wyświetlić</td><td data-label="Kto może je zobaczyć">Tylko Ty, na urządzeniu</td></tr><tr><th scope="row">Wyświetlany obszar mapy; współrzędne miejsc, w których się zatrzymujesz, i trasy przejazdów pojazdami (opcjonalnie)</th><td data-label="Gdzie są przechowywane">Wysyłane do usług map, adresów i transportu bez niczego, co by Cię identyfikowało</td><td data-label="Kto może je zobaczyć">OpenFreeMap, Esri, usługa adresów Androida, Nominatim, Overpass</td></tr><tr><th scope="row">Kopia Twojej osi czasu (opcjonalnie)</th><td data-label="Gdzie są przechowywane">Ukryty folder aplikacji na Twoim własnym Dysku Google</td><td data-label="Kto może je zobaczyć">Tylko Ty</td></tr><tr><th scope="row">Pliki kopii zapasowych</th><td data-label="Gdzie są przechowywane">Tam, gdzie je zapiszesz</td><td data-label="Kto może je zobaczyć">Osoba, której przekażesz plik</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="pl-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Jakie dane przechowuje aplikacja</h2></div>
+    <ul><li><b>Lokalizacja.</b> Gdy zapis jest włączony, aplikacja zapisuje lokalizację telefonu (także w tle), aby pokazać, w jakich miejscach przebywasz i jak się przemieszczasz.</li><li><b>Aktywność fizyczna.</b> Jeśli na to zezwolisz, Android przekazuje aplikacji, czy idziesz, jedziesz rowerem, czy jesteś w pojeździe. Służy to wyłącznie do ustalenia sposobu przemieszczania się. Gdy zapis jest włączony, aplikacja liczy też godzina po godzinie kroki zliczane przez sam telefon; pozostają one na urządzeniu.</li><li><b>Zdjęcia i filmy.</b> Jeśli na to zezwolisz, aplikacja odczytuje datę i miejsce zapisane w plikach galerii, aby pokazać zdjęcia na mapie. Zdjęcia nie są kopiowane ani nigdzie wysyłane. Aplikacja niczego nie zapisuje w plikach zdjęć; może jedynie usunąć miejsce zapisane przez starszą wersję — po tym, jak Android zapyta Cię o zgodę.</li><li><b>Importowane pliki.</b> Wybrane przez Ciebie pliki osi czasu Google lub Google Takeout są odczytywane na telefonie.</li><li><b>Miejsca i ustawienia:</b> nazwy, które nadajesz miejscom, język, motyw.</li><li><b>Raporty tygodniowe</b> (opcjonalnie): nastrój i słowa, które piszesz o danym tygodniu, oraz data urodzin, jeśli ją podasz — aby pokazać, jaką część Twojego życia obejmuje oś czasu.</li><li><b>Cel kroków</b> (opcjonalnie): wzrost i waga, jeśli je podasz — aby obliczyć dzienny cel kroków i długość kroku. Pozostają one na urządzeniu.</li></ul><p>Wszystko to jest przechowywane na Twoim urządzeniu.</p>
+    
+  </section>
+  <section class="card sec" id="pl-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Co jest przesyłane przez internet</h2></div>
+    <ul><li><b>Mapy.</b> Kafelki mapy są pobierane z OpenFreeMap (dane OpenStreetMap), a zdjęcia satelitarne z Esri. Te serwery widzą, jaki obszar jest wyświetlany, ale nie to, kim jesteś.</li><li><b>Adresy i nazwy miejsc</b> (opcjonalnie). Współrzędne miejsc, w których się zatrzymujesz, są wysyłane do usługi adresów Androida i do Nominatim (OpenStreetMap), aby uzyskać adres i nazwę. Nie jest z nimi wysyłane nic, co by Cię identyfikowało. Można to wyłączyć w ustawieniach.</li><li><b>Transport publiczny</b> (opcjonalnie). Aby odróżnić autobus, tramwaj, pociąg lub metro, trasa zakończonego przejazdu pojazdem jest wysyłana do usługi Overpass serwisu OpenStreetMap, która odpowiada torami i przystankami wzdłuż niej. Nie jest z nią wysyłane nic, co by Cię identyfikowało. Można to wyłączyć w ustawieniach.</li></ul>
+    
+  </section>
+  <section class="card sec" id="pl-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Kopia zapasowa na Dysku Google (opcjonalnie)</h2></div>
+    <p>Jeśli połączysz Dysk Google, aplikacja uzyskuje dostęp wyłącznie do własnego ukrytego folderu na Twoim Dysku (uprawnienie drive.appdata) i nie widzi żadnych innych Twoich plików. Zapisywana jest tam kopia Twojej osi czasu, po jednej na urządzenie, aby można ją było przywrócić na nowym telefonie lub wyświetlić na tablecie. Dysk Google może przez pewien czas przechowywać starsze wersje tej kopii, które aplikacja potrafi przywrócić. Aplikacja odczytuje też Twój adres e-mail wyłącznie po to, aby pokazać, które konto jest połączone. Te dane są przesyłane tylko między Twoim urządzeniem a Google; deweloper nie ma do nich dostępu. Dysk możesz odłączyć w ustawieniach.</p><p>Sposób, w jaki aplikacja wykorzystuje informacje otrzymane z interfejsów API Google, jest zgodny z <a href="https://developers.google.com/terms/api-services-user-data-policy">Zasadami dotyczącymi danych użytkownika w usługach interfejsów API Google</a>, w tym z wymogami ograniczonego użytkowania.</p>
+    
+  </section>
+  <section class="card sec" id="pl-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Dane z zegarka przez Health Connect (opcjonalnie)</h2></div>
+    <p>Jeśli na to zezwolisz, aplikacja odczytuje z Health Connect kroki, tętno, sen i treningi (wraz z ich trasami), zapisane tam przez aplikacje zegarków, takie jak Mi Fitness. Aplikacja tylko odczytuje te dane i nigdy nie zapisuje niczego w Health Connect. Dane są odczytywane na telefonie wyłącznie po to, aby wyświetlić je na karcie Zdrowie i przy odpowiednim dniu Twojej osi czasu; aplikacja nie przechowuje ich w swojej bazie danych, nie dołącza ich do kopii zapasowych i nigdzie ich nie wysyła. Uprawnienia możesz w każdej chwili cofnąć w ustawieniach Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="pl-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Pliki kopii zapasowych i kopie bezpieczeństwa</h2></div>
+    <p>Plik kopii zapasowej jest tworzony tylko wtedy, gdy samodzielnie go zapiszesz, w wybranym przez Ciebie miejscu. Zanim kopia zapasowa zastąpi Twoją oś czasu, aplikacja zachowuje poprzednią oś czasu na urządzeniu (trzy ostatnie), aby można było cofnąć błędne przywrócenie; te kopie nigdy nie opuszczają telefonu.</p>
+    
+  </section>
+  <section class="card sec" id="pl-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Aktualizacje</h2></div>
+    <p>Wersja Slid udostępniana na jego stronie co kilka godzin sprawdza w pegasohlib.github.io, czy jest nowa wersja, i pobiera ją z GitHub, gdy dotkniesz Aktualizuj. Jak każda strona internetowa, GitHub widzi adres IP Twojego urządzenia; nic więcej nie jest wysyłane, w tym żadne dane z aplikacji.</p><p>Automatyczne sprawdzanie możesz wyłączyć w Ustawieniach.</p><p>GitHub liczy też, ile razy pobrano każdy plik. To tylko liczba, bez żadnych informacji o tym, kto pobrał plik; strona pokazuje ją jako przybliżoną liczbę pobrań.</p>
+    
+  </section>
+  <section class="card sec" id="pl-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Usuwanie danych</h2></div>
+    <p>Każdy wpis można usunąć na osi czasu. Po odinstalowaniu aplikacji wszystkie dane na urządzeniu znikają. Kopię na Dysku Google można usunąć w aplikacji lub w sekcji Zarządzaj aplikacjami w ustawieniach Dysku Google.</p>
+    
+  </section>
+  <section class="card sec" id="pl-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Dzieci</h2></div>
+    <p>Aplikacja nie zbiera danych o nikim, w tym o dzieciach: wszystko zostaje na urządzeniu właściciela.</p>
+    
+  </section>
+  <section class="card sec" id="pl-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Zmiany</h2></div>
+    <p>Jeśli ta polityka się zmieni, nowa wersja pojawi się na tej stronie z nową datą.</p>
+    
+  </section>
+  <section class="card sec" id="pl-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Kontakt</h2></div>
+    <p>Pytania dotyczące prywatności: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="cs" data-lang="cs" data-title="Zásady ochrany soukromí · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Zásady ochrany soukromí</h1>
+    <p class="date">Platné od 22. října 2026</p>
+    <p class="lead">Tyto zásady se vztahují na aplikaci „Slid“ (balíček dev.slid). Slid nemá vlastní servery, účty, reklamy ani analytiku. Tvoje časová osa je uložena v tvém telefonu a vývojář ji nikdy nedostane ani neuvidí.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="cs-glance">
+    <h2 id="cs-glance" class="eyebrow">Ve zkratce</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Zůstává v tvém telefonu</b><br>Časová osa, místa a polohy fotek jsou uloženy jen v zařízení.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Nic o tobě se neodesílá</b><br>Žádné účty, žádné sledování, žádné reklamy, žádná analytika.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Rozhoduješ ty</b><br>Každé oprávnění i každá online funkce jsou volitelné a dají se vypnout.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Snadné mazání</b><br>Smaž jakýkoli záznam, nebo aplikaci odinstaluj a vše zmizí.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Tvoje záloha, tvůj Disk</b><br>Jen skrytá složka Slid na tvém vlastním Disku Google.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Na této stránce">
+    <p class="eyebrow">Na této stránce</p>
+    <div class="chips"><a href="#cs-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Jaká data aplikace uchovává</a><a href="#cs-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Co se přenáší přes internet</a><a href="#cs-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Záloha na Disk Google (volitelné)</a><a href="#cs-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Data z hodinek přes Health Connect (volitelné)</a><a href="#cs-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Soubory záloh a bezpečnostní kopie</a><a href="#cs-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Aktualizace</a><a href="#cs-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Mazání dat</a><a href="#cs-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Děti</a><a href="#cs-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Změny</a><a href="#cs-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Kontakt</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="cs-table">
+    <h2 id="cs-table">Jaká data, kde jsou a kdo je vidí</h2>
+    <table>
+      <thead><tr><th scope="col">Data</th><th scope="col">Kde jsou uložena</th><th scope="col">Kdo je může vidět</th></tr></thead>
+      <tbody><tr><th scope="row">Tvoje časová osa: polohy, aktivita a kroky, historie importovaná z Googlu, názvy míst, týdenní přehledy, nastavení</th><td data-label="Kde jsou uložena">V tvém zařízení</td><td data-label="Kdo je může vidět">Jen ty</td></tr><tr><th scope="row">Data a místa tvých fotek</th><td data-label="Kde jsou uložena">Čtou se ze souborů v galerii; snímky se nekopírují</td><td data-label="Kdo je může vidět">Jen ty, v zařízení</td></tr><tr><th scope="row">Data z hodinek z Health Connect</th><td data-label="Kde jsou uložena">Neukládají se: čtou se průběžně, jen aby se zobrazila</td><td data-label="Kdo je může vidět">Jen ty, v zařízení</td></tr><tr><th scope="row">Zobrazená oblast mapy; souřadnice míst, kde se zastavuješ, a trasy jízd dopravními prostředky (volitelné)</th><td data-label="Kde jsou uložena">Odesílají se mapovým, adresním a dopravním službám bez čehokoli, co by tě identifikovalo</td><td data-label="Kdo je může vidět">OpenFreeMap, Esri, adresní služba Androidu, Nominatim, Overpass</td></tr><tr><th scope="row">Kopie tvé časové osy (volitelné)</th><td data-label="Kde jsou uložena">Skrytá složka aplikace na tvém vlastním Disku Google</td><td data-label="Kdo je může vidět">Jen ty</td></tr><tr><th scope="row">Soubory záloh</th><td data-label="Kde jsou uložena">Tam, kam je uložíš</td><td data-label="Kdo je může vidět">Ten, komu soubor dáš</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="cs-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Jaká data aplikace uchovává</h2></div>
+    <ul><li><b>Poloha.</b> Dokud máš zapnutý záznam, aplikace zaznamenává polohu telefonu (i na pozadí), aby ukázala, kde se pohybuješ a jakým způsobem se přesouváš.</li><li><b>Fyzická aktivita.</b> Pokud to povolíš, Android aplikaci sděluje, zda jdeš pěšky, jedeš na kole nebo jsi v dopravním prostředku. Slouží to jen k určení způsobu přesunu. Když je záznam zapnutý, aplikace také po hodinách počítá kroky naměřené samotným telefonem; zůstávají v zařízení.</li><li><b>Fotky a videa.</b> Pokud to povolíš, aplikace čte datum a místo uložené v souborech galerie, aby mohla zobrazit fotky na mapě. Snímky se nekopírují ani nikam neodesílají. Aplikace do souborů fotek nic nezapisuje; může jen odstranit místo, které tam zapsala starší verze, a to až poté, co se tě Android zeptá.</li><li><b>Importované soubory.</b> Soubory časové osy Google nebo Google Takeout, které vybereš, se čtou v telefonu.</li><li><b>Místa a nastavení:</b> názvy, které dáš místům, jazyk, motiv.</li><li><b>Týdenní přehledy</b> (volitelné): nálada a slova, která o týdnu napíšeš, a tvoje datum narození, pokud ho zadáš — aby šlo ukázat, jakou část tvého života časová osa zachycuje.</li><li><b>Cíl kroků</b> (volitelné): tvoje výška a váha, pokud je zadáš — k výpočtu denního cíle kroků a délky kroku. Zůstávají v zařízení.</li></ul><p>To vše je uloženo v tvém zařízení.</p>
+    
+  </section>
+  <section class="card sec" id="cs-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Co se přenáší přes internet</h2></div>
+    <ul><li><b>Mapy.</b> Mapové dlaždice se načítají z OpenFreeMap (data OpenStreetMap) a satelitní snímky z Esri. Tyto servery vidí, jaká oblast se zobrazuje, ne to, kdo jsi.</li><li><b>Adresy a názvy míst</b> (volitelné). Souřadnice míst, kde se zastavuješ, se odesílají adresní službě Androidu a službě Nominatim (OpenStreetMap), aby se získala adresa a název. Nic, co by tě identifikovalo, se s nimi neodesílá. Lze to vypnout v nastavení.</li><li><b>Veřejná doprava</b> (volitelné). Aby bylo možné rozlišit autobus, tramvaj, vlak nebo metro, odešle se trasa dokončené jízdy dopravním prostředkem službě Overpass projektu OpenStreetMap, která odpoví kolejemi a zastávkami podél ní. Nic, co by tě identifikovalo, se s ní neodesílá. Lze to vypnout v nastavení.</li></ul>
+    
+  </section>
+  <section class="card sec" id="cs-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Záloha na Disk Google (volitelné)</h2></div>
+    <p>Pokud připojíš Disk Google, aplikace získá přístup jen ke své vlastní skryté složce na tvém Disku (oprávnění drive.appdata) a nevidí žádné jiné tvoje soubory. Ukládá se tam kopie tvé časové osy, jedna pro každé zařízení, aby ji šlo obnovit v novém telefonu nebo zobrazit na tabletu. Disk Google může starší verze této kopie nějakou dobu uchovávat a aplikace je umí obnovit. Aplikace také čte tvou e-mailovou adresu, a to jen proto, aby ukázala, který účet je připojený. Tato data putují jen mezi tvým zařízením a Googlem; vývojář k nim nemá přístup. Disk můžeš v nastavení odpojit.</p><p>Způsob, jakým aplikace používá informace získané z rozhraní Google API, odpovídá <a href="https://developers.google.com/terms/api-services-user-data-policy">Zásadám pro uživatelská data ve službách Google API</a>, včetně požadavků na omezené použití.</p>
+    
+  </section>
+  <section class="card sec" id="cs-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Data z hodinek přes Health Connect (volitelné)</h2></div>
+    <p>Pokud to povolíš, aplikace čte z Health Connect kroky, tep, spánek a tréninky (včetně tras), které tam zapisují aplikace hodinek, například Mi Fitness. Tato data jen čte a do Health Connect nikdy nic nezapisuje. Data se v telefonu čtou jen proto, aby se zobrazila na kartě Zdraví a u odpovídajícího dne tvé časové osy; aplikace je neukládá do své databáze, nezahrnuje je do záloh a nikam je neodesílá. Oprávnění můžeš kdykoli odvolat v nastavení Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="cs-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Soubory záloh a bezpečnostní kopie</h2></div>
+    <p>Soubor zálohy vzniká jen tehdy, když ho výslovně uložíš, a to na místo, které vybereš. Než záloha nahradí tvou časovou osu, aplikace si v zařízení ponechá předchozí časovou osu (poslední tři), aby šlo chybné obnovení vrátit; tyto kopie nikdy neopustí telefon.</p>
+    
+  </section>
+  <section class="card sec" id="cs-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Aktualizace</h2></div>
+    <p>Verze aplikace Slid sdílená na jejím webu každých pár hodin kontroluje na pegasohlib.github.io, zda je k dispozici nová verze, a když klepneš na Aktualizovat, stáhne ji z GitHubu. Jako každý web vidí GitHub IP adresu tvého zařízení; nic dalšího se neodesílá, ani žádná data z aplikace.</p><p>Automatické kontroly můžeš vypnout v Nastavení.</p><p>GitHub také počítá, kolikrát byl každý soubor stažen. Je to jen číslo, bez jakýchkoli údajů o tom, kdo soubor stáhl; web ho zobrazuje jako přibližný počet stažení.</p>
+    
+  </section>
+  <section class="card sec" id="cs-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Mazání dat</h2></div>
+    <p>Jakýkoli záznam lze smazat na časové ose. Když aplikaci odinstaluješ, všechna data v zařízení zmizí. Kopii na Disku Google lze smazat v aplikaci nebo v části Spravovat aplikace v nastavení Disku Google.</p>
+    
+  </section>
+  <section class="card sec" id="cs-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Děti</h2></div>
+    <p>Aplikace neshromažďuje data o nikom, ani o dětech: vše zůstává v zařízení majitele.</p>
+    
+  </section>
+  <section class="card sec" id="cs-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Změny</h2></div>
+    <p>Pokud se tyto zásady změní, nová verze se objeví na této stránce s novým datem.</p>
+    
+  </section>
+  <section class="card sec" id="cs-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Kontakt</h2></div>
+    <p>Dotazy k ochraně soukromí: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="sk" data-lang="sk" data-title="Zásady ochrany súkromia · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Zásady ochrany súkromia</h1>
+    <p class="date">Platné od 22. októbra 2026</p>
+    <p class="lead">Tieto zásady sa vzťahujú na aplikáciu „Slid“ (balík dev.slid). Slid nemá vlastné servery, účty, reklamy ani analytiku. Tvoja časová os je uložená v tvojom telefóne a vývojár ju nikdy nedostane ani neuvidí.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="sk-glance">
+    <h2 id="sk-glance" class="eyebrow">V skratke</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Zostáva v tvojom telefóne</b><br>Časová os, miesta a polohy fotiek sú uložené len v zariadení.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Nič o tebe sa neodosiela</b><br>Žiadne účty, žiadne sledovanie, žiadne reklamy, žiadna analytika.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Rozhoduješ ty</b><br>Každé povolenie aj každá online funkcia sú voliteľné a dajú sa vypnúť.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Jednoduché mazanie</b><br>Vymaž akýkoľvek záznam, alebo aplikáciu odinštaluj a všetko zmizne.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Tvoja záloha, tvoj Disk</b><br>Len skrytý priečinok Slid na tvojom vlastnom Disku Google.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Na tejto stránke">
+    <p class="eyebrow">Na tejto stránke</p>
+    <div class="chips"><a href="#sk-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Aké údaje aplikácia uchováva</a><a href="#sk-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Čo sa prenáša cez internet</a><a href="#sk-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Záloha na Disk Google (voliteľné)</a><a href="#sk-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Údaje z hodiniek cez Health Connect (voliteľné)</a><a href="#sk-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Súbory záloh a bezpečnostné kópie</a><a href="#sk-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Aktualizácie</a><a href="#sk-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Mazanie údajov</a><a href="#sk-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Deti</a><a href="#sk-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Zmeny</a><a href="#sk-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Kontakt</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="sk-table">
+    <h2 id="sk-table">Aké údaje, kde sú a kto ich vidí</h2>
+    <table>
+      <thead><tr><th scope="col">Údaje</th><th scope="col">Kde sú uložené</th><th scope="col">Kto ich môže vidieť</th></tr></thead>
+      <tbody><tr><th scope="row">Tvoja časová os: polohy, aktivita a kroky, história importovaná z Googlu, názvy miest, týždenné prehľady, nastavenia</th><td data-label="Kde sú uložené">V tvojom zariadení</td><td data-label="Kto ich môže vidieť">Len ty</td></tr><tr><th scope="row">Dátumy a miesta tvojich fotiek</th><td data-label="Kde sú uložené">Čítajú sa zo súborov v galérii; snímky sa nekopírujú</td><td data-label="Kto ich môže vidieť">Len ty, v zariadení</td></tr><tr><th scope="row">Údaje z hodiniek z Health Connect</th><td data-label="Kde sú uložené">Neukladajú sa: čítajú sa priebežne, len aby sa zobrazili</td><td data-label="Kto ich môže vidieť">Len ty, v zariadení</td></tr><tr><th scope="row">Zobrazená oblasť mapy; súradnice miest, kde sa zastavuješ, a trasy jázd dopravnými prostriedkami (voliteľné)</th><td data-label="Kde sú uložené">Odosielajú sa mapovým, adresným a dopravným službám bez čohokoľvek, čo by ťa identifikovalo</td><td data-label="Kto ich môže vidieť">OpenFreeMap, Esri, adresná služba Androidu, Nominatim, Overpass</td></tr><tr><th scope="row">Kópia tvojej časovej osi (voliteľné)</th><td data-label="Kde sú uložené">Skrytý priečinok aplikácie na tvojom vlastnom Disku Google</td><td data-label="Kto ich môže vidieť">Len ty</td></tr><tr><th scope="row">Súbory záloh</th><td data-label="Kde sú uložené">Tam, kam ich uložíš</td><td data-label="Kto ich môže vidieť">Ten, komu súbor dáš</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="sk-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Aké údaje aplikácia uchováva</h2></div>
+    <ul><li><b>Poloha.</b> Kým máš zapnutý záznam, aplikácia zaznamenáva polohu telefónu (aj na pozadí), aby ukázala, kde sa pohybuješ a akým spôsobom sa presúvaš.</li><li><b>Fyzická aktivita.</b> Ak to povolíš, Android aplikácii oznamuje, či ideš pešo, bicykluješ alebo si v dopravnom prostriedku. Slúži to len na určenie spôsobu presunu. Keď je záznam zapnutý, aplikácia tiež po hodinách počíta kroky namerané samotným telefónom; zostávajú v zariadení.</li><li><b>Fotky a videá.</b> Ak to povolíš, aplikácia číta dátum a miesto uložené v súboroch galérie, aby mohla zobraziť fotky na mape. Snímky sa nekopírujú ani nikam neodosielajú. Aplikácia do súborov fotiek nič nezapisuje; môže len odstrániť miesto, ktoré tam zapísala staršia verzia, a to až potom, čo sa ťa Android opýta.</li><li><b>Importované súbory.</b> Súbory časovej osi Google alebo Google Takeout, ktoré vyberieš, sa čítajú v telefóne.</li><li><b>Miesta a nastavenia:</b> názvy, ktoré dáš miestam, jazyk, motív.</li><li><b>Týždenné prehľady</b> (voliteľné): nálada a slová, ktoré o týždni napíšeš, a tvoj dátum narodenia, ak ho zadáš — aby sa dalo ukázať, akú časť tvojho života časová os zachytáva.</li><li><b>Cieľ krokov</b> (voliteľné): tvoja výška a hmotnosť, ak ich zadáš — na výpočet denného cieľa krokov a dĺžky kroku. Zostávajú v zariadení.</li></ul><p>To všetko je uložené v tvojom zariadení.</p>
+    
+  </section>
+  <section class="card sec" id="sk-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Čo sa prenáša cez internet</h2></div>
+    <ul><li><b>Mapy.</b> Mapové dlaždice sa načítavajú z OpenFreeMap (údaje OpenStreetMap) a satelitné snímky z Esri. Tieto servery vidia, aká oblasť sa zobrazuje, nie to, kto si.</li><li><b>Adresy a názvy miest</b> (voliteľné). Súradnice miest, kde sa zastavuješ, sa odosielajú adresnej službe Androidu a službe Nominatim (OpenStreetMap), aby sa získala adresa a názov. Nič, čo by ťa identifikovalo, sa s nimi neodosiela. Dá sa to vypnúť v nastaveniach.</li><li><b>Verejná doprava</b> (voliteľné). Aby bolo možné rozlíšiť autobus, električku, vlak alebo metro, odošle sa trasa dokončenej jazdy dopravným prostriedkom službe Overpass projektu OpenStreetMap, ktorá odpovie koľajami a zastávkami pozdĺž nej. Nič, čo by ťa identifikovalo, sa s ňou neodosiela. Dá sa to vypnúť v nastaveniach.</li></ul>
+    
+  </section>
+  <section class="card sec" id="sk-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Záloha na Disk Google (voliteľné)</h2></div>
+    <p>Ak pripojíš Disk Google, aplikácia získa prístup len k svojmu vlastnému skrytému priečinku na tvojom Disku (povolenie drive.appdata) a nevidí žiadne iné tvoje súbory. Ukladá sa tam kópia tvojej časovej osi, jedna pre každé zariadenie, aby sa dala obnoviť v novom telefóne alebo zobraziť na tablete. Disk Google môže staršie verzie tejto kópie nejaký čas uchovávať a aplikácia ich vie obnoviť. Aplikácia tiež číta tvoju e-mailovú adresu, a to len preto, aby ukázala, ktorý účet je pripojený. Tieto údaje putujú len medzi tvojím zariadením a Googlom; vývojár k nim nemá prístup. Disk môžeš v nastaveniach odpojiť.</p><p>Spôsob, akým aplikácia používa informácie získané z rozhraní Google API, je v súlade so <a href="https://developers.google.com/terms/api-services-user-data-policy">Zásadami pre údaje používateľov služieb Google API</a> vrátane požiadaviek na obmedzené používanie.</p>
+    
+  </section>
+  <section class="card sec" id="sk-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Údaje z hodiniek cez Health Connect (voliteľné)</h2></div>
+    <p>Ak to povolíš, aplikácia číta z Health Connect kroky, tep, spánok a tréningy (vrátane trás), ktoré tam zapisujú aplikácie hodiniek, napríklad Mi Fitness. Tieto údaje len číta a do Health Connect nikdy nič nezapisuje. Údaje sa v telefóne čítajú len preto, aby sa zobrazili na karte Zdravie a pri zodpovedajúcom dni tvojej časovej osi; aplikácia ich neukladá do svojej databázy, nezahŕňa ich do záloh a nikam ich neodosiela. Povolenia môžeš kedykoľvek odvolať v nastaveniach Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="sk-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Súbory záloh a bezpečnostné kópie</h2></div>
+    <p>Súbor zálohy vzniká len vtedy, keď ho výslovne uložíš, a to na miesto, ktoré vyberieš. Skôr než záloha nahradí tvoju časovú os, aplikácia si v zariadení ponechá predchádzajúcu časovú os (posledné tri), aby sa dalo chybné obnovenie vrátiť; tieto kópie nikdy neopustia telefón.</p>
+    
+  </section>
+  <section class="card sec" id="sk-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Aktualizácie</h2></div>
+    <p>Verzia aplikácie Slid zdieľaná na jej webe každých pár hodín kontroluje na pegasohlib.github.io, či je k dispozícii nová verzia, a keď ťukneš na Aktualizovať, stiahne ju z GitHubu. Ako každý web, aj GitHub vidí IP adresu tvojho zariadenia; nič ďalšie sa neodosiela, ani žiadne údaje z aplikácie.</p><p>Automatické kontroly môžeš vypnúť v Nastaveniach.</p><p>GitHub tiež počíta, koľkokrát bol každý súbor stiahnutý. Je to len číslo, bez akýchkoľvek údajov o tom, kto súbor stiahol; web ho zobrazuje ako približný počet stiahnutí.</p>
+    
+  </section>
+  <section class="card sec" id="sk-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Mazanie údajov</h2></div>
+    <p>Akýkoľvek záznam sa dá vymazať na časovej osi. Keď aplikáciu odinštaluješ, všetky údaje v zariadení zmiznú. Kópiu na Disku Google možno vymazať v aplikácii alebo v časti Spravovať aplikácie v nastaveniach Disku Google.</p>
+    
+  </section>
+  <section class="card sec" id="sk-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Deti</h2></div>
+    <p>Aplikácia nezhromažďuje údaje o nikom, ani o deťoch: všetko zostáva v zariadení majiteľa.</p>
+    
+  </section>
+  <section class="card sec" id="sk-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Zmeny</h2></div>
+    <p>Ak sa tieto zásady zmenia, nová verzia sa objaví na tejto stránke s novým dátumom.</p>
+    
+  </section>
+  <section class="card sec" id="sk-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Kontakt</h2></div>
+    <p>Otázky týkajúce sa súkromia: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="da" data-lang="da" data-title="Privatlivspolitik · Slid" data-app="Slid" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Privatlivspolitik</h1>
+    <p class="date">Gældende fra 22. oktober 2026</p>
+    <p class="lead">Denne politik gælder for appen “Slid” (pakken dev.slid). Slid har ingen egne servere, ingen konti, ingen reklamer og ingen analyse. Din tidslinje ligger på din telefon, og udvikleren modtager eller ser den aldrig.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="da-glance">
+    <h2 id="da-glance" class="eyebrow">Kort fortalt</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Bliver på din telefon</b><br>Tidslinjen, stederne og billedernes placeringer gemmes kun på enheden.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Intet om dig bliver sendt</b><br>Ingen konti, ingen sporing, ingen reklamer, ingen analyse.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Du bestemmer</b><br>Alle tilladelser og alle onlinefunktioner er valgfrie og kan slås fra.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Nemt at slette</b><br>Slet en hvilken som helst post, eller afinstaller appen, så er alt væk.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Din backup, dit Drev</b><br>Kun Slids skjulte mappe i dit eget Google Drev.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="På denne side">
+    <p class="eyebrow">På denne side</p>
+    <div class="chips"><a href="#da-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Hvilke data appen har</a><a href="#da-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Hvad der sendes over internettet</a><a href="#da-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Backup til Google Drev (valgfrit)</a><a href="#da-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Urdata via Health Connect (valgfrit)</a><a href="#da-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Backupfiler og sikkerhedskopier</a><a href="#da-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Opdateringer</a><a href="#da-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Sletning af data</a><a href="#da-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Børn</a><a href="#da-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Ændringer</a><a href="#da-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Kontakt</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="da-table">
+    <h2 id="da-table">Hvilke data, hvor de ligger, hvem der ser dem</h2>
+    <table>
+      <thead><tr><th scope="col">Data</th><th scope="col">Hvor de gemmes</th><th scope="col">Hvem kan se dem</th></tr></thead>
+      <tbody><tr><th scope="row">Din tidslinje: placeringer, aktivitet og skridt, historik importeret fra Google, stednavne, ugentlige rapporter, indstillinger</th><td data-label="Hvor de gemmes">På din enhed</td><td data-label="Hvem kan se dem">Kun dig</td></tr><tr><th scope="row">Datoer og steder for dine billeder</th><td data-label="Hvor de gemmes">Læses fra filerne i dit galleri; billederne kopieres ikke</td><td data-label="Hvem kan se dem">Kun dig, på enheden</td></tr><tr><th scope="row">Urdata fra Health Connect</th><td data-label="Hvor de gemmes">Gemmes ikke: læses i øjeblikket for at blive vist</td><td data-label="Hvem kan se dem">Kun dig, på enheden</td></tr><tr><th scope="row">Det viste kortområde; koordinater for steder, hvor du har gjort holdt, og ruter for ture med køretøj (valgfrit)</th><td data-label="Hvor de gemmes">Sendes til kort-, adresse- og transporttjenester uden noget, der identificerer dig</td><td data-label="Hvem kan se dem">OpenFreeMap, Esri, Androids adressetjeneste, Nominatim, Overpass</td></tr><tr><th scope="row">En kopi af din tidslinje (valgfrit)</th><td data-label="Hvor de gemmes">Appens skjulte mappe i dit eget Google Drev</td><td data-label="Hvem kan se dem">Kun dig</td></tr><tr><th scope="row">Backupfiler</th><td data-label="Hvor de gemmes">Der, hvor du gemmer dem</td><td data-label="Hvem kan se dem">Den, du giver filen til</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="da-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Hvilke data appen har</h2></div>
+    <ul><li><b>Placering.</b> Så længe du har optagelse slået til, registrerer appen telefonens placering (også i baggrunden) for at vise, hvor du har været, og hvordan du er rejst.</li><li><b>Fysisk aktivitet.</b> Hvis du giver tilladelse, fortæller Android appen, om du går, cykler eller er i et køretøj. Det bruges kun til at afgøre, hvordan du er rejst. Mens optagelse er slået til, tæller appen også telefonens egne skridt time for time; de bliver på enheden.</li><li><b>Billeder og videoer.</b> Hvis du giver tilladelse, læser appen den dato og det sted, der er gemt i filerne i dit galleri, for at vise billederne på kortet. Billederne bliver hverken kopieret eller sendt nogen steder hen. Appen skriver ikke noget i dine billedfiler; den kan kun fjerne en placering, som en ældre version har skrevet, efter at Android har spurgt dig.</li><li><b>Importerede filer.</b> Filer fra Google Tidslinje eller Google Takeout, som du vælger, læses på telefonen.</li><li><b>Steder og indstillinger:</b> de navne, du giver steder, sprog, tema.</li><li><b>Ugentlige rapporter</b> (valgfrit): humøret og de ord, du skriver om en uge, og din fødselsdag, hvis du angiver den, for at vise, hvor stor en del af dit liv tidslinjen rummer.</li><li><b>Skridtmål</b> (valgfrit): din højde og vægt, hvis du angiver dem, for at beregne et dagligt skridtmål og din skridtlængde. De bliver på enheden.</li></ul><p>Det hele gemmes på din enhed.</p>
+    
+  </section>
+  <section class="card sec" id="da-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Hvad der sendes over internettet</h2></div>
+    <ul><li><b>Kort.</b> Kortfliser hentes fra OpenFreeMap (data fra OpenStreetMap), og satellitbilleder fra Esri. Disse servere ser, hvilket område der vises, ikke hvem du er.</li><li><b>Adresser og stednavne</b> (valgfrit). Koordinaterne for steder, hvor du har gjort holdt, sendes til Androids adressetjeneste og til Nominatim (OpenStreetMap) for at få en adresse og et navn. Der sendes intet med, som identificerer dig. Det kan slås fra i indstillingerne.</li><li><b>Offentlig transport</b> (valgfrit). For at skelne mellem bus, sporvogn, tog og metro sendes ruten for en afsluttet tur med køretøj til OpenStreetMaps Overpass-tjeneste, som svarer med skinnerne og stoppestederne langs ruten. Der sendes intet med, som identificerer dig. Det kan slås fra i indstillingerne.</li></ul>
+    
+  </section>
+  <section class="card sec" id="da-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Backup til Google Drev (valgfrit)</h2></div>
+    <p>Hvis du forbinder Google Drev, får appen kun adgang til sin egen skjulte mappe i dit Drev (tilladelsen drive.appdata) og kan ikke se nogen af dine andre filer. Der skrives en kopi af din tidslinje dertil, én pr. enhed, så den kan gendannes på en ny telefon eller vises på en tablet. Google Drev kan beholde ældre versioner af kopien i et stykke tid, og appen kan gendanne dem. Appen læser også din e-mailadresse, kun for at vise, hvilken konto der er forbundet. Disse data går kun mellem din enhed og Google; udvikleren har ikke adgang til dem. Du kan afbryde forbindelsen til Drev i indstillingerne.</p><p>Appens brug af oplysninger modtaget fra Google API'er overholder <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, herunder kravene om begrænset brug (Limited Use).</p>
+    
+  </section>
+  <section class="card sec" id="da-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Urdata via Health Connect (valgfrit)</h2></div>
+    <p>Hvis du giver tilladelse, læser appen skridt, puls, søvn og træning (med ruter) fra Health Connect, som er skrevet dertil af ur-apps som Mi Fitness. Den læser kun disse data og skriver aldrig til Health Connect. Dataene læses på telefonen udelukkende for at blive vist under fanen Sundhed og på den tilsvarende dag i din tidslinje; appen gemmer dem ikke i sin database, tager dem ikke med i backups og sender dem ingen steder hen. Du kan til enhver tid tilbagekalde tilladelserne i Health Connects indstillinger.</p>
+    
+  </section>
+  <section class="card sec" id="da-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Backupfiler og sikkerhedskopier</h2></div>
+    <p>En backupfil oprettes kun, når du selv gemmer en, på det sted, du vælger. Før en backup erstatter din tidslinje, beholder appen den tidligere tidslinje på enheden (de seneste tre), så en forkert gendannelse kan fortrydes; disse kopier forlader aldrig telefonen.</p>
+    
+  </section>
+  <section class="card sec" id="da-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Opdateringer</h2></div>
+    <p>Den version af Slid, der deles på dens websted, tjekker pegasohlib.github.io for en ny version med få timers mellemrum og henter den fra GitHub, når du trykker på Opdater. Som ethvert websted ser GitHub din enheds IP-adresse; intet andet sendes, og ingen data fra appen.</p><p>Du kan slå de automatiske tjek fra under Indstillinger.</p><p>GitHub tæller også, hvor mange gange hver fil er blevet downloadet. Det er kun et tal uden noget om, hvem der har downloadet; webstedet viser det som et omtrentligt antal downloads.</p>
+    
+  </section>
+  <section class="card sec" id="da-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Sletning af data</h2></div>
+    <p>Enhver post kan slettes i tidslinjen. Afinstallerer du appen, er alle data på enheden væk. Kopien i Google Drev kan slettes i appen eller under Administrer apps i Google Drevs indstillinger.</p>
+    
+  </section>
+  <section class="card sec" id="da-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Børn</h2></div>
+    <p>Appen indsamler ingen data om nogen, heller ikke om børn: alt bliver på ejerens enhed.</p>
+    
+  </section>
+  <section class="card sec" id="da-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Ændringer</h2></div>
+    <p>Hvis denne politik ændres, vises den nye version på denne side med en ny dato.</p>
+    
+  </section>
+  <section class="card sec" id="da-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Kontakt</h2></div>
+    <p>Spørgsmål om privatliv: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
 <article class="langdoc" lang="sv" data-lang="sv" data-title="Integritetspolicy · Slid" data-app="Slid" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
@@ -750,6 +1153,84 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
+<article class="langdoc" lang="tr" data-lang="tr" data-title="Gizlilik politikası · Slid" data-app="Slid" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Gizlilik politikası</h1>
+    <p class="date">Yürürlük tarihi: 22 Ekim 2026</p>
+    <p class="lead">Bu politika “Slid” uygulamasını (paket dev.slid) kapsar. Slid'in kendine ait sunucusu, hesapları, reklamları ve analizleri yoktur. Zaman çizelgen telefonunda durur; geliştirici onu hiçbir zaman almaz ve görmez.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="tr-glance">
+    <h2 id="tr-glance" class="eyebrow">Kısaca</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Telefonunda kalır</b><br>Zaman çizelgesi, yerler ve fotoğrafların konumları yalnızca cihazda saklanır.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Seninle ilgili hiçbir şey gönderilmez</b><br>Hesap yok, takip yok, reklam yok, analiz yok.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Sen karar verirsin</b><br>Her izin ve her çevrimiçi özellik isteğe bağlıdır ve kapatılabilir.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Silmek kolay</b><br>Herhangi bir kaydı sil ya da uygulamayı kaldır, her şey gider.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Senin yedeğin, senin Drive'ın</b><br>Yalnızca kendi Google Drive'ındaki Slid'in gizli klasörü.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Bu sayfada">
+    <p class="eyebrow">Bu sayfada</p>
+    <div class="chips"><a href="#tr-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Uygulama hangi verileri tutar</a><a href="#tr-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>İnternet üzerinden neler gider</a><a href="#tr-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive'a yedekleme (isteğe bağlı)</a><a href="#tr-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Health Connect üzerinden saat verileri (isteğe bağlı)</a><a href="#tr-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Yedek dosyaları ve güvenlik kopyaları</a><a href="#tr-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Güncellemeler</a><a href="#tr-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Verileri silme</a><a href="#tr-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Çocuklar</a><a href="#tr-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Değişiklikler</a><a href="#tr-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>İletişim</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="tr-table">
+    <h2 id="tr-table">Hangi veriler, nerede durur, kim görür</h2>
+    <table>
+      <thead><tr><th scope="col">Veri</th><th scope="col">Nerede saklanır</th><th scope="col">Kim görebilir</th></tr></thead>
+      <tbody><tr><th scope="row">Zaman çizelgen: konumlar, etkinlik ve adımlar, Google'dan içe aktarılan geçmiş, yer adları, haftalık raporlar, ayarlar</th><td data-label="Nerede saklanır">Cihazında</td><td data-label="Kim görebilir">Yalnızca sen</td></tr><tr><th scope="row">Fotoğraflarının tarihleri ve konumları</th><td data-label="Nerede saklanır">Galeri dosyalarından okunur; görüntüler kopyalanmaz</td><td data-label="Kim görebilir">Yalnızca sen, cihazda</td></tr><tr><th scope="row">Health Connect'ten saat verileri</th><td data-label="Nerede saklanır">Saklanmaz: göstermek için anında okunur</td><td data-label="Kim görebilir">Yalnızca sen, cihazda</td></tr><tr><th scope="row">Gösterilen harita alanı; durduğun yerlerin koordinatları ve araçla yapılan yolculukların güzergâhları (isteğe bağlı)</th><td data-label="Nerede saklanır">Seni tanımlayan hiçbir bilgi olmadan harita, adres ve ulaşım hizmetlerine gönderilir</td><td data-label="Kim görebilir">OpenFreeMap, Esri, Android'in adres hizmeti, Nominatim, Overpass</td></tr><tr><th scope="row">Zaman çizelgenin bir kopyası (isteğe bağlı)</th><td data-label="Nerede saklanır">Kendi Google Drive'ındaki uygulamanın gizli klasörü</td><td data-label="Kim görebilir">Yalnızca sen</td></tr><tr><th scope="row">Yedek dosyaları</th><td data-label="Nerede saklanır">Onları kaydettiğin yerde</td><td data-label="Kim görebilir">Dosyayı verdiğin kişi</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="tr-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Uygulama hangi verileri tutar</h2></div>
+    <ul><li><b>Konum.</b> Kayıt açık olduğu sürece uygulama, nerelerde bulunduğunu ve nasıl yolculuk ettiğini göstermek için telefonun konumunu (arka planda da) kaydeder.</li><li><b>Fiziksel etkinlik.</b> İzin verirsen Android, uygulamaya yürüyor mu, bisiklet mi sürüyor yoksa bir araçta mı olduğunu bildirir. Bu yalnızca nasıl yolculuk ettiğini anlamak için kullanılır. Kayıt açıkken uygulama, telefonun kendi saydığı adımları da saat saat sayar; bunlar cihazda kalır.</li><li><b>Fotoğraflar ve videolar.</b> İzin verirsen uygulama, fotoğrafları haritada göstermek için galeri dosyalarında kayıtlı tarihi ve konumu okur. Görüntüler kopyalanmaz ve hiçbir yere gönderilmez. Uygulama fotoğraf dosyalarına hiçbir şey yazmaz; yalnızca eski bir sürümün yazdığı bir konumu, Android sana sorduktan sonra kaldırabilir.</li><li><b>İçe aktarılan dosyalar.</b> Seçtiğin Google Zaman Çizelgesi veya Google Takeout dosyaları telefonda okunur.</li><li><b>Yerler ve ayarlar:</b> yerlere verdiğin adlar, dil, tema.</li><li><b>Haftalık raporlar</b> (isteğe bağlı): bir hafta hakkında yazdığın ruh hâli ve sözcükler ile, girersen, zaman çizelgesinin hayatının ne kadarını kapsadığını göstermek için doğum günün.</li><li><b>Adım hedefi</b> (isteğe bağlı): girersen boyun ve kilon; günlük bir adım hedefi ve adım uzunluğu hesaplamak için. Bunlar cihazda kalır.</li></ul><p>Bunların hepsi cihazında saklanır.</p>
+    
+  </section>
+  <section class="card sec" id="tr-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>İnternet üzerinden neler gider</h2></div>
+    <ul><li><b>Haritalar.</b> Harita parçaları OpenFreeMap'ten (OpenStreetMap verileri), uydu görüntüleri ise Esri'den yüklenir. Bu sunucular hangi alanın gösterildiğini görür, senin kim olduğunu değil.</li><li><b>Adresler ve yer adları</b> (isteğe bağlı). Durduğun yerlerin koordinatları, bir adres ve ad almak için Android'in adres hizmetine ve Nominatim'e (OpenStreetMap) gönderilir. Bunlarla birlikte seni tanımlayan hiçbir şey gönderilmez. Bu, ayarlardan kapatılabilir.</li><li><b>Toplu taşıma</b> (isteğe bağlı). Otobüs, tramvay, tren veya metroyu ayırt etmek için tamamlanan bir araç yolculuğunun güzergâhı OpenStreetMap'in Overpass hizmetine gönderilir; bu hizmet de güzergâh boyunca uzanan rayları ve durakları yanıt olarak verir. Bununla birlikte seni tanımlayan hiçbir şey gönderilmez. Bu, ayarlardan kapatılabilir.</li></ul>
+    
+  </section>
+  <section class="card sec" id="tr-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive'a yedekleme (isteğe bağlı)</h2></div>
+    <p>Google Drive'ı bağlarsan uygulama, Drive'ında yalnızca kendi gizli klasörüne erişim alır (drive.appdata izni) ve diğer dosyalarının hiçbirini göremez. Yeni bir telefonda geri yüklenebilmesi veya bir tablette gösterilebilmesi için zaman çizelgenin bir kopyası, her cihaz için bir tane olmak üzere oraya yazılır. Google Drive bu kopyanın eski sürümlerini bir süre saklayabilir; uygulama bunları geri yükleyebilir. Uygulama, yalnızca hangi hesabın bağlı olduğunu göstermek için e-posta adresini de okur. Bu veriler yalnızca cihazınla Google arasında aktarılır; geliştiricinin bunlara erişimi yoktur. Drive bağlantısını ayarlardan kesebilirsin.</p><p>Uygulamanın Google API'lerinden aldığı bilgileri kullanması, Sınırlı Kullanım şartları da dahil olmak üzere <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Hizmetleri Kullanıcı Verileri Politikası</a>'na uygundur.</p>
+    
+  </section>
+  <section class="card sec" id="tr-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Health Connect üzerinden saat verileri (isteğe bağlı)</h2></div>
+    <p>İzin verirsen uygulama; Mi Fitness gibi saat uygulamalarının Health Connect'e yazdığı adımları, nabzı, uykuyu ve antrenmanları (güzergâhlarıyla birlikte) okur. Bu verileri yalnızca okur ve Health Connect'e hiçbir zaman yazmaz. Veriler telefonda yalnızca Sağlık sekmesinde ve zaman çizelgendeki ilgili günde göstermek için okunur; uygulama bunları kendi veritabanında saklamaz, yedeklere eklemez ve hiçbir yere göndermez. İzinleri istediğin zaman Health Connect ayarlarından geri alabilirsin.</p>
+    
+  </section>
+  <section class="card sec" id="tr-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Yedek dosyaları ve güvenlik kopyaları</h2></div>
+    <p>Yedek dosyası yalnızca sen kendin bir tane kaydettiğinde, seçtiğin yerde oluşturulur. Bir yedek zaman çizelgenin yerini almadan önce uygulama, yanlış bir geri yüklemenin geri alınabilmesi için önceki zaman çizelgesini cihazda tutar (son üçünü); bu kopyalar telefondan hiçbir zaman çıkmaz.</p>
+    
+  </section>
+  <section class="card sec" id="tr-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Güncellemeler</h2></div>
+    <p>Slid'in kendi web sitesinde paylaşılan sürümü, birkaç saatte bir pegasohlib.github.io adresinde yeni sürüm olup olmadığını kontrol eder ve Güncelle'ye dokunduğunda onu GitHub'dan indirir. Her web sitesi gibi GitHub da cihazının IP adresini görür; başka hiçbir şey ve uygulamadan hiçbir veri gönderilmez.</p><p>Otomatik kontrolleri Ayarlar'dan kapatabilirsin.</p><p>GitHub ayrıca her dosyanın kaç kez indirildiğini sayar. Bu yalnızca bir sayıdır, kimin indirdiğine dair hiçbir bilgi içermez; web sitesi bunu yaklaşık indirme sayısı olarak gösterir.</p>
+    
+  </section>
+  <section class="card sec" id="tr-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Verileri silme</h2></div>
+    <p>Zaman çizelgesindeki herhangi bir kayıt silinebilir. Uygulamayı kaldırırsan cihazdaki tüm veriler gider. Google Drive'daki kopya uygulamadan ya da Google Drive ayarlarındaki Uygulamaları yönet bölümünden silinebilir.</p>
+    
+  </section>
+  <section class="card sec" id="tr-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Çocuklar</h2></div>
+    <p>Uygulama, çocuklar dahil hiç kimse hakkında veri toplamaz: her şey cihaz sahibinin cihazında kalır.</p>
+    
+  </section>
+  <section class="card sec" id="tr-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Değişiklikler</h2></div>
+    <p>Bu politika değişirse yeni sürüm, yeni bir tarihle bu sayfada yayımlanır.</p>
+    
+  </section>
+  <section class="card sec" id="tr-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>İletişim</h2></div>
+    <p>Gizlilikle ilgili sorular: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
 <article class="langdoc" lang="id" data-lang="id" data-title="Kebijakan privasi · Slid" data-app="Slid" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
@@ -825,6 +1306,240 @@ td:last-child{font-weight:600;color:var(--ink)}
   <section class="card sec" id="id-contact">
     <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Kontak</h2></div>
     <p>Pertanyaan tentang privasi: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="vi" data-lang="vi" data-title="Chính sách quyền riêng tư · Slid" data-app="Slid" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Chính sách quyền riêng tư</h1>
+    <p class="date">Có hiệu lực từ ngày 22 tháng 10 năm 2026</p>
+    <p class="lead">Chính sách này áp dụng cho ứng dụng “Slid” (gói dev.slid). Slid không có máy chủ riêng, không có tài khoản, không quảng cáo và không phân tích. Dòng thời gian của bạn nằm trên điện thoại của bạn, và nhà phát triển không bao giờ nhận được hay nhìn thấy nó.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="vi-glance">
+    <h2 id="vi-glance" class="eyebrow">Tóm tắt</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Ở lại trên điện thoại của bạn</b><br>Dòng thời gian, các địa điểm và vị trí của ảnh chỉ được lưu trên thiết bị.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Không gửi đi bất cứ điều gì về bạn</b><br>Không tài khoản, không theo dõi, không quảng cáo, không phân tích.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Bạn quyết định</b><br>Mọi quyền và mọi tính năng trực tuyến đều là tùy chọn và có thể tắt.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Dễ dàng xóa</b><br>Xóa bất kỳ mục nào, hoặc gỡ cài đặt ứng dụng và mọi thứ sẽ biến mất.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Bản sao lưu của bạn, Drive của bạn</b><br>Chỉ thư mục ẩn của Slid trong Google Drive của chính bạn.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Trên trang này">
+    <p class="eyebrow">Trên trang này</p>
+    <div class="chips"><a href="#vi-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Ứng dụng lưu giữ những dữ liệu nào</a><a href="#vi-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Những gì được truyền qua internet</a><a href="#vi-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Sao lưu lên Google Drive (tùy chọn)</a><a href="#vi-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Dữ liệu đồng hồ qua Health Connect (tùy chọn)</a><a href="#vi-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Tệp sao lưu và bản sao an toàn</a><a href="#vi-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Cập nhật</a><a href="#vi-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Xóa dữ liệu</a><a href="#vi-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Trẻ em</a><a href="#vi-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Thay đổi</a><a href="#vi-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Liên hệ</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="vi-table">
+    <h2 id="vi-table">Dữ liệu nào, lưu ở đâu, ai nhìn thấy</h2>
+    <table>
+      <thead><tr><th scope="col">Dữ liệu</th><th scope="col">Lưu ở đâu</th><th scope="col">Ai có thể xem</th></tr></thead>
+      <tbody><tr><th scope="row">Dòng thời gian của bạn: vị trí, hoạt động và số bước, lịch sử nhập từ Google, tên địa điểm, báo cáo hằng tuần, cài đặt</th><td data-label="Lưu ở đâu">Trên thiết bị của bạn</td><td data-label="Ai có thể xem">Chỉ bạn</td></tr><tr><th scope="row">Ngày chụp và địa điểm của ảnh</th><td data-label="Lưu ở đâu">Đọc từ các tệp trong thư viện; ảnh không bị sao chép</td><td data-label="Ai có thể xem">Chỉ bạn, trên thiết bị</td></tr><tr><th scope="row">Dữ liệu đồng hồ từ Health Connect</th><td data-label="Lưu ở đâu">Không được lưu: chỉ đọc tức thời để hiển thị</td><td data-label="Ai có thể xem">Chỉ bạn, trên thiết bị</td></tr><tr><th scope="row">Vùng bản đồ đang hiển thị; tọa độ những nơi bạn dừng lại và lộ trình các chuyến đi bằng phương tiện (tùy chọn)</th><td data-label="Lưu ở đâu">Gửi đến các dịch vụ bản đồ, địa chỉ và giao thông, không kèm thông tin nào nhận dạng bạn</td><td data-label="Ai có thể xem">OpenFreeMap, Esri, dịch vụ địa chỉ của Android, Nominatim, Overpass</td></tr><tr><th scope="row">Bản sao dòng thời gian của bạn (tùy chọn)</th><td data-label="Lưu ở đâu">Thư mục ẩn của ứng dụng trong Google Drive của chính bạn</td><td data-label="Ai có thể xem">Chỉ bạn</td></tr><tr><th scope="row">Tệp sao lưu</th><td data-label="Lưu ở đâu">Nơi bạn lưu chúng</td><td data-label="Ai có thể xem">Người mà bạn đưa tệp</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="vi-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Ứng dụng lưu giữ những dữ liệu nào</h2></div>
+    <ul><li><b>Vị trí.</b> Khi bạn bật ghi, ứng dụng ghi lại vị trí của điện thoại (kể cả khi chạy nền) để cho thấy bạn đã ở đâu và đã di chuyển như thế nào.</li><li><b>Hoạt động thể chất.</b> Nếu bạn cho phép, Android sẽ cho ứng dụng biết bạn đang đi bộ, đạp xe hay ở trên phương tiện. Thông tin này chỉ được dùng để xác định cách bạn di chuyển. Khi đang ghi, ứng dụng cũng đếm số bước của chính điện thoại theo từng giờ; dữ liệu này ở lại trên thiết bị.</li><li><b>Ảnh và video.</b> Nếu bạn cho phép, ứng dụng đọc ngày và địa điểm được lưu trong các tệp thư viện để hiển thị ảnh trên bản đồ. Ảnh không bị sao chép hay gửi đi đâu cả. Ứng dụng không ghi bất cứ thứ gì vào tệp ảnh của bạn; nó chỉ có thể xóa một địa điểm do phiên bản cũ đã ghi, sau khi Android hỏi ý bạn.</li><li><b>Tệp được nhập.</b> Các tệp Google Timeline hoặc Google Takeout mà bạn chọn được đọc ngay trên điện thoại.</li><li><b>Địa điểm và cài đặt:</b> tên bạn đặt cho các địa điểm, ngôn ngữ, giao diện.</li><li><b>Báo cáo hằng tuần</b> (tùy chọn): tâm trạng và những dòng bạn viết về một tuần, cùng ngày sinh của bạn nếu bạn cung cấp, để cho thấy dòng thời gian bao quát được bao nhiêu phần cuộc đời bạn.</li><li><b>Mục tiêu số bước</b> (tùy chọn): chiều cao và cân nặng của bạn nếu bạn cung cấp, để tính mục tiêu số bước mỗi ngày và độ dài bước chân. Dữ liệu này ở lại trên thiết bị.</li></ul><p>Tất cả đều được lưu trên thiết bị của bạn.</p>
+    
+  </section>
+  <section class="card sec" id="vi-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Những gì được truyền qua internet</h2></div>
+    <ul><li><b>Bản đồ.</b> Các ô bản đồ được tải từ OpenFreeMap (dữ liệu OpenStreetMap), còn ảnh vệ tinh được tải từ Esri. Các máy chủ này thấy vùng nào đang được hiển thị, chứ không biết bạn là ai.</li><li><b>Địa chỉ và tên địa điểm</b> (tùy chọn). Tọa độ những nơi bạn dừng lại được gửi đến dịch vụ địa chỉ của Android và đến Nominatim (OpenStreetMap) để lấy địa chỉ và tên. Không có thông tin nào nhận dạng bạn được gửi kèm. Bạn có thể tắt tính năng này trong cài đặt.</li><li><b>Giao thông công cộng</b> (tùy chọn). Để phân biệt xe buýt, xe điện, tàu hỏa hay tàu điện ngầm, lộ trình của một chuyến đi bằng phương tiện đã kết thúc được gửi đến dịch vụ Overpass của OpenStreetMap, dịch vụ này trả về các tuyến ray và điểm dừng dọc theo lộ trình đó. Không có thông tin nào nhận dạng bạn được gửi kèm. Bạn có thể tắt tính năng này trong cài đặt.</li></ul>
+    
+  </section>
+  <section class="card sec" id="vi-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Sao lưu lên Google Drive (tùy chọn)</h2></div>
+    <p>Nếu bạn kết nối Google Drive, ứng dụng chỉ được truy cập thư mục ẩn của riêng nó trong Drive của bạn (quyền drive.appdata) và không thể thấy bất kỳ tệp nào khác của bạn. Một bản sao dòng thời gian của bạn được ghi vào đó, mỗi thiết bị một bản, để có thể khôi phục trên điện thoại mới hoặc hiển thị trên máy tính bảng. Google Drive có thể giữ các phiên bản cũ hơn của bản sao này trong một thời gian, và ứng dụng có thể khôi phục chúng. Ứng dụng cũng đọc địa chỉ email của bạn, chỉ để hiển thị tài khoản nào đang được kết nối. Dữ liệu này chỉ được truyền giữa thiết bị của bạn và Google; nhà phát triển không có quyền truy cập. Bạn có thể ngắt kết nối Drive trong cài đặt.</p><p>Việc ứng dụng sử dụng thông tin nhận được từ các API của Google tuân thủ <a href="https://developers.google.com/terms/api-services-user-data-policy">Chính sách dữ liệu người dùng của dịch vụ API Google</a>, bao gồm cả các yêu cầu về Sử dụng có giới hạn.</p>
+    
+  </section>
+  <section class="card sec" id="vi-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Dữ liệu đồng hồ qua Health Connect (tùy chọn)</h2></div>
+    <p>Nếu bạn cho phép, ứng dụng đọc số bước, nhịp tim, giấc ngủ và các buổi tập (kèm lộ trình) từ Health Connect, do các ứng dụng đồng hồ như Mi Fitness ghi vào đó. Ứng dụng chỉ đọc dữ liệu này và không bao giờ ghi vào Health Connect. Dữ liệu chỉ được đọc trên điện thoại để hiển thị trong thẻ Sức khỏe và ở ngày tương ứng trên dòng thời gian của bạn; ứng dụng không lưu nó vào cơ sở dữ liệu của mình, không đưa nó vào bản sao lưu và không gửi nó đi đâu cả. Bạn có thể thu hồi các quyền bất cứ lúc nào trong cài đặt của Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="vi-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Tệp sao lưu và bản sao an toàn</h2></div>
+    <p>Tệp sao lưu chỉ được tạo khi chính bạn lưu một tệp, tại nơi bạn chọn. Trước khi một bản sao lưu thay thế dòng thời gian của bạn, ứng dụng giữ lại dòng thời gian trước đó trên thiết bị (ba bản gần nhất), để có thể hoàn tác một lần khôi phục nhầm; các bản sao này không bao giờ rời khỏi điện thoại.</p>
+    
+  </section>
+  <section class="card sec" id="vi-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Cập nhật</h2></div>
+    <p>Phiên bản Slid được chia sẻ trên trang web của ứng dụng cứ vài giờ lại kiểm tra pegasohlib.github.io để tìm phiên bản mới, và tải về từ GitHub khi bạn nhấn Cập nhật. Như mọi trang web khác, GitHub thấy địa chỉ IP của thiết bị bạn; ngoài ra không có gì khác được gửi đi, và không có dữ liệu nào từ ứng dụng.</p><p>Bạn có thể tắt tính năng tự động kiểm tra trong Cài đặt.</p><p>GitHub cũng đếm số lần mỗi tệp được tải về. Đó chỉ là một con số, không chứa thông tin gì về người đã tải; trang web hiển thị nó như số lượt tải gần đúng.</p>
+    
+  </section>
+  <section class="card sec" id="vi-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Xóa dữ liệu</h2></div>
+    <p>Bạn có thể xóa bất kỳ mục nào trên dòng thời gian. Khi gỡ cài đặt ứng dụng, toàn bộ dữ liệu trên thiết bị sẽ biến mất. Bản sao trên Google Drive có thể được xóa trong ứng dụng, hoặc trong mục Quản lý ứng dụng ở phần cài đặt của Google Drive.</p>
+    
+  </section>
+  <section class="card sec" id="vi-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Trẻ em</h2></div>
+    <p>Ứng dụng không thu thập dữ liệu về bất kỳ ai, kể cả trẻ em: mọi thứ đều ở lại trên thiết bị của chủ sở hữu.</p>
+    
+  </section>
+  <section class="card sec" id="vi-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Thay đổi</h2></div>
+    <p>Nếu chính sách này thay đổi, phiên bản mới sẽ xuất hiện trên trang này kèm ngày mới.</p>
+    
+  </section>
+  <section class="card sec" id="vi-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Liên hệ</h2></div>
+    <p>Câu hỏi về quyền riêng tư: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="th" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Slid" data-app="Slid" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>นโยบายความเป็นส่วนตัว</h1>
+    <p class="date">มีผลตั้งแต่วันที่ 22 ตุลาคม 2026</p>
+    <p class="lead">นโยบายนี้ครอบคลุมแอป “Slid” (แพ็กเกจ dev.slid) Slid ไม่มีเซิร์ฟเวอร์ของตัวเอง ไม่มีบัญชี ไม่มีโฆษณา และไม่มีการวิเคราะห์ข้อมูล ไทม์ไลน์ของคุณอยู่ในโทรศัพท์ของคุณ และผู้พัฒนาไม่เคยได้รับหรือเห็นข้อมูลนี้</p>
+  </header>
+
+  <section class="glance" aria-labelledby="th-glance">
+    <h2 id="th-glance" class="eyebrow">สรุปสั้น ๆ</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>อยู่ในโทรศัพท์ของคุณ</b><br>ไทม์ไลน์ สถานที่ และตำแหน่งของรูปถ่าย ถูกเก็บไว้ในอุปกรณ์เท่านั้น</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>ไม่มีการส่งข้อมูลใดเกี่ยวกับคุณ</b><br>ไม่มีบัญชี ไม่มีการติดตาม ไม่มีโฆษณา ไม่มีการวิเคราะห์ข้อมูล</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>คุณเป็นผู้ตัดสินใจ</b><br>ทุกสิทธิ์และทุกฟีเจอร์ออนไลน์เป็นตัวเลือก และปิดได้</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>ลบได้ง่าย</b><br>ลบรายการใดก็ได้ หรือถอนการติดตั้งแอปแล้วทุกอย่างจะหายไป</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>ข้อมูลสำรองของคุณ ใน Drive ของคุณ</b><br>มีเพียงโฟลเดอร์ซ่อนของ Slid ใน Google Drive ของคุณเอง</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="ในหน้านี้">
+    <p class="eyebrow">ในหน้านี้</p>
+    <div class="chips"><a href="#th-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>แอปเก็บข้อมูลอะไรบ้าง</a><a href="#th-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>อะไรบ้างที่ส่งผ่านอินเทอร์เน็ต</a><a href="#th-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>สำรองข้อมูลไปยัง Google Drive (ไม่บังคับ)</a><a href="#th-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>ข้อมูลนาฬิกาผ่าน Health Connect (ไม่บังคับ)</a><a href="#th-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>ไฟล์สำรองข้อมูลและสำเนาป้องกัน</a><a href="#th-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>การอัปเดต</a><a href="#th-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>การลบข้อมูล</a><a href="#th-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>เด็ก</a><a href="#th-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>การเปลี่ยนแปลง</a><a href="#th-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>ติดต่อ</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="th-table">
+    <h2 id="th-table">ข้อมูลอะไร เก็บไว้ที่ไหน ใครเห็นได้</h2>
+    <table>
+      <thead><tr><th scope="col">ข้อมูล</th><th scope="col">เก็บไว้ที่ไหน</th><th scope="col">ใครเห็นได้</th></tr></thead>
+      <tbody><tr><th scope="row">ไทม์ไลน์ของคุณ: ตำแหน่ง กิจกรรมและจำนวนก้าว ประวัติที่นำเข้าจาก Google ชื่อสถานที่ รายงานประจำสัปดาห์ การตั้งค่า</th><td data-label="เก็บไว้ที่ไหน">ในอุปกรณ์ของคุณ</td><td data-label="ใครเห็นได้">คุณเท่านั้น</td></tr><tr><th scope="row">วันที่และสถานที่ของรูปถ่าย</th><td data-label="เก็บไว้ที่ไหน">อ่านจากไฟล์ในแกลเลอรี ไม่มีการคัดลอกรูปภาพ</td><td data-label="ใครเห็นได้">คุณเท่านั้น ในอุปกรณ์</td></tr><tr><th scope="row">ข้อมูลนาฬิกาจาก Health Connect</th><td data-label="เก็บไว้ที่ไหน">ไม่ถูกเก็บไว้: อ่านทันทีเพื่อแสดงผล</td><td data-label="ใครเห็นได้">คุณเท่านั้น ในอุปกรณ์</td></tr><tr><th scope="row">พื้นที่แผนที่ที่แสดงอยู่ พิกัดของสถานที่ที่คุณหยุด และเส้นทางการเดินทางด้วยยานพาหนะ (ไม่บังคับ)</th><td data-label="เก็บไว้ที่ไหน">ส่งไปยังบริการแผนที่ ที่อยู่ และการขนส่ง โดยไม่มีข้อมูลใดที่ระบุตัวคุณ</td><td data-label="ใครเห็นได้">OpenFreeMap, Esri, บริการที่อยู่ของ Android, Nominatim, Overpass</td></tr><tr><th scope="row">สำเนาไทม์ไลน์ของคุณ (ไม่บังคับ)</th><td data-label="เก็บไว้ที่ไหน">โฟลเดอร์ซ่อนของแอปใน Google Drive ของคุณเอง</td><td data-label="ใครเห็นได้">คุณเท่านั้น</td></tr><tr><th scope="row">ไฟล์สำรองข้อมูล</th><td data-label="เก็บไว้ที่ไหน">ที่ที่คุณบันทึกไว้</td><td data-label="ใครเห็นได้">ผู้ที่คุณมอบไฟล์ให้</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="th-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>แอปเก็บข้อมูลอะไรบ้าง</h2></div>
+    <ul><li><b>ตำแหน่ง</b> ขณะที่คุณเปิดการบันทึกไว้ แอปจะบันทึกตำแหน่งของโทรศัพท์ (รวมถึงในเบื้องหลัง) เพื่อแสดงว่าคุณเคยอยู่ที่ไหนและเดินทางอย่างไร</li><li><b>กิจกรรมทางกาย</b> หากคุณอนุญาต Android จะบอกแอปว่าคุณกำลังเดิน ปั่นจักรยาน หรืออยู่ในยานพาหนะ ข้อมูลนี้ใช้เพียงเพื่อระบุวิธีการเดินทางของคุณ ขณะเปิดการบันทึก แอปยังนับจำนวนก้าวของโทรศัพท์เองเป็นรายชั่วโมงด้วย ข้อมูลเหล่านี้อยู่ในอุปกรณ์</li><li><b>รูปภาพและวิดีโอ</b> หากคุณอนุญาต แอปจะอ่านวันที่และสถานที่ที่บันทึกไว้ในไฟล์แกลเลอรีเพื่อแสดงรูปบนแผนที่ รูปภาพไม่ถูกคัดลอกหรือส่งไปที่ใด แอปไม่เขียนสิ่งใดลงในไฟล์รูปของคุณ ทำได้เพียงลบสถานที่ที่เวอร์ชันเก่าเคยเขียนไว้ หลังจากที่ Android ถามคุณแล้ว</li><li><b>ไฟล์ที่นำเข้า</b> ไฟล์ Google Timeline หรือ Google Takeout ที่คุณเลือกจะถูกอ่านในโทรศัพท์</li><li><b>สถานที่และการตั้งค่า:</b> ชื่อที่คุณตั้งให้สถานที่ ภาษา ธีม</li><li><b>รายงานประจำสัปดาห์</b> (ไม่บังคับ): อารมณ์และถ้อยคำที่คุณเขียนเกี่ยวกับสัปดาห์หนึ่ง และวันเกิดของคุณหากคุณระบุไว้ เพื่อแสดงว่าไทม์ไลน์ครอบคลุมชีวิตของคุณมากเพียงใด</li><li><b>เป้าหมายจำนวนก้าว</b> (ไม่บังคับ): ส่วนสูงและน้ำหนักของคุณหากคุณระบุไว้ เพื่อคำนวณเป้าหมายจำนวนก้าวรายวันและความยาวของก้าว ข้อมูลเหล่านี้อยู่ในอุปกรณ์</li></ul><p>ข้อมูลทั้งหมดนี้เก็บอยู่ในอุปกรณ์ของคุณ</p>
+    
+  </section>
+  <section class="card sec" id="th-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>อะไรบ้างที่ส่งผ่านอินเทอร์เน็ต</h2></div>
+    <ul><li><b>แผนที่</b> ไทล์แผนที่โหลดจาก OpenFreeMap (ข้อมูล OpenStreetMap) และภาพถ่ายดาวเทียมโหลดจาก Esri เซิร์ฟเวอร์เหล่านี้เห็นว่ากำลังแสดงพื้นที่ใด แต่ไม่รู้ว่าคุณเป็นใคร</li><li><b>ที่อยู่และชื่อสถานที่</b> (ไม่บังคับ) พิกัดของสถานที่ที่คุณหยุดจะถูกส่งไปยังบริการที่อยู่ของ Android และ Nominatim (OpenStreetMap) เพื่อรับที่อยู่และชื่อ ไม่มีข้อมูลใดที่ระบุตัวคุณถูกส่งไปด้วย ปิดได้ในการตั้งค่า</li><li><b>ขนส่งสาธารณะ</b> (ไม่บังคับ) เพื่อแยกแยะรถเมล์ รถราง รถไฟ หรือรถไฟใต้ดิน เส้นทางของการเดินทางด้วยยานพาหนะที่สิ้นสุดแล้วจะถูกส่งไปยังบริการ Overpass ของ OpenStreetMap ซึ่งจะตอบกลับด้วยรางและป้ายหยุดตลอดเส้นทางนั้น ไม่มีข้อมูลใดที่ระบุตัวคุณถูกส่งไปด้วย ปิดได้ในการตั้งค่า</li></ul>
+    
+  </section>
+  <section class="card sec" id="th-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>สำรองข้อมูลไปยัง Google Drive (ไม่บังคับ)</h2></div>
+    <p>หากคุณเชื่อมต่อ Google Drive แอปจะเข้าถึงได้เพียงโฟลเดอร์ซ่อนของตัวเองใน Drive ของคุณ (สิทธิ์ drive.appdata) และมองไม่เห็นไฟล์อื่นใดของคุณ สำเนาไทม์ไลน์ของคุณจะถูกเขียนไว้ที่นั่น หนึ่งชุดต่อหนึ่งอุปกรณ์ เพื่อให้กู้คืนในโทรศัพท์เครื่องใหม่หรือแสดงบนแท็บเล็ตได้ Google Drive อาจเก็บสำเนาเวอร์ชันเก่าไว้ระยะหนึ่ง ซึ่งแอปสามารถกู้คืนได้ แอปยังอ่านที่อยู่อีเมลของคุณด้วย เพียงเพื่อแสดงว่าบัญชีใดเชื่อมต่ออยู่ ข้อมูลนี้ส่งผ่านระหว่างอุปกรณ์ของคุณกับ Google เท่านั้น ผู้พัฒนาไม่มีสิทธิ์เข้าถึง คุณยกเลิกการเชื่อมต่อ Drive ได้ในการตั้งค่า</p><p>การใช้ข้อมูลที่แอปได้รับจาก Google API เป็นไปตาม<a href="https://developers.google.com/terms/api-services-user-data-policy">นโยบายข้อมูลผู้ใช้ของบริการ Google API</a> รวมถึงข้อกำหนดการใช้งานแบบจำกัด</p>
+    
+  </section>
+  <section class="card sec" id="th-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>ข้อมูลนาฬิกาผ่าน Health Connect (ไม่บังคับ)</h2></div>
+    <p>หากคุณอนุญาต แอปจะอ่านจำนวนก้าว อัตราการเต้นของหัวใจ การนอน และการออกกำลังกาย (พร้อมเส้นทาง) จาก Health Connect ซึ่งแอปนาฬิกาอย่าง Mi Fitness เขียนไว้ แอปเพียงอ่านข้อมูลนี้และไม่เคยเขียนลงใน Health Connect ข้อมูลถูกอ่านในโทรศัพท์เพียงเพื่อแสดงในแท็บสุขภาพและในวันที่ตรงกันบนไทม์ไลน์ของคุณ แอปไม่เก็บข้อมูลนี้ในฐานข้อมูลของตน ไม่รวมไว้ในข้อมูลสำรอง และไม่ส่งไปที่ใด คุณเพิกถอนสิทธิ์ได้ทุกเมื่อในการตั้งค่าของ Health Connect</p>
+    
+  </section>
+  <section class="card sec" id="th-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>ไฟล์สำรองข้อมูลและสำเนาป้องกัน</h2></div>
+    <p>ไฟล์สำรองข้อมูลจะถูกสร้างขึ้นเฉพาะเมื่อคุณบันทึกเอง ในตำแหน่งที่คุณเลือก ก่อนที่ข้อมูลสำรองจะแทนที่ไทม์ไลน์ของคุณ แอปจะเก็บไทม์ไลน์ก่อนหน้าไว้ในอุปกรณ์ (สามชุดล่าสุด) เพื่อให้ยกเลิกการกู้คืนที่ผิดพลาดได้ สำเนาเหล่านี้ไม่เคยออกจากโทรศัพท์</p>
+    
+  </section>
+  <section class="card sec" id="th-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>การอัปเดต</h2></div>
+    <p>Slid เวอร์ชันที่เผยแพร่บนเว็บไซต์ของแอปจะตรวจสอบ pegasohlib.github.io ทุก ๆ ไม่กี่ชั่วโมงเพื่อหาเวอร์ชันใหม่ และดาวน์โหลดจาก GitHub เมื่อคุณแตะอัปเดต เช่นเดียวกับเว็บไซต์ทั่วไป GitHub จะเห็นที่อยู่ IP ของอุปกรณ์คุณ ไม่มีสิ่งอื่นใดถูกส่งไป และไม่มีข้อมูลใดจากแอป</p><p>คุณปิดการตรวจสอบอัตโนมัติได้ในการตั้งค่า</p><p>GitHub ยังนับจำนวนครั้งที่แต่ละไฟล์ถูกดาวน์โหลด เป็นเพียงตัวเลข ไม่มีข้อมูลว่าใครเป็นผู้ดาวน์โหลด เว็บไซต์แสดงตัวเลขนี้เป็นจำนวนดาวน์โหลดโดยประมาณ</p>
+    
+  </section>
+  <section class="card sec" id="th-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>การลบข้อมูล</h2></div>
+    <p>คุณลบรายการใดก็ได้ในไทม์ไลน์ เมื่อถอนการติดตั้งแอป ข้อมูลทั้งหมดในอุปกรณ์จะหายไป สำเนาใน Google Drive ลบได้ในแอป หรือในส่วนจัดการแอปในการตั้งค่าของ Google Drive</p>
+    
+  </section>
+  <section class="card sec" id="th-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>เด็ก</h2></div>
+    <p>แอปไม่เก็บรวบรวมข้อมูลของผู้ใดเลย รวมถึงเด็ก: ทุกอย่างอยู่ในอุปกรณ์ของเจ้าของ</p>
+    
+  </section>
+  <section class="card sec" id="th-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>การเปลี่ยนแปลง</h2></div>
+    <p>หากนโยบายนี้มีการเปลี่ยนแปลง เวอร์ชันใหม่จะปรากฏบนหน้านี้พร้อมวันที่ใหม่</p>
+    
+  </section>
+  <section class="card sec" id="th-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>ติดต่อ</h2></div>
+    <p>คำถามเกี่ยวกับความเป็นส่วนตัว: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="ko" data-lang="ko" data-title="개인정보처리방침 · Slid" data-app="Slid" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>개인정보처리방침</h1>
+    <p class="date">2026년 10월 22일부터 시행</p>
+    <p class="lead">이 방침은 “Slid” 앱(패키지 dev.slid)에 적용돼요. Slid에는 자체 서버도, 계정도, 광고도, 분석도 없어요. 타임라인은 내 휴대폰에 저장되며, 개발자는 이를 받거나 볼 수 없어요.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="ko-glance">
+    <h2 id="ko-glance" class="eyebrow">한눈에 보기</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>내 휴대폰에만 남아요</b><br>타임라인, 장소, 사진의 위치는 기기에만 저장돼요.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>나에 관한 정보는 전송되지 않아요</b><br>계정, 추적, 광고, 분석이 없어요.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>결정은 내가 해요</b><br>모든 권한과 모든 온라인 기능은 선택 사항이며 끌 수 있어요.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>삭제도 쉬워요</b><br>원하는 기록을 지우거나, 앱을 삭제하면 모든 것이 사라져요.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>내 백업은 내 Drive에</b><br>내 Google Drive 안의 Slid 숨김 폴더만 사용해요.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="이 페이지의 내용">
+    <p class="eyebrow">이 페이지의 내용</p>
+    <div class="chips"><a href="#ko-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>앱이 보관하는 데이터</a><a href="#ko-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>인터넷으로 전송되는 것</a><a href="#ko-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive 백업(선택 사항)</a><a href="#ko-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Health Connect를 통한 워치 데이터(선택 사항)</a><a href="#ko-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>백업 파일과 안전 사본</a><a href="#ko-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>업데이트</a><a href="#ko-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>데이터 삭제</a><a href="#ko-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>아동</a><a href="#ko-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>변경 사항</a><a href="#ko-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>문의</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="ko-table">
+    <h2 id="ko-table">어떤 데이터가, 어디에 있고, 누가 보는지</h2>
+    <table>
+      <thead><tr><th scope="col">데이터</th><th scope="col">저장 위치</th><th scope="col">볼 수 있는 사람</th></tr></thead>
+      <tbody><tr><th scope="row">타임라인: 위치, 활동과 걸음 수, Google에서 가져온 기록, 장소 이름, 주간 리포트, 설정</th><td data-label="저장 위치">내 기기</td><td data-label="볼 수 있는 사람">나만</td></tr><tr><th scope="row">사진의 날짜와 장소</th><td data-label="저장 위치">갤러리 파일에서 읽어요. 사진 자체는 복사하지 않아요</td><td data-label="볼 수 있는 사람">나만, 기기에서</td></tr><tr><th scope="row">Health Connect의 워치 데이터</th><td data-label="저장 위치">저장하지 않아요. 표시할 때 바로 읽어요</td><td data-label="볼 수 있는 사람">나만, 기기에서</td></tr><tr><th scope="row">표시 중인 지도 영역, 머문 장소의 좌표, 탈것으로 이동한 경로(선택 사항)</th><td data-label="저장 위치">나를 식별할 수 있는 정보 없이 지도·주소·교통 서비스로 전송돼요</td><td data-label="볼 수 있는 사람">OpenFreeMap, Esri, Android 주소 서비스, Nominatim, Overpass</td></tr><tr><th scope="row">타임라인 사본(선택 사항)</th><td data-label="저장 위치">내 Google Drive 안의 앱 숨김 폴더</td><td data-label="볼 수 있는 사람">나만</td></tr><tr><th scope="row">백업 파일</th><td data-label="저장 위치">내가 저장한 위치</td><td data-label="볼 수 있는 사람">내가 파일을 건넨 사람</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="ko-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>앱이 보관하는 데이터</h2></div>
+    <ul><li><b>위치.</b> 기록을 켜 두는 동안, 앱은 내가 어디에 있었고 어떻게 이동했는지 보여 주기 위해 휴대폰의 위치를 기록해요(백그라운드에서도).</li><li><b>신체 활동.</b> 허용하면 Android가 내가 걷는 중인지, 자전거를 타는 중인지, 탈것에 있는지 앱에 알려 줘요. 이 정보는 이동 방법을 판단하는 데만 쓰여요. 기록이 켜져 있는 동안 앱은 휴대폰 자체의 걸음 수도 시간별로 세며, 이 데이터는 기기에 남아요.</li><li><b>사진과 동영상.</b> 허용하면 앱은 사진을 지도에 표시하기 위해 갤러리 파일에 저장된 날짜와 장소를 읽어요. 사진은 복사되거나 어디로도 전송되지 않아요. 앱은 사진 파일에 아무것도 쓰지 않으며, 예전 버전이 기록한 장소를 Android가 나에게 물어본 뒤에만 지울 수 있어요.</li><li><b>가져온 파일.</b> 내가 선택한 Google 타임라인 또는 Google 테이크아웃 파일은 휴대폰에서 읽어요.</li><li><b>장소와 설정:</b> 장소에 붙인 이름, 언어, 테마.</li><li><b>주간 리포트</b>(선택 사항): 한 주에 대해 남긴 기분과 글, 그리고 입력한 경우 생일 — 타임라인이 내 삶의 얼마만큼을 담고 있는지 보여 주기 위해서예요.</li><li><b>걸음 수 목표</b>(선택 사항): 입력한 경우 키와 몸무게 — 하루 걸음 수 목표와 보폭을 계산하기 위해서예요. 이 정보는 기기에 남아요.</li></ul><p>이 모든 데이터는 내 기기에 저장돼요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>인터넷으로 전송되는 것</h2></div>
+    <ul><li><b>지도.</b> 지도 타일은 OpenFreeMap(OpenStreetMap 데이터)에서, 위성 이미지는 Esri에서 불러와요. 이 서버들은 어떤 지역이 표시되는지는 알지만, 내가 누구인지는 알 수 없어요.</li><li><b>주소와 장소 이름</b>(선택 사항). 머문 장소의 좌표를 Android 주소 서비스와 Nominatim(OpenStreetMap)으로 보내 주소와 이름을 받아요. 나를 식별할 수 있는 정보는 함께 보내지 않아요. 설정에서 끌 수 있어요.</li><li><b>대중교통</b>(선택 사항). 버스, 트램, 기차, 지하철을 구분하기 위해, 끝난 탈것 이동의 경로를 OpenStreetMap의 Overpass 서비스로 보내면 그 경로를 따라 있는 선로와 정류장을 알려 줘요. 나를 식별할 수 있는 정보는 함께 보내지 않아요. 설정에서 끌 수 있어요.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ko-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive 백업(선택 사항)</h2></div>
+    <p>Google Drive를 연결하면 앱은 내 Drive 안의 자체 숨김 폴더에만 접근할 수 있으며(drive.appdata 권한), 다른 파일은 전혀 볼 수 없어요. 새 휴대폰에서 복원하거나 태블릿에서 보여 줄 수 있도록 타임라인 사본이 기기마다 하나씩 그곳에 저장돼요. Google Drive는 이 사본의 이전 버전을 한동안 보관할 수 있으며, 앱은 이를 복원할 수 있어요. 앱은 어떤 계정이 연결되었는지 보여 주기 위해서만 이메일 주소를 읽어요. 이 데이터는 내 기기와 Google 사이에서만 오가며, 개발자는 접근할 수 없어요. 설정에서 Drive 연결을 해제할 수 있어요.</p><p>앱이 Google API에서 받은 정보를 사용하는 방식은 제한적 사용 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 준수해요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Health Connect를 통한 워치 데이터(선택 사항)</h2></div>
+    <p>허용하면 앱은 Mi Fitness 같은 워치 앱이 Health Connect에 기록한 걸음 수, 심박수, 수면, 운동(경로 포함)을 읽어요. 앱은 이 데이터를 읽기만 하고 Health Connect에 쓰지 않아요. 데이터는 휴대폰에서 건강 탭과 타임라인의 해당 날짜에 보여 주기 위해서만 읽으며, 앱은 이를 자체 데이터베이스에 저장하지 않고, 백업에 포함하지 않으며, 어디로도 보내지 않아요. 권한은 언제든지 Health Connect 설정에서 철회할 수 있어요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>백업 파일과 안전 사본</h2></div>
+    <p>백업 파일은 내가 직접 저장할 때만, 내가 고른 위치에 만들어져요. 백업으로 타임라인을 바꾸기 전에 앱은 잘못된 복원을 되돌릴 수 있도록 이전 타임라인을 기기에 보관해요(최근 3개). 이 사본은 절대 휴대폰 밖으로 나가지 않아요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>업데이트</h2></div>
+    <p>웹사이트에서 배포되는 Slid 버전은 몇 시간마다 pegasohlib.github.io에서 새 버전이 있는지 확인하고, 내가 업데이트를 누르면 GitHub에서 다운로드해요. 다른 웹사이트와 마찬가지로 GitHub는 기기의 IP 주소를 볼 수 있어요. 그 밖에는 아무것도 전송되지 않으며, 앱의 데이터도 전송되지 않아요.</p><p>자동 확인은 설정에서 끌 수 있어요.</p><p>GitHub는 각 파일이 몇 번 다운로드되었는지도 세요. 이는 숫자일 뿐 누가 다운로드했는지에 대한 정보는 없으며, 웹사이트는 이를 대략적인 다운로드 수로 보여 줘요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>데이터 삭제</h2></div>
+    <p>타임라인의 어떤 기록이든 삭제할 수 있어요. 앱을 삭제하면 기기에 있는 모든 데이터가 사라져요. Google Drive의 사본은 앱에서, 또는 Google Drive 설정의 앱 관리에서 삭제할 수 있어요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>아동</h2></div>
+    <p>앱은 아동을 포함해 누구에 관한 데이터도 수집하지 않아요. 모든 것은 소유자의 기기에 남아요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>변경 사항</h2></div>
+    <p>이 방침이 변경되면 새 버전이 새 날짜와 함께 이 페이지에 게시돼요.</p>
+    
+  </section>
+  <section class="card sec" id="ko-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>문의</h2></div>
+    <p>개인정보 관련 문의: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
     
   </section>
 </article>
@@ -1068,12 +1783,18 @@ td:last-child{font-weight:600;color:var(--ink)}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"];
-  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], low = {};
+  for (var l in have) low[l.toLowerCase()] = l;
+  // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
+  function norm(c) {
+    var p = (c || "").toLowerCase().split(/[-_]/);
+    for (var n = Math.min(p.length, 2); n > 0; n--) { var x = p.slice(0, n).join("-"); x = alias[x] || x; if (low[x]) return low[x]; }
+    if (p[0].length === 2) for (var k in low) if (k.split("-")[0] === p[0]) return low[k]; // a site with only pt-BR still serves "pt-PT"
+    return null;
+  }
   function pick() {
     var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
     var h = location.hash.slice(1); if (norm(h)) return norm(h);
-    if (h && have[h.split("-")[0]]) return h.split("-")[0];
     for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
     var nav = navigator.languages || [navigator.language];
     for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
