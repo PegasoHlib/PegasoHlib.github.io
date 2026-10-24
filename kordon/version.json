@@ -1,11 +1,11 @@
 {
-    "versionCode":  1502,
-    "versionName":  "0.15.2",
+    "versionCode":  1503,
+    "versionName":  "0.15.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "ad524e2c75477d1792555896bc230aabdb967c3e5d3279327459cf978be3b988",
-    "size":  168054925,
+    "sha256":  "5a8b13f5f81e9b2838fcdffacb86e8f0c20562516850b7aa9f5524c16a328b96",
+    "size":  168048817,
     "notes":  {
-                  "uk":  "Бронзова доба: справжнє населення 1250 р. до н.е. за науковими даними HYDE (~101 млн людей).",
-                  "en":  "Bronze Age: real 1250 BC population from the HYDE research data (~101 million people)."
+                  "uk":  "Бронзова доба: без дірок і пустих смуг біля держав. Тонші лінії кордонів у всій грі.",
+                  "en":  "Bronze Age: no holes or empty strips beside states. Thinner border lines everywhere."
               }
 }
