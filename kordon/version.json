@@ -1,11 +1,11 @@
 {
-    "versionCode":  1400,
-    "versionName":  "0.14.0",
+    "versionCode":  1401,
+    "versionName":  "0.14.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "79eee5a20500bc7c996270b7518d3757c7b629ddb1eb4574c3fbd16c93eb2851",
-    "size":  151540527,
+    "sha256":  "52bed2451bb608fa0a09b4a66d53047278fd6f289aaf3f290447c52586425ece",
+    "size":  151541363,
     "notes":  {
-                  "uk":  "Адміністративний контроль: далекі від центру землі дають менше податків і знижують стабільність. Зрозуміліші картки провінції та країни.",
-                  "en":  "Administrative control: land far from the province centre pays less tax and lowers stability. Clearer province and country cards."
+                  "uk":  "Тап здалеку — країна, зблизька — провінція, а її країна обведена. Кордон Румунії й Сербії тепер іде по Дунаю.",
+                  "en":  "A tap from afar picks a country, close up a province with its country outlined. The Romania–Serbia border now follows the Danube."
               }
 }
