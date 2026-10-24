@@ -1,11 +1,11 @@
 {
-    "versionCode":  1503,
-    "versionName":  "0.15.3",
+    "versionCode":  1504,
+    "versionName":  "0.15.4",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "5a8b13f5f81e9b2838fcdffacb86e8f0c20562516850b7aa9f5524c16a328b96",
-    "size":  168048817,
+    "sha256":  "3b64826dba2cc4309e975e1be134c1e6f05cb0188027ecaba20dec1f2833db3e",
+    "size":  168251885,
     "notes":  {
-                  "uk":  "Бронзова доба: без дірок і пустих смуг біля держав. Тонші лінії кордонів у всій грі.",
-                  "en":  "Bronze Age: no holes or empty strips beside states. Thinner border lines everywhere."
+                  "uk":  "Бронзова доба: м\u0027якші, плавніші межі провінцій.",
+                  "en":  "Bronze Age: softer, smoother province borders."
               }
 }
