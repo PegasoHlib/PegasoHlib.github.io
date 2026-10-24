@@ -1,11 +1,11 @@
 {
-    "versionCode":  1507,
-    "versionName":  "0.15.7",
+    "versionCode":  1600,
+    "versionName":  "0.16.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "60bdf19933e3f961feda6f8d287fc67d3f1ffefcfa6fa566a93b90a3931f66e8",
-    "size":  170884866,
+    "sha256":  "48002c9a5aabbed79abf3ca3866dacdf0248996974a94fd615e4b08ad220feda",
+    "size":  171710917,
     "notes":  {
-                  "uk":  "Бронзова доба: плавні межі без зубців і квадратів, кращі прапори Мікен, Мітанні й Кіпру.",
-                  "en":  "Bronze Age: smooth borders without steps or squares, better standards for Mycenae, Mitanni and Cyprus."
+                  "uk":  "Крок 2: клімат, тип землі, родючість і великі річки кожної соти. Від родючості залежить, скільки людей прогодує земля й скільки вона дає.",
+                  "en":  "Step 2: each cell\u0027s climate, kind of land, food and big rivers. Food sets how many people the land feeds and what it yields."
               }
 }
