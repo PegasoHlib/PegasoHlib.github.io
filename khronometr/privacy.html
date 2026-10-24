@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/khronometr/privacy.html?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -81,12 +98,12 @@ main{max-width:760px}
 .sec{scroll-margin-top:76px}
 .sec p{margin:8px 0 0;color:var(--ink2)}
 .sec p:first-of-type{margin-top:0}
-.sec ul{margin:8px 0 0;padding-left:22px;color:var(--ink2)}
+.sec ul{margin:8px 0 0;padding-inline-start:22px;color:var(--ink2)}
 .sec li{margin:4px 0}
 .sec li::marker{color:var(--accent)}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
+th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
 thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
@@ -105,6 +122,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   .toc .eyebrow{padding:0 16px}
   .toc .chips{flex-wrap:nowrap;overflow-x:auto;padding:0 16px 4px;scroll-snap-type:x proximity;scrollbar-width:none;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
+  [dir=rtl] .toc .chips{-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
   .toc .chips::-webkit-scrollbar{display:none}
   .toc .chips a{scroll-snap-align:start;flex:none}
   thead{display:none}
@@ -123,12 +141,12 @@ td:last-child{font-weight:600;color:var(--ink)}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Khronometr</span></a>
   <nav class="links"><a data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="pc/index.html" data-keep-lang>Windows</a><a class="on" aria-current="page" data-nav="2" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Privacy Policy · Khronometr" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Privacy Policy · Khronometr" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -216,7 +234,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Політика конфіденційності · Хронометр" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Політика конфіденційності · Хронометр" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Хронометр</p>
@@ -304,7 +322,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Política de privacidad · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Política de privacidad · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -392,7 +410,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Política de privacidade · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Política de privacidade · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -480,7 +498,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Política de Privacidade · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Política de Privacidade · Khronometr" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -568,7 +586,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Politique de confidentialité · Khronometr" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Politique de confidentialité · Khronometr" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -656,7 +674,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Datenschutzerklärung · Khronometr" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Datenschutzerklärung · Khronometr" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -744,7 +762,95 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Informativa sulla privacy · Khronometr" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Privacybeleid · Khronometr" data-app="Khronometr" data-langlabel="Taal" data-nav="Start|Windows|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Khronometr</p>
+    <h1>Privacybeleid</h1>
+    <p class="date">Bijgewerkt op 22 oktober 2026</p>
+    <p class="lead">Khronometr laat zien hoeveel tijd je in apps en games doorbrengt, op je telefoon, tablet en pc samen. De app is zo gebouwd dat je gegevens van jou blijven: er is geen server van Khronometr, er zijn geen advertenties en er is geen tracking.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="nl-glance">
+    <h2 id="nl-glance" class="eyebrow">In het kort</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><span><b>Blijft op je apparaten</b><br>Je geschiedenis wordt in de app op je telefoon en pc bewaard. Er is geen server van Khronometr.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg><span><b>Alleen je eigen Google Drive</b><br>Synchronisatie is optioneel en gaat naar een verborgen app-map in <b>jouw</b> Drive die alleen Khronometr kan zien.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Geen advertenties, geen tracking</b><br>Geen analyse, geen advertentie-SDK’s. Er wordt niets verkocht of gedeeld.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><span><b>Tijd, geen inhoud</b><br>Khronometr leest geen berichten, foto’s, wat je typt of iets anders binnen andere apps en vensters.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Op elk moment te verwijderen</b><br>Zet synchronisatie uit, wis de kopie in de cloud of verwijder de app — met een paar tikken.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Inhoud">
+    <p class="eyebrow">Inhoud</p>
+    <div class="chips"><a href="#nl-phone"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg>Wat de telefoon-app leest</a><a href="#nl-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Toestemmingen en waarom</a><a href="#nl-windows"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg>De Windows-app (optioneel)</a><a href="#nl-storage"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>Waar je gegevens worden bewaard</a><a href="#nl-cloud"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Synchronisatie met Google Drive (optioneel)</a><a href="#nl-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Updates (websiteversie)</a><a href="#nl-sharing"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg>Wie je gegevens krijgt</a><a href="#nl-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Jouw controle en verwijderen</a><a href="#nl-security"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>Beveiliging</a><a href="#nl-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Kinderen</a><a href="#nl-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg>Wijzigingen in dit beleid</a><a href="#nl-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Contact</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="nl-table">
+    <h2 id="nl-table">Welke gegevens, waar ze staan, wie ze ziet</h2>
+    <table>
+      <thead><tr><th scope="col">Gegevens</th><th scope="col">Waar ze worden bewaard</th><th scope="col">Wie ze kan zien</th></tr></thead>
+      <tbody><tr><th scope="row">Tijd en dataverbruik per app, ontgrendelingen van het scherm, namen en pictogrammen van apps, namen van apparaten</th><td data-label="Waar ze worden bewaard">In de app op je apparaten; met synchronisatie aan ook in de verborgen app-map van je eigen Google Drive</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Windows-app: tijd in programma’s, tijden waarop het scherm vergrendeld is, speeltijd in Steam, dataverbruik per programma</th><td data-label="Waar ze worden bewaard">Op die pc, in de eigen map van de app; met synchronisatie aan ook in je Drive</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Limieten en groepen</th><td data-label="Waar ze worden bewaard">Op je apparaten; met synchronisatie aan ook in je Drive</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Geboortedatum (alleen als je die invult)</th><td data-label="Waar ze worden bewaard">Alleen op deze telefoon; wordt nooit gesynchroniseerd</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">E-mailadres van je Google-account</th><td data-label="Waar ze worden bewaard">Wordt alleen op het scherm getoond; nergens naartoe verzonden</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Exportbestanden (zip)</th><td data-label="Waar ze worden bewaard">Waar je ze zelf opslaat</td><td data-label="Wie ze kan zien">Iedereen aan wie je het bestand geeft</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="nl-phone">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h2>Wat de telefoon-app leest</h2></div>
+    <ul><li><b>App-gebruik</b> — welke apps open waren, hoe lang, en ontgrendelingen van het scherm. Alleen nadat je in de Android-instellingen “Gebruikstoegang” voor Khronometr hebt aangezet.</li><li><b>Netwerkgebruik per app</b> — hoeveel bytes wifi en mobiele data elke app heeft gebruikt, via dezelfde toestemming.</li><li><b>Namen en pictogrammen van geïnstalleerde apps</b> — om ze in de lijsten te tonen.</li><li><b>Het model van het apparaat</b> en de naam die je het apparaat geeft — om je apparaten uit elkaar te houden.</li><li><b>Je geboortedatum</b>, alleen als je die invult — alleen op deze telefoon bewaard en nooit gesynchroniseerd, om te laten zien op welke leeftijd je geschiedenis begint.</li></ul><p>De app leest <b>geen</b> berichten, contacten, locatie, foto’s, microfoon, camera, wat je typt of iets binnen andere apps.</p>
+    
+  </section>
+  <section class="card sec" id="nl-permissions">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Toestemmingen en waarom</h2></div>
+    
+    <dl class="perms"><div><dt>Gebruikstoegang</dt><dd>Om tijd en dataverbruik per app te tellen.</dd></div><div><dt>Meldingen</dt><dd>Herinneringen over limieten en het overzicht ’s avonds — jij kiest welke.</dd></div><div><dt>Weergeven over andere apps</dt><dd>Alleen om het scherm “De tijd is om” te tonen over een app waarvoor je een limiet hebt ingesteld. Optioneel.</dd></div><div><dt>Op de achtergrond werken, starten na herstart</dt><dd>Zodat het tellen en je limieten blijven werken.</dd></div><div><dt>Uitzondering op batterijoptimalisatie</dt><dd>Eén keer gevraagd, optioneel — zodat de telefoon het tellen niet stopzet.</dd></div><div><dt>Onbekende apps installeren</dt><dd>Alleen in de versie van deze website, om de eigen updates te installeren. Optioneel.</dd></div><div><dt>Internet</dt><dd>Voor de optionele synchronisatie met Google Drive en, in de websiteversie, de controle op updates.</dd></div></dl>
+  </section>
+  <section class="card sec" id="nl-windows">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg><h2>De Windows-app (optioneel)</h2></div>
+    <p>Als je <a href="pc/">Khronometr voor Windows</a> installeert, leest de app op die pc:</p><ul><li>de naam van het programma waarvan het venster vooraan staat, en hoe lang;</li><li>wanneer het scherm wordt vergrendeld en ontgrendeld;</li><li>de speeltijd van je games uit de eigen bestanden van Steam;</li><li>netwerkgebruik per programma uit het gebruiksjournaal van Windows — alleen nadat je dat één keer hebt toegestaan (daarna kopieert de app het journaal elke 6 uur).</li></ul><p>De app bewaart dit in een eigen map, <code>%LOCALAPPDATA%\Khronometr</code>. Ze leest <b>niet</b> wat er in vensters staat, toetsaanslagen, schermafbeeldingen of browsergeschiedenis.</p><p>Met synchronisatie aan downloadt de app ook de gegevens van je andere apparaten uit diezelfde verborgen Drive-map, om ze in het venster te tonen. Ook controleert ze op pegasohlib.github.io / GitHub op eigen updates en installeert ze alleen bestanden met de digitale handtekening van de maker; er worden geen persoonsgegevens verzonden.</p>
+    
+  </section>
+  <section class="card sec" id="nl-storage">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg><h2>Waar je gegevens worden bewaard</h2></div>
+    <p>Alles wordt <b>alleen op je apparaten</b> opgeslagen, in de eigen database van de app. De ontwikkelaar heeft geen server en ontvangt je gegevens nooit.</p><p>Exportbestanden (zip) worden alleen gemaakt als je daarom vraagt, en worden opgeslagen waar jij kiest.</p>
+    
+  </section>
+  <section class="card sec" id="nl-cloud">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Synchronisatie met Google Drive (optioneel)</h2></div>
+    <p>Als je kiest voor “Inloggen met Google”, slaat de app haar geschiedenis op in de <b>verborgen app-map van je eigen Google Drive</b>. De toestemming is <code>drive.appdata</code>: de app ziet alleen de bestanden die ze daar zelf heeft gemaakt en verder niets op je Drive.</p><p>Wat daar komt: dagelijkse tijd en dataverbruik per app, sessies, namen en pictogrammen van apps, namen van apparaten, en je limieten met groepen (plus hoeveel van elke gedeelde limiet vandaag is gebruikt). Zo tonen je andere apparaten dezelfde geschiedenis en werken limieten op meerdere apparaten.</p><p>Gegevens worden versleuteld (HTTPS) verstuurd tussen je apparaat en Google. De ontwikkelaar heeft geen toegang tot je Drive. Je Google-e-mailadres wordt alleen op het scherm getoond en nergens naartoe verzonden.</p><p>Het gebruik en de overdracht door Khronometr van informatie die is ontvangen van Google API’s voldoen aan de <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, inclusief de vereisten voor beperkt gebruik (Limited Use).</p>
+    
+  </section>
+  <section class="card sec" id="nl-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Updates (websiteversie)</h2></div>
+    <p>De versie van deze website controleert een paar keer per dag op <code>pegasohlib.github.io</code> of er een nieuwere versie is en downloadt die van GitHub; Android controleert vóór de installatie of die door dezelfde ontwikkelaar is ondertekend. Er wordt niets over jou verzonden — zoals bij elke website ziet GitHub je IP-adres. Je kunt automatische updates uitzetten in Instellingen. De versie uit Google Play wordt in plaats daarvan door Google Play bijgewerkt.</p><p>GitHub telt ook hoe vaak elk bestand is gedownload. Dat is alleen een getal, zonder iets over wie het heeft gedownload; de website toont het als een geschat aantal downloads.</p>
+    
+  </section>
+  <section class="card sec" id="nl-sharing">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h2>Wie je gegevens krijgt</h2></div>
+    <p><b>Niemand.</b> Je gegevens worden niet verkocht, niet met derden gedeeld en niet voor advertenties gebruikt. Er zijn geen analyse- of crashrapportagediensten. Google is alleen betrokken als opslag van je eigen Drive, als je synchronisatie aanzet.</p>
+    
+  </section>
+  <section class="card sec" id="nl-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Jouw controle en verwijderen</h2></div>
+    <ul><li><b>Synchronisatie:</b> zet die op elk moment uit op het tabblad Apparaten.</li><li><b>Kopie in de cloud:</b> Google Drive → Instellingen → Apps beheren → Khronometr → Verborgen app-gegevens verwijderen.</li><li><b>Telefoon:</b> wis de opslag van de app of verwijder de app — alles op de telefoon is dan weg.</li><li><b>Pc:</b> Windows-instellingen → Apps → Geïnstalleerde apps → Khronometr → Verwijderen; verwijder daarna, als je wilt, zelf de gegevensmap <code>%LOCALAPPDATA%\Khronometr</code>. Als je het kopiëren van het journaal hebt toegestaan, verwijder dan ook de taak <code>Khronometr\JournalCopy</code> in Taakplanner.</li><li><b>Exports</b> zijn je eigen bestanden: verwijder ze zoals elk ander bestand.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-security">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>Beveiliging</h2></div>
+    <p>Al het verkeer naar Google gebruikt HTTPS. Op de telefoon wordt het inloggen afgehandeld door Google Play-services; op de pc wordt het inlogtoken met Windows (DPAPI) versleuteld, alleen voor jouw gebruiker. De app vraagt nooit om wachtwoorden en slaat ze nooit op.</p>
+    
+  </section>
+  <section class="card sec" id="nl-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Kinderen</h2></div>
+    <p>De app is niet bedoeld voor kinderen jonger dan 13 jaar.</p>
+    
+  </section>
+  <section class="card sec" id="nl-changes">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h2>Wijzigingen in dit beleid</h2></div>
+    <p>De datum bovenaan geeft de nieuwste versie aan. Belangrijke wijzigingen worden ook vermeld in de update-opmerkingen van de app.</p>
+    
+  </section>
+  <section class="card sec" id="nl-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Contact</h2></div>
+    <p>Vragen of verzoeken: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Informativa sulla privacy · Khronometr" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -832,7 +938,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Polityka prywatności · Khronometr" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Polityka prywatności · Khronometr" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -920,7 +1026,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Zásady ochrany soukromí · Khronometr" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Zásady ochrany soukromí · Khronometr" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1008,7 +1114,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Zásady ochrany súkromia · Khronometr" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Zásady ochrany súkromia · Khronometr" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1096,7 +1202,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Privatlivspolitik · Khronometr" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Privatlivspolitik · Khronometr" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1184,7 +1290,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Integritetspolicy · Khronometr" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Integritetspolicy · Khronometr" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1272,7 +1378,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Gizlilik Politikası · Khronometr" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Gizlilik Politikası · Khronometr" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1360,7 +1466,183 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Kebijakan Privasi · Khronometr" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="سياسة الخصوصية · Khronometr" data-app="Khronometr" data-langlabel="اللغة" data-nav="الرئيسية|Windows|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Khronometr</p>
+    <h1>سياسة الخصوصية</h1>
+    <p class="date">تاريخ التحديث: 22 أكتوبر 2026</p>
+    <p class="lead">يعرض Khronometr مقدار الوقت الذي تقضيه في التطبيقات والألعاب على هاتفك وجهازك اللوحي وحاسوبك معًا. وقد صُمّم بحيث تبقى بياناتك ملكك: لا يوجد خادم لـ Khronometr، ولا إعلانات، ولا تتبّع.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="ar-glance">
+    <h2 id="ar-glance" class="eyebrow">باختصار</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><span><b>تبقى على أجهزتك</b><br>يُحفظ سجلك داخل التطبيق على هاتفك وحاسوبك. لا يوجد خادم لـ Khronometr.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg><span><b>حسابك في Google Drive فقط</b><br>المزامنة اختيارية وتتم إلى مجلد تطبيق مخفي في Drive <b>الخاص بك</b> لا يراه إلا Khronometr.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>لا إعلانات ولا تتبّع</b><br>لا أدوات تحليل، ولا حِزم SDK إعلانية. لا يُباع شيء ولا يُشارَك.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><span><b>الوقت، لا المحتوى</b><br>لا يقرأ Khronometr الرسائل ولا الصور ولا ما تكتبه ولا أي شيء داخل التطبيقات والنوافذ الأخرى.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>احذف في أي وقت</b><br>أوقف المزامنة، أو امسح النسخة السحابية، أو أزل التطبيق — ببضع نقرات.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="المحتويات">
+    <p class="eyebrow">المحتويات</p>
+    <div class="chips"><a href="#ar-phone"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg>ما الذي يقرؤه تطبيق الهاتف</a><a href="#ar-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>الأذونات وسبب طلبها</a><a href="#ar-windows"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg>تطبيق Windows (اختياري)</a><a href="#ar-storage"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>أين تُحفظ بياناتك</a><a href="#ar-cloud"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>المزامنة مع Google Drive (اختيارية)</a><a href="#ar-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>التحديثات (إصدار الموقع)</a><a href="#ar-sharing"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg>من يحصل على بياناتك</a><a href="#ar-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>تحكّمك والحذف</a><a href="#ar-security"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>الأمان</a><a href="#ar-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>الأطفال</a><a href="#ar-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg>التغييرات على هذه السياسة</a><a href="#ar-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>التواصل</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="ar-table">
+    <h2 id="ar-table">ما البيانات، وأين تُحفظ، ومن يراها</h2>
+    <table>
+      <thead><tr><th scope="col">البيانات</th><th scope="col">مكان الحفظ</th><th scope="col">من يمكنه رؤيتها</th></tr></thead>
+      <tbody><tr><th scope="row">الوقت وحركة البيانات لكل تطبيق، ومرات فتح قفل الشاشة، وأسماء التطبيقات وأيقوناتها، وأسماء الأجهزة</th><td data-label="مكان الحفظ">في التطبيق على أجهزتك؛ وعند تشغيل المزامنة، في مجلد التطبيق المخفي في Google Drive الخاص بك أيضًا</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">تطبيق Windows: الوقت في البرامج، وأوقات قفل الشاشة، ووقت اللعب في Steam، وحركة البيانات لكل برنامج</th><td data-label="مكان الحفظ">على ذلك الحاسوب، في مجلد التطبيق الخاص؛ وعند تشغيل المزامنة، في Drive الخاص بك أيضًا</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">الحدود والمجموعات</th><td data-label="مكان الحفظ">على أجهزتك؛ وعند تشغيل المزامنة، في Drive الخاص بك أيضًا</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">تاريخ الميلاد (فقط إذا أدخلته)</th><td data-label="مكان الحفظ">على هذا الهاتف فقط؛ ولا تتم مزامنته أبدًا</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">البريد الإلكتروني لحساب Google</th><td data-label="مكان الحفظ">يُعرض على الشاشة فقط؛ ولا يُرسل إلى أي مكان</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">ملفات التصدير (zip)</th><td data-label="مكان الحفظ">حيث تختار حفظها</td><td data-label="من يمكنه رؤيتها">أي شخص تعطيه الملف</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="ar-phone">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h2>ما الذي يقرؤه تطبيق الهاتف</h2></div>
+    <ul><li><b>استخدام التطبيقات</b> — أي التطبيقات كانت مفتوحة، ولأي مدة، ومرات فتح قفل الشاشة. وذلك فقط بعد أن تفعّل «الوصول إلى بيانات الاستخدام» لـ Khronometr في إعدادات Android.</li><li><b>استخدام الشبكة لكل تطبيق</b> — عدد بايتات Wi-Fi وبيانات الجوّال التي استخدمها كل تطبيق، من خلال الإذن نفسه.</li><li><b>أسماء التطبيقات المثبتة وأيقوناتها</b> — لعرضها في القوائم.</li><li><b>طراز الجهاز</b> والاسم الذي تعطيه للجهاز — للتمييز بين أجهزتك.</li><li><b>تاريخ ميلادك</b>، فقط إذا أدخلته — يُحفظ على هذا الهاتف وحده ولا تتم مزامنته أبدًا، لإظهار العمر الذي يبدأ منه سجلك.</li></ul><p>وهو <b>لا</b> يقرأ الرسائل، ولا جهات الاتصال، ولا الموقع، ولا الصور، ولا الميكروفون، ولا الكاميرا، ولا ما تكتبه، ولا أي شيء داخل التطبيقات الأخرى.</p>
+    
+  </section>
+  <section class="card sec" id="ar-permissions">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>الأذونات وسبب طلبها</h2></div>
+    
+    <dl class="perms"><div><dt>الوصول إلى بيانات الاستخدام</dt><dd>لعدّ الوقت وحركة البيانات لكل تطبيق.</dd></div><div><dt>الإشعارات</dt><dd>تذكيرات الحدود والملخص المسائي — وأنت من يختار أيها.</dd></div><div><dt>الظهور فوق التطبيقات الأخرى</dt><dd>فقط لعرض شاشة «انتهى الوقت» فوق تطبيق وضعتَ له حدًّا. اختياري.</dd></div><div><dt>العمل في الخلفية، والبدء بعد إعادة التشغيل</dt><dd>كي يستمر العدّ وتبقى حدودك فعّالة.</dd></div><div><dt>استثناء من تحسين البطارية</dt><dd>يُطلب مرة واحدة، وهو اختياري — كي لا يوقف الهاتف العدّ.</dd></div><div><dt>تثبيت التطبيقات غير المعروفة</dt><dd>فقط في الإصدار المأخوذ من هذا الموقع، لتثبيت تحديثاته الخاصة. اختياري.</dd></div><div><dt>الإنترنت</dt><dd>للمزامنة الاختيارية مع Google Drive، وللتحقق من التحديثات في إصدار الموقع.</dd></div></dl>
+  </section>
+  <section class="card sec" id="ar-windows">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg><h2>تطبيق Windows (اختياري)</h2></div>
+    <p>إذا ثبّتّ <a href="pc/">Khronometr لنظام Windows</a>، فإنه يقرأ على ذلك الحاسوب:</p><ul><li>اسم البرنامج الذي تكون نافذته في المقدمة، ولأي مدة؛</li><li>متى تُقفل الشاشة ومتى يُفتح قفلها؛</li><li>وقت اللعب في ألعابك من ملفات Steam نفسها؛</li><li>استخدام الشبكة لكل برنامج من سجل الاستخدام في Windows — فقط بعد أن تسمح بذلك مرة واحدة (وبعدها ينسخ السجل كل 6 ساعات).</li></ul><p>ويحفظ ذلك في مجلده الخاص، <code>%LOCALAPPDATA%\Khronometr</code>. وهو <b>لا</b> يقرأ ما بداخل النوافذ، ولا ضغطات المفاتيح، ولا لقطات الشاشة، ولا سجل المتصفح.</p><p>وعند تشغيل المزامنة، يُنزّل أيضًا بيانات أجهزتك الأخرى من مجلد Drive المخفي نفسه، لعرضها في نافذته. كما يتحقق من تحديثاته الخاصة على pegasohlib.github.io / GitHub، ولا يثبّت إلا الملفات التي تحمل التوقيع الرقمي للمطوّر؛ ولا تُرسل أي بيانات شخصية.</p>
+    
+  </section>
+  <section class="card sec" id="ar-storage">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg><h2>أين تُحفظ بياناتك</h2></div>
+    <p>يُخزَّن كل شيء <b>على أجهزتك فقط</b>، في قاعدة بيانات التطبيق الخاصة. لا يملك المطوّر أي خادم ولا يتلقى بياناتك أبدًا.</p><p>لا تُنشأ ملفات التصدير (zip) إلا عندما تطلبها، وتُحفظ حيث تختار.</p>
+    
+  </section>
+  <section class="card sec" id="ar-cloud">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>المزامنة مع Google Drive (اختيارية)</h2></div>
+    <p>إذا اخترت «تسجيل الدخول باستخدام Google»، يحفظ التطبيق سجله في <b>مجلد التطبيق المخفي في Google Drive الخاص بك</b>. والإذن المستخدم هو <code>drive.appdata</code>: لا يرى التطبيق إلا الملفات التي أنشأها هناك بنفسه، ولا شيء آخر في Drive الخاص بك.</p><p>ما يُحفظ هناك: الوقت اليومي وحركة البيانات لكل تطبيق، والجلسات، وأسماء التطبيقات وأيقوناتها، وأسماء الأجهزة، وحدودك مع المجموعات (إضافةً إلى مقدار ما استُخدم اليوم من كل حد مشترك). وبهذا تعرض أجهزتك الأخرى السجل نفسه وتعمل الحدود على عدة أجهزة.</p><p>تنتقل البيانات مشفّرة (HTTPS) بين جهازك وGoogle. ولا يستطيع المطوّر الوصول إلى Drive الخاص بك. ويُعرض بريدك الإلكتروني في Google على الشاشة فقط ولا يُرسل إلى أي مكان.</p><p>يلتزم استخدام Khronometr للمعلومات التي يتلقاها من واجهات Google البرمجية (Google APIs) ونقله لها بـ <a href="https://developers.google.com/terms/api-services-user-data-policy">سياسة بيانات المستخدم لخدمات Google API</a>، بما في ذلك متطلبات الاستخدام المحدود.</p>
+    
+  </section>
+  <section class="card sec" id="ar-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>التحديثات (إصدار الموقع)</h2></div>
+    <p>يتحقق الإصدار المأخوذ من هذا الموقع من <code>pegasohlib.github.io</code> بضع مرات في اليوم بحثًا عن إصدار أحدث، ويُنزّله من GitHub؛ ويتحقق Android قبل التثبيت من أنه موقَّع من المطوّر نفسه. لا يُرسل أي شيء عنك — وكما هو الحال مع أي موقع، يرى GitHub عنوان IP الخاص بك. يمكنك إيقاف التحديثات التلقائية من الإعدادات. أما الإصدار المأخوذ من Google Play فيحدّثه Google Play بدلًا من ذلك.</p><p>يحصي GitHub أيضًا عدد مرات تنزيل كل ملف. وهو مجرد رقم، لا يتضمن أي شيء عمّن قام بالتنزيل؛ ويعرضه الموقع كعدد تقريبي للتنزيلات.</p>
+    
+  </section>
+  <section class="card sec" id="ar-sharing">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h2>من يحصل على بياناتك</h2></div>
+    <p><b>لا أحد.</b> لا تُباع بياناتك، ولا تُشارَك مع أطراف ثالثة، ولا تُستخدم للإعلانات. لا توجد خدمات تحليل أو تقارير أعطال. ولا يشارك Google إلا بصفته مكان تخزين Drive الخاص بك، إذا شغّلت المزامنة.</p>
+    
+  </section>
+  <section class="card sec" id="ar-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>تحكّمك والحذف</h2></div>
+    <ul><li><b>المزامنة:</b> أوقفها في أي وقت من تبويب «الأجهزة».</li><li><b>النسخة السحابية:</b> Google Drive ← الإعدادات ← إدارة التطبيقات ← Khronometr ← حذف بيانات التطبيق المخفية.</li><li><b>الهاتف:</b> امسح مساحة تخزين التطبيق أو ألغِ تثبيته — فيزول كل ما على الهاتف.</li><li><b>الحاسوب:</b> إعدادات Windows ← التطبيقات ← التطبيقات المثبتة ← Khronometr ← إلغاء التثبيت؛ ثم احذف يدويًا، إن أردت، مجلد البيانات <code>%LOCALAPPDATA%\Khronometr</code>. وإذا كنت قد سمحت بنسخ السجل، فاحذف أيضًا المهمة <code>Khronometr\JournalCopy</code> من «جدولة المهام».</li><li><b>ملفات التصدير</b> ملفاتك أنت: احذفها كأي ملف آخر.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-security">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>الأمان</h2></div>
+    <p>تستخدم كل الاتصالات مع Google بروتوكول HTTPS. على الهاتف تتولى خدمات Google Play تسجيل الدخول؛ وعلى الحاسوب يُشفَّر رمز تسجيل الدخول بواسطة Windows (DPAPI) لمستخدمك وحده. ولا يطلب التطبيق كلمات المرور أبدًا ولا يخزّنها.</p>
+    
+  </section>
+  <section class="card sec" id="ar-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>الأطفال</h2></div>
+    <p>التطبيق غير موجّه إلى الأطفال دون 13 عامًا.</p>
+    
+  </section>
+  <section class="card sec" id="ar-changes">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h2>التغييرات على هذه السياسة</h2></div>
+    <p>يشير التاريخ في الأعلى إلى أحدث إصدار. وتُذكر التغييرات المهمة أيضًا في ملاحظات تحديث التطبيق.</p>
+    
+  </section>
+  <section class="card sec" id="ar-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>التواصل</h2></div>
+    <p>للأسئلة أو الطلبات: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="गोपनीयता नीति · Khronometr" data-app="Khronometr" data-langlabel="भाषा" data-nav="होम|Windows|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Khronometr</p>
+    <h1>गोपनीयता नीति</h1>
+    <p class="date">22 अक्टूबर 2026 को अपडेट की गई</p>
+    <p class="lead">Khronometr दिखाता है कि आप अपने फ़ोन, टैबलेट और PC पर, सब मिलाकर, ऐप और गेम में कितना समय बिताते हैं। इसे इस तरह बनाया गया है कि आपका डेटा आपका ही रहे: Khronometr का कोई सर्वर नहीं है, कोई विज्ञापन नहीं है और कोई ट्रैकिंग नहीं है।</p>
+  </header>
+
+  <section class="glance" aria-labelledby="hi-glance">
+    <h2 id="hi-glance" class="eyebrow">संक्षेप में</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><span><b>आपके डिवाइसों पर ही रहता है</b><br>आपका इतिहास आपके फ़ोन और PC पर ऐप के अंदर रखा जाता है। Khronometr का कोई सर्वर नहीं है।</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg><span><b>सिर्फ़ आपकी अपनी Google Drive</b><br>सिंक वैकल्पिक है और <b>आपकी</b> Drive के एक छिपे ऐप फ़ोल्डर में जाता है, जिसे सिर्फ़ Khronometr देख सकता है।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं</b><br>कोई एनालिटिक्स नहीं, कोई विज्ञापन SDK नहीं। कुछ भी बेचा या साझा नहीं किया जाता।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><span><b>समय, सामग्री नहीं</b><br>Khronometr संदेश, फ़ोटो, आपके टाइप किए शब्द या दूसरे ऐप और विंडो के अंदर की कोई भी चीज़ नहीं पढ़ता।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>कभी भी हटाएँ</b><br>सिंक बंद करें, क्लाउड कॉपी मिटाएँ या ऐप हटा दें — बस कुछ टैप में।</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="विषय-सूची">
+    <p class="eyebrow">विषय-सूची</p>
+    <div class="chips"><a href="#hi-phone"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg>फ़ोन ऐप क्या पढ़ता है</a><a href="#hi-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>अनुमतियाँ और उनकी वजह</a><a href="#hi-windows"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg>Windows ऐप (वैकल्पिक)</a><a href="#hi-storage"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>आपका डेटा कहाँ रखा जाता है</a><a href="#hi-cloud"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive सिंक (वैकल्पिक)</a><a href="#hi-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>अपडेट (वेबसाइट वाला वर्ज़न)</a><a href="#hi-sharing"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg>आपका डेटा किसे मिलता है</a><a href="#hi-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>आपका नियंत्रण और डेटा हटाना</a><a href="#hi-security"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>सुरक्षा</a><a href="#hi-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>बच्चे</a><a href="#hi-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg>इस नीति में बदलाव</a><a href="#hi-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>संपर्क</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="hi-table">
+    <h2 id="hi-table">कौन-सा डेटा, कहाँ रहता है, कौन देखता है</h2>
+    <table>
+      <thead><tr><th scope="col">डेटा</th><th scope="col">कहाँ रखा जाता है</th><th scope="col">कौन देख सकता है</th></tr></thead>
+      <tbody><tr><th scope="row">हर ऐप का समय और ट्रैफ़िक, स्क्रीन अनलॉक, ऐप के नाम और आइकन, डिवाइस के नाम</th><td data-label="कहाँ रखा जाता है">आपके डिवाइसों पर ऐप में; सिंक चालू होने पर आपकी अपनी Google Drive के छिपे ऐप फ़ोल्डर में भी</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">Windows ऐप: प्रोग्राम में समय, स्क्रीन लॉक होने के समय, Steam में खेलने का समय, हर प्रोग्राम का ट्रैफ़िक</th><td data-label="कहाँ रखा जाता है">उसी PC पर, ऐप के अपने फ़ोल्डर में; सिंक चालू होने पर आपकी Drive में भी</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">सीमाएँ और समूह</th><td data-label="कहाँ रखा जाता है">आपके डिवाइसों पर; सिंक चालू होने पर आपकी Drive में भी</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">जन्मतिथि (सिर्फ़ अगर आप इसे दर्ज करें)</th><td data-label="कहाँ रखा जाता है">सिर्फ़ इसी फ़ोन पर; कभी सिंक नहीं होती</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">Google अकाउंट का ईमेल</th><td data-label="कहाँ रखा जाता है">सिर्फ़ स्क्रीन पर दिखाया जाता है; कहीं नहीं भेजा जाता</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">एक्सपोर्ट फ़ाइलें (zip)</th><td data-label="कहाँ रखा जाता है">जहाँ आप उन्हें सहेजना चुनें</td><td data-label="कौन देख सकता है">जिसे भी आप फ़ाइल दें</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="hi-phone">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h2>फ़ोन ऐप क्या पढ़ता है</h2></div>
+    <ul><li><b>ऐप का उपयोग</b> — कौन-से ऐप खुले थे, कितनी देर तक, और स्क्रीन अनलॉक। सिर्फ़ तब, जब आप Android सेटिंग्स में Khronometr के लिए “उपयोग का ऐक्सेस” चालू कर दें।</li><li><b>हर ऐप का नेटवर्क उपयोग</b> — हर ऐप ने कितने बाइट Wi-Fi और मोबाइल डेटा इस्तेमाल किया, उसी अनुमति से।</li><li><b>इंस्टॉल किए गए ऐप के नाम और आइकन</b> — उन्हें सूचियों में दिखाने के लिए।</li><li><b>डिवाइस का मॉडल</b> और वह नाम जो आप डिवाइस को देते हैं — आपके डिवाइसों को अलग-अलग पहचानने के लिए।</li><li><b>आपकी जन्मतिथि</b>, सिर्फ़ अगर आप इसे दर्ज करें — सिर्फ़ इसी फ़ोन पर रखी जाती है और कभी सिंक नहीं होती, यह दिखाने के लिए कि आपका इतिहास किस उम्र से शुरू होता है।</li></ul><p>यह संदेश, संपर्क, लोकेशन, फ़ोटो, माइक्रोफ़ोन, कैमरा, आपके टाइप किए शब्द या दूसरे ऐप के अंदर की कोई भी चीज़ <b>नहीं</b> पढ़ता।</p>
+    
+  </section>
+  <section class="card sec" id="hi-permissions">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>अनुमतियाँ और उनकी वजह</h2></div>
+    
+    <dl class="perms"><div><dt>उपयोग का ऐक्सेस</dt><dd>हर ऐप का समय और ट्रैफ़िक गिनने के लिए।</dd></div><div><dt>सूचनाएँ</dt><dd>सीमा के रिमाइंडर और शाम का सारांश — कौन-से चाहिए, यह आप चुनते हैं।</dd></div><div><dt>दूसरे ऐप के ऊपर दिखाना</dt><dd>सिर्फ़ उस ऐप के ऊपर “समय ख़त्म” स्क्रीन दिखाने के लिए, जिसकी सीमा आपने तय की है। वैकल्पिक।</dd></div><div><dt>बैकग्राउंड में चलना, रीबूट के बाद शुरू होना</dt><dd>ताकि गिनती और आपकी सीमाएँ काम करती रहें।</dd></div><div><dt>बैटरी ऑप्टिमाइज़ेशन से छूट</dt><dd>एक बार पूछा जाता है, वैकल्पिक — ताकि फ़ोन गिनती बंद न कर दे।</dd></div><div><dt>अज्ञात ऐप इंस्टॉल करना</dt><dd>सिर्फ़ इस वेबसाइट वाले वर्ज़न में, उसके अपने अपडेट इंस्टॉल करने के लिए। वैकल्पिक।</dd></div><div><dt>इंटरनेट</dt><dd>वैकल्पिक Google Drive सिंक के लिए और, वेबसाइट वाले वर्ज़न में, अपडेट जाँचने के लिए।</dd></div></dl>
+  </section>
+  <section class="card sec" id="hi-windows">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg><h2>Windows ऐप (वैकल्पिक)</h2></div>
+    <p>अगर आप <a href="pc/">Windows के लिए Khronometr</a> इंस्टॉल करते हैं, तो वह उस PC पर पढ़ता है:</p><ul><li>उस प्रोग्राम का नाम जिसकी विंडो सामने है, और कितनी देर तक;</li><li>स्क्रीन कब लॉक और अनलॉक होती है;</li><li>Steam की अपनी फ़ाइलों से आपके गेम में खेलने का समय;</li><li>Windows के उपयोग जर्नल से हर प्रोग्राम का नेटवर्क उपयोग — सिर्फ़ आपके एक बार अनुमति देने के बाद (उसके बाद यह हर 6 घंटे में जर्नल कॉपी करता है)।</li></ul><p>यह यह सब अपने फ़ोल्डर <code>%LOCALAPPDATA%\Khronometr</code> में रखता है। यह विंडो के अंदर की सामग्री, कीस्ट्रोक, स्क्रीनशॉट या ब्राउज़र इतिहास <b>नहीं</b> पढ़ता।</p><p>सिंक चालू होने पर यह उसी छिपे Drive फ़ोल्डर से आपके दूसरे डिवाइसों का डेटा भी डाउनलोड करता है, ताकि उसे अपनी विंडो में दिखा सके। यह pegasohlib.github.io / GitHub पर अपने अपडेट भी जाँचता है और सिर्फ़ लेखक के डिजिटल हस्ताक्षर वाली फ़ाइलें इंस्टॉल करता है; कोई निजी डेटा नहीं भेजा जाता।</p>
+    
+  </section>
+  <section class="card sec" id="hi-storage">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg><h2>आपका डेटा कहाँ रखा जाता है</h2></div>
+    <p>सब कुछ <b>सिर्फ़ आपके डिवाइसों पर</b>, ऐप के अपने डेटाबेस में रखा जाता है। डेवलपर के पास कोई सर्वर नहीं है और उसे आपका डेटा कभी नहीं मिलता।</p><p>एक्सपोर्ट फ़ाइलें (zip) सिर्फ़ आपके कहने पर बनती हैं, और वहीं सहेजी जाती हैं जहाँ आप चुनें।</p>
+    
+  </section>
+  <section class="card sec" id="hi-cloud">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive सिंक (वैकल्पिक)</h2></div>
+    <p>अगर आप “Google से साइन इन करें” चुनते हैं, तो ऐप अपना इतिहास <b>आपकी अपनी Google Drive के छिपे ऐप फ़ोल्डर</b> में सहेजता है। अनुमति है <code>drive.appdata</code>: ऐप सिर्फ़ वही फ़ाइलें देख सकता है जो उसने वहाँ बनाई हैं, आपकी Drive पर और कुछ नहीं।</p><p>वहाँ क्या जाता है: हर ऐप का रोज़ का समय और ट्रैफ़िक, सेशन, ऐप के नाम और आइकन, डिवाइस के नाम, और समूहों के साथ आपकी सीमाएँ (साथ ही यह भी कि हर साझा सीमा का आज कितना हिस्सा इस्तेमाल हुआ)। इसी से आपके दूसरे डिवाइस वही इतिहास दिखाते हैं और सीमाएँ कई डिवाइसों पर काम करती हैं।</p><p>डेटा आपके डिवाइस और Google के बीच एन्क्रिप्टेड (HTTPS) रूप में जाता है। डेवलपर आपकी Drive तक नहीं पहुँच सकता। आपका Google ईमेल सिर्फ़ स्क्रीन पर दिखाया जाता है और कहीं नहीं भेजा जाता।</p><p>Google API से मिली जानकारी का Khronometr द्वारा उपयोग और ट्रांसफ़र <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> का पालन करता है, जिसमें Limited Use (सीमित उपयोग) की शर्तें भी शामिल हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>अपडेट (वेबसाइट वाला वर्ज़न)</h2></div>
+    <p>इस वेबसाइट वाला वर्ज़न दिन में कुछ बार <code>pegasohlib.github.io</code> पर नए वर्ज़न की जाँच करता है और उसे GitHub से डाउनलोड करता है; इंस्टॉल करने से पहले Android जाँचता है कि उस पर उसी डेवलपर का हस्ताक्षर है। आपके बारे में कुछ नहीं भेजा जाता — किसी भी वेबसाइट की तरह, GitHub आपका IP पता देखता है। आप सेटिंग्स में अपने-आप होने वाले अपडेट बंद कर सकते हैं। Google Play वाले वर्ज़न को इसके बजाय Google Play अपडेट करता है।</p><p>GitHub यह भी गिनता है कि हर फ़ाइल कितनी बार डाउनलोड हुई। यह सिर्फ़ एक संख्या है, जिसमें यह कुछ नहीं होता कि किसने डाउनलोड किया; वेबसाइट इसे डाउनलोड की अनुमानित संख्या के रूप में दिखाती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-sharing">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h2>आपका डेटा किसे मिलता है</h2></div>
+    <p><b>किसी को नहीं।</b> आपका डेटा न बेचा जाता है, न तीसरे पक्ष के साथ साझा किया जाता है, न विज्ञापन के लिए इस्तेमाल होता है। कोई एनालिटिक्स या क्रैश-रिपोर्टिंग सेवा नहीं है। Google सिर्फ़ आपकी अपनी Drive के स्टोरेज के रूप में शामिल होता है, अगर आप सिंक चालू करते हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>आपका नियंत्रण और डेटा हटाना</h2></div>
+    <ul><li><b>सिंक:</b> इसे कभी भी डिवाइस टैब में बंद करें।</li><li><b>क्लाउड कॉपी:</b> Google Drive → सेटिंग्स → ऐप्स मैनेज करें → Khronometr → छिपा हुआ ऐप डेटा मिटाएँ।</li><li><b>फ़ोन:</b> ऐप का स्टोरेज साफ़ करें या उसे अनइंस्टॉल करें — फ़ोन पर मौजूद सब कुछ हट जाता है।</li><li><b>PC:</b> Windows सेटिंग्स → ऐप्स → इंस्टॉल किए गए ऐप्स → Khronometr → अनइंस्टॉल करें; फिर, अगर आप चाहें, डेटा फ़ोल्डर <code>%LOCALAPPDATA%\Khronometr</code> ख़ुद हटा दें। अगर आपने जर्नल कॉपी की अनुमति दी थी, तो Task Scheduler में टास्क <code>Khronometr\JournalCopy</code> भी हटा दें।</li><li><b>एक्सपोर्ट</b> आपकी अपनी फ़ाइलें हैं: उन्हें किसी भी दूसरी फ़ाइल की तरह हटाएँ।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-security">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>सुरक्षा</h2></div>
+    <p>Google तक का सारा ट्रैफ़िक HTTPS का इस्तेमाल करता है। फ़ोन पर साइन-इन Google Play सेवाएँ संभालती हैं; PC पर साइन-इन टोकन Windows (DPAPI) से सिर्फ़ आपके यूज़र के लिए एन्क्रिप्ट किया जाता है। ऐप कभी पासवर्ड नहीं माँगता और न ही उन्हें सहेजता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>बच्चे</h2></div>
+    <p>यह ऐप 13 साल से कम उम्र के बच्चों के लिए नहीं बनाया गया है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-changes">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h2>इस नीति में बदलाव</h2></div>
+    <p>ऊपर दी गई तारीख़ नवीनतम वर्ज़न दिखाती है। ज़रूरी बदलावों का ज़िक्र ऐप के अपडेट नोट्स में भी किया जाता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>संपर्क</h2></div>
+    <p>सवाल या अनुरोध: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Kebijakan Privasi · Khronometr" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1448,7 +1730,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Chính sách quyền riêng tư · Khronometr" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Chính sách quyền riêng tư · Khronometr" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1536,7 +1818,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Khronometr" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Khronometr" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1624,7 +1906,95 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="개인정보처리방침 · Khronometr" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="隐私政策 · Khronometr" data-app="Khronometr" data-langlabel="语言" data-nav="首页|Windows|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Khronometr</p>
+    <h1>隐私政策</h1>
+    <p class="date">更新于2026年10月22日</p>
+    <p class="lead">Khronometr 显示你在手机、平板和电脑上使用应用和游戏的总时间。它的设计让你的数据始终属于你：没有 Khronometr 服务器，没有广告，也没有跟踪。</p>
+  </header>
+
+  <section class="glance" aria-labelledby="zh-glance">
+    <h2 id="zh-glance" class="eyebrow">简要说明</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><span><b>保存在你的设备上</b><br>你的历史记录保存在手机和电脑上的应用内。不存在 Khronometr 服务器。</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg><span><b>只用你自己的 Google 云端硬盘</b><br>同步是可选的，数据会存入<b>你的</b>云端硬盘中一个只有 Khronometr 能看到的隐藏应用文件夹。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>没有广告，没有跟踪</b><br>没有分析工具，没有广告 SDK。不出售也不分享任何内容。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg><span><b>只记时间，不看内容</b><br>Khronometr 不读取消息、照片、你输入的内容，也不读取其他应用和窗口中的任何内容。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>随时删除</b><br>关闭同步、清除云端副本或卸载应用——点几下即可。</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="目录">
+    <p class="eyebrow">目录</p>
+    <div class="chips"><a href="#zh-phone"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg>手机应用读取哪些内容</a><a href="#zh-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>权限及其用途</a><a href="#zh-windows"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg>Windows 应用（可选）</a><a href="#zh-storage"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg>你的数据保存在哪里</a><a href="#zh-cloud"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google 云端硬盘同步（可选）</a><a href="#zh-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>更新（网站版本）</a><a href="#zh-sharing"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg>谁会获得你的数据</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>你的控制权与删除</a><a href="#zh-security"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>安全</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg>本政策的变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="zh-table">
+    <h2 id="zh-table">有哪些数据、存在哪里、谁能看到</h2>
+    <table>
+      <thead><tr><th scope="col">数据</th><th scope="col">保存位置</th><th scope="col">谁能看到</th></tr></thead>
+      <tbody><tr><th scope="row">每个应用的使用时间和流量、屏幕解锁次数、应用名称和图标、设备名称</th><td data-label="保存位置">在你设备上的应用中；开启同步时，也保存在你自己 Google 云端硬盘的隐藏应用文件夹中</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">Windows 应用：程序使用时间、屏幕锁定时间、Steam 游戏时长、每个程序的流量</th><td data-label="保存位置">在该电脑上应用自己的文件夹中；开启同步时，也保存在你的云端硬盘中</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">限制和分组</th><td data-label="保存位置">在你的设备上；开启同步时，也保存在你的云端硬盘中</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">出生日期（仅当你填写时）</th><td data-label="保存位置">只保存在这部手机上；从不同步</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">Google 账号的电子邮件地址</th><td data-label="保存位置">只显示在屏幕上；不会发送到任何地方</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">导出文件（zip）</th><td data-label="保存位置">保存在你选择的位置</td><td data-label="谁能看到">你把文件交给的任何人</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="zh-phone">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h2>手机应用读取哪些内容</h2></div>
+    <ul><li><b>应用使用情况</b>——打开过哪些应用、用了多久，以及屏幕解锁次数。仅在你于 Android 设置中为 Khronometr 开启“使用情况访问权限”之后。</li><li><b>每个应用的网络用量</b>——每个应用使用了多少 Wi-Fi 和移动数据字节数，来自同一项权限。</li><li><b>已安装应用的名称和图标</b>——用于在列表中显示。</li><li><b>设备型号</b>以及你给设备起的名字——用于区分你的各台设备。</li><li><b>你的出生日期</b>，仅当你填写时——只保存在这部手机上，从不同步，用于显示你的历史记录从几岁开始。</li></ul><p>它<b>不会</b>读取消息、通讯录、位置、照片、麦克风、摄像头、你输入的内容，也不会读取其他应用中的任何内容。</p>
+    
+  </section>
+  <section class="card sec" id="zh-permissions">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>权限及其用途</h2></div>
+    
+    <dl class="perms"><div><dt>使用情况访问权限</dt><dd>用于统计每个应用的使用时间和流量。</dd></div><div><dt>通知</dt><dd>限制提醒和晚间总结——由你选择要哪些。</dd></div><div><dt>显示在其他应用上层</dt><dd>仅用于在你设置了限制的应用上方显示“时间到”屏幕。可选。</dd></div><div><dt>后台运行、重启后启动</dt><dd>让计时和你的限制持续生效。</dd></div><div><dt>电池优化例外</dt><dd>只请求一次，可选——以免手机停止计时。</dd></div><div><dt>安装未知应用</dt><dd>仅限本网站提供的版本，用于安装它自己的更新。可选。</dd></div><div><dt>网络</dt><dd>用于可选的 Google 云端硬盘同步，以及网站版本的更新检查。</dd></div></dl>
+  </section>
+  <section class="card sec" id="zh-windows">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="4.5" width="15" height="10.5" rx="1.8"/><path d="M2.5 19h19"/></svg><h2>Windows 应用（可选）</h2></div>
+    <p>如果你安装了 <a href="pc/">Khronometr Windows 版</a>，它会在该电脑上读取：</p><ul><li>位于最前面的窗口所属程序的名称，以及使用时长；</li><li>屏幕锁定和解锁的时间；</li><li>从 Steam 自身文件中读取你的游戏时长；</li><li>从 Windows 使用情况日志中读取每个程序的网络用量——仅在你允许一次之后（之后它每 6 小时复制一次该日志）。</li></ul><p>它把这些数据保存在自己的文件夹 <code>%LOCALAPPDATA%\Khronometr</code> 中。它<b>不会</b>读取窗口内的内容、按键、屏幕截图或浏览器历史记录。</p><p>开启同步后，它还会从同一个隐藏的云端硬盘文件夹下载你其他设备的数据，以便在窗口中显示。它还会在 pegasohlib.github.io / GitHub 上检查自己的更新，并且只安装带有作者数字签名的文件；不会发送任何个人数据。</p>
+    
+  </section>
+  <section class="card sec" id="zh-storage">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="5.5" rx="7.5" ry="3"/><path d="M4.5 5.5v13c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3v-13M4.5 12c0 1.7 3.4 3 7.5 3s7.5-1.3 7.5-3"/></svg><h2>你的数据保存在哪里</h2></div>
+    <p>所有数据<b>只保存在你的设备上</b>，存放在应用自己的数据库中。开发者没有服务器，也从不接收你的数据。</p><p>导出文件（zip）只有在你要求时才会创建，并保存在你选择的位置。</p>
+    
+  </section>
+  <section class="card sec" id="zh-cloud">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google 云端硬盘同步（可选）</h2></div>
+    <p>如果你选择“使用 Google 登录”，应用会把历史记录保存在<b>你自己 Google 云端硬盘的隐藏应用文件夹</b>中。所用权限为 <code>drive.appdata</code>：应用只能看到它自己在那里创建的文件，看不到你云端硬盘中的其他任何内容。</p><p>存入的内容包括：每个应用每天的使用时间和流量、使用会话、应用名称和图标、设备名称，以及你的限制和分组（还有每个共享限制今天已用掉多少）。这样你的其他设备才能显示相同的历史记录，限制也才能在多台设备上生效。</p><p>数据在你的设备和 Google 之间加密传输（HTTPS）。开发者无法访问你的云端硬盘。你的 Google 电子邮件地址只显示在屏幕上，不会发送到任何地方。</p><p>Khronometr 对从 Google API 获取的信息的使用和传输，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的“有限使用”要求。</p>
+    
+  </section>
+  <section class="card sec" id="zh-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>更新（网站版本）</h2></div>
+    <p>本网站提供的版本每天会在 <code>pegasohlib.github.io</code> 上检查几次是否有新版本，并从 GitHub 下载；安装前，Android 会检查新版本是否由同一开发者签名。不会发送任何关于你的信息——和访问任何网站一样，GitHub 会看到你的 IP 地址。你可以在“设置”中关闭自动更新。Google Play 版本则由 Google Play 负责更新。</p><p>GitHub 还会统计每个文件被下载的次数。这只是一个数字，不包含任何关于下载者的信息；网站会把它显示为大致的下载量。</p>
+    
+  </section>
+  <section class="card sec" id="zh-sharing">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h2>谁会获得你的数据</h2></div>
+    <p><b>没有人。</b>你的数据不会被出售、不会与第三方分享，也不会用于广告。没有任何分析或崩溃报告服务。只有在你开启同步时，Google 才作为你自己云端硬盘的存储方参与其中。</p>
+    
+  </section>
+  <section class="card sec" id="zh-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>你的控制权与删除</h2></div>
+    <ul><li><b>同步：</b>随时可在“设备”标签页中关闭。</li><li><b>云端副本：</b>Google 云端硬盘 → 设置 → 管理应用 → Khronometr → 删除隐藏的应用数据。</li><li><b>手机：</b>清除应用存储空间或卸载应用——手机上的所有数据都会消失。</li><li><b>电脑：</b>Windows 设置 → 应用 → 安装的应用 → Khronometr → 卸载；然后如有需要，手动删除数据文件夹 <code>%LOCALAPPDATA%\Khronometr</code>。如果你曾允许复制日志，还要在“任务计划程序”中删除任务 <code>Khronometr\JournalCopy</code>。</li><li><b>导出文件</b>是你自己的文件：像删除其他文件一样删除即可。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-security">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>安全</h2></div>
+    <p>与 Google 之间的所有通信都使用 HTTPS。在手机上，登录由 Google Play 服务处理；在电脑上，登录令牌通过 Windows（DPAPI）加密，仅供你的用户账户使用。应用从不要求也从不保存密码。</p>
+    
+  </section>
+  <section class="card sec" id="zh-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>儿童</h2></div>
+    <p>本应用并非面向 13 岁以下的儿童。</p>
+    
+  </section>
+  <section class="card sec" id="zh-changes">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h2>本政策的变更</h2></div>
+    <p>页面顶部的日期表示最新版本。重要变更也会在应用的更新说明中提及。</p>
+    
+  </section>
+  <section class="card sec" id="zh-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>联系方式</h2></div>
+    <p>问题或请求：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="개인정보처리방침 · Khronometr" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Khronometr</p>
@@ -1712,7 +2082,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="プライバシーポリシー · フロノメトル" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="プライバシーポリシー · フロノメトル" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">フロノメトル</p>
@@ -1800,7 +2170,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Құпиялылық саясаты · Хронометр" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Құпиялылық саясаты · Хронометр" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Хронометр</p>
@@ -1888,7 +2258,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Политика конфиденциальности · Хронометр" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Политика конфиденциальности · Хронометр" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Хронометр</p>
@@ -1982,7 +2352,8 @@ td:last-child{font-weight:600;color:var(--ink)}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -2002,7 +2373,8 @@ td:last-child{font-weight:600;color:var(--ink)}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");

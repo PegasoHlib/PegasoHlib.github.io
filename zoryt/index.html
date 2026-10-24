@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/zoryt/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/zoryt/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/zoryt/?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/zoryt/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/zoryt/?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/zoryt/?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/zoryt/?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/zoryt/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/zoryt/?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/zoryt/?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/zoryt/?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/zoryt/?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/zoryt/?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/zoryt/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/zoryt/?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/zoryt/?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/zoryt/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/zoryt/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/zoryt/?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -137,12 +154,12 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon-256.png" alt="" width="32" height="32"><span id="appname">ZORYT</span></a>
   
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Test version on Roblox</p>
@@ -187,7 +204,7 @@ main{max-width:960px}
 
   <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Тестова версія в Roblox</p>
@@ -232,7 +249,7 @@ main{max-width:960px}
 
   <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Versión de prueba en Roblox</p>
@@ -277,7 +294,7 @@ main{max-width:960px}
 
   <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Versão de teste no Roblox</p>
@@ -322,7 +339,7 @@ main{max-width:960px}
 
   <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Versão de teste no Roblox</p>
@@ -367,7 +384,7 @@ main{max-width:960px}
 
   <p class="contact">Dúvidas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Version test sur Roblox</p>
@@ -412,7 +429,7 @@ main{max-width:960px}
 
   <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Testversion auf Roblox</p>
@@ -457,7 +474,52 @@ main{max-width:960px}
 
   <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Taal" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Testversie op Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">Je dorp is in één nacht afgebrand. Train met Sensei Hanzo, word sterker na elke sessie, versla bazen in combogevechten en bevrijd wereld na wereld uit de duisternis.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-nl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>Wat zit er in het spel</span></a>
+    </div>
+    <p class="note">Een Roblox-spel voor pc en telefoon, in veel talen</p>
+    
+  </header>
+
+  <section class="show" aria-label="Een eerste blik">
+    <div class="showtext"><h2 class="display">Een eerste blik</h2><p>Vroege beelden uit het spel in ontwikkeling: je mentor en twee bazen van de zeewerelden.</p></div>
+    <div class="shots"><figure><img src="img/shot-hanzo.webp" alt="Sensei Hanzo" width="960" height="540" loading="lazy"><figcaption>Sensei Hanzo</figcaption></figure><figure><img src="img/shot-boss.webp" alt="Haven-Leviathan" width="960" height="540" loading="lazy"><figcaption>Haven-Leviathan</figcaption></figure><figure><img src="img/shot-kuroshio.webp" alt="Admiraal Kuroshio" width="960" height="540" loading="lazy"><figcaption>Admiraal Kuroshio</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-nl">
+    <h2 class="eyebrow" id="f-nl">Zo speel je het</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Training als minigames</h3><p>Elk trainingsveld speelt anders: bubbels laten knappen, op taikotrommels slaan, patronen uit je geheugen herhalen, vuurvliegjes volgen, naar parels duiken. Elke ronde maakt je sterker, en auto-training houdt je bezig.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Bazen met combo's</h3><p>Ontwijk de aanvallen, sla terug en maak op het juiste moment de combo af met tikken, vegen en ritme precies op tijd. Een minibaas bewaakt de poort van elke wereld.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Werelden om te bevrijden</h3><p>Van een afgebrand sakuradorp via vulkanen, hemeltoppen en een mistig bos tot havens, riffen en een door stormen geteisterde vuurtoren. Elke wereld heeft een eigen verhaal, mensen om te redden en geheimen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Wedergeboorte en het PAD</h3><p>Besteed je Kracht aan zwaarden en aura's en word dan wedergeboren: je komt sterker terug, opent de volgende wereld en nieuwe takken van de vaardighedenboom PAD.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Huisdieren uit eieren</h3><p>Elke wereld heeft een eigen ei: broed otters, meeuwen, krabben, kleine draken, walvissen en meer uit, en neem je beste team mee.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Zwaarden, aura's, drankjes</h3><p>Verzamel zwaarden en aura's die om je heen gloeien, en drink Kracht-, Geluks- of Genezingsdrankjes wanneer het telt.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Met vrienden of alleen</h3><p>Beklim de Eindeloze Toren solo of als team, sluit je aan bij een huis van de Orde van Sakura en meet je met andere spelers in PvP-arena's.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Events en invasies</h3><p>Regelmatige events brengen Dubbele Training, Geluksbroed, Dubbele Munten of Schaduwnacht. Schaduwbazen vallen de werelden binnen, en elke wereld heeft eigen events, van lantaarnfeesten tot onweersbuien.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-nl">
+    <h2 class="eyebrow" id="m0-nl">Tussen de gevechten</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Vissen en duiken</h3><p>Vis vanaf de steigers, duik naar gezonken kisten en houd het spookschip in de gaten dat door de mist drijft.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Bandexamens</h3><p>Verdien je banden van wit tot zwart door de examens van Sensei Hanzo te halen.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>De Codex</h3><p>Monsters, werelden, huisdieren, uitrusting en verborgen geheimen: alles wat je vindt komt in de Codex, met beloningen voor volledige verzamelingen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titels en emotes</h3><p>Verdien titels voor je prestaties, zoals Zwarte Band, en begroet andere spelers met emotes.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-nl">
+    <h2 class="eyebrow" id="x-nl">Verder</h2>
+    <div class="chips"><span>Veel talen</span><span>Pc en telefoon</span><span>Verplaatsbare aanraakknoppen</span><span>Auto-training</span><span>Lichte effecten voor oudere telefoons</span><span>Muziek voor werelden en bazen</span><span>Online Pass</span><span>Beloningen en quests</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">In de testfase</h2><p>ZORYT staat al als testversie op Roblox: de werelden, bazen en het verhaal worden nu getest en bijgeschaafd. Daarna komen nieuwe werelden en nieuwe hoofdstukken van het verhaal, meer bazen om te verslaan en huisdieren om uit te broeden, en dan de volledige lancering.</p>
+    </div>
+  </section>
+
+  <p class="contact">Vragen en ideeën: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Versione di prova su Roblox</p>
@@ -502,7 +564,7 @@ main{max-width:960px}
 
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Język" data-nav="" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Język" data-nav="" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Wersja testowa w Robloxie</p>
@@ -547,7 +609,7 @@ main{max-width:960px}
 
   <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Testovací verze na Robloxu</p>
@@ -592,7 +654,7 @@ main{max-width:960px}
 
   <p class="contact">Dotazy a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Testovacia verzia na Robloxe</p>
@@ -637,7 +699,7 @@ main{max-width:960px}
 
   <p class="contact">Otázky a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Sprog" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Sprog" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Testversion på Roblox</p>
@@ -682,7 +744,7 @@ main{max-width:960px}
 
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Testversion på Roblox</p>
@@ -727,7 +789,7 @@ main{max-width:960px}
 
   <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Dil" data-nav="" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Dil" data-nav="" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Roblox’ta test sürümü</p>
@@ -772,7 +834,97 @@ main{max-width:960px}
 
   <p class="contact">Sorular ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="اللغة" data-nav="" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">نسخة تجريبية على Roblox</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">احترقت قريتكم في ليلة واحدة. تدرّبوا مع سينسي هانزو، وازدادوا قوة مع كل حصة تدريب، واهزموا الزعماء في معارك الكومبو، وحرّروا العوالم من الظلام واحدًا تلو الآخر.</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-ar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>ماذا في اللعبة</span></a>
+    </div>
+    <p class="note">لعبة على Roblox للكمبيوتر والهواتف، بلغات كثيرة</p>
+    
+  </header>
+
+  <section class="show" aria-label="نظرة أولى">
+    <div class="showtext"><h2 class="display">نظرة أولى</h2><p>لقطات مبكرة من اللعبة وهي قيد التطوير: معلّمكم واثنان من زعماء العوالم البحرية.</p></div>
+    <div class="shots"><figure><img src="img/shot-hanzo.webp" alt="سينسي هانزو" width="960" height="540" loading="lazy"><figcaption>سينسي هانزو</figcaption></figure><figure><img src="img/shot-boss.webp" alt="لوياثان المرفأ" width="960" height="540" loading="lazy"><figcaption>لوياثان المرفأ</figcaption></figure><figure><img src="img/shot-kuroshio.webp" alt="الأدميرال كوروشيو" width="960" height="540" loading="lazy"><figcaption>الأدميرال كوروشيو</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ar">
+    <h2 class="eyebrow" id="f-ar">طريقة اللعب</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>التدريب في ألعاب مصغّرة</h3><p>لكل ساحة تدريب أسلوب لعب مختلف: فرقعوا الفقاعات، واقرعوا طبول التايكو، وكرّروا الأنماط من الذاكرة، وتتبّعوا اليراعات، وغوصوا بحثًا عن اللآلئ. كل جولة تزيدكم قوة، والتدريب التلقائي يواصل التقدّم عنكم.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>قتال الزعماء بالكومبو</h3><p>تفادوا الهجمات وردّوا الضربة، وعندما تحين اللحظة أكملوا الكومبو بالنقرات والسحبات والإيقاع في الوقت المناسب تمامًا. ويحرس زعيمٌ صغير بوابة كل عالم.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>عوالم تنتظر التحرير</h3><p>من قرية ساكورا المحترقة، مرورًا بالبراكين وقمم السماء وغابة يلفّها الضباب، وصولًا إلى المرافئ والشعاب المرجانية ومنارة تجتاحها العواصف. لكل عالم قصته الخاصة، وأناس ينتظرون الإنقاذ، وأسرار.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>إعادة الميلاد وشجرة PATH</h3><p>أنفقوا قوتكم على السيوف والهالات، ثم أعيدوا الميلاد: تعودون أقوى، وتفتحون العالم التالي وفروعًا جديدة في شجرة مهارات PATH.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>حيوانات أليفة من البيض</h3><p>لكل عالم بيضته الخاصة: افقسوا ثعالب الماء والنوارس والسرطانات والتنانين الصغيرة والحيتان وغيرها، وخذوا أفضل فريق معكم.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>سيوف وهالات وجرعات</h3><p>اجمعوا السيوف والهالات التي تتوهّج من حولكم، واشربوا جرعات القوة أو الحظ أو الشفاء في اللحظة الحاسمة.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>مع الأصدقاء أو بمفردكم</h3><p>تسلّقوا البرج اللامتناهي بمفردكم أو ضمن فريق، وانضمّوا إلى أحد بيوت أخوية الساكورا، واختبروا أنفسكم أمام لاعبين آخرين في ساحات PvP.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>فعاليات وغزوات</h3><p>تجلب الفعاليات المنتظمة «التدريب المضاعف» و«الفقس المحظوظ» و«العملات المضاعفة» و«ليلة الظلال». ويغزو زعماء الظلال العوالم، ولكل عالم فعالياته الخاصة، من مهرجانات الفوانيس إلى العواصف الرعدية.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ar">
+    <h2 class="eyebrow" id="m0-ar">بين المعارك</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>الصيد والغوص</h3><p>اصطادوا السمك من الأرصفة، وغوصوا بحثًا عن الصناديق الغارقة، وترقّبوا سفينة الأشباح التي تنجرف عبر الضباب.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>اختبارات الأحزمة</h3><p>احصلوا على أحزمتكم من الأبيض حتى الأسود باجتياز اختبارات سينسي هانزو.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>الموسوعة</h3><p>الوحوش والعوالم والحيوانات الأليفة والعتاد والأسرار الخفية: كل ما تعثرون عليه يُضاف إلى الموسوعة، مع مكافآت على المجموعات الكاملة.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>الألقاب والإيماءات</h3><p>اكسبوا ألقابًا على إنجازاتكم، مثل «الحزام الأسود»، وحيّوا اللاعبين الآخرين بالإيماءات.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-ar">
+    <h2 class="eyebrow" id="x-ar">وأيضًا</h2>
+    <div class="chips"><span>لغات كثيرة</span><span>الكمبيوتر والهواتف</span><span>أزرار لمس قابلة للتحريك</span><span>تدريب تلقائي</span><span>مؤثرات خفيفة للهواتف القديمة</span><span>موسيقى للعوالم والزعماء</span><span>تذكرة أونلاين</span><span>مكافآت ومهام</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">قيد الاختبار</h2><p>لعبة ZORYT متوفرة بالفعل على Roblox كنسخة تجريبية: يجري الآن اختبار العوالم والزعماء والقصة وصقلها. وتأتي بعد ذلك عوالم جديدة وفصول جديدة من القصة، ومزيد من الزعماء لهزيمتهم والحيوانات الأليفة لفقسها، ثم الإطلاق الكامل.</p>
+    </div>
+  </section>
+
+  <p class="contact">أسئلة وأفكار: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="भाषा" data-nav="" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Roblox पर टेस्ट वर्ज़न</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">एक ही रात में आपका गाँव जलकर राख हो गया। सेंसेई हानज़ो के साथ ट्रेनिंग करें, हर सत्र के साथ और ताक़तवर बनें, कॉम्बो लड़ाइयों में बॉस को हराएँ और एक के बाद एक दुनिया को अंधेरे से आज़ाद करें।</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-hi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>गेम में क्या है</span></a>
+    </div>
+    <p class="note">PC और फ़ोन के लिए Roblox गेम, कई भाषाओं में</p>
+    
+  </header>
+
+  <section class="show" aria-label="पहली झलक">
+    <div class="showtext"><h2 class="display">पहली झलक</h2><p>विकास के दौर में गेम की शुरुआती तस्वीरें: आपके गुरु और समुद्री दुनियाओं के दो बॉस।</p></div>
+    <div class="shots"><figure><img src="img/shot-hanzo.webp" alt="सेंसेई हानज़ो" width="960" height="540" loading="lazy"><figcaption>सेंसेई हानज़ो</figcaption></figure><figure><img src="img/shot-boss.webp" alt="बंदरगाह का लेविअथान" width="960" height="540" loading="lazy"><figcaption>बंदरगाह का लेविअथान</figcaption></figure><figure><img src="img/shot-kuroshio.webp" alt="एडमिरल कुरोशियो" width="960" height="540" loading="lazy"><figcaption>एडमिरल कुरोशियो</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-hi">
+    <h2 class="eyebrow" id="f-hi">गेम कैसे खेला जाता है</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>मिनी-गेम्स के रूप में ट्रेनिंग</h3><p>हर ट्रेनिंग ग्राउंड अलग तरह से खेला जाता है: बुलबुले फोड़ें, ताइको ढोल बजाएँ, याद से पैटर्न दोहराएँ, जुगनुओं का पीछा करें, मोतियों के लिए गोता लगाएँ। हर राउंड आपको और ताक़तवर बनाता है, और ऑटो-ट्रेनिंग आपकी प्रगति जारी रखती है।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>कॉम्बो के साथ बॉस फ़ाइट</h3><p>हमलों से बचें, पलटवार करें, और सही पल आने पर टैप, स्वाइप और लय के साथ ठीक समय पर कॉम्बो पूरा करें। हर दुनिया के द्वार की रखवाली एक मिनी-बॉस करता है।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>आज़ाद करने के लिए दुनियाएँ</h3><p>जले हुए सकुरा गाँव से लेकर ज्वालामुखियों, आसमान छूती चोटियों और धुंध भरे जंगल से होते हुए बंदरगाहों, मूंगा चट्टानों और तूफ़ानों से घिरे लाइटहाउस तक। हर दुनिया की अपनी कहानी, बचाने के लिए अपने लोग और अपने राज़ हैं।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>पुनर्जन्म और पथ</h3><p>अपनी शक्ति तलवारों और ऑरा पर खर्च करें, फिर पुनर्जन्म लें: आप और मज़बूत होकर लौटते हैं, अगली दुनिया खुलती है और पथ स्किल ट्री की नई शाखाएँ भी।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>अंडों से पेट्स</h3><p>हर दुनिया का अपना अंडा है: ऊदबिलाव, समुद्री चील, केकड़े, छोटे ड्रैगन, व्हेल और बहुत कुछ निकालें, और अपनी सबसे अच्छी टीम साथ ले जाएँ।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>तलवारें, ऑरा, पोशन</h3><p>तलवारें और आपके चारों ओर चमकने वाले ऑरा इकट्ठा करें, और ज़रूरत के समय ताक़त, क़िस्मत या हीलिंग के पोशन पिएँ।</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>दोस्तों के साथ या अकेले</h3><p>अंतहीन टावर पर अकेले या टीम में चढ़ें, सकुरा ऑर्डर के किसी घराने में शामिल हों और PvP एरीना में दूसरे खिलाड़ियों के ख़िलाफ़ खुद को आज़माएँ।</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>इवेंट और आक्रमण</h3><p>नियमित इवेंट में डबल ट्रेनिंग, लकी हैच, डबल सिक्के या छाया रात्रि आते हैं। छाया बॉस दुनियाओं पर हमला करते हैं, और हर दुनिया के अपने इवेंट भी हैं, लालटेन उत्सवों से लेकर आँधी-तूफ़ानों तक।</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-hi">
+    <h2 class="eyebrow" id="m0-hi">लड़ाइयों के बीच</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>मछली पकड़ना और गोताखोरी</h3><p>घाटों से मछली पकड़ें, डूबे हुए संदूकों के लिए गोता लगाएँ और धुंध में भटकते भूतिया जहाज़ पर नज़र रखें।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>बेल्ट परीक्षा</h3><p>सेंसेई हानज़ो की परीक्षाएँ पास करके सफ़ेद से काली तक अपनी बेल्ट हासिल करें।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>कोडेक्स</h3><p>राक्षस, दुनियाएँ, पेट्स, उपकरण और छिपे राज़: आपको जो भी मिलता है, वह कोडेक्स में जाता है, और पूरे संग्रह पर इनाम मिलते हैं।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>टाइटल और इमोट</h3><p>अपनी उपलब्धियों के लिए ब्लैक बेल्ट जैसे टाइटल पाएँ, और इमोट से दूसरे खिलाड़ियों का अभिवादन करें।</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-hi">
+    <h2 class="eyebrow" id="x-hi">और भी</h2>
+    <div class="chips"><span>कई भाषाएँ</span><span>PC और फ़ोन</span><span>खिसकाए जा सकने वाले टच बटन</span><span>ऑटो-ट्रेनिंग</span><span>पुराने फ़ोन के लिए हल्के इफ़ेक्ट</span><span>दुनियाओं और बॉस के लिए संगीत</span><span>ऑनलाइन पास</span><span>इनाम और क्वेस्ट</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">टेस्टिंग में</h2><p>ZORYT टेस्ट वर्ज़न के रूप में Roblox पर पहले से मौजूद है: दुनियाओं, बॉस और कहानी को अभी टेस्ट करके निखारा जा रहा है। आगे आएँगी नई दुनियाएँ और कहानी के नए अध्याय, हराने के लिए और बॉस और निकालने के लिए और पेट्स, और फिर पूरा लॉन्च।</p>
+    </div>
+  </section>
+
+  <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Versi uji coba di Roblox</p>
@@ -817,7 +969,7 @@ main{max-width:960px}
 
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Ngôn ngữ" data-nav="" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Ngôn ngữ" data-nav="" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Bản thử nghiệm trên Roblox</p>
@@ -862,7 +1014,7 @@ main{max-width:960px}
 
   <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="ภาษา" data-nav="" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="ภาษา" data-nav="" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">เวอร์ชันทดสอบบน Roblox</p>
@@ -907,7 +1059,52 @@ main{max-width:960px}
 
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="语言" data-nav="" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Roblox 测试版</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">一夜之间，你的村庄化为灰烬。跟随半藏师父修炼，每一次训练都让你变得更强，在连招战斗中击败 Boss，把一个又一个世界从黑暗中解放出来。</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-zh"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>游戏内容</span></a>
+    </div>
+    <p class="note">适用于电脑和手机的 Roblox 游戏，支持多种语言</p>
+    
+  </header>
+
+  <section class="show" aria-label="抢先看">
+    <div class="showtext"><h2 class="display">抢先看</h2><p>开发中游戏的早期截图：你的师父，以及海洋世界的两位 Boss。</p></div>
+    <div class="shots"><figure><img src="img/shot-hanzo.webp" alt="半藏师父" width="960" height="540" loading="lazy"><figcaption>半藏师父</figcaption></figure><figure><img src="img/shot-boss.webp" alt="港湾利维坦" width="960" height="540" loading="lazy"><figcaption>港湾利维坦</figcaption></figure><figure><img src="img/shot-kuroshio.webp" alt="黑潮提督" width="960" height="540" loading="lazy"><figcaption>黑潮提督</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh">
+    <h2 class="eyebrow" id="f-zh">玩法</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>小游戏式修炼</h3><p>每个训练场玩法都不一样：戳泡泡、敲太鼓、凭记忆重复图案、追踪萤火虫、潜水寻找珍珠。每一轮都让你更强，自动修炼也能让你一直进步。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>连招 Boss 战</h3><p>躲开攻击，发起反击，时机一到，就用点击、滑动和节奏精准完成连招。每个世界的大门都有小 Boss 把守。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>等你解放的世界</h3><p>从被烧毁的樱花村，到火山、天空之巅和雾之森林，再到港湾、珊瑚礁和风暴中的灯塔。每个世界都有自己的故事、等待救援的人和秘密。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>转生与「道」</h3><p>把力量花在剑和光环上，然后转生：你会变得更强，开启下一个世界，以及技能树「道」的新分支。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>蛋里孵出的宠物</h3><p>每个世界都有专属的蛋：孵化水獭、海鸥、螃蟹、小龙、鲸鱼等等，带上你最强的队伍出发。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>剑、光环、药水</h3><p>收集在你周身闪耀的剑和光环，在关键时刻喝下力量、幸运或治疗药水。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>组队或单人</h3><p>单人或组队挑战无尽之塔，加入樱花之团的一个分院，在 PvP 竞技场中与其他玩家一较高下。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>活动与入侵</h3><p>定期活动带来双倍修炼、幸运孵化、双倍金币或暗影之夜。暗影 Boss 会入侵各个世界，每个世界还有自己的专属活动，从灯笼节到雷暴应有尽有。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-zh">
+    <h2 class="eyebrow" id="m0-zh">战斗之余</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>钓鱼与潜水</h3><p>在码头钓鱼，潜水寻找沉没的宝箱，还要留意在雾中漂荡的幽灵船。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>腰带考试</h3><p>通过半藏师父的考试，从白带一路晋升到黑带。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>图鉴</h3><p>怪物、世界、宠物、装备和隐藏的秘密：你发现的一切都会收入图鉴，集齐还有奖励。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>称号与表情动作</h3><p>凭借你的成就赢得称号，比如「黑带」，还能用表情动作向其他玩家打招呼。</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-zh">
+    <h2 class="eyebrow" id="x-zh">还有</h2>
+    <div class="chips"><span>多种语言</span><span>电脑和手机</span><span>可移动的触屏按钮</span><span>自动修炼</span><span>适合旧手机的轻量特效</span><span>世界与 Boss 专属音乐</span><span>在线通行证</span><span>奖励与任务</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">测试中</h2><p>ZORYT 已经以测试版的形式登陆 Roblox：世界、Boss 和故事正在测试和打磨中。接下来会有新的世界和新的故事章节、更多可以击败的 Boss 和可以孵化的宠物，然后是正式上线。</p>
+    </div>
+  </section>
+
+  <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Roblox 테스트 버전</p>
@@ -952,7 +1149,7 @@ main{max-width:960px}
 
   <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Roblox でテスト版公開中</p>
@@ -997,7 +1194,7 @@ main{max-width:960px}
 
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Roblox-тағы сынақ нұсқасы</p>
@@ -1042,7 +1239,7 @@ main{max-width:960px}
 
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
     <p class="pill">Тестовая версия в Roblox</p>
@@ -1093,7 +1290,8 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1113,7 +1311,8 @@ main{max-width:960px}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
