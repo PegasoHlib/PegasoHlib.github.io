@@ -1,11 +1,11 @@
 {
-    "versionCode":  2000,
-    "versionName":  "0.20.0",
+    "versionCode":  2100,
+    "versionName":  "0.21.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "42bd0f85dcf77f3ee352ee7ab31d10470c06313d00431c54622a8af5fe234494",
-    "size":  204410367,
+    "sha256":  "55f685ca140721bf3a0d8413e3a788358fc4c37ca8840a3a35cdc0184ff89144",
+    "size":  204414623,
     "notes":  {
-                  "uk":  "Війна: оголошення війни в картці країни, бої армій (гори й ліси допомагають захиснику), облога міст і захоплення провінцій, білий мир або мир із захопленим. Інші країни боронять себе.",
-                  "en":  "War: declare it on a country\u0027s card, army battles (hills and forests help the defender), sieges and captured provinces, white peace or keep what you hold. Other countries defend themselves."
+                  "uk":  "Постачання й голод: армія несе обоз на 30 днів, поповнює його на своїй землі або через лінію постачання (до 300 км). Відрізана армія годується з родючої землі, інакше їсть обоз, а потім голодує, слабшає й здається. Ворожі армії на шляху відрізають постачання.",
+                  "en":  "Supply and food: an army carries 30 days of baggage and refills it on its own land or through a supply line (up to 300 km). Cut off, it lives off fertile land, otherwise eats its baggage, then starves, weakens and surrenders. Enemy armies on the way cut the supply line."
               }
 }
