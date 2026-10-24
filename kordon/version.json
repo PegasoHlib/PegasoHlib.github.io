@@ -1,11 +1,11 @@
 {
-    "versionCode":  1600,
-    "versionName":  "0.16.0",
+    "versionCode":  1601,
+    "versionName":  "0.16.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "48002c9a5aabbed79abf3ca3866dacdf0248996974a94fd615e4b08ad220feda",
-    "size":  171710917,
+    "sha256":  "ed3d2ef119c42a47e4d40938538ad7d9debaf2b67f1be873a5eec5a461a303b9",
+    "size":  194299761,
     "notes":  {
-                  "uk":  "Крок 2: клімат, тип землі, родючість і великі річки кожної соти. Від родючості залежить, скільки людей прогодує земля й скільки вона дає.",
-                  "en":  "Step 2: each cell\u0027s climate, kind of land, food and big rivers. Food sets how many people the land feeds and what it yields."
+                  "uk":  "16 типів землі за справжньою рослинністю (ліси, степи, болота, гірські луки…), температура й опади кожної соти, родючість від тепла, води й ґрунту.",
+                  "en":  "16 kinds of land from real vegetation (forests, steppes, marshes, mountain meadows…), each cell\u0027s temperature and rain, food from warmth, water and soil."
               }
 }
