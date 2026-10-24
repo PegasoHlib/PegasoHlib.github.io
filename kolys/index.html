@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/kolys/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kolys/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kolys/?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/kolys/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kolys/?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/kolys/?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/kolys/?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/kolys/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kolys/?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/kolys/?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/kolys/?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/kolys/?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kolys/?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/kolys/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/kolys/?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/kolys/?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/kolys/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kolys/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kolys/?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -137,12 +154,12 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Kolys</span></a>
   <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Kolys: a letter to your future self" data-app="Kolys" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Kolys: a letter to your future self" data-app="Kolys" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -150,11 +167,11 @@ main{max-width:960px}
     <p class="tagline">A letter to your future self</p>
     <p class="lead">Write yourself a letter, add photos and seal it until the day you choose. Until then nobody can open it, not even you. When the time comes, the capsule opens by itself.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
     </div>
     <p class="note">After installing, the app updates itself.<br>An app for Android phones · Android 8 and newer</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="How a time capsule works">
@@ -170,19 +187,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-en">
     <h2 class="eyebrow" id="x-en">And also</h2>
-    <div class="chips"><span>21 languages</span><span>Light and dark theme</span><span>Three opening sounds</span><span>Text size in five steps</span><span>A seal in your colour</span></div>
+    <div class="chips"><span>25 languages</span><span>Light and dark theme</span><span>Three opening sounds</span><span>Text size in five steps</span><span>A seal in your colour</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Private by design</h2><p>No accounts of ours, no servers, no ads, no tracking. Your letters stay on your phone and, if you choose, in your own Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Колись: лист собі в майбутнє" data-app="Колись" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Колись: лист собі в майбутнє" data-app="Колись" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -190,11 +207,11 @@ main{max-width:960px}
     <p class="tagline">Лист собі в майбутнє</p>
     <p class="lead">Напиши собі лист, додай фото й запечатай до обраного дня. До того часу його ніхто не відкриє, навіть ти. А коли час настане, капсула відкриється сама.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
     <p class="note">Після встановлення застосунок оновлюється сам.<br>Застосунок для телефонів на Android · Android 8 і новіші</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Як працює капсула часу">
@@ -210,19 +227,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-uk">
     <h2 class="eyebrow" id="x-uk">А ще</h2>
-    <div class="chips"><span>21 мова</span><span>Світла й темна тема</span><span>Три звуки відкриття</span><span>Розмір тексту в п’ять кроків</span><span>Печатка твого кольору</span></div>
+    <div class="chips"><span>25 мов</span><span>Світла й темна тема</span><span>Три звуки відкриття</span><span>Розмір тексту в п’ять кроків</span><span>Печатка твого кольору</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Приватність від початку</h2><p>Без наших акаунтів, серверів, реклами й стеження. Твої листи лишаються на телефоні й, якщо захочеш, на твоєму власному Google Диску.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Зв’язок: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Kolys: una carta a tu yo del futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Kolys: una carta a tu yo del futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -230,11 +247,11 @@ main{max-width:960px}
     <p class="tagline">Una carta a tu yo del futuro</p>
     <p class="lead">Escríbete una carta, añade fotos y séllala hasta el día que elijas. Hasta entonces nadie podrá abrirla, ni siquiera tú. Cuando llegue el momento, la cápsula se abrirá sola.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
     <p class="note">Una vez instalada, la app se actualiza sola.<br>Una aplicación para teléfonos Android · Android 8 o posterior</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Cómo funciona una cápsula del tiempo">
@@ -250,19 +267,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-es">
     <h2 class="eyebrow" id="x-es">Y además</h2>
-    <div class="chips"><span>21 idiomas</span><span>Tema claro y oscuro</span><span>Tres sonidos de apertura</span><span>Tamaño del texto en cinco pasos</span><span>Un sello de tu color</span></div>
+    <div class="chips"><span>25 idiomas</span><span>Tema claro y oscuro</span><span>Tres sonidos de apertura</span><span>Tamaño del texto en cinco pasos</span><span>Un sello de tu color</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privacidad desde el diseño</h2><p>Sin cuentas nuestras, sin servidores, sin anuncios, sin rastreo. Tus cartas se quedan en tu teléfono y, si quieres, en tu propio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Lee la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lee la política de privacidad</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contacto: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Kolys: uma carta ao teu eu do futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Kolys: uma carta ao teu eu do futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -270,11 +287,11 @@ main{max-width:960px}
     <p class="tagline">Uma carta ao teu eu do futuro</p>
     <p class="lead">Escreve uma carta para ti, junta fotos e sela-a até ao dia que escolheres. Até lá, ninguém a pode abrir, nem mesmo tu. Quando chegar a hora, a cápsula abre-se sozinha.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descarregar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Depois de instalada, a app atualiza-se sozinha.<br>Uma app para telemóveis Android · Android 8 ou mais recente</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona uma cápsula do tempo">
@@ -290,19 +307,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pt">
     <h2 class="eyebrow" id="x-pt">E ainda</h2>
-    <div class="chips"><span>21 idiomas</span><span>Tema claro e escuro</span><span>Três sons de abertura</span><span>Tamanho do texto em cinco níveis</span><span>Um selo da tua cor</span></div>
+    <div class="chips"><span>25 idiomas</span><span>Tema claro e escuro</span><span>Três sons de abertura</span><span>Tamanho do texto em cinco níveis</span><span>Um selo da tua cor</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privacidade desde a conceção</h2><p>Sem contas nossas, sem servidores, sem anúncios, sem rastreio. As tuas cartas ficam no teu telemóvel e, se quiseres, no teu próprio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Lê a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lê a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contacto: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Kolys: uma carta para o seu eu do futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Kolys: uma carta para o seu eu do futuro" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -310,11 +327,11 @@ main{max-width:960px}
     <p class="tagline">Uma carta para o seu eu do futuro</p>
     <p class="lead">Escreva uma carta para você mesmo, adicione fotos e lacre até o dia que você escolher. Até lá, ninguém consegue abrir, nem você. Quando chegar a hora, a cápsula abre sozinha.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Depois de instalado, o app se atualiza sozinho.<br>Um app para celulares Android · Android 8 ou mais recente</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona uma cápsula do tempo">
@@ -330,19 +347,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pt-BR">
     <h2 class="eyebrow" id="x-pt-BR">E também</h2>
-    <div class="chips"><span>21 idiomas</span><span>Tema claro e escuro</span><span>Três sons de abertura</span><span>Tamanho do texto em cinco níveis</span><span>Um lacre na sua cor</span></div>
+    <div class="chips"><span>25 idiomas</span><span>Tema claro e escuro</span><span>Três sons de abertura</span><span>Tamanho do texto em cinco níveis</span><span>Um lacre na sua cor</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privado desde o início</h2><p>Sem contas nossas, sem servidores, sem anúncios, sem rastreamento. Suas cartas ficam no seu celular e, se você quiser, no seu próprio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contato: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Kolys: une lettre à ton futur moi" data-app="Kolys" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Kolys: une lettre à ton futur moi" data-app="Kolys" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -350,11 +367,11 @@ main{max-width:960px}
     <p class="tagline">Une lettre à ton futur moi</p>
     <p class="lead">Écris-toi une lettre, ajoute des photos et scelle-la jusqu’au jour de ton choix. D’ici là, personne ne peut l’ouvrir, pas même toi. Le moment venu, la capsule s’ouvre toute seule.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
     <p class="note">Une fois installée, l’appli se met à jour seule.<br>Une application pour téléphones Android · Android 8 et versions ultérieures</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Comment fonctionne une capsule temporelle">
@@ -370,19 +387,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-fr">
     <h2 class="eyebrow" id="x-fr">Et aussi</h2>
-    <div class="chips"><span>21 langues</span><span>Thème clair et sombre</span><span>Trois sons d’ouverture</span><span>Taille du texte en cinq niveaux</span><span>Un sceau à ta couleur</span></div>
+    <div class="chips"><span>25 langues</span><span>Thème clair et sombre</span><span>Trois sons d’ouverture</span><span>Taille du texte en cinq niveaux</span><span>Un sceau à ta couleur</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Confidentialité dès la conception</h2><p>Pas de compte chez nous, pas de serveurs, pas de pub, pas de pistage. Tes lettres restent sur ton téléphone et, si tu le souhaites, dans ton propre Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Kolys: ein Brief an dein zukünftiges Ich" data-app="Kolys" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Kolys: ein Brief an dein zukünftiges Ich" data-app="Kolys" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -390,11 +407,11 @@ main{max-width:960px}
     <p class="tagline">Ein Brief an dein zukünftiges Ich</p>
     <p class="lead">Schreib dir selbst einen Brief, füge Fotos hinzu und versiegle ihn bis zu dem Tag, den du wählst. Bis dahin kann ihn niemand öffnen, nicht einmal du. Wenn es so weit ist, öffnet sich die Kapsel von selbst.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
     <p class="note">Die App aktualisiert sich dann von selbst.<br>Eine App für Android-Smartphones · Android 8 und neuer</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="So funktioniert eine Zeitkapsel">
@@ -410,19 +427,59 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-de">
     <h2 class="eyebrow" id="x-de">Außerdem</h2>
-    <div class="chips"><span>21 Sprachen</span><span>Helles und dunkles Design</span><span>Drei Klänge beim Öffnen</span><span>Textgröße in fünf Stufen</span><span>Ein Siegel in deiner Farbe</span></div>
+    <div class="chips"><span>25 Sprachen</span><span>Helles und dunkles Design</span><span>Drei Klänge beim Öffnen</span><span>Textgröße in fünf Stufen</span><span>Ein Siegel in deiner Farbe</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Von Grund auf privat</h2><p>Keine Konten bei uns, keine Server, keine Werbung, kein Tracking. Deine Briefe bleiben auf deinem Handy und, wenn du willst, in deinem eigenen Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Kolys: una lettera al te del futuro" data-app="Kolys" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Kolys: een brief aan je toekomstige zelf" data-app="Kolys" data-langlabel="Taal" data-nav="Start|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">Een brief aan je toekomstige zelf</p>
+    <p class="lead">Schrijf jezelf een brief, voeg foto’s toe en verzegel hem tot de dag die jij kiest. Tot die tijd kan niemand hem openen, zelfs jij niet. Als het zover is, gaat de capsule vanzelf open.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Downloaden voor Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacybeleid</span></a>
+    </div>
+    <p class="note">Na de installatie werkt de app zichzelf bij.<br>Een app voor Android-telefoons · Android 8 en nieuwer</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">29</b></p>
+  </header>
+
+  <section class="show" aria-label="Zo werkt een tijdcapsule">
+    <div class="showtext"><h2 class="display">Zo werkt een tijdcapsule</h2><p>Schrijf vandaag, en lees het op de dag die jij kiest.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Schrijven</h3><p>Een brief in je eigen woorden, met maximaal 12 foto’s en video’s en maximaal 3 spraakberichten. Vriendelijke vragen helpen als de pagina leeg blijft. Je kunt ook direct in de app foto’s en video’s maken.</p></div></li><li><span class="num">2</span><div><h3>Verzegelen</h3><p>Over een maand, een jaar, tien jaar of op een willekeurige datum. De datum wordt online gecontroleerd, dus de klok van je telefoon verzetten opent hem niet eerder.</p></div></li><li><span class="num">3</span><div><h3>Openen</h3><p>Op de dag zelf komt er een melding, gaat de capsule open met een kleine lichtshow, en is de brief van jou om te lezen.</p></div></li><li><span class="num">4</span><div><h3>Bewaren</h3><p>Capsules worden opgeslagen in een verborgen map op je eigen Google Drive. Log op een nieuwe telefoon in met hetzelfde account en alle capsules komen terug.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-nl">
+    <h2 class="eyebrow" id="f-nl">Wat het kan</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>Stem en video</h3><p>Spraakberichten tot 5 minuten, video’s met een eigen speler en foto’s die je met twee vingers of een dubbeltik inzoomt. Zodra een brief opengaat, laat Herinneringen ze zien als diavoorstelling.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Dit moment</h3><p>Je stemming, het nummer dat speelt, de stad en het weer. Over jaren is het leuk om je te herinneren hoe deze dag was.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Een capsule als cadeau</h3><p>Schrijf aan iemand die je na staat, verzegel de capsule en stuur hem als bestand via elke messenger. Hij kan in Kolys pas op de gekozen dag worden geopend. Vergrendel hem als je wilt met een geheim woord en een hint: een doorgestuurd bestand gaat dan voor niemand anders open.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Bijzondere datums</h3><p>Verzegel een capsule tot een verjaardag, tot Nieuwjaar of voor 1000 dagen, niet alleen voor een maand, een jaar of tien.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>Seintjes onderweg</h3><p>Een berichtje als een capsule de helft van zijn tijd heeft gewacht, en nog een, een week voordat hij opengaat. Je kunt ze uitzetten in Instellingen.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>Niet vergeten</h3><p>Met één tik zet je de openingsdag in je agenda, zodat de herinnering je zelfs jaren later op een andere telefoon vindt.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget</h3><p>Je eerstvolgende capsule op je startscherm, met de dagen tot hij opengaat. In drie formaten.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Concepten en antwoorden</h3><p>Concepten worden vanzelf opgeslagen terwijl je schrijft. Zodra een brief opengaat, antwoord je jezelf: het antwoord is een nieuwe capsule die de eerdere brief bewaart.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-nl">
+    <h2 class="eyebrow" id="x-nl">En verder</h2>
+    <div class="chips"><span>25 talen</span><span>Licht en donker thema</span><span>Drie openingsgeluiden</span><span>Tekstgrootte in vijf stappen</span><span>Een zegel in jouw kleur</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privé vanaf het ontwerp</h2><p>Geen accounts van ons, geen servers, geen advertenties, geen tracking. Je brieven blijven op je telefoon en, als je dat kiest, in je eigen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lees het privacybeleid</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Contact: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Kolys: una lettera al te del futuro" data-app="Kolys" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -430,11 +487,11 @@ main{max-width:960px}
     <p class="tagline">Una lettera al te del futuro</p>
     <p class="lead">Scriviti una lettera, aggiungi delle foto e sigillala fino al giorno che scegli. Fino ad allora nessuno potrà aprirla, nemmeno tu. Quando arriverà il momento, la capsula si aprirà da sola.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
     <p class="note">Dopo l’installazione l’app si aggiorna da sola.<br>Un’app per smartphone Android · Android 8 e successivi</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Come funziona una capsula del tempo">
@@ -450,19 +507,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-it">
     <h2 class="eyebrow" id="x-it">E inoltre</h2>
-    <div class="chips"><span>21 lingue</span><span>Tema chiaro e scuro</span><span>Tre suoni di apertura</span><span>Dimensione del testo in cinque livelli</span><span>Un sigillo del tuo colore</span></div>
+    <div class="chips"><span>25 lingue</span><span>Tema chiaro e scuro</span><span>Tre suoni di apertura</span><span>Dimensione del testo in cinque livelli</span><span>Un sigillo del tuo colore</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privacy fin dalla progettazione</h2><p>Nessun nostro account, nessun server, niente pubblicità, nessun tracciamento. Le tue lettere restano sul tuo telefono e, se vuoi, nel tuo Google Drive personale.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Contatti: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Kolys: list do siebie z przyszłości" data-app="Kolys" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Kolys: list do siebie z przyszłości" data-app="Kolys" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -470,11 +527,11 @@ main{max-width:960px}
     <p class="tagline">List do siebie z przyszłości</p>
     <p class="lead">Napisz list do siebie, dodaj zdjęcia i zapieczętuj go do wybranego dnia. Do tego czasu nikt go nie otworzy, nawet ty. Gdy nadejdzie pora, kapsuła otworzy się sama.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Polityka prywatności</span></a>
     </div>
     <p class="note">Po instalacji aplikacja aktualizuje się sama.<br>Aplikacja na telefony z Androidem · Android 8 i nowsze</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Jak działa kapsuła czasu">
@@ -490,19 +547,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pl">
     <h2 class="eyebrow" id="x-pl">A do tego</h2>
-    <div class="chips"><span>21 języków</span><span>Jasny i ciemny motyw</span><span>Trzy dźwięki otwarcia</span><span>Rozmiar tekstu w pięciu stopniach</span><span>Pieczęć w twoim kolorze</span></div>
+    <div class="chips"><span>25 języków</span><span>Jasny i ciemny motyw</span><span>Trzy dźwięki otwarcia</span><span>Rozmiar tekstu w pięciu stopniach</span><span>Pieczęć w twoim kolorze</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Prywatność od podstaw</h2><p>Bez naszych kont, bez serwerów, bez reklam, bez śledzenia. Twoje listy zostają w telefonie i, jeśli zechcesz, na twoim własnym Dysku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Kolys: dopis sobě do budoucna" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Kolys: dopis sobě do budoucna" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -510,11 +567,11 @@ main{max-width:960px}
     <p class="tagline">Dopis sobě do budoucna</p>
     <p class="lead">Napiš si dopis, přidej fotky a zapečeť ho do dne, který si vybereš. Do té doby ho nikdo neotevře, ani ty. Až nastane čas, schránka se otevře sama.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany soukromí</span></a>
     </div>
     <p class="note">Po instalaci se aplikace aktualizuje sama.<br>Aplikace pro telefony s Androidem · Android 8 a novější</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Jak funguje časová schránka">
@@ -530,19 +587,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-cs">
     <h2 class="eyebrow" id="x-cs">A navíc</h2>
-    <div class="chips"><span>21 jazyků</span><span>Světlý a tmavý motiv</span><span>Tři zvuky otevření</span><span>Velikost textu v pěti stupních</span><span>Pečeť ve tvé barvě</span></div>
+    <div class="chips"><span>25 jazyků</span><span>Světlý a tmavý motiv</span><span>Tři zvuky otevření</span><span>Velikost textu v pěti stupních</span><span>Pečeť ve tvé barvě</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Soukromí od základu</h2><p>Žádné naše účty, žádné servery, žádné reklamy, žádné sledování. Tvoje dopisy zůstávají v telefonu a, pokud chceš, na tvém vlastním Disku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Kolys: list sebe do budúcnosti" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Kolys: list sebe do budúcnosti" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -550,11 +607,11 @@ main{max-width:960px}
     <p class="tagline">List sebe do budúcnosti</p>
     <p class="lead">Napíš si list, pridaj fotky a zapečať ho do dňa, ktorý si vyberieš. Dovtedy ho nikto neotvorí, ani ty. Keď príde čas, kapsula sa otvorí sama.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany súkromia</span></a>
     </div>
     <p class="note">Po inštalácii sa aplikácia aktualizuje sama.<br>Aplikácia pre telefóny s Androidom · Android 8 a novší</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Ako funguje časová kapsula">
@@ -570,19 +627,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-sk">
     <h2 class="eyebrow" id="x-sk">A ešte</h2>
-    <div class="chips"><span>21 jazykov</span><span>Svetlá a tmavá téma</span><span>Tri zvuky otvorenia</span><span>Veľkosť textu v piatich stupňoch</span><span>Pečať v tvojej farbe</span></div>
+    <div class="chips"><span>25 jazykov</span><span>Svetlá a tmavá téma</span><span>Tri zvuky otvorenia</span><span>Veľkosť textu v piatich stupňoch</span><span>Pečať v tvojej farbe</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Súkromie od základu</h2><p>Žiadne naše účty, žiadne servery, žiadne reklamy, žiadne sledovanie. Tvoje listy zostávajú v telefóne a, ak chceš, na tvojom vlastnom Disku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Kolys: et brev til dit fremtidige jeg" data-app="Kolys" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Kolys: et brev til dit fremtidige jeg" data-app="Kolys" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -590,11 +647,11 @@ main{max-width:960px}
     <p class="tagline">Et brev til dit fremtidige jeg</p>
     <p class="lead">Skriv et brev til dig selv, tilføj billeder, og forsegl det til den dag, du vælger. Indtil da kan ingen åbne det, ikke engang dig. Når tiden er inde, åbner kapslen af sig selv.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privatlivspolitik</span></a>
     </div>
     <p class="note">Når appen er installeret, opdaterer den sig selv.<br>En app til Android-telefoner · Android 8 og nyere</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Sådan virker en tidskapsel">
@@ -610,19 +667,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-da">
     <h2 class="eyebrow" id="x-da">Og desuden</h2>
-    <div class="chips"><span>21 sprog</span><span>Lyst og mørkt tema</span><span>Tre åbningslyde</span><span>Tekststørrelse i fem trin</span><span>Et segl i din farve</span></div>
+    <div class="chips"><span>25 sprog</span><span>Lyst og mørkt tema</span><span>Tre åbningslyde</span><span>Tekststørrelse i fem trin</span><span>Et segl i din farve</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privat fra starten</h2><p>Ingen konti hos os, ingen servere, ingen reklamer, ingen sporing. Dine breve bliver på din telefon og, hvis du vil, på dit eget Google Drev.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Kolys: ett brev till ditt framtida jag" data-app="Kolys" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Kolys: ett brev till ditt framtida jag" data-app="Kolys" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -630,11 +687,11 @@ main{max-width:960px}
     <p class="tagline">Ett brev till ditt framtida jag</p>
     <p class="lead">Skriv ett brev till dig själv, lägg till foton och försegla det till den dag du väljer. Fram till dess kan ingen öppna det, inte ens du. När tiden är inne öppnas kapseln av sig själv.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
     <p class="note">Efter installationen uppdaterar appen sig själv.<br>En app för Android-telefoner · Android 8 och senare</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Så fungerar en tidskapsel">
@@ -650,19 +707,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-sv">
     <h2 class="eyebrow" id="x-sv">Dessutom</h2>
-    <div class="chips"><span>21 språk</span><span>Ljust och mörkt tema</span><span>Tre ljud vid öppning</span><span>Textstorlek i fem steg</span><span>Ett sigill i din färg</span></div>
+    <div class="chips"><span>25 språk</span><span>Ljust och mörkt tema</span><span>Tre ljud vid öppning</span><span>Textstorlek i fem steg</span><span>Ett sigill i din färg</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privat från grunden</h2><p>Inga konton hos oss, inga servrar, ingen reklam, ingen spårning. Dina brev stannar på din telefon och, om du vill, i din egen Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontakt: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Kolys: gelecekteki kendine bir mektup" data-app="Kolys" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Kolys: gelecekteki kendine bir mektup" data-app="Kolys" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -670,11 +727,11 @@ main{max-width:960px}
     <p class="tagline">Gelecekteki kendine bir mektup</p>
     <p class="lead">Kendine bir mektup yaz, fotoğraf ekle ve seçtiğin güne kadar mühürle. O güne kadar kimse açamaz, sen bile. Zamanı gelince kapsül kendiliğinden açılır.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Gizlilik politikası</span></a>
     </div>
     <p class="note">Kurulumdan sonra uygulama kendini güncel tutar.<br>Android telefonlar için bir uygulama · Android 8 ve üzeri</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Zaman kapsülü nasıl çalışır">
@@ -690,19 +747,99 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-tr">
     <h2 class="eyebrow" id="x-tr">Ayrıca</h2>
-    <div class="chips"><span>21 dil</span><span>Açık ve koyu tema</span><span>Üç açılış sesi</span><span>Beş kademeli yazı boyutu</span><span>Senin renginde bir mühür</span></div>
+    <div class="chips"><span>25 dil</span><span>Açık ve koyu tema</span><span>Üç açılış sesi</span><span>Beş kademeli yazı boyutu</span><span>Senin renginde bir mühür</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Baştan gizlilik odaklı</h2><p>Bizde hesap yok, sunucu yok, reklam yok, izleme yok. Mektupların telefonunda ve istersen kendi Google Drive’ında kalır.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">İletişim: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Kolys: surat untuk dirimu di masa depan" data-app="Kolys" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="Kolys: رسالة إلى نفسك في المستقبل" data-app="Kolys" data-langlabel="اللغة" data-nav="الرئيسية|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">رسالة إلى نفسك في المستقبل</p>
+    <p class="lead">اكتب لنفسك رسالة، وأضف صورًا، واختمها حتى اليوم الذي تختاره. وحتى ذلك الحين لا يستطيع أحد فتحها، ولا حتى أنت. وحين يحين الوقت، تُفتح الكبسولة من تلقاء نفسها.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>تنزيل لنظام Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>سياسة الخصوصية</span></a>
+    </div>
+    <p class="note">بعد التثبيت، يحدّث التطبيق نفسه بنفسه.<br>تطبيق لهواتف Android · Android 8 وما بعده</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="kolys">29</b></p>
+  </header>
+
+  <section class="show" aria-label="كيف تعمل الكبسولة الزمنية">
+    <div class="showtext"><h2 class="display">كيف تعمل الكبسولة الزمنية</h2><p>اكتب اليوم، واقرأ في اليوم الذي تختاره.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>اكتب</h3><p>رسالة بكلماتك أنت، مع ما يصل إلى 12 صورة ومقطع فيديو وما يصل إلى 3 رسائل صوتية. وتساعدك أسئلة لطيفة حين تكون الصفحة فارغة. ويمكنك أيضًا التقاط الصور والفيديو مباشرة داخل التطبيق.</p></div></li><li><span class="num">2</span><div><h3>اختم</h3><p>بعد شهر، أو سنة، أو عشر سنوات، أو في أي تاريخ. يُتحقَّق من التاريخ عبر الإنترنت، لذا فإن تغيير ساعة الهاتف لن يفتحها قبل موعدها.</p></div></li><li><span class="num">3</span><div><h3>افتح</h3><p>في ذلك اليوم يصلك إشعار، وتُفتح الكبسولة مع عرض ضوئي صغير، وتصبح الرسالة بين يديك لتقرأها.</p></div></li><li><span class="num">4</span><div><h3>احتفظ</h3><p>تُحفظ الكبسولات في مجلد مخفي في Google Drive الخاص بك. وعلى هاتف جديد، سجّل الدخول بالحساب نفسه فتعود كل الكبسولات.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ar">
+    <h2 class="eyebrow" id="f-ar">ما الذي يمكنه فعله</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>الصوت والفيديو</h3><p>رسائل صوتية حتى 5 دقائق، ومقاطع فيديو بمشغّل خاص بها، وصور تُكبَّر بإصبعين أو بنقرة مزدوجة. وما إن تُفتح الرسالة حتى تعرضها «الذكريات» كعرض شرائح.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>هذه اللحظة</h3><p>مزاجك، والأغنية التي تُعزف، والمدينة، والطقس. بعد سنوات سيكون من الممتع أن تتذكر كيف كان هذا اليوم.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>كبسولة هدية</h3><p>اكتب لشخص قريب منك، واختمها، وأرسلها كملف عبر أي تطبيق مراسلة. ولا يمكن فتحها في Kolys إلا في اليوم المختار. ويمكنك إن شئت قفلها بكلمة سرية وتلميح: وعندها لا يُفتح الملف المُعاد توجيهه لأي شخص آخر.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>تواريخ مميزة</h3><p>اختم كبسولة حتى عيد ميلاد، أو حتى رأس السنة، أو لمدة 1000 يوم، لا لشهر أو سنة أو عشر سنوات فقط.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>تذكيرات على الطريق</h3><p>تنبيه حين تكون الكبسولة قد انتظرت نصف مدتها، وآخر قبل أسبوع من فتحها. ويمكنك إيقافها من الإعدادات.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>تذكّر</h3><p>بنقرة واحدة يُضاف يوم الفتح إلى تقويمك، فيصلك التذكير حتى بعد سنوات على هاتف آخر.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>أداة</h3><p>أقرب كبسولة لديك على الشاشة الرئيسية، مع الأيام المتبقية حتى فتحها. بثلاثة أحجام.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>المسودات والردود</h3><p>تُحفظ المسودات تلقائيًا أثناء الكتابة. وما إن تُفتح الرسالة حتى يمكنك الرد على نفسك: فالرد كبسولة جديدة تحتفظ بالرسالة السابقة.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ar">
+    <h2 class="eyebrow" id="x-ar">وأيضًا</h2>
+    <div class="chips"><span>25 لغة</span><span>سمة فاتحة وداكنة</span><span>ثلاثة أصوات للفتح</span><span>حجم النص بخمس درجات</span><span>ختم بلونك</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">الخصوصية في صميم التصميم</h2><p>لا حسابات لدينا، ولا خوادم، ولا إعلانات، ولا تتبّع. تبقى رسائلك على هاتفك، وإن اخترت ذلك، في Google Drive الخاص بك.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>اقرأ سياسة الخصوصية</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">التواصل: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="Kolys: भविष्य के अपने आप को एक चिट्ठी" data-app="Kolys" data-langlabel="भाषा" data-nav="होम|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">भविष्य के अपने आप को एक चिट्ठी</p>
+    <p class="lead">अपने आप को एक चिट्ठी लिखें, फ़ोटो जोड़ें और उसे अपने चुने हुए दिन तक सील कर दें। तब तक उसे कोई नहीं खोल सकता, आप भी नहीं। समय आने पर कैप्सूल अपने-आप खुल जाता है।</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>गोपनीयता नीति</span></a>
+    </div>
+    <p class="note">इंस्टॉल करने के बाद ऐप ख़ुद अपडेट होता है।<br>Android फ़ोन के लिए ऐप · Android 8 और नया</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="kolys">29</b></p>
+  </header>
+
+  <section class="show" aria-label="टाइम कैप्सूल कैसे काम करता है">
+    <div class="showtext"><h2 class="display">टाइम कैप्सूल कैसे काम करता है</h2><p>आज लिखें, और अपने चुने हुए दिन पढ़ें।</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>लिखें</h3><p>अपने शब्दों में एक चिट्ठी, ज़्यादा से ज़्यादा 12 फ़ोटो और वीडियो और ज़्यादा से ज़्यादा 3 वॉइस मैसेज के साथ। पन्ना ख़ाली हो तो हल्के-फुल्के सवाल मदद करते हैं। आप सीधे ऐप में फ़ोटो और वीडियो भी ले सकते हैं।</p></div></li><li><span class="num">2</span><div><h3>सील करें</h3><p>एक महीने, एक साल, दस साल बाद या किसी भी तारीख़ पर। तारीख़ ऑनलाइन जाँची जाती है, इसलिए फ़ोन की घड़ी आगे करने से वह पहले नहीं खुलेगा।</p></div></li><li><span class="num">3</span><div><h3>खोलें</h3><p>उस दिन एक सूचना आती है, कैप्सूल एक छोटे-से लाइट शो के साथ खुलता है, और चिट्ठी पढ़ने के लिए आपकी होती है।</p></div></li><li><span class="num">4</span><div><h3>सँभालकर रखें</h3><p>कैप्सूल आपकी अपनी Google Drive के एक छिपे फ़ोल्डर में सहेजे जाते हैं। नए फ़ोन पर उसी अकाउंट से साइन इन करें और हर कैप्सूल वापस आ जाता है।</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-hi">
+    <h2 class="eyebrow" id="f-hi">यह क्या-क्या कर सकता है</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>आवाज़ और वीडियो</h3><p>5 मिनट तक के वॉइस मैसेज, अपने प्लेयर वाले वीडियो और फ़ोटो जो दो उँगलियों या डबल टैप से ज़ूम होती हैं। चिट्ठी खुलने के बाद यादें उन्हें स्लाइडशो की तरह दिखाता है।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>यह पल</h3><p>आपका मूड, चल रहा गाना, शहर और मौसम। बरसों बाद यह याद करना मज़ेदार होगा कि यह दिन कैसा था।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>तोहफ़े के रूप में कैप्सूल</h3><p>किसी करीबी को लिखें, सील करें और किसी भी मैसेंजर में फ़ाइल के रूप में भेज दें। Kolys में उसे सिर्फ़ चुने हुए दिन ही खोला जा सकता है। चाहें तो उसे एक गुप्त शब्द और एक संकेत से लॉक करें: तब आगे भेजी गई फ़ाइल किसी और के लिए नहीं खुलती।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>ख़ास तारीख़ें</h3><p>कैप्सूल को किसी जन्मदिन तक, नए साल तक या 1000 दिनों के लिए सील करें, सिर्फ़ एक महीने, एक साल या दस साल के लिए नहीं।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>रास्ते में रिमाइंडर</h3><p>जब कोई कैप्सूल अपना आधा समय इंतज़ार कर ले तब एक संदेश, और खुलने से एक हफ़्ता पहले एक और। आप इन्हें सेटिंग्स में बंद कर सकते हैं।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>याद रखें</h3><p>एक टैप से खुलने का दिन आपके कैलेंडर में जुड़ जाता है, ताकि रिमाइंडर बरसों बाद दूसरे फ़ोन पर भी आप तक पहुँचे।</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>विजेट</h3><p>होम स्क्रीन पर आपका सबसे नज़दीकी कैप्सूल, उसके खुलने में बचे दिनों के साथ। तीन साइज़ में।</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>ड्राफ़्ट और जवाब</h3><p>लिखते समय ड्राफ़्ट अपने-आप सहेजे जाते हैं। चिट्ठी खुलने के बाद अपने आप को जवाब दें: जवाब एक नया कैप्सूल होता है जो पिछली चिट्ठी को साथ रखता है।</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-hi">
+    <h2 class="eyebrow" id="x-hi">और भी</h2>
+    <div class="chips"><span>25 भाषाएँ</span><span>लाइट और डार्क थीम</span><span>खुलने की तीन आवाज़ें</span><span>टेक्स्ट साइज़ के पाँच स्तर</span><span>आपके रंग की मुहर</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">शुरू से ही निजी</h2><p>हमारे कोई अकाउंट नहीं, कोई सर्वर नहीं, कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं। आपकी चिट्ठियाँ आपके फ़ोन पर रहती हैं और, अगर आप चुनें, आपकी अपनी Google Drive में।</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>गोपनीयता नीति पढ़ें</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">संपर्क: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Kolys: surat untuk dirimu di masa depan" data-app="Kolys" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -710,11 +847,11 @@ main{max-width:960px}
     <p class="tagline">Surat untuk dirimu di masa depan</p>
     <p class="lead">Tulis surat untuk dirimu sendiri, tambahkan foto, lalu segel hingga hari yang kamu pilih. Sampai saat itu tidak ada yang bisa membukanya, bahkan kamu sendiri. Saat waktunya tiba, kapsul akan terbuka dengan sendirinya.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan privasi</span></a>
     </div>
     <p class="note">Setelah dipasang, aplikasi diperbarui otomatis.<br>Aplikasi untuk ponsel Android · Android 8 dan yang lebih baru</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Cara kerja kapsul waktu">
@@ -730,19 +867,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-id">
     <h2 class="eyebrow" id="x-id">Selain itu</h2>
-    <div class="chips"><span>21 bahasa</span><span>Tema terang dan gelap</span><span>Tiga suara pembukaan</span><span>Ukuran teks dalam lima tingkat</span><span>Segel dengan warna pilihanmu</span></div>
+    <div class="chips"><span>25 bahasa</span><span>Tema terang dan gelap</span><span>Tiga suara pembukaan</span><span>Ukuran teks dalam lima tingkat</span><span>Segel dengan warna pilihanmu</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Privat sejak awal</h2><p>Tanpa akun dari kami, tanpa server, tanpa iklan, tanpa pelacakan. Surat-suratmu tetap di ponselmu dan, jika kamu mau, di Google Drive milikmu sendiri.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Kontak: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Kolys: lá thư gửi bạn của tương lai" data-app="Kolys" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Kolys: lá thư gửi bạn của tương lai" data-app="Kolys" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -750,11 +887,11 @@ main{max-width:960px}
     <p class="tagline">Lá thư gửi bạn của tương lai</p>
     <p class="lead">Viết cho chính mình một lá thư, thêm ảnh và niêm phong đến ngày bạn chọn. Trước ngày đó không ai mở được, kể cả bạn. Khi đến lúc, viên nang sẽ tự mở.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải về cho Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải về cho Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Chính sách quyền riêng tư</span></a>
     </div>
     <p class="note">Sau khi cài đặt, ứng dụng tự cập nhật.<br>Ứng dụng cho điện thoại Android · Android 8 trở lên</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Viên nang thời gian hoạt động thế nào">
@@ -770,19 +907,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-vi">
     <h2 class="eyebrow" id="x-vi">Và còn nữa</h2>
-    <div class="chips"><span>21 ngôn ngữ</span><span>Giao diện sáng và tối</span><span>Ba âm thanh khi mở</span><span>Cỡ chữ năm mức</span><span>Con dấu theo màu của bạn</span></div>
+    <div class="chips"><span>25 ngôn ngữ</span><span>Giao diện sáng và tối</span><span>Ba âm thanh khi mở</span><span>Cỡ chữ năm mức</span><span>Con dấu theo màu của bạn</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Riêng tư ngay từ thiết kế</h2><p>Không tài khoản của chúng tôi, không máy chủ, không quảng cáo, không theo dõi. Thư của bạn ở trên điện thoại và, nếu bạn muốn, trong Google Drive của chính bạn.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Liên hệ: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="Kolys: จดหมายถึงตัวคุณในอนาคต" data-app="Kolys" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="Kolys: จดหมายถึงตัวคุณในอนาคต" data-app="Kolys" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -790,11 +927,11 @@ main{max-width:960px}
     <p class="tagline">จดหมายถึงตัวคุณในอนาคต</p>
     <p class="lead">เขียนจดหมายถึงตัวเอง แนบรูปภาพ แล้วปิดผนึกไว้จนถึงวันที่คุณเลือก ก่อนถึงวันนั้นไม่มีใครเปิดได้ แม้แต่ตัวคุณเอง เมื่อถึงเวลา แคปซูลจะเปิดเอง</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>นโยบายความเป็นส่วนตัว</span></a>
     </div>
     <p class="note">หลังติดตั้งแล้ว แอปจะอัปเดตเอง<br>แอปสำหรับโทรศัพท์ Android · Android 8 ขึ้นไป</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="แคปซูลเวลาทำงานอย่างไร">
@@ -810,19 +947,59 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-th">
     <h2 class="eyebrow" id="x-th">และยังมี</h2>
-    <div class="chips"><span>21 ภาษา</span><span>ธีมสว่างและมืด</span><span>เสียงเปิดสามแบบ</span><span>ขนาดตัวอักษรห้าระดับ</span><span>ตราประทับในสีของคุณ</span></div>
+    <div class="chips"><span>25 ภาษา</span><span>ธีมสว่างและมืด</span><span>เสียงเปิดสามแบบ</span><span>ขนาดตัวอักษรห้าระดับ</span><span>ตราประทับในสีของคุณ</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">ออกแบบมาเพื่อความเป็นส่วนตัว</h2><p>ไม่มีบัญชีของเรา ไม่มีเซิร์ฟเวอร์ ไม่มีโฆษณา ไม่มีการติดตาม จดหมายของคุณอยู่ในโทรศัพท์ของคุณ และหากคุณเลือก ก็อยู่ใน Google Drive ของคุณเอง</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">ติดต่อ: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="Kolys: 미래의 나에게 보내는 편지" data-app="Kolys" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="Kolys：写给未来自己的信" data-app="Kolys" data-langlabel="语言" data-nav="首页|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">写给未来自己的信</p>
+    <p class="lead">给自己写一封信，附上照片，封存到你选定的那一天。在那之前谁都打不开，连你自己也不行。时间一到，胶囊会自动开启。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下载 Android 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>隐私政策</span></a>
+    </div>
+    <p class="note">安装后，应用会自动更新。<br>Android 手机应用 · Android 8 及更高版本</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="kolys">29</b></p>
+  </header>
+
+  <section class="show" aria-label="时间胶囊如何运作">
+    <div class="showtext"><h2 class="display">时间胶囊如何运作</h2><p>今天写下，在你选定的那天再读。</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>写信</h3><p>用你自己的话写一封信，最多可附 12 张照片和视频、3 条语音消息。页面空白时，温和的提问会帮你开个头。你也可以直接在应用里拍照和录像。</p></div></li><li><span class="num">2</span><div><h3>封存</h3><p>一个月、一年、十年后，或任意日期。日期会联网校验，所以调整手机时钟也无法提前打开。</p></div></li><li><span class="num">3</span><div><h3>开启</h3><p>到了那天你会收到通知，胶囊伴随一场小小的光影秀开启，这封信就等你来读了。</p></div></li><li><span class="num">4</span><div><h3>保存</h3><p>胶囊保存在你自己 Google 云端硬盘的隐藏文件夹中。在新手机上用同一账号登录，所有胶囊都会回来。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh">
+    <h2 class="eyebrow" id="f-zh">功能一览</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>语音和视频</h3><p>最长 5 分钟的语音消息，带独立播放器的视频，以及可以双指缩放或双击放大的照片。信件开启后，“回忆”会以幻灯片形式播放它们。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>此刻</h3><p>你的心情、正在播放的歌、所在的城市和天气。多年以后，回想这一天是什么样子会很有意思。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>把胶囊当作礼物</h3><p>写给亲近的人，封存后通过任意聊天软件以文件形式发送。只有到了选定的日期，才能在 Kolys 中打开。如果你愿意，还可以用暗号和提示把它锁上：这样即使文件被转发，其他人也打不开。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>特别的日子</h3><p>把胶囊封存到生日、新年或 1000 天之后，不只是一个月、一年或十年。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>沿途的提醒</h3><p>胶囊等待了一半时间时会提醒你一次，开启前一周再提醒一次。你可以在“设置”中关闭。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>记住这一天</h3><p>轻点一下就能把开启日期加入日历，即使多年后换了手机，提醒也能找到你。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>小组件</h3><p>主屏幕上显示离你最近的胶囊，以及距离开启还剩多少天。有三种尺寸。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>草稿和回信</h3><p>写作时草稿会自动保存。信件开启后，可以给自己回信：回信是一个新的胶囊，并会保留之前的那封信。</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-zh">
+    <h2 class="eyebrow" id="x-zh">此外</h2>
+    <div class="chips"><span>25 种语言</span><span>浅色和深色主题</span><span>三种开启音效</span><span>五档文字大小</span><span>你喜欢的颜色的封印</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">从设计上保护隐私</h2><p>我们不设账号，没有服务器，没有广告，没有跟踪。你的信件留在你的手机上；如果你愿意，也可以保存在你自己的 Google 云端硬盘中。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>阅读隐私政策</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">联系方式: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="Kolys: 미래의 나에게 보내는 편지" data-app="Kolys" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -830,11 +1007,11 @@ main{max-width:960px}
     <p class="tagline">미래의 나에게 보내는 편지</p>
     <p class="lead">나에게 편지를 쓰고 사진을 넣은 뒤, 고른 날까지 봉인하세요. 그날이 오기 전에는 아무도 열 수 없어요. 나조차도요. 때가 되면 캡슐이 저절로 열려요.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>개인정보 처리방침</span></a>
     </div>
     <p class="note">설치한 뒤에는 앱이 스스로 업데이트돼요.<br>Android 휴대폰용 앱 · Android 8 이상</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="타임캡슐은 이렇게 작동해요">
@@ -850,19 +1027,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ko">
     <h2 class="eyebrow" id="x-ko">그리고</h2>
-    <div class="chips"><span>21개 언어</span><span>밝은 테마와 어두운 테마</span><span>세 가지 열림 소리</span><span>다섯 단계 글자 크기</span><span>내 색깔의 봉인</span></div>
+    <div class="chips"><span>25개 언어</span><span>밝은 테마와 어두운 테마</span><span>세 가지 열림 소리</span><span>다섯 단계 글자 크기</span><span>내 색깔의 봉인</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">처음부터 프라이버시 중심</h2><p>자체 계정도, 서버도, 광고도, 추적도 없어요. 편지는 내 휴대폰에, 원하면 내 Google Drive에만 남아요.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>개인정보 처리방침 읽기</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>개인정보 처리방침 읽기</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">문의: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="コリス：未来の自分への手紙" data-app="コリス" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="コリス：未来の自分への手紙" data-app="コリス" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -870,11 +1047,11 @@ main{max-width:960px}
     <p class="tagline">未来の自分への手紙</p>
     <p class="lead">自分に宛てて手紙を書き、写真を添えて、選んだ日まで封をしましょう。その日までは誰にも開けられません。あなた自身にもです。その時が来ると、カプセルはひとりでに開きます。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
     </div>
     <p class="note">インストール後は自動でアップデートされます。<br>Android スマートフォン向けアプリ · Android 8 以降</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="タイムカプセルのしくみ">
@@ -890,19 +1067,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ja">
     <h2 class="eyebrow" id="x-ja">さらに</h2>
-    <div class="chips"><span>21言語に対応</span><span>ライト・ダークテーマ</span><span>3種類の開封の音</span><span>5段階の文字サイズ</span><span>好きな色の封蝋</span></div>
+    <div class="chips"><span>25言語に対応</span><span>ライト・ダークテーマ</span><span>3種類の開封の音</span><span>5段階の文字サイズ</span><span>好きな色の封蝋</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">プライバシー重視の設計</h2><p>独自のアカウントもサーバーもなく、広告もトラッキングもありません。手紙はあなたのスマホに残り、希望すればあなた自身の Google ドライブにも保存されます。</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">お問い合わせ: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Колись: болашақтағы өзіңе хат" data-app="Колись" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Колись: болашақтағы өзіңе хат" data-app="Колись" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -910,11 +1087,11 @@ main{max-width:960px}
     <p class="tagline">Болашақтағы өзіңе хат</p>
     <p class="lead">Өзіңе хат жаз, фото қос та, таңдаған күніңе дейін мөрлеп қой. Оған дейін оны ешкім аша алмайды, тіпті сен де. Уақыты келгенде капсула өзі ашылады.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялық саясаты</span></a>
     </div>
     <p class="note">Орнатқаннан кейін қолданба өзі жаңарып отырады.<br>Android телефондарына арналған қолданба · Android 8 және одан жаңа</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Уақыт капсуласы қалай жұмыс істейді">
@@ -930,19 +1107,19 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-kk">
     <h2 class="eyebrow" id="x-kk">Тағы да</h2>
-    <div class="chips"><span>21 тіл</span><span>Ашық және қараңғы тақырып</span><span>Үш түрлі ашылу дыбысы</span><span>Мәтін өлшемі бес деңгейде</span><span>Өзің таңдаған түстегі мөр</span></div>
+    <div class="chips"><span>25 тіл</span><span>Ашық және қараңғы тақырып</span><span>Үш түрлі ашылу дыбысы</span><span>Мәтін өлшемі бес деңгейде</span><span>Өзің таңдаған түстегі мөр</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Құпиялық басынан ойластырылған</h2><p>Біздің аккаунттарымыз да, серверлеріміз де, жарнама да, бақылау да жоқ. Хаттарың телефоныңда қалады, ал қаласаң, өзіңнің Google Drive-ыңда да сақталады.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялық саясатын оқу</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Байланыс: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Колись: письмо себе в будущее" data-app="Колись" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Колись: письмо себе в будущее" data-app="Колись" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -950,11 +1127,11 @@ main{max-width:960px}
     <p class="tagline">Письмо себе в будущее</p>
     <p class="lead">Напиши себе письмо, добавь фото и запечатай его до выбранного дня. До тех пор его никто не откроет, даже ты. А когда время придёт, капсула откроется сама.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.5.1/Kolys-0.5.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.6.0/Kolys-0.6.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
     <p class="note">После установки приложение обновляется само.<br>Приложение для телефонов на Android · Android 8 и новее</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kolys">28</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kolys">29</b></p>
   </header>
 
   <section class="show" aria-label="Как работает капсула времени">
@@ -970,14 +1147,14 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ru">
     <h2 class="eyebrow" id="x-ru">А ещё</h2>
-    <div class="chips"><span>21 язык</span><span>Светлая и тёмная тема</span><span>Три звука открытия</span><span>Размер текста в пять шагов</span><span>Печать твоего цвета</span></div>
+    <div class="chips"><span>25 языков</span><span>Светлая и тёмная тема</span><span>Три звука открытия</span><span>Размер текста в пять шагов</span><span>Печать твоего цвета</span></div>
   </section>
 
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Приватность с самого начала</h2><p>Без наших аккаунтов, серверов, рекламы и слежки. Твои письма остаются на телефоне и, если захочешь, на твоём собственном Google Диске.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Связь: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
@@ -988,7 +1165,8 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kolys-lang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kolys-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1008,7 +1186,8 @@ main{max-width:960px}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
@@ -1046,7 +1225,7 @@ main{max-width:960px}
     .then(function (lists) {
       var n = {}; for (var k in P) n[k] = 0;
       lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k][0]) === 0 && a.name.slice(a.name.length - P[k][1].length) === P[k][1]) n[k] += a.download_count; }); }); });
-      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { var lc = document.documentElement.lang; e.textContent = v.toLocaleString(lc === "ar" ? "ar-u-nu-latn" : lc); var w = e.closest(".count"); if (w) w.hidden = false; } });
     }).catch(function () {});
 })();
 </script>

@@ -7,7 +7,7 @@
   var KEY = "pegasohlib-theme";
   var SUN = '<circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>';
   var MOON = '<path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11z"/>';
-  // What a tap does, in the 21 languages of the sites (pt-BR uses pt): [to light, to dark].
+  // What a tap does, in the 25 languages of the sites (pt-BR uses pt): [to light, to dark].
   var WORDS = {
     en: ["Light theme", "Dark theme"], uk: ["Світла тема", "Темна тема"], es: ["Tema claro", "Tema oscuro"],
     pt: ["Tema claro", "Tema escuro"], fr: ["Thème clair", "Thème sombre"], de: ["Helles Design", "Dunkles Design"],
@@ -16,6 +16,8 @@
     pl: ["Jasny motyw", "Ciemny motyw"], cs: ["Světlý motiv", "Tmavý motiv"], sk: ["Svetlý motív", "Tmavý motív"],
     da: ["Lyst tema", "Mørkt tema"], tr: ["Açık tema", "Koyu tema"], vi: ["Giao diện sáng", "Giao diện tối"],
     th: ["ธีมสว่าง", "ธีมมืด"], ko: ["밝은 테마", "어두운 테마"],
+    nl: ["Licht thema", "Donker thema"], ar: ["المظهر الفاتح", "المظهر الداكن"], hi: ["लाइट थीम", "डार्क थीम"],
+    zh: ["浅色主题", "深色主题"],
   };
   var phoneDark = matchMedia("(prefers-color-scheme: dark)");
   // ?theme=light|dark in the address wins (for links and checks), then the saved choice, then the phone.

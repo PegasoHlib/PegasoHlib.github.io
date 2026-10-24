@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/oberih/privacy.html?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/oberih/privacy.html?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/oberih/privacy.html?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/oberih/privacy.html?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/oberih/privacy.html?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/oberih/privacy.html?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/oberih/privacy.html?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/oberih/privacy.html?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/oberih/privacy.html?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/oberih/privacy.html?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/oberih/privacy.html?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/oberih/privacy.html?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/oberih/privacy.html?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/oberih/privacy.html?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/oberih/privacy.html?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/oberih/privacy.html?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/oberih/privacy.html?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/oberih/privacy.html?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/oberih/privacy.html?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -81,12 +98,12 @@ main{max-width:760px}
 .sec{scroll-margin-top:76px}
 .sec p{margin:8px 0 0;color:var(--ink2)}
 .sec p:first-of-type{margin-top:0}
-.sec ul{margin:8px 0 0;padding-left:22px;color:var(--ink2)}
+.sec ul{margin:8px 0 0;padding-inline-start:22px;color:var(--ink2)}
 .sec li{margin:4px 0}
 .sec li::marker{color:var(--accent)}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
+th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
 thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
@@ -105,6 +122,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   .toc .eyebrow{padding:0 16px}
   .toc .chips{flex-wrap:nowrap;overflow-x:auto;padding:0 16px 4px;scroll-snap-type:x proximity;scrollbar-width:none;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
+  [dir=rtl] .toc .chips{-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
   .toc .chips::-webkit-scrollbar{display:none}
   .toc .chips a{scroll-snap-align:start;flex:none}
   thead{display:none}
@@ -123,12 +141,12 @@ td:last-child{font-weight:600;color:var(--ink)}
   <a class="home" href="index.html" data-keep-lang><img src="icon-512.png" alt="" width="32" height="32"><span id="appname">Oberih</span></a>
   <nav class="links"><a data-nav="0" href="index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Privacy policy · Oberih" data-app="Oberih" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Privacy policy · Oberih" data-app="Oberih" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -211,7 +229,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Політика конфіденційності · Оберіг" data-app="Оберіг" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Політика конфіденційності · Оберіг" data-app="Оберіг" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Оберіг</p>
@@ -294,7 +312,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Política de privacidad · Oberih" data-app="Oberih" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Política de privacidad · Oberih" data-app="Oberih" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -377,7 +395,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Política de privacidade · Oberih" data-app="Oberih" data-langlabel="Língua" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Política de privacidade · Oberih" data-app="Oberih" data-langlabel="Língua" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -460,7 +478,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Política de privacidade · Oberih" data-app="Oberih" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Política de privacidade · Oberih" data-app="Oberih" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -543,7 +561,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Politique de confidentialité · Oberih" data-app="Oberih" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Politique de confidentialité · Oberih" data-app="Oberih" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -626,7 +644,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Datenschutzerklärung · Oberih" data-app="Oberih" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Datenschutzerklärung · Oberih" data-app="Oberih" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -709,7 +727,90 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Informativa sulla privacy · Oberih" data-app="Oberih" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Privacybeleid · Oberih" data-app="Oberih" data-langlabel="Taal" data-nav="Start|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon-512.png" alt="" width="76" height="76">
+    <p class="app">Oberih</p>
+    <h1>Privacybeleid</h1>
+    <p class="date">Laatst bijgewerkt: 22 oktober 2026</p>
+    <p class="lead">Oberih is een gratis Windows-app van PegasoHlib die de status van Microsoft Defender, de antivirus die in Windows is ingebouwd, toont, de instellingen ervan beheert en beveiligingstips geeft. Dit beleid legt uit wat Oberih met gegevens doet. Kort gezegd: alles blijft op je pc en er wordt niets naar de ontwikkelaar gestuurd.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="nl-glance">
+    <h2 id="nl-glance" class="eyebrow">In het kort</h2>
+    <ul><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Oberih leest de beschermingsstatus rechtstreeks uit Windows op je pc. Niets daarvan verlaat de computer.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Oberih heeft geen servers, geen accounts en geen analytics. De ontwikkelaar ontvangt nooit gegevens.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><span>Het gaat alleen online om te controleren op updates en ze van GitHub te downloaden. De controle kan worden uitgezet.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><span>De instellingen worden bewaard in één klein bestand op je pc, in <code>%LOCALAPPDATA%\Oberih</code>.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span>Om beheerdersrechten wordt alleen gevraagd om instellingen te wijzigen, en ze gelden tot je het venster sluit.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Wat Microsoft Defender zelf naar Microsoft stuurt, valt onder de privacyverklaring van Microsoft, niet onder Oberih.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Op deze pagina">
+    <p class="eyebrow">Op deze pagina</p>
+    <div class="chips"><a href="#nl-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Wat Oberih op je pc leest</a><a href="#nl-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Wat Oberih op je pc bewaart</a><a href="#nl-install"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>Installeren</a><a href="#nl-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Internet: alleen voor updates</a><a href="#nl-microsoft"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Microsoft Defender en Microsoft</a><a href="#nl-admin"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>Beheerdersrechten</a><a href="#nl-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Wat Oberih niet doet</a><a href="#nl-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Oberih en de gegevens verwijderen</a><a href="#nl-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Kinderen</a><a href="#nl-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>Wijzigingen in dit beleid</a><a href="#nl-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Contact</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="nl-table">
+    <h2 id="nl-table">Welke gegevens, waar ze staan, wie ze ziet</h2>
+    <table>
+      <thead><tr><th scope="col">Gegevens</th><th scope="col">Waar ze worden bewaard</th><th scope="col">Wie ze kan zien</th></tr></thead>
+      <tbody><tr><th scope="row">Beschermingsstatus, Defender-instellingen, bedreigingen, detectiegeschiedenis, quarantaine, scangebeurtenissen</th><td data-label="Waar ze worden bewaard">In Windows op je pc; Oberih leest ze terwijl het open is en bewaart geen kopieën</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Instellingen van Oberih: taal, thema, tekstgrootte, geluiden, gelezen tips, updatekeuze, hoe lang scans duurden</th><td data-label="Waar ze worden bewaard">In settings.json in %LOCALAPPDATA%\<wbr>Oberih op je pc</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Technische foutmeldingen</th><td data-label="Waar ze worden bewaard">In error.log in dezelfde map</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Wijzigingen die je aanbrengt: Defender-instellingen, uitsluitingen, toegestane apps en bedreigingen</th><td data-label="Waar ze worden bewaard">In Microsoft Defender op je pc, net alsof ze in Windows-beveiliging zijn gemaakt</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Updatecontrole en download</th><td data-label="Waar ze worden bewaard">Er wordt niets opgeslagen; er wordt een klein bestand gelezen van pegasohlib.<wbr>github.io, een nieuwe versie komt van GitHub</td><td data-label="Wie ze kan zien">GitHub ziet je IP-adres, zoals elke website</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="nl-data">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h2>Wat Oberih op je pc leest</h2></div>
+    <p>Om de beschermingsstatus te tonen, leest Oberih lokaal en alleen terwijl het venster open is:</p><ul><li>de status, instellingen, bedreigingen, detectiegeschiedenis en quarantaine van Microsoft Defender, via de eigen interfaces van Windows (WMI en <code>MpCmdRun.exe</code>);</li><li>het gebeurtenislogboek van Defender, om een scan op te merken die buiten Oberih is gestart;</li><li>andere beveiligingsinstellingen van Windows: de firewall, andere antivirus- of firewall-apps die in Windows-beveiliging zijn geregistreerd, Gebruikersaccountbeheer, SmartScreen, geheugenintegriteit, versleuteling van het systeemstation en de datum van de laatste Windows-update.</li></ul><p>Deze informatie wordt op het scherm getoond. Ze wordt nergens opgeslagen, gekopieerd of naartoe gestuurd. Om te schatten hoe lang een scan duurt, leest Oberih ook hoeveel ruimte er op je stations in gebruik is en hoe groot de map of het bestand is dat je kiest om te scannen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-stored">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h2>Wat Oberih op je pc bewaart</h2></div>
+    <p>Oberih bewaart één klein instellingenbestand, <code>%LOCALAPPDATA%\Oberih\settings.json</code>, met:</p><ul><li>de instellingen voor taal, thema, tekstgrootte en geluid;</li><li>welke tips je als gelezen hebt gemarkeerd, en of je het welkomstscherm en het aanbod om te installeren al hebt gezien;</li><li>of er automatisch op updates moet worden gecontroleerd, en een versie die je hebt gekozen over te slaan;</li><li>hoe lang eerdere scans op deze pc duurden, voor de schatting van de voortgang.</li></ul><p>Technische foutmeldingen (bijvoorbeeld als een link niet kon worden geopend of de app is gecrasht) worden naar <code>error.log</code> in dezelfde map geschreven. Deze bestanden blijven op je pc, en Oberih stuurt ze nooit ergens naartoe. Je kunt de map openen vanuit de Instellingen van Oberih.</p>
+    
+  </section>
+  <section class="card sec" id="nl-install">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><h2>Installeren</h2></div>
+    <p>Als je ervoor kiest Oberih te installeren, kopieert het zichzelf naar <code>%LOCALAPPDATA%\Programs\Oberih</code>, maakt het een snelkoppeling in het Startmenu en, als je wilt, een op het bureaublad, en voegt het een vermelding toe aan de Windows-lijst met geïnstalleerde apps (in jouw gebruikersdeel van het register). Hiervoor zijn geen beheerdersrechten nodig.</p>
+    
+  </section>
+  <section class="card sec" id="nl-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Internet: alleen voor updates</h2></div>
+    <p>Oberih gaat voor één ding online: de eigen updates. Bij het starten en elke 12 uur leest het een klein bestand, <code>pegasohlib.github.io/oberih/update.json</code>, met het nummer van de nieuwste versie. Is er een nieuwere, dan toont Oberih een knop, en pas als je daarop drukt, wordt de nieuwe versie van GitHub (github.com) gedownload. Vóór de installatie controleert Oberih de handtekening van de maker en de controlesom van het bestand.</p><p>Deze verzoeken bevatten geen gegevens over jou of je pc, alleen het versienummer van Oberih in de standaardheader “User-Agent”. Zoals elke website ziet GitHub je IP-adres, en de eigen privacyverklaring van GitHub is van toepassing. Je kunt automatische controles uitzetten in de Instellingen van Oberih → Updates.</p><p>Knoppen zoals “Openen” leiden naar Windows-beveiliging of Windows-instellingen op je pc. Websites die in de tips worden genoemd, zijn gewone tekst: Oberih opent ze niet en maakt er geen contact mee.</p><p>GitHub telt ook hoe vaak elk bestand is gedownload. Het is alleen een getal, zonder iets over wie het heeft gedownload; de website toont het als een geschat aantal downloads.</p>
+    
+  </section>
+  <section class="card sec" id="nl-microsoft">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Microsoft Defender en Microsoft</h2></div>
+    <p>Al het scannen en beschermen wordt gedaan door Microsoft Defender, dat deel uitmaakt van Windows. Sommige functies ervan communiceren met Microsoft: cloudbescherming stuurt details over verdachte bestanden, het indienen van voorbeelden kan verdachte bestanden ter analyse versturen, en definitie-updates worden van Microsoft gedownload. Dit is het eigen gedrag van Defender, dat valt onder de <a href="https://privacy.microsoft.com/privacystatement">privacyverklaring van Microsoft</a>. Oberih toont deze instellingen en wijzigt ze alleen als jij erom vraagt. Het ontvangt niets van die gegevens.</p>
+    
+  </section>
+  <section class="card sec" id="nl-admin">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>Beheerdersrechten</h2></div>
+    <p>Oberih start met normale rechten. Om Defender-instellingen te wijzigen, uitsluitingen te beheren of de quarantaine te bekijken, druk je op <b>Ontgrendelen</b>: Oberih start opnieuw met beheerdersrechten nadat Windows je om bevestiging heeft gevraagd, en de rechten gelden alleen tot je het venster sluit. Oberih installeert geen achtergrondservice en draait niet als het venster gesloten is. Voordat het om rechten vraagt, controleert het of het eigen bestand niet is vervangen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Wat Oberih niet doet</h2></div>
+    <ul><li>geen accounts bij de ontwikkelaar en geen eigen servers;</li><li>geen analytics, geen advertenties, geen tracking, geen crashrapporten die ergens naartoe worden gestuurd;</li><li>geen uploaden van je bestanden, scanresultaten of lijsten met bedreigingen;</li><li>geen verkopen of delen van welke gegevens dan ook;</li><li>geen omzeilen van Manipulatiebeveiliging of welke andere Windows-bescherming dan ook.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Oberih en de gegevens verwijderen</h2></div>
+    <p>Het verwijderen van Oberih (in Windows-instellingen → Apps, of met de knop in de Instellingen van Oberih) verwijdert de app, de snelkoppelingen, de vermelding in de lijst met apps en de map <code>%LOCALAPPDATA%\Oberih</code> met de instellingen en het foutenlogboek. Microsoft Defender en al zijn instellingen blijven zoals ze zijn. Heb je het gedownloade bestand alleen gestart zonder te installeren, verwijder dan dat bestand en die map zelf.</p>
+    
+  </section>
+  <section class="card sec" id="nl-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Kinderen</h2></div>
+    <p>Oberih verzamelt van niemand persoonsgegevens, ook niet van kinderen. Het heeft geen accounts, geen chat en geen delen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-changes">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>Wijzigingen in dit beleid</h2></div>
+    <p>Als de app iets nieuws met gegevens gaat doen, wordt deze pagina eerst bijgewerkt, met een nieuwe datum bovenaan.</p>
+    
+  </section>
+  <section class="card sec" id="nl-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Contact</h2></div>
+    <p>Vragen over privacy: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>.</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Informativa sulla privacy · Oberih" data-app="Oberih" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -792,7 +893,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Polityka prywatności · Oberih" data-app="Oberih" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Polityka prywatności · Oberih" data-app="Oberih" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -875,7 +976,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Zásady ochrany soukromí · Oberih" data-app="Oberih" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Zásady ochrany soukromí · Oberih" data-app="Oberih" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -958,7 +1059,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Zásady ochrany súkromia · Oberih" data-app="Oberih" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Zásady ochrany súkromia · Oberih" data-app="Oberih" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1041,7 +1142,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Privatlivspolitik · Oberih" data-app="Oberih" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Privatlivspolitik · Oberih" data-app="Oberih" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1124,7 +1225,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Integritetspolicy · Oberih" data-app="Oberih" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Integritetspolicy · Oberih" data-app="Oberih" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1207,7 +1308,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Gizlilik politikası · Oberih" data-app="Oberih" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Gizlilik politikası · Oberih" data-app="Oberih" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1290,7 +1391,173 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Kebijakan privasi · Oberih" data-app="Oberih" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="سياسة الخصوصية · Oberih" data-app="Oberih" data-langlabel="اللغة" data-nav="الرئيسية|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="logo" src="icon-512.png" alt="" width="76" height="76">
+    <p class="app">Oberih</p>
+    <h1>سياسة الخصوصية</h1>
+    <p class="date">آخر تحديث: 22 أكتوبر 2026</p>
+    <p class="lead">يُعدّ Oberih تطبيقًا مجانيًا لنظام Windows من PegasoHlib، يعرض حالة Microsoft Defender، مضاد الفيروسات المدمج في Windows، ويدير إعداداته، ويقدّم نصائح للأمان. توضّح هذه السياسة ما يفعله Oberih بالبيانات. باختصار: كل شيء يبقى على كمبيوتركم، ولا يُرسَل أي شيء إلى المطوّر.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="ar-glance">
+    <h2 id="ar-glance" class="eyebrow">باختصار</h2>
+    <ul><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>يقرأ Oberih حالة الحماية من Windows مباشرةً على كمبيوتركم. ولا يغادر أيٌّ منها الكمبيوتر.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>ليس لدى Oberih خوادم ولا حسابات ولا أدوات تحليل. ولا يتلقى المطوّر أي بيانات على الإطلاق.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><span>لا يتصل بالإنترنت إلا للتحقق من التحديثات وتنزيلها من GitHub. ويمكن إيقاف هذا التحقق.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><span>تُحفظ إعداداته في ملف صغير واحد على كمبيوتركم، في <code>%LOCALAPPDATA%\Oberih</code>.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span>لا تُطلب صلاحيات المسؤول إلا لتغيير الإعدادات، وتبقى حتى تغلقوا النافذة.</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>ما يرسله Microsoft Defender نفسه إلى Microsoft يخضع لبيان الخصوصية الخاص بـ Microsoft، وليس لـ Oberih.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="في هذه الصفحة">
+    <p class="eyebrow">في هذه الصفحة</p>
+    <div class="chips"><a href="#ar-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>ما يقرؤه Oberih على كمبيوتركم</a><a href="#ar-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>ما يحتفظ به Oberih على كمبيوتركم</a><a href="#ar-install"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>التثبيت</a><a href="#ar-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>الإنترنت: للتحديثات فقط</a><a href="#ar-microsoft"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>برنامج Microsoft Defender وشركة Microsoft</a><a href="#ar-admin"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>صلاحيات المسؤول</a><a href="#ar-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>ما لا يفعله Oberih</a><a href="#ar-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>إزالة Oberih وبياناته</a><a href="#ar-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>الأطفال</a><a href="#ar-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>التغييرات على هذه السياسة</a><a href="#ar-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>التواصل</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="ar-table">
+    <h2 id="ar-table">ما البيانات، وأين تُحفظ، ومن يراها</h2>
+    <table>
+      <thead><tr><th scope="col">البيانات</th><th scope="col">مكان الحفظ</th><th scope="col">من يمكنه رؤيتها</th></tr></thead>
+      <tbody><tr><th scope="row">حالة الحماية، وإعدادات Defender، والتهديدات، وسجل الاكتشافات، والعزل، وأحداث الفحص</th><td data-label="مكان الحفظ">في Windows على كمبيوتركم؛ يقرؤها Oberih ما دام مفتوحًا ولا يحتفظ بأي نسخ منها</td><td data-label="من يمكنه رؤيتها">أنتم فقط</td></tr><tr><th scope="row">إعدادات Oberih: اللغة، والسمة، وحجم النص، والأصوات، والنصائح المقروءة، وخيار التحديث، والمدة التي استغرقتها الفحوصات</th><td data-label="مكان الحفظ">في settings.json داخل ⁦%LOCALAPPDATA%\<wbr>Oberih⁩ على كمبيوتركم</td><td data-label="من يمكنه رؤيتها">أنتم فقط</td></tr><tr><th scope="row">رسائل الأخطاء التقنية</th><td data-label="مكان الحفظ">في error.log في المجلد نفسه</td><td data-label="من يمكنه رؤيتها">أنتم فقط</td></tr><tr><th scope="row">التغييرات التي تجرونها: إعدادات Defender، والاستثناءات، والتطبيقات والتهديدات المسموح بها</th><td data-label="مكان الحفظ">في Microsoft Defender على كمبيوتركم، تمامًا كما لو أُجريت في «أمن Windows»</td><td data-label="من يمكنه رؤيتها">أنتم فقط</td></tr><tr><th scope="row">التحقق من التحديثات وتنزيلها</th><td data-label="مكان الحفظ">لا يُحفظ شيء؛ يُقرأ ملف صغير من pegasohlib.<wbr>github.io، ويأتي الإصدار الجديد من GitHub</td><td data-label="من يمكنه رؤيتها">يرى GitHub عنوان IP الخاص بكم، كما يفعل أي موقع ويب</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="ar-data">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h2>ما يقرؤه Oberih على كمبيوتركم</h2></div>
+    <p>لعرض حالة الحماية، يقرأ Oberih، محليًا وفقط ما دامت نافذته مفتوحة:</p><ul><li>حالة Microsoft Defender وإعداداته والتهديدات وسجل الاكتشافات والعزل، عبر واجهات Windows نفسها (WMI و<code>MpCmdRun.exe</code>)؛</li><li>سجل أحداث Defender، لملاحظة أي فحص بدأ من خارج Oberih؛</li><li>إعدادات أمان أخرى في Windows: جدار الحماية، وتطبيقات مكافحة الفيروسات أو جدران الحماية الأخرى المسجّلة في «أمن Windows»، والتحكم في حساب المستخدم، وSmartScreen، وتكامل الذاكرة، وتشفير محرك أقراص النظام، وتاريخ آخر تحديث لـ Windows.</li></ul><p>تُعرض هذه المعلومات على الشاشة. ولا تُحفظ ولا تُنسخ ولا تُرسل إلى أي مكان. ولتقدير المدة التي يستغرقها الفحص، يقرأ Oberih أيضًا المساحة المستخدمة على محركات الأقراص لديكم وحجم المجلد أو الملف الذي تختارون فحصه.</p>
+    
+  </section>
+  <section class="card sec" id="ar-stored">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h2>ما يحتفظ به Oberih على كمبيوتركم</h2></div>
+    <p>يحتفظ Oberih بملف إعدادات صغير واحد، <code>%LOCALAPPDATA%\Oberih\settings.json</code>، يتضمن:</p><ul><li>إعدادات اللغة والسمة وحجم النص والصوت؛</li><li>النصائح التي علّمتموها كمقروءة، وما إذا كنتم قد رأيتم شاشة الترحيب وعرض التثبيت؛</li><li>ما إذا كان يجب التحقق من التحديثات تلقائيًا، والإصدار الذي اخترتم تخطّيه؛</li><li>المدة التي استغرقتها الفحوصات السابقة على هذا الكمبيوتر، لتقدير التقدّم.</li></ul><p>تُكتب رسائل الأخطاء التقنية (مثلًا عندما يتعذّر فتح رابط أو عندما يتعطّل التطبيق) في <code>error.log</code> في المجلد نفسه. تبقى هذه الملفات على كمبيوتركم، ولا يرسلها Oberih إلى أي مكان أبدًا. ويمكنكم فتح المجلد من إعدادات Oberih.</p>
+    
+  </section>
+  <section class="card sec" id="ar-install">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><h2>التثبيت</h2></div>
+    <p>إذا اخترتم تثبيت Oberih، فإنه ينسخ نفسه إلى <code>%LOCALAPPDATA%\Programs\Oberih</code>، وينشئ اختصارًا في قائمة «ابدأ»، واختصارًا على سطح المكتب إذا أردتم، ويضيف إدخالًا إلى قائمة التطبيقات المثبّتة في Windows (في الجزء الخاص بحساب المستخدم لديكم من السجل). ولا يحتاج ذلك إلى صلاحيات المسؤول.</p>
+    
+  </section>
+  <section class="card sec" id="ar-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>الإنترنت: للتحديثات فقط</h2></div>
+    <p>يتصل Oberih بالإنترنت لأمر واحد فقط: تحديثاته الخاصة. فعند التشغيل وكل 12 ساعة يقرأ ملفًا صغيرًا، <code>pegasohlib.github.io/oberih/update.json</code>، يحتوي على رقم أحدث إصدار. وإذا وُجد إصدار أحدث، يعرض Oberih زرًا، ولا يُنزَّل الإصدار الجديد من GitHub (github.com) إلا عندما تضغطونه. وقبل التثبيت، يتحقق Oberih من توقيع المطوّر ومن المجموع الاختباري للملف.</p><p>لا تحمل هذه الطلبات أي بيانات عنكم أو عن كمبيوتركم، سوى رقم إصدار Oberih في ترويسة «User-Agent» القياسية. وكأي موقع ويب، يرى GitHub عنوان IP الخاص بكم، ويُطبَّق بيان الخصوصية الخاص بـ GitHub. ويمكنكم إيقاف التحقق التلقائي من إعدادات Oberih ← التحديثات.</p><p>تقود أزرار مثل «فتح» إلى «أمن Windows» أو إعدادات Windows على كمبيوتركم. أما مواقع الويب المذكورة في النصائح فهي نص عادي: لا يفتحها Oberih ولا يتصل بها.</p><p>ويحصي GitHub أيضًا عدد مرات تنزيل كل ملف. وهو مجرد رقم، دون أي معلومات عمّن نزّله؛ ويعرضه الموقع كعدد تقريبي للتنزيلات.</p>
+    
+  </section>
+  <section class="card sec" id="ar-microsoft">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>برنامج Microsoft Defender وشركة Microsoft</h2></div>
+    <p>تتم جميع عمليات الفحص والحماية بواسطة Microsoft Defender، وهو جزء من Windows. وتتواصل بعض ميزاته مع Microsoft: فالحماية السحابية ترسل تفاصيل عن الملفات المشبوهة، وقد يرسل خيار إرسال العيّنات ملفات مشبوهة لتحليلها، وتُنزَّل تحديثات التعريفات من Microsoft. هذا سلوك Defender نفسه، ويخضع لـ <a href="https://privacy.microsoft.com/privacystatement">بيان خصوصية Microsoft</a>. يعرض Oberih هذه الإعدادات ولا يغيّرها إلا عندما تطلبون ذلك. ولا يتلقى أيًّا من تلك البيانات.</p>
+    
+  </section>
+  <section class="card sec" id="ar-admin">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>صلاحيات المسؤول</h2></div>
+    <p>يبدأ Oberih بصلاحيات عادية. ولتغيير إعدادات Defender أو إدارة الاستثناءات أو عرض العزل، تضغطون <b>إلغاء القفل</b>: فيُعاد تشغيل Oberih بصلاحيات المسؤول بعد أن يطلب منكم Windows التأكيد، ولا تبقى الصلاحيات إلا حتى تغلقوا النافذة. لا يثبّت Oberih أي خدمة في الخلفية، ولا يعمل عندما تكون نافذته مغلقة. وقبل طلب الصلاحيات، يتحقق من أن ملفه لم يُستبدَل.</p>
+    
+  </section>
+  <section class="card sec" id="ar-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>ما لا يفعله Oberih</h2></div>
+    <ul><li>لا حسابات لدى المطوّر ولا خوادم خاصة به؛</li><li>لا أدوات تحليل، ولا إعلانات، ولا تتبّع، ولا تقارير أعطال تُرسل إلى أي مكان؛</li><li>لا رفع لملفاتكم أو نتائج الفحص أو قوائم التهديدات؛</li><li>لا بيع لأي بيانات ولا مشاركة لها؛</li><li>لا تجاوز للحماية من العبث أو لأي حماية أخرى في Windows.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>إزالة Oberih وبياناته</h2></div>
+    <p>تؤدي إزالة تثبيت Oberih (في إعدادات Windows ← التطبيقات، أو بالزر في إعدادات Oberih) إلى إزالة التطبيق واختصاراته وإدخاله في قائمة التطبيقات والمجلد <code>%LOCALAPPDATA%\Oberih</code> مع الإعدادات وسجل الأخطاء. ويبقى Microsoft Defender وجميع إعداداته كما هي. وإذا كنتم قد شغّلتم الملف الذي نزّلتموه فقط دون تثبيته، فاحذفوه واحذفوا ذلك المجلد بأنفسكم.</p>
+    
+  </section>
+  <section class="card sec" id="ar-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>الأطفال</h2></div>
+    <p>لا يجمع Oberih أي بيانات شخصية من أي أحد، بمن في ذلك الأطفال. فلا حسابات فيه ولا دردشة ولا مشاركة.</p>
+    
+  </section>
+  <section class="card sec" id="ar-changes">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>التغييرات على هذه السياسة</h2></div>
+    <p>إذا بدأ التطبيق بفعل شيء جديد بالبيانات، فستُحدَّث هذه الصفحة أولًا، مع تاريخ جديد في أعلاها.</p>
+    
+  </section>
+  <section class="card sec" id="ar-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>التواصل</h2></div>
+    <p>للأسئلة المتعلقة بالخصوصية: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>.</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="निजता नीति · Oberih" data-app="Oberih" data-langlabel="भाषा" data-nav="होम|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="logo" src="icon-512.png" alt="" width="76" height="76">
+    <p class="app">Oberih</p>
+    <h1>निजता नीति</h1>
+    <p class="date">अंतिम अपडेट: 22 अक्टूबर 2026</p>
+    <p class="lead">Oberih, PegasoHlib का एक मुफ़्त Windows ऐप है, जो Windows में बने एंटीवायरस Microsoft Defender की स्थिति दिखाता है, उसकी सेटिंग संभालता है और सुरक्षा से जुड़े सुझाव देता है। यह नीति बताती है कि Oberih डेटा के साथ क्या करता है। संक्षेप में: सब कुछ आपके PC पर ही रहता है, और डेवलपर को कुछ भी नहीं भेजा जाता।</p>
+  </header>
+
+  <section class="glance" aria-labelledby="hi-glance">
+    <h2 id="hi-glance" class="eyebrow">एक नज़र में</h2>
+    <ul><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Oberih सुरक्षा की स्थिति सीधे आपके PC पर Windows से पढ़ता है। इसमें से कुछ भी कंप्यूटर से बाहर नहीं जाता।</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Oberih के न कोई सर्वर हैं, न अकाउंट और न एनालिटिक्स। डेवलपर को कभी कोई डेटा नहीं मिलता।</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><span>यह सिर्फ़ अपडेट जाँचने और उन्हें GitHub से डाउनलोड करने के लिए ऑनलाइन जाता है। यह जाँच बंद की जा सकती है।</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><span>इसकी सेटिंग आपके PC पर एक छोटी फ़ाइल में, <code>%LOCALAPPDATA%\Oberih</code> में रखी जाती हैं।</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span>एडमिनिस्ट्रेटर अधिकार सिर्फ़ सेटिंग बदलने के लिए माँगे जाते हैं, और वे तब तक रहते हैं जब तक आप विंडो बंद नहीं करते।</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Microsoft Defender खुद Microsoft को क्या भेजता है, यह Oberih से नहीं, बल्कि Microsoft के निजता कथन से तय होता है।</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="इस पेज पर">
+    <p class="eyebrow">इस पेज पर</p>
+    <div class="chips"><a href="#hi-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Oberih आपके PC पर क्या पढ़ता है</a><a href="#hi-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Oberih आपके PC पर क्या रखता है</a><a href="#hi-install"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>इंस्टॉल करना</a><a href="#hi-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>इंटरनेट: सिर्फ़ अपडेट के लिए</a><a href="#hi-microsoft"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Microsoft Defender और Microsoft</a><a href="#hi-admin"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>एडमिनिस्ट्रेटर अधिकार</a><a href="#hi-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Oberih क्या नहीं करता</a><a href="#hi-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Oberih और उसका डेटा हटाना</a><a href="#hi-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>बच्चे</a><a href="#hi-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>इस नीति में बदलाव</a><a href="#hi-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>संपर्क</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="hi-table">
+    <h2 id="hi-table">कौन-सा डेटा, कहाँ रहता है, कौन देखता है</h2>
+    <table>
+      <thead><tr><th scope="col">डेटा</th><th scope="col">कहाँ रखा जाता है</th><th scope="col">कौन देख सकता है</th></tr></thead>
+      <tbody><tr><th scope="row">सुरक्षा की स्थिति, Defender की सेटिंग, खतरे, पहचान का इतिहास, क्वारंटीन, स्कैन से जुड़ी घटनाएँ</th><td data-label="कहाँ रखा जाता है">आपके PC पर Windows में; Oberih इन्हें तभी पढ़ता है जब वह खुला हो, और इनकी कोई कॉपी नहीं रखता</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">Oberih की सेटिंग: भाषा, थीम, टेक्स्ट का आकार, आवाज़ें, पढ़े गए सुझाव, अपडेट का विकल्प, स्कैन में कितना समय लगा</th><td data-label="कहाँ रखा जाता है">आपके PC पर %LOCALAPPDATA%\<wbr>Oberih में settings.json में</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">तकनीकी त्रुटि संदेश</th><td data-label="कहाँ रखा जाता है">उसी फ़ोल्डर में error.log में</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">आपके किए बदलाव: Defender की सेटिंग, अपवाद, अनुमति दिए गए ऐप और खतरे</th><td data-label="कहाँ रखा जाता है">आपके PC पर Microsoft Defender में, ठीक वैसे ही जैसे Windows सुरक्षा में किए गए हों</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">अपडेट की जाँच और डाउनलोड</th><td data-label="कहाँ रखा जाता है">कुछ भी सेव नहीं होता; pegasohlib.<wbr>github.io से एक छोटी फ़ाइल पढ़ी जाती है, नया वर्ज़न GitHub से आता है</td><td data-label="कौन देख सकता है">GitHub आपका IP पता देखता है, जैसे कोई भी वेबसाइट देखती है</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="hi-data">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h2>Oberih आपके PC पर क्या पढ़ता है</h2></div>
+    <p>सुरक्षा की स्थिति दिखाने के लिए Oberih स्थानीय रूप से, और सिर्फ़ तब तक जब तक उसकी विंडो खुली हो, ये चीज़ें पढ़ता है:</p><ul><li>Microsoft Defender की स्थिति, सेटिंग, खतरे, पहचान का इतिहास और क्वारंटीन, Windows के अपने इंटरफ़ेस (WMI और <code>MpCmdRun.exe</code>) के ज़रिए;</li><li>Defender का इवेंट लॉग, ताकि Oberih के बाहर शुरू किए गए स्कैन का पता चल सके;</li><li>Windows की दूसरी सुरक्षा सेटिंग: फ़ायरवॉल, Windows सुरक्षा में दर्ज दूसरे एंटीवायरस या फ़ायरवॉल ऐप, यूज़र अकाउंट कंट्रोल, SmartScreen, मेमोरी इंटीग्रिटी, सिस्टम ड्राइव का एन्क्रिप्शन और पिछले Windows अपडेट की तारीख।</li></ul><p>यह जानकारी स्क्रीन पर दिखाई जाती है। इसे न सेव किया जाता है, न कॉपी किया जाता है और न कहीं भेजा जाता है। स्कैन में कितना समय लगेगा, इसका अनुमान लगाने के लिए Oberih यह भी पढ़ता है कि आपकी ड्राइव पर कितनी जगह इस्तेमाल हुई है और स्कैन के लिए चुने गए फ़ोल्डर या फ़ाइल का आकार क्या है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-stored">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h2>Oberih आपके PC पर क्या रखता है</h2></div>
+    <p>Oberih सेटिंग की एक छोटी फ़ाइल, <code>%LOCALAPPDATA%\Oberih\settings.json</code>, रखता है, जिसमें होता है:</p><ul><li>भाषा, थीम, टेक्स्ट का आकार और आवाज़ की सेटिंग;</li><li>कौन-से सुझाव आपने पढ़े हुए चिह्नित किए, और क्या आपने स्वागत संदेश और इंस्टॉल करने की पेशकश देखी है;</li><li>अपडेट अपने आप जाँचने हैं या नहीं, और वह वर्ज़न जिसे आपने छोड़ना चुना;</li><li>इस PC पर पहले के स्कैन में कितना समय लगा, प्रगति के अनुमान के लिए।</li></ul><p>तकनीकी त्रुटि संदेश (उदाहरण के लिए, जब कोई लिंक नहीं खुल पाया या ऐप क्रैश हो गया) उसी फ़ोल्डर में <code>error.log</code> में लिखे जाते हैं। ये फ़ाइलें आपके PC पर ही रहती हैं, और Oberih इन्हें कभी कहीं नहीं भेजता। आप यह फ़ोल्डर Oberih की सेटिंग से खोल सकते हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-install">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><h2>इंस्टॉल करना</h2></div>
+    <p>अगर आप Oberih को इंस्टॉल करना चुनते हैं, तो यह खुद को <code>%LOCALAPPDATA%\Programs\Oberih</code> में कॉपी करता है, स्टार्ट मेनू में शॉर्टकट बनाता है और, अगर आप चाहें, तो डेस्कटॉप पर भी, और Windows में इंस्टॉल किए गए ऐप की सूची में एक एंट्री जोड़ता है (रजिस्ट्री के आपके यूज़र वाले हिस्से में)। इसके लिए एडमिनिस्ट्रेटर अधिकारों की ज़रूरत नहीं होती।</p>
+    
+  </section>
+  <section class="card sec" id="hi-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>इंटरनेट: सिर्फ़ अपडेट के लिए</h2></div>
+    <p>Oberih सिर्फ़ एक काम के लिए ऑनलाइन जाता है: अपने अपडेट के लिए। शुरू होने पर और हर 12 घंटे में यह एक छोटी फ़ाइल, <code>pegasohlib.github.io/oberih/update.json</code>, पढ़ता है, जिसमें सबसे नए वर्ज़न का नंबर होता है। अगर कोई नया वर्ज़न हो, तो Oberih एक बटन दिखाता है, और नया वर्ज़न GitHub (github.com) से तभी डाउनलोड होता है जब आप उसे दबाते हैं। इंस्टॉल करने से पहले Oberih लेखक के हस्ताक्षर और फ़ाइल का चेकसम जाँचता है।</p><p>इन अनुरोधों में आपके या आपके PC के बारे में कोई डेटा नहीं होता, सिर्फ़ मानक “User-Agent” हेडर में Oberih का वर्ज़न नंबर होता है। किसी भी वेबसाइट की तरह GitHub आपका IP पता देखता है, और GitHub का अपना निजता कथन लागू होता है। आप Oberih की सेटिंग → अपडेट में अपने आप होने वाली जाँच बंद कर सकते हैं।</p><p>“खोलें” जैसे बटन आपके PC पर Windows सुरक्षा या Windows सेटिंग में ले जाते हैं। सुझावों में बताई गई वेबसाइटें सिर्फ़ सादा टेक्स्ट हैं: Oberih उन्हें न खोलता है और न उनसे संपर्क करता है।</p><p>GitHub यह भी गिनता है कि हर फ़ाइल कितनी बार डाउनलोड हुई है। यह सिर्फ़ एक संख्या है, जिसमें यह कुछ नहीं होता कि किसने डाउनलोड किया; वेबसाइट इसे डाउनलोड की अनुमानित संख्या के रूप में दिखाती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-microsoft">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Microsoft Defender और Microsoft</h2></div>
+    <p>सारी स्कैनिंग और सुरक्षा Microsoft Defender करता है, जो Windows का हिस्सा है। इसकी कुछ सुविधाएँ Microsoft से संपर्क करती हैं: क्लाउड सुरक्षा संदिग्ध फ़ाइलों का विवरण भेजती है, नमूना सबमिशन संदिग्ध फ़ाइलों को विश्लेषण के लिए भेज सकता है, और डेफ़िनिशन अपडेट Microsoft से डाउनलोड होते हैं। यह Defender का अपना व्यवहार है, जो <a href="https://privacy.microsoft.com/privacystatement">Microsoft निजता कथन</a> से तय होता है। Oberih ये सेटिंग दिखाता है और उन्हें सिर्फ़ आपके कहने पर बदलता है। उसे उस डेटा में से कुछ भी नहीं मिलता।</p>
+    
+  </section>
+  <section class="card sec" id="hi-admin">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>एडमिनिस्ट्रेटर अधिकार</h2></div>
+    <p>Oberih सामान्य अधिकारों के साथ शुरू होता है। Defender की सेटिंग बदलने, अपवाद संभालने या क्वारंटीन देखने के लिए आप <b>अनलॉक</b> दबाते हैं: Windows के आपसे पुष्टि माँगने के बाद Oberih एडमिनिस्ट्रेटर अधिकारों के साथ फिर से शुरू होता है, और ये अधिकार सिर्फ़ तब तक रहते हैं जब तक आप विंडो बंद नहीं करते। Oberih कोई बैकग्राउंड सर्विस इंस्टॉल नहीं करता और विंडो बंद होने पर नहीं चलता। अधिकार माँगने से पहले यह जाँचता है कि इसकी अपनी फ़ाइल बदली नहीं गई है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Oberih क्या नहीं करता</h2></div>
+    <ul><li>डेवलपर के यहाँ कोई अकाउंट नहीं और अपना कोई सर्वर नहीं;</li><li>न एनालिटिक्स, न विज्ञापन, न ट्रैकिंग, न कहीं भेजी जाने वाली क्रैश रिपोर्ट;</li><li>आपकी फ़ाइलें, स्कैन के नतीजे या खतरों की सूचियाँ अपलोड नहीं की जातीं;</li><li>कोई भी डेटा न बेचा जाता है, न साझा किया जाता है;</li><li>Tamper Protection या Windows की किसी दूसरी सुरक्षा को बायपास नहीं किया जाता।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Oberih और उसका डेटा हटाना</h2></div>
+    <p>Oberih को अनइंस्टॉल करने पर (Windows सेटिंग → ऐप्स में, या Oberih की सेटिंग में दिए बटन से) ऐप, उसके शॉर्टकट, ऐप सूची में उसकी एंट्री और सेटिंग व त्रुटि लॉग वाला <code>%LOCALAPPDATA%\Oberih</code> फ़ोल्डर हट जाते हैं। Microsoft Defender और उसकी सारी सेटिंग जैसी हैं वैसी ही रहती हैं। अगर आपने डाउनलोड की गई फ़ाइल को इंस्टॉल किए बिना सिर्फ़ चलाया था, तो उसे और उस फ़ोल्डर को खुद डिलीट कर दें।</p>
+    
+  </section>
+  <section class="card sec" id="hi-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>बच्चे</h2></div>
+    <p>Oberih किसी से भी, बच्चों सहित, कोई निजी डेटा इकट्ठा नहीं करता। इसमें न अकाउंट हैं, न चैट और न शेयरिंग।</p>
+    
+  </section>
+  <section class="card sec" id="hi-changes">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>इस नीति में बदलाव</h2></div>
+    <p>अगर ऐप डेटा के साथ कुछ नया करना शुरू करता है, तो सबसे पहले यह पेज अपडेट किया जाएगा, और ऊपर नई तारीख होगी।</p>
+    
+  </section>
+  <section class="card sec" id="hi-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>संपर्क</h2></div>
+    <p>निजता से जुड़े सवाल: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>।</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Kebijakan privasi · Oberih" data-app="Oberih" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1373,7 +1640,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Chính sách quyền riêng tư · Oberih" data-app="Oberih" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Chính sách quyền riêng tư · Oberih" data-app="Oberih" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1456,7 +1723,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Oberih" data-app="Oberih" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Oberih" data-app="Oberih" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1539,7 +1806,90 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="개인정보 처리방침 · Oberih" data-app="Oberih" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="隐私政策 · Oberih" data-app="Oberih" data-langlabel="语言" data-nav="首页|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="logo" src="icon-512.png" alt="" width="76" height="76">
+    <p class="app">Oberih</p>
+    <h1>隐私政策</h1>
+    <p class="date">最后更新：2026 年 10 月 22 日</p>
+    <p class="lead">Oberih 是 PegasoHlib 推出的一款免费 Windows 应用，用于显示 Windows 内置杀毒软件 Microsoft Defender 的状态、管理其设置并提供安全建议。本政策说明 Oberih 如何处理数据。简而言之：一切都留在你的电脑上，不会向开发者发送任何内容。</p>
+  </header>
+
+  <section class="glance" aria-labelledby="zh-glance">
+    <h2 id="zh-glance" class="eyebrow">要点速览</h2>
+    <ul><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><span>Oberih 直接在你的电脑上从 Windows 读取防护状态。这些信息都不会离开这台电脑。</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Oberih 没有服务器、没有账户，也没有分析统计。开发者从不接收任何数据。</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><span>它只在检查更新并从 GitHub 下载更新时联网。可以关闭更新检查。</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><span>它的设置保存在你电脑上的一个小文件中，位于 <code>%LOCALAPPDATA%\Oberih</code>。</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span>只有在修改设置时才会请求管理员权限，权限在你关闭窗口之前有效。</span></li><li class="t2"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Microsoft Defender 自身向 Microsoft 发送的内容受 Microsoft 隐私声明约束，而不是由 Oberih 决定。</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="本页内容">
+    <p class="eyebrow">本页内容</p>
+    <div class="chips"><a href="#zh-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Oberih 在你的电脑上读取什么</a><a href="#zh-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Oberih 在你的电脑上保存什么</a><a href="#zh-install"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg>安装</a><a href="#zh-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>联网：仅用于更新</a><a href="#zh-microsoft"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Microsoft Defender 与 Microsoft</a><a href="#zh-admin"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>管理员权限</a><a href="#zh-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Oberih 不会做的事</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>删除 Oberih 及其数据</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="zh-table">
+    <h2 id="zh-table">哪些数据、存放在哪里、谁能看到</h2>
+    <table>
+      <thead><tr><th scope="col">数据</th><th scope="col">存放位置</th><th scope="col">谁能看到</th></tr></thead>
+      <tbody><tr><th scope="row">防护状态、Defender 设置、威胁、检测历史、隔离区、扫描事件</th><td data-label="存放位置">在你电脑上的 Windows 中；Oberih 仅在打开时读取，不保留任何副本</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">Oberih 设置：语言、主题、文字大小、声音、已读建议、更新选项、扫描所用时长</th><td data-label="存放位置">在你电脑上 %LOCALAPPDATA%\<wbr>Oberih 中的 settings.json 里</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">技术错误信息</th><td data-label="存放位置">在同一文件夹的 error.log 中</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">你所做的更改：Defender 设置、排除项、已允许的应用和威胁</th><td data-label="存放位置">在你电脑上的 Microsoft Defender 中，与在「Windows 安全中心」中修改完全一样</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">检查和下载更新</th><td data-label="存放位置">不保存任何内容；从 pegasohlib.<wbr>github.io 读取一个小文件，新版本来自 GitHub</td><td data-label="谁能看到">GitHub 能看到你的 IP 地址，任何网站都是如此</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="zh-data">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg><h2>Oberih 在你的电脑上读取什么</h2></div>
+    <p>为了显示防护状态，Oberih 仅在其窗口打开时于本地读取：</p><ul><li>Microsoft Defender 的状态、设置、威胁、检测历史和隔离区，通过 Windows 自身的接口（WMI 和 <code>MpCmdRun.exe</code>）读取；</li><li>Defender 的事件日志，用于发现在 Oberih 之外启动的扫描；</li><li>其他 Windows 安全设置：防火墙、在「Windows 安全中心」中注册的其他杀毒软件或防火墙应用、用户账户控制、SmartScreen、内存完整性、系统盘加密以及上次 Windows 更新的日期。</li></ul><p>这些信息只显示在屏幕上，不会被保存、复制或发送到任何地方。为了估算扫描所需时间，Oberih 还会读取你各个驱动器的已用空间，以及你选择扫描的文件夹或文件的大小。</p>
+    
+  </section>
+  <section class="card sec" id="zh-stored">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h2>Oberih 在你的电脑上保存什么</h2></div>
+    <p>Oberih 保存一个小的设置文件 <code>%LOCALAPPDATA%\Oberih\settings.json</code>，其中包含：</p><ul><li>语言、主题、文字大小和声音设置；</li><li>你标记为已读的建议，以及你是否已看过欢迎页面和安装提议；</li><li>是否自动检查更新，以及你选择跳过的版本；</li><li>这台电脑上以往扫描所用的时长，用于估算进度。</li></ul><p>技术错误信息（例如无法打开链接或应用崩溃时）会写入同一文件夹中的 <code>error.log</code>。这些文件留在你的电脑上，Oberih 从不将它们发送到任何地方。你可以从 Oberih 的「设置」中打开该文件夹。</p>
+    
+  </section>
+  <section class="card sec" id="zh-install">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><h2>安装</h2></div>
+    <p>如果你选择安装 Oberih，它会将自身复制到 <code>%LOCALAPPDATA%\Programs\Oberih</code>，创建开始菜单快捷方式，并可按你的意愿创建桌面快捷方式，还会在 Windows 已安装应用列表中添加一个条目（位于注册表中你的用户部分）。这些操作无需管理员权限。</p>
+    
+  </section>
+  <section class="card sec" id="zh-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>联网：仅用于更新</h2></div>
+    <p>Oberih 联网只为一件事：它自身的更新。启动时以及每 12 小时，它会读取一个小文件 <code>pegasohlib.github.io/oberih/update.json</code>，其中包含最新版本的版本号。如果有更新的版本，Oberih 会显示一个按钮，只有在你按下按钮后，才会从 GitHub（github.com）下载新版本。安装前，Oberih 会检查作者的签名和文件的校验和。</p><p>这些请求不包含任何关于你或你电脑的数据，只在标准的“User-Agent”请求头中包含 Oberih 的版本号。与任何网站一样，GitHub 能看到你的 IP 地址，并适用 GitHub 自己的隐私声明。你可以在 Oberih 的「设置」→「更新」中关闭自动检查。</p><p>“打开”等按钮会跳转到你电脑上的「Windows 安全中心」或 Windows 设置。建议中提到的网站只是纯文本：Oberih 不会打开或连接它们。</p><p>GitHub 还会统计每个文件的下载次数。这只是一个数字，不包含任何关于下载者的信息；网站会将其显示为大致的下载量。</p>
+    
+  </section>
+  <section class="card sec" id="zh-microsoft">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Microsoft Defender 与 Microsoft</h2></div>
+    <p>所有扫描和防护工作都由 Windows 的组成部分 Microsoft Defender 完成。它的部分功能会与 Microsoft 通信：云提供的保护会发送可疑文件的详细信息，样本提交功能可能会发送可疑文件以供分析，病毒定义更新从 Microsoft 下载。这是 Defender 自身的行为，受 <a href="https://privacy.microsoft.com/privacystatement">Microsoft 隐私声明</a>约束。Oberih 会显示这些设置，并且只在你要求时才修改它们。Oberih 不会收到其中任何数据。</p>
+    
+  </section>
+  <section class="card sec" id="zh-admin">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>管理员权限</h2></div>
+    <p>Oberih 以普通权限启动。要修改 Defender 设置、管理排除项或查看隔离区，你需要按下<b>解锁</b>：在 Windows 请你确认后，Oberih 会以管理员权限重新启动，权限只在你关闭窗口之前有效。Oberih 不安装任何后台服务，窗口关闭后也不会运行。在请求权限之前，它会检查自身文件是否被替换。</p>
+    
+  </section>
+  <section class="card sec" id="zh-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Oberih 不会做的事</h2></div>
+    <ul><li>不设开发者账户，也没有自己的服务器；</li><li>没有分析统计、没有广告、没有跟踪，不会向任何地方发送崩溃报告；</li><li>不上传你的文件、扫描结果或威胁列表；</li><li>不出售或分享任何数据；</li><li>不绕过篡改防护或任何其他 Windows 防护。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>删除 Oberih 及其数据</h2></div>
+    <p>卸载 Oberih（在 Windows 设置 → 应用中，或使用 Oberih「设置」中的按钮）会删除应用、快捷方式、它在应用列表中的条目，以及包含设置和错误日志的 <code>%LOCALAPPDATA%\Oberih</code> 文件夹。Microsoft Defender 及其所有设置保持不变。如果你只是运行了下载的文件而没有安装，请自行删除该文件和该文件夹。</p>
+    
+  </section>
+  <section class="card sec" id="zh-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>儿童</h2></div>
+    <p>Oberih 不向任何人收集个人数据，包括儿童。它没有账户、没有聊天，也没有分享功能。</p>
+    
+  </section>
+  <section class="card sec" id="zh-changes">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的变更</h2></div>
+    <p>如果应用开始以新的方式处理数据，本页面会先行更新，并在顶部注明新的日期。</p>
+    
+  </section>
+  <section class="card sec" id="zh-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>联系方式</h2></div>
+    <p>有关隐私的问题：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="개인정보 처리방침 · Oberih" data-app="Oberih" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Oberih</p>
@@ -1622,7 +1972,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="プライバシーポリシー · オベリフ" data-app="オベリフ" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="プライバシーポリシー · オベリフ" data-app="オベリフ" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">オベリフ</p>
@@ -1705,7 +2055,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Құпиялық саясаты · Оберіг" data-app="Оберіг" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Құпиялық саясаты · Оберіг" data-app="Оберіг" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Оберіг</p>
@@ -1788,7 +2138,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Политика конфиденциальности · Обериг" data-app="Обериг" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Политика конфиденциальности · Обериг" data-app="Обериг" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="logo" src="icon-512.png" alt="" width="76" height="76">
     <p class="app">Обериг</p>
@@ -1877,7 +2227,8 @@ td:last-child{font-weight:600;color:var(--ink)}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1897,7 +2248,8 @@ td:last-child{font-weight:600;color:var(--ink)}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");

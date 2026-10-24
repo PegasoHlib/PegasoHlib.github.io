@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/kordon/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kordon/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kordon/?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/kordon/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kordon/?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/kordon/?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/kordon/?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/kordon/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kordon/?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/kordon/?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/kordon/?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/kordon/?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kordon/?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/kordon/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/kordon/?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/kordon/?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/kordon/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kordon/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kordon/?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -137,12 +154,12 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="logo.svg" alt="" width="32" height="32"><span id="appname">KORDON</span></a>
   
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Language" data-nav="" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Android test build</p>
@@ -154,7 +171,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-en"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>How to install</span></a>
     </div>
     <p class="note">Android 10 or newer · 64-bit phone or tablet (arm64)<br>No ads and no tracking. This site collects no data.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="A first look">
@@ -188,7 +205,7 @@ main{max-width:960px}
 
   <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Мова" data-nav="" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Тестова версія для Android</p>
@@ -200,7 +217,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-uk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Як встановити</span></a>
     </div>
     <p class="note">Android 10 або новіший · 64-бітний телефон чи планшет (arm64)<br>Без реклами й без стеження. Сайт не збирає жодних даних.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Перший погляд">
@@ -234,7 +251,7 @@ main{max-width:960px}
 
   <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Versión de prueba para Android</p>
@@ -246,7 +263,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-es"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cómo instalar</span></a>
     </div>
     <p class="note">Android 10 o posterior · teléfono o tableta de 64 bits (arm64)<br>Sin anuncios ni rastreo. Este sitio no recopila ningún dato.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Un primer vistazo">
@@ -280,7 +297,7 @@ main{max-width:960px}
 
   <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Versão de teste para Android</p>
@@ -292,7 +309,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
     </div>
     <p class="note">Android 10 ou mais recente · telemóvel ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreio. Este site não recolhe quaisquer dados.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Um primeiro olhar">
@@ -326,7 +343,7 @@ main{max-width:960px}
 
   <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Idioma" data-nav="" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Versão de teste para Android</p>
@@ -338,7 +355,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pt-BR"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
     </div>
     <p class="note">Android 10 ou mais recente · celular ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreamento. Este site não coleta nenhum dado.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Uma primeira olhada">
@@ -372,7 +389,7 @@ main{max-width:960px}
 
   <p class="contact">Dúvidas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Langue" data-nav="" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Version de test Android</p>
@@ -384,7 +401,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-fr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Comment installer</span></a>
     </div>
     <p class="note">Android 10 ou plus récent · téléphone ou tablette 64 bits (arm64)<br>Pas de pub, pas de pistage. Ce site ne collecte aucune donnée.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Un premier aperçu">
@@ -418,7 +435,7 @@ main{max-width:960px}
 
   <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Sprache" data-nav="" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Android-Testversion</p>
@@ -430,7 +447,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-de"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Installation</span></a>
     </div>
     <p class="note">Android 10 oder neuer · 64-Bit-Smartphone oder -Tablet (arm64)<br>Keine Werbung, kein Tracking. Diese Website sammelt keine Daten.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Ein erster Blick">
@@ -464,7 +481,53 @@ main{max-width:960px}
 
   <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Taal" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Testversie voor Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">Een grand strategy op de echte aarde, opgebouwd uit zeshoekige cellen. Speel op een globe of een platte wereldkaart, voeg provincies samen en teken grenzen opnieuw zoals jij wilt. Alle tijdperken, solo en multiplayer komen eraan.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK downloaden</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-nl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Zo installeer je het</span></a>
+    </div>
+    <p class="note">Android 10 of nieuwer · 64-bit telefoon of tablet (arm64)<br>Geen advertenties en geen tracking. Deze site verzamelt geen gegevens.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+  </header>
+
+  <section class="show" aria-label="Een eerste blik">
+    <div class="showtext"><h2 class="display">Een eerste blik</h2><p>Dit is een vroege versie: de wereldkaart en het bewerken van provincies. Economie, oorlog en diplomatie zijn er nog niet.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="Globe" width="1280" height="720" loading="lazy"><figcaption>Globe</figcaption></figure><figure><img src="img/shot-map.webp" alt="Wereldkaart" width="1280" height="720" loading="lazy"><figcaption>Wereldkaart</figcaption></figure><figure><img src="img/shot-relief.webp" alt="Reliëf" width="1280" height="720" loading="lazy"><figcaption>Reliëf</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-nl">
+    <h2 class="eyebrow" id="f-nl">Nu in de testversie</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>De echte aarde in cellen</h3><p>De hele wereld bestaat uit zeshoeken: landen, regio's en kustlijnen volgen echte kaarten.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>6 detailniveaus</h3><p>Van de normale kaart met cellen van 60 km en 46 duizend landcellen tot de ultieme: 3 miljoen landcellen van elk zo'n 7 km breed.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>Globe ↔ kaart</h3><p>Met één tik rolt de globe soepel uit tot een platte wereldkaart en weer terug.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>Je eigen provincies</h3><p>Voeg meerdere provincies tegelijk samen, snijd een nieuwe uit door de omtrek te tekenen, maak elke stap ongedaan.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>Reliëf</h3><p>Elke cel kent haar hoogte en terrein: vlakte, heuvels, bergen of ijs. Daarbovenop berggearceerd reliëf en zeediepten uit echte hoogtegegevens van de aarde.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>Tot 120 FPS</h3><p>Vloeiend op snelle schermen; framerate en resolutie bepaal je zelf.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-nl">
+    <h2 class="eyebrow" id="m0-nl">Gepland</h2>
+    <p class="sub">Weinig mechanieken, elk diepgaand en verbonden met de andere.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Economie</h3><p>Ontwikkeling van provincies: grondwaarde = oppervlakte × ontwikkeling.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>Oorlog</h3><p>Een oorlogskaart en tactische gevechten met figuurtjes, met regels die per tijdperk veranderen.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Diplomatie</h3><p>Onderhandelingen met andere landen.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>Sterke AI</h3><p>Tegenstanders met een eigen karakter die volgens dezelfde regels spelen.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>Multiplayer</h3><p>Twee modi: realtime of beurtgebaseerd.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Tijdperken en scenario's</h3><p>Alle tijdperken uit de geschiedenis en korte scenario's.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Editor en mods</h3><p>Maak je eigen kaarten en mods.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Laatste beproeving</h3><p>Elk tijdperk eindigt met een beproeving die je moet overleven.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-nl">
+    <h2 class="eyebrow" id="m1-nl">Zo installeer je het</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. Downloaden</h3><p>Download <b>Kordon.apk</b> met de knop op deze pagina.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. Openen</h3><p>Open het vanuit de melding of de map Downloads.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. Toestaan</h3><p>Vraagt Android erom, sta dan installeren vanuit deze bron toe (je browser of bestandsbeheerder) en ga terug.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. Installeren</h3><p>Tik op «Installeren». Daarna komen nieuwe versies vanzelf.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">Altijd de nieuwste versie</h2><p>De testversie werkt zichzelf bij: via wifi downloadt en installeert ze de nieuwe versie, via mobiele data toont ze een knop. De versie voor Google Play komt later.</p>
+    </div>
+  </section>
+
+  <p class="contact">Vragen en ideeën: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Lingua" data-nav="" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Versione di prova per Android</p>
@@ -476,7 +539,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Come installare</span></a>
     </div>
     <p class="note">Android 10 o successivo · telefono o tablet a 64 bit (arm64)<br>Niente pubblicità e nessun tracciamento. Questo sito non raccoglie alcun dato.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Un primo sguardo">
@@ -510,7 +573,7 @@ main{max-width:960px}
 
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Język" data-nav="" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Język" data-nav="" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Wersja testowa na Androida</p>
@@ -522,7 +585,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Jak zainstalować</span></a>
     </div>
     <p class="note">Android 10 lub nowszy · 64-bitowy telefon lub tablet (arm64)<br>Bez reklam i bez śledzenia. Ta strona nie zbiera żadnych danych.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Pierwsze spojrzenie">
@@ -556,7 +619,7 @@ main{max-width:960px}
 
   <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Testovací verze pro Android</p>
@@ -568,7 +631,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-cs"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Jak nainstalovat</span></a>
     </div>
     <p class="note">Android 10 nebo novější · 64bitový telefon nebo tablet (arm64)<br>Bez reklam a bez sledování. Tento web nesbírá žádná data.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="První pohled">
@@ -602,7 +665,7 @@ main{max-width:960px}
 
   <p class="contact">Dotazy a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Jazyk" data-nav="" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Testovacia verzia pre Android</p>
@@ -614,7 +677,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-sk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Ako nainštalovať</span></a>
     </div>
     <p class="note">Android 10 alebo novší · 64-bitový telefón alebo tablet (arm64)<br>Bez reklám a bez sledovania. Tento web nezbiera žiadne údaje.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Prvý pohľad">
@@ -648,7 +711,7 @@ main{max-width:960px}
 
   <p class="contact">Otázky a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Sprog" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Sprog" data-nav="" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Testversion til Android</p>
@@ -660,7 +723,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-da"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Sådan installerer du</span></a>
     </div>
     <p class="note">Android 10 eller nyere · 64-bit telefon eller tablet (arm64)<br>Ingen reklamer og ingen sporing. Denne side indsamler ingen data.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Et første kig">
@@ -694,7 +757,7 @@ main{max-width:960px}
 
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Språk" data-nav="" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Testversion för Android</p>
@@ -706,7 +769,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-sv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Så installerar du</span></a>
     </div>
     <p class="note">Android 10 eller senare · 64-bitars telefon eller surfplatta (arm64)<br>Inga annonser och ingen spårning. Webbplatsen samlar inte in några data.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="En första titt">
@@ -740,7 +803,7 @@ main{max-width:960px}
 
   <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Dil" data-nav="" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Dil" data-nav="" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Android test sürümü</p>
@@ -752,7 +815,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-tr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Nasıl kurulur</span></a>
     </div>
     <p class="note">Android 10 veya üstü · 64 bit telefon ya da tablet (arm64)<br>Reklam yok, takip yok. Bu site hiçbir veri toplamaz.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="İlk bakış">
@@ -786,7 +849,99 @@ main{max-width:960px}
 
   <p class="contact">Sorular ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="KORDON: استراتيجية تاريخ العالم" data-app="KORDON" data-langlabel="اللغة" data-nav="" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">نسخة تجريبية لنظام Android</p>
+    <h1>KORDON</h1>
+    <p class="tagline">استراتيجية تاريخ العالم</p>
+    <p class="lead">لعبة استراتيجية كبرى على الأرض الحقيقية المكوّنة من خلايا سداسية. العبوا على كرة أرضية أو على خريطة مسطّحة للعالم، وادمجوا المقاطعات وأعيدوا رسم الحدود كما تشاؤون. وجميع العصور واللعب الفردي والجماعي في الطريق.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>تنزيل APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-ar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>طريقة التثبيت</span></a>
+    </div>
+    <p class="note">نظام Android 10 أو أحدث · هاتف أو جهاز لوحي 64 بت (arm64)<br>بلا إعلانات ولا تتبّع. هذا الموقع لا يجمع أي بيانات.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="kordon">2</b></p>
+  </header>
+
+  <section class="show" aria-label="نظرة أولى">
+    <div class="showtext"><h2 class="display">نظرة أولى</h2><p>هذه نسخة مبكرة: خريطة العالم وتحرير المقاطعات. لا يوجد بعد اقتصاد ولا حرب ولا دبلوماسية.</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="الكرة الأرضية" width="1280" height="720" loading="lazy"><figcaption>الكرة الأرضية</figcaption></figure><figure><img src="img/shot-map.webp" alt="خريطة العالم" width="1280" height="720" loading="lazy"><figcaption>خريطة العالم</figcaption></figure><figure><img src="img/shot-relief.webp" alt="التضاريس" width="1280" height="720" loading="lazy"><figcaption>التضاريس</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ar">
+    <h2 class="eyebrow" id="f-ar">في النسخة التجريبية الآن</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>الأرض الحقيقية في خلايا</h3><p>العالم كله مكوَّن من سداسيات: الدول والمناطق والسواحل تتبع الخرائط الحقيقية.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>ستة مستويات من التفاصيل</h3><p>من الخريطة العادية بخلايا عرضها 60 كم و46 ألف خلية برية، وصولًا إلى المستوى الأقصى: 3 ملايين خلية برية، عرض كل منها نحو 7 كم.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>الكرة الأرضية ↔ الخريطة</h3><p>بنقرة واحدة تنبسط الكرة الأرضية بسلاسة إلى خريطة مسطّحة للعالم، ثم تعود كما كانت.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>مقاطعاتكم الخاصة</h3><p>ادمجوا عدة مقاطعات دفعة واحدة، واقتطعوا مقاطعة جديدة برسم حدودها، وتراجعوا عن أي خطوة.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>التضاريس</h3><p>تعرف كل خلية ارتفاعها ونوع أرضها: سهول أو تلال أو جبال أو جليد. وفوق ذلك، تظليل الجبال وأعماق البحار من بيانات الارتفاع الحقيقية للأرض.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>حتى 120 إطارًا في الثانية</h3><p>سلاسة على الشاشات السريعة؛ ومعدل الإطارات والدقة باختياركم.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ar">
+    <h2 class="eyebrow" id="m0-ar">قيد التخطيط</h2>
+    <p class="sub">آليات قليلة، كل منها عميقة ومرتبطة بالأخرى.</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>الاقتصاد</h3><p>تطوير المقاطعات: قيمة الأرض = المساحة × التطوير.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>الحرب</h3><p>خريطة حرب ومعارك تكتيكية بالمجسّمات تتغيّر قواعدها مع كل عصر.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>الدبلوماسية</h3><p>مفاوضات مع الدول الأخرى.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>ذكاء اصطناعي قوي</h3><p>خصوم بشخصيات مختلفة يلعبون وفق القواعد نفسها.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>اللعب الجماعي</h3><p>نمطان: الوقت الحقيقي أو اللعب بالأدوار.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>العصور والسيناريوهات</h3><p>جميع عصور التاريخ وسيناريوهات قصيرة.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>المحرّر والتعديلات</h3><p>اصنعوا خرائطكم وتعديلاتكم الخاصة.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>الاختبار الأخير</h3><p>ينتهي كل عصر باختبار عليكم النجاة منه.</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-ar">
+    <h2 class="eyebrow" id="m1-ar">طريقة التثبيت</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. التنزيل</h3><p>نزّلوا <b>Kordon.apk</b> بالزر الموجود في هذه الصفحة.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. الفتح</h3><p>افتحوه من الإشعار أو من مجلد التنزيلات.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. السماح</h3><p>إذا طلب Android ذلك، فاسمحوا بالتثبيت من هذا المصدر (المتصفح أو مدير الملفات) ثم عودوا.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. التثبيت</h3><p>انقروا على «تثبيت». بعد ذلك ستصل الإصدارات الجديدة تلقائيًا.</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">أحدث نسخة دائمًا</h2><p>تحدّث النسخة التجريبية نفسها بنفسها: عبر شبكة Wi‑Fi تنزّل النسخة الجديدة وتثبّتها، وعبر بيانات الجوال تعرض زرًا. أما نسخة Google Play فستأتي لاحقًا.</p>
+    </div>
+  </section>
+
+  <p class="contact">أسئلة وأفكار: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="भाषा" data-nav="" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android टेस्ट बिल्ड</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">षट्कोणीय सेलों से बनी असली पृथ्वी पर एक बड़ी रणनीति। ग्लोब पर या दुनिया के सपाट नक्शे पर खेलें, प्रांतों को मिलाएँ और सीमाएँ जैसे चाहें वैसे फिर से खींचें। सभी युग, सिंगल-प्लेयर और मल्टीप्लेयर जल्द आ रहे हैं।</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>APK डाउनलोड करें</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-hi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>कैसे इंस्टॉल करें</span></a>
+    </div>
+    <p class="note">Android 10 या नया · 64-बिट फ़ोन या टैबलेट (arm64)<br>न विज्ञापन, न ट्रैकिंग। यह साइट कोई डेटा इकट्ठा नहीं करती।</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="kordon">2</b></p>
+  </header>
+
+  <section class="show" aria-label="पहली झलक">
+    <div class="showtext"><h2 class="display">पहली झलक</h2><p>यह एक शुरुआती बिल्ड है: दुनिया का नक्शा और प्रांतों का संपादन। अभी अर्थव्यवस्था, युद्ध या कूटनीति नहीं है।</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="ग्लोब" width="1280" height="720" loading="lazy"><figcaption>ग्लोब</figcaption></figure><figure><img src="img/shot-map.webp" alt="दुनिया का नक्शा" width="1280" height="720" loading="lazy"><figcaption>दुनिया का नक्शा</figcaption></figure><figure><img src="img/shot-relief.webp" alt="भू-आकृति" width="1280" height="720" loading="lazy"><figcaption>भू-आकृति</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-hi">
+    <h2 class="eyebrow" id="f-hi">टेस्ट बिल्ड में अभी</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>सेलों में असली पृथ्वी</h3><p>पूरी दुनिया षट्कोणों से बनी है: देश, क्षेत्र और समुद्र तट असली नक्शों के अनुसार हैं।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>विस्तार के 6 लेवल</h3><p>60 किमी सेलों और 46 हज़ार ज़मीनी सेलों वाले सामान्य नक्शे से लेकर सबसे बारीक नक्शे तक: 3 मिलियन ज़मीनी सेल, हर एक लगभग 7 किमी चौड़ा।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>ग्लोब ↔ नक्शा</h3><p>एक टैप में ग्लोब आसानी से खुलकर दुनिया का सपाट नक्शा बन जाता है, और वापस भी।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>आपके अपने प्रांत</h3><p>एक साथ कई प्रांतों को मिलाएँ, रूपरेखा खींचकर नया प्रांत काटें, कोई भी कदम वापस लें।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>भू-आकृति</h3><p>हर सेल अपनी ऊँचाई और ज़मीन का प्रकार जानता है: मैदान, पहाड़ियाँ, पहाड़ या बर्फ़। ऊपर से, पृथ्वी की ऊँचाई के असली डेटा से बनी पहाड़ों की छाया और समुद्र की गहराई।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>120 FPS तक</h3><p>तेज़ स्क्रीन पर स्मूद; फ़्रेम रेट और रिज़ॉल्यूशन आप खुद चुनें।</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-hi">
+    <h2 class="eyebrow" id="m0-hi">योजना में</h2>
+    <p class="sub">कम मैकेनिक्स, पर हर एक गहरा और बाकियों से जुड़ा हुआ।</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>अर्थव्यवस्था</h3><p>प्रांतों का विकास: ज़मीन का मूल्य = क्षेत्रफल × विकास।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>युद्ध</h3><p>युद्ध का नक्शा और मूर्तियों वाली टैक्टिकल लड़ाइयाँ, जिनके नियम युग के साथ बदलते हैं।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>कूटनीति</h3><p>दूसरे देशों के साथ बातचीत।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>मज़बूत AI</h3><p>अपने-अपने स्वभाव वाले विरोधी, जो उन्हीं नियमों से खेलते हैं।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>मल्टीप्लेयर</h3><p>दो मोड: रियल टाइम या बारी-बारी से।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>युग और परिदृश्य</h3><p>इतिहास के सभी युग और छोटे परिदृश्य।</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>एडिटर और मॉड</h3><p>अपने खुद के नक्शे और मॉड बनाएँ।</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>अंतिम परीक्षा</h3><p>हर युग एक ऐसी परीक्षा से खत्म होता है, जिससे आपको बचकर निकलना होता है।</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-hi">
+    <h2 class="eyebrow" id="m1-hi">कैसे इंस्टॉल करें</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. डाउनलोड करें</h3><p>इस पेज के बटन से <b>Kordon.apk</b> डाउनलोड करें।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. खोलें</h3><p>इसे नोटिफ़िकेशन से या Downloads फ़ोल्डर से खोलें।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. अनुमति दें</h3><p>अगर Android पूछे, तो इस स्रोत (आपका ब्राउज़र या फ़ाइल मैनेजर) से इंस्टॉल करने की अनुमति दें और वापस जाएँ।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. इंस्टॉल करें</h3><p>«इंस्टॉल करें» पर टैप करें। इसके बाद नए वर्ज़न अपने आप आएँगे।</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">हमेशा सबसे नया बिल्ड</h2><p>टेस्ट बिल्ड अपने आप अपडेट होता है: Wi‑Fi पर यह नया बिल्ड डाउनलोड करके इंस्टॉल कर देता है, मोबाइल डेटा पर एक बटन दिखाता है। Google Play वर्ज़न बाद में आएगा।</p>
+    </div>
+  </section>
+
+  <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Bahasa" data-nav="" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Versi uji Android</p>
@@ -798,7 +953,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-id"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cara memasang</span></a>
     </div>
     <p class="note">Android 10 atau lebih baru · ponsel atau tablet 64-bit (arm64)<br>Tanpa iklan dan tanpa pelacakan. Situs ini tidak mengumpulkan data apa pun.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Lihat sekilas">
@@ -832,7 +987,7 @@ main{max-width:960px}
 
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Ngôn ngữ" data-nav="" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Ngôn ngữ" data-nav="" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Bản thử nghiệm cho Android</p>
@@ -844,7 +999,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-vi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cách cài đặt</span></a>
     </div>
     <p class="note">Android 10 trở lên · điện thoại hoặc máy tính bảng 64-bit (arm64)<br>Không quảng cáo, không theo dõi. Trang web này không thu thập dữ liệu nào.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Cái nhìn đầu tiên">
@@ -878,7 +1033,7 @@ main{max-width:960px}
 
   <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="ภาษา" data-nav="" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="ภาษา" data-nav="" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">เวอร์ชันทดสอบสำหรับ Android</p>
@@ -890,7 +1045,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-th"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>วิธีติดตั้ง</span></a>
     </div>
     <p class="note">Android 10 ขึ้นไป · โทรศัพท์หรือแท็บเล็ต 64 บิต (arm64)<br>ไม่มีโฆษณาและไม่มีการติดตาม เว็บไซต์นี้ไม่เก็บข้อมูลใด ๆ</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="ชมตัวอย่างแรก">
@@ -924,7 +1079,53 @@ main{max-width:960px}
 
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="语言" data-nav="" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android 测试版</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">一款在由六边形格子构成的真实地球上进行的大战略游戏。在地球仪或平面世界地图上游玩，合并省份，随心所欲地重划边界。所有时代、单人和多人模式都在路上。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下载 APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-zh"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>如何安装</span></a>
+    </div>
+    <p class="note">Android 10 或更高版本 · 64 位手机或平板（arm64）<br>无广告、无跟踪。本网站不收集任何数据。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="kordon">2</b></p>
+  </header>
+
+  <section class="show" aria-label="抢先看">
+    <div class="showtext"><h2 class="display">抢先看</h2><p>这是一个早期版本：世界地图和省份编辑。目前还没有经济、战争或外交。</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="地球仪" width="1280" height="720" loading="lazy"><figcaption>地球仪</figcaption></figure><figure><img src="img/shot-map.webp" alt="世界地图" width="1280" height="720" loading="lazy"><figcaption>世界地图</figcaption></figure><figure><img src="img/shot-relief.webp" alt="地形" width="1280" height="720" loading="lazy"><figcaption>地形</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh">
+    <h2 class="eyebrow" id="f-zh">测试版现有内容</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>由格子构成的真实地球</h3><p>整个世界由六边形组成：国家、地区和海岸线都依照真实地图。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>6 个细节层级</h3><p>从 60 公里格子、共 4.6 万个陆地格子的普通地图，到终极层级：300 万个陆地格子，每个约 7 公里宽。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>地球仪 ↔ 地图</h3><p>轻点一下，地球仪就会平滑展开成平面世界地图，还能再变回来。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>你自己的省份</h3><p>一次合并多个省份，画出轮廓切出新省份，任何一步都可以撤销。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>地形</h3><p>每个格子都知道自己的海拔和地形：平原、丘陵、山地或冰原。此外还有基于真实地球高程数据的山体阴影和海洋深度。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>最高 120 FPS</h3><p>在高刷新率屏幕上流畅运行；帧率和分辨率由你决定。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-zh">
+    <h2 class="eyebrow" id="m0-zh">计划中</h2>
+    <p class="sub">机制不多，但每一个都有深度，并且相互关联。</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>经济</h3><p>省份发展：土地价值 = 面积 × 发展度。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>战争</h3><p>战争地图，以及规则随时代变化的战术棋子战斗。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>外交</h3><p>与其他国家谈判。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>强大的 AI</h3><p>各具个性的对手，遵守与你相同的规则。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>多人游戏</h3><p>两种模式：即时制或回合制。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>时代与剧本</h3><p>历史上的所有时代，以及短篇剧本。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>编辑器与模组</h3><p>制作你自己的地图和模组。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>最终考验</h3><p>每个时代都以一场你必须挺过的考验收尾。</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-zh">
+    <h2 class="eyebrow" id="m1-zh">如何安装</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. 下载</h3><p>用本页的按钮下载 <b>Kordon.apk</b>。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. 打开</h3><p>从通知或「下载」文件夹中打开它。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. 允许</h3><p>如果 Android 询问，请允许从该来源（你的浏览器或文件管理器）安装，然后返回。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. 安装</h3><p>点按「安装」。之后新版本会自动到来。</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">始终是最新版本</h2><p>测试版会自动更新：连接 Wi‑Fi 时会自动下载并安装新版本，使用移动数据时会显示一个按钮。Google Play 版本稍后推出。</p>
+    </div>
+  </section>
+
+  <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Android 테스트 버전</p>
@@ -936,7 +1137,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ko"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>설치 방법</span></a>
     </div>
     <p class="note">Android 10 이상 · 64비트 휴대폰 또는 태블릿(arm64)<br>광고도 추적도 없어요. 이 사이트는 어떤 데이터도 수집하지 않아요.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="첫 공개">
@@ -970,7 +1171,7 @@ main{max-width:960px}
 
   <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="言語" data-nav="" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Androidテスト版</p>
@@ -982,7 +1183,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ja"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>インストール方法</span></a>
     </div>
     <p class="note">Android 10以降 · 64ビットのスマートフォンまたはタブレット（arm64）<br>広告もトラッキングもありません。このサイトはデータを一切収集しません。</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="ゲーム画面">
@@ -1016,7 +1217,7 @@ main{max-width:960px}
 
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Тіл" data-nav="" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Android-ға арналған тест нұсқасы</p>
@@ -1028,7 +1229,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-kk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Қалай орнатуға болады</span></a>
     </div>
     <p class="note">Android 10 немесе одан жаңа · 64 биттік телефон не планшет (arm64)<br>Жарнамасыз әрі бақылаусыз. Сайт ешқандай дерек жинамайды.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Алғашқы танысу">
@@ -1062,7 +1263,7 @@ main{max-width:960px}
 
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="Язык" data-nav="" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
     <p class="pill">Тестовая версия для Android</p>
@@ -1074,7 +1275,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ru"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Как установить</span></a>
     </div>
     <p class="note">Android 10 или новее · 64-битный телефон или планшет (arm64)<br>Без рекламы и без слежки. Сайт не собирает никаких данных.</p>
-    <p class="note count" hidden><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kordon">0</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kordon">2</b></p>
   </header>
 
   <section class="show" aria-label="Первый взгляд">
@@ -1114,7 +1315,8 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kordon-lang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kordon-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1134,7 +1336,8 @@ main{max-width:960px}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
@@ -1172,7 +1375,7 @@ main{max-width:960px}
     .then(function (lists) {
       var n = {}; for (var k in P) n[k] = 0;
       lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k][0]) === 0 && a.name.slice(a.name.length - P[k][1].length) === P[k][1]) n[k] += a.download_count; }); }); });
-      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { var lc = document.documentElement.lang; e.textContent = v.toLocaleString(lc === "ar" ? "ar-u-nu-latn" : lc); var w = e.closest(".count"); if (w) w.hidden = false; } });
     }).catch(function () {});
 })();
 </script>

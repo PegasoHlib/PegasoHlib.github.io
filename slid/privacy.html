@@ -36,6 +36,7 @@ addEventListener("DOMContentLoaded", function () {
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/slid/privacy.html?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/slid/privacy.html?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/slid/privacy.html?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/slid/privacy.html?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/slid/privacy.html?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/slid/privacy.html?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/slid/privacy.html?lang=cs">
@@ -43,9 +44,12 @@ addEventListener("DOMContentLoaded", function () {
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/slid/privacy.html?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/slid/privacy.html?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/slid/privacy.html?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/slid/privacy.html?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/slid/privacy.html?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/slid/privacy.html?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/slid/privacy.html?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/slid/privacy.html?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/slid/privacy.html?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/slid/privacy.html?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/slid/privacy.html?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/slid/privacy.html?lang=kk">
@@ -66,6 +70,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -92,12 +109,12 @@ main{max-width:760px}
 .sec{scroll-margin-top:76px}
 .sec p{margin:8px 0 0;color:var(--ink2)}
 .sec p:first-of-type{margin-top:0}
-.sec ul{margin:8px 0 0;padding-left:22px;color:var(--ink2)}
+.sec ul{margin:8px 0 0;padding-inline-start:22px;color:var(--ink2)}
 .sec li{margin:4px 0}
 .sec li::marker{color:var(--accent)}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
+th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
 thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
@@ -116,6 +133,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   .toc .eyebrow{padding:0 16px}
   .toc .chips{flex-wrap:nowrap;overflow-x:auto;padding:0 16px 4px;scroll-snap-type:x proximity;scrollbar-width:none;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
+  [dir=rtl] .toc .chips{-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
   .toc .chips::-webkit-scrollbar{display:none}
   .toc .chips a{scroll-snap-align:start;flex:none}
   thead{display:none}
@@ -134,12 +152,12 @@ td:last-child{font-weight:600;color:var(--ink)}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Slid</span></a>
   <nav class="links"><a data-nav="0" href="index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Privacy policy · Slid" data-app="Slid" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Privacy policy · Slid" data-app="Slid" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -217,7 +235,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Політика конфіденційності · Слід" data-app="Слід" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Політика конфіденційності · Слід" data-app="Слід" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Слід</p>
@@ -295,7 +313,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Política de privacidad · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Política de privacidad · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -373,7 +391,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Política de privacidade · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Política de privacidade · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -451,7 +469,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Política de privacidade · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Política de privacidade · Slid" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -529,7 +547,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Politique de confidentialité · Slid" data-app="Slid" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Politique de confidentialité · Slid" data-app="Slid" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -607,7 +625,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Datenschutzerklärung · Slid" data-app="Slid" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Datenschutzerklärung · Slid" data-app="Slid" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -685,7 +703,85 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Informativa sulla privacy · Slid" data-app="Slid" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Privacybeleid · Slid" data-app="Slid" data-langlabel="Taal" data-nav="Start|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>Privacybeleid</h1>
+    <p class="date">Van kracht vanaf 22 oktober 2026</p>
+    <p class="lead">Dit beleid geldt voor de app “Slid” (pakket dev.slid). Slid heeft geen eigen servers, geen accounts, geen advertenties en geen analyse. Je tijdlijn staat op je telefoon, en de ontwikkelaar ontvangt of ziet die nooit.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="nl-glance">
+    <h2 id="nl-glance" class="eyebrow">In één oogopslag</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>Blijft op je telefoon</b><br>De tijdlijn, plekken en de plekken van foto’s worden alleen op het apparaat opgeslagen.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>Er wordt niets over jou verzonden</b><br>Geen accounts, geen tracking, geen advertenties, geen analyse.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>Jij beslist</b><br>Elke toestemming en elke onlinefunctie is optioneel en kan worden uitgezet.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>Eenvoudig te verwijderen</b><br>Verwijder elk item, of verwijder de app en alles is weg.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>Jouw back-up, jouw Drive</b><br>Alleen de verborgen map van Slid in je eigen Google Drive.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Op deze pagina">
+    <p class="eyebrow">Op deze pagina</p>
+    <div class="chips"><a href="#nl-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Welke gegevens de app bewaart</a><a href="#nl-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>Wat er via internet gaat</a><a href="#nl-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Back-up naar Google Drive (optioneel)</a><a href="#nl-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Horlogegegevens via Health Connect (optioneel)</a><a href="#nl-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>Back-upbestanden en veiligheidskopieën</a><a href="#nl-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Updates</a><a href="#nl-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Gegevens verwijderen</a><a href="#nl-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Kinderen</a><a href="#nl-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Wijzigingen</a><a href="#nl-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Contact</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="nl-table">
+    <h2 id="nl-table">Welke gegevens, waar ze staan, wie ze ziet</h2>
+    <table>
+      <thead><tr><th scope="col">Gegevens</th><th scope="col">Waar ze worden bewaard</th><th scope="col">Wie ze kan zien</th></tr></thead>
+      <tbody><tr><th scope="row">Je tijdlijn: locaties, activiteit en stappen, uit Google geïmporteerde geschiedenis, namen van plekken, weekrapporten, instellingen</th><td data-label="Waar ze worden bewaard">Op je apparaat</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Datums en plekken van je foto’s</th><td data-label="Waar ze worden bewaard">Gelezen uit de bestanden in je galerij; de foto’s zelf worden niet gekopieerd</td><td data-label="Wie ze kan zien">Alleen jij, op het apparaat</td></tr><tr><th scope="row">Horlogegegevens uit Health Connect</th><td data-label="Waar ze worden bewaard">Niet opgeslagen: ter plekke gelezen om ze te tonen</td><td data-label="Wie ze kan zien">Alleen jij, op het apparaat</td></tr><tr><th scope="row">Het getoonde kaartgebied; coördinaten van plekken waar je stilstond en routes van ritten met een voertuig (optioneel)</th><td data-label="Waar ze worden bewaard">Verzonden naar kaart-, adres- en vervoersdiensten, zonder iets waarmee je kunt worden geïdentificeerd</td><td data-label="Wie ze kan zien">OpenFreeMap, Esri, de adresdienst van Android, Nominatim, Overpass</td></tr><tr><th scope="row">Een kopie van je tijdlijn (optioneel)</th><td data-label="Waar ze worden bewaard">De verborgen map van de app in je eigen Google Drive</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Back-upbestanden</th><td data-label="Waar ze worden bewaard">Waar je ze opslaat</td><td data-label="Wie ze kan zien">Iedereen aan wie je het bestand geeft</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="nl-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Welke gegevens de app bewaart</h2></div>
+    <ul><li><b>Locatie.</b> Zolang je het vastleggen aan laat staan, legt de app de locatie van de telefoon vast (ook op de achtergrond) om te laten zien waar je bent geweest en hoe je hebt gereisd.</li><li><b>Fysieke activiteit.</b> Als je dat toestaat, vertelt Android de app of je loopt, fietst of in een voertuig zit. Dit wordt alleen gebruikt om te bepalen hoe je hebt gereisd. Zolang het vastleggen aan staat, telt de app ook per uur de stappen van de telefoon zelf; die blijven op het apparaat.</li><li><b>Foto’s en video’s.</b> Als je dat toestaat, leest de app de datum en de plek die in de bestanden van je galerij zijn opgeslagen, om foto’s op de kaart te tonen. De foto’s worden niet gekopieerd en nergens naartoe verzonden. De app schrijft niets in je fotobestanden; ze kan alleen een plek verwijderen die een oudere versie heeft geschreven, nadat Android je om toestemming heeft gevraagd.</li><li><b>Geïmporteerde bestanden.</b> Bestanden van Google Tijdlijn of Google Takeout die je kiest, worden op de telefoon gelezen.</li><li><b>Plekken en instellingen:</b> de namen die je aan plekken geeft, taal, thema.</li><li><b>Weekrapporten</b> (optioneel): de stemming en de woorden die je over een week schrijft, en je verjaardag als je die opgeeft, om te laten zien hoeveel van je leven de tijdlijn bevat.</li><li><b>Stappendoel</b> (optioneel): je lengte en gewicht, als je die opgeeft, om een dagelijks stappendoel en de lengte van een stap te berekenen. Ze blijven op het apparaat.</li></ul><p>Alles wordt op je apparaat opgeslagen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>Wat er via internet gaat</h2></div>
+    <ul><li><b>Kaarten.</b> Kaarttegels worden geladen van OpenFreeMap (gegevens van OpenStreetMap), en satellietbeelden van Esri. Deze servers zien welk gebied wordt getoond, niet wie je bent.</li><li><b>Adressen en namen van plekken</b> (optioneel). De coördinaten van plekken waar je stilstond, worden naar de adresdienst van Android en naar Nominatim (OpenStreetMap) gestuurd om een adres en een naam te krijgen. Er wordt niets meegestuurd waarmee je kunt worden geïdentificeerd. Dit kan worden uitgezet in de instellingen.</li><li><b>Openbaar vervoer</b> (optioneel). Om een bus, tram, trein of metro te herkennen, wordt de route van een voltooide rit met een voertuig naar de Overpass-dienst van OpenStreetMap gestuurd, die antwoordt met de sporen en haltes langs die route. Er wordt niets meegestuurd waarmee je kunt worden geïdentificeerd. Dit kan worden uitgezet in de instellingen.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Back-up naar Google Drive (optioneel)</h2></div>
+    <p>Als je Google Drive koppelt, krijgt de app alleen toegang tot haar eigen verborgen map in je Drive (de toestemming drive.appdata) en kan ze geen van je andere bestanden zien. Daar wordt een kopie van je tijdlijn geschreven, één per apparaat, zodat die op een nieuwe telefoon kan worden hersteld of op een tablet kan worden getoond. Google Drive kan oudere versies van die kopie een tijdje bewaren, en de app kan die herstellen. De app leest ook je e-mailadres, alleen om te laten zien welk account is gekoppeld. Deze gegevens gaan alleen tussen je apparaat en Google; de ontwikkelaar heeft er geen toegang toe. Je kunt Drive ontkoppelen in de instellingen.</p><p>Het gebruik door de app van informatie die is ontvangen van Google API’s voldoet aan de <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, inclusief de vereisten voor beperkt gebruik (Limited Use).</p>
+    
+  </section>
+  <section class="card sec" id="nl-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Horlogegegevens via Health Connect (optioneel)</h2></div>
+    <p>Als je dat toestaat, leest de app stappen, hartslag, slaap en trainingen (met hun routes) uit Health Connect, waar ze zijn geschreven door horloge-apps zoals Mi Fitness. De app leest deze gegevens alleen en schrijft nooit naar Health Connect. De gegevens worden alleen op de telefoon gelezen om ze te tonen op het tabblad Gezondheid en op de bijbehorende dag van je tijdlijn; de app slaat ze niet op in haar database, neemt ze niet mee in back-ups en verstuurt ze nergens naartoe. Je kunt de toestemmingen op elk moment intrekken in de instellingen van Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="nl-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>Back-upbestanden en veiligheidskopieën</h2></div>
+    <p>Een back-upbestand wordt alleen gemaakt als je er zelf een opslaat, op de plek die je kiest. Voordat een back-up je tijdlijn vervangt, bewaart de app de vorige tijdlijn op het apparaat (de laatste drie), zodat een verkeerd herstel ongedaan kan worden gemaakt; deze kopieën verlaten de telefoon nooit.</p>
+    
+  </section>
+  <section class="card sec" id="nl-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Updates</h2></div>
+    <p>De versie van Slid die via de eigen website wordt verspreid, controleert om de paar uur op pegasohlib.github.io of er een nieuwe versie is, en downloadt die van GitHub als je op Bijwerken tikt. Zoals bij elke website ziet GitHub het IP-adres van je apparaat; verder wordt er niets verzonden, en geen gegevens uit de app.</p><p>Je kunt automatische controles uitzetten in Instellingen.</p><p>GitHub telt ook hoe vaak elk bestand is gedownload. Dat is alleen een getal, zonder iets over wie het heeft gedownload; de website toont het als een geschat aantal downloads.</p>
+    
+  </section>
+  <section class="card sec" id="nl-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Gegevens verwijderen</h2></div>
+    <p>Elk item kan in de tijdlijn worden verwijderd. Verwijder de app en alle gegevens op het apparaat zijn weg. De kopie op Google Drive kan in de app worden verwijderd, of onder Apps beheren in de instellingen van Google Drive.</p>
+    
+  </section>
+  <section class="card sec" id="nl-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Kinderen</h2></div>
+    <p>De app verzamelt over niemand gegevens, ook niet over kinderen: alles blijft op het apparaat van de eigenaar.</p>
+    
+  </section>
+  <section class="card sec" id="nl-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Wijzigingen</h2></div>
+    <p>Als dit beleid verandert, verschijnt de nieuwe versie op deze pagina met een nieuwe datum.</p>
+    
+  </section>
+  <section class="card sec" id="nl-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Contact</h2></div>
+    <p>Vragen over privacy: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Informativa sulla privacy · Slid" data-app="Slid" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -763,7 +859,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Polityka prywatności · Slid" data-app="Slid" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Polityka prywatności · Slid" data-app="Slid" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -841,7 +937,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Zásady ochrany soukromí · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Zásady ochrany soukromí · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -919,7 +1015,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Zásady ochrany súkromia · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Zásady ochrany súkromia · Slid" data-app="Slid" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -997,7 +1093,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Privatlivspolitik · Slid" data-app="Slid" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Privatlivspolitik · Slid" data-app="Slid" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1075,7 +1171,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Integritetspolicy · Slid" data-app="Slid" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Integritetspolicy · Slid" data-app="Slid" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1153,7 +1249,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Gizlilik politikası · Slid" data-app="Slid" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Gizlilik politikası · Slid" data-app="Slid" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1231,7 +1327,163 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Kebijakan privasi · Slid" data-app="Slid" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="سياسة الخصوصية · Slid" data-app="Slid" data-langlabel="اللغة" data-nav="الرئيسية|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>سياسة الخصوصية</h1>
+    <p class="date">سارية اعتبارًا من 22 أكتوبر 2026</p>
+    <p class="lead">تنطبق هذه السياسة على تطبيق «Slid» (الحزمة dev.slid). ليس لدى Slid خوادم خاصة به، ولا حسابات، ولا إعلانات، ولا أدوات تحليل. يبقى خطك الزمني على هاتفك، ولا يتلقاه المطوّر ولا يراه أبدًا.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="ar-glance">
+    <h2 id="ar-glance" class="eyebrow">نظرة سريعة</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>يبقى على هاتفك</b><br>يُخزَّن الخط الزمني والأماكن وأماكن الصور على الجهاز فقط.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>لا يُرسل أي شيء عنك</b><br>لا حسابات، ولا تتبّع، ولا إعلانات، ولا أدوات تحليل.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>أنت من يقرر</b><br>كل إذن وكل ميزة عبر الإنترنت اختيارية ويمكن إيقافها.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>حذف سهل</b><br>احذف أي إدخال، أو ألغِ تثبيت التطبيق فيزول كل شيء.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>نسختك الاحتياطية، وDrive الخاص بك</b><br>فقط مجلد Slid المخفي في Google Drive الخاص بك.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="في هذه الصفحة">
+    <p class="eyebrow">في هذه الصفحة</p>
+    <div class="chips"><a href="#ar-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>ما البيانات التي يحتفظ بها التطبيق</a><a href="#ar-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>ما الذي يمرّ عبر الإنترنت</a><a href="#ar-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>النسخ الاحتياطي إلى Google Drive (اختياري)</a><a href="#ar-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>بيانات الساعة عبر Health Connect (اختياري)</a><a href="#ar-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>ملفات النسخ الاحتياطي ونسخ الأمان</a><a href="#ar-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>التحديثات</a><a href="#ar-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>حذف البيانات</a><a href="#ar-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>الأطفال</a><a href="#ar-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>التغييرات</a><a href="#ar-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>التواصل</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="ar-table">
+    <h2 id="ar-table">ما البيانات، وأين تُحفظ، ومن يراها</h2>
+    <table>
+      <thead><tr><th scope="col">البيانات</th><th scope="col">مكان الحفظ</th><th scope="col">من يمكنه رؤيتها</th></tr></thead>
+      <tbody><tr><th scope="row">خطك الزمني: المواقع، والنشاط والخطوات، والسجل المستورد من Google، وأسماء الأماكن، والتقارير الأسبوعية، والإعدادات</th><td data-label="مكان الحفظ">على جهازك</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">تواريخ صورك وأماكنها</th><td data-label="مكان الحفظ">تُقرأ من ملفات المعرض؛ ولا تُنسخ الصور نفسها</td><td data-label="من يمكنه رؤيتها">أنت فقط، على الجهاز</td></tr><tr><th scope="row">بيانات الساعة من Health Connect</th><td data-label="مكان الحفظ">لا تُخزَّن: تُقرأ لحظيًا لعرضها</td><td data-label="من يمكنه رؤيتها">أنت فقط، على الجهاز</td></tr><tr><th scope="row">منطقة الخريطة المعروضة؛ وإحداثيات الأماكن التي توقفت فيها ومسارات الرحلات بالمركبات (اختياري)</th><td data-label="مكان الحفظ">تُرسل إلى خدمات الخرائط والعناوين والنقل، دون أي شيء يحدد هويتك</td><td data-label="من يمكنه رؤيتها">خدمات OpenFreeMap وEsri وخدمة العناوين في Android وNominatim وOverpass</td></tr><tr><th scope="row">نسخة من خطك الزمني (اختيارية)</th><td data-label="مكان الحفظ">المجلد المخفي للتطبيق في Google Drive الخاص بك</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">ملفات النسخ الاحتياطي</th><td data-label="مكان الحفظ">حيث تحفظها</td><td data-label="من يمكنه رؤيتها">أي شخص تعطيه الملف</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="ar-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>ما البيانات التي يحتفظ بها التطبيق</h2></div>
+    <ul><li><b>الموقع.</b> ما دمت تُبقي التسجيل مفعّلًا، يسجّل التطبيق موقع الهاتف (في الخلفية أيضًا) ليُظهر أين كنت وكيف تنقّلت.</li><li><b>النشاط البدني.</b> إذا سمحت بذلك، يُخبر Android التطبيق ما إذا كنت تمشي أو تركب دراجة أو في مركبة. ولا يُستخدم ذلك إلا لمعرفة طريقة تنقّلك. وأثناء تفعيل التسجيل، يحصي التطبيق أيضًا الخطوات التي يعدّها الهاتف نفسه ساعةً بساعة؛ وهي تبقى على الجهاز.</li><li><b>الصور ومقاطع الفيديو.</b> إذا سمحت بذلك، يقرأ التطبيق التاريخ والمكان المحفوظين في ملفات معرضك لعرض الصور على الخريطة. ولا تُنسخ الصور ولا تُرسل إلى أي مكان. ولا يكتب التطبيق أي شيء في ملفات صورك؛ بل يمكنه فقط إزالة مكان كتبه إصدار أقدم، بعد أن يطلب Android موافقتك.</li><li><b>الملفات المستوردة.</b> تُقرأ ملفات المخطط الزمني من Google أو Google Takeout التي تختارها على الهاتف.</li><li><b>الأماكن والإعدادات:</b> الأسماء التي تعطيها للأماكن، واللغة، والسمة.</li><li><b>التقارير الأسبوعية</b> (اختيارية): المزاج والكلمات التي تكتبها عن أسبوع ما، وتاريخ ميلادك إن قدّمته، لإظهار مقدار ما يحمله الخط الزمني من حياتك.</li><li><b>هدف الخطوات</b> (اختياري): طولك ووزنك، إن قدّمتهما، لحساب هدف يومي للخطوات وطول الخطوة. ويبقيان على الجهاز.</li></ul><p>يُخزَّن كل ذلك على جهازك.</p>
+    
+  </section>
+  <section class="card sec" id="ar-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>ما الذي يمرّ عبر الإنترنت</h2></div>
+    <ul><li><b>الخرائط.</b> تُحمَّل مربعات الخريطة من OpenFreeMap (بيانات OpenStreetMap)، وصور الأقمار الصناعية من Esri. ترى هذه الخوادم المنطقة المعروضة، لا هويتك.</li><li><b>العناوين وأسماء الأماكن</b> (اختياري). تُرسل إحداثيات الأماكن التي توقفت فيها إلى خدمة العناوين في Android وإلى Nominatim (OpenStreetMap) للحصول على عنوان واسم. ولا يُرسل معها أي شيء يحدد هويتك. ويمكن إيقاف ذلك من الإعدادات.</li><li><b>النقل العام</b> (اختياري). للتمييز بين الحافلة والترام والقطار والمترو، يُرسل مسار رحلة منتهية بمركبة إلى خدمة Overpass التابعة لـ OpenStreetMap، فتردّ بالسكك والمحطات الواقعة على امتداده. ولا يُرسل معه أي شيء يحدد هويتك. ويمكن إيقاف ذلك من الإعدادات.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>النسخ الاحتياطي إلى Google Drive (اختياري)</h2></div>
+    <p>إذا ربطت Google Drive، لا يحصل التطبيق إلا على الوصول إلى مجلده المخفي الخاص في Drive الخاص بك (إذن drive.appdata)، ولا يمكنه رؤية أي من ملفاتك الأخرى. تُكتب هناك نسخة من خطك الزمني، نسخة لكل جهاز، كي يمكن استعادتها على هاتف جديد أو عرضها على جهاز لوحي. وقد يحتفظ Google Drive بإصدارات أقدم من تلك النسخة لبعض الوقت، ويمكن للتطبيق استعادتها. ويقرأ التطبيق أيضًا عنوان بريدك الإلكتروني، فقط لإظهار الحساب المتصل. تنتقل هذه البيانات بين جهازك وGoogle فقط؛ ولا يملك المطوّر أي وصول إليها. ويمكنك فصل Drive من الإعدادات.</p><p>يلتزم استخدام التطبيق للمعلومات التي يتلقاها من واجهات Google البرمجية (Google APIs) بـ <a href="https://developers.google.com/terms/api-services-user-data-policy">سياسة بيانات المستخدم لخدمات Google API</a>، بما في ذلك متطلبات الاستخدام المحدود.</p>
+    
+  </section>
+  <section class="card sec" id="ar-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>بيانات الساعة عبر Health Connect (اختياري)</h2></div>
+    <p>إذا سمحت بذلك، يقرأ التطبيق الخطوات ونبض القلب والنوم والتمارين (مع مساراتها) من Health Connect، حيث تكتبها تطبيقات الساعات مثل Mi Fitness. ويقرأ التطبيق هذه البيانات فقط ولا يكتب أبدًا في Health Connect. تُقرأ البيانات على الهاتف فقط لعرضها في تبويب «الصحة» وفي اليوم المطابق من خطك الزمني؛ ولا يخزّنها التطبيق في قاعدة بياناته، ولا يضمّنها في النسخ الاحتياطية، ولا يرسلها إلى أي مكان. ويمكنك سحب الأذونات في أي وقت من إعدادات Health Connect.</p>
+    
+  </section>
+  <section class="card sec" id="ar-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>ملفات النسخ الاحتياطي ونسخ الأمان</h2></div>
+    <p>لا يُنشأ ملف النسخ الاحتياطي إلا عندما تحفظه بنفسك، في المكان الذي تختاره. وقبل أن تحلّ نسخة احتياطية محل خطك الزمني، يحتفظ التطبيق بالخط الزمني السابق على الجهاز (آخر ثلاث نسخ)، كي يمكن التراجع عن استعادة خاطئة؛ ولا تغادر هذه النسخ الهاتف أبدًا.</p>
+    
+  </section>
+  <section class="card sec" id="ar-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>التحديثات</h2></div>
+    <p>يتحقق إصدار Slid الموزَّع عبر موقعه من pegasohlib.github.io كل بضع ساعات بحثًا عن إصدار جديد، ويُنزّله من GitHub عندما تنقر على «تحديث». وكما هو الحال مع أي موقع، يرى GitHub عنوان IP لجهازك؛ ولا يُرسل أي شيء آخر، ولا أي بيانات من التطبيق.</p><p>يمكنك إيقاف التحقق التلقائي من الإعدادات.</p><p>يحصي GitHub أيضًا عدد مرات تنزيل كل ملف. وهو مجرد رقم، لا يتضمن أي شيء عمّن قام بالتنزيل؛ ويعرضه الموقع كعدد تقريبي للتنزيلات.</p>
+    
+  </section>
+  <section class="card sec" id="ar-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>حذف البيانات</h2></div>
+    <p>يمكن حذف أي إدخال في الخط الزمني. ألغِ تثبيت التطبيق فتزول كل البيانات من الجهاز. ويمكن حذف النسخة الموجودة في Google Drive من داخل التطبيق، أو من «إدارة التطبيقات» في إعدادات Google Drive.</p>
+    
+  </section>
+  <section class="card sec" id="ar-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>الأطفال</h2></div>
+    <p>لا يجمع التطبيق بيانات عن أي شخص، بمن في ذلك الأطفال: فكل شيء يبقى على جهاز مالكه.</p>
+    
+  </section>
+  <section class="card sec" id="ar-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>التغييرات</h2></div>
+    <p>إذا تغيّرت هذه السياسة، فسيظهر الإصدار الجديد في هذه الصفحة بتاريخ جديد.</p>
+    
+  </section>
+  <section class="card sec" id="ar-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>التواصل</h2></div>
+    <p>للأسئلة المتعلقة بالخصوصية: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="गोपनीयता नीति · Slid" data-app="Slid" data-langlabel="भाषा" data-nav="होम|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>गोपनीयता नीति</h1>
+    <p class="date">22 अक्टूबर 2026 से लागू</p>
+    <p class="lead">यह नीति “Slid” ऐप (पैकेज dev.slid) पर लागू होती है। Slid के अपने कोई सर्वर नहीं हैं, कोई अकाउंट नहीं, कोई विज्ञापन नहीं और कोई एनालिटिक्स नहीं। आपकी टाइमलाइन आपके फ़ोन पर रहती है, और डेवलपर को वह कभी नहीं मिलती, न ही वह उसे कभी देखता है।</p>
+  </header>
+
+  <section class="glance" aria-labelledby="hi-glance">
+    <h2 id="hi-glance" class="eyebrow">एक नज़र में</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>आपके फ़ोन पर ही रहता है</b><br>टाइमलाइन, जगहें और फ़ोटो की जगहें सिर्फ़ डिवाइस पर सहेजी जाती हैं।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>आपके बारे में कुछ नहीं भेजा जाता</b><br>कोई अकाउंट नहीं, कोई ट्रैकिंग नहीं, कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं।</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>फ़ैसला आपका</b><br>हर अनुमति और हर ऑनलाइन सुविधा वैकल्पिक है और बंद की जा सकती है।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>हटाना आसान</b><br>कोई भी एंट्री हटाएँ, या ऐप अनइंस्टॉल करें और सब कुछ हट जाता है।</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>आपका बैकअप, आपकी Drive</b><br>सिर्फ़ आपकी अपनी Google Drive में Slid का छिपा फ़ोल्डर।</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="इस पेज पर">
+    <p class="eyebrow">इस पेज पर</p>
+    <div class="chips"><a href="#hi-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>ऐप में कौन-सा डेटा रहता है</a><a href="#hi-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>इंटरनेट पर क्या जाता है</a><a href="#hi-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive में बैकअप (वैकल्पिक)</a><a href="#hi-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>Health Connect से घड़ी का डेटा (वैकल्पिक)</a><a href="#hi-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>बैकअप फ़ाइलें और सुरक्षा कॉपियाँ</a><a href="#hi-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>अपडेट</a><a href="#hi-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>डेटा हटाना</a><a href="#hi-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>बच्चे</a><a href="#hi-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>बदलाव</a><a href="#hi-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>संपर्क</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="hi-table">
+    <h2 id="hi-table">कौन-सा डेटा, कहाँ रहता है, कौन देखता है</h2>
+    <table>
+      <thead><tr><th scope="col">डेटा</th><th scope="col">कहाँ रखा जाता है</th><th scope="col">कौन देख सकता है</th></tr></thead>
+      <tbody><tr><th scope="row">आपकी टाइमलाइन: लोकेशन, गतिविधि और कदम, Google से इंपोर्ट किया गया इतिहास, जगहों के नाम, हफ़्ते की रिपोर्ट, सेटिंग्स</th><td data-label="कहाँ रखा जाता है">आपके डिवाइस पर</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">आपकी फ़ोटो की तारीख़ें और जगहें</th><td data-label="कहाँ रखा जाता है">आपकी गैलरी की फ़ाइलों से पढ़ी जाती हैं; तस्वीरें कॉपी नहीं की जातीं</td><td data-label="कौन देख सकता है">सिर्फ़ आप, डिवाइस पर</td></tr><tr><th scope="row">Health Connect से घड़ी का डेटा</th><td data-label="कहाँ रखा जाता है">सहेजा नहीं जाता: दिखाने के लिए उसी समय पढ़ा जाता है</td><td data-label="कौन देख सकता है">सिर्फ़ आप, डिवाइस पर</td></tr><tr><th scope="row">दिखाया गया नक्शे का हिस्सा; उन जगहों के निर्देशांक जहाँ आप रुके और वाहन से की गई यात्राओं के रास्ते (वैकल्पिक)</th><td data-label="कहाँ रखा जाता है">नक्शे, पते और परिवहन सेवाओं को भेजे जाते हैं, ऐसी किसी चीज़ के बिना जिससे आपकी पहचान हो</td><td data-label="कौन देख सकता है">OpenFreeMap, Esri, Android की पता सेवा, Nominatim, Overpass</td></tr><tr><th scope="row">आपकी टाइमलाइन की एक कॉपी (वैकल्पिक)</th><td data-label="कहाँ रखा जाता है">आपकी अपनी Google Drive में ऐप का छिपा फ़ोल्डर</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">बैकअप फ़ाइलें</th><td data-label="कहाँ रखा जाता है">जहाँ आप उन्हें सहेजते हैं</td><td data-label="कौन देख सकता है">जिसे भी आप फ़ाइल दें</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="hi-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>ऐप में कौन-सा डेटा रहता है</h2></div>
+    <ul><li><b>लोकेशन।</b> जब तक आप रिकॉर्डिंग चालू रखते हैं, ऐप फ़ोन की लोकेशन रिकॉर्ड करता है (बैकग्राउंड में भी), ताकि दिखा सके कि आप कहाँ गए और कैसे यात्रा की।</li><li><b>शारीरिक गतिविधि।</b> अगर आप अनुमति दें, तो Android ऐप को बताता है कि आप पैदल चल रहे हैं, साइकिल चला रहे हैं या किसी वाहन में हैं। इसका इस्तेमाल सिर्फ़ यह जानने के लिए होता है कि आपने कैसे यात्रा की। रिकॉर्डिंग चालू रहने पर ऐप घंटे-दर-घंटे फ़ोन के अपने गिने कदम भी गिनता है; वे डिवाइस पर ही रहते हैं।</li><li><b>फ़ोटो और वीडियो।</b> अगर आप अनुमति दें, तो ऐप नक्शे पर फ़ोटो दिखाने के लिए आपकी गैलरी की फ़ाइलों में सहेजी गई तारीख़ और जगह पढ़ता है। तस्वीरें न कॉपी की जाती हैं, न कहीं भेजी जाती हैं। ऐप आपकी फ़ोटो फ़ाइलों में कुछ नहीं लिखता; वह सिर्फ़ किसी पुराने वर्ज़न की लिखी जगह हटा सकता है, वह भी Android के आपसे पूछने के बाद।</li><li><b>इंपोर्ट की गई फ़ाइलें।</b> आपकी चुनी हुई Google Timeline या Google Takeout फ़ाइलें फ़ोन पर पढ़ी जाती हैं।</li><li><b>जगहें और सेटिंग्स:</b> जगहों को आपके दिए नाम, भाषा, थीम।</li><li><b>हफ़्ते की रिपोर्ट</b> (वैकल्पिक): किसी हफ़्ते के बारे में आपका मूड और आपके लिखे शब्द, और आपका जन्मदिन अगर आप दें, यह दिखाने के लिए कि टाइमलाइन में आपकी ज़िंदगी का कितना हिस्सा है।</li><li><b>कदम लक्ष्य</b> (वैकल्पिक): आपकी लंबाई और वज़न, अगर आप दें, ताकि रोज़ का कदम लक्ष्य और एक कदम की लंबाई निकाली जा सके। ये डिवाइस पर ही रहते हैं।</li></ul><p>यह सब आपके डिवाइस पर सहेजा जाता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>इंटरनेट पर क्या जाता है</h2></div>
+    <ul><li><b>नक्शे।</b> नक्शे की टाइलें OpenFreeMap (OpenStreetMap डेटा) से लोड होती हैं, और सैटेलाइट तस्वीरें Esri से। ये सर्वर देखते हैं कि कौन-सा हिस्सा दिखाया जा रहा है, यह नहीं कि आप कौन हैं।</li><li><b>पते और जगहों के नाम</b> (वैकल्पिक)। उन जगहों के निर्देशांक जहाँ आप रुके, पता और नाम पाने के लिए Android की पता सेवा और Nominatim (OpenStreetMap) को भेजे जाते हैं। इनके साथ ऐसा कुछ नहीं भेजा जाता जिससे आपकी पहचान हो। इसे सेटिंग्स में बंद किया जा सकता है।</li><li><b>सार्वजनिक परिवहन</b> (वैकल्पिक)। बस, ट्राम, ट्रेन या मेट्रो को पहचानने के लिए, वाहन से की गई किसी पूरी यात्रा का रास्ता OpenStreetMap की Overpass सेवा को भेजा जाता है, जो उस रास्ते के साथ की पटरियाँ और स्टॉप बताती है। इसके साथ ऐसा कुछ नहीं भेजा जाता जिससे आपकी पहचान हो। इसे सेटिंग्स में बंद किया जा सकता है।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive में बैकअप (वैकल्पिक)</h2></div>
+    <p>अगर आप Google Drive जोड़ते हैं, तो ऐप को सिर्फ़ आपकी Drive में उसके अपने छिपे फ़ोल्डर का ऐक्सेस मिलता है (drive.appdata अनुमति) और वह आपकी कोई दूसरी फ़ाइल नहीं देख सकता। आपकी टाइमलाइन की एक कॉपी वहाँ लिखी जाती है, हर डिवाइस की एक, ताकि उसे नए फ़ोन पर वापस लाया जा सके या टैबलेट पर दिखाया जा सके। Google Drive उस कॉपी के पुराने वर्ज़न कुछ समय तक रख सकती है, जिन्हें ऐप वापस ला सकता है। ऐप आपका ईमेल पता भी पढ़ता है, सिर्फ़ यह दिखाने के लिए कि कौन-सा अकाउंट जुड़ा है। यह डेटा सिर्फ़ आपके डिवाइस और Google के बीच जाता है; डेवलपर के पास इसका कोई ऐक्सेस नहीं है। आप सेटिंग्स में Drive को अलग कर सकते हैं।</p><p>Google API से मिली जानकारी का ऐप द्वारा उपयोग <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> का पालन करता है, जिसमें Limited Use (सीमित उपयोग) की शर्तें भी शामिल हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>Health Connect से घड़ी का डेटा (वैकल्पिक)</h2></div>
+    <p>अगर आप अनुमति दें, तो ऐप Health Connect से कदम, धड़कन, नींद और वर्कआउट (उनके रास्तों के साथ) पढ़ता है, जिन्हें Mi Fitness जैसे घड़ी वाले ऐप वहाँ लिखते हैं। ऐप यह डेटा सिर्फ़ पढ़ता है और Health Connect में कभी कुछ नहीं लिखता। डेटा सिर्फ़ फ़ोन पर पढ़ा जाता है, ताकि उसे सेहत टैब में और आपकी टाइमलाइन के उसी दिन पर दिखाया जा सके; ऐप इसे अपने डेटाबेस में नहीं सहेजता, बैकअप में शामिल नहीं करता और कहीं नहीं भेजता। आप Health Connect की सेटिंग्स में कभी भी अनुमतियाँ वापस ले सकते हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>बैकअप फ़ाइलें और सुरक्षा कॉपियाँ</h2></div>
+    <p>बैकअप फ़ाइल सिर्फ़ तब बनती है जब आप ख़ुद उसे सहेजते हैं, आपकी चुनी हुई जगह पर। किसी बैकअप से आपकी टाइमलाइन बदलने से पहले ऐप पिछली टाइमलाइन डिवाइस पर रख लेता है (आख़िरी तीन), ताकि ग़लत रीस्टोर को वापस किया जा सके; ये कॉपियाँ कभी फ़ोन से बाहर नहीं जातीं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>अपडेट</h2></div>
+    <p>Slid की वेबसाइट पर बाँटा गया वर्ज़न हर कुछ घंटों में pegasohlib.github.io पर नए वर्ज़न की जाँच करता है, और जब आप अपडेट पर टैप करते हैं, तो उसे GitHub से डाउनलोड करता है। किसी भी वेबसाइट की तरह, GitHub आपके डिवाइस का IP पता देखता है; इसके अलावा कुछ नहीं भेजा जाता, और ऐप का कोई डेटा नहीं।</p><p>आप सेटिंग्स में अपने-आप होने वाली जाँच बंद कर सकते हैं।</p><p>GitHub यह भी गिनता है कि हर फ़ाइल कितनी बार डाउनलोड हुई। यह सिर्फ़ एक संख्या है, जिसमें यह कुछ नहीं होता कि किसने डाउनलोड किया; वेबसाइट इसे डाउनलोड की अनुमानित संख्या के रूप में दिखाती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>डेटा हटाना</h2></div>
+    <p>टाइमलाइन में कोई भी एंट्री हटाई जा सकती है। ऐप अनइंस्टॉल करें तो डिवाइस का सारा डेटा हट जाता है। Google Drive पर रखी कॉपी ऐप में, या Google Drive की सेटिंग्स में ऐप्स मैनेज करें के तहत हटाई जा सकती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>बच्चे</h2></div>
+    <p>ऐप किसी के बारे में भी डेटा इकट्ठा नहीं करता, बच्चों के बारे में भी नहीं: सब कुछ मालिक के डिवाइस पर ही रहता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>बदलाव</h2></div>
+    <p>अगर यह नीति बदलती है, तो नया वर्ज़न नई तारीख़ के साथ इसी पेज पर दिखेगा।</p>
+    
+  </section>
+  <section class="card sec" id="hi-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>संपर्क</h2></div>
+    <p>गोपनीयता से जुड़े सवाल: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Kebijakan privasi · Slid" data-app="Slid" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1309,7 +1561,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Chính sách quyền riêng tư · Slid" data-app="Slid" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Chính sách quyền riêng tư · Slid" data-app="Slid" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1387,7 +1639,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Slid" data-app="Slid" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Slid" data-app="Slid" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1465,7 +1717,85 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="개인정보처리방침 · Slid" data-app="Slid" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="隐私政策 · Slid" data-app="Slid" data-langlabel="语言" data-nav="首页|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Slid</p>
+    <h1>隐私政策</h1>
+    <p class="date">自2026年10月22日起生效</p>
+    <p class="lead">本政策适用于应用“Slid”（软件包 dev.slid）。Slid 没有自己的服务器，没有账号，没有广告，也没有分析。你的时间线保存在你的手机上，开发者从不接收也看不到它。</p>
+  </header>
+
+  <section class="glance" aria-labelledby="zh-glance">
+    <h2 id="zh-glance" class="eyebrow">概览</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span><b>留在你的手机上</b><br>时间线、地点以及照片的位置只保存在设备上。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span><b>不发送任何关于你的信息</b><br>没有账号，没有跟踪，没有广告，没有分析。</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><span><b>由你决定</b><br>每项权限和每个联网功能都是可选的，并且可以关闭。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><span><b>轻松删除</b><br>可以删除任何条目；卸载应用后，所有数据都会消失。</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span><b>你的备份，你的云端硬盘</b><br>只使用你自己 Google 云端硬盘中 Slid 的隐藏文件夹。</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="本页内容">
+    <p class="eyebrow">本页内容</p>
+    <div class="chips"><a href="#zh-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>应用保存哪些数据</a><a href="#zh-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>哪些内容会通过互联网传输</a><a href="#zh-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>备份到 Google 云端硬盘（可选）</a><a href="#zh-health"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg>通过 Health Connect 获取手表数据（可选）</a><a href="#zh-files"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>备份文件和安全副本</a><a href="#zh-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>更新</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>删除数据</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="zh-table">
+    <h2 id="zh-table">有哪些数据、存在哪里、谁能看到</h2>
+    <table>
+      <thead><tr><th scope="col">数据</th><th scope="col">保存位置</th><th scope="col">谁能看到</th></tr></thead>
+      <tbody><tr><th scope="row">你的时间线：位置、活动和步数、从 Google 导入的历史、地点名称、每周报告、设置</th><td data-label="保存位置">在你的设备上</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">你的照片的日期和地点</th><td data-label="保存位置">从你的相册文件中读取；不会复制照片本身</td><td data-label="谁能看到">只有你，在设备上</td></tr><tr><th scope="row">来自 Health Connect 的手表数据</th><td data-label="保存位置">不保存：显示时即时读取</td><td data-label="谁能看到">只有你，在设备上</td></tr><tr><th scope="row">显示的地图区域；你停留过的地点的坐标以及乘交通工具出行的路线（可选）</th><td data-label="保存位置">发送给地图、地址和交通服务，不附带任何可识别你身份的信息</td><td data-label="谁能看到">OpenFreeMap、Esri、Android 的地址服务、Nominatim、Overpass</td></tr><tr><th scope="row">你的时间线副本（可选）</th><td data-label="保存位置">你自己 Google 云端硬盘中应用的隐藏文件夹</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">备份文件</th><td data-label="保存位置">保存在你选择的位置</td><td data-label="谁能看到">你把文件交给的任何人</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="zh-data">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>应用保存哪些数据</h2></div>
+    <ul><li><b>位置。</b>只要你保持记录开启，应用就会记录手机的位置（包括在后台），以显示你去过哪里以及你是如何出行的。</li><li><b>身体活动。</b>如果你允许，Android 会告诉应用你是在步行、骑车还是乘坐交通工具。这只用于判断你的出行方式。记录开启期间，应用还会按小时统计手机自身记录的步数；这些数据留在设备上。</li><li><b>照片和视频。</b>如果你允许，应用会读取相册文件中保存的日期和地点，以便在地图上显示照片。照片不会被复制，也不会被发送到任何地方。应用不会向你的照片文件写入任何内容；它只能在 Android 征得你同意后，删除旧版本曾写入的地点信息。</li><li><b>导入的文件。</b>你选择的 Google 时间轴或 Google Takeout 文件会在手机上读取。</li><li><b>地点和设置：</b>你给地点起的名字、语言、主题。</li><li><b>每周报告</b>（可选）：你为某一周写下的心情和文字，以及你提供的生日（如有），用于显示时间线涵盖了你人生的多少部分。</li><li><b>步数目标</b>（可选）：你提供的身高和体重（如有），用于计算每日步数目标和步长。这些数据留在设备上。</li></ul><p>所有这些都保存在你的设备上。</p>
+    
+  </section>
+  <section class="card sec" id="zh-internet">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h2>哪些内容会通过互联网传输</h2></div>
+    <ul><li><b>地图。</b>地图图块从 OpenFreeMap（OpenStreetMap 数据）加载，卫星图像来自 Esri。这些服务器能看到显示的是哪个区域，但不知道你是谁。</li><li><b>地址和地点名称</b>（可选）。你停留过的地点的坐标会发送给 Android 的地址服务和 Nominatim（OpenStreetMap），以获取地址和名称。不会附带任何可识别你身份的信息。此功能可以在设置中关闭。</li><li><b>公共交通</b>（可选）。为了区分公交、有轨电车、火车和地铁，一段已结束的交通工具行程的路线会发送给 OpenStreetMap 的 Overpass 服务，它会返回沿线的轨道和站点。不会附带任何可识别你身份的信息。此功能可以在设置中关闭。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>备份到 Google 云端硬盘（可选）</h2></div>
+    <p>如果你连接 Google 云端硬盘，应用只能访问你云端硬盘中它自己的隐藏文件夹（drive.appdata 权限），看不到你的任何其他文件。你的时间线副本会写入那里，每台设备一份，以便在新手机上恢复或在平板上显示。Google 云端硬盘可能会将该副本的旧版本保留一段时间，应用可以恢复这些旧版本。应用还会读取你的电子邮件地址，仅用于显示已连接的是哪个账号。这些数据只在你的设备和 Google 之间传输；开发者无法访问。你可以在设置中断开云端硬盘。</p><p>本应用对从 Google API 获取的信息的使用，遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的“有限使用”要求。</p>
+    
+  </section>
+  <section class="card sec" id="zh-health">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h2>通过 Health Connect 获取手表数据（可选）</h2></div>
+    <p>如果你允许，应用会从 Health Connect 读取步数、心率、睡眠和锻炼（及其路线），这些数据由 Mi Fitness 等手表应用写入。应用只读取这些数据，从不向 Health Connect 写入。数据只在手机上读取，用于在“健康”标签页和时间线的对应日期中显示；应用不会把它存入自己的数据库，不会包含在备份中，也不会发送到任何地方。你可以随时在 Health Connect 的设置中撤销权限。</p>
+    
+  </section>
+  <section class="card sec" id="zh-files">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>备份文件和安全副本</h2></div>
+    <p>只有当你自己保存备份时，才会在你选择的位置创建备份文件。在备份替换你的时间线之前，应用会在设备上保留之前的时间线（最近三份），以便撤销错误的恢复；这些副本从不离开手机。</p>
+    
+  </section>
+  <section class="card sec" id="zh-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>更新</h2></div>
+    <p>通过官网分发的 Slid 版本每隔几小时会在 pegasohlib.github.io 上检查是否有新版本，并在你点击“更新”时从 GitHub 下载。和访问任何网站一样，GitHub 会看到你设备的 IP 地址；除此之外不会发送任何内容，也不会发送应用中的任何数据。</p><p>你可以在“设置”中关闭自动检查。</p><p>GitHub 还会统计每个文件被下载的次数。这只是一个数字，不包含任何关于下载者的信息；网站会把它显示为大致的下载量。</p>
+    
+  </section>
+  <section class="card sec" id="zh-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>删除数据</h2></div>
+    <p>时间线中的任何条目都可以删除。卸载应用后，设备上的所有数据都会消失。Google 云端硬盘上的副本可以在应用中删除，也可以在 Google 云端硬盘设置的“管理应用”中删除。</p>
+    
+  </section>
+  <section class="card sec" id="zh-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>儿童</h2></div>
+    <p>本应用不收集任何人的数据，包括儿童：所有数据都留在设备主人的设备上。</p>
+    
+  </section>
+  <section class="card sec" id="zh-changes">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>变更</h2></div>
+    <p>如果本政策发生变更，新版本将以新的日期发布在本页面上。</p>
+    
+  </section>
+  <section class="card sec" id="zh-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>联系方式</h2></div>
+    <p>隐私相关问题：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="개인정보처리방침 · Slid" data-app="Slid" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Slid</p>
@@ -1543,7 +1873,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="プライバシー ポリシー · スリド" data-app="スリド" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="プライバシー ポリシー · スリド" data-app="スリド" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">スリド</p>
@@ -1621,7 +1951,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Құпиялық саясаты · Слід" data-app="Слід" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Құпиялық саясаты · Слід" data-app="Слід" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Слід</p>
@@ -1699,7 +2029,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Политика конфиденциальности · Слід" data-app="Слід" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Политика конфиденциальности · Слід" data-app="Слід" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Слід</p>
@@ -1783,7 +2113,8 @@ td:last-child{font-weight:600;color:var(--ink)}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1803,7 +2134,8 @@ td:last-child{font-weight:600;color:var(--ink)}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");

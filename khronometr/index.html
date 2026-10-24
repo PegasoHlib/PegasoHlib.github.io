@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/khronometr/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/khronometr/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/khronometr/?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/khronometr/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/khronometr/?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/khronometr/?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/khronometr/?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/khronometr/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/khronometr/?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/khronometr/?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/khronometr/?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/khronometr/?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/khronometr/?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/khronometr/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/khronometr/?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/khronometr/?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/khronometr/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/khronometr/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/khronometr/?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -137,12 +154,12 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Khronometr</span></a>
   <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="pc/index.html" data-keep-lang>Windows</a><a data-nav="2" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Khronometr — Screen time for all time" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Khronometr — Screen time for all time" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -150,12 +167,12 @@ main{max-width:960px}
     <p class="tagline">Screen time for all time</p>
     <p class="lead">How long you have spent in every app and game — not for the last few weeks, but for all time. On your phone, tablet and PC together.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download for Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr for Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy Policy</span></a>
     </div>
     <p class="note">Free · Android 8 or newer · after that the app updates itself</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="How it works">
@@ -174,12 +191,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Your data stays yours</h2><p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Хронометр — Час у застосунках за весь час" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Хронометр — Час у застосунках за весь час" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -187,12 +204,12 @@ main{max-width:960px}
     <p class="tagline">Час у застосунках за весь час</p>
     <p class="lead">Скільки часу пішло на кожен застосунок і гру — не за останні тижні, а за весь час. На телефоні, планшеті й ПК разом.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Завантажити для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Хронометр для Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
     <p class="note">Безкоштовно · Android 8 і новіші · далі застосунок оновлюється сам</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Як це працює">
@@ -211,12 +228,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Твої дані — твої</h2><p>Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Khronometr — Tu tiempo de pantalla, desde siempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Khronometr — Tu tiempo de pantalla, desde siempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -224,12 +241,12 @@ main{max-width:960px}
     <p class="tagline">Tu tiempo de pantalla, desde siempre</p>
     <p class="lead">Cuánto tiempo has pasado en cada app y juego — no en las últimas semanas, sino desde siempre. En tu teléfono, tablet y PC a la vez.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Descargar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr para Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
     <p class="note">Gratis · Android 8 o posterior · después la app se actualiza sola</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Cómo funciona">
@@ -248,12 +265,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tus datos son tuyos</h2><p>Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Khronometr — O teu tempo de ecrã, desde sempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Khronometr — O teu tempo de ecrã, desde sempre" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -261,12 +278,12 @@ main{max-width:960px}
     <p class="tagline">O teu tempo de ecrã, desde sempre</p>
     <p class="lead">Quanto tempo passaste em cada app e jogo — não nas últimas semanas, mas desde sempre. No telemóvel, tablet e PC, tudo junto.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Transferir para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Transferir para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr para Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Grátis · Android 8 ou mais recente · depois a app atualiza-se sozinha</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -285,12 +302,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Os teus dados são teus</h2><p>Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Khronometr — Seu tempo de tela de todos os tempos" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Khronometr — Seu tempo de tela de todos os tempos" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -298,12 +315,12 @@ main{max-width:960px}
     <p class="tagline">Seu tempo de tela de todos os tempos</p>
     <p class="lead">Quanto tempo você passou em cada app e jogo — não só nas últimas semanas, mas desde sempre. No celular, no tablet e no PC, tudo junto.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr para Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de Privacidade</span></a>
     </div>
     <p class="note">Grátis · Android 8 ou mais recente · depois o app se atualiza sozinho</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -322,12 +339,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Seus dados continuam seus</h2><p>Sem servidores, sem anúncios, sem rastreamento. Tudo fica nos seus dispositivos e, se você quiser, numa pasta oculta do seu próprio Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Dúvidas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Khronometr — Ton temps d’écran, depuis toujours" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Khronometr — Ton temps d’écran, depuis toujours" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -335,12 +352,12 @@ main{max-width:960px}
     <p class="tagline">Ton temps d’écran, depuis toujours</p>
     <p class="lead">Le temps passé dans chaque appli et chaque jeu — pas sur les dernières semaines, mais depuis toujours. Sur ton téléphone, ta tablette et ton PC réunis.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Télécharger pour Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr pour Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
     <p class="note">Gratuit · Android 8 ou plus récent · ensuite l’appli se met à jour toute seule</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Comment ça marche">
@@ -359,12 +376,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tes données restent à toi</h2><p>Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Khronometr — Deine Bildschirmzeit seit jeher" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Khronometr — Deine Bildschirmzeit seit jeher" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -372,12 +389,12 @@ main{max-width:960px}
     <p class="tagline">Deine Bildschirmzeit seit jeher</p>
     <p class="lead">Wie lange du in jeder App und jedem Spiel verbracht hast — nicht nur in den letzten Wochen, sondern seit jeher. Auf Handy, Tablet und PC zusammen.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Für Android herunterladen</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr für Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
     <p class="note">Kostenlos · ab Android 8 · danach aktualisiert sich die App selbst</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="So funktioniert’s">
@@ -396,12 +413,49 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Deine Daten bleiben deine</h2><p>Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Khronometr — Il tuo tempo davanti allo schermo, da sempre" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Khronometr — Schermtijd van altijd" data-app="Khronometr" data-langlabel="Taal" data-nav="Start|Windows|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">Schermtijd van altijd</p>
+    <p class="lead">Hoeveel tijd je in elke app en game hebt doorgebracht — niet alleen de laatste paar weken, maar sinds het begin. Op je telefoon, tablet en pc samen.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Downloaden voor Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr voor Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacybeleid</span></a>
+    </div>
+    <p class="note">Gratis · Android 8 of nieuwer · daarna werkt de app zichzelf bij</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">18</b></p>
+  </header>
+
+  <section class="show" aria-label="Zo werkt het">
+    <div class="showtext"><h2 class="display">Zo werkt het</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Installeer op je telefoon</h3><p>Geef één keer “Gebruikstoegang” — de app leest de geschiedenis die je telefoon bewaart en telt vanaf dan verder.</p></div></li><li><span class="num">2</span><div><h3>Voeg je andere apparaten toe</h3><p>Log op elke telefoon, tablet en in de <a href="pc/">Windows-app</a> in met Google — ze vinden elkaar vanzelf.</p></div></li><li><span class="num">3</span><div><h3>Kijk terug wanneer je wilt</h3><p>Dagen, weken, maanden of jaren, elke app of een categorie, één apparaat of allemaal.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-nl">
+    <h2 class="eyebrow" id="f-nl">Wat het kan</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>Geschiedenis van altijd</h3><p>Elke app en game, dag voor dag, voor altijd bewaard — met records, titels en je langste reeksen.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Geschiedenis van vroeger</h3><p>Bij de eerste start haalt de app alles op wat je telefoon nog weet.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Al je apparaten</h3><p>Telefoons, tablets en een Windows-pc op één plek, via een verborgen map op je eigen Google Drive.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Limieten die werken</h3><p>Tijd per dag, verboden uren, een scherm “De tijd is om” — voor één app, een categorie of je eigen groep, op de apparaten die je kiest.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Vandaag, de week, de top-apps, één app, je limieten en de totalen van altijd, direct op je startscherm.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>Dataverbruik</h3><p>Wifi en mobiele data per app, voor alle dagen die je kiest.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Je gegevens blijven van jou</h2><p>Geen servers, geen advertenties, geen tracking. Alles wordt bewaard op je apparaten en, als je wilt, in een verborgen map op je eigen Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Lees het privacybeleid</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Vragen en ideeën: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Khronometr — Il tuo tempo davanti allo schermo, da sempre" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -409,12 +463,12 @@ main{max-width:960px}
     <p class="tagline">Il tuo tempo davanti allo schermo, da sempre</p>
     <p class="lead">Quanto tempo hai passato in ogni app e gioco — non nelle ultime settimane, ma da sempre. Su telefono, tablet e PC insieme.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Scarica per Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr per Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
     <p class="note">Gratis · Android 8 o successivo · poi l’app si aggiorna da sola</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Come funziona">
@@ -433,12 +487,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">I tuoi dati restano tuoi</h2><p>Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Khronometr — Czas przed ekranem od zawsze" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Khronometr — Czas przed ekranem od zawsze" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -446,12 +500,12 @@ main{max-width:960px}
     <p class="tagline">Czas przed ekranem od zawsze</p>
     <p class="lead">Ile czasu spędzasz w każdej aplikacji i grze — nie tylko z ostatnich kilku tygodni, ale od zawsze. Na telefonie, tablecie i komputerze razem.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr na Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Polityka prywatności</span></a>
     </div>
     <p class="note">Za darmo · Android 8 lub nowszy · potem aplikacja aktualizuje się sama</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Jak to działa">
@@ -470,12 +524,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Twoje dane zostają Twoje</h2><p>Bez serwerów, bez reklam, bez śledzenia. Wszystko jest przechowywane na Twoich urządzeniach i, jeśli chcesz, w ukrytym folderze Twojego własnego Dysku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Khronometr — Čas u obrazovky za celou dobu" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Khronometr — Čas u obrazovky za celou dobu" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -483,12 +537,12 @@ main{max-width:960px}
     <p class="tagline">Čas u obrazovky za celou dobu</p>
     <p class="lead">Kolik času trávíš v každé aplikaci a hře — ne za posledních pár týdnů, ale za celou dobu. Na telefonu, tabletu i počítači dohromady.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr pro Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany soukromí</span></a>
     </div>
     <p class="note">Zdarma · Android 8 nebo novější · pak se aplikace aktualizuje sama</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Jak to funguje">
@@ -507,12 +561,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tvoje data zůstávají tvoje</h2><p>Žádné servery, žádné reklamy, žádné sledování. Vše je uloženo v tvých zařízeních a, pokud chceš, ve skryté složce na tvém vlastním Disku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Dotazy a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Khronometr — Čas pred obrazovkou za celý čas" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Khronometr — Čas pred obrazovkou za celý čas" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -520,12 +574,12 @@ main{max-width:960px}
     <p class="tagline">Čas pred obrazovkou za celý čas</p>
     <p class="lead">Koľko času trávíš v každej aplikácii a hre — nie za posledných pár týždňov, ale za celý čas. Na telefóne, tablete aj počítači spolu.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr pre Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany súkromia</span></a>
     </div>
     <p class="note">Zadarmo · Android 8 alebo novší · potom sa aplikácia aktualizuje sama</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Ako to funguje">
@@ -544,12 +598,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tvoje údaje zostávajú tvoje</h2><p>Žiadne servery, žiadne reklamy, žiadne sledovanie. Všetko je uložené v tvojich zariadeniach a, ak chceš, v skrytom priečinku na tvojom vlastnom Disku Google.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Otázky a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Khronometr — Skærmtid for al tid" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Khronometr — Skærmtid for al tid" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -557,12 +611,12 @@ main{max-width:960px}
     <p class="tagline">Skærmtid for al tid</p>
     <p class="lead">Hvor lang tid du har brugt i hver app og hvert spil — ikke kun de sidste par uger, men for al tid. På din telefon, tablet og pc samlet.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr til Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privatlivspolitik</span></a>
     </div>
     <p class="note">Gratis · Android 8 eller nyere · derefter opdaterer appen sig selv</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Sådan virker det">
@@ -581,12 +635,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dine data forbliver dine</h2><p>Ingen servere, ingen reklamer, ingen sporing. Alt gemmes på dine enheder og, hvis du vil, i en skjult mappe på dit eget Google Drev.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Khronometr — Skärmtid för all tid" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Khronometr — Skärmtid för all tid" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -594,12 +648,12 @@ main{max-width:960px}
     <p class="tagline">Skärmtid för all tid</p>
     <p class="lead">Hur länge du har varit i varje app och spel — inte bara de senaste veckorna, utan genom alla tider. På telefon, surfplatta och dator tillsammans.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Ladda ner för Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr för Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
     <p class="note">Gratis · Android 8 eller senare · sedan uppdaterar appen sig själv</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Så fungerar det">
@@ -618,12 +672,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dina data är dina</h2><p>Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Khronometr — Tüm zamanların ekran süresi" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Khronometr — Tüm zamanların ekran süresi" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -631,12 +685,12 @@ main{max-width:960px}
     <p class="tagline">Tüm zamanların ekran süresi</p>
     <p class="lead">Her uygulamada ve oyunda ne kadar zaman geçirdin — sadece son birkaç haftada değil, tüm zamanlarda. Telefonun, tabletin ve bilgisayarın bir arada.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows için Khronometr</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Gizlilik Politikası</span></a>
     </div>
     <p class="note">Ücretsiz · Android 8 veya üstü · sonrasında uygulama kendini günceller</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Nasıl çalışır">
@@ -655,12 +709,86 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Verilerin sende kalır</h2><p>Sunucu yok, reklam yok, takip yok. Her şey cihazlarında ve istersen kendi Google Drive’ının gizli bir klasöründe saklanır.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Soru ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Khronometr — Waktu layar sepanjang masa" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="Khronometr — وقت الشاشة منذ البداية" data-app="Khronometr" data-langlabel="اللغة" data-nav="الرئيسية|Windows|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">وقت الشاشة منذ البداية</p>
+    <p class="lead">كم من الوقت قضيت في كل تطبيق ولعبة — لا خلال الأسابيع القليلة الماضية فحسب، بل منذ البداية. على هاتفك وجهازك اللوحي وحاسوبك معًا.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>تنزيل لنظام Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr لنظام Windows</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>سياسة الخصوصية</span></a>
+    </div>
+    <p class="note">مجاني · Android 8 أو أحدث · بعد ذلك يحدّث التطبيق نفسه بنفسه</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="khronometr-android">18</b></p>
+  </header>
+
+  <section class="show" aria-label="كيف يعمل">
+    <div class="showtext"><h2 class="display">كيف يعمل</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>ثبّته على الهاتف</h3><p>امنحه «الوصول إلى بيانات الاستخدام» مرة واحدة — فيقرأ السجل الذي يحتفظ به الهاتف ويواصل العدّ من ذلك الحين.</p></div></li><li><span class="num">2</span><div><h3>أضف أجهزتك الأخرى</h3><p>سجّل الدخول باستخدام Google على كل هاتف وجهاز لوحي وفي <a href="pc/">تطبيق Windows</a> — وستجد الأجهزة بعضها بعضًا.</p></div></li><li><span class="num">3</span><div><h3>راجع ما مضى في أي وقت</h3><p>أيام أو أسابيع أو أشهر أو سنوات، كل تطبيق أو فئة، جهاز واحد أو جميع الأجهزة.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ar">
+    <h2 class="eyebrow" id="f-ar">ما الذي يمكنه فعله</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>سجل منذ البداية</h3><p>كل تطبيق ولعبة، يومًا بيوم، محفوظ إلى الأبد — مع الأرقام القياسية والألقاب وأطول سلاسلك المتتالية.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>السجل السابق أيضًا</h3><p>عند التشغيل الأول يأخذ كل ما لا يزال الهاتف يتذكره.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>جميع أجهزتك</h3><p>الهواتف والأجهزة اللوحية وحاسوب Windows في مكان واحد، عبر مجلد مخفي في Google Drive الخاص بك.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>حدود تعمل فعلًا</h3><p>وقت يومي، وساعات ممنوعة، وشاشة «انتهى الوقت» — لتطبيق واحد أو فئة أو مجموعة تنشئها بنفسك، على الأجهزة التي تختارها.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>أدوات</h3><p>اليوم، والأسبوع، والتطبيقات الأكثر استخدامًا، وتطبيق واحد، وحدودك، والإجماليات منذ البداية — مباشرة على الشاشة الرئيسية.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>حركة البيانات</h3><p>بيانات Wi-Fi والجوّال لكل تطبيق، لأي أيام تختارها.</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">بياناتك تبقى ملكك</h2><p>لا خوادم، ولا إعلانات، ولا تتبّع. كل شيء محفوظ على أجهزتك، وإن أردت، في مجلد مخفي في Google Drive الخاص بك.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>اقرأ سياسة الخصوصية</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">أسئلة وأفكار: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="Khronometr — शुरू से अब तक का स्क्रीन टाइम" data-app="Khronometr" data-langlabel="भाषा" data-nav="होम|Windows|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">शुरू से अब तक का स्क्रीन टाइम</p>
+    <p class="lead">आपने हर ऐप और गेम में कितना समय बिताया — सिर्फ़ पिछले कुछ हफ़्तों का नहीं, बल्कि शुरू से अब तक का। आपके फ़ोन, टैबलेट और PC पर, सब एक साथ।</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows के लिए Khronometr</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>गोपनीयता नीति</span></a>
+    </div>
+    <p class="note">मुफ़्त · Android 8 या नया · उसके बाद ऐप ख़ुद अपडेट होता है</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="khronometr-android">18</b></p>
+  </header>
+
+  <section class="show" aria-label="यह कैसे काम करता है">
+    <div class="showtext"><h2 class="display">यह कैसे काम करता है</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>फ़ोन पर इंस्टॉल करें</h3><p>एक बार “उपयोग का ऐक्सेस” दें — यह फ़ोन में सहेजा इतिहास पढ़ता है और उसके बाद से गिनती करता रहता है।</p></div></li><li><span class="num">2</span><div><h3>अपने दूसरे डिवाइस जोड़ें</h3><p>हर फ़ोन, टैबलेट और <a href="pc/">Windows ऐप</a> में Google से साइन इन करें — वे एक-दूसरे को ख़ुद ढूँढ लेते हैं।</p></div></li><li><span class="num">3</span><div><h3>जब चाहें पीछे देखें</h3><p>दिन, हफ़्ते, महीने या साल; हर ऐप या कोई श्रेणी; एक डिवाइस या सभी।</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-hi">
+    <h2 class="eyebrow" id="f-hi">यह क्या-क्या कर सकता है</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>शुरू से अब तक का इतिहास</h3><p>हर ऐप और गेम, दिन-ब-दिन, हमेशा के लिए सहेजा हुआ — रिकॉर्ड, टाइटल और आपकी सबसे लंबी स्ट्रीक के साथ।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>पहले का इतिहास भी</h3><p>पहली बार खुलने पर यह वह सब ले लेता है जो फ़ोन को अब भी याद है।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>आपके सभी डिवाइस</h3><p>फ़ोन, टैबलेट और Windows PC एक ही जगह — आपकी अपनी Google Drive के एक छिपे फ़ोल्डर के ज़रिए।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>सीमाएँ जो सच में काम करती हैं</h3><p>रोज़ का समय, मना किए गए घंटे, “समय ख़त्म” स्क्रीन — एक ऐप, एक श्रेणी या आपके अपने समूह के लिए, आपके चुने हुए डिवाइसों पर।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>विजेट</h3><p>आज, यह हफ़्ता, टॉप ऐप, कोई एक ऐप, आपकी सीमाएँ और शुरू से अब तक का कुल — सीधे होम स्क्रीन पर।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>ट्रैफ़िक</h3><p>हर ऐप का Wi-Fi और मोबाइल डेटा, आपके चुने किसी भी दिनों के लिए।</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">आपका डेटा आपका ही रहता है</h2><p>कोई सर्वर नहीं, कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं। सब कुछ आपके डिवाइसों पर रहता है और, अगर आप चाहें, आपकी अपनी Google Drive के एक छिपे फ़ोल्डर में।</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>गोपनीयता नीति पढ़ें</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Khronometr — Waktu layar sepanjang masa" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -668,12 +796,12 @@ main{max-width:960px}
     <p class="tagline">Waktu layar sepanjang masa</p>
     <p class="lead">Berapa lama kamu menghabiskan waktu di setiap aplikasi dan game — bukan hanya beberapa minggu terakhir, tapi sepanjang masa. Di ponsel, tablet, dan PC sekaligus.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Unduh untuk Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr untuk Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
     </div>
     <p class="note">Gratis · Android 8 atau lebih baru · setelah itu aplikasi memperbarui diri sendiri</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Cara kerjanya">
@@ -692,12 +820,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Datamu tetap milikmu</h2><p>Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Khronometr — Thời gian sử dụng màn hình từ trước đến nay" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Khronometr — Thời gian sử dụng màn hình từ trước đến nay" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -705,12 +833,12 @@ main{max-width:960px}
     <p class="tagline">Thời gian màn hình từ trước đến nay</p>
     <p class="lead">Bạn đã dành bao nhiêu thời gian cho từng ứng dụng và trò chơi — không chỉ vài tuần gần đây mà từ trước đến nay. Trên điện thoại, máy tính bảng và PC cùng lúc.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải cho Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải cho Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr cho Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Chính sách quyền riêng tư</span></a>
     </div>
     <p class="note">Miễn phí · Android 8 trở lên · sau đó ứng dụng tự cập nhật</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Cách hoạt động">
@@ -729,12 +857,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dữ liệu của bạn vẫn là của bạn</h2><p>Không máy chủ, không quảng cáo, không theo dõi. Mọi thứ được lưu trên thiết bị của bạn và, nếu bạn muốn, trong một thư mục ẩn trên Google Drive của chính bạn.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="Khronometr — เวลาหน้าจอตลอดกาล" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="Khronometr — เวลาหน้าจอตลอดกาล" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -742,12 +870,12 @@ main{max-width:960px}
     <p class="tagline">เวลาหน้าจอตลอดกาล</p>
     <p class="lead">คุณใช้เวลากับแต่ละแอปและเกมไปเท่าไร — ไม่ใช่แค่ไม่กี่สัปดาห์ล่าสุด แต่ตลอดกาล บนโทรศัพท์ แท็บเล็ต และพีซีรวมกัน</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr สำหรับ Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>นโยบายความเป็นส่วนตัว</span></a>
     </div>
     <p class="note">ฟรี · Android 8 ขึ้นไป · หลังจากนั้นแอปจะอัปเดตตัวเอง</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="ทำงานอย่างไร">
@@ -766,12 +894,49 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">ข้อมูลของคุณยังเป็นของคุณ</h2><p>ไม่มีเซิร์ฟเวอร์ ไม่มีโฆษณา ไม่มีการติดตาม ทุกอย่างเก็บไว้บนอุปกรณ์ของคุณ และหากต้องการ ในโฟลเดอร์ที่ซ่อนอยู่ใน Google Drive ของคุณเอง</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="Khronometr — 지금까지의 모든 스크린 타임" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="Khronometr — 屏幕使用时间，全部记录" data-app="Khronometr" data-langlabel="语言" data-nav="首页|Windows|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr</h1>
+    <p class="tagline">屏幕使用时间，全部记录</p>
+    <p class="lead">你在每个应用和游戏上花了多少时间——不只是最近几周，而是有史以来的全部。手机、平板和电脑汇总在一起。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下载 Android 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Khronometr Windows 版</span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>隐私政策</span></a>
+    </div>
+    <p class="note">免费 · Android 8 或更高版本 · 安装后应用会自动更新</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="khronometr-android">18</b></p>
+  </header>
+
+  <section class="show" aria-label="使用方法">
+    <div class="showtext"><h2 class="display">使用方法</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>在手机上安装</h3><p>授予一次“使用情况访问权限”——它会读取手机保存的历史记录，并从此开始计时。</p></div></li><li><span class="num">2</span><div><h3>添加你的其他设备</h3><p>在每部手机、平板和 <a href="pc/">Windows 应用</a>上用 Google 登录——它们会自动找到彼此。</p></div></li><li><span class="num">3</span><div><h3>随时回顾</h3><p>按天、周、月或年；看每个应用或某个类别；看一台设备或全部设备。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh">
+    <h2 class="eyebrow" id="f-zh">功能一览</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12c-2-2.7-4-4-6-4a4 4 0 0 0 0 8c2 0 4-1.3 6-4zm0 0c2 2.7 4 4 6 4a4 4 0 0 0 0-8c-2 0-4 1.3-6 4z"/></svg><h3>全部历史</h3><p>每个应用和游戏，逐日记录，永久保存——还有纪录、称号和你最长的连续天数。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>以前的历史</h3><p>首次启动时，会导入手机还记得的所有记录。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>你的所有设备</h3><p>手机、平板和 Windows 电脑集中在一处，通过你自己 Google 云端硬盘中的隐藏文件夹同步。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>真正有效的限制</h3><p>每日时长、禁用时段、“时间到”屏幕——可用于单个应用、某个类别或你自建的分组，并在你选择的设备上生效。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>小组件</h3><p>今天、本周、常用应用排行、单个应用、你的限制和全部时间总计，直接显示在主屏幕上。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 9a14 14 0 0 1 19 0M5.5 12.5a9.5 9.5 0 0 1 13 0M8.8 15.8a5 5 0 0 1 6.4 0M12 19.5h.01"/></svg><h3>流量</h3><p>每个应用的 Wi-Fi 和移动数据用量，可选任意日期。</p></div></div>
+  </section>
+
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">你的数据只属于你</h2><p>没有服务器，没有广告，没有跟踪。所有数据都保存在你的设备上；如果你愿意，也可以保存在你自己 Google 云端硬盘的隐藏文件夹中。</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>阅读隐私政策</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="Khronometr — 지금까지의 모든 스크린 타임" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -779,12 +944,12 @@ main{max-width:960px}
     <p class="tagline">지금까지의 모든 스크린 타임</p>
     <p class="lead">앱과 게임마다 얼마나 시간을 썼는지 — 최근 몇 주가 아니라 지금까지 전부 보여 줘요. 휴대폰, 태블릿, PC를 한꺼번에요.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows용 Khronometr</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>개인정보처리방침</span></a>
     </div>
     <p class="note">무료 · Android 8 이상 · 설치 후에는 앱이 알아서 업데이트돼요</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="사용 방법">
@@ -803,12 +968,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">내 데이터는 내 것</h2><p>서버도, 광고도, 추적도 없어요. 모든 데이터는 내 기기에, 원하면 내 Google Drive의 숨겨진 폴더에 보관돼요.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>개인정보처리방침 읽기</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>개인정보처리방침 읽기</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="フロノメトル — ずっと残るスクリーンタイム" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="フロノメトル — ずっと残るスクリーンタイム" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -816,12 +981,12 @@ main{max-width:960px}
     <p class="tagline">ずっと残るスクリーンタイム</p>
     <p class="lead">すべてのアプリとゲームに使った時間を、ここ数週間だけでなく、これまでずっと。スマホ、タブレット、PC をまとめて。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android 版をダウンロード</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版フロノメトル</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
     </div>
     <p class="note">無料 · Android 8 以降 · その後はアプリが自動で更新されます</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="使い方">
@@ -840,12 +1005,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">あなたのデータはあなたのもの</h2><p>サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Хронометр — Қолданбалардағы уақыт — бүкіл уақыт бойы" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Хронометр — Қолданбалардағы уақыт — бүкіл уақыт бойы" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -853,12 +1018,12 @@ main{max-width:960px}
     <p class="tagline">Қолданбалардағы уақыт — бүкіл уақыт бойы</p>
     <p class="lead">Әр қолданба мен ойында қанша уақыт өткізгенің — соңғы апталарда ғана емес, бүкіл уақыт бойы. Телефон, планшет және ДК бірге.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows-қа арналған Хронометр</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
     </div>
     <p class="note">Тегін · Android 8 және жаңарақ · кейін қолданба өзі жаңарады</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Бұл қалай жұмыс істейді">
@@ -877,12 +1042,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Деректерің — өзіңдікі</h2><p>Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Хронометр — Время в приложениях за всё время" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Хронометр — Время в приложениях за всё время" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="appicon" src="icon.svg" alt="" width="112" height="112">
     
@@ -890,12 +1055,12 @@ main{max-width:960px}
     <p class="tagline">Время в приложениях за всё время</p>
     <p class="lead">Сколько времени ушло на каждое приложение и игру — не за последние недели, а за всё время. На телефоне, планшете и ПК вместе.</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.29.5/Khronometr-0.29.5.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/khronometr-v0.30.0/Khronometr-0.30.0.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Скачать для Android</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="pc/index.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Хронометр для Windows</span></a>
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
     <p class="note">Бесплатно · Android 8 и новее · дальше приложение обновляется само</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="khronometr-android">16</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="khronometr-android">18</b></p>
   </header>
 
   <section class="show" aria-label="Как это работает">
@@ -914,7 +1079,7 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Твои данные — твои</h2><p>Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.</p>
-    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
@@ -925,7 +1090,8 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -945,7 +1111,8 @@ main{max-width:960px}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
@@ -983,7 +1150,7 @@ main{max-width:960px}
     .then(function (lists) {
       var n = {}; for (var k in P) n[k] = 0;
       lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k][0]) === 0 && a.name.slice(a.name.length - P[k][1].length) === P[k][1]) n[k] += a.download_count; }); }); });
-      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { var lc = document.documentElement.lang; e.textContent = v.toLocaleString(lc === "ar" ? "ar-u-nu-latn" : lc); var w = e.closest(".count"); if (w) w.hidden = false; } });
     }).catch(function () {});
 })();
 </script>

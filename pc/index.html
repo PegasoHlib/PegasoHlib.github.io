@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/khronometr/pc/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/khronometr/pc/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/khronometr/pc/?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/khronometr/pc/?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/khronometr/pc/?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/khronometr/pc/?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/khronometr/pc/?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/khronometr/pc/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/khronometr/pc/?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/khronometr/pc/?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/khronometr/pc/?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/khronometr/pc/?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/khronometr/pc/?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/khronometr/pc/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/khronometr/pc/?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/khronometr/pc/?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/khronometr/pc/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/khronometr/pc/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/khronometr/pc/?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -137,12 +154,12 @@ main{max-width:960px}
   <a class="home" href="../khronometr/index.html" data-keep-lang><img src="../khronometr/icon.svg" alt="" width="32" height="32"><span id="appname">Khronometr</span></a>
   <nav class="links"><a data-nav="0" href="../khronometr/index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="../khronometr/pc/index.html" data-keep-lang>Windows</a><a data-nav="2" href="../khronometr/privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Khronometr for Windows" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Khronometr for Windows" data-app="Khronometr" data-langlabel="Language" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -153,8 +170,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download for Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy Policy</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · free · 21 languages<br>Updates itself; every update is checked with a digital signature.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · free · 25 languages<br>Updates itself; every update is checked with a digital signature.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="How to install">
@@ -177,12 +194,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Your data stays yours</h2><p>No servers, no ads, no tracking. Everything is kept on your devices and, if you want, in a hidden folder of your own Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Read the privacy policy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Questions and ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Мова" data-nav="Головна|Windows|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -193,8 +210,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Завантажити для Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 МБ · безкоштовно · 21 мова<br>Оновлюється сама; кожне оновлення перевіряється цифровим підписом.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 МБ · безкоштовно · 25 мов<br>Оновлюється сама; кожне оновлення перевіряється цифровим підписом.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Як встановити">
@@ -217,12 +234,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Твої дані — твої</h2><p>Жодних серверів, реклами й стеження. Усе зберігається на твоїх пристроях і, якщо захочеш, у прихованій папці твого власного Google Диска.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Читати політику конфіденційності</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Inicio|Windows|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -233,8 +250,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Descargar para Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · gratis · 21 idiomas<br>Se actualiza sola; cada actualización se comprueba con una firma digital.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 idiomas<br>Se actualiza sola; cada actualización se comprueba con una firma digital.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Cómo instalarlo">
@@ -257,12 +274,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tus datos son tuyos</h2><p>Sin servidores, sin anuncios, sin rastreo. Todo se guarda en tus dispositivos y, si quieres, en una carpeta oculta de tu propio Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Leer la política de privacidad</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Preguntas e ideas: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -273,8 +290,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Transferir para Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · grátis · 21 idiomas<br>Atualiza-se sozinha; cada atualização é verificada com uma assinatura digital.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · grátis · 25 idiomas<br>Atualiza-se sozinha; cada atualização é verificada com uma assinatura digital.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Como instalar">
@@ -297,12 +314,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Os teus dados são teus</h2><p>Sem servidores, sem anúncios, sem rastreio. Tudo fica nos teus dispositivos e, se quiseres, numa pasta oculta do teu próprio Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Khronometr para Windows" data-app="Khronometr" data-langlabel="Idioma" data-nav="Início|Windows|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -313,8 +330,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Baixar para Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de Privacidade</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · grátis · 21 idiomas<br>Atualiza-se sozinho; cada atualização é verificada com uma assinatura digital.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · grátis · 25 idiomas<br>Atualiza-se sozinho; cada atualização é verificada com uma assinatura digital.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Como instalar">
@@ -337,12 +354,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Seus dados continuam seus</h2><p>Sem servidores, sem anúncios, sem rastreamento. Tudo fica nos seus dispositivos e, se você quiser, numa pasta oculta do seu próprio Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Dúvidas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Khronometr pour Windows" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Khronometr pour Windows" data-app="Khronometr" data-langlabel="Langue" data-nav="Accueil|Windows|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -353,8 +370,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Télécharger pour Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 Mo · gratuit · 21 langues<br>Se met à jour tout seul ; chaque mise à jour est vérifiée par une signature numérique.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 Mo · gratuit · 25 langues<br>Se met à jour tout seul ; chaque mise à jour est vérifiée par une signature numérique.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Comment l’installer">
@@ -377,12 +394,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tes données restent à toi</h2><p>Pas de serveurs, pas de pub, pas de pistage. Tout est conservé sur tes appareils et, si tu veux, dans un dossier caché de ton propre Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Lire la politique de confidentialité</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Khronometr für Windows" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Khronometr für Windows" data-app="Khronometr" data-langlabel="Sprache" data-nav="Start|Windows|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -393,8 +410,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Für Windows herunterladen</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · kostenlos · 21 Sprachen<br>Aktualisiert sich selbst; jedes Update wird per digitaler Signatur geprüft.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · kostenlos · 25 Sprachen<br>Aktualisiert sich selbst; jedes Update wird per digitaler Signatur geprüft.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="So installierst du es">
@@ -417,12 +434,52 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Deine Daten bleiben deine</h2><p>Keine Server, keine Werbung, kein Tracking. Alles bleibt auf deinen Geräten und, wenn du willst, in einem versteckten Ordner deines eigenen Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Datenschutzerklärung lesen</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Fragen und Ideen: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Khronometr per Windows" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Khronometr voor Windows" data-app="Khronometr" data-langlabel="Taal" data-nav="Start|Windows|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr voor Windows</h1>
+    <p class="tagline">Al je schermtijd — ook op de pc</p>
+    <p class="lead">Een echte app voor je computer: tijd in programma’s en games, de geschiedenis van je telefoon en tablet, limieten en records — in één venster.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Downloaden voor Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacybeleid</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 talen<br>Werkt zichzelf bij; elke update wordt gecontroleerd met een digitale handtekening.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">4</b></p>
+  </header>
+
+  <section class="show" aria-label="Zo installeer je het">
+    <div class="showtext"><h2 class="display">Zo installeer je het</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Downloaden en starten</h3><p><b>Download</b> het bestand met de knop hierboven en <b>start</b> het. Khronometr biedt aan zichzelf te <b>installeren</b> — daarna staat het in het Startmenu.</p></div></li><li><span class="num">2</span><div><h3>Als Windows je waarschuwt</h3><p>Zegt Windows “Windows heeft uw pc beveiligd”, klik dan op <b>Meer informatie</b> en daarna op <b>Toch uitvoeren</b>. Dit gebeurt bij apps zonder betaalde handtekening; Khronometr installeert niets buiten zijn eigen map en vraagt nooit om beheerdersrechten.</p></div></li><li><span class="num">3</span><div><h3>Log in met Google</h3><p>Klik in het venster van Khronometr op <b>Inloggen</b> met hetzelfde account als op je telefoon. Daarna verschijnen je telefoon en tablet hier ook.</p></div></li><li><span class="num">4</span><div><h3>Klaar</h3><p>Khronometr blijft tellen als het venster dicht is — het zit <b>naast de klok</b> (in het systeemvak) en start mee met Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-nl">
+    <h2 class="eyebrow" id="f-nl">Wat het doet</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Alle statistieken</h3><p>Dag, week, maand, jaar en sinds het begin: grafieken, categorieën, elke app apart — alle apparaten samen of één voor één.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Je hele geschiedenis</h3><p>Tijd van je telefoon en tablet, oudere Android-geschiedenis, Steam-games — hetzelfde als je op je telefoon ziet.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>Ook hier limieten</h3><p>Maak en wijzig limieten direct op de pc — ze werken ook op je telefoon. Als de tijd op is, verschijnt een scherm “De tijd is om”.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Records en dataverbruik</h3><p>Je grootste dag, je langste sessie, de top-apps van altijd en netwerkgebruik per app.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Werkt zichzelf bij</h3><p>Nieuwe versies worden op de achtergrond geïnstalleerd; zonder de juiste digitale handtekening wordt niets geïnstalleerd.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>Alleen je eigen Google Drive</h3><p>Synchronisatie loopt via een verborgen map op je eigen Drive. Geen servers, geen advertenties.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-nl">
+    <h2 class="eyebrow" id="q-nl">Vragen</h2>
+    <div class="faqs"><details class="card"><summary>Hoe ziet de waarschuwing van Windows eruit?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Een blauw venster met de titel <b>“Windows heeft uw pc beveiligd”</b> en de tekst “Microsoft Defender SmartScreen heeft voorkomen dat een onbekende app werd gestart…”. Klik onder de tekst op <b>Meer informatie</b> en daarna op <b>Toch uitvoeren</b>, niet op <b>Niet uitvoeren</b>.</p></details><details class="card"><summary>Ik heb de oude Khronometr voor pc al<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Start gewoon het nieuwe bestand en klik op <b>Bijwerken</b>: het neemt de plaats van de oude in, en je geschiedenis, limieten, Google-login en automatisch starten blijven behouden.</p></details><details class="card"><summary>Hoe verwijder ik het?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows-instellingen → Apps → Geïnstalleerde apps → Khronometr → Verwijderen</b>. Je geschiedenis blijft staan in <code>%LOCALAPPDATA%\Khronometr</code> — verwijder die map zelf als je wilt.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Je gegevens blijven van jou</h2><p>Geen servers, geen advertenties, geen tracking. Alles wordt bewaard op je apparaten en, als je wilt, in een verborgen map op je eigen Google Drive.</p>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Lees het privacybeleid</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Vragen en ideeën: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Khronometr per Windows" data-app="Khronometr" data-langlabel="Lingua" data-nav="Home|Windows|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -433,8 +490,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Scarica per Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · gratis · 21 lingue<br>Si aggiorna da sola; ogni aggiornamento viene verificato con una firma digitale.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 lingue<br>Si aggiorna da sola; ogni aggiornamento viene verificato con una firma digitale.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Come installarlo">
@@ -457,12 +514,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">I tuoi dati restano tuoi</h2><p>Niente server, niente pubblicità, niente tracciamento. Tutto resta sui tuoi dispositivi e, se vuoi, in una cartella nascosta del tuo Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Leggi l’informativa sulla privacy</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Khronometr na Windows" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Khronometr na Windows" data-app="Khronometr" data-langlabel="Język" data-nav="Start|Windows|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -473,8 +530,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Pobierz na Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Polityka prywatności</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · za darmo · 21 języków<br>Aktualizuje się sama; każda aktualizacja jest sprawdzana podpisem cyfrowym.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · za darmo · 25 języków<br>Aktualizuje się sama; każda aktualizacja jest sprawdzana podpisem cyfrowym.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Jak zainstalować">
@@ -497,12 +554,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Twoje dane zostają Twoje</h2><p>Bez serwerów, bez reklam, bez śledzenia. Wszystko jest przechowywane na Twoich urządzeniach i, jeśli chcesz, w ukrytym folderze Twojego własnego Dysku Google.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Khronometr pro Windows" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Khronometr pro Windows" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domů|Windows|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -513,8 +570,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Stáhnout pro Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany soukromí</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · zdarma · 21 jazyků<br>Aktualizuje se sama; každá aktualizace se ověřuje digitálním podpisem.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · zdarma · 25 jazyků<br>Aktualizuje se sama; každá aktualizace se ověřuje digitálním podpisem.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Jak nainstalovat">
@@ -537,12 +594,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tvoje data zůstávají tvoje</h2><p>Žádné servery, žádné reklamy, žádné sledování. Vše je uloženo v tvých zařízeních a, pokud chceš, ve skryté složce na tvém vlastním Disku Google.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Dotazy a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Khronometr pre Windows" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Khronometr pre Windows" data-app="Khronometr" data-langlabel="Jazyk" data-nav="Domov|Windows|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -553,8 +610,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Stiahnuť pre Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany súkromia</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · zadarmo · 21 jazykov<br>Aktualizuje sa sama; každá aktualizácia sa overuje digitálnym podpisom.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · zadarmo · 25 jazykov<br>Aktualizuje sa sama; každá aktualizácia sa overuje digitálnym podpisom.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Ako nainštalovať">
@@ -577,12 +634,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Tvoje údaje zostávajú tvoje</h2><p>Žiadne servery, žiadne reklamy, žiadne sledovanie. Všetko je uložené v tvojich zariadeniach a, ak chceš, v skrytom priečinku na tvojom vlastnom Disku Google.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Otázky a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Khronometr til Windows" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Khronometr til Windows" data-app="Khronometr" data-langlabel="Sprog" data-nav="Forside|Windows|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -593,8 +650,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download til Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privatlivspolitik</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · gratis · 21 sprog<br>Opdaterer sig selv; hver opdatering kontrolleres med en digital signatur.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 sprog<br>Opdaterer sig selv; hver opdatering kontrolleres med en digital signatur.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Sådan installerer du">
@@ -617,12 +674,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dine data forbliver dine</h2><p>Ingen servere, ingen reklamer, ingen sporing. Alt gemmes på dine enheder og, hvis du vil, i en skjult mappe på dit eget Google Drev.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Khronometr för Windows" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Khronometr för Windows" data-app="Khronometr" data-langlabel="Språk" data-nav="Hem|Windows|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -633,8 +690,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Ladda ned för Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · gratis · 21 språk<br>Uppdaterar sig själv; varje uppdatering kontrolleras med en digital signatur.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 språk<br>Uppdaterar sig själv; varje uppdatering kontrolleras med en digital signatur.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Så installerar du">
@@ -657,12 +714,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dina data är dina</h2><p>Inga servrar, ingen reklam, ingen spårning. Allt sparas på dina enheter och, om du vill, i en dold mapp på din egen Google Drive.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Läs integritetspolicyn</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Windows için Khronometr" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Windows için Khronometr" data-app="Khronometr" data-langlabel="Dil" data-nav="Ana sayfa|Windows|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -673,8 +730,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows için indir</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Gizlilik Politikası</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · ücretsiz · 21 dil<br>Kendini günceller; her güncelleme dijital imzayla doğrulanır.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · ücretsiz · 25 dil<br>Kendini günceller; her güncelleme dijital imzayla doğrulanır.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Nasıl kurulur">
@@ -697,12 +754,92 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Verilerin sende kalır</h2><p>Sunucu yok, reklam yok, takip yok. Her şey cihazlarında ve istersen kendi Google Drive’ının gizli bir klasöründe saklanır.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Soru ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Khronometr untuk Windows" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="Khronometr لنظام Windows" data-app="Khronometr" data-langlabel="اللغة" data-nav="الرئيسية|Windows|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr لنظام Windows</h1>
+    <p class="tagline">كل وقت الشاشة لديك — على الحاسوب أيضًا</p>
+    <p class="lead">تطبيق حقيقي لحاسوبك: الوقت في البرامج والألعاب، وسجل هاتفك وجهازك اللوحي، والحدود والأرقام القياسية — في نافذة واحدة.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>تنزيل لنظام Windows</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>سياسة الخصوصية</span></a>
+    </div>
+    <p class="note">لنظام Windows 10 / 11 · 67 ميغابايت · مجاني · 25 لغة<br>يحدّث نفسه بنفسه؛ ويُتحقَّق من كل تحديث بتوقيع رقمي.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="khronometr-pc">4</b></p>
+  </header>
+
+  <section class="show" aria-label="طريقة التثبيت">
+    <div class="showtext"><h2 class="display">طريقة التثبيت</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>نزّله وشغّله</h3><p><b>نزّل</b> الملف بالزر أعلاه ثم <b>شغّله</b>. سيعرض Khronometr أن <b>يثبّت</b> نفسه — وسيظهر بعدها في قائمة «ابدأ».</p></div></li><li><span class="num">2</span><div><h3>إذا ظهر تحذير من Windows</h3><p>إذا ظهرت رسالة «قام Windows بحماية الكمبيوتر»، فانقر على <b>مزيد من المعلومات</b>، ثم على <b>التشغيل على أي حال</b>. يحدث هذا مع التطبيقات التي لا تحمل توقيعًا مدفوعًا؛ ولا يثبّت Khronometr أي شيء خارج مجلده الخاص، ولا يطلب أبدًا صلاحيات المسؤول.</p></div></li><li><span class="num">3</span><div><h3>سجّل الدخول باستخدام Google</h3><p>في نافذة Khronometr انقر على <b>تسجيل الدخول</b> بالحساب نفسه الذي تستخدمه على هاتفك. بعدها سيظهر هاتفك وجهازك اللوحي هنا أيضًا.</p></div></li><li><span class="num">4</span><div><h3>انتهيت</h3><p>يواصل Khronometr العدّ والنافذة مغلقة — فهو يعيش <b>بجوار الساعة</b> (في علبة النظام) ويبدأ مع Windows.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ar">
+    <h2 class="eyebrow" id="f-ar">ما الذي يفعله</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>كل الإحصاءات</h3><p>اليوم والأسبوع والشهر والسنة ومنذ البداية: رسوم بيانية، وفئات، وكل تطبيق على حدة — جميع الأجهزة معًا أو كل جهاز وحده.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>سجلك الكامل</h3><p>الوقت من هاتفك وجهازك اللوحي، وسجل Android الأقدم، وألعاب Steam — تمامًا كما تراه على الهاتف.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>الحدود هنا أيضًا</h3><p>أنشئ الحدود وعدّلها مباشرة على الحاسوب — وهي تعمل على الهاتف كذلك. عندما ينتهي الوقت تظهر شاشة «انتهى الوقت».</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>الأرقام القياسية وحركة البيانات</h3><p>أكبر يوم لديك، وأطول جلسة، والتطبيقات الأكثر استخدامًا منذ البداية، واستخدام الشبكة لكل تطبيق.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>يحدّث نفسه بنفسه</h3><p>تُثبَّت الإصدارات الجديدة في الخلفية؛ ولا يُثبَّت أي شيء دون التوقيع الرقمي الصحيح.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>حسابك في Google Drive فقط</h3><p>تجري المزامنة عبر مجلد مخفي في Drive الخاص بك. لا خوادم ولا إعلانات.</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-ar">
+    <h2 class="eyebrow" id="q-ar">أسئلة</h2>
+    <div class="faqs"><details class="card"><summary>كيف يبدو تحذير Windows؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>نافذة زرقاء عنوانها <b>«قام Windows بحماية الكمبيوتر»</b> وفيها النص «منع Microsoft Defender SmartScreen تطبيقًا غير معروف من البدء…». انقر على <b>مزيد من المعلومات</b> أسفل النص، ثم على <b>التشغيل على أي حال</b>، وليس على <b>عدم التشغيل</b>.</p></details><details class="card"><summary>لديّ بالفعل الإصدار القديم من Khronometr للحاسوب<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>شغّل الملف الجديد فقط وانقر على <b>تحديث</b>: سيحلّ محل القديم، ويبقى سجلك وحدودك وتسجيل دخولك إلى Google والتشغيل التلقائي كما هي.</p></details><details class="card"><summary>كيف ألغي تثبيته؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>إعدادات Windows ← التطبيقات ← التطبيقات المثبتة ← Khronometr ← إلغاء التثبيت</b>. يبقى سجلك في <code>%LOCALAPPDATA%\Khronometr</code> — احذفه يدويًا إن أردت.</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">بياناتك تبقى ملكك</h2><p>لا خوادم، ولا إعلانات، ولا تتبّع. كل شيء محفوظ على أجهزتك، وإن أردت، في مجلد مخفي في Google Drive الخاص بك.</p>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>اقرأ سياسة الخصوصية</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">أسئلة وأفكار: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="Windows के लिए Khronometr" data-app="Khronometr" data-langlabel="भाषा" data-nav="होम|Windows|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
+    
+    <h1>Windows के लिए Khronometr</h1>
+    <p class="tagline">आपका पूरा स्क्रीन टाइम — PC पर भी</p>
+    <p class="lead">आपके कंप्यूटर के लिए एक असली ऐप: प्रोग्राम और गेम में बिताया समय, आपके फ़ोन और टैबलेट का इतिहास, सीमाएँ और रिकॉर्ड — एक ही विंडो में।</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>गोपनीयता नीति</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 67 MB · मुफ़्त · 25 भाषाएँ<br>ख़ुद अपडेट होता है; हर अपडेट डिजिटल हस्ताक्षर से जाँचा जाता है।</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="khronometr-pc">4</b></p>
+  </header>
+
+  <section class="show" aria-label="इंस्टॉल कैसे करें">
+    <div class="showtext"><h2 class="display">इंस्टॉल कैसे करें</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>डाउनलोड करें और चलाएँ</h3><p>ऊपर दिए बटन से फ़ाइल <b>डाउनलोड</b> करें और उसे <b>चलाएँ</b>। Khronometr ख़ुद को <b>इंस्टॉल</b> करने का विकल्प देता है — फिर यह Start मेन्यू में दिखता है।</p></div></li><li><span class="num">2</span><div><h3>अगर Windows चेतावनी दे</h3><p>अगर Windows कहे “Windows protected your PC”, तो <b>More info</b> पर क्लिक करें, फिर <b>Run anyway</b> पर। ऐसा उन ऐप के साथ होता है जिनके पास पेड सिग्नेचर नहीं है; Khronometr अपने फ़ोल्डर के बाहर कुछ भी इंस्टॉल नहीं करता और कभी एडमिन अधिकार नहीं माँगता।</p></div></li><li><span class="num">3</span><div><h3>Google से साइन इन करें</h3><p>Khronometr की विंडो में उसी अकाउंट से <b>साइन इन</b> पर क्लिक करें जो आपके फ़ोन पर है। फिर आपका फ़ोन और टैबलेट भी यहाँ दिखने लगते हैं।</p></div></li><li><span class="num">4</span><div><h3>हो गया</h3><p>विंडो बंद होने पर भी Khronometr गिनती करता रहता है — यह <b>घड़ी के पास</b> (ट्रे में) रहता है और Windows के साथ शुरू होता है।</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-hi">
+    <h2 class="eyebrow" id="f-hi">यह क्या करता है</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>सारे आँकड़े</h3><p>दिन, हफ़्ता, महीना, साल और शुरू से अब तक: चार्ट, श्रेणियाँ, हर ऐप अलग से — सभी डिवाइस एक साथ या एक-एक करके।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>आपका पूरा इतिहास</h3><p>आपके फ़ोन और टैबलेट का समय, पुराना Android इतिहास, Steam गेम — बिल्कुल वैसा ही जैसा आप फ़ोन पर देखते हैं।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>यहाँ भी सीमाएँ</h3><p>सीमाएँ सीधे PC पर बनाएँ और बदलें — वे फ़ोन पर भी काम करती हैं। समय ख़त्म होने पर “समय ख़त्म” स्क्रीन दिखती है।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>रिकॉर्ड और ट्रैफ़िक</h3><p>आपका सबसे बड़ा दिन, सबसे लंबा सेशन, शुरू से अब तक के टॉप ऐप और हर ऐप का नेटवर्क उपयोग।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>ख़ुद अपडेट होता है</h3><p>नए वर्ज़न बैकग्राउंड में इंस्टॉल होते हैं; सही डिजिटल हस्ताक्षर के बिना कुछ भी इंस्टॉल नहीं होता।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>सिर्फ़ आपकी Google Drive</h3><p>सिंक आपकी अपनी Drive के एक छिपे फ़ोल्डर से होता है। कोई सर्वर नहीं, कोई विज्ञापन नहीं।</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-hi">
+    <h2 class="eyebrow" id="q-hi">सवाल</h2>
+    <div class="faqs"><details class="card"><summary>Windows की चेतावनी कैसी दिखती है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>एक नीली विंडो जिसका शीर्षक <b>“Windows protected your PC”</b> होता है और जिसमें लिखा होता है “Microsoft Defender SmartScreen prevented an unrecognized app from starting…”। टेक्स्ट के नीचे <b>More info</b> पर क्लिक करें, फिर <b>Run anyway</b> पर, <b>Don’t run</b> पर नहीं।</p></details><details class="card"><summary>मेरे पास पहले से PC के लिए पुराना Khronometr है<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>बस नई फ़ाइल चलाएँ और <b>अपडेट करें</b> पर क्लिक करें: यह पुराने की जगह ले लेता है, और आपका इतिहास, सीमाएँ, Google साइन-इन और ऑटोस्टार्ट बने रहते हैं।</p></details><details class="card"><summary>इसे अनइंस्टॉल कैसे करें?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows सेटिंग्स → ऐप्स → इंस्टॉल किए गए ऐप्स → Khronometr → अनइंस्टॉल करें</b>। आपका इतिहास <code>%LOCALAPPDATA%\Khronometr</code> में रहता है — चाहें तो उसे ख़ुद हटा दें।</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">आपका डेटा आपका ही रहता है</h2><p>कोई सर्वर नहीं, कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं। सब कुछ आपके डिवाइसों पर रहता है और, अगर आप चाहें, आपकी अपनी Google Drive के एक छिपे फ़ोल्डर में।</p>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>गोपनीयता नीति पढ़ें</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Khronometr untuk Windows" data-app="Khronometr" data-langlabel="Bahasa" data-nav="Beranda|Windows|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -713,8 +850,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Unduh untuk Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan Privasi</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · gratis · 21 bahasa<br>Memperbarui diri sendiri; setiap pembaruan diperiksa dengan tanda tangan digital.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · gratis · 25 bahasa<br>Memperbarui diri sendiri; setiap pembaruan diperiksa dengan tanda tangan digital.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Cara memasang">
@@ -737,12 +874,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Datamu tetap milikmu</h2><p>Tanpa server, tanpa iklan, tanpa pelacakan. Semuanya disimpan di perangkatmu dan, jika kamu mau, di folder tersembunyi di Google Drive milikmu sendiri.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Baca kebijakan privasi</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Khronometr cho Windows" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Khronometr cho Windows" data-app="Khronometr" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Windows|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -753,8 +890,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Tải cho Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Chính sách quyền riêng tư</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · miễn phí · 21 ngôn ngữ<br>Tự cập nhật; mỗi bản cập nhật đều được kiểm tra bằng chữ ký số.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · miễn phí · 25 ngôn ngữ<br>Tự cập nhật; mỗi bản cập nhật đều được kiểm tra bằng chữ ký số.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Cách cài đặt">
@@ -777,12 +914,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Dữ liệu của bạn vẫn là của bạn</h2><p>Không máy chủ, không quảng cáo, không theo dõi. Mọi thứ được lưu trên thiết bị của bạn và, nếu bạn muốn, trong một thư mục ẩn trên Google Drive của chính bạn.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="Khronometr สำหรับ Windows" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="Khronometr สำหรับ Windows" data-app="Khronometr" data-langlabel="ภาษา" data-nav="หน้าแรก|Windows|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -793,8 +930,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>ดาวน์โหลดสำหรับ Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>นโยบายความเป็นส่วนตัว</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · ฟรี · 21 ภาษา<br>อัปเดตตัวเอง ทุกการอัปเดตตรวจสอบด้วยลายเซ็นดิจิทัล</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · ฟรี · 25 ภาษา<br>อัปเดตตัวเอง ทุกการอัปเดตตรวจสอบด้วยลายเซ็นดิจิทัล</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="วิธีติดตั้ง">
@@ -817,12 +954,52 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">ข้อมูลของคุณยังเป็นของคุณ</h2><p>ไม่มีเซิร์ฟเวอร์ ไม่มีโฆษณา ไม่มีการติดตาม ทุกอย่างเก็บไว้บนอุปกรณ์ของคุณ และหากต้องการ ในโฟลเดอร์ที่ซ่อนอยู่ใน Google Drive ของคุณเอง</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="Windows용 Khronometr" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="Khronometr Windows 版" data-app="Khronometr" data-langlabel="语言" data-nav="首页|Windows|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
+    
+    <h1>Khronometr Windows 版</h1>
+    <p class="tagline">你的全部屏幕使用时间——电脑上也一样</p>
+    <p class="lead">一款真正的电脑应用：程序和游戏的使用时间、手机和平板的历史记录、限制和纪录——都在一个窗口里。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>下载 Windows 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>隐私政策</span></a>
+    </div>
+    <p class="note">Windows 10 / 11 · 67 MB · 免费 · 25 种语言<br>自动更新；每次更新都会通过数字签名进行校验。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="khronometr-pc">4</b></p>
+  </header>
+
+  <section class="show" aria-label="如何安装">
+    <div class="showtext"><h2 class="display">如何安装</h2></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>下载并运行</h3><p>用上方的按钮<b>下载</b>文件，然后<b>运行</b>它。Khronometr 会提示你<b>安装</b>——安装后它会出现在“开始”菜单中。</p></div></li><li><span class="num">2</span><div><h3>如果 Windows 发出警告</h3><p>如果 Windows 显示“Windows 已保护你的电脑”，请点击<b>更多信息</b>，然后点击<b>仍要运行</b>。没有付费签名的应用都会这样；Khronometr 不会在自己的文件夹之外安装任何东西，也从不要求管理员权限。</p></div></li><li><span class="num">3</span><div><h3>用 Google 登录</h3><p>在 Khronometr 窗口中点击<b>登录</b>，使用与手机上相同的账号。之后你的手机和平板也会显示在这里。</p></div></li><li><span class="num">4</span><div><h3>完成</h3><p>关闭窗口后 Khronometr 仍会继续计时——它待在<b>时钟旁边</b>（系统托盘中），并随 Windows 一起启动。</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh">
+    <h2 class="eyebrow" id="f-zh">它能做什么</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>全部统计</h3><p>日、周、月、年和全部时间：图表、类别、每个应用单独查看——所有设备合并或逐台查看。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>你的完整历史</h3><p>手机和平板上的时间、更早的 Android 历史、Steam 游戏——和你在手机上看到的完全一样。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>这里也能设限制</h3><p>直接在电脑上创建和修改限制——在手机上同样生效。时间用完时，会出现“时间到”屏幕。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>纪录和流量</h3><p>你使用最多的一天、最长的一次使用、全部时间的常用应用排行，以及每个应用的网络用量。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>自动更新</h3><p>新版本在后台安装；没有正确数字签名的文件一律不会安装。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h3>只用你的 Google 云端硬盘</h3><p>同步通过你自己云端硬盘中的隐藏文件夹进行。没有服务器，没有广告。</p></div></div>
+  </section>
+
+
+
+  <section class="section faq" aria-labelledby="q-zh">
+    <h2 class="eyebrow" id="q-zh">常见问题</h2>
+    <div class="faqs"><details class="card"><summary>Windows 的警告是什么样子的？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>一个蓝色窗口，标题为<b>“Windows 已保护你的电脑”</b>，文字为“Microsoft Defender SmartScreen 阻止了无法识别的应用启动……”。点击文字下方的<b>更多信息</b>，然后点击<b>仍要运行</b>，而不是<b>不运行</b>。</p></details><details class="card"><summary>我已经装有旧版 Khronometr 电脑版<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>直接运行新文件并点击<b>更新</b>：它会替换旧版，你的历史记录、限制、Google 登录和开机自启动都会保留。</p></details><details class="card"><summary>如何卸载？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 设置 → 应用 → 安装的应用 → Khronometr → 卸载</b>。你的历史记录会保留在 <code>%LOCALAPPDATA%\Khronometr</code> 中——如有需要，请手动删除。</p></details></div>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">你的数据只属于你</h2><p>没有服务器，没有广告，没有跟踪。所有数据都保存在你的设备上；如果你愿意，也可以保存在你自己 Google 云端硬盘的隐藏文件夹中。</p>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>阅读隐私政策</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="Windows용 Khronometr" data-app="Khronometr" data-langlabel="언어" data-nav="홈|Windows|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -833,8 +1010,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows용 다운로드</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>개인정보처리방침</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · 무료 · 21개 언어<br>알아서 업데이트되고, 모든 업데이트는 디지털 서명으로 확인해요.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · 무료 · 25개 언어<br>알아서 업데이트되고, 모든 업데이트는 디지털 서명으로 확인해요.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="설치 방법">
@@ -857,12 +1034,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">내 데이터는 내 것</h2><p>서버도, 광고도, 추적도 없어요. 모든 데이터는 내 기기에, 원하면 내 Google Drive의 숨겨진 폴더에 보관돼요.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>개인정보처리방침 읽기</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>개인정보처리방침 읽기</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="Windows 版フロノメトル" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="Windows 版フロノメトル" data-app="フロノメトル" data-langlabel="言語" data-nav="ホーム|Windows|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -873,8 +1050,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシーポリシー</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 MB · 無料 · 21 言語<br>自動で更新されます。すべての更新はデジタル署名で確認されます。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 MB · 無料 · 25 言語<br>自動で更新されます。すべての更新はデジタル署名で確認されます。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="インストール方法">
@@ -897,12 +1074,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">あなたのデータはあなたのもの</h2><p>サーバーなし、広告なし、追跡なし。すべてはあなたのデバイスと、希望すればあなた自身の Google ドライブの非表示フォルダに保存されます。</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>プライバシーポリシーを読む</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Windows-қа арналған Хронометр" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Windows-қа арналған Хронометр" data-app="Хронометр" data-langlabel="Тіл" data-nav="Басты бет|Windows|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -913,8 +1090,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows үшін жүктеп алу</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялылық саясаты</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 МБ · тегін · 21 тіл<br>Өзі жаңарады; әр жаңарту цифрлық қолтаңбамен тексеріледі.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 МБ · тегін · 25 тіл<br>Өзі жаңарады; әр жаңарту цифрлық қолтаңбамен тексеріледі.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Қалай орнату керек">
@@ -937,12 +1114,12 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Деректерің — өзіңдікі</h2><p>Сервер де, жарнама да, бақылау да жоқ. Бәрі сенің құрылғыларыңда және қаласаң, өз Google Дискіңдегі жасырын қалтада сақталады.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Құпиялылық саясатын оқу</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Хронометр для Windows" data-app="Хронометр" data-langlabel="Язык" data-nav="Главная|Windows|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="appicon" src="../khronometr/icon.svg" alt="" width="112" height="112">
     
@@ -953,8 +1130,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/pc/Khronometr-PC.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Скачать для Windows</span><span class="ver badge" hidden></span></a>
       <a class="btn" href="../khronometr/privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
-    <p class="note">Windows 10 / 11 · 67 МБ · бесплатно · 21 язык<br>Обновляется сама; каждое обновление проверяется цифровой подписью.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="khronometr-pc">2</b></p>
+    <p class="note">Windows 10 / 11 · 67 МБ · бесплатно · 25 языков<br>Обновляется сама; каждое обновление проверяется цифровой подписью.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="khronometr-pc">4</b></p>
   </header>
 
   <section class="show" aria-label="Как установить">
@@ -977,7 +1154,7 @@ main{max-width:960px}
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
     <div><h2 class="display">Твои данные — твои</h2><p>Никаких серверов, рекламы и слежки. Всё хранится на твоих устройствах и, если захочешь, в скрытой папке твоего собственного Google Диска.</p>
-    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <a class="btn light" href="../khronometr/privacy.html" data-keep-lang><span>Читать политику конфиденциальности</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
   </section>
 
   <p class="contact">Вопросы и идеи: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
@@ -988,7 +1165,8 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -1008,7 +1186,8 @@ main{max-width:960px}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
@@ -1033,7 +1212,7 @@ main{max-width:960px}
     .then(function (lists) {
       var n = {}; for (var k in P) n[k] = 0;
       lists.forEach(function (rels) { rels.forEach(function (rel) { rel.assets.forEach(function (a) { for (var k in P) if (a.name.indexOf(P[k][0]) === 0 && a.name.slice(a.name.length - P[k][1].length) === P[k][1]) n[k] += a.download_count; }); }); });
-      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { e.textContent = v.toLocaleString(document.documentElement.lang); var w = e.closest(".count"); if (w) w.hidden = false; } });
+      els.forEach(function (e) { var v = n[e.dataset.count]; if (v) { var lc = document.documentElement.lang; e.textContent = v.toLocaleString(lc === "ar" ? "ar-u-nu-latn" : lc); var w = e.closest(".count"); if (w) w.hidden = false; } });
     }).catch(function () {});
 })();
 </script>

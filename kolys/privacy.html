@@ -25,6 +25,7 @@
 <link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/kolys/privacy.html?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kolys/privacy.html?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kolys/privacy.html?lang=de">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/kolys/privacy.html?lang=nl">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kolys/privacy.html?lang=it">
 <link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/kolys/privacy.html?lang=pl">
 <link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/kolys/privacy.html?lang=cs">
@@ -32,9 +33,12 @@
 <link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/kolys/privacy.html?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kolys/privacy.html?lang=sv">
 <link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/kolys/privacy.html?lang=tr">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/kolys/privacy.html?lang=ar">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/kolys/privacy.html?lang=hi">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kolys/privacy.html?lang=id">
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/kolys/privacy.html?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/kolys/privacy.html?lang=th">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/kolys/privacy.html?lang=zh">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/kolys/privacy.html?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kolys/privacy.html?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kolys/privacy.html?lang=kk">
@@ -55,6 +59,19 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
 :root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -81,12 +98,12 @@ main{max-width:760px}
 .sec{scroll-margin-top:76px}
 .sec p{margin:8px 0 0;color:var(--ink2)}
 .sec p:first-of-type{margin-top:0}
-.sec ul{margin:8px 0 0;padding-left:22px;color:var(--ink2)}
+.sec ul{margin:8px 0 0;padding-inline-start:22px;color:var(--ink2)}
 .sec li{margin:4px 0}
 .sec li::marker{color:var(--accent)}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
-th,td{text-align:left;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
+th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
 thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
@@ -105,6 +122,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   .toc .eyebrow{padding:0 16px}
   .toc .chips{flex-wrap:nowrap;overflow-x:auto;padding:0 16px 4px;scroll-snap-type:x proximity;scrollbar-width:none;
     -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
+  [dir=rtl] .toc .chips{-webkit-mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(270deg,transparent 0,#000 16px,#000 calc(100% - 28px),transparent)}
   .toc .chips::-webkit-scrollbar{display:none}
   .toc .chips a{scroll-snap-align:start;flex:none}
   thead{display:none}
@@ -123,12 +141,12 @@ td:last-child{font-weight:600;color:var(--ink)}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Kolys</span></a>
   <nav class="links"><a data-nav="0" href="index.html" data-keep-lang>Home</a><a class="on" aria-current="page" data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
 <main>
-<article class="langdoc" lang="en" data-lang="en" data-title="Privacy policy · Kolys" data-app="Kolys" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
+<article class="langdoc" lang="en" dir="ltr" data-lang="en" data-title="Privacy policy · Kolys" data-app="Kolys" data-langlabel="Language" data-nav="Home|Privacy" data-hub="PegasoHlib — all apps">
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -231,7 +249,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="uk" data-lang="uk" data-title="Політика конфіденційності · Колись" data-app="Колись" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
+<article class="langdoc" lang="uk" dir="ltr" data-lang="uk" data-title="Політика конфіденційності · Колись" data-app="Колись" data-langlabel="Мова" data-nav="Головна|Конфіденційність" data-hub="PegasoHlib — всі застосунки" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Колись</p>
@@ -334,7 +352,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="es" data-lang="es" data-title="Política de privacidad · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
+<article class="langdoc" lang="es" dir="ltr" data-lang="es" data-title="Política de privacidad · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Inicio|Privacidad" data-hub="PegasoHlib — todas las apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -437,7 +455,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt" data-lang="pt" data-title="Política de privacidade · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt" dir="ltr" data-lang="pt" data-title="Política de privacidade · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -540,7 +558,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Política de privacidade · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+<article class="langdoc" lang="pt-BR" dir="ltr" data-lang="pt-BR" data-title="Política de privacidade · Kolys" data-app="Kolys" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -643,7 +661,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="fr" data-lang="fr" data-title="Politique de confidentialité · Kolys" data-app="Kolys" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
+<article class="langdoc" lang="fr" dir="ltr" data-lang="fr" data-title="Politique de confidentialité · Kolys" data-app="Kolys" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -746,7 +764,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="de" data-lang="de" data-title="Datenschutzerklärung · Kolys" data-app="Kolys" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
+<article class="langdoc" lang="de" dir="ltr" data-lang="de" data-title="Datenschutzerklärung · Kolys" data-app="Kolys" data-langlabel="Sprache" data-nav="Start|Datenschutz" data-hub="PegasoHlib — alle Apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -849,7 +867,110 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="it" data-lang="it" data-title="Informativa sulla privacy · Kolys" data-app="Kolys" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
+<article class="langdoc" lang="nl" dir="ltr" data-lang="nl" data-title="Privacybeleid · Kolys" data-app="Kolys" data-langlabel="Taal" data-nav="Start|Privacy" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Kolys</p>
+    <h1>Privacybeleid</h1>
+    <p class="date">Laatst bijgewerkt: 22 oktober 2026</p>
+    <p class="lead">Kolys is een Android-app om brieven te schrijven aan je toekomstige zelf (“tijdcapsules”). Dit beleid legt uit wat de app met je gegevens doet. Kort gezegd: alles blijft op je telefoon en, als je dat aanzet, in je eigen Google Drive.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="nl-glance">
+    <h2 id="nl-glance" class="eyebrow">In één oogopslag</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span>Je brieven, foto’s, video’s en spraakberichten worden op je telefoon bewaard.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Kolys heeft geen eigen servers. De ontwikkelaar ontvangt nooit je brieven, foto’s of andere gegevens.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span>Geen advertenties, geen analyse, geen tracking, geen verkoop van gegevens.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span>Google Drive is optioneel en bereikt alleen de eigen verborgen map van de app.</span></li><li class="t1"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Om je locatie wordt alleen gevraagd als je de stad en het weer toevoegt, alleen bij benadering, en die wordt niet opgeslagen.</span></li><li class="t4"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><span>Een capsule als cadeau is een bestand dat je zelf verstuurt. De ontwikkelaar ontvangt het nooit.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="Op deze pagina">
+    <p class="eyebrow">Op deze pagina</p>
+    <div class="chips"><a href="#nl-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>Wat er op je telefoon blijft</a><a href="#nl-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive (optioneel)</a><a href="#nl-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Hoe gegevens van Google worden gebruikt</a><a href="#nl-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>De datum controleren</a><a href="#nl-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Stad en weer (optioneel)</a><a href="#nl-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>Nummers zoeken (optioneel)</a><a href="#nl-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>Capsules als cadeau</a><a href="#nl-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>Meldingen, agenda en widget</a><a href="#nl-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>Updates</a><a href="#nl-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Wat Kolys niet doet</a><a href="#nl-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>Toestemmingen die de app vraagt</a><a href="#nl-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>Je gegevens verwijderen</a><a href="#nl-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>Kinderen</a><a href="#nl-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>Wijzigingen in dit beleid</a><a href="#nl-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>Contact</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="nl-table">
+    <h2 id="nl-table">Welke gegevens, waar ze staan, wie ze ziet</h2>
+    <table>
+      <thead><tr><th scope="col">Gegevens</th><th scope="col">Waar ze worden bewaard</th><th scope="col">Wie ze kan zien</th></tr></thead>
+      <tbody><tr><th scope="row">Capsules en concepten: brieven, foto’s, video’s, spraakberichten, “dit moment”</th><td data-label="Waar ze worden bewaard">Op je telefoon; elke verzegelde capsule ook in je eigen Google Drive, als je dat aanzet</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Instellingen, je verjaardag, het e-mailadres van het gekoppelde Google-account</th><td data-label="Waar ze worden bewaard">Op je telefoon</td><td data-label="Wie ze kan zien">Alleen jij</td></tr><tr><th scope="row">Locatie bij benadering</th><td data-label="Waar ze worden bewaard">Niet opgeslagen: één keer omgezet in de naam van een stad; alleen de stad en het weer worden bewaard</td><td data-label="Wie ze kan zien">Open-Meteo, afgerond op ongeveer een kilometer, om het weer op te halen</td></tr><tr><th scope="row">Woorden die je typt bij het zoeken naar een nummer</th><td data-label="Waar ze worden bewaard">Niet opgeslagen; de capsule bewaart alleen de titel, de artiest en het jaar van het nummer</td><td data-label="Wie ze kan zien">MusicBrainz, om titels van nummers te vinden</td></tr><tr><th scope="row">Een capsule als cadeau</th><td data-label="Waar ze worden bewaard">In één bestand dat je zelf verstuurt; daarna in de app van de ontvanger</td><td data-label="Wie ze kan zien">Jij en de persoon naar wie je het stuurt</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="nl-data">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><h2>Wat er op je telefoon blijft</h2></div>
+    <p>De app slaat op je telefoon op:</p><ul><li>je capsules en concepten: naam, tekst van de brief, de datum van schrijven, de openingsdatum, de kleur van het zegel, of de capsule al is geopend, en op welke eerdere brief ze antwoordt;</li><li>kopieën van de foto’s en video’s die je toevoegt (foto’s worden verkleind), en de spraakberichten die je opneemt;</li><li>“dit moment”, als je het invult: je stemming, een nummer, de stad en het weer, en het model en het batterijniveau van de telefoon;</li><li>je instellingen (taal, thema, je verjaardag als je die voor een capsule gebruikt, het e-mailadres van het gekoppelde Google-account).</li></ul><p>Foto’s en video’s kies je via de eigen fotokiezer van Android, zodat de app alleen de bestanden ziet die je kiest, nooit je hele galerij. De microfoon wordt alleen gebruikt terwijl je een spraakbericht opneemt. Dit alles wordt bewaard in de privéopslag van de app, die andere apps niet kunnen lezen. De app zet de automatische back-up van Android uit. Foto’s en video’s die je in Kolys maakt, worden gemaakt door de camera-app van je telefoon; Kolys zelf heeft geen toestemming voor de camera.</p>
+    
+  </section>
+  <section class="card sec" id="nl-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive (optioneel)</h2></div>
+    <p>Als je inlogt met Google, vraagt Kolys om één toestemming: <code>drive.appdata</code>. Daarmee kan de app alleen haar eigen bestanden maken, lezen en verwijderen in een verborgen app-map op je Google Drive. De app kan geen andere bestanden in je Drive zien of wijzigen.</p><p>Elke verzegelde capsule wordt daar als één bestand opgeslagen (de brief, de foto’s, video’s, spraakberichten en “dit moment”), samen met de openingsdatum en de datum waarop de capsule is geopend. Zo komen je capsules terug op een nieuwe telefoon. De app leest ook het e-mailadres van je account, alleen om je te laten zien welk account is gekoppeld.</p><p>Gegevens gaan rechtstreeks tussen je telefoon en Google, via een versleutelde verbinding. Er zit geen andere server tussen. Op wat er in je Drive is opgeslagen, is het eigen privacybeleid van Google van toepassing.</p>
+    
+  </section>
+  <section class="card sec" id="nl-google">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Hoe gegevens van Google worden gebruikt</h2></div>
+    <p>Het gebruik door Kolys van informatie die is ontvangen van Google API’s, en de overdracht daarvan aan andere apps, voldoet aan de <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, inclusief de vereisten voor beperkt gebruik (Limited Use).</p><ul><li>Gegevens uit je Google Drive worden alleen gebruikt om je capsules te bewaren en ze terug te zetten op je telefoons.</li><li>Ze worden nooit verkocht, nooit voor advertenties gebruikt en nooit met iemand gedeeld.</li><li>Geen mens leest ze: de ontwikkelaar heeft geen toegang tot je Drive of je brieven.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-time">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>De datum controleren</h2></div>
+    <p>Zodat een capsule niet eerder kan worden geopend door de klok van de telefoon te verzetten, vraagt de app een webserver om de huidige tijd (www.google.com of www.cloudflare.com) en leest ze de datum uit het antwoord. Er wordt niets over jou of je capsules verzonden. Zoals bij elk webverzoek zien deze diensten je IP-adres.</p>
+    
+  </section>
+  <section class="card sec" id="nl-place">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>Stad en weer (optioneel)</h2></div>
+    <p>Alleen als je tijdens het schrijven op “Stad en weer toevoegen” tikt, vraagt de app Android één keer om je locatie bij benadering (nooit de exacte). De telefoon zet die om in de naam van een stad, en de app vraagt Open-Meteo (open-meteo.com) om het huidige weer, waarbij de locatie wordt meegestuurd, afgerond op ongeveer een kilometer. Alleen de naam van de stad en het weer worden in de capsule bewaard; de locatie zelf wordt niet opgeslagen. Je kunt dit altijd weglaten.</p>
+    
+  </section>
+  <section class="card sec" id="nl-song">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg><h2>Nummers zoeken (optioneel)</h2></div>
+    <p>Als je zoekt naar het nummer van het moment, worden de woorden die je typt naar MusicBrainz (musicbrainz.org) gestuurd, een open muziekdatabase, om bijpassende titels te vinden. Alleen de titel, de artiest en het jaar van het nummer worden in de capsule bewaard, nooit hoezen of opnamen. “Luisteren” geeft de titel van het nummer door aan de muziek-app op je telefoon (of opent een zoekopdracht in YouTube Music), en die app werkt volgens haar eigen regels. Je kunt ook gewoon zelf een nummer typen zonder te zoeken.</p>
+    
+  </section>
+  <section class="card sec" id="nl-gifts">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>Capsules als cadeau</h2></div>
+    <p>Een capsule voor iemand anders wordt één bestand dat je zelf verstuurt, in de app die je kiest (een messenger, e-mail, Google Drive). Het bestand bevat de brief met de foto’s, video’s, spraakberichten en “dit moment”, en je naam als je die opgeeft. Het is versleuteld, zodat het niet zomaar kan worden uitgepakt en gelezen vóór de dag zelf, maar de sleutel zit in het bestand, dus het is geen sterke bescherming tegen een vastberaden expert. De ontwikkelaar ontvangt het nooit. Zodra je vriend of vriendin het bestand in Kolys opent, staat diens kopie in diens eigen app en, als die persoon dat gebruikt, in diens eigen Google Drive. Als je het vergrendelt met een geheim woord, wordt de sleutel gemaakt van dat woord en zit die niet in het bestand: het woord wordt nergens opgeslagen, en zonder het woord kan niemand, ook de ontwikkelaar niet, het bestand openen. Alleen de hint die je schrijft, kan vooraf worden gelezen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-notify">
+    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h2>Meldingen, agenda en widget</h2></div>
+    <p>De melding op de openingsdag wordt op je telefoon gemaakt; er wordt niets verzonden. “Toevoegen aan agenda” opent de agenda-app van je telefoon met een kant-en-klare afspraak (de naam en de openingsdatum van de capsule). Jij beslist of je die opslaat, en daarna wordt die bewaard door je agenda-app. Kolys kan je agenda niet lezen. De widget op het startscherm toont alleen de naam van je eerstvolgende capsule en hoeveel dagen er nog over zijn.</p>
+    
+  </section>
+  <section class="card sec" id="nl-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>Updates</h2></div>
+    <p>De versie van Kolys van deze website controleert om de paar uur op de website van Kolys (pegasohlib.github.io) of er een nieuwe versie is, en downloadt die van GitHub als je op Bijwerken tikt. Zoals bij elke website ziet GitHub het IP-adres van je apparaat; verder wordt er niets verzonden, en geen gegevens uit de app.</p><p>Je kunt automatische controles uitzetten in Instellingen. Als de app uit Google Play komt, werkt Google Play haar in plaats daarvan bij.</p><p>GitHub telt ook hoe vaak elk bestand is gedownload. Dat is alleen een getal, zonder iets over wie het heeft gedownload; de website toont het als een geschat aantal downloads.</p>
+    
+  </section>
+  <section class="card sec" id="nl-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Wat Kolys niet doet</h2></div>
+    <ul><li>geen accounts bij de ontwikkelaar en geen eigen servers;</li><li>geen analyse, geen advertenties, geen tracking, geen crashrapporten die ergens naartoe worden gestuurd;</li><li>geen verkoop of delen van welke gegevens dan ook;</li><li>geen toegang tot je contacten, bestanden of galerij, en geen locatie op de achtergrond.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-permissions">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>Toestemmingen die de app vraagt</h2></div>
+    
+    <dl class="perms"><div><dt>Internet</dt><dd>om de datum en het weer te controleren, Google Drive te gebruiken, naar nummers te zoeken en op updates te controleren.</dd></div><div><dt>Netwerkstatus</dt><dd>om op een verbinding te wachten voordat de datum wordt gecontroleerd of wordt gesynchroniseerd.</dd></div><div><dt>Meldingen</dt><dd>de openingsdag en de seintjes onderweg.</dd></div><div><dt>Microfoon (optioneel)</dt><dd>alleen voor spraakberichten, terwijl je opneemt.</dd></div><div><dt>Locatie bij benadering (optioneel)</dt><dd>alleen voor de stad en het weer, als je daarom vraagt.</dd></div><div><dt>Trillen</dt><dd>als een capsule opengaat.</dd></div><div><dt>Apps installeren</dt><dd>om de eigen updates te installeren (alleen in de versie van deze website).</dd></div></dl>
+  </section>
+  <section class="card sec" id="nl-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>Je gegevens verwijderen</h2></div>
+    <ul><li>Als je een capsule in de app verwijdert, wordt die van je telefoon verwijderd en, bij de volgende synchronisatie, ook van je Google Drive.</li><li>Als je de app verwijdert, wordt alles verwijderd wat ze op de telefoon heeft opgeslagen.</li><li>Om de kopie in Drive zonder de app te verwijderen: open Google Drive op het web → Instellingen → Apps beheren → Kolys → Opties → Verborgen app-gegevens verwijderen.</li><li>Je kunt de toegang van de app op elk moment intrekken op <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li></ul>
+    
+  </section>
+  <section class="card sec" id="nl-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>Kinderen</h2></div>
+    <p>Kolys verzamelt van niemand persoonsgegevens, ook niet van kinderen. De app heeft geen accounts, geen chat en geen functies om te delen.</p>
+    
+  </section>
+  <section class="card sec" id="nl-changes">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>Wijzigingen in dit beleid</h2></div>
+    <p>Als de app iets nieuws met gegevens gaat doen, wordt deze pagina eerst bijgewerkt, met een nieuwe datum bovenaan.</p>
+    
+  </section>
+  <section class="card sec" id="nl-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>Contact</h2></div>
+    <p>Vragen over privacy: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>.</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="it" dir="ltr" data-lang="it" data-title="Informativa sulla privacy · Kolys" data-app="Kolys" data-langlabel="Lingua" data-nav="Home|Privacy" data-hub="PegasoHlib — tutte le app" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -952,7 +1073,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="pl" data-lang="pl" data-title="Polityka prywatności · Kolys" data-app="Kolys" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+<article class="langdoc" lang="pl" dir="ltr" data-lang="pl" data-title="Polityka prywatności · Kolys" data-app="Kolys" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1055,7 +1176,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="cs" data-lang="cs" data-title="Zásady ochrany soukromí · Kolys" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+<article class="langdoc" lang="cs" dir="ltr" data-lang="cs" data-title="Zásady ochrany soukromí · Kolys" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1158,7 +1279,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sk" data-lang="sk" data-title="Zásady ochrany súkromia · Kolys" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+<article class="langdoc" lang="sk" dir="ltr" data-lang="sk" data-title="Zásady ochrany súkromia · Kolys" data-app="Kolys" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1261,7 +1382,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="da" data-lang="da" data-title="Privatlivspolitik · Kolys" data-app="Kolys" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da" data-title="Privatlivspolitik · Kolys" data-app="Kolys" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1364,7 +1485,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="sv" data-lang="sv" data-title="Integritetspolicy · Kolys" data-app="Kolys" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
+<article class="langdoc" lang="sv" dir="ltr" data-lang="sv" data-title="Integritetspolicy · Kolys" data-app="Kolys" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1467,7 +1588,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="tr" data-lang="tr" data-title="Gizlilik politikası · Kolys" data-app="Kolys" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+<article class="langdoc" lang="tr" dir="ltr" data-lang="tr" data-title="Gizlilik politikası · Kolys" data-app="Kolys" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1570,7 +1691,213 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="id" data-lang="id" data-title="Kebijakan privasi · Kolys" data-app="Kolys" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
+<article class="langdoc" lang="ar" dir="rtl" data-lang="ar" data-title="سياسة الخصوصية · Kolys" data-app="Kolys" data-langlabel="اللغة" data-nav="الرئيسية|الخصوصية" data-hub="PegasoHlib — كل التطبيقات" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Kolys</p>
+    <h1>سياسة الخصوصية</h1>
+    <p class="date">آخر تحديث: 22 أكتوبر 2026</p>
+    <p class="lead">تطبيق Kolys لنظام Android مخصّص لكتابة رسائل إلى نفسك في المستقبل («كبسولات زمنية»). توضّح هذه السياسة ما يفعله التطبيق ببياناتك. باختصار: كل شيء يبقى على هاتفك، وإن فعّلت ذلك، في Google Drive الخاص بك.</p>
+  </header>
+
+  <section class="glance" aria-labelledby="ar-glance">
+    <h2 id="ar-glance" class="eyebrow">نظرة سريعة</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span>تُحفظ رسائلك وصورك ومقاطع الفيديو والرسائل الصوتية على هاتفك.</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>ليس لدى Kolys خوادم خاصة به. ولا يتلقى المطوّر أبدًا رسائلك أو صورك أو أي بيانات أخرى.</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span>لا إعلانات، ولا أدوات تحليل، ولا تتبّع، ولا بيع للبيانات.</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span>استخدام Google Drive اختياري ولا يصل إلا إلى المجلد المخفي الخاص بالتطبيق.</span></li><li class="t1"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>لا يُطلب الموقع إلا عند إضافة المدينة والطقس، وبشكل تقريبي فقط، ولا يُخزَّن.</span></li><li class="t4"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><span>الكبسولة الهدية ملف ترسله بنفسك. ولا يتلقاه المطوّر أبدًا.</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="في هذه الصفحة">
+    <p class="eyebrow">في هذه الصفحة</p>
+    <div class="chips"><a href="#ar-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>ما الذي يبقى على هاتفك</a><a href="#ar-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>التخزين في Google Drive (اختياري)</a><a href="#ar-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>كيف تُستخدم بيانات Google</a><a href="#ar-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>التحقق من التاريخ</a><a href="#ar-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>المدينة والطقس (اختياري)</a><a href="#ar-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>البحث عن الأغاني (اختياري)</a><a href="#ar-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>الكبسولات الهدايا</a><a href="#ar-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>الإشعارات والتقويم والأداة</a><a href="#ar-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>التحديثات</a><a href="#ar-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>ما لا يفعله Kolys</a><a href="#ar-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>الأذونات التي يطلبها التطبيق</a><a href="#ar-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>حذف بياناتك</a><a href="#ar-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>الأطفال</a><a href="#ar-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>التغييرات على هذه السياسة</a><a href="#ar-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>التواصل</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="ar-table">
+    <h2 id="ar-table">ما البيانات، وأين تُحفظ، ومن يراها</h2>
+    <table>
+      <thead><tr><th scope="col">البيانات</th><th scope="col">مكان الحفظ</th><th scope="col">من يمكنه رؤيتها</th></tr></thead>
+      <tbody><tr><th scope="row">الكبسولات والمسودات: الرسائل، والصور، ومقاطع الفيديو، والرسائل الصوتية، و«هذه اللحظة»</th><td data-label="مكان الحفظ">على هاتفك؛ وكل كبسولة مختومة أيضًا في Google Drive الخاص بك، إذا فعّلت ذلك</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">الإعدادات، وتاريخ ميلادك، والبريد الإلكتروني لحساب Google المتصل</th><td data-label="مكان الحفظ">على هاتفك</td><td data-label="من يمكنه رؤيتها">أنت فقط</td></tr><tr><th scope="row">الموقع التقريبي</th><td data-label="مكان الحفظ">لا يُخزَّن: يُحوَّل مرة واحدة إلى اسم مدينة؛ ولا يُحفظ إلا المدينة والطقس</td><td data-label="من يمكنه رؤيتها">خدمة Open-Meteo، مقرَّبًا إلى نحو كيلومتر واحد، لمعرفة الطقس</td></tr><tr><th scope="row">الكلمات المكتوبة في البحث عن الأغاني</th><td data-label="مكان الحفظ">لا تُخزَّن؛ ولا تحتفظ الكبسولة إلا باسم الأغنية والفنان والسنة</td><td data-label="من يمكنه رؤيتها">قاعدة بيانات MusicBrainz، للعثور على أسماء الأغاني</td></tr><tr><th scope="row">الكبسولة الهدية</th><td data-label="مكان الحفظ">في ملف واحد ترسله بنفسك؛ ثم في تطبيق المستلم</td><td data-label="من يمكنه رؤيتها">أنت والشخص الذي ترسلها إليه</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="ar-data">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><h2>ما الذي يبقى على هاتفك</h2></div>
+    <p>يخزّن التطبيق على هاتفك:</p><ul><li>كبسولاتك ومسوداتك: الاسم، ونص الرسالة، وتاريخ الكتابة، وتاريخ الفتح، ولون الختم، وما إذا كانت قد فُتحت، وأي رسالة سابقة تردّ عليها؛</li><li>نسخًا من الصور ومقاطع الفيديو التي تضيفها (تُصغَّر الصور)، والرسائل الصوتية التي تسجّلها؛</li><li>«هذه اللحظة»، إذا ملأتها: مزاجك، وأغنية، والمدينة والطقس، وطراز الهاتف ومستوى البطارية؛</li><li>إعداداتك (اللغة، والسمة، وتاريخ ميلادك إذا استخدمته لكبسولة، والبريد الإلكتروني لحساب Google المتصل).</li></ul><p>تُختار الصور ومقاطع الفيديو عبر أداة اختيار الصور المدمجة في Android، لذا لا يرى التطبيق إلا ما تختاره أنت، ولا يرى معرضك كاملًا أبدًا. ولا يُستخدم الميكروفون إلا أثناء تسجيلك رسالة صوتية. ويُحفظ كل ذلك في مساحة التخزين الخاصة بالتطبيق، التي لا تستطيع التطبيقات الأخرى قراءتها. ويوقف التطبيق النسخ الاحتياطي التلقائي في Android. أما الصور ومقاطع الفيديو التي تلتقطها في Kolys فيلتقطها تطبيق الكاميرا في هاتفك؛ إذ لا يملك Kolys نفسه إذن الكاميرا.</p>
+    
+  </section>
+  <section class="card sec" id="ar-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>التخزين في Google Drive (اختياري)</h2></div>
+    <p>إذا سجّلت الدخول باستخدام Google، يطلب Kolys إذنًا واحدًا: <code>drive.appdata</code>. وهو يتيح للتطبيق إنشاء ملفاته الخاصة فقط وقراءتها وحذفها في مجلد تطبيق مخفي في Google Drive الخاص بك. ولا يمكن للتطبيق رؤية أي ملفات أخرى في Drive الخاص بك أو تغييرها.</p><p>تُحفظ كل كبسولة مختومة هناك كملف واحد (الرسالة، وصورها، ومقاطع الفيديو، والرسائل الصوتية، و«هذه اللحظة»)، مع تاريخ فتحها والتاريخ الذي فُتحت فيه. وهذا ما يعيد كبسولاتك على هاتف جديد. ويقرأ التطبيق أيضًا عنوان البريد الإلكتروني لحسابك فقط ليُظهر لك الحساب المتصل.</p><p>تنتقل البيانات مباشرة بين هاتفك وGoogle عبر اتصال مشفّر. ولا يوجد أي خادم آخر بينهما. وتنطبق سياسة الخصوصية الخاصة بـ Google على ما يُخزَّن في Drive الخاص بك.</p>
+    
+  </section>
+  <section class="card sec" id="ar-google">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>كيف تُستخدم بيانات Google</h2></div>
+    <p>سيلتزم استخدام Kolys للمعلومات التي يتلقاها من واجهات Google البرمجية (Google APIs) ونقلها إلى أي تطبيق آخر بـ <a href="https://developers.google.com/terms/api-services-user-data-policy">سياسة بيانات المستخدم لخدمات Google API</a>، بما في ذلك متطلبات الاستخدام المحدود.</p><ul><li>لا تُستخدم البيانات من Google Drive الخاص بك إلا لحفظ كبسولاتك وإعادتها إلى هواتفك.</li><li>ولا تُباع أبدًا، ولا تُستخدم للإعلانات أبدًا، ولا تُشارَك مع أي أحد أبدًا.</li><li>لا يقرؤها أي إنسان: فالمطوّر لا يملك أي وصول إلى Drive الخاص بك أو إلى رسائلك.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-time">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>التحقق من التاريخ</h2></div>
+    <p>كي لا يمكن فتح الكبسولة قبل موعدها بتغيير ساعة الهاتف، يطلب التطبيق الوقت الحالي من خادم ويب (www.google.com أو www.cloudflare.com) ويقرأ التاريخ من الرد. ولا يُرسل أي شيء عنك أو عن كبسولاتك. وكما هو الحال مع أي طلب ويب، ترى هذه الخدمات عنوان IP الخاص بك.</p>
+    
+  </section>
+  <section class="card sec" id="ar-place">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>المدينة والطقس (اختياري)</h2></div>
+    <p>فقط عندما تنقر على «أضف المدينة والطقس» أثناء الكتابة، يطلب التطبيق من Android موقعك التقريبي (وليس الدقيق أبدًا) مرة واحدة. يحوّله الهاتف إلى اسم مدينة، ويطلب التطبيق من Open-Meteo (open-meteo.com) الطقس الحالي، مرسلًا الموقع مقرَّبًا إلى نحو كيلومتر واحد. ولا يُحفظ في الكبسولة إلا اسم المدينة والطقس؛ أما الموقع نفسه فلا يُخزَّن. ويمكنك دائمًا ترك ذلك.</p>
+    
+  </section>
+  <section class="card sec" id="ar-song">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg><h2>البحث عن الأغاني (اختياري)</h2></div>
+    <p>عندما تبحث عن أغنية اللحظة، تُرسل الكلمات التي تكتبها إلى MusicBrainz (musicbrainz.org)، وهي قاعدة بيانات موسيقية مفتوحة، للعثور على أسماء الأغاني المطابقة. ولا يُحفظ في الكبسولة إلا اسم الأغنية والفنان والسنة، وليس الأغلفة أو التسجيلات أبدًا. ويمرّر زر «استمع» اسم الأغنية إلى تطبيق الموسيقى على هاتفك (أو يفتح بحثًا في YouTube Music)، ويعمل ذلك التطبيق وفق قواعده الخاصة. ويمكنك أيضًا ببساطة كتابة أغنية بنفسك دون بحث.</p>
+    
+  </section>
+  <section class="card sec" id="ar-gifts">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>الكبسولات الهدايا</h2></div>
+    <p>تصبح الكبسولة المخصصة لشخص آخر ملفًا واحدًا ترسله بنفسك، عبر التطبيق الذي تختاره (تطبيق مراسلة، أو بريد إلكتروني، أو Google Drive). ويحتوي الملف على الرسالة مع صورها ومقاطع الفيديو والرسائل الصوتية و«هذه اللحظة»، واسمك إن قدّمته. وهو مشفّر بحيث لا يمكن ببساطة فكّه وقراءته قبل يومه، لكن المفتاح ينتقل داخل الملف، لذا فهو ليس حماية قوية من خبير مصمِّم. ولا يتلقاه المطوّر أبدًا. وما إن يفتح صديقك الملف في Kolys حتى تصبح نسخته في تطبيقه، وإن كان يستخدم Google Drive، في Google Drive الخاص به. وإذا قفلته بكلمة سرية، فإن المفتاح يُصنع من الكلمة ولا يكون في الملف: لا تُخزَّن الكلمة في أي مكان، ودونها لا يستطيع أحد، بمن في ذلك المطوّر، فتح الملف. ولا يمكن أن يُقرأ مسبقًا إلا التلميح الذي تكتبه.</p>
+    
+  </section>
+  <section class="card sec" id="ar-notify">
+    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h2>الإشعارات والتقويم والأداة</h2></div>
+    <p>يُنشأ إشعار يوم الفتح على هاتفك؛ ولا يُرسل أي شيء إلى أي مكان. ويفتح زر «إضافة إلى التقويم» تطبيق التقويم في هاتفك مع حدث جاهز (اسم الكبسولة وتاريخ فتحها). وأنت من يقرر حفظه، وعندها يحتفظ به تطبيق التقويم لديك. ولا يستطيع Kolys قراءة تقويمك. ولا تعرض أداة الشاشة الرئيسية إلا اسم أقرب كبسولة لديك وعدد الأيام المتبقية.</p>
+    
+  </section>
+  <section class="card sec" id="ar-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>التحديثات</h2></div>
+    <p>يتحقق إصدار Kolys المأخوذ من هذا الموقع من موقع Kolys (pegasohlib.github.io) كل بضع ساعات بحثًا عن إصدار جديد، ويُنزّله من GitHub عندما تنقر على «تحديث». وكما هو الحال مع أي موقع، يرى GitHub عنوان IP لجهازك؛ ولا يُرسل أي شيء آخر، ولا أي بيانات من التطبيق.</p><p>يمكنك إيقاف التحقق التلقائي من الإعدادات. وعندما يكون التطبيق من Google Play، يتولى Google Play تحديثه بدلًا من ذلك.</p><p>يحصي GitHub أيضًا عدد مرات تنزيل كل ملف. وهو مجرد رقم، لا يتضمن أي شيء عمّن قام بالتنزيل؛ ويعرضه الموقع كعدد تقريبي للتنزيلات.</p>
+    
+  </section>
+  <section class="card sec" id="ar-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>ما لا يفعله Kolys</h2></div>
+    <ul><li>لا حسابات لدى المطوّر ولا خوادم خاصة به؛</li><li>لا أدوات تحليل، ولا إعلانات، ولا تتبّع، ولا تقارير أعطال تُرسل إلى أي مكان؛</li><li>لا بيع ولا مشاركة لأي بيانات؛</li><li>لا وصول إلى جهات اتصالك أو ملفاتك أو معرضك، ولا تحديد للموقع في الخلفية.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-permissions">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>الأذونات التي يطلبها التطبيق</h2></div>
+    
+    <dl class="perms"><div><dt>الإنترنت</dt><dd>للتحقق من التاريخ والطقس، واستخدام Google Drive، والبحث عن الأغاني، والتحقق من التحديثات.</dd></div><div><dt>حالة الشبكة</dt><dd>لانتظار الاتصال قبل التحقق من التاريخ أو المزامنة.</dd></div><div><dt>الإشعارات</dt><dd>يوم الفتح والتذكيرات على الطريق.</dd></div><div><dt>الميكروفون (اختياري)</dt><dd>للرسائل الصوتية فقط، أثناء التسجيل.</dd></div><div><dt>الموقع التقريبي (اختياري)</dt><dd>للمدينة والطقس فقط، عندما تطلب ذلك.</dd></div><div><dt>الاهتزاز</dt><dd>عندما تُفتح كبسولة.</dd></div><div><dt>تثبيت التطبيقات</dt><dd>لتثبيت تحديثاته الخاصة (فقط في الإصدار المأخوذ من هذا الموقع).</dd></div></dl>
+  </section>
+  <section class="card sec" id="ar-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>حذف بياناتك</h2></div>
+    <ul><li>حذف كبسولة في التطبيق يزيلها من هاتفك، وعند المزامنة التالية، من Google Drive الخاص بك.</li><li>إلغاء تثبيت التطبيق يزيل كل ما خزّنه على الهاتف.</li><li>لإزالة النسخة من Drive دون التطبيق: افتح Google Drive على الويب ← الإعدادات ← إدارة التطبيقات ← Kolys ← الخيارات ← حذف بيانات التطبيق المخفية.</li><li>يمكنك سحب وصول التطبيق في أي وقت من <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a>.</li></ul>
+    
+  </section>
+  <section class="card sec" id="ar-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>الأطفال</h2></div>
+    <p>لا يجمع Kolys أي بيانات شخصية من أي أحد، بمن في ذلك الأطفال. فليس فيه حسابات، ولا دردشة، ولا مشاركة.</p>
+    
+  </section>
+  <section class="card sec" id="ar-changes">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>التغييرات على هذه السياسة</h2></div>
+    <p>إذا بدأ التطبيق يفعل شيئًا جديدًا بالبيانات، فستُحدَّث هذه الصفحة أولًا، مع تاريخ جديد في الأعلى.</p>
+    
+  </section>
+  <section class="card sec" id="ar-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>التواصل</h2></div>
+    <p>للأسئلة المتعلقة بالخصوصية: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>.</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="hi" dir="ltr" data-lang="hi" data-title="गोपनीयता नीति · Kolys" data-app="Kolys" data-langlabel="भाषा" data-nav="होम|निजता" data-hub="PegasoHlib — सभी ऐप" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Kolys</p>
+    <h1>गोपनीयता नीति</h1>
+    <p class="date">आख़िरी अपडेट: 22 अक्टूबर 2026</p>
+    <p class="lead">Kolys भविष्य के अपने आप को चिट्ठियाँ (“टाइम कैप्सूल”) लिखने के लिए एक Android ऐप है। यह नीति बताती है कि ऐप आपके डेटा के साथ क्या करता है। संक्षेप में: सब कुछ आपके फ़ोन पर रहता है और, अगर आप इसे चालू करें, आपकी अपनी Google Drive में।</p>
+  </header>
+
+  <section class="glance" aria-labelledby="hi-glance">
+    <h2 id="hi-glance" class="eyebrow">एक नज़र में</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span>आपकी चिट्ठियाँ, फ़ोटो, वीडियो और वॉइस मैसेज आपके फ़ोन पर रखे जाते हैं।</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Kolys के अपने कोई सर्वर नहीं हैं। डेवलपर को आपकी चिट्ठियाँ, फ़ोटो या कोई दूसरा डेटा कभी नहीं मिलता।</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span>कोई विज्ञापन नहीं, कोई एनालिटिक्स नहीं, कोई ट्रैकिंग नहीं, डेटा की कोई बिक्री नहीं।</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span>Google Drive वैकल्पिक है और सिर्फ़ ऐप के अपने छिपे फ़ोल्डर तक पहुँचती है।</span></li><li class="t1"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>लोकेशन सिर्फ़ तब माँगी जाती है जब आप शहर और मौसम जोड़ते हैं, सिर्फ़ अनुमानित, और वह सहेजी नहीं जाती।</span></li><li class="t4"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><span>तोहफ़े के रूप में कैप्सूल एक फ़ाइल है जिसे आप ख़ुद भेजते हैं। डेवलपर को वह कभी नहीं मिलती।</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="इस पेज पर">
+    <p class="eyebrow">इस पेज पर</p>
+    <div class="chips"><a href="#hi-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>आपके फ़ोन पर क्या रहता है</a><a href="#hi-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google Drive (वैकल्पिक)</a><a href="#hi-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Google डेटा का इस्तेमाल कैसे होता है</a><a href="#hi-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>तारीख़ की जाँच</a><a href="#hi-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>शहर और मौसम (वैकल्पिक)</a><a href="#hi-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>गाने की खोज (वैकल्पिक)</a><a href="#hi-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>तोहफ़े के रूप में कैप्सूल</a><a href="#hi-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>सूचनाएँ, कैलेंडर और विजेट</a><a href="#hi-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>अपडेट</a><a href="#hi-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kolys क्या नहीं करता</a><a href="#hi-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>ऐप कौन-सी अनुमतियाँ माँगता है</a><a href="#hi-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>अपना डेटा हटाना</a><a href="#hi-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>बच्चे</a><a href="#hi-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>इस नीति में बदलाव</a><a href="#hi-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>संपर्क</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="hi-table">
+    <h2 id="hi-table">कौन-सा डेटा, कहाँ रहता है, कौन देखता है</h2>
+    <table>
+      <thead><tr><th scope="col">डेटा</th><th scope="col">कहाँ रखा जाता है</th><th scope="col">कौन देख सकता है</th></tr></thead>
+      <tbody><tr><th scope="row">कैप्सूल और ड्राफ़्ट: चिट्ठियाँ, फ़ोटो, वीडियो, वॉइस मैसेज, “यह पल”</th><td data-label="कहाँ रखा जाता है">आपके फ़ोन पर; हर सील किया गया कैप्सूल आपकी अपनी Google Drive में भी, अगर आप इसे चालू करें</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">सेटिंग्स, आपका जन्मदिन, जुड़े हुए Google अकाउंट का ईमेल</th><td data-label="कहाँ रखा जाता है">आपके फ़ोन पर</td><td data-label="कौन देख सकता है">सिर्फ़ आप</td></tr><tr><th scope="row">अनुमानित लोकेशन</th><td data-label="कहाँ रखा जाता है">सहेजी नहीं जाती: एक बार शहर के नाम में बदली जाती है; सिर्फ़ शहर और मौसम रखे जाते हैं</td><td data-label="कौन देख सकता है">Open-Meteo, लगभग एक किलोमीटर तक राउंड करके, मौसम जानने के लिए</td></tr><tr><th scope="row">गाने की खोज में टाइप किए गए शब्द</th><td data-label="कहाँ रखा जाता है">सहेजे नहीं जाते; कैप्सूल सिर्फ़ गाने का नाम, कलाकार और साल रखता है</td><td data-label="कौन देख सकता है">MusicBrainz, गानों के नाम ढूँढने के लिए</td></tr><tr><th scope="row">तोहफ़े के रूप में कैप्सूल</th><td data-label="कहाँ रखा जाता है">एक फ़ाइल में जिसे आप ख़ुद भेजते हैं; फिर पाने वाले के ऐप में</td><td data-label="कौन देख सकता है">आप और वह व्यक्ति जिसे आप इसे भेजते हैं</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="hi-data">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><h2>आपके फ़ोन पर क्या रहता है</h2></div>
+    <p>ऐप आपके फ़ोन पर सहेजता है:</p><ul><li>आपके कैप्सूल और ड्राफ़्ट: नाम, चिट्ठी का टेक्स्ट, लिखने की तारीख़, खुलने की तारीख़, मुहर का रंग, वह खुल चुका है या नहीं, और वह किस पिछली चिट्ठी का जवाब है;</li><li>आपकी जोड़ी गई फ़ोटो और वीडियो की कॉपियाँ (फ़ोटो छोटी की जाती हैं), और आपके रिकॉर्ड किए वॉइस मैसेज;</li><li>“यह पल”, अगर आप इसे भरें: आपका मूड, एक गाना, शहर और मौसम, और फ़ोन का मॉडल और बैटरी लेवल;</li><li>आपकी सेटिंग्स (भाषा, थीम, आपका जन्मदिन अगर आप उसे किसी कैप्सूल के लिए इस्तेमाल करें, जुड़े हुए Google अकाउंट का ईमेल)।</li></ul><p>फ़ोटो और वीडियो Android के अपने फ़ोटो पिकर से चुने जाते हैं, इसलिए ऐप सिर्फ़ वही देखता है जो आप चुनते हैं, आपकी पूरी गैलरी कभी नहीं। माइक्रोफ़ोन सिर्फ़ तब इस्तेमाल होता है जब आप वॉइस मैसेज रिकॉर्ड कर रहे होते हैं। यह सब ऐप के निजी स्टोरेज में रखा जाता है, जिसे दूसरे ऐप नहीं पढ़ सकते। ऐप Android का अपने-आप होने वाला बैकअप बंद कर देता है। Kolys में ली गई फ़ोटो और वीडियो आपके फ़ोन का कैमरा ऐप लेता है; Kolys के पास ख़ुद कैमरे की कोई अनुमति नहीं है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google Drive (वैकल्पिक)</h2></div>
+    <p>अगर आप Google से साइन इन करते हैं, तो Kolys एक ही अनुमति माँगता है: <code>drive.appdata</code>। इससे ऐप आपकी Google Drive के एक छिपे ऐप फ़ोल्डर में सिर्फ़ अपनी फ़ाइलें बना, पढ़ और हटा सकता है। ऐप आपकी Drive की कोई दूसरी फ़ाइल न देख सकता है, न बदल सकता है।</p><p>हर सील किया गया कैप्सूल वहाँ एक फ़ाइल के रूप में सहेजा जाता है (चिट्ठी, उसकी फ़ोटो, वीडियो, वॉइस मैसेज और “यह पल”), उसके खुलने की तारीख़ और जिस तारीख़ को वह खोला गया, उसके साथ। इसी से आपके कैप्सूल नए फ़ोन पर वापस आते हैं। ऐप आपके अकाउंट का ईमेल पता भी पढ़ता है, सिर्फ़ आपको यह दिखाने के लिए कि कौन-सा अकाउंट जुड़ा है।</p><p>डेटा एन्क्रिप्टेड कनेक्शन से सीधे आपके फ़ोन और Google के बीच जाता है। बीच में कोई दूसरा सर्वर नहीं होता। आपकी Drive में सहेजी गई चीज़ों पर Google की अपनी गोपनीयता नीति लागू होती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-google">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Google डेटा का इस्तेमाल कैसे होता है</h2></div>
+    <p>Google API से मिली जानकारी का Kolys द्वारा उपयोग और किसी भी दूसरे ऐप को उसका ट्रांसफ़र <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a> का पालन करेगा, जिसमें Limited Use (सीमित उपयोग) की शर्तें भी शामिल हैं।</p><ul><li>आपकी Google Drive का डेटा सिर्फ़ आपके कैप्सूल सहेजने और उन्हें आपके फ़ोन पर वापस लाने के लिए इस्तेमाल होता है।</li><li>यह कभी बेचा नहीं जाता, कभी विज्ञापन के लिए इस्तेमाल नहीं होता और कभी किसी के साथ साझा नहीं किया जाता।</li><li>कोई इंसान इसे नहीं पढ़ता: डेवलपर के पास आपकी Drive या आपकी चिट्ठियों का कोई ऐक्सेस नहीं है।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-time">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>तारीख़ की जाँच</h2></div>
+    <p>ताकि फ़ोन की घड़ी आगे करके कोई कैप्सूल पहले न खोला जा सके, ऐप एक वेब सर्वर (www.google.com या www.cloudflare.com) से मौजूदा समय पूछता है और जवाब से तारीख़ पढ़ता है। आपके या आपके कैप्सूलों के बारे में कुछ नहीं भेजा जाता। किसी भी वेब अनुरोध की तरह, ये सेवाएँ आपका IP पता देखती हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-place">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>शहर और मौसम (वैकल्पिक)</h2></div>
+    <p>सिर्फ़ जब आप लिखते समय “शहर और मौसम जोड़ें” पर टैप करते हैं, तब ऐप Android से एक बार आपकी अनुमानित लोकेशन माँगता है (सटीक कभी नहीं)। फ़ोन उसे शहर के नाम में बदल देता है, और ऐप Open-Meteo (open-meteo.com) से मौजूदा मौसम पूछता है, लगभग एक किलोमीटर तक राउंड की गई लोकेशन भेजकर। कैप्सूल में सिर्फ़ शहर का नाम और मौसम रखा जाता है; लोकेशन ख़ुद सहेजी नहीं जाती। आप इसे हमेशा छोड़ सकते हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-song">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg><h2>गाने की खोज (वैकल्पिक)</h2></div>
+    <p>जब आप इस पल का गाना ढूँढते हैं, तो आपके टाइप किए शब्द मिलते-जुलते गानों के नाम ढूँढने के लिए MusicBrainz (musicbrainz.org), एक खुले म्यूज़िक डेटाबेस, को भेजे जाते हैं। कैप्सूल में सिर्फ़ गाने का नाम, कलाकार और साल रखा जाता है, कवर या रिकॉर्डिंग कभी नहीं। “सुनें” गाने का नाम आपके फ़ोन के म्यूज़िक ऐप को देता है (या YouTube Music में खोज खोलता है), और वह ऐप अपने नियमों के तहत काम करता है। आप बिना खोजे ख़ुद भी गाना टाइप कर सकते हैं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-gifts">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>तोहफ़े के रूप में कैप्सूल</h2></div>
+    <p>किसी और के लिए बना कैप्सूल एक फ़ाइल बन जाता है, जिसे आप ख़ुद अपने चुने हुए ऐप (मैसेंजर, ईमेल, Google Drive) से भेजते हैं। फ़ाइल में चिट्ठी उसकी फ़ोटो, वीडियो, वॉइस मैसेज और “यह पल” के साथ होती है, और आपका नाम भी, अगर आप दें। यह एन्क्रिप्टेड होती है, ताकि उसके दिन से पहले उसे आसानी से खोलकर पढ़ा न जा सके, लेकिन कुंजी फ़ाइल के अंदर ही होती है, इसलिए यह किसी पक्के इरादे वाले विशेषज्ञ से मज़बूत सुरक्षा नहीं है। डेवलपर को यह कभी नहीं मिलती। जब आपका दोस्त Kolys में फ़ाइल खोलता है, तो उसकी कॉपी उसके ऐप में रहती है और, अगर वह इस्तेमाल करता है, उसकी अपनी Google Drive में। अगर आप इसे एक गुप्त शब्द से लॉक करते हैं, तो कुंजी उस शब्द से बनती है और फ़ाइल में नहीं होती: शब्द कहीं सहेजा नहीं जाता, और उसके बिना कोई भी, डेवलपर भी, फ़ाइल नहीं खोल सकता। सिर्फ़ आपका लिखा संकेत पहले पढ़ा जा सकता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-notify">
+    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h2>सूचनाएँ, कैलेंडर और विजेट</h2></div>
+    <p>खुलने के दिन की सूचना आपके फ़ोन पर ही बनती है; कहीं कुछ नहीं भेजा जाता। “कैलेंडर में जोड़ें” आपके फ़ोन का कैलेंडर ऐप एक तैयार इवेंट (कैप्सूल का नाम और खुलने की तारीख़) के साथ खोलता है। उसे सहेजना है या नहीं, यह आप तय करते हैं, और फिर उसे आपका कैलेंडर ऐप रखता है। Kolys आपका कैलेंडर नहीं पढ़ सकता। होम स्क्रीन विजेट सिर्फ़ आपके सबसे नज़दीकी कैप्सूल का नाम और बचे हुए दिन दिखाता है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>अपडेट</h2></div>
+    <p>इस वेबसाइट से लिया गया Kolys का वर्ज़न हर कुछ घंटों में Kolys की वेबसाइट (pegasohlib.github.io) पर नए वर्ज़न की जाँच करता है, और जब आप अपडेट करें पर टैप करते हैं, तो उसे GitHub से डाउनलोड करता है। किसी भी वेबसाइट की तरह, GitHub आपके डिवाइस का IP पता देखता है; इसके अलावा कुछ नहीं भेजा जाता, और ऐप का कोई डेटा नहीं।</p><p>आप सेटिंग्स में अपने-आप होने वाली जाँच बंद कर सकते हैं। जब ऐप Google Play से आता है, तो उसे इसके बजाय Google Play अपडेट करता है।</p><p>GitHub यह भी गिनता है कि हर फ़ाइल कितनी बार डाउनलोड हुई। यह सिर्फ़ एक संख्या है, जिसमें यह कुछ नहीं होता कि किसने डाउनलोड किया; वेबसाइट इसे डाउनलोड की अनुमानित संख्या के रूप में दिखाती है।</p>
+    
+  </section>
+  <section class="card sec" id="hi-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Kolys क्या नहीं करता</h2></div>
+    <ul><li>डेवलपर के पास कोई अकाउंट नहीं और अपने कोई सर्वर नहीं;</li><li>कोई एनालिटिक्स नहीं, कोई विज्ञापन नहीं, कोई ट्रैकिंग नहीं, कहीं भी क्रैश रिपोर्ट नहीं भेजी जाती;</li><li>किसी भी डेटा की न बिक्री, न साझा करना;</li><li>आपके संपर्कों, फ़ाइलों या गैलरी तक कोई ऐक्सेस नहीं, और बैकग्राउंड में कोई लोकेशन नहीं।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-permissions">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>ऐप कौन-सी अनुमतियाँ माँगता है</h2></div>
+    
+    <dl class="perms"><div><dt>इंटरनेट</dt><dd>तारीख़ और मौसम जाँचने, Google Drive इस्तेमाल करने, गाने खोजने और अपडेट जाँचने के लिए।</dd></div><div><dt>नेटवर्क की स्थिति</dt><dd>तारीख़ जाँचने या सिंक करने से पहले कनेक्शन का इंतज़ार करने के लिए।</dd></div><div><dt>सूचनाएँ</dt><dd>खुलने का दिन और रास्ते के रिमाइंडर।</dd></div><div><dt>माइक्रोफ़ोन (वैकल्पिक)</dt><dd>सिर्फ़ वॉइस मैसेज के लिए, जब आप रिकॉर्ड कर रहे हों।</dd></div><div><dt>अनुमानित लोकेशन (वैकल्पिक)</dt><dd>सिर्फ़ शहर और मौसम के लिए, जब आप माँगें।</dd></div><div><dt>वाइब्रेशन</dt><dd>जब कोई कैप्सूल खुलता है।</dd></div><div><dt>ऐप इंस्टॉल करना</dt><dd>अपने अपडेट इंस्टॉल करने के लिए (सिर्फ़ इस वेबसाइट वाले वर्ज़न में)।</dd></div></dl>
+  </section>
+  <section class="card sec" id="hi-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>अपना डेटा हटाना</h2></div>
+    <ul><li>ऐप में कोई कैप्सूल हटाने से वह आपके फ़ोन से और, अगले सिंक पर, आपकी Google Drive से हट जाता है।</li><li>ऐप अनइंस्टॉल करने से फ़ोन पर उसका सहेजा हुआ सब कुछ हट जाता है।</li><li>ऐप के बिना Drive की कॉपी हटाने के लिए: वेब पर Google Drive खोलें → सेटिंग्स → ऐप्स मैनेज करें → Kolys → विकल्प → छिपा हुआ ऐप डेटा मिटाएँ।</li><li>आप कभी भी <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> पर ऐप का ऐक्सेस हटा सकते हैं।</li></ul>
+    
+  </section>
+  <section class="card sec" id="hi-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>बच्चे</h2></div>
+    <p>Kolys किसी से भी, बच्चों से भी, कोई निजी डेटा इकट्ठा नहीं करता। इसमें कोई अकाउंट नहीं, कोई चैट नहीं और कोई शेयरिंग नहीं।</p>
+    
+  </section>
+  <section class="card sec" id="hi-changes">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>इस नीति में बदलाव</h2></div>
+    <p>अगर ऐप डेटा के साथ कुछ नया करना शुरू करता है, तो यह पेज पहले अपडेट किया जाएगा, ऊपर नई तारीख़ के साथ।</p>
+    
+  </section>
+  <section class="card sec" id="hi-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>संपर्क</h2></div>
+    <p>गोपनीयता से जुड़े सवाल: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>।</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="id" dir="ltr" data-lang="id" data-title="Kebijakan privasi · Kolys" data-app="Kolys" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1673,7 +2000,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="vi" data-lang="vi" data-title="Chính sách quyền riêng tư · Kolys" data-app="Kolys" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+<article class="langdoc" lang="vi" dir="ltr" data-lang="vi" data-title="Chính sách quyền riêng tư · Kolys" data-app="Kolys" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1776,7 +2103,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="th" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Kolys" data-app="Kolys" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+<article class="langdoc" lang="th" dir="ltr" data-lang="th" data-title="นโยบายความเป็นส่วนตัว · Kolys" data-app="Kolys" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1879,7 +2206,110 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ko" data-lang="ko" data-title="개인정보 처리방침 · Kolys" data-app="Kolys" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+<article class="langdoc" lang="zh" dir="ltr" data-lang="zh" data-title="隐私政策 · Kolys" data-app="Kolys" data-langlabel="语言" data-nav="首页|隐私" data-hub="PegasoHlib — 全部应用" hidden>
+  <header class="hero">
+    <img class="logo" src="icon.svg" alt="" width="76" height="76">
+    <p class="app">Kolys</p>
+    <h1>隐私政策</h1>
+    <p class="date">最后更新：2026年10月22日</p>
+    <p class="lead">Kolys 是一款用来给未来的自己写信（“时间胶囊”）的 Android 应用。本政策说明应用如何处理你的数据。简而言之：所有内容都留在你的手机上；如果你开启，也会保存在你自己的 Google 云端硬盘中。</p>
+  </header>
+
+  <section class="glance" aria-labelledby="zh-glance">
+    <h2 id="zh-glance" class="eyebrow">概览</h2>
+    <ul><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><span>你的信件、照片、视频和语音消息都保存在你的手机上。</span></li><li class="t6"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg><span>Kolys 没有自己的服务器。开发者从不接收你的信件、照片或任何其他数据。</span></li><li class="t7"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><span>没有广告，没有分析，没有跟踪，不出售数据。</span></li><li class="t0"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><span>Google 云端硬盘是可选的，并且只能访问应用自己的隐藏文件夹。</span></li><li class="t1"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>只有在你添加城市和天气时才会请求位置，而且只是大致位置，也不会被保存。</span></li><li class="t4"><svg class="ic tile" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><span>作为礼物的胶囊是一个由你自己发送的文件。开发者从不接收它。</span></li></ul>
+  </section>
+
+  <nav class="toc" aria-label="本页内容">
+    <p class="eyebrow">本页内容</p>
+    <div class="chips"><a href="#zh-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>哪些内容留在你的手机上</a><a href="#zh-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google 云端硬盘（可选）</a><a href="#zh-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>如何使用 Google 数据</a><a href="#zh-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>校验日期</a><a href="#zh-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>城市和天气（可选）</a><a href="#zh-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>歌曲搜索（可选）</a><a href="#zh-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>作为礼物的胶囊</a><a href="#zh-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>通知、日历和小组件</a><a href="#zh-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>更新</a><a href="#zh-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kolys 不会做的事</a><a href="#zh-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>应用请求的权限</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>删除你的数据</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
+  </nav>
+
+  <section class="card tablecard" aria-labelledby="zh-table">
+    <h2 id="zh-table">有哪些数据、存在哪里、谁能看到</h2>
+    <table>
+      <thead><tr><th scope="col">数据</th><th scope="col">保存位置</th><th scope="col">谁能看到</th></tr></thead>
+      <tbody><tr><th scope="row">胶囊和草稿：信件、照片、视频、语音消息、“此刻”</th><td data-label="保存位置">在你的手机上；如果你开启，每个已封存的胶囊也会保存在你自己的 Google 云端硬盘中</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">设置、你的生日、已连接 Google 账号的电子邮件地址</th><td data-label="保存位置">在你的手机上</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">大致位置</th><td data-label="保存位置">不保存：只转换一次城市名称；只保留城市和天气</td><td data-label="谁能看到">Open-Meteo（精确到约一公里），用于获取天气</td></tr><tr><th scope="row">歌曲搜索中输入的文字</th><td data-label="保存位置">不保存；胶囊只保留歌曲名称、艺人和年份</td><td data-label="谁能看到">MusicBrainz，用于查找歌曲名称</td></tr><tr><th scope="row">作为礼物的胶囊</th><td data-label="保存位置">在一个由你自己发送的文件中；之后在收件人的应用中</td><td data-label="谁能看到">你和你发送给的人</td></tr></tbody>
+    </table>
+  </section>
+
+  <section class="card sec" id="zh-data">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg><h2>哪些内容留在你的手机上</h2></div>
+    <p>应用会在你的手机上保存：</p><ul><li>你的胶囊和草稿：名称、信件正文、写信日期、开启日期、封印颜色、是否已开启，以及它回复的是哪一封之前的信；</li><li>你添加的照片和视频的副本（照片会被缩小），以及你录制的语音消息；</li><li>“此刻”（如果你填写了）：你的心情、一首歌、城市和天气，以及手机型号和电量；</li><li>你的设置（语言、主题、你用于某个胶囊的生日、已连接 Google 账号的电子邮件地址）。</li></ul><p>照片和视频通过 Android 自带的照片选择器选取，因此应用只能看到你选中的那些，永远看不到整个相册。麦克风只在你录制语音消息时使用。所有这些都保存在应用的私有存储空间中，其他应用无法读取。应用关闭了 Android 的自动备份。你在 Kolys 中拍摄的照片和视频由手机的相机应用拍摄；Kolys 本身没有相机权限。</p>
+    
+  </section>
+  <section class="card sec" id="zh-drive">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg><h2>Google 云端硬盘（可选）</h2></div>
+    <p>如果你使用 Google 登录，Kolys 只请求一项权限：<code>drive.appdata</code>。它只允许应用在你 Google 云端硬盘的隐藏应用文件夹中创建、读取和删除它自己的文件。应用无法查看或更改你云端硬盘中的任何其他文件。</p><p>每个已封存的胶囊都会以一个文件的形式保存在那里（信件及其照片、视频、语音消息和“此刻”），连同它的开启日期和实际开启的日期。正因如此，你的胶囊才能在新手机上回来。应用还会读取你账号的电子邮件地址，仅用于向你显示已连接的是哪个账号。</p><p>数据通过加密连接在你的手机和 Google 之间直接传输，中间没有其他服务器。存储在你云端硬盘中的内容适用 Google 自己的隐私政策。</p>
+    
+  </section>
+  <section class="card sec" id="zh-google">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>如何使用 Google 数据</h2></div>
+    <p>Kolys 对从 Google API 获取的信息的使用及向任何其他应用的传输，将遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的“有限使用”要求。</p><ul><li>来自你 Google 云端硬盘的数据只用于保存你的胶囊，并把它们恢复到你的手机上。</li><li>这些数据从不出售，从不用于广告，也从不与任何人分享。</li><li>没有任何人会阅读它们：开发者无法访问你的云端硬盘或你的信件。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-time">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>校验日期</h2></div>
+    <p>为了防止有人通过调整手机时钟提前打开胶囊，应用会向网络服务器（www.google.com 或 www.cloudflare.com）询问当前时间，并从回复中读取日期。不会发送任何关于你或你的胶囊的信息。和任何网络请求一样，这些服务会看到你的 IP 地址。</p>
+    
+  </section>
+  <section class="card sec" id="zh-place">
+    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg><h2>城市和天气（可选）</h2></div>
+    <p>只有当你在写信时点击“添加城市和天气”，应用才会向 Android 请求一次你的大致位置（从不请求精确位置）。手机会把它转换成城市名称，应用再向 Open-Meteo（open-meteo.com）查询当前天气，发送的位置精确到约一公里。胶囊中只保留城市名称和天气；位置本身不会被保存。你随时可以不添加这些信息。</p>
+    
+  </section>
+  <section class="card sec" id="zh-song">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg><h2>歌曲搜索（可选）</h2></div>
+    <p>当你搜索此刻的歌曲时，你输入的文字会发送到开放音乐数据库 MusicBrainz（musicbrainz.org），以查找匹配的歌曲名称。胶囊中只保留歌曲名称、艺人和年份，从不保存封面或录音。“收听”会把歌曲名称传给你手机上的音乐应用（或打开 YouTube Music 搜索），该应用按其自身的规则运行。你也可以不搜索，直接自己输入一首歌。</p>
+    
+  </section>
+  <section class="card sec" id="zh-gifts">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>作为礼物的胶囊</h2></div>
+    <p>送给别人的胶囊会变成一个文件，由你自己通过你选择的应用（聊天软件、电子邮件、Google 云端硬盘）发送。该文件包含信件及其照片、视频、语音消息和“此刻”，以及你提供的名字（如有）。文件经过加密，因此无法在那一天之前被轻易解包阅读；但密钥就在文件内部，所以它对意志坚定的专家来说并不是强有力的保护。开发者从不接收该文件。你的朋友在 Kolys 中打开文件后，其副本就保存在对方的应用中；如果对方使用云端硬盘，也会保存在对方自己的 Google 云端硬盘中。如果你用暗号锁定它，密钥由暗号生成，并且不在文件中：暗号不会保存在任何地方，没有它，任何人（包括开发者）都无法打开该文件。只有你写下的提示可以事先读到。</p>
+    
+  </section>
+  <section class="card sec" id="zh-notify">
+    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h2>通知、日历和小组件</h2></div>
+    <p>开启当天的通知在你的手机上生成；不会发送任何内容。“添加到日历”会打开手机的日历应用，并附带一个现成的事件（胶囊的名称和开启日期）。是否保存由你决定，保存后由你的日历应用保管。Kolys 无法读取你的日历。主屏幕小组件只显示离你最近的胶囊的名称和剩余天数。</p>
+    
+  </section>
+  <section class="card sec" id="zh-updates">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h2>更新</h2></div>
+    <p>来自本网站的 Kolys 版本每隔几小时会在 Kolys 网站（pegasohlib.github.io）上检查是否有新版本，并在你点击“更新”时从 GitHub 下载。和访问任何网站一样，GitHub 会看到你设备的 IP 地址；除此之外不会发送任何内容，也不会发送应用中的任何数据。</p><p>你可以在“设置”中关闭自动检查。如果应用来自 Google Play，则由 Google Play 负责更新。</p><p>GitHub 还会统计每个文件被下载的次数。这只是一个数字，不包含任何关于下载者的信息；网站会把它显示为大致的下载量。</p>
+    
+  </section>
+  <section class="card sec" id="zh-not">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg><h2>Kolys 不会做的事</h2></div>
+    <ul><li>没有开发者账号，也没有自己的服务器；</li><li>没有分析，没有广告，没有跟踪，不向任何地方发送崩溃报告；</li><li>不出售或分享任何数据；</li><li>不访问你的通讯录、文件或相册，也不在后台获取位置。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-permissions">
+    <div class="sechead"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h2>应用请求的权限</h2></div>
+    
+    <dl class="perms"><div><dt>网络</dt><dd>用于校验日期和查询天气、使用 Google 云端硬盘、搜索歌曲以及检查更新。</dd></div><div><dt>网络状态</dt><dd>在校验日期或同步之前等待网络连接。</dd></div><div><dt>通知</dt><dd>开启当天以及沿途的提醒。</dd></div><div><dt>麦克风（可选）</dt><dd>仅用于语音消息，仅在你录制时。</dd></div><div><dt>大致位置（可选）</dt><dd>仅用于城市和天气，仅在你请求时。</dd></div><div><dt>振动</dt><dd>胶囊开启时。</dd></div><div><dt>安装应用</dt><dd>用于安装自身的更新（仅限来自本网站的版本）。</dd></div></dl>
+  </section>
+  <section class="card sec" id="zh-delete">
+    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>删除你的数据</h2></div>
+    <ul><li>在应用中删除胶囊，会将其从你的手机中删除，并在下次同步时从你的 Google 云端硬盘中删除。</li><li>卸载应用会删除它在手机上保存的所有内容。</li><li>如需在不使用应用的情况下删除云端硬盘中的副本：在网页上打开 Google 云端硬盘 → 设置 → 管理应用 → Kolys → 选项 → 删除隐藏的应用数据。</li><li>你可以随时在 <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> 撤销应用的访问权限。</li></ul>
+    
+  </section>
+  <section class="card sec" id="zh-children">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>儿童</h2></div>
+    <p>Kolys 不收集任何人的个人数据，包括儿童。它没有账号，没有聊天，也没有分享功能。</p>
+    
+  </section>
+  <section class="card sec" id="zh-changes">
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的变更</h2></div>
+    <p>如果应用开始以新的方式处理数据，本页面会先行更新，并在顶部标注新的日期。</p>
+    
+  </section>
+  <section class="card sec" id="zh-contact">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg><h2>联系方式</h2></div>
+    <p>隐私相关问题：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p>
+    
+  </section>
+</article>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="개인정보 처리방침 · Kolys" data-app="Kolys" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Kolys</p>
@@ -1982,7 +2412,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ja" data-lang="ja" data-title="プライバシーポリシー · コリス" data-app="コリス" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
+<article class="langdoc" lang="ja" dir="ltr" data-lang="ja" data-title="プライバシーポリシー · コリス" data-app="コリス" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">コリス</p>
@@ -2085,7 +2515,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="kk" data-lang="kk" data-title="Құпиялық саясаты · Колись" data-app="Колись" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
+<article class="langdoc" lang="kk" dir="ltr" data-lang="kk" data-title="Құпиялық саясаты · Колись" data-app="Колись" data-langlabel="Тіл" data-nav="Басты бет|Құпиялық" data-hub="PegasoHlib — барлық қолданбалар" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Колись</p>
@@ -2188,7 +2618,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
 </article>
-<article class="langdoc" lang="ru" data-lang="ru" data-title="Политика конфиденциальности · Колись" data-app="Колись" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
+<article class="langdoc" lang="ru" dir="ltr" data-lang="ru" data-title="Политика конфиденциальности · Колись" data-app="Колись" data-langlabel="Язык" data-nav="Главная|Конфиденциальность" data-hub="PegasoHlib — все приложения" hidden>
   <header class="hero">
     <img class="logo" src="icon.svg" alt="" width="76" height="76">
     <p class="app">Колись</p>
@@ -2297,7 +2727,8 @@ td:last-child{font-weight:600;color:var(--ink)}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kolys-lang"], low = {};
+  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kolys-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
@@ -2317,7 +2748,8 @@ td:last-child{font-weight:600;color:var(--ink)}
   function text(id, t) { var e = document.getElementById(id); if (e && t != null) e.textContent = t; }
   function show(c, save) {
     for (var k in have) have[k].hidden = k !== c;
-    var d = have[c]; document.documentElement.lang = c; document.title = d.dataset.title;
+    // The whole page (bar and footer too) turns right to left with Arabic and back with every other language.
+    var d = have[c]; document.documentElement.lang = c; document.documentElement.dir = RTL.indexOf(c) >= 0 ? "rtl" : "ltr"; document.title = d.dataset.title;
     sel.value = c;
     text("appname", d.dataset.app); text("langlabel", d.dataset.langlabel); text("hublink", d.dataset.hub); text("footnote", d.dataset.footnote);
     var names = (d.dataset.nav || "").split("|"), nav = document.querySelectorAll("a[data-nav]");
