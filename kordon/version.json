@@ -1,11 +1,11 @@
 {
-    "versionCode":  2202,
-    "versionName":  "0.22.2",
+    "versionCode":  2203,
+    "versionName":  "0.22.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "07102be101c62f6acf27dc252d806bdf3a4ac39e7caadd3d88f21f74e3bfb667",
-    "size":  204423692,
+    "sha256":  "0e50bc606a2b2ab09b3fdbcd51bef918392e73d145dac078bca0427eef83ecc5",
+    "size":  204424236,
     "notes":  {
-                  "uk":  "Камера: нахил двома пальцями вгору-вниз, кнопка «вигляд зверху» під + і −, налаштування «Автонахил». Наближення до ~20 км.",
-                  "en":  "Camera: tilt with two fingers up or down, a top view button under + and −, an Auto tilt setting. Zoom in to about 20 km."
+                  "uk":  "Нахиляти можна раніше, ще здалеку; жест двома пальцями розпізнається надійніше.",
+                  "en":  "Tilt from farther out; the two-finger gesture is read more surely."
               }
 }
