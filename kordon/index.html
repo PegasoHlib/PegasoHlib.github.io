@@ -39,6 +39,7 @@
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/kordon/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/kordon/?lang=th">
 <link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/kordon/?lang=zh">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/kordon/?lang=zh-Hant">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/kordon/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kordon/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kordon/?lang=kk">
@@ -63,6 +64,8 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
 :root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
 :root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
@@ -154,7 +157,7 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="logo.svg" alt="" width="32" height="32"><span id="appname">KORDON</span></a>
   
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
@@ -171,7 +174,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-en"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>How to install</span></a>
     </div>
     <p class="note">Android 10 or newer · 64-bit phone or tablet (arm64)<br>No ads and no tracking. This site collects no data.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="A first look">
@@ -217,7 +220,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-uk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Як встановити</span></a>
     </div>
     <p class="note">Android 10 або новіший · 64-бітний телефон чи планшет (arm64)<br>Без реклами й без стеження. Сайт не збирає жодних даних.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Перший погляд">
@@ -263,7 +266,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-es"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cómo instalar</span></a>
     </div>
     <p class="note">Android 10 o posterior · teléfono o tableta de 64 bits (arm64)<br>Sin anuncios ni rastreo. Este sitio no recopila ningún dato.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Un primer vistazo">
@@ -309,7 +312,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pt"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
     </div>
     <p class="note">Android 10 ou mais recente · telemóvel ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreio. Este site não recolhe quaisquer dados.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Um primeiro olhar">
@@ -355,7 +358,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pt-BR"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Como instalar</span></a>
     </div>
     <p class="note">Android 10 ou mais recente · celular ou tablet de 64 bits (arm64)<br>Sem anúncios e sem rastreamento. Este site não coleta nenhum dado.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Uma primeira olhada">
@@ -401,7 +404,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-fr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Comment installer</span></a>
     </div>
     <p class="note">Android 10 ou plus récent · téléphone ou tablette 64 bits (arm64)<br>Pas de pub, pas de pistage. Ce site ne collecte aucune donnée.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Un premier aperçu">
@@ -447,7 +450,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-de"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Installation</span></a>
     </div>
     <p class="note">Android 10 oder neuer · 64-Bit-Smartphone oder -Tablet (arm64)<br>Keine Werbung, kein Tracking. Diese Website sammelt keine Daten.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Ein erster Blick">
@@ -493,7 +496,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-nl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Zo installeer je het</span></a>
     </div>
     <p class="note">Android 10 of nieuwer · 64-bit telefoon of tablet (arm64)<br>Geen advertenties en geen tracking. Deze site verzamelt geen gegevens.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Een eerste blik">
@@ -539,7 +542,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-it"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Come installare</span></a>
     </div>
     <p class="note">Android 10 o successivo · telefono o tablet a 64 bit (arm64)<br>Niente pubblicità e nessun tracciamento. Questo sito non raccoglie alcun dato.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Un primo sguardo">
@@ -585,7 +588,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-pl"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Jak zainstalować</span></a>
     </div>
     <p class="note">Android 10 lub nowszy · 64-bitowy telefon lub tablet (arm64)<br>Bez reklam i bez śledzenia. Ta strona nie zbiera żadnych danych.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Pierwsze spojrzenie">
@@ -631,7 +634,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-cs"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Jak nainstalovat</span></a>
     </div>
     <p class="note">Android 10 nebo novější · 64bitový telefon nebo tablet (arm64)<br>Bez reklam a bez sledování. Tento web nesbírá žádná data.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="První pohled">
@@ -677,7 +680,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-sk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Ako nainštalovať</span></a>
     </div>
     <p class="note">Android 10 alebo novší · 64-bitový telefón alebo tablet (arm64)<br>Bez reklám a bez sledovania. Tento web nezbiera žiadne údaje.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Prvý pohľad">
@@ -723,7 +726,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-da"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Sådan installerer du</span></a>
     </div>
     <p class="note">Android 10 eller nyere · 64-bit telefon eller tablet (arm64)<br>Ingen reklamer og ingen sporing. Denne side indsamler ingen data.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Et første kig">
@@ -769,7 +772,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-sv"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Så installerar du</span></a>
     </div>
     <p class="note">Android 10 eller senare · 64-bitars telefon eller surfplatta (arm64)<br>Inga annonser och ingen spårning. Webbplatsen samlar inte in några data.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="En första titt">
@@ -815,7 +818,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-tr"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Nasıl kurulur</span></a>
     </div>
     <p class="note">Android 10 veya üstü · 64 bit telefon ya da tablet (arm64)<br>Reklam yok, takip yok. Bu site hiçbir veri toplamaz.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="İlk bakış">
@@ -861,7 +864,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ar"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>طريقة التثبيت</span></a>
     </div>
     <p class="note">نظام Android 10 أو أحدث · هاتف أو جهاز لوحي 64 بت (arm64)<br>بلا إعلانات ولا تتبّع. هذا الموقع لا يجمع أي بيانات.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>التنزيلات: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="نظرة أولى">
@@ -907,7 +910,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-hi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>कैसे इंस्टॉल करें</span></a>
     </div>
     <p class="note">Android 10 या नया · 64-बिट फ़ोन या टैबलेट (arm64)<br>न विज्ञापन, न ट्रैकिंग। यह साइट कोई डेटा इकट्ठा नहीं करती।</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>डाउनलोड: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="पहली झलक">
@@ -953,7 +956,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-id"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cara memasang</span></a>
     </div>
     <p class="note">Android 10 atau lebih baru · ponsel atau tablet 64-bit (arm64)<br>Tanpa iklan dan tanpa pelacakan. Situs ini tidak mengumpulkan data apa pun.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Lihat sekilas">
@@ -999,7 +1002,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-vi"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Cách cài đặt</span></a>
     </div>
     <p class="note">Android 10 trở lên · điện thoại hoặc máy tính bảng 64-bit (arm64)<br>Không quảng cáo, không theo dõi. Trang web này không thu thập dữ liệu nào.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Cái nhìn đầu tiên">
@@ -1045,7 +1048,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-th"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>วิธีติดตั้ง</span></a>
     </div>
     <p class="note">Android 10 ขึ้นไป · โทรศัพท์หรือแท็บเล็ต 64 บิต (arm64)<br>ไม่มีโฆษณาและไม่มีการติดตาม เว็บไซต์นี้ไม่เก็บข้อมูลใด ๆ</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="ชมตัวอย่างแรก">
@@ -1091,7 +1094,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-zh"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>如何安装</span></a>
     </div>
     <p class="note">Android 10 或更高版本 · 64 位手机或平板（arm64）<br>无广告、无跟踪。本网站不收集任何数据。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下载量: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="抢先看">
@@ -1125,6 +1128,52 @@ main{max-width:960px}
 
   <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
+<article class="langdoc" lang="zh-Hant" dir="ltr" data-lang="zh-Hant" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="語言" data-nav="" data-hub="PegasoHlib — 所有應用程式" hidden>
+  <header class="hero">
+    <img class="appicon" src="logo.svg" alt="" width="112" height="112">
+    <p class="pill">Android 測試版</p>
+    <h1>KORDON</h1>
+    <p class="tagline">World History Strategy</p>
+    <p class="lead">一款在由六角形格子構成的真實地球上進行的大戰略遊戲。在地球儀或平面世界地圖上遊玩，合併省份，隨心所欲地重劃邊界。所有時代、單人和多人模式都在路上。</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>下載 APK</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="#m1-zh-Hant"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>如何安裝</span></a>
+    </div>
+    <p class="note">Android 10 或更新版本 · 64 位元手機或平板（arm64）<br>沒有廣告、沒有追蹤。本網站不會收集任何資料。</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>下載次數: ≈ <b data-count="kordon">1</b></p>
+  </header>
+
+  <section class="show" aria-label="搶先看">
+    <div class="showtext"><h2 class="display">搶先看</h2><p>這是早期版本：世界地圖和省份編輯。目前還沒有經濟、戰爭或外交。</p></div>
+    <div class="shots"><figure><img src="img/shot-globe.webp" alt="地球儀" width="1280" height="720" loading="lazy"><figcaption>地球儀</figcaption></figure><figure><img src="img/shot-map.webp" alt="世界地圖" width="1280" height="720" loading="lazy"><figcaption>世界地圖</figcaption></figure><figure><img src="img/shot-relief.webp" alt="地形" width="1280" height="720" loading="lazy"><figcaption>地形</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh-Hant">
+    <h2 class="eyebrow" id="f-zh-Hant">測試版現有內容</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>由格子構成的真實地球</h3><p>整個世界由六角形組成：國家、地區和海岸線都依照真實地圖。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>6 個細節層級</h3><p>從 60 公里格子、共 4.6 萬個陸地格子的一般地圖，到終極層級：300 萬個陸地格子，每個約 7 公里寬。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>地球儀 ↔ 地圖</h3><p>輕點一下，地球儀就會平順地展開成平面世界地圖，還能再變回來。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l8 4.6v9.2l-8 4.6-8-4.6V7.4z"/><path d="M12 7.5l4 2.3v4.4l-4 2.3-4-2.3V9.8z"/></svg><h3>你自己的省份</h3><p>一次合併多個省份，畫出輪廓切出新省份，任何一步都可以復原。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 19.5l6.5-11 4 6.5 2.5-3.5 6 8z"/><path d="M7.4 11.2l1.6 1.3 1.5-1.3"/></svg><h3>地形</h3><p>每個格子都知道自己的海拔和地形：平原、丘陵、山地或冰原。此外還有根據真實地球高程資料製作的山體陰影和海洋深度。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>最高 120 FPS</h3><p>在高更新率螢幕上流暢執行；影格率和解析度由你決定。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-zh-Hant">
+    <h2 class="eyebrow" id="m0-zh-Hant">規劃中</h2>
+    <p class="sub">機制不多，但每一個都有深度，而且彼此關聯。</p>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>經濟</h3><p>省份發展：土地價值 = 面積 × 發展度。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>戰爭</h3><p>戰爭地圖，以及規則隨時代變化的戰術棋子戰鬥。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>外交</h3><p>與其他國家談判。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h3>強大的 AI</h3><p>各具個性的對手，遵守與你相同的規則。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>多人遊戲</h3><p>兩種模式：即時制或回合制。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>時代與劇本</h3><p>歷史上的所有時代，以及短篇劇本。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>編輯器與模組</h3><p>製作你自己的地圖和模組。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>最終考驗</h3><p>每個時代都以一場你必須撐過的考驗收尾。</p></div></div>
+  </section>
+  <section class="section features" aria-labelledby="m1-zh-Hant">
+    <h2 class="eyebrow" id="m1-zh-Hant">如何安裝</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>1. 下載</h3><p>用本頁的按鈕下載 <b>Kordon.apk</b>。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>2. 開啟</h3><p>從通知或「下載」資料夾中開啟它。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 7.6-1.7M12 14.5v2.5"/></svg><h3>3. 允許</h3><p>如果 Android 詢問，請允許從該來源（你的瀏覽器或檔案管理員）安裝，然後返回。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.3 12.2l2.5 2.5 4.9-5.2"/></svg><h3>4. 安裝</h3><p>點按「安裝」。之後新版本會自動送達。</p></div></div>
+  </section>
+
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>
+    <div><h2 class="display">永遠是最新版本</h2><p>測試版會自動更新：連上 Wi‑Fi 時會自動下載並安裝新版本，使用行動數據時會顯示一個按鈕。Google Play 版本稍後推出。</p>
+    </div>
+  </section>
+
+  <p class="contact">問題與建議: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
 <article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="KORDON: World History Strategy" data-app="KORDON" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="logo.svg" alt="" width="112" height="112">
@@ -1137,7 +1186,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ko"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>설치 방법</span></a>
     </div>
     <p class="note">Android 10 이상 · 64비트 휴대폰 또는 태블릿(arm64)<br>광고도 추적도 없어요. 이 사이트는 어떤 데이터도 수집하지 않아요.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="첫 공개">
@@ -1183,7 +1232,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ja"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>インストール方法</span></a>
     </div>
     <p class="note">Android 10以降 · 64ビットのスマートフォンまたはタブレット（arm64）<br>広告もトラッキングもありません。このサイトはデータを一切収集しません。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="ゲーム画面">
@@ -1229,7 +1278,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-kk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Қалай орнатуға болады</span></a>
     </div>
     <p class="note">Android 10 немесе одан жаңа · 64 биттік телефон не планшет (arm64)<br>Жарнамасыз әрі бақылаусыз. Сайт ешқандай дерек жинамайды.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Алғашқы танысу">
@@ -1275,7 +1324,7 @@ main{max-width:960px}
       <a class="btn" href="#m1-ru"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.5 9.5a2.6 2.6 0 0 1 5 .9c0 1.8-2.5 2.3-2.5 4M12 17.2h.01"/></svg><span>Как установить</span></a>
     </div>
     <p class="note">Android 10 или новее · 64-битный телефон или планшет (arm64)<br>Без рекламы и без слежки. Сайт не собирает никаких данных.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kordon">2</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="kordon">1</b></p>
   </header>
 
   <section class="show" aria-label="Первый взгляд">
@@ -1315,8 +1364,9 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","kordon-lang"], RTL = ["ar"], low = {};
+  // Chinese: zh-TW, zh-HK, zh-MO and zh-Hant… take "zh-Hant" (Traditional); zh-CN, zh-Hans, zh-SG and plain zh take "zh"
+  // (Simplified) through the first part of the code, and so does Traditional on a site without zh-Hant.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv", "zh-tw": "zh-hant", "zh-hk": "zh-hant", "zh-mo": "zh-hant" }, KEYS = ["siteLang","kordon-lang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {

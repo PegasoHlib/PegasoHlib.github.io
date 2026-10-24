@@ -39,6 +39,7 @@
 <link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/zoryt/?lang=vi">
 <link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/zoryt/?lang=th">
 <link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/zoryt/?lang=zh">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/zoryt/?lang=zh-Hant">
 <link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/zoryt/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/zoryt/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/zoryt/?lang=kk">
@@ -63,6 +64,8 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
 :root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
 :root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
@@ -154,7 +157,7 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon-256.png" alt="" width="32" height="32"><span id="appname">ZORYT</span></a>
   
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="nl" lang="nl">Nederlands</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="ar" lang="ar">العربية</option><option value="hi" lang="hi">हिन्दी</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="zh" lang="zh">简体中文</option><option value="zh-Hant" lang="zh-Hant">繁體中文</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақ тілі</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
@@ -1104,6 +1107,51 @@ main{max-width:960px}
 
   <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
+<article class="langdoc" lang="zh-Hant" dir="ltr" data-lang="zh-Hant" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="語言" data-nav="" data-hub="PegasoHlib — 所有應用程式" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
+    <p class="pill">Roblox 測試版</p>
+    <h1>ZORYT</h1>
+    <p class="tagline">Anime Training Simulator</p>
+    <p class="lead">一夜之間，你的村莊化為灰燼。跟著半藏老師修練，每一次訓練都讓你變得更強，在連招戰鬥中擊敗 Boss，把一個又一個世界從黑暗中解放出來。</p>
+    <div class="actions">
+      
+      <a class="btn" href="#f-zh-Hant"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6.5" width="19" height="11" rx="4"/><path d="M6.5 12h4M8.5 10v4M15 11h.01M17.5 13.5h.01"/></svg><span>遊戲內容</span></a>
+    </div>
+    <p class="note">適用於電腦和手機的 Roblox 遊戲，支援多種語言</p>
+    
+  </header>
+
+  <section class="show" aria-label="搶先看">
+    <div class="showtext"><h2 class="display">搶先看</h2><p>開發中遊戲的早期截圖：你的老師，以及海洋世界的兩位 Boss。</p></div>
+    <div class="shots"><figure><img src="img/shot-hanzo.webp" alt="半藏老師" width="960" height="540" loading="lazy"><figcaption>半藏老師</figcaption></figure><figure><img src="img/shot-boss.webp" alt="港灣利維坦" width="960" height="540" loading="lazy"><figcaption>港灣利維坦</figcaption></figure><figure><img src="img/shot-kuroshio.webp" alt="黑潮提督" width="960" height="540" loading="lazy"><figcaption>黑潮提督</figcaption></figure></div>
+  </section>
+
+  <section class="section features" aria-labelledby="f-zh-Hant">
+    <h2 class="eyebrow" id="f-zh-Hant">玩法</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg><h3>小遊戲式修練</h3><p>每個訓練場的玩法都不一樣：戳泡泡、敲太鼓、憑記憶重複圖案、追蹤螢火蟲、潛水尋找珍珠。每一輪都讓你更強，自動修練也能讓你持續進步。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".6"/></svg><h3>連招 Boss 戰</h3><p>躲開攻擊、發動反擊，時機一到，就用點按、滑動和節奏精準完成連招。每個世界的大門都有小 Boss 把守。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4.5l-5.5 2v13l5.5-2 6 2 5.5-2v-13l-5.5 2z"/><path d="M9 4.5v13M15 6.5v13"/></svg><h3>等你解放的世界</h3><p>從被燒毀的櫻花村，到火山、天空之巔和迷霧森林，再到港灣、珊瑚礁和風暴中的燈塔。每個世界都有自己的故事、等待救援的人和祕密。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>重生與「道」</h3><p>把力量花在劍和光環上，然後重生：你會變得更強，開啟下一個世界，以及技能樹「道」的新分支。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>從蛋裡孵出的寵物</h3><p>每個世界都有專屬的蛋：孵化水獺、海鷗、螃蟹、小龍、鯨魚等等，帶上你最強的隊伍出發。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>劍、光環、藥水</h3><p>收集在你周身閃耀的劍和光環，在關鍵時刻喝下力量、幸運或治療藥水。</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>組隊或單人</h3><p>單人或組隊挑戰無盡之塔，加入櫻花團的一個門派，在 PvP 競技場中與其他玩家一較高下。</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>活動與入侵</h3><p>定期活動帶來雙倍修練、幸運孵化、雙倍金幣或暗影之夜。暗影 Boss 會入侵各個世界，每個世界還有自己的專屬活動，從燈籠節到雷暴應有盡有。</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-zh-Hant">
+    <h2 class="eyebrow" id="m0-zh-Hant">戰鬥之餘</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>釣魚與潛水</h3><p>在碼頭釣魚，潛水尋找沉沒的寶箱，還要留意在霧中漂盪的幽靈船。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>腰帶考試</h3><p>通過半藏老師的考試，從白帶一路晉升到黑帶。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>圖鑑</h3><p>怪物、世界、寵物、裝備和隱藏的祕密：你發現的一切都會收進圖鑑，集齊還有獎勵。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>稱號與表情動作</h3><p>憑著你的成就贏得稱號，例如「黑帶」，還能用表情動作向其他玩家打招呼。</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-zh-Hant">
+    <h2 class="eyebrow" id="x-zh-Hant">還有</h2>
+    <div class="chips"><span>多種語言</span><span>電腦和手機</span><span>可移動的觸控按鈕</span><span>自動修練</span><span>適合舊手機的輕量特效</span><span>世界與 Boss 專屬音樂</span><span>線上通行證</span><span>獎勵與任務</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
+    <div><h2 class="display">測試中</h2><p>ZORYT 已經以測試版的形式登上 Roblox：世界、Boss 和故事正在測試與打磨中。接下來會有新的世界和新的故事章節、更多可以擊敗的 Boss 和可以孵化的寵物，然後正式上線。</p>
+    </div>
+  </section>
+
+  <p class="contact">問題與建議: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
 <article class="langdoc" lang="ko" dir="ltr" data-lang="ko" data-title="ZORYT: Anime Training Simulator" data-app="ZORYT" data-langlabel="언어" data-nav="" data-hub="PegasoHlib — 모든 앱" hidden>
   <header class="hero">
     <img class="appicon" src="icon-256.png" alt="" width="112" height="112">
@@ -1290,8 +1338,9 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  // Chinese: zh-CN, zh-Hans, zh-SG, zh-TW, zh-Hant… all take "zh" (Simplified) through the first part of the code.
-  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
+  // Chinese: zh-TW, zh-HK, zh-MO and zh-Hant… take "zh-Hant" (Traditional); zh-CN, zh-Hans, zh-SG and plain zh take "zh"
+  // (Simplified) through the first part of the code, and so does Traditional on a site without zh-Hant.
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv", "zh-tw": "zh-hant", "zh-hk": "zh-hant", "zh-mo": "zh-hant" }, KEYS = ["siteLang"], RTL = ["ar"], low = {};
   for (var l in have) low[l.toLowerCase()] = l;
   // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
   function norm(c) {
