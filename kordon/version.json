@@ -1,11 +1,11 @@
 {
-    "versionCode":  2201,
-    "versionName":  "0.22.1",
+    "versionCode":  2202,
+    "versionName":  "0.22.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "1e293cb1674973b9b98944bbe2bbe01a340a51e652a1f3014f940789b24b7efe",
-    "size":  204419671,
+    "sha256":  "07102be101c62f6acf27dc252d806bdf3a4ac39e7caadd3d88f21f74e3bfb667",
+    "size":  204423692,
     "notes":  {
-                  "uk":  "Виправлено: смуги через екран при нахиленій камері, щілини між шматками мапи й дірки після віддалення (мапа більше не зависає на найдетальнішому рівні).",
-                  "en":  "Fixed: stripes across the screen with a tilted camera, cracks between map pieces and holes after zooming out (the map no longer sticks at the finest level)."
+                  "uk":  "Камера: нахил двома пальцями вгору-вниз, кнопка «вигляд зверху» під + і −, налаштування «Автонахил». Наближення до ~20 км.",
+                  "en":  "Camera: tilt with two fingers up or down, a top view button under + and −, an Auto tilt setting. Zoom in to about 20 km."
               }
 }
