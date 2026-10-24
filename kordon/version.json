@@ -1,11 +1,11 @@
 {
-    "versionCode":  1900,
-    "versionName":  "0.19.0",
+    "versionCode":  2000,
+    "versionName":  "0.20.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c2c4d73cb9a3398514e3db8868bece715dca27d68670288c86701cf562a5ef06",
-    "size":  204392906,
+    "sha256":  "42bd0f85dcf77f3ee352ee7ab31d10470c06313d00431c54622a8af5fe234494",
+    "size":  204410367,
     "notes":  {
-                  "uk":  "Нова мапа «Реалістична»: справжні кольори Землі з космосу, ліси, поля, скелі зблизька, жива вода й атмосфера. Плавне перемикання наближень без смикання, ближче наближення.",
-                  "en":  "New «Realistic» map: the Earth\u0027s real colours from space, woods, fields and rock close up, living water and air. Smooth zoom without stutter, closer zoom."
+                  "uk":  "Війна: оголошення війни в картці країни, бої армій (гори й ліси допомагають захиснику), облога міст і захоплення провінцій, білий мир або мир із захопленим. Інші країни боронять себе.",
+                  "en":  "War: declare it on a country\u0027s card, army battles (hills and forests help the defender), sieges and captured provinces, white peace or keep what you hold. Other countries defend themselves."
               }
 }
