@@ -1,11 +1,11 @@
 {
-    "versionCode":  1800,
-    "versionName":  "0.18.0",
+    "versionCode":  1900,
+    "versionName":  "0.19.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "af3f09d2567a596586768ccb93eb27ee174597f7948b5caf68a1bef13b1c1473",
-    "size":  192635157,
+    "sha256":  "c2c4d73cb9a3398514e3db8868bece715dca27d68670288c86701cf562a5ef06",
+    "size":  204392906,
     "notes":  {
-                  "uk":  "3D-рельєф: гори піднімаються з мапи, зблизька камера нахиляється, озера на своїй висоті. Вимикається в налаштуваннях.",
-                  "en":  "3D relief: mountains rise from the map, the camera tilts close up, lakes lie at their own level. Can be turned off in Settings."
+                  "uk":  "Нова мапа «Реалістична»: справжні кольори Землі з космосу, ліси, поля, скелі зблизька, жива вода й атмосфера. Плавне перемикання наближень без смикання, ближче наближення.",
+                  "en":  "New «Realistic» map: the Earth\u0027s real colours from space, woods, fields and rock close up, living water and air. Smooth zoom without stutter, closer zoom."
               }
 }
