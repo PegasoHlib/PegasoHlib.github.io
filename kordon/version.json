@@ -1,11 +1,11 @@
 {
-    "versionCode":  1500,
-    "versionName":  "0.15.0",
+    "versionCode":  1501,
+    "versionName":  "0.15.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "53cf86ebf319d8a81901d756c61ff689f289cf27c3f0b45ccb9c93045f80876e",
-    "size":  154283023,
+    "sha256":  "4ddd5f80e68d4c9a405927687fdc48d88a372b6cf1a8628d032d01e093e03274",
+    "size":  166497029,
     "notes":  {
-                  "uk":  "Нова епоха: бронзова доба (1250 р. до н.е.) — 17 держав, решта світу нічия. Колонізація нічиєї землі. Населення поки тимчасове.",
-                  "en":  "New era: the Bronze Age (1250 BC) — 17 states, the rest of the world nobody\u0027s. Settling land of nobody. People are temporary for now."
+                  "uk":  "Бронзова доба: власна мапа без сучасних кордонів — плавні кордони держав, провінції тієї доби. Титри вміщуються на телефоні.",
+                  "en":  "Bronze Age: its own map with no modern borders — smooth state borders, provinces of that age. Credits fit on phones."
               }
 }
