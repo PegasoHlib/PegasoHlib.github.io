@@ -1,11 +1,11 @@
 {
-    "versionCode":  1505,
-    "versionName":  "0.15.5",
+    "versionCode":  1506,
+    "versionName":  "0.15.6",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "5f03f3a7c77dc162b72b527ba0c34d030f007ef4bb1524a1314c873882b4d10c",
-    "size":  173836290,
+    "sha256":  "6c4d3e476f0c9e0299d573465b8ba064ee9399918fab28e90cbf0662493186a1",
+    "size":  173822010,
     "notes":  {
-                  "uk":  "Бронзова доба: штандарти з символами держав замість смуг, удвічі менші провінції з плавними межами, без дірок на півдні Єгипту.",
-                  "en":  "Bronze Age: standards with each state\u0027s emblem, provinces half the size with smooth borders, no hole in southern Egypt."
+                  "uk":  "Бронзова доба: гарніші штандарти держав, без дрібних провінцій (крім островів).",
+                  "en":  "Bronze Age: finer state standards, no tiny provinces (islands aside)."
               }
 }
