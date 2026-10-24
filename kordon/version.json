@@ -1,11 +1,11 @@
 {
-    "versionCode":  2301,
-    "versionName":  "0.23.1",
+    "versionCode":  2302,
+    "versionName":  "0.23.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9f503fde7a9e4ca8f66bf99fa3e313dbd5fe20abdb76f324b0d4146a04d587c5",
-    "size":  204682790,
+    "sha256":  "b6e1fa2db5a1177e70c6b8b7ae0183753bc8a9d53e58ab9f5641e145fd4155d6",
+    "size":  204684138,
     "notes":  {
-                  "uk":  "Виправлено: після додавання моря гра довго вантажилась і гальмувала (порти рахувались надто повільно). Тепер завантаження знову швидке.",
-                  "en":  "Fixed: after the sea update the game loaded slowly and lagged (ports were counted too slowly). Loading is fast again."
+                  "uk":  "Гра більше не зависає на великій мапі при швидкому часі (час іде повільніше замість зупинки кадрів). Суша малюється дешевше. У «Звіті» — заміри швидкості й пам\u0027яті.",
+                  "en":  "No more freezing on a big map at high speed (the clock slows down instead of frames stopping). Cheaper land drawing. The report shows speed and memory measurements."
               }
 }
