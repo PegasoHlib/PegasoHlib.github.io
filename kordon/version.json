@@ -1,11 +1,11 @@
 {
-    "versionCode":  1300,
-    "versionName":  "0.13.0",
+    "versionCode":  1301,
+    "versionName":  "0.13.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "23360283e2783d2ef9e8142b4619e0aed89733fc8249386824817d05c543fbde",
-    "size":  151529959,
+    "sha256":  "d3490f2dede46e2305a0b81ef69cbd45a91442604b27f63f4a6c1b70a554f8d7",
+    "size":  151530283,
     "notes":  {
-                  "uk":  "Стабільність: борги й чужі землі знижують її, низька стабільність — менше податків, падіння розвитку, повстання чужих провінцій. Етап 2 завершено",
-                  "en":  "Stability: debt and foreign land lower it; low stability means less tax, falling development and foreign provinces rising. Stage 2 done"
+                  "uk":  "Виправлено: на краю глобуса при віддаленні більше не просвічують країни з іншого боку планети",
+                  "en":  "Fixed: countries from the far side of the planet no longer show through at the globe\u0027s rim when zoomed out"
               }
 }
