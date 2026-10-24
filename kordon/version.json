@@ -1,11 +1,11 @@
 {
-    "versionCode":  2203,
-    "versionName":  "0.22.3",
+    "versionCode":  2300,
+    "versionName":  "0.23.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "0e50bc606a2b2ab09b3fdbcd51bef918392e73d145dac078bca0427eef83ecc5",
-    "size":  204424236,
+    "sha256":  "89ce8b06de2d729f5cea4e7f7c021df5e901042bbefbb6aa5b20ee99a7b470db",
+    "size":  204682166,
     "notes":  {
-                  "uk":  "Нахиляти можна раніше, ще здалеку; жест двома пальцями розпізнається надійніше.",
-                  "en":  "Tilt from farther out; the two-finger gesture is read more surely."
+                  "uk":  "Море: 206 морських зон зі справжніми назвами. Порти: є на старті в прибережних столицях і великих містах, нові можна будувати; порт дає +20% доходу від торгівлі, а ворожий флот його блокує. Кораблі будуються в порту, армія сідає на них з берега, флот пливе між морями й висаджує десант. Морські бої, блокада й постачання армій морем.",
+                  "en":  "The sea: 206 sea zones with real names. Ports: coastal capitals and big cities have them from the start, new ones can be built; a port gives +20% trade income, an enemy fleet blockades it. Ships are built in ports, armies board from the coast, fleets sail between seas and land troops. Sea battles, blockades and supply by sea."
               }
 }
