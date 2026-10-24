@@ -33,11 +33,20 @@ addEventListener("DOMContentLoaded", function () {
 <link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/slid/?lang=uk">
 <link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/slid/?lang=es">
 <link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/slid/?lang=pt">
+<link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/slid/?lang=pt-BR">
 <link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/slid/?lang=fr">
 <link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/slid/?lang=de">
 <link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/slid/?lang=it">
+<link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/slid/?lang=pl">
+<link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/slid/?lang=cs">
+<link rel="alternate" hreflang="sk" href="https://pegasohlib.github.io/slid/?lang=sk">
+<link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/slid/?lang=da">
 <link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/slid/?lang=sv">
+<link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/slid/?lang=tr">
 <link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/slid/?lang=id">
+<link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/slid/?lang=vi">
+<link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/slid/?lang=th">
+<link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/slid/?lang=ko">
 <link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/slid/?lang=ja">
 <link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/slid/?lang=kk">
 <link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/slid/?lang=ru">
@@ -53,6 +62,10 @@ addEventListener("DOMContentLoaded", function () {
 .tile{width:40px;height:40px;padding:9px;background:var(--h0)}
 .t0 .tile,.tile.t0{background:var(--h0)}.t1 .tile,.tile.t1{background:var(--h1)}.t2 .tile,.tile.t2{background:var(--h2)}.t3 .tile,.tile.t3{background:var(--h3)}.t4 .tile,.tile.t4{background:var(--h4)}.t5 .tile,.tile.t5{background:var(--h5)}.t6 .tile,.tile.t6{background:var(--h6)}.t7 .tile,.tile.t7{background:var(--h7)}
 h2.eyebrow{font-family:inherit;line-height:1.4}
+:root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
+:root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
+:root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
 .btn .ic{width:22px;height:22px}
 .btn.primary{background:linear-gradient(135deg,var(--g1),var(--g2));box-shadow:0 12px 30px -12px color-mix(in srgb,var(--g1) 80%,transparent)}
 .btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
@@ -135,7 +148,7 @@ main{max-width:960px}
   <a class="home" href="index.html" data-keep-lang><img src="icon.svg" alt="" width="32" height="32"><span id="appname">Slid</span></a>
   <nav class="links"><a class="on" aria-current="page" data-nav="0" href="index.html" data-keep-lang>Home</a><a data-nav="1" href="privacy.html" data-keep-lang>Privacy</a></nav>
   <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Language</span>
-    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="sv" lang="sv">Svenska</option><option value="id" lang="id">Bahasa Indonesia</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en">English</option><option value="uk" lang="uk">Українська</option><option value="es" lang="es">Español</option><option value="pt" lang="pt">Português</option><option value="pt-BR" lang="pt-BR">Português (Brasil)</option><option value="fr" lang="fr">Français</option><option value="de" lang="de">Deutsch</option><option value="it" lang="it">Italiano</option><option value="pl" lang="pl">Polski</option><option value="cs" lang="cs">Čeština</option><option value="sk" lang="sk">Slovenčina</option><option value="da" lang="da">Dansk</option><option value="sv" lang="sv">Svenska</option><option value="tr" lang="tr">Türkçe</option><option value="id" lang="id">Bahasa Indonesia</option><option value="vi" lang="vi">Tiếng Việt</option><option value="th" lang="th">ไทย</option><option value="ko" lang="ko">한국어</option><option value="ja" lang="ja">日本語</option><option value="kk" lang="kk">Қазақша</option><option value="ru" lang="ru">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
   </label>
   <button class="theme" id="theme" type="button"></button>
 </div></div>
@@ -152,7 +165,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privacy policy</span></a>
     </div>
     <p class="note">Free · Android 8.0 or newer<br>After installing, the app updates itself.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="How it works">
@@ -168,7 +181,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-en">
     <h2 class="eyebrow" id="x-en">And also</h2>
-    <div class="chips"><span>12 languages</span><span>Light and dark theme</span><span>Adjustable text size</span><span>Weekly reports</span><span>Buses, trams, trains and metro</span><span>Personal step goal</span><span>Backups to a file</span></div>
+    <div class="chips"><span>21 languages</span><span>Light and dark theme</span><span>Adjustable text size</span><span>Weekly reports</span><span>Buses, trams, trains and metro</span><span>Personal step goal</span><span>Backups to a file</span></div>
   </section>
 
 
@@ -192,7 +205,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Політика конфіденційності</span></a>
     </div>
     <p class="note">Безкоштовно · Android 8.0 або новіший<br>Після встановлення застосунок оновлюється сам.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Завантажень: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Як це працює">
@@ -208,7 +221,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-uk">
     <h2 class="eyebrow" id="x-uk">А ще</h2>
-    <div class="chips"><span>12 мов</span><span>Світла й темна тема</span><span>Розмір тексту на вибір</span><span>Звіти тижнів</span><span>Автобуси, трамваї, потяги й метро</span><span>Своя ціль кроків</span><span>Резервна копія у файл</span></div>
+    <div class="chips"><span>21 мова</span><span>Світла й темна тема</span><span>Розмір тексту на вибір</span><span>Звіти тижнів</span><span>Автобуси, трамваї, потяги й метро</span><span>Своя ціль кроків</span><span>Резервна копія у файл</span></div>
   </section>
 
 
@@ -232,7 +245,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidad</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 o posterior<br>Una vez instalada, la app se actualiza sola.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Descargas: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Cómo funciona">
@@ -248,7 +261,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-es">
     <h2 class="eyebrow" id="x-es">Y además</h2>
-    <div class="chips"><span>12 idiomas</span><span>Tema claro y oscuro</span><span>Tamaño de texto ajustable</span><span>Resúmenes semanales</span><span>Autobuses, tranvías, trenes y metro</span><span>Meta de pasos personal</span><span>Copias de seguridad en un archivo</span></div>
+    <div class="chips"><span>21 idiomas</span><span>Tema claro y oscuro</span><span>Tamaño de texto ajustable</span><span>Resúmenes semanales</span><span>Autobuses, tranvías, trenes y metro</span><span>Meta de pasos personal</span><span>Copias de seguridad en un archivo</span></div>
   </section>
 
 
@@ -272,7 +285,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
     </div>
     <p class="note">Grátis · Android 8.0 ou mais recente<br>Depois de instalada, a app atualiza-se sozinha.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Transferências: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Como funciona">
@@ -288,7 +301,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-pt">
     <h2 class="eyebrow" id="x-pt">E ainda</h2>
-    <div class="chips"><span>12 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Resumos semanais</span><span>Autocarros, elétricos, comboios e metro</span><span>Meta de passos pessoal</span><span>Cópias de segurança num ficheiro</span></div>
+    <div class="chips"><span>21 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Resumos semanais</span><span>Autocarros, elétricos, comboios e metro</span><span>Meta de passos pessoal</span><span>Cópias de segurança num ficheiro</span></div>
   </section>
 
 
@@ -299,6 +312,46 @@ main{max-width:960px}
   </section>
 
   <p class="contact">Perguntas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pt-BR" data-lang="pt-BR" data-title="Slid — Sua linha do tempo, dia após dia" data-app="Slid" data-langlabel="Idioma" data-nav="Início|Privacidade" data-hub="PegasoHlib — todos os apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">App para Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Sua linha do tempo, dia após dia</p>
+    <p class="lead">O Slid guarda a história dos seus lugares: aonde você vai, os caminhos entre eles e as fotos que você tira por lá — e tudo isso fica no seu celular.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Baixar para Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Política de privacidade</span></a>
+    </div>
+    <p class="note">Grátis · Android 8.0 ou mais recente<br>Depois de instalado, o app se atualiza sozinho.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Como funciona">
+    <div class="showtext"><h2 class="display">Como funciona</h2><p>Três passos de um mapa vazio até toda a sua história.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Grave os novos dias</h3><p>O celular anota onde você está e quase não gasta bateria.</p></div></li><li><span class="num">2</span><div><h3>Traga o passado do Google</h3><p>Sua Linha do tempo do Google Maps, com todos os anos que ela guardou.</p></div></li><li><span class="num">3</span><div><h3>Fotos no mapa</h3><p>As fotos da galeria vão para os seus lugares, até as que não têm GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pt-BR">
+    <h2 class="eyebrow" id="f-pt-BR">O que ele faz</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Cada dia, como ele foi</h3><p>Aonde você foi e como: a pé, de bicicleta, de carro, de trem ou de avião. Preciso em movimento, econômico quando você está parado.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Anos vindos do Google</h3><p>Importa toda a sua Linha do tempo do Google Maps — pelo arquivo exportado ou pelo Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Fotos no mapa</h3><p>As fotos da galeria vão para os seus lugares, até as que não têm GPS. As fotos que enviaram para você ficam sem lugar.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>O mundo que você viu</h3><p>Um globo com os seus países, um mapa de calor e uma névoa sobre o mundo que se dissipa por onde você passa.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Países e cidades</h3><p>Quantos, quando foi a primeira vez, por quanto tempo — e os melhores momentos de cada ano.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Seu relógio também</h3><p>Passos, frequência cardíaca, sono e treinos do seu relógio pelo Health Connect, ao lado de cada dia.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Trajetos que faltam</h3><p>Percebe quando falta uma viagem entre dois lugares e deixa você completá-la — ou completa sozinho.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Agora, hoje, a semana e o mundo explorado, direto na tela inicial.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Celular e tablet</h3><p>Seu próprio backup no Google Drive, um celular novo pronto em um minuto e um tablet que mostra a linha do tempo do celular.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-pt-BR">
+    <h2 class="eyebrow" id="x-pt-BR">E mais</h2>
+    <div class="chips"><span>21 idiomas</span><span>Tema claro e escuro</span><span>Tamanho do texto ajustável</span><span>Relatórios semanais</span><span>Ônibus, bondes, trens e metrô</span><span>Meta de passos pessoal</span><span>Backups em arquivo</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privado desde a concepção</h2><p><b>Fica no seu celular.</b> Sem servidores, sem contas, sem anúncios, sem análises.<br><b>Você decide.</b> Toda permissão e todo recurso online são opcionais.<br><b>Seu backup, seu Drive.</b> Só a pasta oculta do Slid no seu próprio Google Drive.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Ler a política de privacidade</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Dúvidas e ideias: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 <article class="langdoc" lang="fr" data-lang="fr" data-title="Slid — Votre chronologie, jour après jour" data-app="Slid" data-langlabel="Langue" data-nav="Accueil|Confidentialité" data-hub="PegasoHlib — toutes les applis" hidden>
   <header class="hero">
@@ -312,7 +365,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Politique de confidentialité</span></a>
     </div>
     <p class="note">Gratuit · Android 8.0 ou plus récent<br>Une fois installée, l’appli se met à jour toute seule.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Téléchargements: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Comment ça marche">
@@ -328,7 +381,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-fr">
     <h2 class="eyebrow" id="x-fr">Et aussi</h2>
-    <div class="chips"><span>12 langues</span><span>Thème clair et sombre</span><span>Taille du texte réglable</span><span>Bilans de la semaine</span><span>Bus, trams, trains et métro</span><span>Objectif de pas personnalisé</span><span>Sauvegardes dans un fichier</span></div>
+    <div class="chips"><span>21 langues</span><span>Thème clair et sombre</span><span>Taille du texte réglable</span><span>Bilans de la semaine</span><span>Bus, trams, trains et métro</span><span>Objectif de pas personnalisé</span><span>Sauvegardes dans un fichier</span></div>
   </section>
 
 
@@ -352,7 +405,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Datenschutzerklärung</span></a>
     </div>
     <p class="note">Kostenlos · Android 8.0 oder neuer<br>Nach der Installation aktualisiert sich die App von selbst.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="So funktioniert’s">
@@ -368,7 +421,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-de">
     <h2 class="eyebrow" id="x-de">Außerdem</h2>
-    <div class="chips"><span>12 Sprachen</span><span>Helles und dunkles Design</span><span>Anpassbare Textgröße</span><span>Wochenberichte</span><span>Bus, Tram, Zug und U-Bahn</span><span>Persönliches Schrittziel</span><span>Sicherungen in eine Datei</span></div>
+    <div class="chips"><span>21 Sprachen</span><span>Helles und dunkles Design</span><span>Anpassbare Textgröße</span><span>Wochenberichte</span><span>Bus, Tram, Zug und U-Bahn</span><span>Persönliches Schrittziel</span><span>Sicherungen in eine Datei</span></div>
   </section>
 
 
@@ -392,7 +445,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Informativa sulla privacy</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 o successivo<br>Dopo l’installazione l’app si aggiorna da sola.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Download: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Come funziona">
@@ -408,7 +461,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-it">
     <h2 class="eyebrow" id="x-it">E inoltre</h2>
-    <div class="chips"><span>12 lingue</span><span>Tema chiaro e scuro</span><span>Dimensione del testo regolabile</span><span>Resoconti settimanali</span><span>Autobus, tram, treni e metro</span><span>Obiettivo di passi personale</span><span>Backup su file</span></div>
+    <div class="chips"><span>21 lingue</span><span>Tema chiaro e scuro</span><span>Dimensione del testo regolabile</span><span>Resoconti settimanali</span><span>Autobus, tram, treni e metro</span><span>Obiettivo di passi personale</span><span>Backup su file</span></div>
   </section>
 
 
@@ -419,6 +472,166 @@ main{max-width:960px}
   </section>
 
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="pl" data-lang="pl" data-title="Slid — Twoja oś czasu, dzień po dniu" data-app="Slid" data-langlabel="Język" data-nav="Start|Prywatność" data-hub="PegasoHlib — wszystkie aplikacje" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Aplikacja na Androida</p>
+    <h1>Slid</h1>
+    <p class="tagline">Twoja oś czasu, dzień po dniu</p>
+    <p class="lead">Slid przechowuje historię Twoich miejsc: dokąd chodzisz, drogi pomiędzy nimi i zdjęcia, które tam robisz — a wszystko to zostaje na Twoim telefonie.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Pobierz na Androida</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Polityka prywatności</span></a>
+    </div>
+    <p class="note">Za darmo · Android 8.0 lub nowszy<br>Po instalacji aplikacja aktualizuje się sama.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Pobrania: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Jak to działa">
+    <div class="showtext"><h2 class="display">Jak to działa</h2><p>Trzy kroki od pustej mapy do całej Twojej historii.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Zapisuj nowe dni</h3><p>Telefon notuje, gdzie jesteś, i prawie nie zużywa baterii.</p></div></li><li><span class="num">2</span><div><h3>Przenieś przeszłość z Google</h3><p>Twoja oś czasu z Map Google — ze wszystkimi latami, które zachowała.</p></div></li><li><span class="num">3</span><div><h3>Zdjęcia na mapie</h3><p>Zdjęcia z galerii trafiają na swoje miejsca, nawet te bez GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-pl">
+    <h2 class="eyebrow" id="f-pl">Co potrafi</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Każdy dzień taki, jaki był</h3><p>Dokąd i jak się przemieszczasz: pieszo, rowerem, samochodem, pociągiem czy samolotem. Dokładnie w ruchu, oszczędnie, gdy stoisz w miejscu.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Lata z Google</h3><p>Przenosi całą Twoją oś czasu z Map Google — z pliku eksportu lub z Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Zdjęcia na mapie</h3><p>Zdjęcia z galerii trafiają na swoje miejsca, nawet te bez GPS. Zdjęcia, które ktoś Ci wysłał, zostają bez miejsca.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Świat, który znasz</h3><p>Globus z Twoimi krajami, mapa cieplna i mgła świata, która rozwiewa się tam, gdzie bywasz.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Kraje i miasta</h3><p>Ile, kiedy po raz pierwszy, jak długo — i najlepsze chwile każdego roku.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Także Twój zegarek</h3><p>Kroki, tętno, sen i treningi z zegarka przez Health Connect, tuż obok danego dnia.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Brakujące podróże</h3><p>Zauważa, gdy brakuje przejazdu między dwoma miejscami, i pozwala go uzupełnić — albo robi to sam.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widżety</h3><p>Teraz, dziś, tydzień i odkryty świat — prosto na ekranie głównym.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefon i tablet</h3><p>Twoja własna kopia zapasowa na Dysku Google, nowy telefon w minutę i tablet, który pokazuje oś czasu z telefonu.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-pl">
+    <h2 class="eyebrow" id="x-pl">A także</h2>
+    <div class="chips"><span>21 języków</span><span>Jasny i ciemny motyw</span><span>Regulowany rozmiar tekstu</span><span>Raporty tygodniowe</span><span>Autobusy, tramwaje, pociągi i metro</span><span>Własny cel kroków</span><span>Kopie zapasowe do pliku</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Prywatność od podstaw</h2><p><b>Zostaje na Twoim telefonie.</b> Bez serwerów, bez kont, bez reklam, bez analityki.<br><b>Ty decydujesz.</b> Każde uprawnienie i każda funkcja online są opcjonalne.<br><b>Twoja kopia, Twój Dysk.</b> Tylko ukryty folder Slid na Twoim własnym Dysku Google.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Przeczytaj politykę prywatności</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="cs" data-lang="cs" data-title="Slid — Tvoje časová osa, den po dni" data-app="Slid" data-langlabel="Jazyk" data-nav="Domů|Soukromí" data-hub="PegasoHlib — všechny aplikace" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Aplikace pro Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Tvoje časová osa, den po dni</p>
+    <p class="lead">Slid uchovává příběh tvých míst: kam chodíš, cesty mezi nimi a fotky, které tam pořídíš — a to všechno zůstává v tvém telefonu.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stáhnout pro Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany soukromí</span></a>
+    </div>
+    <p class="note">Zdarma · Android 8.0 nebo novější<br>Po instalaci se aplikace aktualizuje sama.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stažení: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Jak to funguje">
+    <div class="showtext"><h2 class="display">Jak to funguje</h2><p>Tři kroky od prázdné mapy k celému tvému příběhu.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Zaznamenávej nové dny</h3><p>Telefon si zapisuje, kde jsi, a baterii téměř nezatěžuje.</p></div></li><li><span class="num">2</span><div><h3>Přenes minulost z Googlu</h3><p>Tvoje časová osa z Map Google se všemi roky, které uchovala.</p></div></li><li><span class="num">3</span><div><h3>Fotky na mapě</h3><p>Fotky z galerie se usadí na svá místa, i ty bez GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-cs">
+    <h2 class="eyebrow" id="f-cs">Co umí</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Každý den, jak opravdu byl</h3><p>Kam a jak se přesouváš: pěšky, na kole, autem, vlakem nebo letadlem. Přesně v pohybu, úsporně, když stojíš na místě.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Roky z Googlu</h3><p>Přenese celou tvou časovou osu z Map Google — ze souboru exportu nebo z Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Fotky na mapě</h3><p>Fotky z galerie se usadí na svá místa, i ty bez GPS. Fotky, které ti někdo poslal, zůstanou bez místa.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Svět, který znáš</h3><p>Glóbus s tvými zeměmi, teplotní mapa a mlha světa, která se rozplývá tam, kam se vydáš.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Země a města</h3><p>Kolik, kdy poprvé, jak dlouho — a nejlepší chvíle každého roku.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>I tvoje hodinky</h3><p>Kroky, tep, spánek a tréninky z hodinek přes Health Connect, hned vedle daného dne.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Chybějící cesty</h3><p>Pozná, když mezi dvěma místy chybí cesta, a nechá tě ji doplnit — nebo ji doplní sám.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgety</h3><p>Teď, dnes, týden a prozkoumaný svět přímo na domovské obrazovce.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefon a tablet</h3><p>Vlastní záloha na Disku Google, nový telefon za minutu a tablet, který ukazuje časovou osu z telefonu.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-cs">
+    <h2 class="eyebrow" id="x-cs">A také</h2>
+    <div class="chips"><span>21 jazyků</span><span>Světlý a tmavý motiv</span><span>Nastavitelná velikost textu</span><span>Týdenní přehledy</span><span>Autobusy, tramvaje, vlaky a metro</span><span>Vlastní cíl kroků</span><span>Zálohy do souboru</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Soukromí už od návrhu</h2><p><b>Zůstává v tvém telefonu.</b> Žádné servery, žádné účty, žádné reklamy, žádná analytika.<br><b>Rozhoduješ ty.</b> Každé oprávnění i každá online funkce jsou volitelné.<br><b>Tvoje záloha, tvůj Disk.</b> Jen skrytá složka Slid na tvém vlastním Disku Google.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Přečíst zásady ochrany soukromí</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Dotazy a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="sk" data-lang="sk" data-title="Slid — Tvoja časová os, deň po dni" data-app="Slid" data-langlabel="Jazyk" data-nav="Domov|Súkromie" data-hub="PegasoHlib — všetky aplikácie" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Aplikácia pre Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Tvoja časová os, deň po dni</p>
+    <p class="lead">Slid uchováva príbeh tvojich miest: kam chodíš, cesty medzi nimi a fotky, ktoré tam odfotíš — a to všetko zostáva v tvojom telefóne.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Stiahnuť pre Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Zásady ochrany súkromia</span></a>
+    </div>
+    <p class="note">Zadarmo · Android 8.0 alebo novší<br>Po inštalácii sa aplikácia aktualizuje sama.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Stiahnutia: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Ako to funguje">
+    <div class="showtext"><h2 class="display">Ako to funguje</h2><p>Tri kroky od prázdnej mapy k celému tvojmu príbehu.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Zaznamenávaj nové dni</h3><p>Telefón si zapisuje, kde si, a batériu takmer nezaťažuje.</p></div></li><li><span class="num">2</span><div><h3>Prenes minulosť z Googlu</h3><p>Tvoja časová os z Máp Google so všetkými rokmi, ktoré uchovala.</p></div></li><li><span class="num">3</span><div><h3>Fotky na mape</h3><p>Fotky z galérie sa usadia na svoje miesta, aj tie bez GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-sk">
+    <h2 class="eyebrow" id="f-sk">Čo dokáže</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Každý deň, aký naozaj bol</h3><p>Kam a ako sa presúvaš: pešo, na bicykli, autom, vlakom alebo lietadlom. Presne v pohybe, úsporne, keď stojíš na mieste.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Roky z Googlu</h3><p>Prenesie celú tvoju časovú os z Máp Google — zo súboru exportu alebo z Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Fotky na mape</h3><p>Fotky z galérie sa usadia na svoje miesta, aj tie bez GPS. Fotky, ktoré ti niekto poslal, zostanú bez miesta.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Svet, ktorý poznáš</h3><p>Glóbus s tvojimi krajinami, teplotná mapa a hmla sveta, ktorá sa rozplýva tam, kam sa vyberieš.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Krajiny a mestá</h3><p>Koľko, kedy prvýkrát, ako dlho — a najlepšie chvíle každého roka.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Aj tvoje hodinky</h3><p>Kroky, tep, spánok a tréningy z hodiniek cez Health Connect, hneď vedľa daného dňa.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Chýbajúce cesty</h3><p>Spozná, keď medzi dvoma miestami chýba cesta, a nechá ťa ju doplniť — alebo ju doplní sám.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgety</h3><p>Teraz, dnes, týždeň a preskúmaný svet priamo na domovskej obrazovke.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefón a tablet</h3><p>Vlastná záloha na Disku Google, nový telefón za minútu a tablet, ktorý ukazuje časovú os z telefónu.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-sk">
+    <h2 class="eyebrow" id="x-sk">A tiež</h2>
+    <div class="chips"><span>21 jazykov</span><span>Svetlý a tmavý motív</span><span>Nastaviteľná veľkosť textu</span><span>Týždenné prehľady</span><span>Autobusy, električky, vlaky a metro</span><span>Vlastný cieľ krokov</span><span>Zálohy do súboru</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Súkromie už od návrhu</h2><p><b>Zostáva v tvojom telefóne.</b> Žiadne servery, žiadne účty, žiadne reklamy, žiadna analytika.<br><b>Rozhoduješ ty.</b> Každé povolenie aj každá online funkcia sú voliteľné.<br><b>Tvoja záloha, tvoj Disk.</b> Len skrytý priečinok Slid na tvojom vlastnom Disku Google.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Prečítať zásady ochrany súkromia</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Otázky a nápady: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="da" data-lang="da" data-title="Slid — Din tidslinje, dag for dag" data-app="Slid" data-langlabel="Sprog" data-nav="Forside|Privatliv" data-hub="PegasoHlib — alle apps" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">App til Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Din tidslinje, dag for dag</p>
+    <p class="lead">Slid gemmer historien om dine steder: hvor du tager hen, vejene imellem og de billeder, du tager undervejs — og det hele bliver på din telefon.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Privatlivspolitik</span></a>
+    </div>
+    <p class="note">Gratis · Android 8.0 eller nyere<br>Efter installationen opdaterer appen sig selv.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Downloads: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Sådan virker det">
+    <div class="showtext"><h2 class="display">Sådan virker det</h2><p>Tre trin fra et tomt kort til hele din historie.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Optag nye dage</h3><p>Telefonen noterer, hvor du er, og bruger næsten ingen strøm.</p></div></li><li><span class="num">2</span><div><h3>Hent fortiden fra Google</h3><p>Din tidslinje fra Google Maps med alle de år, den har gemt.</p></div></li><li><span class="num">3</span><div><h3>Billeder på kortet</h3><p>Billeder fra galleriet finder deres plads, også dem uden GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-da">
+    <h2 class="eyebrow" id="f-da">Det kan den</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Hver dag, som den var</h3><p>Hvor du tog hen, og hvordan: til fods, på cykel, i bil, med tog eller fly. Præcis i bevægelse, sparsommelig når du står stille.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>År fra Google</h3><p>Henter hele din tidslinje fra Google Maps — fra eksportfilen eller via Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Billeder på kortet</h3><p>Billeder fra galleriet finder deres plads, også dem uden GPS. Billeder, du har fået tilsendt, får ingen placering.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Den verden, du har set</h3><p>En globus med dine lande, et heatmap og en tåge over verden, der letter, hvor du kommer frem.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Lande og byer</h3><p>Hvor mange, hvornår første gang, hvor længe — og de bedste øjeblikke fra hvert år.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Også dit ur</h3><p>Skridt, puls, søvn og træning fra dit ur via Health Connect, lige ved siden af dagen.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Manglende ture</h3><p>Opdager, når der mangler en tur mellem to steder, og lader dig udfylde den — eller gør det selv.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Lige nu, i dag, ugen og den udforskede verden direkte på startskærmen.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefon og tablet</h3><p>Din egen backup i Google Drev, en ny telefon klar på et minut og en tablet, der viser telefonens tidslinje.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-da">
+    <h2 class="eyebrow" id="x-da">Og desuden</h2>
+    <div class="chips"><span>21 sprog</span><span>Lyst og mørkt tema</span><span>Justerbar tekststørrelse</span><span>Ugentlige rapporter</span><span>Busser, sporvogne, tog og metro</span><span>Personligt skridtmål</span><span>Backup til en fil</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Privat fra starten</h2><p><b>Bliver på din telefon.</b> Ingen servere, ingen konti, ingen reklamer, ingen analyse.<br><b>Du bestemmer.</b> Alle tilladelser og onlinefunktioner er valgfrie.<br><b>Din backup, dit Drev.</b> Kun Slids skjulte mappe i dit eget Google Drev.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Læs privatlivspolitikken</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 <article class="langdoc" lang="sv" data-lang="sv" data-title="Slid — Din tidslinje, dag för dag" data-app="Slid" data-langlabel="Språk" data-nav="Hem|Integritet" data-hub="PegasoHlib — alla appar" hidden>
   <header class="hero">
@@ -432,7 +645,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Integritetspolicy</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 eller senare<br>Efter installationen uppdaterar appen sig själv.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Nedladdningar: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Så fungerar det">
@@ -448,7 +661,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-sv">
     <h2 class="eyebrow" id="x-sv">Dessutom</h2>
-    <div class="chips"><span>12 språk</span><span>Ljust och mörkt tema</span><span>Justerbar textstorlek</span><span>Veckorapporter</span><span>Buss, spårvagn, tåg och tunnelbana</span><span>Personligt stegmål</span><span>Säkerhetskopior till fil</span></div>
+    <div class="chips"><span>21 språk</span><span>Ljust och mörkt tema</span><span>Justerbar textstorlek</span><span>Veckorapporter</span><span>Buss, spårvagn, tåg och tunnelbana</span><span>Personligt stegmål</span><span>Säkerhetskopior till fil</span></div>
   </section>
 
 
@@ -459,6 +672,46 @@ main{max-width:960px}
   </section>
 
   <p class="contact">Frågor och idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="tr" data-lang="tr" data-title="Slid — Gün gün zaman çizelgen" data-app="Slid" data-langlabel="Dil" data-nav="Ana sayfa|Gizlilik" data-hub="PegasoHlib — tüm uygulamalar" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Android uygulaması</p>
+    <h1>Slid</h1>
+    <p class="tagline">Gün gün zaman çizelgen</p>
+    <p class="lead">Slid, yerlerinin hikâyesini saklar: nereye gittiğini, aradaki yolları ve oralarda çektiğin fotoğrafları — ve hepsi telefonunda kalır.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android için indir</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Gizlilik politikası</span></a>
+    </div>
+    <p class="note">Ücretsiz · Android 8.0 veya üzeri<br>Kurulumdan sonra uygulama kendini günceller.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>İndirmeler: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Nasıl çalışır">
+    <div class="showtext"><h2 class="display">Nasıl çalışır</h2><p>Boş bir haritadan tüm hikâyene üç adım.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Yeni günleri kaydet</h3><p>Telefon nerede olduğunu not eder ve pili neredeyse hiç harcamaz.</p></div></li><li><span class="num">2</span><div><h3>Geçmişi Google'dan getir</h3><p>Google Haritalar Zaman Çizelgen, sakladığı tüm yıllarıyla.</p></div></li><li><span class="num">3</span><div><h3>Haritada fotoğraflar</h3><p>Galerideki fotoğraflar yerlerine oturur, GPS bilgisi olmayanlar bile.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-tr">
+    <h2 class="eyebrow" id="f-tr">Neler yapar</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Her gün, olduğu gibi</h3><p>Nereye ve nasıl gittiğin: yürüyerek, bisikletle, arabayla, trenle ya da uçakla. Hareket hâlindeyken hassas, bir yerde dururken tutumlu.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Google'dan yıllar</h3><p>Tüm Google Haritalar Zaman Çizelgeni getirir — dışa aktarma dosyasıyla ya da Google Takeout ile.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Haritada fotoğraflar</h3><p>Galerideki fotoğraflar yerlerine oturur, GPS bilgisi olmayanlar bile. Sana gönderilen fotoğraflar konumsuz bırakılır.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Gördüğün dünya</h3><p>Ülkelerinin olduğu bir küre, bir ısı haritası ve gittiğin yerlerde dağılan bir dünya sisi.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Ülkeler ve şehirler</h3><p>Kaç tane, ilk ne zaman, ne kadar süre — ve her yılın en güzel anları.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Saatin de</h3><p>Saatinden adımlar, nabız, uyku ve antrenmanlar, Health Connect üzerinden, günün hemen yanında.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Eksik yolculuklar</h3><p>İki yer arasında bir yolculuk eksik olduğunda fark eder ve onu tamamlamana izin verir — ya da kendisi tamamlar.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widget'lar</h3><p>Şu an, bugün, hafta ve keşfedilen dünya, doğrudan ana ekranda.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefon ve tablet</h3><p>Google Drive'da kendi yedeğin, bir dakikada yeni telefon ve telefonun zaman çizelgesini gösteren bir tablet.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-tr">
+    <h2 class="eyebrow" id="x-tr">Ayrıca</h2>
+    <div class="chips"><span>21 dil</span><span>Açık ve koyu tema</span><span>Ayarlanabilir yazı boyutu</span><span>Haftalık raporlar</span><span>Otobüs, tramvay, tren ve metro</span><span>Kişisel adım hedefi</span><span>Dosyaya yedekleme</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Baştan gizlilik odaklı</h2><p><b>Telefonunda kalır.</b> Sunucu yok, hesap yok, reklam yok, analiz yok.<br><b>Sen karar verirsin.</b> Her izin ve her çevrimiçi özellik isteğe bağlıdır.<br><b>Senin yedeğin, senin Drive'ın.</b> Yalnızca kendi Google Drive'ındaki Slid'in gizli klasörü.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Gizlilik politikasını oku</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Sorular ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 <article class="langdoc" lang="id" data-lang="id" data-title="Slid — Linimasa, hari demi hari" data-app="Slid" data-langlabel="Bahasa" data-nav="Beranda|Privasi" data-hub="PegasoHlib — semua aplikasi" hidden>
   <header class="hero">
@@ -472,7 +725,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Kebijakan privasi</span></a>
     </div>
     <p class="note">Gratis · Android 8.0 atau lebih baru<br>Setelah dipasang, aplikasi memperbarui dirinya sendiri.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Unduhan: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Cara kerjanya">
@@ -488,7 +741,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-id">
     <h2 class="eyebrow" id="x-id">Selain itu</h2>
-    <div class="chips"><span>12 bahasa</span><span>Tema terang dan gelap</span><span>Ukuran teks bisa diatur</span><span>Laporan mingguan</span><span>Bus, trem, kereta, dan MRT</span><span>Target langkah pribadi</span><span>Cadangan ke file</span></div>
+    <div class="chips"><span>21 bahasa</span><span>Tema terang dan gelap</span><span>Ukuran teks bisa diatur</span><span>Laporan mingguan</span><span>Bus, trem, kereta, dan MRT</span><span>Target langkah pribadi</span><span>Cadangan ke file</span></div>
   </section>
 
 
@@ -499,6 +752,126 @@ main{max-width:960px}
   </section>
 
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="vi" data-lang="vi" data-title="Slid — Dòng thời gian của bạn, từng ngày một" data-app="Slid" data-langlabel="Ngôn ngữ" data-nav="Trang chủ|Quyền riêng tư" data-hub="PegasoHlib — tất cả ứng dụng" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Ứng dụng Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Dòng thời gian của bạn, từng ngày một</p>
+    <p class="lead">Slid lưu giữ câu chuyện về những nơi bạn đến: bạn đi đâu, những chặng đường ở giữa và những bức ảnh bạn chụp ở đó — và tất cả đều ở lại trên điện thoại của bạn.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Tải về cho Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Chính sách quyền riêng tư</span></a>
+    </div>
+    <p class="note">Miễn phí · Android 8.0 trở lên<br>Sau khi cài đặt, ứng dụng tự cập nhật.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Lượt tải: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="Cách hoạt động">
+    <div class="showtext"><h2 class="display">Cách hoạt động</h2><p>Ba bước từ một tấm bản đồ trống đến toàn bộ câu chuyện của bạn.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Ghi lại những ngày mới</h3><p>Điện thoại ghi nhận bạn đang ở đâu mà hầu như không tốn pin.</p></div></li><li><span class="num">2</span><div><h3>Đưa quá khứ về từ Google</h3><p>Dòng thời gian Google Maps của bạn, với tất cả những năm nó đã lưu.</p></div></li><li><span class="num">3</span><div><h3>Ảnh trên bản đồ</h3><p>Ảnh trong thư viện về đúng chỗ của chúng, kể cả ảnh không có GPS.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-vi">
+    <h2 class="eyebrow" id="f-vi">Ứng dụng làm được gì</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Mỗi ngày, đúng như nó đã diễn ra</h3><p>Bạn đã đi đâu và đi bằng gì: đi bộ, xe đạp, ô tô, tàu hỏa hay máy bay. Chính xác khi di chuyển, tiết kiệm khi bạn ở yên một chỗ.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Nhiều năm từ Google</h3><p>Đưa về toàn bộ Dòng thời gian Google Maps của bạn — từ tệp xuất hoặc từ Google Takeout.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Ảnh trên bản đồ</h3><p>Ảnh trong thư viện về đúng chỗ của chúng, kể cả ảnh không có GPS. Ảnh người khác gửi cho bạn sẽ không được gắn địa điểm.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Thế giới bạn đã thấy</h3><p>Một quả địa cầu với các quốc gia của bạn, một bản đồ nhiệt và một lớp sương mù thế giới tan dần ở những nơi bạn đến.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Quốc gia và thành phố</h3><p>Bao nhiêu nơi, lần đầu khi nào, ở bao lâu — và những khoảnh khắc đẹp nhất của mỗi năm.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Cả đồng hồ của bạn</h3><p>Số bước, nhịp tim, giấc ngủ và các buổi tập từ đồng hồ qua Health Connect, ngay cạnh từng ngày.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Những chuyến đi bị thiếu</h3><p>Nhận ra khi thiếu một chuyến đi giữa hai địa điểm và cho bạn bổ sung, hoặc tự bổ sung.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Tiện ích</h3><p>Hiện tại, hôm nay, tuần này và thế giới đã khám phá, ngay trên màn hình chính.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Điện thoại và máy tính bảng</h3><p>Bản sao lưu của riêng bạn trên Google Drive, điện thoại mới sẵn sàng trong một phút và máy tính bảng hiển thị dòng thời gian của điện thoại.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-vi">
+    <h2 class="eyebrow" id="x-vi">Và còn nữa</h2>
+    <div class="chips"><span>21 ngôn ngữ</span><span>Giao diện sáng và tối</span><span>Cỡ chữ tùy chỉnh</span><span>Báo cáo hằng tuần</span><span>Xe buýt, xe điện, tàu hỏa và tàu điện ngầm</span><span>Mục tiêu số bước riêng</span><span>Sao lưu ra tệp</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Riêng tư ngay từ thiết kế</h2><p><b>Ở lại trên điện thoại của bạn.</b> Không máy chủ, không tài khoản, không quảng cáo, không phân tích.<br><b>Bạn quyết định.</b> Mọi quyền và mọi tính năng trực tuyến đều là tùy chọn.<br><b>Bản sao lưu của bạn, Drive của bạn.</b> Chỉ thư mục ẩn của Slid trong Google Drive của chính bạn.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>Đọc chính sách quyền riêng tư</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="th" data-lang="th" data-title="Slid — ไทม์ไลน์ของคุณ ทีละวัน" data-app="Slid" data-langlabel="ภาษา" data-nav="หน้าแรก|ความเป็นส่วนตัว" data-hub="PegasoHlib — แอปทั้งหมด" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">แอปสำหรับ Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">ไทม์ไลน์ของคุณ ทีละวัน</p>
+    <p class="lead">Slid เก็บเรื่องราวของสถานที่ต่าง ๆ ของคุณ: ที่ที่คุณไป เส้นทางระหว่างทาง และรูปที่คุณถ่ายไว้ที่นั่น — และทั้งหมดอยู่ในโทรศัพท์ของคุณเท่านั้น</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>ดาวน์โหลดสำหรับ Android</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>นโยบายความเป็นส่วนตัว</span></a>
+    </div>
+    <p class="note">ฟรี · Android 8.0 ขึ้นไป<br>หลังติดตั้งแล้ว แอปจะอัปเดตตัวเองโดยอัตโนมัติ</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ดาวน์โหลด: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="ทำงานอย่างไร">
+    <div class="showtext"><h2 class="display">ทำงานอย่างไร</h2><p>สามขั้นตอนจากแผนที่ว่างเปล่าสู่เรื่องราวทั้งหมดของคุณ</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>บันทึกวันใหม่ ๆ</h3><p>โทรศัพท์จดบันทึกว่าคุณอยู่ที่ไหน โดยแทบไม่กินแบตเตอรี่</p></div></li><li><span class="num">2</span><div><h3>นำอดีตมาจาก Google</h3><p>ไทม์ไลน์ใน Google Maps ของคุณ ครบทุกปีที่เคยเก็บไว้</p></div></li><li><span class="num">3</span><div><h3>รูปบนแผนที่</h3><p>รูปในแกลเลอรีจะไปอยู่ตรงตำแหน่งของมัน แม้รูปที่ไม่มี GPS</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-th">
+    <h2 class="eyebrow" id="f-th">ทำอะไรได้บ้าง</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>ทุกวันตามที่เป็นจริง</h3><p>คุณไปที่ไหนและไปอย่างไร: เดิน ปั่นจักรยาน ขับรถ นั่งรถไฟ หรือเครื่องบิน แม่นยำขณะเคลื่อนที่ ประหยัดพลังงานขณะอยู่กับที่</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>หลายปีจาก Google</h3><p>นำไทม์ไลน์ใน Google Maps ทั้งหมดของคุณเข้ามา — จากไฟล์ส่งออกหรือ Google Takeout</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>รูปบนแผนที่</h3><p>รูปในแกลเลอรีจะไปอยู่ตรงตำแหน่งของมัน แม้รูปที่ไม่มี GPS ส่วนรูปที่คนอื่นส่งมาให้คุณจะไม่ถูกระบุตำแหน่ง</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>โลกที่คุณได้เห็น</h3><p>ลูกโลกที่แสดงประเทศของคุณ แผนที่ความร้อน และหมอกปกคลุมโลกที่จางหายไปในที่ที่คุณไป</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>ประเทศและเมือง</h3><p>กี่แห่ง ไปครั้งแรกเมื่อไร อยู่นานแค่ไหน — และช่วงเวลาที่ดีที่สุดของแต่ละปี</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>นาฬิกาของคุณด้วย</h3><p>จำนวนก้าว อัตราการเต้นของหัวใจ การนอน และการออกกำลังกายจากนาฬิกาผ่าน Health Connect อยู่ข้างวันนั้น ๆ</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>การเดินทางที่ขาดหายไป</h3><p>สังเกตได้เมื่อการเดินทางระหว่างสองสถานที่หายไป และให้คุณเติมเอง หรือเติมให้อัตโนมัติ</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>วิดเจ็ต</h3><p>ตอนนี้ วันนี้ สัปดาห์นี้ และโลกที่สำรวจแล้ว บนหน้าจอหลักได้ทันที</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>โทรศัพท์และแท็บเล็ต</h3><p>ข้อมูลสำรองของคุณเองใน Google Drive ย้ายไปโทรศัพท์เครื่องใหม่ได้ในหนึ่งนาที และแท็บเล็ตที่แสดงไทม์ไลน์ของโทรศัพท์</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-th">
+    <h2 class="eyebrow" id="x-th">และยังมี</h2>
+    <div class="chips"><span>21 ภาษา</span><span>ธีมสว่างและมืด</span><span>ปรับขนาดตัวอักษรได้</span><span>รายงานประจำสัปดาห์</span><span>รถเมล์ รถราง รถไฟ และรถไฟใต้ดิน</span><span>เป้าหมายจำนวนก้าวส่วนตัว</span><span>สำรองข้อมูลเป็นไฟล์</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">ออกแบบมาเพื่อความเป็นส่วนตัว</h2><p><b>อยู่ในโทรศัพท์ของคุณ</b> ไม่มีเซิร์ฟเวอร์ ไม่มีบัญชี ไม่มีโฆษณา ไม่มีการวิเคราะห์ข้อมูล<br><b>คุณเป็นผู้ตัดสินใจ</b> ทุกสิทธิ์และทุกฟีเจอร์ออนไลน์เป็นตัวเลือก<br><b>ข้อมูลสำรองของคุณ ใน Drive ของคุณ</b> มีเพียงโฟลเดอร์ซ่อนของ Slid ใน Google Drive ของคุณเอง</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>อ่านนโยบายความเป็นส่วนตัว</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+<article class="langdoc" lang="ko" data-lang="ko" data-title="Slid — 하루하루 쌓이는 나의 타임라인" data-app="Slid" data-langlabel="언어" data-nav="홈|개인정보" data-hub="PegasoHlib — 모든 앱" hidden>
+  <header class="hero">
+    <img class="appicon" src="icon.svg" alt="" width="112" height="112">
+    <p class="pill">Android 앱</p>
+    <h1>Slid</h1>
+    <p class="tagline">하루하루 쌓이는 나의 타임라인</p>
+    <p class="lead">Slid는 내가 다닌 곳의 이야기를 간직해요. 어디에 갔는지, 그 사이의 길, 그곳에서 찍은 사진까지 — 그리고 모든 것이 내 휴대폰에만 남아요.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.6/Slid-0.9.6.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
+      <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>개인정보처리방침</span></a>
+    </div>
+    <p class="note">무료 · Android 8.0 이상<br>설치 후에는 앱이 스스로 업데이트돼요.</p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>다운로드: ≈ <b data-count="slid">31</b></p>
+  </header>
+
+  <section class="show" aria-label="이렇게 작동해요">
+    <div class="showtext"><h2 class="display">이렇게 작동해요</h2><p>빈 지도에서 나의 모든 이야기까지, 세 단계면 돼요.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>새로운 날 기록하기</h3><p>휴대폰이 내 위치를 기록하고, 배터리는 거의 쓰지 않아요.</p></div></li><li><span class="num">2</span><div><h3>Google에서 과거 가져오기</h3><p>Google 지도 타임라인에 저장된 모든 해를 그대로 가져와요.</p></div></li><li><span class="num">3</span><div><h3>지도 위의 사진</h3><p>갤러리 사진이 제자리를 찾아가요. GPS 정보가 없는 사진도요.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ko">
+    <h2 class="eyebrow" id="f-ko">이런 걸 할 수 있어요</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>그날 그대로의 하루</h3><p>어디에 어떻게 갔는지: 걸어서, 자전거로, 차로, 기차나 비행기로. 이동할 때는 정확하게, 머무를 때는 알뜰하게.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>Google에서 가져온 몇 년</h3><p>Google 지도 타임라인 전체를 가져와요 — 내보내기 파일이나 Google 테이크아웃으로.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>지도 위의 사진</h3><p>갤러리 사진이 제자리를 찾아가요. GPS 정보가 없는 사진도요. 다른 사람이 보내 준 사진에는 위치를 붙이지 않아요.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>내가 본 세상</h3><p>내가 가 본 나라가 표시된 지구본, 히트맵, 그리고 내가 가는 곳마다 걷히는 세상의 안개.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>나라와 도시</h3><p>몇 곳인지, 언제 처음 갔는지, 얼마나 머물렀는지 — 그리고 해마다의 가장 좋았던 순간들.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>스마트워치도 함께</h3><p>Health Connect를 통해 워치의 걸음 수, 심박수, 수면, 운동 기록을 그날 옆에 보여 줘요.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>빠진 이동 경로</h3><p>두 장소 사이에 이동 기록이 빠지면 알아채고, 직접 채우게 하거나 알아서 채워요.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>위젯</h3><p>지금, 오늘, 이번 주, 탐험한 세상을 홈 화면에서 바로 확인해요.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>휴대폰과 태블릿</h3><p>내 Google Drive에 나만의 백업, 1분이면 끝나는 새 휴대폰 이전, 휴대폰의 타임라인을 보여 주는 태블릿까지.</p></div></div>
+  </section>
+
+
+  <section class="section extra" aria-labelledby="x-ko">
+    <h2 class="eyebrow" id="x-ko">그 밖에도</h2>
+    <div class="chips"><span>21개 언어</span><span>라이트·다크 테마</span><span>글자 크기 조절</span><span>주간 리포트</span><span>버스, 트램, 기차, 지하철</span><span>나만의 걸음 수 목표</span><span>파일로 백업</span></div>
+  </section>
+
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">처음부터 프라이버시 중심</h2><p><b>내 휴대폰에만 남아요.</b> 서버도, 계정도, 광고도, 분석도 없어요.<br><b>결정은 내가 해요.</b> 모든 권한과 온라인 기능은 선택 사항이에요.<br><b>내 백업은 내 Drive에.</b> 내 Google Drive 안의 Slid 숨김 폴더만 사용해요.</p>
+    <a class="btn light" href="privacy.html" data-keep-lang><span>개인정보처리방침 읽기</span><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 <article class="langdoc" lang="ja" data-lang="ja" data-title="スリド — あなたのタイムラインを日ごとに" data-app="スリド" data-langlabel="言語" data-nav="ホーム|プライバシー" data-hub="PegasoHlib — すべてのアプリ" hidden>
   <header class="hero">
@@ -512,7 +885,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>プライバシー ポリシー</span></a>
     </div>
     <p class="note">無料 · Android 8.0 以降<br>インストール後は、アプリが自動でアップデートされます。</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロード数: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="使い方">
@@ -528,7 +901,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ja">
     <h2 class="eyebrow" id="x-ja">さらに</h2>
-    <div class="chips"><span>12言語に対応</span><span>ライト・ダークテーマ</span><span>文字サイズを調整可能</span><span>週のレポート</span><span>バス・路面電車・電車・地下鉄</span><span>あなたに合った歩数目標</span><span>ファイルへのバックアップ</span></div>
+    <div class="chips"><span>21言語に対応</span><span>ライト・ダークテーマ</span><span>文字サイズを調整可能</span><span>週のレポート</span><span>バス・路面電車・電車・地下鉄</span><span>あなたに合った歩数目標</span><span>ファイルへのバックアップ</span></div>
   </section>
 
 
@@ -552,7 +925,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Құпиялық саясаты</span></a>
     </div>
     <p class="note">Тегін · Android 8.0 немесе одан жаңа<br>Орнатқаннан кейін қолданба өзі жаңарып отырады.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Жүктеулер: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Қалай жұмыс істейді">
@@ -568,7 +941,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-kk">
     <h2 class="eyebrow" id="x-kk">Тағы да</h2>
-    <div class="chips"><span>12 тіл</span><span>Ашық және қараңғы тақырып</span><span>Мәтін өлшемін баптау</span><span>Апта есептері</span><span>Автобус, трамвай, пойыз және метро</span><span>Жеке қадам мақсаты</span><span>Файлға сақтық көшірме</span></div>
+    <div class="chips"><span>21 тіл</span><span>Ашық және қараңғы тақырып</span><span>Мәтін өлшемін баптау</span><span>Апта есептері</span><span>Автобус, трамвай, пойыз және метро</span><span>Жеке қадам мақсаты</span><span>Файлға сақтық көшірме</span></div>
   </section>
 
 
@@ -592,7 +965,7 @@ main{max-width:960px}
       <a class="btn" href="privacy.html" data-keep-lang><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><span>Политика конфиденциальности</span></a>
     </div>
     <p class="note">Бесплатно · Android 8.0 или новее<br>После установки приложение обновляется само.</p>
-    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="slid">20</b></p>
+    <p class="note count"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>Загрузок: ≈ <b data-count="slid">31</b></p>
   </header>
 
   <section class="show" aria-label="Как это работает">
@@ -608,7 +981,7 @@ main{max-width:960px}
 
   <section class="section extra" aria-labelledby="x-ru">
     <h2 class="eyebrow" id="x-ru">А ещё</h2>
-    <div class="chips"><span>12 языков</span><span>Светлая и тёмная тема</span><span>Размер текста на выбор</span><span>Отчёты недель</span><span>Автобусы, трамваи, поезда и метро</span><span>Своя цель по шагам</span><span>Резервные копии в файл</span></div>
+    <div class="chips"><span>21 язык</span><span>Светлая и тёмная тема</span><span>Размер текста на выбор</span><span>Отчёты недель</span><span>Автобусы, трамваи, поезда и метро</span><span>Своя цель по шагам</span><span>Резервные копии в файл</span></div>
   </section>
 
 
@@ -626,12 +999,18 @@ main{max-width:960px}
 (function () {
   var docs = document.querySelectorAll(".langdoc"), sel = document.getElementById("lang");
   var have = {}; for (var i = 0; i < docs.length; i++) have[docs[i].dataset.lang] = docs[i];
-  var alias = { "in": "id", "nb": "sv", "no": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"];
-  function norm(c) { c = (c || "").toLowerCase(); if (alias[c]) c = alias[c]; if (have[c]) return c; c = c.split(/[-_]/)[0]; c = alias[c] || c; return have[c] ? c : null; }
+  var alias = { "in": "id", "nb": "sv", "no": "sv", "nn": "sv" }, KEYS = ["siteLang","slid-lang","slid-privacy-lang"], low = {};
+  for (var l in have) low[l.toLowerCase()] = l;
+  // "pt-BR", "pt-br", "pt_BR" → pt-BR; "pt-PT" → pt (or pt-BR when the site has only that); "uk-data" (an anchor) → uk; "pt-BR-data" → pt-BR.
+  function norm(c) {
+    var p = (c || "").toLowerCase().split(/[-_]/);
+    for (var n = Math.min(p.length, 2); n > 0; n--) { var x = p.slice(0, n).join("-"); x = alias[x] || x; if (low[x]) return low[x]; }
+    if (p[0].length === 2) for (var k in low) if (k.split("-")[0] === p[0]) return low[k]; // a site with only pt-BR still serves "pt-PT"
+    return null;
+  }
   function pick() {
     var q = new URLSearchParams(location.search).get("lang"); if (norm(q)) return norm(q);
     var h = location.hash.slice(1); if (norm(h)) return norm(h);
-    if (h && have[h.split("-")[0]]) return h.split("-")[0];
     for (var k = 0; k < KEYS.length; k++) { try { var s = localStorage.getItem(KEYS[k]); if (norm(s)) return norm(s); } catch (e) {} }
     var nav = navigator.languages || [navigator.language];
     for (var j = 0; j < nav.length; j++) if (norm(nav[j])) return norm(nav[j]);
