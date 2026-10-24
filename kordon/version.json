@@ -1,11 +1,11 @@
 {
-    "versionCode":  1700,
-    "versionName":  "0.17.0",
+    "versionCode":  1701,
+    "versionName":  "0.17.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "a1ff4c661901b4e8185fc01f182e0abffcd09ad4be0ff1f9f6d0193945941e3f",
-    "size":  181551745,
+    "sha256":  "c677a80ad972d50e1059672d2d95f202942001c84bea58ef4493c68baf18f5dc",
+    "size":  181556921,
     "notes":  {
-                  "uk":  "Армії: набір з людей провінції, утримання, марш по сотах (ліс, болота, гори й річки повільніші). Країни стартують із запасом грошей. Тестові «Забрати / Віддати» прибрано.",
-                  "en":  "Armies: raised from a province\u0027s people, upkeep, marching over cells (forests, marshes, mountains and rivers slower). Countries start with savings. Test Take / Give removed."
+                  "uk":  "Зручніше: кнопка «Армії» зі списком, окремі «Іти» й «Зупинити», «До столиці» в картці країни, регіони вибираються з більшої відстані.",
+                  "en":  "Easier: an «Armies» button with a list, separate «March» and «Stop», «To the capital» on a country\u0027s card, provinces picked from farther out."
               }
 }
