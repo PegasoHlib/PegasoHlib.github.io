@@ -1,11 +1,11 @@
 {
-    "versionCode":  1301,
-    "versionName":  "0.13.1",
+    "versionCode":  1400,
+    "versionName":  "0.14.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "d3490f2dede46e2305a0b81ef69cbd45a91442604b27f63f4a6c1b70a554f8d7",
-    "size":  151530283,
+    "sha256":  "79eee5a20500bc7c996270b7518d3757c7b629ddb1eb4574c3fbd16c93eb2851",
+    "size":  151540527,
     "notes":  {
-                  "uk":  "Виправлено: на краю глобуса при віддаленні більше не просвічують країни з іншого боку планети",
-                  "en":  "Fixed: countries from the far side of the planet no longer show through at the globe\u0027s rim when zoomed out"
+                  "uk":  "Адміністративний контроль: далекі від центру землі дають менше податків і знижують стабільність. Зрозуміліші картки провінції та країни.",
+                  "en":  "Administrative control: land far from the province centre pays less tax and lowers stability. Clearer province and country cards."
               }
 }
