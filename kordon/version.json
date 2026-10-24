@@ -1,11 +1,11 @@
 {
-    "versionCode":  2300,
-    "versionName":  "0.23.0",
+    "versionCode":  2301,
+    "versionName":  "0.23.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "89ce8b06de2d729f5cea4e7f7c021df5e901042bbefbb6aa5b20ee99a7b470db",
-    "size":  204682166,
+    "sha256":  "9f503fde7a9e4ca8f66bf99fa3e313dbd5fe20abdb76f324b0d4146a04d587c5",
+    "size":  204682790,
     "notes":  {
-                  "uk":  "Море: 206 морських зон зі справжніми назвами. Порти: є на старті в прибережних столицях і великих містах, нові можна будувати; порт дає +20% доходу від торгівлі, а ворожий флот його блокує. Кораблі будуються в порту, армія сідає на них з берега, флот пливе між морями й висаджує десант. Морські бої, блокада й постачання армій морем.",
-                  "en":  "The sea: 206 sea zones with real names. Ports: coastal capitals and big cities have them from the start, new ones can be built; a port gives +20% trade income, an enemy fleet blockades it. Ships are built in ports, armies board from the coast, fleets sail between seas and land troops. Sea battles, blockades and supply by sea."
+                  "uk":  "Виправлено: після додавання моря гра довго вантажилась і гальмувала (порти рахувались надто повільно). Тепер завантаження знову швидке.",
+                  "en":  "Fixed: after the sea update the game loaded slowly and lagged (ports were counted too slowly). Loading is fast again."
               }
 }
