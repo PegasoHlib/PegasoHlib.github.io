@@ -1,11 +1,11 @@
 {
-    "versionCode":  1506,
-    "versionName":  "0.15.6",
+    "versionCode":  1507,
+    "versionName":  "0.15.7",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6c4d3e476f0c9e0299d573465b8ba064ee9399918fab28e90cbf0662493186a1",
-    "size":  173822010,
+    "sha256":  "60bdf19933e3f961feda6f8d287fc67d3f1ffefcfa6fa566a93b90a3931f66e8",
+    "size":  170884866,
     "notes":  {
-                  "uk":  "Бронзова доба: гарніші штандарти держав, без дрібних провінцій (крім островів).",
-                  "en":  "Bronze Age: finer state standards, no tiny provinces (islands aside)."
+                  "uk":  "Бронзова доба: плавні межі без зубців і квадратів, кращі прапори Мікен, Мітанні й Кіпру.",
+                  "en":  "Bronze Age: smooth borders without steps or squares, better standards for Mycenae, Mitanni and Cyprus."
               }
 }
