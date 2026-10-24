@@ -1,11 +1,11 @@
 {
-    "versionCode":  1703,
-    "versionName":  "0.17.3",
+    "versionCode":  1800,
+    "versionName":  "0.18.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "214e955bbd052d55b2df7c879040d3ccadea867c0261d84c110cbba712f16f83",
-    "size":  181885239,
+    "sha256":  "af3f09d2567a596586768ccb93eb27ee174597f7948b5caf68a1bef13b1c1473",
+    "size":  192635157,
     "notes":  {
-                  "uk":  "Нова іконка гри.",
-                  "en":  "New game icon."
+                  "uk":  "3D-рельєф: гори піднімаються з мапи, зблизька камера нахиляється, озера на своїй висоті. Вимикається в налаштуваннях.",
+                  "en":  "3D relief: mountains rise from the map, the camera tilts close up, lakes lie at their own level. Can be turned off in Settings."
               }
 }
