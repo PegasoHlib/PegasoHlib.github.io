@@ -1,11 +1,11 @@
 {
-    "versionCode":  2200,
-    "versionName":  "0.22.0",
+    "versionCode":  2201,
+    "versionName":  "0.22.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "35080b0b11a94ef5ada5084059aca0822c984929c61b13594487b076cca7c27a",
-    "size":  204416315,
+    "sha256":  "1e293cb1674973b9b98944bbe2bbe01a340a51e652a1f3014f940789b24b7efe",
+    "size":  204419671,
     "notes":  {
-                  "uk":  "Окупація: захоплене місто руйнується (−25% розвитку, −5% людей), чужі люди платять лише 40% податків, поки не стануть своїми, а на чужій землі треба тримати гарнізони, які коштують грошей щомісяця. Картки показують окупацію й гарнізони.",
-                  "en":  "Occupation: a captured city is ruined (−25% development, −5% people), foreign people pay only 40% of taxes until they become your own, and foreign land needs garrisons that cost money every month. Cards show occupation and garrisons."
+                  "uk":  "Виправлено: смуги через екран при нахиленій камері, щілини між шматками мапи й дірки після віддалення (мапа більше не зависає на найдетальнішому рівні).",
+                  "en":  "Fixed: stripes across the screen with a tilted camera, cracks between map pieces and holes after zooming out (the map no longer sticks at the finest level)."
               }
 }
