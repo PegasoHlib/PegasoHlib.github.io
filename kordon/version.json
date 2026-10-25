@@ -1,11 +1,11 @@
 {
-    "versionCode":  2712,
-    "versionName":  "0.27.12",
+    "versionCode":  2713,
+    "versionName":  "0.27.13",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "bee2f513f6827c698011c846ce487d0b63fc4c89a600cf6b8c6dbaf8e0664139",
-    "size":  284881798,
+    "sha256":  "6823d62d3bb188ac9aaed98a4612a4335af267abb6926c3fc52b6bd20673edd7",
+    "size":  285084659,
     "notes":  {
-                  "uk":  "Країни й кордони як у старому атласі: м\u0027якші теплі кольори, фактура паперу, кордони підфарбовані глибшим тоном країни; точніша глибина — менше «бійки» двох поверхонь на телефоні.",
-                  "en":  "Countries and borders as an old atlas: softer warm colours, a paper texture, borders washed in the country\u0027s deeper tone; finer depth precision — less fighting of two surfaces on phones."
+                  "uk":  "Лінії глибин у морі, назви морів і океанів, річки звужуються до витоку, лід із рельєфом і блакитними тінями, межі провінцій пунктиром, дерева з\u0027являються плавно.",
+                  "en":  "Depth lines at sea, names of seas and oceans, rivers narrowing toward their source, ice with relief and blue shade, dotted province lines, trees growing in smoothly."
               }
 }
