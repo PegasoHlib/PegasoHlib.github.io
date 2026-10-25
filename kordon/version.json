@@ -1,11 +1,11 @@
 {
-    "versionCode":  2302,
-    "versionName":  "0.23.2",
+    "versionCode":  2303,
+    "versionName":  "0.23.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "b6e1fa2db5a1177e70c6b8b7ae0183753bc8a9d53e58ab9f5641e145fd4155d6",
-    "size":  204684138,
+    "sha256":  "8e0b9caca6052c7fef7e3b69a9e6e1ab2256b7781f2b51b177a55b47b74976aa",
+    "size":  204688218,
     "notes":  {
-                  "uk":  "Гра більше не зависає на великій мапі при швидкому часі (час іде повільніше замість зупинки кадрів). Суша малюється дешевше. У «Звіті» — заміри швидкості й пам\u0027яті.",
-                  "en":  "No more freezing on a big map at high speed (the clock slows down instead of frames stopping). Cheaper land drawing. The report shows speed and memory measurements."
+                  "uk":  "Нахилена камера: далека земля будується грубіше (у 3 рази менше трикутників, без зависань і прибирань пам\u0027яті). Кордони й ріки в 3D більше не висять над горами й не тонуть у долинах. Невидимі шматки мапи звільняють пам\u0027ять.",
+                  "en":  "Tilted camera: far land is built coarser (3x fewer triangles, no stalls). Borders and rivers in 3D no longer float over ridges or sink into valleys. Map pieces out of view free their memory."
               }
 }
