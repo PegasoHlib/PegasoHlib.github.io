@@ -1,9 +1,9 @@
 {
-    "versionCode":  2501,
-    "versionName":  "0.25.1",
+    "versionCode":  2502,
+    "versionName":  "0.25.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "5aaa5bf2eaa821d198121ac60cdc6ac95e744fcb567a1102fecfd2542291dfe1",
-    "size":  204683491,
+    "sha256":  "159a5034cbede13ac69134d2c4333c97fbc9d4741c887167e7b3cb8f10ee42a3",
+    "size":  205687677,
     "notes":  {
                   "uk":  "Картини на екрані завантаження й у меню: щоразу інша, по черзі у випадковому порядку",
                   "en":  "Pictures on the loading screen and in the menus: a different one each time, in a shuffled order"
