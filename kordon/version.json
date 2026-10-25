@@ -1,11 +1,11 @@
 {
-    "versionCode":  2504,
-    "versionName":  "0.25.4",
+    "versionCode":  2600,
+    "versionName":  "0.26.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "f44a9d16183af3ec28b1d2de492a008a01ab4a03a008c76d8df68ea97b7fb9e3",
-    "size":  205692633,
+    "sha256":  "14a8290eac7f62479e6d6f702520c4a9dddbb240d915ef333c5a92ae258f46e2",
+    "size":  271092486,
     "notes":  {
-                  "uk":  "Картина на екрані завантаження тепер видно; нічийні землі здалеку — сама земля; колір країн прозоріший; дерева не на воді",
-                  "en":  "The loading picture now shows; land nobody holds is the land itself from afar; countries\u0027 colours more see-through; trees off the water"
+                  "uk":  "Мальована мапа: справжні мальовані текстури (трава, поля, ліс, скелі, сніг, пісок, степ, тундра, чагарники) і рельєф утричі детальніший зблизька",
+                  "en":  "Painted map: real painted textures (grass, fields, forest, rock, snow, sand, steppe, tundra, scrub) and relief three times finer close up"
               }
 }
