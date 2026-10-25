@@ -1,11 +1,11 @@
 {
-    "versionCode":  2707,
-    "versionName":  "0.27.7",
+    "versionCode":  2708,
+    "versionName":  "0.27.8",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9ac3171bfb6fc34c3980af59aeea30d369a98a42ed82f44ccc778ae5cd6cdf4a",
-    "size":  284876646,
+    "sha256":  "451c4c4bbd03e127a93ecfc7d34b40478bcd6a2b7683f2675551044db8ed1538",
+    "size":  284877754,
     "notes":  {
-                  "uk":  "Назви країн розставлені на всю країну, м\u0027якше обведення; назви більше не тягнуться через світ; менше мерехтіння текстур землі; зрозуміла підказка, коли розріз замалий.",
-                  "en":  "Country names spread over the whole country with a softer outline; no names across the world; less ground texture shimmer; a clear hint when a cut is too small."
+                  "uk":  "На середньому масштабі земля в тоні своєї країни замість туману; лінії хвиль і мілководдя біля берегів; повільні тіні хмар і легка віньєтка.",
+                  "en":  "Mid zoom: the land tinted by its country instead of a fog; water lines and shallows along shores; slow cloud shadows and a soft vignette."
               }
 }
