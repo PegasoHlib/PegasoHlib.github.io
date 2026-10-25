@@ -1,11 +1,11 @@
 {
-    "versionCode":  2306,
-    "versionName":  "0.23.6",
+    "versionCode":  2307,
+    "versionName":  "0.23.7",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "0de348e10a8555f37da091f014c187f2cad2da36389e6e468b2c998c6617c9ca",
-    "size":  204637134,
+    "sha256":  "689894607b14467a76334b0592e61348185123bbfd2f3e491854c395782f7dc8",
+    "size":  204639606,
     "notes":  {
-                  "uk":  "Прибрано маленькі клинці кольору країни за лінією берега в 3D. Суша, що торкалася материка лише кутом (Касандра в Греції та ще ~500 місць), тепер з\u0027єднана.",
-                  "en":  "Removed small wedges of country colour past the coast line in 3D. Land that touched the mainland only at a corner (Kassandra in Greece and ~500 more spots) is now joined."
+                  "uk":  "Висота камери над морем під кнопками наближення. Під час швидкого наближення кольори більше не вилазять за кордони.",
+                  "en":  "Camera height above the sea under the zoom buttons. Colours no longer spill past borders while zooming fast."
               }
 }
