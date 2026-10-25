@@ -1,11 +1,11 @@
 {
-    "versionCode":  2601,
-    "versionName":  "0.26.1",
+    "versionCode":  2602,
+    "versionName":  "0.26.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c6a816c7934c5255fc5c775f5bfa4d1982faf151857f3469cb59b94f0bf4156a",
-    "size":  273524093,
+    "sha256":  "cd96cf6ebcd485271524c8293c1b4be602ceef80b429cad03ed46e364eefce27",
+    "size":  275466717,
     "notes":  {
-                  "uk":  "Мальована мапа: дерева з Tripo (ялина, листяне, пальма, акація, кущ) на постійних місцях; савана, джунглі, болота, пустелі; нові річки, мілини й піна біля берега; детальний рельєф видно здалі; країни фарбуються з ~500 км",
-                  "en":  "Painted map: Tripo trees (fir, broadleaf, palm, acacia, bush) that keep their places; savanna, jungle, swamps, deserts; new rivers, shallows and foam along shores; detailed relief from further out; countries\u0027 colours back from ~500 km"
+                  "uk":  "Мальована мапа: текстури без повторів і нові варіанти (луки, живоплоти, степові смуги, мішаний ліс); плавні живі річки; озера не світяться здалеку; дерева видно до ~500 км; кольори країн повертаються до ~2000 км",
+                  "en":  "Painted map: textures without repeats and new variants (meadows, hedgerows, steppe strips, mixed forest); smooth living rivers; lakes no longer glow from afar; trees up to ~500 km; countries\u0027 colours back by ~2000 km"
               }
 }
