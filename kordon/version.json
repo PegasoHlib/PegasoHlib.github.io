@@ -1,11 +1,11 @@
 {
-    "versionCode":  2602,
-    "versionName":  "0.26.2",
+    "versionCode":  2700,
+    "versionName":  "0.27.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "cd96cf6ebcd485271524c8293c1b4be602ceef80b429cad03ed46e364eefce27",
-    "size":  275466717,
+    "sha256":  "f22885842c58a0a369f206e8856b9833f4b8f2f0ecf7665361eddccfe9846660",
+    "size":  284694901,
     "notes":  {
-                  "uk":  "Мальована мапа: текстури без повторів і нові варіанти (луки, живоплоти, степові смуги, мішаний ліс); плавні живі річки; озера не світяться здалеку; дерева видно до ~500 км; кольори країн повертаються до ~2000 км",
-                  "en":  "Painted map: textures without repeats and new variants (meadows, hedgerows, steppe strips, mixed forest); smooth living rivers; lakes no longer glow from afar; trees up to ~500 km; countries\u0027 colours back by ~2000 km"
+                  "uk":  "Кордони лягають на рельєф і м\u0027яко світяться всередину країни; нові текстури (поля, степ, пустелі, тайга, рисові поля, Середземномор\u0027я); колір кожного регіону з реальних барв; чіткий рельєф здалеку; без темних плям і дерев у воді; 14 картинок завантаження",
+                  "en":  "Borders lie on the relief and glow softly inside each country; new textures (fields, steppe, deserts, taiga, rice paddies, the Mediterranean); each region\u0027s own colour from the real ones; crisp relief from afar; no dark specks or trees in the sea; 14 loading pictures"
               }
 }
