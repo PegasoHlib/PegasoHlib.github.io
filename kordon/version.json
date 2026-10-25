@@ -1,11 +1,11 @@
 {
-    "versionCode":  2303,
-    "versionName":  "0.23.3",
+    "versionCode":  2304,
+    "versionName":  "0.23.4",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "8e0b9caca6052c7fef7e3b69a9e6e1ab2256b7781f2b51b177a55b47b74976aa",
-    "size":  204688218,
+    "sha256":  "bd8919ea4b0af83b3a546c75a485905902376a13fe032fba8c769922be77b64f",
+    "size":  204690522,
     "notes":  {
-                  "uk":  "Нахилена камера: далека земля будується грубіше (у 3 рази менше трикутників, без зависань і прибирань пам\u0027яті). Кордони й ріки в 3D більше не висять над горами й не тонуть у долинах. Невидимі шматки мапи звільняють пам\u0027ять.",
-                  "en":  "Tilted camera: far land is built coarser (3x fewer triangles, no stalls). Borders and rivers in 3D no longer float over ridges or sink into valleys. Map pieces out of view free their memory."
+                  "uk":  "Ігровий день рахується на всіх ядрах телефона: на великих мапах приблизно втричі швидше, на звичайних — майже вдвічі.",
+                  "en":  "The game day runs on all phone cores: about 3x quicker on big maps, nearly 2x on normal ones."
               }
 }
