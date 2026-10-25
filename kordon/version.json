@@ -1,11 +1,11 @@
 {
-    "versionCode":  2700,
-    "versionName":  "0.27.0",
+    "versionCode":  2701,
+    "versionName":  "0.27.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "f22885842c58a0a369f206e8856b9833f4b8f2f0ecf7665361eddccfe9846660",
-    "size":  284694901,
+    "sha256":  "34f34e7f94f56b761b9205a15941e2566f61d819310aae226399f69bb4c0b0fc",
+    "size":  284696253,
     "notes":  {
-                  "uk":  "Кордони лягають на рельєф і м\u0027яко світяться всередину країни; нові текстури (поля, степ, пустелі, тайга, рисові поля, Середземномор\u0027я); колір кожного регіону з реальних барв; чіткий рельєф здалеку; без темних плям і дерев у воді; 14 картинок завантаження",
-                  "en":  "Borders lie on the relief and glow softly inside each country; new textures (fields, steppe, deserts, taiga, rice paddies, the Mediterranean); each region\u0027s own colour from the real ones; crisp relief from afar; no dark specks or trees in the sea; 14 loading pictures"
+                  "uk":  "Карта не «перезавантажується» при віддаленні й русі: рельєф лишається детальним; зблизька видно регіони (легкий колір країни, чіткіші межі провінцій).",
+                  "en":  "The map no longer \u0027reloads\u0027 while zooming and dragging: the relief stays detailed; regions read close up (a light country tint, clearer province lines)."
               }
 }
