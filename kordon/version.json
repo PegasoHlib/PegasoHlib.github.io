@@ -1,11 +1,11 @@
 {
-    "versionCode":  2500,
-    "versionName":  "0.25.0",
+    "versionCode":  2501,
+    "versionName":  "0.25.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6b05ed873222997b6a9c359cdeab9806ba83f28a114d45a87530f6723b02e4f1",
-    "size":  204679893,
+    "sha256":  "5aaa5bf2eaa821d198121ac60cdc6ac95e744fcb567a1102fecfd2542291dfe1",
+    "size":  204683491,
     "notes":  {
-                  "uk":  "Етап 5 на затвердження: Альпи й Північна Італія мальовані як на кампанійній мапі — сніг на хребтах, ліс, тіні гір, 3D-дерева зблизька (у 3D-рельєфі)",
-                  "en":  "Stage 5 for approval: the Alps and northern Italy painted like a campaign map — snow on the ridges, woods, the hills\u0027 shadows, 3D trees close up (3D relief)"
+                  "uk":  "Картини на екрані завантаження й у меню: щоразу інша, по черзі у випадковому порядку",
+                  "en":  "Pictures on the loading screen and in the menus: a different one each time, in a shuffled order"
               }
 }
