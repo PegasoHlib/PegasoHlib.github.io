@@ -1,11 +1,11 @@
 {
-    "versionCode":  2711,
-    "versionName":  "0.27.11",
+    "versionCode":  2712,
+    "versionName":  "0.27.12",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "b67e91c93bad64aac1c69087483236bb186961e9a0a87d94281c554f0911d85d",
-    "size":  284881142,
+    "sha256":  "bee2f513f6827c698011c846ce487d0b63fc4c89a600cf6b8c6dbaf8e0664139",
+    "size":  284881798,
     "notes":  {
-                  "uk":  "Текстури землі більше не лежать одна на одній і не переливаються; зелені долини в посушливих краях по всій планеті — суцільні поля, без дір із піску.",
-                  "en":  "Ground textures no longer lie on top of each other or shimmer; green valleys in dry lands across the planet are solid fields, without holes of sand."
+                  "uk":  "Країни й кордони як у старому атласі: м\u0027якші теплі кольори, фактура паперу, кордони підфарбовані глибшим тоном країни; точніша глибина — менше «бійки» двох поверхонь на телефоні.",
+                  "en":  "Countries and borders as an old atlas: softer warm colours, a paper texture, borders washed in the country\u0027s deeper tone; finer depth precision — less fighting of two surfaces on phones."
               }
 }
