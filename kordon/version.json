@@ -1,11 +1,11 @@
 {
-    "versionCode":  2705,
-    "versionName":  "0.27.5",
+    "versionCode":  2706,
+    "versionName":  "0.27.6",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "b289639bcae9b600097983b60f537314357b57334b210b0ba2c214116c99a483",
-    "size":  284697525,
+    "sha256":  "8f90e6f17b68bb58c868bc16c09d5fce96fd5b0d2abad07cb4967aab8620d0fd",
+    "size":  284875922,
     "notes":  {
-                  "uk":  "Лінії під роздільність екрана (на телефоні були тонші), нічийні землі зі штрихуванням, кордони країн важчі за межі провінцій, гори видно крізь кольори країн.",
-                  "en":  "Lines sized for the screen (thinner on phones before), unclaimed land hatched, country borders heavier than province lines, mountains show through country colours."
+                  "uk":  "Назви країн тепер ідуть уздовж форми країни, вигнуті, шрифтом із засічками.",
+                  "en":  "Country names now follow each country\u0027s shape, curved, in a serif face."
               }
 }
