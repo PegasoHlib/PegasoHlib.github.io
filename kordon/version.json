@@ -1,11 +1,11 @@
 {
-    "versionCode":  2304,
-    "versionName":  "0.23.4",
+    "versionCode":  2305,
+    "versionName":  "0.23.5",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "bd8919ea4b0af83b3a546c75a485905902376a13fe032fba8c769922be77b64f",
-    "size":  204690522,
+    "sha256":  "887b15939f72d5c969cb995ed7cdeb46c82f9e09da4e74b1db2d31a72f712cb7",
+    "size":  204690422,
     "notes":  {
-                  "uk":  "Ігровий день рахується на всіх ядрах телефона: на великих мапах приблизно втричі швидше, на звичайних — майже вдвічі.",
-                  "en":  "The game day runs on all phone cores: about 3x quicker on big maps, nearly 2x on normal ones."
+                  "uk":  "3D: кордони на хребтах більше не ховаються за ближніми пагорбами; сусідні шматки мапи однаково детальні, без зсувів кордонів на їхніх межах.",
+                  "en":  "3D: borders on ridges no longer hide behind the hills just before them; neighbouring map pieces share one detail level, no border offsets at their seams."
               }
 }
