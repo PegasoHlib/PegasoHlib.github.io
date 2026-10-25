@@ -1,11 +1,11 @@
 {
-    "versionCode":  2400,
-    "versionName":  "0.24.0",
+    "versionCode":  2401,
+    "versionName":  "0.24.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "8051a8d8ece417bebf324661dbc1331b00df72371655b68ad807c51159621b9b",
-    "size":  204655996,
+    "sha256":  "52039a8a6fcb0e22f5b687e370becb34fc92fe0200d8d6a3a3ee73516057ca6d",
+    "size":  204660760,
     "notes":  {
-                  "uk":  "Мапа країн змінюється з наближенням: здалеку кольори країн, назви країн і панель країн; ближче крізь колір проступає земля, а вздовж кордону лишається смуга кольору країни.",
-                  "en":  "The countries map changes with zoom: from afar country colours, names and a countries panel; closer the land shows through and a band of the owner\u0027s colour stays along each border."
+                  "uk":  "Зблизька країни видно смугою свого кольору вздовж кордону, регіони — тонкою смугою свого відтінку; списки (країни, налаштування, армії, титри) гортаються пальцем",
+                  "en":  "Close up countries show as a band of their colour along the border, regions as a thin band of their own tone; lists (countries, settings, armies, credits) scroll by finger"
               }
 }
