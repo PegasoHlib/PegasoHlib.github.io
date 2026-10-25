@@ -1,11 +1,11 @@
 {
-    "versionCode":  2305,
-    "versionName":  "0.23.5",
+    "versionCode":  2306,
+    "versionName":  "0.23.6",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "887b15939f72d5c969cb995ed7cdeb46c82f9e09da4e74b1db2d31a72f712cb7",
-    "size":  204690422,
+    "sha256":  "0de348e10a8555f37da091f014c187f2cad2da36389e6e468b2c998c6617c9ca",
+    "size":  204637134,
     "notes":  {
-                  "uk":  "3D: кордони на хребтах більше не ховаються за ближніми пагорбами; сусідні шматки мапи однаково детальні, без зсувів кордонів на їхніх межах.",
-                  "en":  "3D: borders on ridges no longer hide behind the hills just before them; neighbouring map pieces share one detail level, no border offsets at their seams."
+                  "uk":  "Прибрано маленькі клинці кольору країни за лінією берега в 3D. Суша, що торкалася материка лише кутом (Касандра в Греції та ще ~500 місць), тепер з\u0027єднана.",
+                  "en":  "Removed small wedges of country colour past the coast line in 3D. Land that touched the mainland only at a corner (Kassandra in Greece and ~500 more spots) is now joined."
               }
 }
