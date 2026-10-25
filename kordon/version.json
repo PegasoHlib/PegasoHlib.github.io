@@ -1,11 +1,11 @@
 {
-    "versionCode":  2307,
-    "versionName":  "0.23.7",
+    "versionCode":  2308,
+    "versionName":  "0.23.8",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "689894607b14467a76334b0592e61348185123bbfd2f3e491854c395782f7dc8",
-    "size":  204639606,
+    "sha256":  "be66c6cc1ab4956b221e42b7992d294f5f84654a58025cf45aeeeab2f74e3f6d",
+    "size":  204643617,
     "notes":  {
-                  "uk":  "Висота камери над морем під кнопками наближення. Під час швидкого наближення кольори більше не вилазять за кордони.",
-                  "en":  "Camera height above the sea under the zoom buttons. Colours no longer spill past borders while zooming fast."
+                  "uk":  "Під час наближення гра створює втричі менше сміття в пам\u0027яті (менше зупинок на прибирання). Нове налаштування «Якість»: Авто, Низька, Середня, Висока.",
+                  "en":  "Zooming makes a third of the memory garbage (fewer pauses). New Quality setting: Auto, Low, Medium, High."
               }
 }
