@@ -1,11 +1,11 @@
 {
-    "versionCode":  2708,
-    "versionName":  "0.27.8",
+    "versionCode":  2709,
+    "versionName":  "0.27.9",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "451c4c4bbd03e127a93ecfc7d34b40478bcd6a2b7683f2675551044db8ed1538",
-    "size":  284877754,
+    "sha256":  "9c4beeb413c3849405e0035ffb598bc8c0af7ed6c2fe14a8fd6394be5c2ef694",
+    "size":  285350762,
     "notes":  {
-                  "uk":  "На середньому масштабі земля в тоні своєї країни замість туману; лінії хвиль і мілководдя біля берегів; повільні тіні хмар і легка віньєтка.",
-                  "en":  "Mid zoom: the land tinted by its country instead of a fog; water lines and shallows along shores; slow cloud shadows and a soft vignette."
+                  "uk":  "Набагато більше річок зблизька: Південний Буг, Рось, притоки Дністра та інші; менші річки вужчі.",
+                  "en":  "Many more rivers close in: the Southern Bug, Ros, Dniester tributaries and others; smaller rivers narrower."
               }
 }
