@@ -1,11 +1,11 @@
 {
-    "versionCode":  2706,
-    "versionName":  "0.27.6",
+    "versionCode":  2707,
+    "versionName":  "0.27.7",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "8f90e6f17b68bb58c868bc16c09d5fce96fd5b0d2abad07cb4967aab8620d0fd",
-    "size":  284875922,
+    "sha256":  "9ac3171bfb6fc34c3980af59aeea30d369a98a42ed82f44ccc778ae5cd6cdf4a",
+    "size":  284876646,
     "notes":  {
-                  "uk":  "Назви країн тепер ідуть уздовж форми країни, вигнуті, шрифтом із засічками.",
-                  "en":  "Country names now follow each country\u0027s shape, curved, in a serif face."
+                  "uk":  "Назви країн розставлені на всю країну, м\u0027якше обведення; назви більше не тягнуться через світ; менше мерехтіння текстур землі; зрозуміла підказка, коли розріз замалий.",
+                  "en":  "Country names spread over the whole country with a softer outline; no names across the world; less ground texture shimmer; a clear hint when a cut is too small."
               }
 }
