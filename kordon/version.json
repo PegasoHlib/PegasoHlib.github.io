@@ -1,11 +1,11 @@
 {
-    "versionCode":  2702,
-    "versionName":  "0.27.2",
+    "versionCode":  2703,
+    "versionName":  "0.27.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "de3c7d7c071e3de5888c665af25030256072ebb1353d1d6ff33b5c070b0e91aa",
-    "size":  284696197,
+    "sha256":  "60927c51f0d85f88b34802cb9288bb1e8d195d314a5a265fd4bf61418649459b",
+    "size":  284696433,
     "notes":  {
-                  "uk":  "Кордони країн знову як раніше (чітка темна лінія); річки вздовж кордонів більше не зникають; світіння лише ледь-ледь зблизька.",
-                  "en":  "Country borders as before (a crisp dark line); rivers along borders no longer vanish; the glow only faintly close in."
+                  "uk":  "Кордони, річки й берегові лінії знову видно на телефоні (на Android вони ховалися під землю з 0.27.0).",
+                  "en":  "Borders, rivers and coastlines show on the phone again (on Android they went under the land since 0.27.0)."
               }
 }
