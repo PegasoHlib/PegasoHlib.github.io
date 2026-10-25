@@ -1,11 +1,11 @@
 {
-    "versionCode":  2502,
-    "versionName":  "0.25.2",
+    "versionCode":  2503,
+    "versionName":  "0.25.3",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "159a5034cbede13ac69134d2c4333c97fbc9d4741c887167e7b3cb8f10ee42a3",
-    "size":  205687677,
+    "sha256":  "95c2e02a8f02fe73a4a97a59a8acfd1584023220e69f11a5cda3477441dc27d1",
+    "size":  205692381,
     "notes":  {
-                  "uk":  "Картини на екрані завантаження й у меню: щоразу інша, по черзі у випадковому порядку",
-                  "en":  "Pictures on the loading screen and in the menus: a different one each time, in a shuffled order"
+                  "uk":  "Мальована мапа — окремий вибір у налаштуваннях (уся планета); вигляд мапи тепер у налаштуваннях; дерева видно здалі й не на річках та озерах; м\u0027якші смуги провінцій; картини лише на екрані завантаження",
+                  "en":  "The painted map is its own choice in the settings (whole planet); map view moved into the settings; trees from further out and never on rivers or lakes; softer province bands; pictures only on the loading screen"
               }
 }
