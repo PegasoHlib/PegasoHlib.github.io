@@ -1,11 +1,11 @@
 {
-    "versionCode":  2713,
-    "versionName":  "0.27.13",
+    "versionCode":  2714,
+    "versionName":  "0.27.14",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6823d62d3bb188ac9aaed98a4612a4335af267abb6926c3fc52b6bd20673edd7",
-    "size":  285084659,
+    "sha256":  "53c01a73aff1da91ba3d0164f4b35b02d9e83d6c510c2b268bbb8b6ac427f6cb",
+    "size":  285086823,
     "notes":  {
-                  "uk":  "Лінії глибин у морі, назви морів і океанів, річки звужуються до витоку, лід із рельєфом і блакитними тінями, межі провінцій пунктиром, дерева з\u0027являються плавно.",
-                  "en":  "Depth lines at sea, names of seas and oceans, rivers narrowing toward their source, ice with relief and blue shade, dotted province lines, trees growing in smoothly."
+                  "uk":  "Прибрано прямі смуги на землі, що мерехтіли під час руху; спокійніше море (менше смужок); Гренландія й Антарктида з блакитним льодом, тріщинами й тінями.",
+                  "en":  "Straight streaks on the land that flickered while moving are gone; a calmer sea (fewer stripes); Greenland and Antarctica with blue ice, crevasses and shade."
               }
 }
