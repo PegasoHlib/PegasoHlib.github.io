@@ -1,11 +1,11 @@
 {
-    "versionCode":  2402,
-    "versionName":  "0.24.2",
+    "versionCode":  2500,
+    "versionName":  "0.25.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "8d29a8f69b587ddaa1e7c20a278ef0b46e3a425c4d96a98dce0b1d73fd93a3e3",
-    "size":  204661116,
+    "sha256":  "6b05ed873222997b6a9c359cdeab9806ba83f28a114d45a87530f6723b02e4f1",
+    "size":  204679893,
     "notes":  {
-                  "uk":  "Меню країн відкривається, коли камера вище 2 500 км",
-                  "en":  "The countries panel opens when the camera is above 2,500 km"
+                  "uk":  "Етап 5 на затвердження: Альпи й Північна Італія мальовані як на кампанійній мапі — сніг на хребтах, ліс, тіні гір, 3D-дерева зблизька (у 3D-рельєфі)",
+                  "en":  "Stage 5 for approval: the Alps and northern Italy painted like a campaign map — snow on the ridges, woods, the hills\u0027 shadows, 3D trees close up (3D relief)"
               }
 }
