@@ -1,11 +1,11 @@
 {
-    "versionCode":  2710,
-    "versionName":  "0.27.10",
+    "versionCode":  2711,
+    "versionName":  "0.27.11",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "eefeff3bc3995c45dc73403e76dc792bd3b6129de97d7b86e71e5be13021f52a",
-    "size":  284880678,
+    "sha256":  "b67e91c93bad64aac1c69087483236bb186961e9a0a87d94281c554f0911d85d",
+    "size":  284881142,
     "notes":  {
-                  "uk":  "Річки як раніше і втричі тонші; без уламків біля берегів на глобусі; без постійного переливання; поля в долинах пустель без дір; назва для кожної окремої території і в межах країни.",
-                  "en":  "Rivers as before and a third as wide; no coast shards on the globe; no constant shimmer; desert valley fields without holes; a name per separate territory, kept inside the country."
+                  "uk":  "Текстури землі більше не лежать одна на одній і не переливаються; зелені долини в посушливих краях по всій планеті — суцільні поля, без дір із піску.",
+                  "en":  "Ground textures no longer lie on top of each other or shimmer; green valleys in dry lands across the planet are solid fields, without holes of sand."
               }
 }
