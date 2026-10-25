@@ -1,11 +1,11 @@
 {
-    "versionCode":  2704,
-    "versionName":  "0.27.4",
+    "versionCode":  2705,
+    "versionName":  "0.27.5",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "51ef0c2cfd41a29050c02d6f80e28c11bb71bde4709c12e1279db8bbe60df08a",
-    "size":  284696637,
+    "sha256":  "b289639bcae9b600097983b60f537314357b57334b210b0ba2c214116c99a483",
+    "size":  284697525,
     "notes":  {
-                  "uk":  "Кордони, річки й береги знову видно на телефоні: шейдер ліній з 0.27.0 не запускався на телефонних відеокартах.",
-                  "en":  "Borders, rivers and coasts show on the phone again: since 0.27.0 the line shader did not run on phone GPUs."
+                  "uk":  "Лінії під роздільність екрана (на телефоні були тонші), нічийні землі зі штрихуванням, кордони країн важчі за межі провінцій, гори видно крізь кольори країн.",
+                  "en":  "Lines sized for the screen (thinner on phones before), unclaimed land hatched, country borders heavier than province lines, mountains show through country colours."
               }
 }
