@@ -1,11 +1,11 @@
 {
-    "versionCode":  2401,
-    "versionName":  "0.24.1",
+    "versionCode":  2402,
+    "versionName":  "0.24.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "52039a8a6fcb0e22f5b687e370becb34fc92fe0200d8d6a3a3ee73516057ca6d",
-    "size":  204660760,
+    "sha256":  "8d29a8f69b587ddaa1e7c20a278ef0b46e3a425c4d96a98dce0b1d73fd93a3e3",
+    "size":  204661116,
     "notes":  {
-                  "uk":  "Зблизька країни видно смугою свого кольору вздовж кордону, регіони — тонкою смугою свого відтінку; списки (країни, налаштування, армії, титри) гортаються пальцем",
-                  "en":  "Close up countries show as a band of their colour along the border, regions as a thin band of their own tone; lists (countries, settings, armies, credits) scroll by finger"
+                  "uk":  "Меню країн відкривається, коли камера вище 2 500 км",
+                  "en":  "The countries panel opens when the camera is above 2,500 km"
               }
 }
