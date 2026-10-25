@@ -1,11 +1,11 @@
 {
-    "versionCode":  2709,
-    "versionName":  "0.27.9",
+    "versionCode":  2710,
+    "versionName":  "0.27.10",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9c4beeb413c3849405e0035ffb598bc8c0af7ed6c2fe14a8fd6394be5c2ef694",
-    "size":  285350762,
+    "sha256":  "eefeff3bc3995c45dc73403e76dc792bd3b6129de97d7b86e71e5be13021f52a",
+    "size":  284880678,
     "notes":  {
-                  "uk":  "Набагато більше річок зблизька: Південний Буг, Рось, притоки Дністра та інші; менші річки вужчі.",
-                  "en":  "Many more rivers close in: the Southern Bug, Ros, Dniester tributaries and others; smaller rivers narrower."
+                  "uk":  "Річки як раніше і втричі тонші; без уламків біля берегів на глобусі; без постійного переливання; поля в долинах пустель без дір; назва для кожної окремої території і в межах країни.",
+                  "en":  "Rivers as before and a third as wide; no coast shards on the globe; no constant shimmer; desert valley fields without holes; a name per separate territory, kept inside the country."
               }
 }
