@@ -1,11 +1,11 @@
 {
-    "versionCode":  2308,
-    "versionName":  "0.23.8",
+    "versionCode":  2400,
+    "versionName":  "0.24.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "be66c6cc1ab4956b221e42b7992d294f5f84654a58025cf45aeeeab2f74e3f6d",
-    "size":  204643617,
+    "sha256":  "8051a8d8ece417bebf324661dbc1331b00df72371655b68ad807c51159621b9b",
+    "size":  204655996,
     "notes":  {
-                  "uk":  "Під час наближення гра створює втричі менше сміття в пам\u0027яті (менше зупинок на прибирання). Нове налаштування «Якість»: Авто, Низька, Середня, Висока.",
-                  "en":  "Zooming makes a third of the memory garbage (fewer pauses). New Quality setting: Auto, Low, Medium, High."
+                  "uk":  "Мапа країн змінюється з наближенням: здалеку кольори країн, назви країн і панель країн; ближче крізь колір проступає земля, а вздовж кордону лишається смуга кольору країни.",
+                  "en":  "The countries map changes with zoom: from afar country colours, names and a countries panel; closer the land shows through and a band of the owner\u0027s colour stays along each border."
               }
 }
