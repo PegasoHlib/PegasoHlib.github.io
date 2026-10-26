@@ -1,11 +1,11 @@
 {
-    "versionCode":  2719,
-    "versionName":  "0.27.19",
+    "versionCode":  2720,
+    "versionName":  "0.27.20",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "489f856def7eedb90a324122e27b1c20ac0b6b1c249a2f7a5f78bf64dc801e78",
-    "size":  296606500,
+    "sha256":  "c771c15e979e551b3882291462f69708203407e41f35b362b1911cba77b075a6",
+    "size":  296606372,
     "notes":  {
-                  "uk":  "Країни на краю глобуса більше не світяться тонкою лінією.",
-                  "en":  "Countries at the globe\u0027s rim no longer glow as a thin line."
+                  "uk":  "Повернуто, як було: земля на краю глобуса знову на своїй висоті (у 0.27.19 лінії «літали»).",
+                  "en":  "Reverted: the land at the globe\u0027s rim back at its height (in 0.27.19 lines seemed to float)."
               }
 }
