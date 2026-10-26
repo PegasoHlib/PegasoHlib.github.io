@@ -1,11 +1,11 @@
 {
-    "versionCode":  2718,
-    "versionName":  "0.27.18",
+    "versionCode":  2719,
+    "versionName":  "0.27.19",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "ec900b0b3ff998acbc6fe7c096010d8eba02cc1ae2f1a1a8a8de44501b0e5187",
-    "size":  296606364,
+    "sha256":  "489f856def7eedb90a324122e27b1c20ac0b6b1c249a2f7a5f78bf64dc801e78",
+    "size":  296606500,
     "notes":  {
-                  "uk":  "Гори знову високі, як раніше; кордони й річки не світяться на краю глобуса; назви не вилазять за край.",
-                  "en":  "Mountains tall again as before; borders and rivers no longer glow at the globe\u0027s rim; names stay off the rim."
+                  "uk":  "Країни на краю глобуса більше не світяться тонкою лінією.",
+                  "en":  "Countries at the globe\u0027s rim no longer glow as a thin line."
               }
 }
