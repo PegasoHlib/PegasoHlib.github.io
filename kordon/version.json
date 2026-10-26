@@ -1,11 +1,11 @@
 {
-    "versionCode":  2722,
-    "versionName":  "0.27.22",
+    "versionCode":  2723,
+    "versionName":  "0.27.23",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6045f3ce6ffa7b7145de28f4bf975a26e35fe76b3f3b96470fbf4f70c4158443",
-    "size":  296607564,
+    "sha256":  "508f3d7f10fb45478116cee1f6077185127495699ac09da950b9e7392f0cd82d",
+    "size":  296606632,
     "notes":  {
-                  "uk":  "Край глобуса більше не мерехтить: гори біля краю не стирчать зубцями, штрихування нічиєї землі там згасає.",
-                  "en":  "The globe\u0027s rim no longer flickers: mountains at the edge no longer stick out as teeth, no-man\u0027s-land strokes fade there."
+                  "uk":  "Край глобуса повернуто, як було до 0.27.22.",
+                  "en":  "The globe\u0027s rim is back as it was before 0.27.22."
               }
 }
