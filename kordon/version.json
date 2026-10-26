@@ -1,11 +1,11 @@
 {
-    "versionCode":  2720,
-    "versionName":  "0.27.20",
+    "versionCode":  2721,
+    "versionName":  "0.27.21",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c771c15e979e551b3882291462f69708203407e41f35b362b1911cba77b075a6",
-    "size":  296606372,
+    "sha256":  "eebb1a44187a07fd74478c44077d1b03655b9cdb6dc11ec3de8fb3333532b54e",
+    "size":  296606632,
     "notes":  {
-                  "uk":  "Повернуто, як було: земля на краю глобуса знову на своїй висоті (у 0.27.19 лінії «літали»).",
-                  "en":  "Reverted: the land at the globe\u0027s rim back at its height (in 0.27.19 lines seemed to float)."
+                  "uk":  "Карта більше не мерехтить дрібно, коли її рухаєш: згладжені краї дерев і гір (якість Середня/Висока).",
+                  "en":  "The map no longer flickers finely while moving: smoothed edges of trees and mountains (Medium/High quality)."
               }
 }
