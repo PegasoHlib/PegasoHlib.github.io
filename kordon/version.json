@@ -1,11 +1,11 @@
 {
-    "versionCode":  2715,
-    "versionName":  "0.27.15",
+    "versionCode":  2716,
+    "versionName":  "0.27.16",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "ae39bcf360f839c1e9bd94296d4a29ed8c6fe76d4e4f521ddfb5092557509796",
-    "size":  296604072,
+    "sha256":  "458ae808bfe9c74c5a6260184c69a3f36dc1ce7363b1c036d56e8893ab5000f7",
+    "size":  296604588,
     "notes":  {
-                  "uk":  "Новий екран завантаження: картина на весь екран, назва, епоха, поради, смуга прогресу, і він більше не завмирає. Музика: тема в меню й 4 треки в грі (вимикається в налаштуваннях).",
-                  "en":  "A new loading screen: full-screen art, title, era, tips, a progress bar, and it no longer freezes. Music: a theme in the menus and 4 tracks in game (can be turned off in the settings)."
+                  "uk":  "Згладжені краї (дерева, хребти й лінії більше не мерехтять), пунктир провінцій не повзе, на старті без назви мапи.",
+                  "en":  "Smoothed edges (trees, ridges and lines no longer shimmer), province dashes stay put, no map name at start."
               }
 }
