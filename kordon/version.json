@@ -1,11 +1,11 @@
 {
-    "versionCode":  2721,
-    "versionName":  "0.27.21",
+    "versionCode":  2722,
+    "versionName":  "0.27.22",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "eebb1a44187a07fd74478c44077d1b03655b9cdb6dc11ec3de8fb3333532b54e",
-    "size":  296606632,
+    "sha256":  "6045f3ce6ffa7b7145de28f4bf975a26e35fe76b3f3b96470fbf4f70c4158443",
+    "size":  296607564,
     "notes":  {
-                  "uk":  "Карта більше не мерехтить дрібно, коли її рухаєш: згладжені краї дерев і гір (якість Середня/Висока).",
-                  "en":  "The map no longer flickers finely while moving: smoothed edges of trees and mountains (Medium/High quality)."
+                  "uk":  "Край глобуса більше не мерехтить: гори біля краю не стирчать зубцями, штрихування нічиєї землі там згасає.",
+                  "en":  "The globe\u0027s rim no longer flickers: mountains at the edge no longer stick out as teeth, no-man\u0027s-land strokes fade there."
               }
 }
