@@ -1,11 +1,11 @@
 {
-    "versionCode":  2714,
-    "versionName":  "0.27.14",
+    "versionCode":  2715,
+    "versionName":  "0.27.15",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "53c01a73aff1da91ba3d0164f4b35b02d9e83d6c510c2b268bbb8b6ac427f6cb",
-    "size":  285086823,
+    "sha256":  "ae39bcf360f839c1e9bd94296d4a29ed8c6fe76d4e4f521ddfb5092557509796",
+    "size":  296604072,
     "notes":  {
-                  "uk":  "Прибрано прямі смуги на землі, що мерехтіли під час руху; спокійніше море (менше смужок); Гренландія й Антарктида з блакитним льодом, тріщинами й тінями.",
-                  "en":  "Straight streaks on the land that flickered while moving are gone; a calmer sea (fewer stripes); Greenland and Antarctica with blue ice, crevasses and shade."
+                  "uk":  "Новий екран завантаження: картина на весь екран, назва, епоха, поради, смуга прогресу, і він більше не завмирає. Музика: тема в меню й 4 треки в грі (вимикається в налаштуваннях).",
+                  "en":  "A new loading screen: full-screen art, title, era, tips, a progress bar, and it no longer freezes. Music: a theme in the menus and 4 tracks in game (can be turned off in the settings)."
               }
 }
