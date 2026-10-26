@@ -1,11 +1,11 @@
 {
-    "versionCode":  2717,
-    "versionName":  "0.27.17",
+    "versionCode":  2718,
+    "versionName":  "0.27.18",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "6968180c1c0a24257ae8ac1c38790ce4178980920bd21da555279320759d17ae",
-    "size":  296606024,
+    "sha256":  "ec900b0b3ff998acbc6fe7c096010d8eba02cc1ae2f1a1a8a8de44501b0e5187",
+    "size":  296606364,
     "notes":  {
-                  "uk":  "Повернуто швидкодію (вимкнено згладжування, що гальмувало телефон); без смуг світла на пагорбах; текстури на крутих схилах не розтягуються; рельєф зблизька природніший.",
-                  "en":  "Speed back (the smoothing that slowed phones is off); no streaks of light across hills; textures no longer stretch on steep slopes; more natural relief close in."
+                  "uk":  "Гори знову високі, як раніше; кордони й річки не світяться на краю глобуса; назви не вилазять за край.",
+                  "en":  "Mountains tall again as before; borders and rivers no longer glow at the globe\u0027s rim; names stay off the rim."
               }
 }
