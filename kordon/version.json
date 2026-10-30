@@ -1,11 +1,11 @@
 {
-    "versionCode":  2724,
-    "versionName":  "0.27.24",
+    "versionCode":  2800,
+    "versionName":  "0.28.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c0a9ba8f40e2d4b47a785c611f21d04c11506dfdd1edc539e8aa8d9977209b28",
-    "size":  296606800,
+    "sha256":  "9766bd93b69896cd5ceed0562bfe3c1c745eb7116bd6288d5c08b05dac9b1b7d",
+    "size":  296706866,
     "notes":  {
-                  "uk":  "Кордони більше не світяться на краю глобуса: біля краю лінії тоншають і згасають, земля без змін.",
-                  "en":  "Borders no longer glow at the globe\u0027s rim: lines thin out and fade near the edge, the land is unchanged."
+                  "uk":  "Заставка PegasoHlib зі звуком під час запуску (натисни, щоб пропустити)",
+                  "en":  "PegasoHlib intro with sound at launch (tap to skip)"
               }
 }
