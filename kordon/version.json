@@ -1,11 +1,11 @@
 {
-    "versionCode":  2800,
-    "versionName":  "0.28.0",
+    "versionCode":  2801,
+    "versionName":  "0.28.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9766bd93b69896cd5ceed0562bfe3c1c745eb7116bd6288d5c08b05dac9b1b7d",
-    "size":  296706866,
+    "sha256":  "4a582b3c7c091087ec85e498c44febbf238d4f805f95aa751c7620ea93e614b9",
+    "size":  296727470,
     "notes":  {
-                  "uk":  "Заставка PegasoHlib зі звуком під час запуску (натисни, щоб пропустити)",
-                  "en":  "PegasoHlib intro with sound at launch (tap to skip)"
+                  "uk":  "Титри: повний перелік ліцензій (.NET, бібліотеки Android, шрифт PT Serif, відкриті дані CC BY 4.0)",
+                  "en":  "Credits: complete licence list (.NET, Android libraries, PT Serif font, CC BY 4.0 open data)"
               }
 }
