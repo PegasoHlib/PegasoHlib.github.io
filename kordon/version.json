@@ -1,11 +1,11 @@
 {
-    "versionCode":  2801,
-    "versionName":  "0.28.1",
+    "versionCode":  2802,
+    "versionName":  "0.28.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "4a582b3c7c091087ec85e498c44febbf238d4f805f95aa751c7620ea93e614b9",
-    "size":  296727470,
+    "sha256":  "3d2c729d03d5ea8a0ecc2f656f75206435801e8531566eafee48519680c3fcb8",
+    "size":  296732002,
     "notes":  {
-                  "uk":  "Титри: повний перелік ліцензій (.NET, бібліотеки Android, шрифт PT Serif, відкриті дані CC BY 4.0)",
-                  "en":  "Credits: complete licence list (.NET, Android libraries, PT Serif font, CC BY 4.0 open data)"
+                  "uk":  "Інтерфейс під будь-який екран: меню, картки й списки більше не виходять за край, на планшеті більше місця",
+                  "en":  "UI fits any screen: menus, cards and lists no longer spill past the edge; more room on tablets"
               }
 }
