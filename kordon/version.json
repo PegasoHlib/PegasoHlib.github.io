@@ -1,11 +1,11 @@
 {
-    "versionCode":  2802,
-    "versionName":  "0.28.2",
+    "versionCode":  2900,
+    "versionName":  "0.29.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "3d2c729d03d5ea8a0ecc2f656f75206435801e8531566eafee48519680c3fcb8",
-    "size":  296732002,
+    "sha256":  "8242bbbeb053d4a92af59551ca9972c21149be9702dff8e207ed4405112a62a4",
+    "size":  296753112,
     "notes":  {
-                  "uk":  "Інтерфейс під будь-який екран: меню, картки й списки більше не виходять за край, на планшеті більше місця",
-                  "en":  "UI fits any screen: menus, cards and lists no longer spill past the edge; more room on tablets"
+                  "uk":  "Новий вигляд: рамки, іконки на всіх кнопках, капсули годинника й зуму, вкладки в налаштуваннях, дії картки праворуч і кнопка «Ще»",
+                  "en":  "New look: framed panels, icons on every button, clock and zoom capsules, tabs in Settings, card actions on the right and a More button"
               }
 }
