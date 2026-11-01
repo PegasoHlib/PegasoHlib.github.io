@@ -1,11 +1,11 @@
 {
-    "versionCode":  3201,
-    "versionName":  "0.32.1",
+    "versionCode":  3300,
+    "versionName":  "0.33.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "196179e93d31d50fc44053634ceaaf76a84f37a39d5fec88a7c07a15c1a1b73f",
-    "size":  305720810,
+    "sha256":  "3cdfe79373f61b0964c6d059d1ae3cea7bd6b428189c5888ec9fb980b22d5349",
+    "size":  305730734,
     "notes":  {
-                  "uk":  "Кольори й тонкі межі країн здалеку більше не мерехтять; додаткова (тимчасова) карта лежить нижче й повторює кривизну глобуса.",
-                  "en":  "Country colours and thin borders no longer twinkle from afar; the stand-in map lies lower and follows the globe\u0027s curve."
+                  "uk":  "Загроза й коаліції: хто захоплює землі, бере контрибуції чи воює без причини, лякає сусідів. Від загрози 50 вони складають коаліцію: нападеш на одного — воюватимеш з усіма. Кілька років миру, і вона розпадається. У картці країни видно загрозу в обидва боки, до коаліції можна приєднатися.",
+                  "en":  "Threat and coalitions: whoever takes land, demands contributions or fights without a reason frightens the neighbours. From threat 50 they form a coalition: attack one and you fight them all. A few years of peace and it falls apart. A country\u0027s card shows the threat both ways, and you can join a coalition."
               }
 }
