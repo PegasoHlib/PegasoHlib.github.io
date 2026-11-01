@@ -1,11 +1,11 @@
 {
-    "versionCode":  3300,
-    "versionName":  "0.33.0",
+    "versionCode":  3301,
+    "versionName":  "0.33.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "3cdfe79373f61b0964c6d059d1ae3cea7bd6b428189c5888ec9fb980b22d5349",
-    "size":  305730734,
+    "sha256":  "5bc036fcbb7dae51bd04d5dfa47c33c987286fbd5f32b6bc0dad1f821acc5504",
+    "size":  305731394,
     "notes":  {
-                  "uk":  "Загроза й коаліції: хто захоплює землі, бере контрибуції чи воює без причини, лякає сусідів. Від загрози 50 вони складають коаліцію: нападеш на одного — воюватимеш з усіма. Кілька років миру, і вона розпадається. У картці країни видно загрозу в обидва боки, до коаліції можна приєднатися.",
-                  "en":  "Threat and coalitions: whoever takes land, demands contributions or fights without a reason frightens the neighbours. From threat 50 they form a coalition: attack one and you fight them all. A few years of peace and it falls apart. A country\u0027s card shows the threat both ways, and you can join a coalition."
+                  "uk":  "Віддалений глобус спокійніший: узбережжя й кордони країн рівні під час обертання, на планшеті зникла бліда сітка областей; дрібні далекі дерева не мерехтять.",
+                  "en":  "The far globe is steadier: coasts and borders stay even as it turns, the faint mesh of regions is gone on tablets; tiny far trees no longer twinkle."
               }
 }
