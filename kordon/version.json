@@ -1,11 +1,11 @@
 {
-    "versionCode":  2901,
-    "versionName":  "0.29.1",
+    "versionCode":  3000,
+    "versionName":  "0.30.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "c562520b420b7bd64008cd669b02a0e119b6e726339597697ec9e493ef86d3f7",
-    "size":  296751353,
+    "sha256":  "d956cc7e66822e5d17d864f820e9933b2882c87fb61ceef52bccaceea3f4c6a3",
+    "size":  285427193,
     "notes":  {
-                  "uk":  "Карта спокійніша: прибрано іскри на краю глобуса й смуги на телефонах, планшет знову будує карту з правильною деталізацією (менше трикутників), тіні пагорбів не стрибають, менше смикань під час гри",
-                  "en":  "A steadier map: no sparks at the globe\u0027s rim or stripes on phones, tablets build the map at the right detail again (fewer triangles), hill shadows no longer jump, fewer hitches while playing"
+                  "uk":  "Одна мальовнича карта (інші види й вибір карти прибрано); без вертикальних смуг і мерехтіння при русі: світло й текстури більше не ламаються на межах шматків карти; чіткі кордони й маленькі країни здалеку; гра менша",
+                  "en":  "One painted map (the other views and the map choice are gone); no vertical stripes or flicker while moving: light and textures no longer break at the map\u0027s piece edges; crisp borders and small countries from afar; a smaller game"
               }
 }
