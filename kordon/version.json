@@ -1,11 +1,11 @@
 {
-    "versionCode":  3101,
-    "versionName":  "0.31.1",
+    "versionCode":  3102,
+    "versionName":  "0.31.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "5a8dae2c9dc56f23ae4afc5606235cb06fa481ecb2576ef6c63008a9017719e0",
-    "size":  305696051,
+    "sha256":  "39fea3d0eb6433b30f0766e20c6754b1a6fc5a5a65459989070af8fc0092ce81",
+    "size":  305697091,
     "notes":  {
-                  "uk":  "Мерехтіння на мапі: кольорові смуги кордонів, рік і узбережжя більше не обрізаються горами; поділені провінції не просвічують старими кольорами; дерева плавно з\u0027являються й зникають замість стрибків.",
-                  "en":  "Map flicker: the coloured bands of borders, rivers and coasts are no longer cut by the hills; split provinces no longer show their old colours through; trees fade in and out instead of popping."
+                  "uk":  "Кордони на крутих схилах більше не «крутяться» й не блимають; біля берегів зникли сірі клини на деревах і мерехтіння лінії шельфу в морі.",
+                  "en":  "Border bands on steep slopes no longer swing and flicker; by the coasts the grey wedges over trees and the sparkling shelf line in the sea are gone."
               }
 }
