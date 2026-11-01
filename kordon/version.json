@@ -1,11 +1,11 @@
 {
-    "versionCode":  3100,
-    "versionName":  "0.31.0",
+    "versionCode":  3101,
+    "versionName":  "0.31.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "b016fc44e21833e5e05fb552464252e5e607282a2bd03a1777350499954edbee",
-    "size":  305690679,
+    "sha256":  "5a8dae2c9dc56f23ae4afc5606235cb06fa481ecb2576ef6c63008a9017719e0",
+    "size":  305696051,
     "notes":  {
-                  "uk":  "Армії, флоти й порти тепер видно на мапі 3D-фігурками: воїни своєї епохи й краю (стоять, ідуть, б\u0027ються), корабель і гавань — у кольорі країни. У Налаштуваннях → Загальні є тест на 3 000 анімованих солдатів з лічильником кадрів.",
-                  "en":  "Armies, fleets and ports now show on the map as 3D figures: soldiers of their age and land (standing, marching, fighting), a ship and a harbour, in the country\u0027s colour. Settings → General has a test with 3,000 animated soldiers and an FPS counter."
+                  "uk":  "Мерехтіння на мапі: кольорові смуги кордонів, рік і узбережжя більше не обрізаються горами; поділені провінції не просвічують старими кольорами; дерева плавно з\u0027являються й зникають замість стрибків.",
+                  "en":  "Map flicker: the coloured bands of borders, rivers and coasts are no longer cut by the hills; split provinces no longer show their old colours through; trees fade in and out instead of popping."
               }
 }
