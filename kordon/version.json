@@ -1,11 +1,11 @@
 {
-    "versionCode":  3400,
-    "versionName":  "0.34.0",
+    "versionCode":  3401,
+    "versionName":  "0.34.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9f810a837e923e9d8bffe39885398151f7cd360c86dca569e7ce2cfe95583a83",
-    "size":  305743003,
+    "sha256":  "02903e6e3c5c45942f3a795c92834c6e15007e7a37d783fec3880d005770f627",
+    "size":  305743267,
     "notes":  {
-                  "uk":  "Васали й анексія: переможеного можна зробити васалом. Він платить данину (0–30%, ставиш у його картці) і воює на твоєму боці, а ти захищаєш його. Невірний васал може повстати. Вірного через 5 років можна приєднати за річний дохід. Мир тепер закінчує війну й для союзників обох сторін.",
-                  "en":  "Vassals and annexation: a beaten enemy can become your vassal. It pays tribute (0-30%, set on its card) and fights beside you, and you defend it. A disloyal vassal may rise. A loyal one can be annexed after 5 years for a year of its income. A peace now ends the war for both sides\u0027 allies too."
+                  "uk":  "Гори здалеку (з 3–4 тис. км) більше не мерехтять: затінення рельєфу на такій відстані плавне.",
+                  "en":  "Mountains seen from far up (3–4 thousand km) no longer flicker: the relief\u0027s shading is smooth at that distance."
               }
 }
