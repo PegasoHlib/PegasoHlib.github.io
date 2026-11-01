@@ -1,11 +1,11 @@
 {
-    "versionCode":  3200,
-    "versionName":  "0.32.0",
+    "versionCode":  3201,
+    "versionName":  "0.32.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "4c6e369817c6e0f869518f068e88fbfdda854c98e52338449ac3d5d0cb75a3f8",
-    "size":  305720218,
+    "sha256":  "196179e93d31d50fc44053634ceaaf76a84f37a39d5fec88a7c07a15c1a1b73f",
+    "size":  305720810,
     "notes":  {
-                  "uk":  "Дипломатія: довіра між країнами, союзи, ненапад і прохід для військ, подарунки. Війна без причини знижує довіру всіх і стабільність; союзники вступають у війну або відмовляються. Мир можна укласти з контрибуцією.",
-                  "en":  "Diplomacy: trust between countries, alliances, non-aggression and passage for armies, gifts. A war without a reason costs everyone\u0027s trust and stability; allies join the war or refuse. Peace can come with a contribution."
+                  "uk":  "Кольори й тонкі межі країн здалеку більше не мерехтять; додаткова (тимчасова) карта лежить нижче й повторює кривизну глобуса.",
+                  "en":  "Country colours and thin borders no longer twinkle from afar; the stand-in map lies lower and follows the globe\u0027s curve."
               }
 }
