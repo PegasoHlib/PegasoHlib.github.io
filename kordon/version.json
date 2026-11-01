@@ -1,11 +1,11 @@
 {
-    "versionCode":  3000,
-    "versionName":  "0.30.0",
+    "versionCode":  3001,
+    "versionName":  "0.30.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "d956cc7e66822e5d17d864f820e9933b2882c87fb61ceef52bccaceea3f4c6a3",
-    "size":  285427193,
+    "sha256":  "784c436c952da037b6f0e8b8599b53dc2c6f437df1ee44f24a9450e7e19febb1",
+    "size":  285428377,
     "notes":  {
-                  "uk":  "Одна мальовнича карта (інші види й вибір карти прибрано); без вертикальних смуг і мерехтіння при русі: світло й текстури більше не ламаються на межах шматків карти; чіткі кордони й маленькі країни здалеку; гра менша",
-                  "en":  "One painted map (the other views and the map choice are gone); no vertical stripes or flicker while moving: light and textures no longer break at the map\u0027s piece edges; crisp borders and small countries from afar; a smaller game"
+                  "uk":  "Дерева й деталі мають своє місце на карті: при наближенні нові дерева додаються між наявними, а ті не стрибають; оновлення гра шукає й тоді, коли повертаєшся до неї з фону, і показує в головному меню",
+                  "en":  "Trees and details keep their places on the map: coming closer adds trees between those there and none jumps; the game looks for updates when brought back from the background too and shows them in the main menu"
               }
 }
