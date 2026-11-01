@@ -1,11 +1,11 @@
 {
-    "versionCode":  2900,
-    "versionName":  "0.29.0",
+    "versionCode":  2901,
+    "versionName":  "0.29.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "8242bbbeb053d4a92af59551ca9972c21149be9702dff8e207ed4405112a62a4",
-    "size":  296753112,
+    "sha256":  "c562520b420b7bd64008cd669b02a0e119b6e726339597697ec9e493ef86d3f7",
+    "size":  296751353,
     "notes":  {
-                  "uk":  "Новий вигляд: рамки, іконки на всіх кнопках, капсули годинника й зуму, вкладки в налаштуваннях, дії картки праворуч і кнопка «Ще»",
-                  "en":  "New look: framed panels, icons on every button, clock and zoom capsules, tabs in Settings, card actions on the right and a More button"
+                  "uk":  "Карта спокійніша: прибрано іскри на краю глобуса й смуги на телефонах, планшет знову будує карту з правильною деталізацією (менше трикутників), тіні пагорбів не стрибають, менше смикань під час гри",
+                  "en":  "A steadier map: no sparks at the globe\u0027s rim or stripes on phones, tablets build the map at the right detail again (fewer triangles), hill shadows no longer jump, fewer hitches while playing"
               }
 }
