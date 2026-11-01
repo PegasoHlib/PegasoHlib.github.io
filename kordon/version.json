@@ -1,11 +1,11 @@
 {
-    "versionCode":  3500,
-    "versionName":  "0.35.0",
+    "versionCode":  3600,
+    "versionName":  "0.36.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "9480c7e099fa0034dcda7314890a23f05ef5396b583ed85df30b91f81fd40772",
-    "size":  308176782,
+    "sha256":  "5c80d4bdeb935ba1dbeb8c9fea1e76cd6a575a9659256592fa637bde60fe3c5b",
+    "size":  308187616,
     "notes":  {
-                  "uk":  "Правитель і спадкоємець: у кожної країни є правитель із рисами (полководець, скнара, дипломат, завойовник…), що діють на всю країну з плюсом і мінусом. Риси молодих відкриваються з роками. Правитель старіє й може померти, тоді на трон сходить спадкоємець. У картці країни видно фігурку правителя.",
-                  "en":  "Ruler and heir: every country has a ruler with traits (general, miser, diplomat, conqueror…) that act on the whole country with a plus and a minus. The young show theirs with the years. Rulers age and may die, then the heir takes the throne. The country card shows the ruler\u0027s figure."
+                  "uk":  "Зв\u0027язок зі столицею й перші закони: провінції далеко від столиці гінець досягає за дні, і чим довше, тим слабший контроль (з 1850 року телеграф). Податки: низькі, звичайні, високі, грабіжницькі. Новий закон поширюється від столиці й діє в провінції, лише коли туди дійде звістка. Провінції можна дати автономію: платить половину, зате спокійніша.",
+                  "en":  "The capital\u0027s reach and the first laws: far provinces are days away by messenger, and the longer, the looser they are held (the telegraph from 1850). Taxes: low, normal, high, plunder. A new law spreads from the capital and holds in a province only once word arrives. A province can be given autonomy: it pays half but is calmer."
               }
 }
