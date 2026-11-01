@@ -1,11 +1,11 @@
 {
-    "versionCode":  3102,
-    "versionName":  "0.31.2",
+    "versionCode":  3200,
+    "versionName":  "0.32.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "39fea3d0eb6433b30f0766e20c6754b1a6fc5a5a65459989070af8fc0092ce81",
-    "size":  305697091,
+    "sha256":  "4c6e369817c6e0f869518f068e88fbfdda854c98e52338449ac3d5d0cb75a3f8",
+    "size":  305720218,
     "notes":  {
-                  "uk":  "Кордони на крутих схилах більше не «крутяться» й не блимають; біля берегів зникли сірі клини на деревах і мерехтіння лінії шельфу в морі.",
-                  "en":  "Border bands on steep slopes no longer swing and flicker; by the coasts the grey wedges over trees and the sparkling shelf line in the sea are gone."
+                  "uk":  "Дипломатія: довіра між країнами, союзи, ненапад і прохід для військ, подарунки. Війна без причини знижує довіру всіх і стабільність; союзники вступають у війну або відмовляються. Мир можна укласти з контрибуцією.",
+                  "en":  "Diplomacy: trust between countries, alliances, non-aggression and passage for armies, gifts. A war without a reason costs everyone\u0027s trust and stability; allies join the war or refuse. Peace can come with a contribution."
               }
 }
