@@ -1,11 +1,11 @@
 {
-    "versionCode":  3401,
-    "versionName":  "0.34.1",
+    "versionCode":  3500,
+    "versionName":  "0.35.0",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "02903e6e3c5c45942f3a795c92834c6e15007e7a37d783fec3880d005770f627",
-    "size":  305743267,
+    "sha256":  "9480c7e099fa0034dcda7314890a23f05ef5396b583ed85df30b91f81fd40772",
+    "size":  308176782,
     "notes":  {
-                  "uk":  "Гори здалеку (з 3–4 тис. км) більше не мерехтять: затінення рельєфу на такій відстані плавне.",
-                  "en":  "Mountains seen from far up (3–4 thousand km) no longer flicker: the relief\u0027s shading is smooth at that distance."
+                  "uk":  "Правитель і спадкоємець: у кожної країни є правитель із рисами (полководець, скнара, дипломат, завойовник…), що діють на всю країну з плюсом і мінусом. Риси молодих відкриваються з роками. Правитель старіє й може померти, тоді на трон сходить спадкоємець. У картці країни видно фігурку правителя.",
+                  "en":  "Ruler and heir: every country has a ruler with traits (general, miser, diplomat, conqueror…) that act on the whole country with a plus and a minus. The young show theirs with the years. Rulers age and may die, then the heir takes the throne. The country card shows the ruler\u0027s figure."
               }
 }
