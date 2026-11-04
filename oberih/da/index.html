@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="da" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Oberih: en praktisk hjælper til Microsoft Defender</title>
+<meta name="description" content="Oberih er en gratis Windows-app, der viser status for Microsoft Defender, kører scanninger, forklarer hver indstilling i et klart sprog og giver sikkerhedstips.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Oberih: en praktisk hjælper til Microsoft Defender">
+<meta property="og:description" content="Oberih er en gratis Windows-app, der viser status for Microsoft Defender, kører scanninger, forklarer hver indstilling i et klart sprog og giver sikkerhedstips.">
+<meta property="og:url" content="https://pegasohlib.github.io/oberih/da/">
+<meta property="og:image" content="https://pegasohlib.github.io/oberih/og.png?v=47722ca5">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon-512.png">
+<link rel="apple-touch-icon" href="../icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/oberih/da/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/oberih/">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/oberih/uk/">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/oberih/es/">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/oberih/pt/">
+<link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/oberih/pt-BR/">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/oberih/fr/">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/oberih/de/">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/oberih/nl/">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/oberih/it/">
+<link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/oberih/pl/">
+<link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/oberih/cs/">
+<link rel="alternate" hreflang="sk" href="https://pegasohlib.github.io/oberih/sk/">
+<link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/oberih/da/">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/oberih/sv/">
+<link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/oberih/tr/">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/oberih/ar/">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/oberih/hi/">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/oberih/id/">
+<link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/oberih/vi/">
+<link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/oberih/th/">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/oberih/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/oberih/zh-Hant/">
+<link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/oberih/ko/">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/oberih/ja/">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/oberih/kk/">
+<link rel="alternate" hreflang="be" href="https://pegasohlib.github.io/oberih/be/">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/oberih/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/oberih/">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/kit.css">
+<style>
+:root{--g1:#2FD9FF;--g2:#2BF5A0;--on-accent:#04131A;--accent:#007A6A;--accent2:#2BF5A0;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#14304A;--navy2:#0A1622;--panel-line:transparent;--panel-ic:#5FF5C0}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
+.tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+:root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
+:root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
+:root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:var(--g1);box-shadow:none}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+footer .legal{display:block;margin-top:8px;font-size:13px;line-height:1.5}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
+.heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.gallery{display:grid;gap:12px;margin-top:28px}
+.gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
+@media (min-width:940px){
+  .hero.art{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center;text-align:start}
+  .hero.art .appicon{margin:0}
+  .hero.art .lead{margin-inline:0}
+  .hero.art .actions{margin-inline:0;align-items:stretch}
+  .hero.art .note,.hero.art .textlinks{text-align:start}
+  .hero.art .count{justify-content:flex-start}
+  .hero.art .qr{justify-content:flex-start;margin-inline:0}
+  .heroart{margin:0}
+}
+.textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
+.textlinks a{color:var(--ink2)}
+.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
+.sha[hidden]{display:none}
+.sha code{font-size:12px;background:none;border:0;padding:0}
+.qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
+.qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
+.qr p{margin:0;font-size:14px;color:var(--ink2)}
+@media (min-width:900px) and (hover:hover){.qr{display:flex}}
+.changes{margin-top:36px}
+.changes dl{margin:0;display:grid;gap:12px}
+.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
+.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
+.grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--g1);color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="home" href="../da/"><img src="../icon-512.png" alt="" width="32" height="32"><span>Oberih</span></a>
+  <nav class="links"><a class="on" aria-current="page" href="../da/">Forside</a><a href="../da/privacy.html">Privatliv</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Sprog</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en" data-url="/oberih/">English</option><option value="uk" lang="uk" data-url="/oberih/uk/">Українська</option><option value="es" lang="es" data-url="/oberih/es/">Español</option><option value="pt" lang="pt" data-url="/oberih/pt/">Português</option><option value="pt-BR" lang="pt-BR" data-url="/oberih/pt-BR/">Português (Brasil)</option><option value="fr" lang="fr" data-url="/oberih/fr/">Français</option><option value="de" lang="de" data-url="/oberih/de/">Deutsch</option><option value="nl" lang="nl" data-url="/oberih/nl/">Nederlands</option><option value="it" lang="it" data-url="/oberih/it/">Italiano</option><option value="pl" lang="pl" data-url="/oberih/pl/">Polski</option><option value="cs" lang="cs" data-url="/oberih/cs/">Čeština</option><option value="sk" lang="sk" data-url="/oberih/sk/">Slovenčina</option><option value="da" lang="da" data-url="/oberih/da/" selected>Dansk</option><option value="sv" lang="sv" data-url="/oberih/sv/">Svenska</option><option value="tr" lang="tr" data-url="/oberih/tr/">Türkçe</option><option value="ar" lang="ar" data-url="/oberih/ar/">العربية</option><option value="hi" lang="hi" data-url="/oberih/hi/">हिन्दी</option><option value="id" lang="id" data-url="/oberih/id/">Bahasa Indonesia</option><option value="vi" lang="vi" data-url="/oberih/vi/">Tiếng Việt</option><option value="th" lang="th" data-url="/oberih/th/">ไทย</option><option value="zh" lang="zh" data-url="/oberih/zh/">简体中文</option><option value="zh-Hant" lang="zh-Hant" data-url="/oberih/zh-Hant/">繁體中文</option><option value="ko" lang="ko" data-url="/oberih/ko/">한국어</option><option value="ja" lang="ja" data-url="/oberih/ja/">日本語</option><option value="kk" lang="kk" data-url="/oberih/kk/">Қазақша</option><option value="be" lang="be" data-url="/oberih/be/">Беларуская</option><option value="ru" lang="ru" data-url="/oberih/ru/">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da">
+  <header class="hero art">
+    <div class="herotext">
+    <img class="appicon" src="../icon-512.png" alt="" width="112" height="112">
+    <p class="pill">Til Windows 10 og 11 (64 bit)</p>
+    <h1>Oberih</h1>
+    <p class="tagline">En praktisk hjælper til Microsoft Defender</p>
+    <p class="lead">Microsoft Defender, den antivirus der er indbygget i Windows, står for beskyttelsen. Oberih viser dens status, kører scanninger, forklarer hver indstilling i et klart sprog og foreslår, hvordan du bliver mere sikker.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.3.4/Oberih-0.3.4.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download til Windows</span><span class="ver badge" hidden></span></a>
+      
+    </div>
+    <p class="textlinks"><a href="../da/privacy.html">Privatlivspolitik</a></p>
+    <p class="note">Den finder selv nye versioner; du trykker på en knap for at installere.<br>Gratis · ingen reklamer · 27 sprog</p>
+    <p class="note sha" hidden>SHA-256: <code></code></p>
+    
+    
+    </div>
+    <img class="heroart" src="../img/overview.webp" alt="" width="1100" height="720">
+  </header>
+
+  <section class="gallery"><img src="../img/scan.webp" alt="" width="1100" height="720" loading="lazy"><img src="../img/protection.webp" alt="" width="1100" height="720" loading="lazy"></section>
+
+  <section class="show" aria-label="Sådan virker det">
+    <div class="showtext"><h2 class="display">Sådan virker det</h2><p>Defender beskytter, og Oberih gør den nemmere at bruge.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Download og kør</h3><p><b>Download</b> filen med knappen ovenfor, og kør den. Hvis Windows advarer dig, så klik på <b>Flere oplysninger</b> og derefter <b>Kør alligevel</b>.</p></div></li><li><span class="num">2</span><div><h3>Installer</h3><p>Oberih tilbyder at installere sig selv: genveje i Start-menuen og på skrivebordet, en post i Windows’ applisten, opdateringer inde fra appen. Ingen administratorrettigheder nødvendige.</p></div></li><li><span class="num">3</span><div><h3>Se status</h3><p>Oversigten viser med det samme, om pc’en er beskyttet, og hvad der skal rettes. Knapperne kører scanninger og opdaterer definitioner; efter Lås op slår de også de rigtige indstillinger til.</p></div></li><li><span class="num">4</span><div><h3>Lås op for at ændre</h3><p>Vil du ændre noget, så tryk på <b>Lås op</b>: Windows beder om tilladelse én gang, og rettighederne gælder kun, til du lukker vinduet.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-da">
+    <h2 class="eyebrow" id="f-da">Det kan den</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h3>Status med ét blik</h3><p>Et skjold med beskyttelsesstatus og felter for beskyttelse i realtid og i skyen, Manipulationsbeskyttelse, firewallen, hukommelsesintegritet, definitioner, Windows Update, SmartScreen og mere.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5l5 5"/></svg><h3>Scanninger med status</h3><p>Hurtig, fuld, brugerdefineret (en mappe eller en fil) og offline scanning. Defender melder ingen fremdrift, så procenten og den resterende tid er et skøn. Scanninger startet andre steder vises også.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="4.5" rx="1.5"/><path d="M4.5 8.5v10a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2v-10M10 12.5h4"/></svg><h3>Trusler og historik</h3><p>Hvad Defender fandt, hvilket program der var involveret, historikken over registreringer og de trusler, du har tilladt. En tydelig advarsel kommer før alt, hvad der er risikabelt.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Alle indstillinger forklaret</h3><p>Mere end 30 indstillinger til Microsoft Defender samlet ét sted, i almindeligt sprog: sky, uønskede apps, netværk, scanning, tidsplan, undtagelser. „Anbefalet“ markerer det sikre valg.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Tips med færdige rettelser</h3><p>Oberih tjekker denne pc og fortæller, hvad der kan forbedres, med en knap, der slår det til eller åbner det rigtige sted. Plus 16 tips om adgangskoder, 2FA, phishing, snyd i spil og svindel.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg><h3>Beskyttelse mod ransomware</h3><p>Oberih kan slå Defenders kontrollerede mappeadgang til, som forhindrer ukendte apps i at ændre Dokumenter, Billeder og andre mapper.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5a8.5 8.5 0 0 0 0 17c1.2 0 1.8-.9 1.8-1.8 0-1.1-.9-1.5-.9-2.5s.8-1.7 1.8-1.7h2.3a3.5 3.5 0 0 0 3.5-3.5c0-4.2-3.8-7.5-8.5-7.5z"/><path d="M7.5 11.5h.01M10 7.5h.01M14.5 7.5h.01"/></svg><h3>Dit sprog, dit udseende</h3><p>27 sprog, lyst eller mørkt tema eller det samme som Windows, og tekststørrelse fra 90 til 150 %.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg><h3>Sikre selvopdateringer</h3><p>Mens den er åben, søger den efter en ny version ved start og hver 12. time og installerer den kun, når du trykker på knappen. Opdateringer er signeret med forfatterens nøgle: Oberih installerer ikke en forfalsket.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-da">
+    <h2 class="eyebrow" id="m0-da">Små ting, der hjælper</h2>
+    
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>En score fra 0 til 100</h3><p>Oberih gør det, den finder på denne pc, til ét tal, så du med et blik kan se, hvor godt du er beskyttet.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Advarsel ved en ny trussel</h3><p>Hvis Defender fanger noget, mens Oberih er åben, ser du en advarsel og hører en lyd. Den holder ikke øje, når vinduet er lukket.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Risikable undtagelser markeres</h3><p>Den advarer dig, når Defender får besked på at springe et helt drev, din brugermappe, Downloads eller programtyper som .exe og .ps1 over.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Kører uden installation</h3><p>Kør den downloadede fil, som den er: ingen .NET at installere, intet du skal gøre. Installation tilføjer kun genveje og opdateringer i appen.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-da">
+    <h2 class="eyebrow" id="x-da">Og også</h2>
+    <div class="chips"><span>Gratis</span><span>Ingen reklamer, ingen sporing</span><span>Ingen baggrundstjeneste, ingen autostart</span><span>Respekterer Manipulationsbeskyttelse</span><span>3 lydsæt</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-da">
+    <h2 class="eyebrow" id="q-da">Spørgsmål</h2>
+    <div class="faqs"><details class="card"><summary>Windows skriver »Windows beskyttede din pc«. Er det i orden?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ja. Windows viser det for filer, det ikke kender godt, for eksempel apps uden et betalt kodesigneringscertifikat, og Oberih har ikke et. Klik på <b>Flere oplysninger</b> under teksten og derefter på <b>Kør alligevel</b>, ikke på <b>Kør ikke</b>. Oberihs egne opdateringer er signeret med forfatterens nøgle og kontrolleres, før de installeres.</p></details><details class="card"><summary>Er Oberih et antivirusprogram?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. Microsoft Defender, den antivirus der er indbygget i Windows, står for al scanning og beskyttelse. Oberih viser dens status, styrer dens indstillinger og forklarer dem i et klart sprog. Hvis et andet antivirusprogram har styringen, står Defender på standby, og det fortæller Oberih dig.</p></details><details class="card"><summary>Hvorfor beder den om administratorrettigheder?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Visning virker uden dem, undtagen undtagelseslisten og karantænen. Ændring af indstillinger og undtagelser, tilladelse af trusler, gendannelse fra karantæne, offline scanning og stop af en scanning kræver dem. Tryk på <b>Lås op</b>, Windows spørger én gang, og rettighederne gælder, indtil du lukker vinduet. Oberih har ingen baggrundstjeneste, der kunne ændre indstillinger efter en andens anmodning, og før oplåsning kontrollerer den, at dens egen fil ikke er ændret siden start.</p></details><details class="card"><summary>Hvad hvis Manipulationsbeskyttelse blokerer en indstilling?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih omgår den ikke. Indstillinger, den beskytter, vises med en lås og kan kun ændres i Windows Sikkerhed. Det er godt: så kan en virus heller ikke slå beskyttelsen fra.</p></details><details class="card"><summary>Hvordan fjerner jeg den?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Find Oberih i Windows Indstillinger → <b>Apps</b>, og vælg <b>Afinstaller</b>, eller brug knappen i Oberihs indstillinger. Appen, dens genveje og dens indstillinger fjernes; Microsoft Defender og alle dens indstillinger forbliver, som de er. Ændringer, du har lavet i Defender, for eksempel undtagelser, bliver også. Hvis du kun kørte den downloadede fil uden at installere, så slet den og mappen <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details class="card"><summary>Hvordan virker opdateringer?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Mens Oberih er åben, læser den en lille fil fra pegasohlib.github.io ved start og hver 12. time, hvis automatisk søgning er slået til (det er den som standard). Hvis der findes en nyere version, vises en knap. Kun når du trykker på den, downloades filen fra GitHub, dens signatur og kontrolsum kontrolleres, og Oberih genstarter som den nye version.</p></details></div>
+  </section>
+
+  <section class="section changes" aria-labelledby="c-da">
+    <h2 class="eyebrow" id="c-da">Nyheder</h2>
+    <dl class="card"><div><dt>0.3.4</dt><dd>Hviderussisk er tilføjet.</dd></div><div><dt>0.3.3</dt><dd>Nyt vindue »Open source-licenser« i Indstillinger: hvert bibliotek, appen bruger, er krediteret med den fulde licenstekst.</dd></div><div><dt>0.3.2</dt><dd>Nyt sprog: traditionelt kinesisk.</dd></div><div><dt>0.3.1</dt><dd>Nye sprog: hindi, forenklet kinesisk, nederlandsk og arabisk (med layout fra højre mod venstre).</dd></div></dl>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Dine data bliver på din pc</h2><p>Oberih indsamler ingen data og har ingen servere, reklamer eller sporing. Den går kun online for at søge efter opdateringer og downloade dem fra GitHub, og du kan slå den automatiske søgning fra.</p>
+    <a class="btn light" href="../da/privacy.html"><span>Læs privatlivspolitikken</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
+<script>
+(function () {
+  var sel = document.getElementById("lang"), cur = sel.value;
+  sel.addEventListener("change", function () {
+    try { localStorage.setItem("siteLang", sel.value); } catch (e) {}
+    location.href = sel.options[sel.selectedIndex].dataset.url;
+  });
+  addEventListener("pageshow", function () { sel.value = cur; });
+})();
+</script>
+<script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("../update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
+<script src="/assets/kit.js" defer></script>
+</body>
+</html>

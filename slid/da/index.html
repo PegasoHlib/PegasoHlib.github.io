@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="da" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<script>
+addEventListener("DOMContentLoaded", function () {
+  var m = /^#([a-z]+)(?:-[a-z]{2})?$/.exec(location.hash);
+  if (!m || document.getElementById(m[1])) return;
+  var t = document.getElementById(document.documentElement.lang + "-" + m[1]);
+  if (!t) return;
+  var go = function () { t.scrollIntoView(); };
+  setTimeout(go, 80);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(go);
+});
+</script>
+<title>Slid — Din tidslinje, dag for dag</title>
+<meta name="description" content="Slid gemmer historien om dine steder: hvor du kommer, vejene derimellem og de billeder, du tager der. Tidslinjen gemmes på din telefon.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Slid — Din tidslinje, dag for dag">
+<meta property="og:description" content="Slid gemmer historien om dine steder: hvor du kommer, vejene derimellem og de billeder, du tager der. Tidslinjen gemmes på din telefon.">
+<meta property="og:url" content="https://pegasohlib.github.io/slid/da/">
+<meta property="og:image" content="https://pegasohlib.github.io/slid/og.png?v=f8e80b36">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/slid/da/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/slid/">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/slid/uk/">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/slid/es/">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/slid/pt/">
+<link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/slid/pt-BR/">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/slid/fr/">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/slid/de/">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/slid/nl/">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/slid/it/">
+<link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/slid/pl/">
+<link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/slid/cs/">
+<link rel="alternate" hreflang="sk" href="https://pegasohlib.github.io/slid/sk/">
+<link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/slid/da/">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/slid/sv/">
+<link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/slid/tr/">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/slid/ar/">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/slid/hi/">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/slid/id/">
+<link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/slid/vi/">
+<link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/slid/th/">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/slid/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/slid/zh-Hant/">
+<link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/slid/ko/">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/slid/ja/">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/slid/kk/">
+<link rel="alternate" hreflang="be" href="https://pegasohlib.github.io/slid/be/">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/slid/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/slid/">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/kit.css">
+<style>
+:root{--g1:#E8552C;--g2:#FF8A4C;--on-accent:#fff;--accent:#B93E12;--accent2:#FF8A4C;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#5A2614;--navy2:#170905;--panel-line:transparent;--panel-ic:#FFB08A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF9A70}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF9A70}
+.tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+:root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
+:root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
+:root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:var(--g1);box-shadow:none}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+footer .legal{display:block;margin-top:8px;font-size:13px;line-height:1.5}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
+.heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.gallery{display:grid;gap:12px;margin-top:28px}
+.gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
+@media (min-width:940px){
+  .hero.art{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center;text-align:start}
+  .hero.art .appicon{margin:0}
+  .hero.art .lead{margin-inline:0}
+  .hero.art .actions{margin-inline:0;align-items:stretch}
+  .hero.art .note,.hero.art .textlinks{text-align:start}
+  .hero.art .count{justify-content:flex-start}
+  .hero.art .qr{justify-content:flex-start;margin-inline:0}
+  .heroart{margin:0}
+}
+.textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
+.textlinks a{color:var(--ink2)}
+.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
+.sha[hidden]{display:none}
+.sha code{font-size:12px;background:none;border:0;padding:0}
+.qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
+.qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
+.qr p{margin:0;font-size:14px;color:var(--ink2)}
+@media (min-width:900px) and (hover:hover){.qr{display:flex}}
+.changes{margin-top:36px}
+.changes dl{margin:0;display:grid;gap:12px}
+.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
+.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
+.grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--g1);color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="home" href="../da/"><img src="../icon.svg" alt="" width="32" height="32"><span>Slid</span></a>
+  <nav class="links"><a class="on" aria-current="page" href="../da/">Forside</a><a href="../da/privacy.html">Privatliv</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">Sprog</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en" data-url="/slid/">English</option><option value="uk" lang="uk" data-url="/slid/uk/">Українська</option><option value="es" lang="es" data-url="/slid/es/">Español</option><option value="pt" lang="pt" data-url="/slid/pt/">Português</option><option value="pt-BR" lang="pt-BR" data-url="/slid/pt-BR/">Português (Brasil)</option><option value="fr" lang="fr" data-url="/slid/fr/">Français</option><option value="de" lang="de" data-url="/slid/de/">Deutsch</option><option value="nl" lang="nl" data-url="/slid/nl/">Nederlands</option><option value="it" lang="it" data-url="/slid/it/">Italiano</option><option value="pl" lang="pl" data-url="/slid/pl/">Polski</option><option value="cs" lang="cs" data-url="/slid/cs/">Čeština</option><option value="sk" lang="sk" data-url="/slid/sk/">Slovenčina</option><option value="da" lang="da" data-url="/slid/da/" selected>Dansk</option><option value="sv" lang="sv" data-url="/slid/sv/">Svenska</option><option value="tr" lang="tr" data-url="/slid/tr/">Türkçe</option><option value="ar" lang="ar" data-url="/slid/ar/">العربية</option><option value="hi" lang="hi" data-url="/slid/hi/">हिन्दी</option><option value="id" lang="id" data-url="/slid/id/">Bahasa Indonesia</option><option value="vi" lang="vi" data-url="/slid/vi/">Tiếng Việt</option><option value="th" lang="th" data-url="/slid/th/">ไทย</option><option value="zh" lang="zh" data-url="/slid/zh/">简体中文</option><option value="zh-Hant" lang="zh-Hant" data-url="/slid/zh-Hant/">繁體中文</option><option value="ko" lang="ko" data-url="/slid/ko/">한국어</option><option value="ja" lang="ja" data-url="/slid/ja/">日本語</option><option value="kk" lang="kk" data-url="/slid/kk/">Қазақша</option><option value="be" lang="be" data-url="/slid/be/">Беларуская</option><option value="ru" lang="ru" data-url="/slid/ru/">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="da" dir="ltr" data-lang="da">
+  <header class="hero">
+    <div class="herotext">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    <p class="pill">App til Android</p>
+    <h1>Slid</h1>
+    <p class="tagline">Din tidslinje, dag for dag</p>
+    <p class="lead">Slid gemmer historien om dine steder: hvor du kommer, vejene derimellem og de billeder, du tager der. Tidslinjen gemmes på din telefon.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v0.9.17/Slid-0.9.17.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Download til Android</span><span class="ver badge" hidden></span></a>
+      
+    </div>
+    <p class="textlinks"><a href="../da/privacy.html">Privatlivspolitik</a></p>
+    <p class="note">Gratis · Android 8.0 eller nyere med Google Play-tjenester<br>Appen finder nye versioner og installerer dem, når du trykker på Opdater.</p>
+    <p class="note sha" hidden>SHA-256: <code></code></p>
+    
+    <div class="qr"><svg viewBox="0 0 33 33" width="128" height="128" role="img" aria-hidden="true" shape-rendering="crispEdges"><path fill="#fff" d="M0 0h33v33H0z"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM11 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM16 2h1v1h-1zM18 2h1v1h-1zM20 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM27 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM13 4h1v1h-1zM14 4h1v1h-1zM16 4h1v1h-1zM17 4h1v1h-1zM20 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM11 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM16 5h1v1h-1zM18 5h1v1h-1zM19 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM28 5h1v1h-1zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM12 6h1v1h-1zM15 6h1v1h-1zM18 6h1v1h-1zM21 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM11 7h1v1h-1zM13 7h1v1h-1zM15 7h1v1h-1zM16 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM15 9h1v1h-1zM18 9h1v1h-1zM2 10h1v1h-1zM8 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM19 10h1v1h-1zM21 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM29 10h1v1h-1zM2 11h1v1h-1zM3 11h1v1h-1zM4 11h1v1h-1zM6 11h1v1h-1zM7 11h1v1h-1zM10 11h1v1h-1zM12 11h1v1h-1zM16 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM21 11h1v1h-1zM23 11h1v1h-1zM25 11h1v1h-1zM26 11h1v1h-1zM28 11h1v1h-1zM29 11h1v1h-1zM2 12h1v1h-1zM4 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM13 12h1v1h-1zM14 12h1v1h-1zM17 12h1v1h-1zM18 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM22 12h1v1h-1zM23 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM9 13h1v1h-1zM10 13h1v1h-1zM14 13h1v1h-1zM16 13h1v1h-1zM17 13h1v1h-1zM18 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM22 13h1v1h-1zM23 13h1v1h-1zM24 13h1v1h-1zM26 13h1v1h-1zM27 13h1v1h-1zM2 14h1v1h-1zM3 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM10 14h1v1h-1zM13 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM30 14h1v1h-1zM2 15h1v1h-1zM3 15h1v1h-1zM4 15h1v1h-1zM7 15h1v1h-1zM12 15h1v1h-1zM15 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM19 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM22 15h1v1h-1zM24 15h1v1h-1zM25 15h1v1h-1zM26 15h1v1h-1zM29 15h1v1h-1zM30 15h1v1h-1zM2 16h1v1h-1zM6 16h1v1h-1zM7 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM14 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM24 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM2 17h1v1h-1zM3 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM10 17h1v1h-1zM13 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM20 17h1v1h-1zM21 17h1v1h-1zM23 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM30 17h1v1h-1zM2 18h1v1h-1zM3 18h1v1h-1zM6 18h1v1h-1zM8 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM2 19h1v1h-1zM3 19h1v1h-1zM5 19h1v1h-1zM6 19h1v1h-1zM7 19h1v1h-1zM9 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM13 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM19 19h1v1h-1zM20 19h1v1h-1zM21 19h1v1h-1zM24 19h1v1h-1zM25 19h1v1h-1zM26 19h1v1h-1zM28 19h1v1h-1zM29 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM4 20h1v1h-1zM7 20h1v1h-1zM8 20h1v1h-1zM11 20h1v1h-1zM12 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM26 20h1v1h-1zM27 20h1v1h-1zM30 20h1v1h-1zM2 21h1v1h-1zM6 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM11 21h1v1h-1zM13 21h1v1h-1zM14 21h1v1h-1zM16 21h1v1h-1zM21 21h1v1h-1zM25 21h1v1h-1zM26 21h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM8 22h1v1h-1zM11 22h1v1h-1zM13 22h1v1h-1zM19 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM28 22h1v1h-1zM29 22h1v1h-1zM30 22h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM14 23h1v1h-1zM15 23h1v1h-1zM17 23h1v1h-1zM19 23h1v1h-1zM20 23h1v1h-1zM22 23h1v1h-1zM26 23h1v1h-1zM27 23h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM15 24h1v1h-1zM16 24h1v1h-1zM17 24h1v1h-1zM19 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM28 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM13 25h1v1h-1zM14 25h1v1h-1zM15 25h1v1h-1zM18 25h1v1h-1zM21 25h1v1h-1zM22 25h1v1h-1zM26 25h1v1h-1zM29 25h1v1h-1zM2 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM11 26h1v1h-1zM12 26h1v1h-1zM15 26h1v1h-1zM18 26h1v1h-1zM20 26h1v1h-1zM21 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM27 26h1v1h-1zM30 26h1v1h-1zM2 27h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM11 27h1v1h-1zM14 27h1v1h-1zM17 27h1v1h-1zM18 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM21 27h1v1h-1zM23 27h1v1h-1zM27 27h1v1h-1zM28 27h1v1h-1zM30 27h1v1h-1zM2 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM18 28h1v1h-1zM19 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM24 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1zM29 28h1v1h-1zM2 29h1v1h-1zM8 29h1v1h-1zM13 29h1v1h-1zM17 29h1v1h-1zM18 29h1v1h-1zM23 29h1v1h-1zM26 29h1v1h-1zM27 29h1v1h-1zM28 29h1v1h-1zM30 29h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM6 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM14 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM21 30h1v1h-1zM23 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM28 30h1v1h-1z"/></svg><p>Scan for at åbne siden på din telefon</p></div>
+    </div>
+    
+  </header>
+
+
+  <section class="show" aria-label="Sådan virker det">
+    <div class="showtext"><h2 class="display">Sådan virker det</h2><p>Tre trin fra et tomt kort til hele din historie.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>Optag nye dage</h3><p>Telefonen noterer, hvor du er: ofte, mens du bevæger dig, sjældent, mens du bliver.</p></div></li><li><span class="num">2</span><div><h3>Hent fortiden fra Google</h3><p>Din tidslinje fra Google Maps med alle de år, den har gemt.</p></div></li><li><span class="num">3</span><div><h3>Billeder på kortet</h3><p>Billeder fra galleriet får deres steder. Billeder uden GPS får det sted, hvor du var på det tidspunkt.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-da">
+    <h2 class="eyebrow" id="f-da">Det kan den</h2>
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Hver dag, som den var</h3><p>Hvor du tog hen, og hvordan: til fods, på cykel, i bil, med tog eller fly. Præcis i bevægelse, sparsommelig når du står stille.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h3>År fra Google</h3><p>Henter din Google Maps-tidslinje ind: eksportfilen fra en Android-telefon eller en iPhone eller et ældre Google Takeout-arkiv.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.5a2 2 0 0 1 2-2h2l1.5-2h6l1.5 2h2a2 2 0 0 1 2 2v9.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg><h3>Billeder på kortet</h3><p>Billeder fra galleriet får deres steder. Billeder fra chats, downloads og skærmbilleder får ikke et gættet sted.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><h3>Den verden, du har set</h3><p>En globus med dine lande, et heatmap og en tåge over verden, der letter, hvor du kommer frem.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V4M5 4.5h12.5l-2.5 4 2.5 4H5"/></svg><h3>Lande og byer</h3><p>Hvor mange, hvornår første gang, hvor længe, og de bedste øjeblikke fra hvert år.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>Også dit ur</h3><p>Skridt, puls, søvn og træning, som dit urs app skriver til Health Connect, vist ved siden af dagen.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Manglende ture</h3><p>Opdager, når en tur mangler mellem to steder, og lader dig udfylde den eller vælger den mest sandsynlige vej for dig.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>Widgets</h3><p>Lige nu, i dag, ugen og den udforskede verden direkte på startskærmen.</p></div><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>Telefon og tablet</h3><p>En sikkerhedskopi på dit Google Drev til gendannelse på en ny telefon og en ekstra tablet, der viser en kopi af telefonens tidslinje.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-da">
+    <h2 class="eyebrow" id="m0-da">Og et par ting, du måske ikke venter</h2>
+    
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 13.5c-1.7 0-2.5-1.8-2.5-4.2S5.6 4 7.2 4s2.3 2.2 2.1 4.6c-.1 2.3-.6 4.9-2.3 4.9zM6 16.5l3.2-.3.3 1.6a1.7 1.7 0 0 1-3.3.6zM17 10.5c1.7 0 2.5-1.8 2.5-4.2S18.4 1 16.8 1s-2.3 2.2-2.1 4.6c.1 2.3.6 4.9 2.3 4.9zM18 13.5l-3.2-.3-.3 1.6a1.7 1.7 0 0 0 3.3.6z"/></svg><h3>Skridt uden ur</h3><p>Telefonen tæller sine egne skridt og regner et dagsmål ud til dig. Du kan sætte dit eget.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>iPhone og Google Fotos</h3><p>Importér en tidslinjeeksport fra en iPhone og de steder, Google Fotos kender til billeder på din telefon.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18h7a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H15.5"/></svg><h3>Buslinjer og faste ruter</h3><p>Busser får deres linjenummer, når kortet kender det. Ruter, du gentager, genkendes på telefonen, uden internet.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Ryd op i din historie</h3><p>Ret, hvordan en tur blev foretaget, omdøb steder og slå to steder sammen til ét.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5v.2a2 2 0 1 1-4 0v-.1a1.6 1.6 0 0 0-1-1.5 1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1h-.2a2 2 0 1 1 0-4h.1a1.6 1.6 0 0 0 1.5-1 1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3h0a1.6 1.6 0 0 0 1-1.5v-.2a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8v0a1.6 1.6 0 0 0 1.5 1h.2a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/></svg><h3>Tre detaljeniveauer</h3><p>Maksimalt, detaljeret eller sparsomt: Du vælger, hvor ofte telefonen optager, mens du bevæger dig.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>Ældre versioner på Drev</h3><p>Google Drev gemmer tidligere versioner af din kopi i et stykke tid, og du kan gendanne en.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-da">
+    <h2 class="eyebrow" id="x-da">Og desuden</h2>
+    <div class="chips"><span>27 sprog</span><span>Lyst og mørkt tema</span><span>Justerbar tekststørrelse</span><span>Ugentlige rapporter</span><span>Busser, sporvogne, tog og metro</span><span>Backup til en fil</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-da">
+    <h2 class="eyebrow" id="q-da">Spørgsmål</h2>
+    <div class="faqs"><details class="card"><summary>Hvordan installerer jeg den?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Slid er ikke på Google Play. Download APK’en fra denne side, og åbn den. Android spørger én gang, om installation fra den app, du åbnede den med, må tillades.</p></details><details class="card"><summary>Hvordan virker opdateringer?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Når du åbner Slid, søger den på denne hjemmeside efter en ny version, højst hver 30. minut, og aldrig i baggrunden. Hvis der er en, trykker du på Opdater, og Android installerer den oven på den gamle version. Dine data bliver. Du kan slå søgningen fra under Indstillinger.</p></details><details class="card"><summary>Hvad går over internettet?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kortfliser hentes altid fra OpenFreeMap, og fra Esri til satellitkortet. Adresseopslag og transportopslag er slået til som standard: De sender stedernes koordinater til Androids adressetjeneste (som regel Google), Nominatim og Overpass. Begge kan slås fra under Indstillinger. <a href="../da/privacy.html">Privatlivspolitikken</a> nævner hver tjeneste.</p></details><details class="card"><summary>Hvad sker der med mine data på en ny telefon?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Forbind Google Drev på den gamle telefon for at beholde en kopi, eller gem en sikkerhedsfil. På den nye telefon gendanner du den fra den første skærm. Ingen af delene krypteres af appen, og Google gemmer Drev-kopien. Selve billederne kopieres ikke, kun deres datoer og steder.</p></details><details class="card"><summary>Virker den på enhver Android-telefon?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Optagelsen kræver Google Play-tjenester (til placering og aktivitet), så den kan ikke optage uden dem. Health Connect skal kun bruges til data fra ur.</p></details><details class="card"><summary>Hvor meget batteri bruger den?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Den optager ofte, mens du bevæger dig, og sjældent, mens du bliver et sted. Dens batteriforbrug er ikke målt. Hvis det er vigtigt for dig, så vælg det sparsomme niveau i optagelsesindstillingerne.</p></details></div>
+  </section>
+
+  <section class="section changes" aria-labelledby="c-da">
+    <h2 class="eyebrow" id="c-da">Nyheder</h2>
+    <dl class="card"><div><dt>0.9.17</dt><dd>Tydeligere ord om, hvad der bliver på telefonen, og hvad der går gennem onlinetjenester.</dd></div><div><dt>0.9.16</dt><dd>Fanen Dag: når tidslinjen er trukket helt ned, står satellitkortets kildelinje nu helt nederst, under knappen »Vis dagen«.</dd></div><div><dt>0.9.15</dt><dd>Et mere ryddeligt kort: år, korttype og det, der vises på kortet, ligger nu bag to knapper, der åbner små kort med et billede af hvert kort. Satellitkortets kilder står på en tynd linje nederst.</dd></div><div><dt>0.9.14</dt><dd>Transportmidler genkendes langt bedre: sporvogn, bus, taxa og på lange ture tog. Ruter, du har kørt før, huskes også uden internet, og en overbelastet kortserver stopper ikke længere tjekket.</dd></div></dl>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">Ærlig om privatliv</h2><p><b>Gemmes på din telefon.</b> Ingen servere, ingen konti, ingen reklamer, ingen analyse. Udvikleren modtager aldrig din tidslinje.<br><b>Eksterne tjenester, nævnt ved navn.</b> Kort hentes altid fra OpenFreeMap. Adresse- og transportopslag er slået til som standard og kan slås fra.<br><b>Kopier er ikke krypteret.</b> En kopi på dit Google Drev gemmes af Google. En sikkerhedsfil er kun så privat som det sted, du opbevarer den.</p>
+    <a class="btn light" href="../da/privacy.html"><span>Læs privatlivspolitikken</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
+<script>
+(function () {
+  var sel = document.getElementById("lang"), cur = sel.value;
+  sel.addEventListener("change", function () {
+    try { localStorage.setItem("siteLang", sel.value); } catch (e) {}
+    location.href = sel.options[sel.selectedIndex].dataset.url;
+  });
+  addEventListener("pageshow", function () { sel.value = cur; });
+})();
+</script>
+<script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("../update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/slid-v") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
+<script src="/assets/kit.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<script>try{var t=localStorage.getItem("pegasohlib-theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+<title>Kolys: 미래의 나에게 보내는 편지</title>
+<meta name="description" content="Kolys는 미래의 나에게 편지를 쓰는 Android 앱이에요. 타임캡슐을 봉인하면 내가 고른 날에 열려요.">
+<meta name="theme-color" content="#ECEEF3">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kolys: 미래의 나에게 보내는 편지">
+<meta property="og:description" content="Kolys는 미래의 나에게 편지를 쓰는 Android 앱이에요. 타임캡슐을 봉인하면 내가 고른 날에 열려요.">
+<meta property="og:url" content="https://pegasohlib.github.io/kolys/ko/">
+<meta property="og:image" content="https://pegasohlib.github.io/kolys/og.png?v=337921b5">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="../icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../icon-512.png">
+<link rel="canonical" href="https://pegasohlib.github.io/kolys/ko/">
+<link rel="alternate" hreflang="en" href="https://pegasohlib.github.io/kolys/">
+<link rel="alternate" hreflang="uk" href="https://pegasohlib.github.io/kolys/uk/">
+<link rel="alternate" hreflang="es" href="https://pegasohlib.github.io/kolys/es/">
+<link rel="alternate" hreflang="pt" href="https://pegasohlib.github.io/kolys/pt/">
+<link rel="alternate" hreflang="pt-BR" href="https://pegasohlib.github.io/kolys/pt-BR/">
+<link rel="alternate" hreflang="fr" href="https://pegasohlib.github.io/kolys/fr/">
+<link rel="alternate" hreflang="de" href="https://pegasohlib.github.io/kolys/de/">
+<link rel="alternate" hreflang="nl" href="https://pegasohlib.github.io/kolys/nl/">
+<link rel="alternate" hreflang="it" href="https://pegasohlib.github.io/kolys/it/">
+<link rel="alternate" hreflang="pl" href="https://pegasohlib.github.io/kolys/pl/">
+<link rel="alternate" hreflang="cs" href="https://pegasohlib.github.io/kolys/cs/">
+<link rel="alternate" hreflang="sk" href="https://pegasohlib.github.io/kolys/sk/">
+<link rel="alternate" hreflang="da" href="https://pegasohlib.github.io/kolys/da/">
+<link rel="alternate" hreflang="sv" href="https://pegasohlib.github.io/kolys/sv/">
+<link rel="alternate" hreflang="tr" href="https://pegasohlib.github.io/kolys/tr/">
+<link rel="alternate" hreflang="ar" href="https://pegasohlib.github.io/kolys/ar/">
+<link rel="alternate" hreflang="hi" href="https://pegasohlib.github.io/kolys/hi/">
+<link rel="alternate" hreflang="id" href="https://pegasohlib.github.io/kolys/id/">
+<link rel="alternate" hreflang="vi" href="https://pegasohlib.github.io/kolys/vi/">
+<link rel="alternate" hreflang="th" href="https://pegasohlib.github.io/kolys/th/">
+<link rel="alternate" hreflang="zh" href="https://pegasohlib.github.io/kolys/zh/">
+<link rel="alternate" hreflang="zh-Hant" href="https://pegasohlib.github.io/kolys/zh-Hant/">
+<link rel="alternate" hreflang="ko" href="https://pegasohlib.github.io/kolys/ko/">
+<link rel="alternate" hreflang="ja" href="https://pegasohlib.github.io/kolys/ja/">
+<link rel="alternate" hreflang="kk" href="https://pegasohlib.github.io/kolys/kk/">
+<link rel="alternate" hreflang="be" href="https://pegasohlib.github.io/kolys/be/">
+<link rel="alternate" hreflang="ru" href="https://pegasohlib.github.io/kolys/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pegasohlib.github.io/kolys/">
+<link rel="stylesheet" href="../assets/fonts/fonts.css">
+<link rel="stylesheet" href="/assets/kit.css">
+<style>
+:root{--g1:#FFC673;--g2:#FF9550;--on-accent:#2A1606;--accent:#9A5208;--accent2:#FF9550;--h0:#2A78D6;--h1:#EB6834;--h2:#1BAF7A;--h3:#EDA100;--h4:#E87BA4;--h5:#008300;--h6:#6250D6;--h7:#E34948;--navy1:#1E2A5C;--navy2:#080B1F;--panel-line:transparent;--panel-ic:#FFD79A}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}}
+:root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}
+.tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
+h2.eyebrow{font-family:inherit;line-height:1.4}
+:root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
+:root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
+:root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
+:root:lang(ko) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",sans-serif;line-height:1.25}
+:root:lang(hi) body{font-family:Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,system-ui,sans-serif;line-height:1.75}
+:root:lang(hi) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Devanagari","Nirmala UI","Kohinoor Devanagari","Devanagari Sangam MN",Mangal,sans-serif;line-height:1.4}
+:root:lang(zh) body{font-family:Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",system-ui,sans-serif}
+:root:lang(zh) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang SC","Microsoft YaHei","Noto Sans SC","Noto Sans CJK SC","Hiragino Sans GB","Source Han Sans SC",sans-serif;line-height:1.3;letter-spacing:0}
+:root:lang(zh-Hant) body{font-family:Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",system-ui,sans-serif}
+:root:lang(zh-Hant) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"PingFang TC","Microsoft JhengHei","Noto Sans TC","Noto Sans CJK TC","Source Han Sans TC",sans-serif}
+:root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
+:root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
+:root:lang(ar) *{letter-spacing:0!important}
+:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
+:root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
+[dir=rtl] .ic.flip{transform:scaleX(-1)}
+[dir=rtl] .ic.flip.down{transform:rotate(90deg)}
+[dir=rtl] .langdoc a[href^="mailto:"],[dir=rtl] .langdoc code,[dir=rtl] .ver,[dir=rtl] footer a[href^="mailto:"],[dir=rtl] .ltr{direction:ltr;unicode-bidi:isolate}
+[dir=rtl] select{text-align:start}
+.btn .ic{width:22px;height:22px}
+.btn.primary{background:var(--g1);box-shadow:none}
+.btn.primary .badge{background:color-mix(in srgb,var(--on-accent) 18%,transparent)}
+.home img{object-fit:cover}
+footer .legal{display:block;margin-top:8px;font-size:13px;line-height:1.5}
+
+main{max-width:960px}
+.btn.dl .ic{stroke-width:2.2}
+.ver[hidden]{display:none}
+/* On phones the version goes under the button text instead of squeezing it onto two lines. */
+@media (max-width:440px){.btn.dl{flex-wrap:wrap;column-gap:10px;row-gap:0;padding-top:8px;padding-bottom:8px}.btn.dl .ver{flex-basis:100%;width:max-content;max-width:max-content;margin:0 auto}}
+.note{margin-top:12px}
+.count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
+.heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
+.heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.gallery{display:grid;gap:12px;margin-top:28px}
+.gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
+@media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
+@media (min-width:940px){
+  .hero.art{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:36px;align-items:center;text-align:start}
+  .hero.art .appicon{margin:0}
+  .hero.art .lead{margin-inline:0}
+  .hero.art .actions{margin-inline:0;align-items:stretch}
+  .hero.art .note,.hero.art .textlinks{text-align:start}
+  .hero.art .count{justify-content:flex-start}
+  .hero.art .qr{justify-content:flex-start;margin-inline:0}
+  .heroart{margin:0}
+}
+.textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
+.textlinks a{color:var(--ink2)}
+.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
+.sha[hidden]{display:none}
+.sha code{font-size:12px;background:none;border:0;padding:0}
+.qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
+.qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
+.qr p{margin:0;font-size:14px;color:var(--ink2)}
+@media (min-width:900px) and (hover:hover){.qr{display:flex}}
+.changes{margin-top:36px}
+.changes dl{margin:0;display:grid;gap:12px}
+.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
+.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
+.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
+.grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
+.count .mini{width:15px;height:15px}
+.count b{color:var(--ink2);font-variant-numeric:tabular-nums}
+.pill{display:inline-block;margin:18px 0 0;font-size:13px;font-weight:700;color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,var(--surface));border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:999px;padding:4px 12px}
+.pill+h1{margin-top:10px}
+/* The dark panels stay dark in both themes (the widget pictures and screenshots are made for a dark background). */
+.show{margin:44px 0 0;border-radius:28px;padding:28px;color:#fff;border:1px solid var(--panel-line);background:radial-gradient(120% 90% at 50% 110%,color-mix(in srgb,var(--g1) 45%,transparent),transparent 60%),linear-gradient(160deg,var(--navy1),var(--navy2));overflow:hidden}
+.showtext{text-align:center;margin:0 auto 22px;max-width:640px}
+.showtext h2{font-size:clamp(22px,4.6vw,30px);margin:0;line-height:1.2}
+.showtext p{margin:8px 0 0;color:rgba(255,255,255,.75)}
+.show a{color:var(--panel-ic)}
+.widgets{display:grid;grid-template-columns:1.05fr 1fr;grid-template-areas:"today week" "today plan";gap:16px;max-width:780px;margin:0 auto;align-items:start}
+.w{min-width:0}
+.w img{display:block;width:100%;height:auto;filter:drop-shadow(0 14px 28px rgba(0,0,0,.35))}
+.w.today{grid-area:today}.w.week{grid-area:week}.w.plan{grid-area:plan}
+.shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:900px;margin:0 auto}
+.shots figure{margin:0;min-width:0}
+.shots img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 14px 28px rgba(0,0,0,.35)}
+.shots figcaption{margin-top:8px;text-align:center;font-size:14px;font-weight:600;color:rgba(255,255,255,.78)}
+.steps{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:12px;max-width:900px}
+.steps li{min-width:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:18px}
+.steps .num{display:grid;place-items:center;width:34px;height:34px;border-radius:999px;background:var(--g1);color:var(--on-accent);font:700 15px/1 Unbounded,Onest,sans-serif}
+.steps h3{margin:12px 0 4px;font-size:17px;line-height:1.3;color:#fff}
+.steps p{margin:0;color:rgba(255,255,255,.75);font-size:15px}
+.features{margin-top:48px}
+.sub{margin:-4px 0 14px;color:var(--ink2)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:760px){.grid.n3{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
+.feat p{margin:0;color:var(--ink2);font-size:15.5px}
+.extra{margin-top:36px}
+.faq{margin-top:36px}
+.faqs{display:grid;gap:10px}
+.faqs details{padding:0}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faqs summary::-webkit-details-marker{display:none}
+.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs details[open] .chev{transform:rotate(180deg)}
+.faqs details p{padding:0 20px 18px}
+.private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
+.private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
+.private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
+.private p{margin:8px 0 16px;color:rgba(255,255,255,.78)}
+.private p:last-child{margin-bottom:0}
+.private .btn{width:auto}
+.btn.light,.btn.light:hover{background:#fff;color:#12151C;border-color:transparent}
+.contact{text-align:center;margin:36px 0 0;color:var(--ink2)}
+@media (max-width:620px){
+  .hero{padding-top:28px}
+  .show{padding:22px 16px;border-radius:24px;margin-top:36px}
+  .widgets{grid-template-columns:1fr;grid-template-areas:"today" "week" "plan";max-width:380px}
+  .shots{grid-template-columns:1fr;max-width:420px}
+  .steps li{display:grid;grid-template-columns:34px 1fr;gap:0 14px;padding:16px}
+  .steps h3{margin:4px 0 4px}
+  .private{flex-direction:column;padding:22px}
+  .private .btn{width:100%}
+  .grid,.grid.n3,.grid.n4{grid-template-columns:1fr;gap:10px}
+  .feat{display:grid;grid-template-columns:40px 1fr;gap:2px 14px;padding:16px}
+  .feat .tile{grid-row:span 2}
+  .feat h3{margin:0;align-self:end}
+  .faqs summary{padding:14px 16px}
+  .faqs details p{padding:0 16px 16px}
+}</style>
+</head>
+<body>
+<div class="bar"><div class="in">
+  <a class="home" href="../ko/"><img src="../icon.svg" alt="" width="32" height="32"><span>Kolys</span></a>
+  <nav class="links"><a class="on" aria-current="page" href="../ko/">홈</a><a href="../ko/privacy.html">개인정보</a></nav>
+  <label class="lang"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg><span class="sr" id="langlabel">언어</span>
+    <select id="lang" aria-labelledby="langlabel"><option value="en" lang="en" data-url="/kolys/">English</option><option value="uk" lang="uk" data-url="/kolys/uk/">Українська</option><option value="es" lang="es" data-url="/kolys/es/">Español</option><option value="pt" lang="pt" data-url="/kolys/pt/">Português</option><option value="pt-BR" lang="pt-BR" data-url="/kolys/pt-BR/">Português (Brasil)</option><option value="fr" lang="fr" data-url="/kolys/fr/">Français</option><option value="de" lang="de" data-url="/kolys/de/">Deutsch</option><option value="nl" lang="nl" data-url="/kolys/nl/">Nederlands</option><option value="it" lang="it" data-url="/kolys/it/">Italiano</option><option value="pl" lang="pl" data-url="/kolys/pl/">Polski</option><option value="cs" lang="cs" data-url="/kolys/cs/">Čeština</option><option value="sk" lang="sk" data-url="/kolys/sk/">Slovenčina</option><option value="da" lang="da" data-url="/kolys/da/">Dansk</option><option value="sv" lang="sv" data-url="/kolys/sv/">Svenska</option><option value="tr" lang="tr" data-url="/kolys/tr/">Türkçe</option><option value="ar" lang="ar" data-url="/kolys/ar/">العربية</option><option value="hi" lang="hi" data-url="/kolys/hi/">हिन्दी</option><option value="id" lang="id" data-url="/kolys/id/">Bahasa Indonesia</option><option value="vi" lang="vi" data-url="/kolys/vi/">Tiếng Việt</option><option value="th" lang="th" data-url="/kolys/th/">ไทย</option><option value="zh" lang="zh" data-url="/kolys/zh/">简体中文</option><option value="zh-Hant" lang="zh-Hant" data-url="/kolys/zh-Hant/">繁體中文</option><option value="ko" lang="ko" data-url="/kolys/ko/" selected>한국어</option><option value="ja" lang="ja" data-url="/kolys/ja/">日本語</option><option value="kk" lang="kk" data-url="/kolys/kk/">Қазақша</option><option value="be" lang="be" data-url="/kolys/be/">Беларуская</option><option value="ru" lang="ru" data-url="/kolys/ru/">Русский</option></select><svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg>
+  </label>
+  <button class="theme" id="theme" type="button"></button>
+</div></div>
+<main>
+<article class="langdoc" lang="ko" dir="ltr" data-lang="ko">
+  <header class="hero">
+    <div class="herotext">
+    <img class="appicon" src="../icon.svg" alt="" width="112" height="112">
+    
+    <h1>Kolys</h1>
+    <p class="tagline">미래의 나에게 보내는 편지</p>
+    <p class="lead">나에게 편지를 쓰고 사진을 넣은 뒤, 고른 날까지 봉인하세요. Kolys는 그전에는 보여 주지 않고, 그날이 되면 알림으로 준비되었다고 알려 줘요.</p>
+    <div class="actions">
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v0.9.1/Kolys-0.9.1.apk"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><span>Android용 다운로드</span><span class="ver badge" hidden></span></a>
+      
+    </div>
+    <p class="textlinks"><a href="../ko/privacy.html">개인정보 처리방침</a></p>
+    <p class="note">앱을 열 때 새 버전을 확인하고, 한 번 탭하면 설치돼요.<br>Android 휴대폰용 앱 · Android 8 이상</p>
+    <p class="note sha" hidden>SHA-256: <code></code></p>
+    
+    <div class="qr"><svg viewBox="0 0 33 33" width="128" height="128" role="img" aria-hidden="true" shape-rendering="crispEdges"><path fill="#fff" d="M0 0h33v33H0z"/><path d="M2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM5 2h1v1h-1zM6 2h1v1h-1zM7 2h1v1h-1zM8 2h1v1h-1zM12 2h1v1h-1zM15 2h1v1h-1zM16 2h1v1h-1zM17 2h1v1h-1zM19 2h1v1h-1zM20 2h1v1h-1zM21 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM27 2h1v1h-1zM28 2h1v1h-1zM29 2h1v1h-1zM30 2h1v1h-1zM2 3h1v1h-1zM8 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM16 3h1v1h-1zM17 3h1v1h-1zM18 3h1v1h-1zM19 3h1v1h-1zM21 3h1v1h-1zM24 3h1v1h-1zM30 3h1v1h-1zM2 4h1v1h-1zM4 4h1v1h-1zM5 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM12 4h1v1h-1zM14 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM20 4h1v1h-1zM24 4h1v1h-1zM26 4h1v1h-1zM27 4h1v1h-1zM28 4h1v1h-1zM30 4h1v1h-1zM2 5h1v1h-1zM4 5h1v1h-1zM5 5h1v1h-1zM6 5h1v1h-1zM8 5h1v1h-1zM12 5h1v1h-1zM13 5h1v1h-1zM20 5h1v1h-1zM21 5h1v1h-1zM22 5h1v1h-1zM24 5h1v1h-1zM26 5h1v1h-1zM27 5h1v1h-1zM28 5h1v1h-1zM30 5h1v1h-1zM2 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM11 6h1v1h-1zM15 6h1v1h-1zM16 6h1v1h-1zM17 6h1v1h-1zM21 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM2 7h1v1h-1zM8 7h1v1h-1zM12 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM21 7h1v1h-1zM22 7h1v1h-1zM24 7h1v1h-1zM30 7h1v1h-1zM2 8h1v1h-1zM3 8h1v1h-1zM4 8h1v1h-1zM5 8h1v1h-1zM6 8h1v1h-1zM7 8h1v1h-1zM8 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM16 8h1v1h-1zM18 8h1v1h-1zM20 8h1v1h-1zM22 8h1v1h-1zM24 8h1v1h-1zM25 8h1v1h-1zM26 8h1v1h-1zM27 8h1v1h-1zM28 8h1v1h-1zM29 8h1v1h-1zM30 8h1v1h-1zM13 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM16 9h1v1h-1zM18 9h1v1h-1zM19 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM2 10h1v1h-1zM4 10h1v1h-1zM6 10h1v1h-1zM8 10h1v1h-1zM11 10h1v1h-1zM13 10h1v1h-1zM16 10h1v1h-1zM17 10h1v1h-1zM18 10h1v1h-1zM19 10h1v1h-1zM21 10h1v1h-1zM22 10h1v1h-1zM26 10h1v1h-1zM29 10h1v1h-1zM3 11h1v1h-1zM6 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM13 11h1v1h-1zM19 11h1v1h-1zM22 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM30 11h1v1h-1zM2 12h1v1h-1zM3 12h1v1h-1zM5 12h1v1h-1zM6 12h1v1h-1zM7 12h1v1h-1zM8 12h1v1h-1zM9 12h1v1h-1zM10 12h1v1h-1zM12 12h1v1h-1zM15 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM24 12h1v1h-1zM25 12h1v1h-1zM26 12h1v1h-1zM28 12h1v1h-1zM29 12h1v1h-1zM30 12h1v1h-1zM2 13h1v1h-1zM5 13h1v1h-1zM6 13h1v1h-1zM7 13h1v1h-1zM9 13h1v1h-1zM19 13h1v1h-1zM22 13h1v1h-1zM24 13h1v1h-1zM25 13h1v1h-1zM29 13h1v1h-1zM2 14h1v1h-1zM4 14h1v1h-1zM5 14h1v1h-1zM7 14h1v1h-1zM8 14h1v1h-1zM9 14h1v1h-1zM10 14h1v1h-1zM12 14h1v1h-1zM14 14h1v1h-1zM19 14h1v1h-1zM20 14h1v1h-1zM22 14h1v1h-1zM23 14h1v1h-1zM24 14h1v1h-1zM27 14h1v1h-1zM29 14h1v1h-1zM30 14h1v1h-1zM4 15h1v1h-1zM6 15h1v1h-1zM7 15h1v1h-1zM14 15h1v1h-1zM15 15h1v1h-1zM18 15h1v1h-1zM22 15h1v1h-1zM23 15h1v1h-1zM24 15h1v1h-1zM27 15h1v1h-1zM30 15h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM11 16h1v1h-1zM12 16h1v1h-1zM13 16h1v1h-1zM16 16h1v1h-1zM19 16h1v1h-1zM22 16h1v1h-1zM23 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM29 16h1v1h-1zM30 16h1v1h-1zM2 17h1v1h-1zM6 17h1v1h-1zM7 17h1v1h-1zM9 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM12 17h1v1h-1zM15 17h1v1h-1zM16 17h1v1h-1zM17 17h1v1h-1zM19 17h1v1h-1zM22 17h1v1h-1zM24 17h1v1h-1zM27 17h1v1h-1zM29 17h1v1h-1zM3 18h1v1h-1zM4 18h1v1h-1zM8 18h1v1h-1zM9 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM16 18h1v1h-1zM17 18h1v1h-1zM19 18h1v1h-1zM21 18h1v1h-1zM22 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM27 18h1v1h-1zM29 18h1v1h-1zM30 18h1v1h-1zM3 19h1v1h-1zM4 19h1v1h-1zM7 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM13 19h1v1h-1zM16 19h1v1h-1zM18 19h1v1h-1zM23 19h1v1h-1zM24 19h1v1h-1zM27 19h1v1h-1zM28 19h1v1h-1zM30 19h1v1h-1zM2 20h1v1h-1zM4 20h1v1h-1zM6 20h1v1h-1zM8 20h1v1h-1zM9 20h1v1h-1zM10 20h1v1h-1zM14 20h1v1h-1zM15 20h1v1h-1zM18 20h1v1h-1zM20 20h1v1h-1zM22 20h1v1h-1zM25 20h1v1h-1zM26 20h1v1h-1zM29 20h1v1h-1zM30 20h1v1h-1zM3 21h1v1h-1zM4 21h1v1h-1zM5 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM23 21h1v1h-1zM27 21h1v1h-1zM29 21h1v1h-1zM2 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM7 22h1v1h-1zM8 22h1v1h-1zM11 22h1v1h-1zM12 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM22 22h1v1h-1zM23 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM26 22h1v1h-1zM10 23h1v1h-1zM11 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM15 23h1v1h-1zM18 23h1v1h-1zM21 23h1v1h-1zM22 23h1v1h-1zM26 23h1v1h-1zM28 23h1v1h-1zM29 23h1v1h-1zM30 23h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM5 24h1v1h-1zM6 24h1v1h-1zM7 24h1v1h-1zM8 24h1v1h-1zM11 24h1v1h-1zM16 24h1v1h-1zM19 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM24 24h1v1h-1zM26 24h1v1h-1zM27 24h1v1h-1zM29 24h1v1h-1zM30 24h1v1h-1zM2 25h1v1h-1zM8 25h1v1h-1zM11 25h1v1h-1zM12 25h1v1h-1zM15 25h1v1h-1zM16 25h1v1h-1zM18 25h1v1h-1zM19 25h1v1h-1zM20 25h1v1h-1zM22 25h1v1h-1zM26 25h1v1h-1zM27 25h1v1h-1zM29 25h1v1h-1zM30 25h1v1h-1zM2 26h1v1h-1zM4 26h1v1h-1zM5 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM16 26h1v1h-1zM17 26h1v1h-1zM18 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM22 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM26 26h1v1h-1zM29 26h1v1h-1zM30 26h1v1h-1zM2 27h1v1h-1zM4 27h1v1h-1zM5 27h1v1h-1zM6 27h1v1h-1zM8 27h1v1h-1zM11 27h1v1h-1zM13 27h1v1h-1zM15 27h1v1h-1zM16 27h1v1h-1zM18 27h1v1h-1zM25 27h1v1h-1zM26 27h1v1h-1zM28 27h1v1h-1zM29 27h1v1h-1zM30 27h1v1h-1zM2 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM10 28h1v1h-1zM12 28h1v1h-1zM14 28h1v1h-1zM16 28h1v1h-1zM19 28h1v1h-1zM25 28h1v1h-1zM26 28h1v1h-1zM27 28h1v1h-1zM30 28h1v1h-1zM2 29h1v1h-1zM8 29h1v1h-1zM11 29h1v1h-1zM13 29h1v1h-1zM15 29h1v1h-1zM16 29h1v1h-1zM19 29h1v1h-1zM20 29h1v1h-1zM21 29h1v1h-1zM22 29h1v1h-1zM24 29h1v1h-1zM25 29h1v1h-1zM29 29h1v1h-1zM2 30h1v1h-1zM3 30h1v1h-1zM4 30h1v1h-1zM5 30h1v1h-1zM6 30h1v1h-1zM7 30h1v1h-1zM8 30h1v1h-1zM10 30h1v1h-1zM11 30h1v1h-1zM12 30h1v1h-1zM13 30h1v1h-1zM15 30h1v1h-1zM16 30h1v1h-1zM17 30h1v1h-1zM18 30h1v1h-1zM19 30h1v1h-1zM21 30h1v1h-1zM22 30h1v1h-1zM24 30h1v1h-1zM26 30h1v1h-1zM27 30h1v1h-1zM29 30h1v1h-1zM30 30h1v1h-1z"/></svg><p>스캔해서 휴대폰에서 이 페이지 열기</p></div>
+    </div>
+    
+  </header>
+
+
+  <section class="show" aria-label="타임캡슐은 이렇게 작동해요">
+    <div class="showtext"><h2 class="display">타임캡슐은 이렇게 작동해요</h2><p>오늘 쓰고, 고른 날에 읽어요.</p></div>
+    <ol class="steps"><li><span class="num">1</span><div><h3>쓰기</h3><p>내 말로 쓰는 편지에 사진과 동영상을 최대 12개, 음성 메시지를 최대 3개까지 담을 수 있어요. 막막할 때는 부드러운 질문이 도와줘요. 앱에서 바로 사진과 동영상을 찍을 수도 있어요.</p></div></li><li><span class="num">2</span><div><h3>봉인</h3><p>한 달 뒤, 일 년 뒤, 십 년 뒤, 또는 최대 100년 뒤까지의 어떤 날짜로든요. 날짜는 온라인으로 확인하므로 휴대폰 시계를 바꿔도 미리 열 수 없어요.</p></div></li><li><span class="num">3</span><div><h3>열기</h3><p>그날 알림이 도착해요(휴대폰에 인터넷이 필요해요). 탭하면 작은 빛의 연출과 함께 캡슐이 열려요.</p></div></li><li><span class="num">4</span><div><h3>보관</h3><p>Google로 로그인하면 봉인된 캡슐이 내 Drive의 숨겨진 폴더에 저장돼요. 새 휴대폰에서 같은 계정으로 로그인하면 돌아와요. 임시 저장본은 돌아오지 않아요.</p></div></li></ol>
+  </section>
+
+  <section class="section features" aria-labelledby="f-ko">
+    <h2 class="eyebrow" id="f-ko">이런 걸 할 수 있어요</h2>
+    <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg><h3>음성과 동영상</h3><p>최대 5분의 음성 메시지, 전용 플레이어가 있는 동영상, 두 손가락이나 두 번 탭으로 확대되는 사진. 편지가 열리면 추억에서 슬라이드쇼로 보여 줘요.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>지금 이 순간</h3><p>내 기분, 내가 고른 노래, 그리고 허용하면 도시와 날씨. 휴대폰의 이름이나 모델명과 배터리 잔량은 매번 함께 저장돼요.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>선물하는 캡슐</h3><p>봉인된 편지를 친구나 그룹 전체에게 아무 메신저로 파일로 보내세요. Kolys는 정해진 날에만 열어 주고, 비밀 단어로 잠글 수도 있어요.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>특별한 날</h3><p>한 달, 1년, 10년뿐 아니라 생일까지, 새해까지, 또는 1000일 동안 캡슐을 봉인하세요.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><h3>기다리는 동안의 알림</h3><p>캡슐이 기간의 절반을 기다렸을 때(60일 이상의 캡슐) 알림이 한 번, 열리기 일주일 전(30일 이상)에 한 번 더 와요. 설정에서 끌 수 있어요.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg><h3>잊지 않기</h3><p>한 번 탭하면 열리는 날이 채워진 상태로 캘린더 앱이 열려요. 거기에 저장하면 다른 휴대폰에서도 리마인더가 나를 찾아와요.</p></div><div class="card feat"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"/><rect x="3.5" y="13" width="17" height="7.5" rx="2"/></svg><h3>위젯</h3><p>가장 가까운 캡슐이 남은 일수와 함께 홈 화면에 표시돼요. 세 가지 크기가 있고, 큰 위젯은 캡슐 세 개와 새 캡슐을 위한 +를 보여 줘요.</p></div><div class="card feat"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>임시 저장과 답장</h3><p>쓰는 동안 임시 저장이 자동으로 돼요. 편지가 열리면 나에게 답장해 보세요. 답장은 이전 편지를 함께 간직하는 새 캡슐이에요.</p></div></div>
+  </section>
+
+  <section class="section features" aria-labelledby="m0-ko">
+    <h2 class="eyebrow" id="m0-ko">뜻밖의 기능들</h2>
+    
+    <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.8a3.5 3.5 0 0 1 0 6.4M21.5 20a6.5 6.5 0 0 0-3.5-5.8"/></svg><h3>함께 쓰기</h3><p>모두가 하나의 그룹 캡슐에 편지를 하나씩 추가하거나, 그룹이 한 사람에게 써요. 그날이 오기 전까지 앱은 누가 썼는지만 보여 주고, 무엇을 썼는지는 절대 보여 주지 않아요.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg><h3>비밀 단어를 잊어버렸나요?</h3><p>휴대폰이 내가 잠근 선물마다 단어를 기억해 두므로 화면에서 확인할 수 있어요. 파일 자체는 그것을 알려 줄 수 없어요.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="4" width="13" height="10" rx="1.8"/><path d="M5.5 18h7M9 14v4"/><rect x="16" y="8" width="5.5" height="12" rx="1.5"/><path d="M18.2 17.5h1.1"/></svg><h3>한 번 열면 어디서나 열린 것으로</h3><p>한 휴대폰에서 캡슐을 열면, 같은 Google 계정과 Drive를 쓰는 다른 휴대폰에서도 열린 것으로 표시돼요.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h3>답장은 과거를 간직해요</h3><p>답장은 자신이 답하는 편지의 사본을 따로 간직하므로, 원본을 삭제해도 남아 있어요.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg><h3>먼 미래까지</h3><p>최대 100년 뒤까지 어떤 날짜든 고를 수 있어요. 동영상은 최대 500 MB까지 가능해요.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.4 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10z"/></svg><h3>친구의 생일까지</h3><p>친구에게 쓸 때는 날짜를 입력해 그 친구의 생일까지 캡슐을 봉인할 수 있어요.</p></div></div>
+  </section>
+
+  <section class="section extra" aria-labelledby="x-ko">
+    <h2 class="eyebrow" id="x-ko">그리고</h2>
+    <div class="chips"><span>27개 언어</span><span>밝은 테마와 어두운 테마</span><span>세 가지 열림 소리</span><span>다섯 단계 글자 크기</span><span>내 색깔의 봉인</span></div>
+  </section>
+
+  <section class="section faq" aria-labelledby="q-ko">
+    <h2 class="eyebrow" id="q-ko">질문</h2>
+    <div class="faqs"><details class="card"><summary>어떻게 설치하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>이 페이지에서 앱을 다운로드하고 파일을 여세요. Android가 그 출처로부터의 설치를 허용할지 한 번 물어볼 수 있어요. Android 8 이상이 필요해요.</p></details><details class="card"><summary>업데이트는 어떻게 이루어지나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>앱을 열면 Kolys 웹사이트에서 새 버전을 확인해요. 30분에 한 번 이하로 하며, 설정에서 끌 수 있어요. 스스로 아무것도 설치하지 않아요. 업데이트를 탭하는 것은 내가 해요.</p></details><details class="card"><summary>봉인된 편지를 누군가 미리 읽을 수 있나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kolys는 정해진 날 전에는 열지도 보여 주지도 않지만, 이 잠금은 앱 안에 있는 것이지 암호화가 아니에요. 앱의 전용 저장 공간에 있는 것과 내 Drive의 zip은 암호화되지 않아서, Android의 앱 보호를 뚫은 사람은 읽을 수 있고, Google은 Drive 사본을 읽을 수 있어요. 비밀 단어로 잠근 선물은 암호화돼요. 단어가 없으면 키가 파일 안에 있고, 그룹의 키는 초대 파일 안에 있어요.</p></details><details class="card"><summary>새 휴대폰에서는 어떻게 되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>같은 Google 계정으로 로그인하면 Drive에 저장된 봉인된 캡슐이 돌아와요. 임시 저장본과 그룹 캡슐을 위해 아직 모으는 중인 편지는 이전 휴대폰에 남아요. Drive가 없으면 아무것도 돌아오지 않아요.</p></details><details class="card"><summary>“이 순간”에는 무엇이 기록되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>내 기분, 노래, 그리고 허용하면 도시와 날씨예요. 매번 휴대폰의 이름이나 모델명과 배터리 잔량도 추가되며, 이것들은 선물과 그룹 캡슐의 받는 사람에게 전달돼요.</p></details><details class="card"><summary>캡슐을 삭제하면 어떻게 되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>편지, 파일, 리마인더가 즉시 내 휴대폰에서 사라져요. Drive에서는 zip이 삭제되고 아주 작은 “gone” 파일이 남아서, 다른 휴대폰에서도 삭제돼요. 이미 보낸 파일은 받은 사람에게 그대로 남아요.</p></details></div>
+  </section>
+
+  <section class="section changes" aria-labelledby="c-ko">
+    <h2 class="eyebrow" id="c-ko">새로운 내용</h2>
+    <dl class="card"><div><dt>0.9.1</dt><dd>삭제한 캡슐은 이제 Google 로그인이 없어도 휴대전화에서 바로 사라지고, 다른 휴대전화에서도 사라져요.</dd></div><div><dt>0.9.0</dt><dd>이제 한 사람을 위한 캡슐도 함께 쓸 수 있어요. 예를 들어 친구들이 생일 캡슐을 함께 쓸 수 있죠. 편지를 모으는 마감일도 직접 고를 수 있어요. 알림: 아직 쓰지 않은 사람은 마감 전에, 모으는 사람은 봉인할 때가 되면 알림을 받아요.</dd></div><div><dt>0.8.1</dt><dd>그룹 캡슐 함께 쓰기: 이제 편지를 하루 동안만 모을 수도 있어요.</dd></div><div><dt>0.8.0</dt><dd>캡슐을 함께 써 보세요. 그룹을 초대하면 각자 자기 편지를 더하고, 여는 날까지 누구도 다른 사람의 편지를 볼 수 없어요.</dd></div></dl>
+  </section>
+
+  <section class="private">
+    <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>
+    <div><h2 class="display">내 데이터, 있는 그대로</h2><p>자체 계정도, 서버도, 광고도, 추적도 없어요. 편지는 내 휴대폰에, 원하면 내 Google Drive에만 남아요. 앱은 편지를 잠글 뿐 암호화하지는 않으니, 내 휴대폰과 Google 계정을 잘 지키세요.</p>
+    <a class="btn light" href="../ko/privacy.html"><span>개인정보 처리방침 읽기</span><svg class="ic flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+
+  <p class="contact">문의: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
+</article>
+</main>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ko/">PegasoHlib — 모든 앱</a> · <a href="https://pegasohlib.github.io/ko/terms.html">이용 약관</a> · <a href="https://pegasohlib.github.io/ko/site-privacy.html">사이트 개인정보</a><small class="legal">호스팅: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok은 각 소유자의 상표이며, PegasoHlib는 이들과 관련이 없습니다.</small></footer>
+<script>
+(function () {
+  var sel = document.getElementById("lang"), cur = sel.value;
+  sel.addEventListener("change", function () {
+    try { localStorage.setItem("siteLang", sel.value); } catch (e) {}
+    location.href = sel.options[sel.selectedIndex].dataset.url;
+  });
+  addEventListener("pageshow", function () { sel.value = cur; });
+})();
+</script>
+<script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("../update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kolys-v") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
+<script src="/assets/kit.js" defer></script>
+</body>
+</html>

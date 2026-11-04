@@ -2,7 +2,7 @@
 
 https://pegasohlib.github.io — apps and games by PegasoHlib.
 
-- `index.html`, `assets/` — the main site (all projects, 21 languages). Generated; sources live outside this repo.
+- `index.html`, `assets/` — the main site (all projects, 27 languages). Generated; sources live outside this repo.
 - `favicon.ico`, `sitemap.xml`, `robots.txt` — generated with the main site (favicon from `assets/mark.svg`, sitemap lists every page that answers).
 - `icon.png` — Khronometr's old icon from when it was the home page; kept for old links.
 - `khronometr/` — Khronometr's pages. `privacy.html` and `pc/` at the root are copies kept for old links.
