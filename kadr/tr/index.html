@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows için indir</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../tr/privacy.html">Gizlilik politikası</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">Lisanslar ve kaynak kod</a></p>
+    <p class="textlinks"><a href="../tr/privacy.html">Gizlilik politikası</a></p>
     <p class="note">Ücretsiz · reklamsız · Windows 10 ve 11 (64 bit)<br>Güncellemeler uygulamanın içinden kontrol edilir; otomatik indirmeyi kapatabilirsin<br>27 dil, bu web sitesiyle aynı</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Katmanlar ve tuval boyutları</h3><p>Katman olarak fotoğraflar ve metin. Küçük resim, kare gönderi ve hikâye için hazır boyutlar.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Arka plan kaldırma</h3><p>Tek tıkla, bilgisayarında. Yaklaşık 115 MB’lık model bir kez indirilir. Ayrıca bir bulanıklaştırma fırçası ve <b>Arka planı bulanıklaştır</b> var.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>Yapay zekâ ile iyileştirme ×2 veya ×4</h3><p>2–5 MB’lık Real-ESRGAN modelleri, bir kez indirilir. Fotoğrafların asla yüklenmez.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Fırça, şekiller ve pano</h3><p>Fırça, silgi, oklar ve şekiller. <b>Ctrl+V</b> bir ekran görüntüsü yapıştırır, <b>Ctrl+Shift+C</b> sonucu kopyalar.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-tr">
-    <h2 class="eyebrow" id="x-tr">Ayrıca</h2>
-    <div class="chips"><span>Ücretsiz, reklamsız</span><span>Açık ve koyu tema</span><span>Ayarlanabilir yazı boyutu</span><span>TikTok için güvenli alan</span><span>Video projeleri için otomatik kayıt</span><span>İmzalı güncellemeler</span><span>Yönetici hakları gerekmez</span><span>Açık kaynaklı parçalar ve Microsoft DirectML, lisanslar içinde</span></div>
-  </section>
+  <p class="also">Ücretsiz, reklamsız · Video projeleri için otomatik kayıt · İmzalı güncellemeler</p>
 
   <section class="section faq" aria-labelledby="q-tr">
     <h2 class="eyebrow" id="q-tr">Sorular</h2>
-    <div class="faqs"><details class="card"><summary>Windows “Windows bilgisayarınızı korudu” diyor. Bu normal mi?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows bunu ücretli kod imzalama sertifikası olmayan uygulamalar için gösterir; Kadr’ın da yoktur. <b>Daha fazla bilgi</b>’ye, sonra <b>Yine de çalıştır</b>’a tıkla. Kadr’ın kendi güncellemeleri kurulmadan önce dijital imzaya karşı kontrol edilir.</p></details><details class="card"><summary>Videolarım ya da fotoğraflarım bir yere yükleniyor mu?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Hayır. Bilgisayarında kalırlar; arka plan kaldırma ve iyileştirme de onda çalışır. Tek istisna otomatik altyazıdır ve yalnızca sen başlattığında: seçilen klibin sesi kendi API anahtarınla ElevenLabs’e gider.</p></details><details class="card"><summary>Kadr internete ne için ihtiyaç duyar?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Güncellemeleri kontrol etmek (Kadr başladığında ve her 6 saatte bir), bir güncellemeyi indirmek ve her yapay zekâ modeli için bir kez. Kontrolün kendisi kapatılamaz; Ayarlar → Güncellemeler’de yalnızca otomatik indirmeyi kapatabilirsin. Kullanırsan otomatik altyazılar da çevrimiçi olur.</p></details><details class="card"><summary>Yapay zekâ güçlü bir ekran kartı gerektirir mi?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Hayır, ama o olmadan çok daha yavaştır. DirectML açıkken (varsayılan) yapay zekâ ekran kartını kullanır; arka plan kaldırma yaklaşık 5 GB video belleği alabilir. Ayarlar → Yapay zekâ’dan yalnızca işlemciye geçebilirsin.</p></details><details class="card"><summary>Kadr veya bilgisayar çökerse ne olur?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Bir video projesi her 45 saniyede otomatik kaydedilir ve Kadr bir sonraki seferde onu kurtarmayı önerir. Fotoğraf projeleri otomatik kaydedilmez; bu yüzden kendin kaydet.</p></details><details class="card"><summary>Nasıl kaldırırım ve neler kalır?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kadr’ı Windows Ayarlar → <b>Uygulamalar</b>’dan kaldır. Ayarların, son proje yolların ve şifrelenmiş ElevenLabs anahtarın kayıt defterinde kalır; otomatik kayıt, önbellek ve modeller <code>%LOCALAPPDATA%\Kadr</code> içinde kalır. Gizlilik politikası bunları nasıl sileceğini anlatır.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-tr">
-    <h2 class="eyebrow" id="c-tr">Yenilikler</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>Fotoğraf düzenleyicide bulanıklık: ayrı bir Bulanıklık kaydırıcısı (öncekinden çok daha güçlü), yalnızca boyadığın yeri bulanıklaştıran Bulanıklaştır fırçası ve Arka planı bulanıklaştır: kişi ya da nesne net kalır, arkasındaki arka plan telefonun portre modu gibi bulanıklaşır (hafif, orta veya güçlü; bu bilgisayarda çalışır).</dd></div><div><dt>2.8.0</dt><dd>Hız eğrisi: bir klibin hızı yumuşakça değişebilir — doğru anda ağır çekim, hızlanma, bir “sıçrama”. Hazır ayarlar (Hızlanma, Yavaşlama, Kahraman, Mermi, Montaj, Sıçrama) ve kendi eğrin: noktaları yukarı ya da aşağı sürükle, çift tıkla nokta ekle. Önizleme, kesme ve dışa aktarma eğriyi tam olarak izler; ses perdesi değişmeden hızlanır.</dd></div><div><dt>2.7.2</dt><dd>Hakkında sayfası sadeleşti: üçüncü taraf kütüphanelerin kaynak koduna giden bağlantılar artık yalnızca Lisanslar penceresinde.</dd></div><div><dt>2.7.1</dt><dd>Yeni Ayarlar ve Hakkında sayfası: anahtarlı kartlar, bayraklı tek bir listede dil, kutucuk şeklinde bağlantılar. Daha güzel ayrıntılar: üst çubukta logo, daha yumuşak renkli ve seçim çerçeveli zaman çizelgesi klipleri, iğne biçiminde oynatma kafası ve boş projede ipuçları.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows “Windows bilgisayarınızı korudu” diyor. Bu normal mi?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows bunu ücretli kod imzalama sertifikası olmayan uygulamalar için gösterir; Kadr’ın da yoktur. <b>Daha fazla bilgi</b>’ye, sonra <b>Yine de çalıştır</b>’a tıkla. Kadr’ın kendi güncellemeleri kurulmadan önce dijital imzaya karşı kontrol edilir.</p></details><details><summary>Videolarım ya da fotoğraflarım bir yere yükleniyor mu?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Hayır. Bilgisayarında kalırlar; arka plan kaldırma ve iyileştirme de onda çalışır. Tek istisna otomatik altyazıdır ve yalnızca sen başlattığında: seçilen klibin sesi kendi API anahtarınla ElevenLabs’e gider.</p></details><details><summary>Kadr internete ne için ihtiyaç duyar?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Güncellemeleri kontrol etmek (Kadr başladığında ve her 6 saatte bir), bir güncellemeyi indirmek ve her yapay zekâ modeli için bir kez. Kontrolün kendisi kapatılamaz; Ayarlar → Güncellemeler’de yalnızca otomatik indirmeyi kapatabilirsin. Kullanırsan otomatik altyazılar da çevrimiçi olur.</p></details><details><summary>Yapay zekâ güçlü bir ekran kartı gerektirir mi?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Hayır, ama o olmadan çok daha yavaştır. DirectML açıkken (varsayılan) yapay zekâ ekran kartını kullanır; arka plan kaldırma yaklaşık 5 GB video belleği alabilir. Ayarlar → Yapay zekâ’dan yalnızca işlemciye geçebilirsin.</p></details><details><summary>Kadr veya bilgisayar çökerse ne olur?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Bir video projesi her 45 saniyede otomatik kaydedilir ve Kadr bir sonraki seferde onu kurtarmayı önerir. Fotoğraf projeleri otomatik kaydedilmez; bu yüzden kendin kaydet.</p></details><details><summary>Kadr neyden yapıldı?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>FFmpeg ve Qt gibi açık kaynaklı bileşenleri ve kapalı kaynaklı Microsoft DirectML’i kullanır. Her bileşen ve lisansı uygulamada “Hakkında → Lisanslar” altında listelenir. Bu lisansların gerektirdiği gibi, <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">açık kaynaklı bileşenlerin kaynak kodu</a> indirilebilir.</p></details><details><summary>Nasıl kaldırırım ve neler kalır?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kadr’ı Windows Ayarlar → <b>Uygulamalar</b>’dan kaldır. Ayarların, son proje yolların ve şifrelenmiş ElevenLabs anahtarın kayıt defterinde kalır; otomatik kayıt, önbellek ve modeller <code>%LOCALAPPDATA%\Kadr</code> içinde kalır. Gizlilik politikası bunları nasıl sileceğini anlatır.</p></details><details><summary>Yenilikler: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Fotoğraf düzenleyicide bulanıklık: ayrı bir Bulanıklık kaydırıcısı (öncekinden çok daha güçlü), yalnızca boyadığın yeri bulanıklaştıran Bulanıklaştır fırçası ve Arka planı bulanıklaştır: kişi ya da nesne net kalır, arkasındaki arka plan telefonun portre modu gibi bulanıklaşır (hafif, orta veya güçlü; bu bilgisayarda çalışır).</p></details><details class="sha" hidden><summary>Dosyayı nasıl doğrularım?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>İndirdiğiniz dosyanın SHA-256 sağlama toplamı şununla eşleşmelidir: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Sorular ve fikirler: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/tr/">PegasoHlib — tüm uygulamalar</a> · <a href="https://pegasohlib.github.io/tr/terms.html">Kullanım koşulları</a> · <a href="https://pegasohlib.github.io/tr/site-privacy.html">Site gizliliği</a><small class="legal">Barındırma: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube ve TikTok sahiplerine ait ticari markalardır; PegasoHlib’in bunlarla bir bağlantısı yoktur.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/tr/">PegasoHlib — tüm uygulamalar</a> · <a href="https://pegasohlib.github.io/tr/terms.html">Kullanım koşulları</a> · <a href="https://pegasohlib.github.io/tr/site-privacy.html">Site gizliliği</a><small class="legal">Bu çeviri yapay zekâ ile yapıldı, bu nedenle hatalar içerebilir. Barındırma: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube ve TikTok sahiplerine ait ticari markalardır; PegasoHlib’in bunlarla bir bağlantısı yoktur.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

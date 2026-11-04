@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../vi/privacy.html">Chính sách quyền riêng tư</a></p>
     <p class="note">Nó tự tìm phiên bản mới; bạn bấm một nút để cài.<br>Miễn phí · không quảng cáo · 27 ngôn ngữ</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Điểm từ 0 đến 100</h3><p>Oberih biến những gì nó tìm thấy trên máy tính này thành một con số, để bạn thấy ngay mình được bảo vệ đến đâu.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Cảnh báo khi có mối đe dọa mới</h3><p>Nếu Defender bắt được thứ gì khi Oberih đang mở, bạn thấy một cảnh báo và nghe một âm thanh. Nó không theo dõi khi cửa sổ đóng.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Đánh dấu các ngoại lệ rủi ro</h3><p>Nó cảnh báo bạn khi Defender được yêu cầu bỏ qua cả một ổ đĩa, thư mục người dùng của bạn, Downloads hoặc các loại chương trình như .exe và .ps1.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Chạy không cần cài đặt</h3><p>Chạy tệp đã tải về nguyên trạng: không cần cài .NET, không cần bạn làm gì thêm. Việc cài đặt chỉ thêm lối tắt và cập nhật trong ứng dụng.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-vi">
-    <h2 class="eyebrow" id="x-vi">Và còn nữa</h2>
-    <div class="chips"><span>Miễn phí</span><span>Không quảng cáo, không theo dõi</span><span>Không dịch vụ nền, không tự khởi động</span><span>Tôn trọng bảo vệ chống giả mạo</span><span>3 bộ âm thanh</span></div>
-  </section>
+  <p class="also">Miễn phí · Không quảng cáo, không theo dõi · Không dịch vụ nền, không tự khởi động</p>
 
   <section class="section faq" aria-labelledby="q-vi">
     <h2 class="eyebrow" id="q-vi">Câu hỏi</h2>
-    <div class="faqs"><details class="card"><summary>Windows báo “Windows đã bảo vệ PC của bạn”. Có sao không?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Có. Windows hiện thông báo này cho những tệp nó không biết rõ, chẳng hạn ứng dụng không có chứng chỉ ký mã trả phí, và Oberih không có. Nhấp <b>More info</b> dưới dòng chữ, rồi <b>Run anyway</b>, không phải <b>Don’t run</b>. Các bản cập nhật của chính Oberih được ký bằng khóa của tác giả và được kiểm tra trước khi cài.</p></details><details class="card"><summary>Oberih có phải phần mềm diệt virus không?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Không. Mọi việc quét và bảo vệ đều do Microsoft Defender, phần mềm diệt virus có sẵn trong Windows, đảm nhận. Oberih cho biết trạng thái của nó, quản lý các cài đặt và giải thích chúng bằng lời dễ hiểu. Nếu một phần mềm diệt virus khác đang chịu trách nhiệm, Defender sẽ ở chế độ chờ và Oberih sẽ báo cho bạn.</p></details><details class="card"><summary>Tại sao ứng dụng xin quyền quản trị?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Việc xem vẫn hoạt động mà không cần chúng, trừ danh sách ngoại lệ và khu cách ly. Thay đổi cài đặt và ngoại lệ, cho phép mối đe dọa, khôi phục từ khu cách ly, quét ngoại tuyến và dừng một lần quét thì cần chúng. Bấm <b>Mở khóa</b>, Windows hỏi một lần, và quyền kéo dài đến khi bạn đóng cửa sổ. Oberih không có dịch vụ nền nào có thể thay đổi cài đặt theo yêu cầu của người khác, và trước khi mở khóa nó kiểm tra rằng tệp của chính nó không thay đổi kể từ lúc khởi động.</p></details><details class="card"><summary>Nếu bảo vệ chống giả mạo chặn một cài đặt thì sao?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih không vượt qua nó. Các cài đặt được nó bảo vệ hiện kèm biểu tượng ổ khóa và chỉ có thể thay đổi trong Bảo mật Windows. Điều đó tốt: virus cũng không thể tắt bảo vệ.</p></details><details class="card"><summary>Làm sao để gỡ ứng dụng?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Trong Cài đặt Windows → <b>Ứng dụng</b>, tìm Oberih và chọn <b>Gỡ cài đặt</b>, hoặc dùng nút trong Cài đặt của Oberih. Ứng dụng, lối tắt và cài đặt của nó bị xóa; Microsoft Defender và mọi cài đặt của nó giữ nguyên. Các thay đổi bạn đã làm trong Defender, như ngoại lệ, cũng được giữ. Nếu bạn chỉ chạy tệp đã tải mà không cài đặt, hãy xóa nó và thư mục <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details class="card"><summary>Cập nhật hoạt động thế nào?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Khi Oberih đang mở, nó đọc một tệp nhỏ từ pegasohlib.github.io lúc khởi động và mỗi 12 giờ, nếu kiểm tra tự động bật (mặc định là bật). Nếu có phiên bản mới hơn, một nút xuất hiện. Chỉ khi bạn bấm nó, tệp mới được tải từ GitHub, chữ ký và giá trị kiểm tra (checksum) của nó được kiểm tra, và Oberih khởi động lại thành phiên bản mới.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-vi">
-    <h2 class="eyebrow" id="c-vi">Có gì mới</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>Đã thêm tiếng Belarus.</dd></div><div><dt>0.3.3</dt><dd>Cửa sổ mới «Giấy phép mã nguồn mở» trong Cài đặt: mọi thư viện ứng dụng dùng đều được ghi công, kèm toàn văn giấy phép.</dd></div><div><dt>0.3.2</dt><dd>Ngôn ngữ mới: tiếng Trung phồn thể.</dd></div><div><dt>0.3.1</dt><dd>Ngôn ngữ mới: tiếng Hindi, tiếng Trung giản thể, tiếng Hà Lan và tiếng Ả Rập (bố cục từ phải sang trái).</dd></div></dl>
+    <div class="faqs"><details><summary>Windows báo “Windows đã bảo vệ PC của bạn”. Có sao không?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Có. Windows hiện thông báo này cho những tệp nó không biết rõ, chẳng hạn ứng dụng không có chứng chỉ ký mã trả phí, và Oberih không có. Nhấp <b>More info</b> dưới dòng chữ, rồi <b>Run anyway</b>, không phải <b>Don’t run</b>. Các bản cập nhật của chính Oberih được ký bằng khóa của tác giả và được kiểm tra trước khi cài.</p></details><details><summary>Oberih có phải phần mềm diệt virus không?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Không. Mọi việc quét và bảo vệ đều do Microsoft Defender, phần mềm diệt virus có sẵn trong Windows, đảm nhận. Oberih cho biết trạng thái của nó, quản lý các cài đặt và giải thích chúng bằng lời dễ hiểu. Nếu một phần mềm diệt virus khác đang chịu trách nhiệm, Defender sẽ ở chế độ chờ và Oberih sẽ báo cho bạn.</p></details><details><summary>Tại sao ứng dụng xin quyền quản trị?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Việc xem vẫn hoạt động mà không cần chúng, trừ danh sách ngoại lệ và khu cách ly. Thay đổi cài đặt và ngoại lệ, cho phép mối đe dọa, khôi phục từ khu cách ly, quét ngoại tuyến và dừng một lần quét thì cần chúng. Bấm <b>Mở khóa</b>, Windows hỏi một lần, và quyền kéo dài đến khi bạn đóng cửa sổ. Oberih không có dịch vụ nền nào có thể thay đổi cài đặt theo yêu cầu của người khác, và trước khi mở khóa nó kiểm tra rằng tệp của chính nó không thay đổi kể từ lúc khởi động.</p></details><details><summary>Nếu bảo vệ chống giả mạo chặn một cài đặt thì sao?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih không vượt qua nó. Các cài đặt được nó bảo vệ hiện kèm biểu tượng ổ khóa và chỉ có thể thay đổi trong Bảo mật Windows. Điều đó tốt: virus cũng không thể tắt bảo vệ.</p></details><details><summary>Làm sao để gỡ ứng dụng?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Trong Cài đặt Windows → <b>Ứng dụng</b>, tìm Oberih và chọn <b>Gỡ cài đặt</b>, hoặc dùng nút trong Cài đặt của Oberih. Ứng dụng, lối tắt và cài đặt của nó bị xóa; Microsoft Defender và mọi cài đặt của nó giữ nguyên. Các thay đổi bạn đã làm trong Defender, như ngoại lệ, cũng được giữ. Nếu bạn chỉ chạy tệp đã tải mà không cài đặt, hãy xóa nó và thư mục <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details><summary>Cập nhật hoạt động thế nào?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Khi Oberih đang mở, nó đọc một tệp nhỏ từ pegasohlib.github.io lúc khởi động và mỗi 12 giờ, nếu kiểm tra tự động bật (mặc định là bật). Nếu có phiên bản mới hơn, một nút xuất hiện. Chỉ khi bạn bấm nó, tệp mới được tải từ GitHub, chữ ký và giá trị kiểm tra (checksum) của nó được kiểm tra, và Oberih khởi động lại thành phiên bản mới.</p></details><details><summary>Có gì mới: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Đã thêm tiếng Belarus.</p></details><details class="sha" hidden><summary>Làm sao để kiểm tra tệp?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Mã kiểm tra SHA-256 của tệp bạn tải xuống phải khớp với mã này: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">Câu hỏi và ý tưởng: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/vi/">PegasoHlib — tất cả ứng dụng</a> · <a href="https://pegasohlib.github.io/vi/terms.html">Điều khoản sử dụng</a> · <a href="https://pegasohlib.github.io/vi/site-privacy.html">Quyền riêng tư của trang</a><small class="legal">Lưu trữ: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube và TikTok là nhãn hiệu của các chủ sở hữu tương ứng; PegasoHlib không liên kết với họ.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/vi/">PegasoHlib — tất cả ứng dụng</a> · <a href="https://pegasohlib.github.io/vi/terms.html">Điều khoản sử dụng</a> · <a href="https://pegasohlib.github.io/vi/site-privacy.html">Quyền riêng tư của trang</a><small class="legal">Bản dịch này được tạo bằng AI nên có thể chưa chính xác. Lưu trữ: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube và TikTok là nhãn hiệu của các chủ sở hữu tương ứng; PegasoHlib không liên kết với họ.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

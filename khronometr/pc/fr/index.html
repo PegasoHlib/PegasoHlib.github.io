@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Windows 10 / 11, 64 bits uniquement · 70,3 Mo · gratuit · 27 langues<br>Cherche des mises à jour toutes les 6 heures et les installe toute seule, sauf si tu le désactives ; chaque mise à jour est vérifiée par une signature numérique.</p>
     
     
-    
     </div>
     <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
   </header>
@@ -228,12 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-fr">
     <h2 class="eyebrow" id="q-fr">Questions</h2>
-    <div class="faqs"><details class="card"><summary>À quoi ressemble l’avertissement de Windows ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Une fenêtre bleue intitulée <b>« Windows a protégé votre ordinateur »</b>, avec le texte « Microsoft Defender SmartScreen a empêché le démarrage d’une application non reconnue… ». Clique sur <b>Informations complémentaires</b> sous le texte, puis sur <b>Exécuter quand même</b>, pas sur <b>Ne pas exécuter</b>.</p></details><details class="card"><summary>J’ai déjà l’ancien Khronometr pour PC<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Lance simplement le nouveau fichier et clique sur <b>Mettre à jour</b> : il remplace l’ancien, et ton historique, tes limites, ta connexion Google et le démarrage automatique sont conservés.</p></details><details class="card"><summary>Qu’est-ce que ça ajoute à mon PC ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Elle s’installe pour ton utilisateur, sans droits d’administrateur : le programme dans <code>%LOCALAPPDATA%\Programs\Khronometr</code>, un raccourci du menu Démarrer, une entrée dans Applications installées et le démarrage automatique. Elle crée aussi une tâche de ton utilisateur, « Khronometr Watchdog », qui la relance toutes les 10 minutes si elle ne tourne pas. Uniquement si tu choisis d’importer le journal de Windows, Windows demande une fois les droits d’administrateur et une tâche « Khronometr Journal » est créée ; elle copie le journal toutes les 6 heures dans un dossier de Program Files que seuls les administrateurs et toi pouvez lire.</p></details><details class="card"><summary>Dois-je me connecter avec Google ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Non. Le comptage, les records et les limites fonctionnent sur ce PC sans cela. Connecte-toi pour voir ici ton téléphone et ta tablette et pour partager des limites avec eux.</p></details><details class="card"><summary>Comment le désinstaller ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Paramètres Windows → Applications → Applications installées → Khronometr → Désinstaller</b>. Cela supprime le programme, le raccourci, le démarrage automatique, la tâche Watchdog et l’entrée dans Applications installées. La tâche du journal, si tu en as créé une, s’en aperçoit et se supprime elle-même ainsi que son dossier dans Program Files, en général tout de suite et au plus tard à sa prochaine exécution, sans demander de confirmation. Ton historique reste dans <code>%LOCALAPPDATA%\Khronometr</code> : supprime ce dossier à la main pour l’effacer, et supprime la copie du Drive dans les paramètres de Google Drive si tu utilisais la synchronisation.</p></details><details class="card"><summary>J’ai désinstallé une version antérieure à la 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ces versions laissaient derrière elles une tâche <code>Khronometr\JournalCopy</code>. Supprime-la : elle lancerait un fichier d’un dossier utilisateur avec des droits d’administrateur. Ouvre le Planificateur de tâches et supprime-la, ou exécute dans un terminal administrateur : <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-fr">
-    <h2 class="eyebrow" id="c-fr">Nouveautés</h2>
-    <dl class="card"><div><dt>1.2.2</dt><dd>Correctif de sécurité : le journal de Windows est désormais copié par une tâche système protégée. Elle remplace d’elle-même l’ancienne tâche et disparaît quand tu désinstalles l’appli.</dd></div><div><dt>1.2.1</dt><dd>Aspect plus net : chiffres sans halo flou, fond plus profond et sélections en couleur au lieu du gris.</dd></div><div><dt>1.2.0</dt><dd>Nouveau design en verre : fond aux aurores douces, cartes en verre et un sélecteur fluide partout. La page de chaque appli a désormais son propre choix de période, comme l'écran principal.</dd></div><div><dt>1.1.4</dt><dd>Ajout de la langue biélorusse.</dd></div></dl>
+    <div class="faqs"><details><summary>À quoi ressemble l’avertissement de Windows ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Une fenêtre bleue intitulée <b>« Windows a protégé votre ordinateur »</b>, avec le texte « Microsoft Defender SmartScreen a empêché le démarrage d’une application non reconnue… ». Clique sur <b>Informations complémentaires</b> sous le texte, puis sur <b>Exécuter quand même</b>, pas sur <b>Ne pas exécuter</b>.</p></details><details><summary>J’ai déjà l’ancien Khronometr pour PC<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Lance simplement le nouveau fichier et clique sur <b>Mettre à jour</b> : il remplace l’ancien, et ton historique, tes limites, ta connexion Google et le démarrage automatique sont conservés.</p></details><details><summary>Qu’est-ce que ça ajoute à mon PC ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Elle s’installe pour ton utilisateur, sans droits d’administrateur : le programme dans <code>%LOCALAPPDATA%\Programs\Khronometr</code>, un raccourci du menu Démarrer, une entrée dans Applications installées et le démarrage automatique. Elle crée aussi une tâche de ton utilisateur, « Khronometr Watchdog », qui la relance toutes les 10 minutes si elle ne tourne pas. Uniquement si tu choisis d’importer le journal de Windows, Windows demande une fois les droits d’administrateur et une tâche « Khronometr Journal » est créée ; elle copie le journal toutes les 6 heures dans un dossier de Program Files que seuls les administrateurs et toi pouvez lire.</p></details><details><summary>Dois-je me connecter avec Google ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Non. Le comptage, les records et les limites fonctionnent sur ce PC sans cela. Connecte-toi pour voir ici ton téléphone et ta tablette et pour partager des limites avec eux.</p></details><details><summary>Comment le désinstaller ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Paramètres Windows → Applications → Applications installées → Khronometr → Désinstaller</b>. Cela supprime le programme, le raccourci, le démarrage automatique, la tâche Watchdog et l’entrée dans Applications installées. La tâche du journal, si tu en as créé une, s’en aperçoit et se supprime elle-même ainsi que son dossier dans Program Files, en général tout de suite et au plus tard à sa prochaine exécution, sans demander de confirmation. Ton historique reste dans <code>%LOCALAPPDATA%\Khronometr</code> : supprime ce dossier à la main pour l’effacer, et supprime la copie du Drive dans les paramètres de Google Drive si tu utilisais la synchronisation.</p></details><details><summary>J’ai désinstallé une version antérieure à la 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ces versions laissaient derrière elles une tâche <code>Khronometr\JournalCopy</code>. Supprime-la : elle lancerait un fichier d’un dossier utilisateur avec des droits d’administrateur. Ouvre le Planificateur de tâches et supprime-la, ou exécute dans un terminal administrateur : <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>.</p></details><details><summary>Nouveautés: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Correctif de sécurité : le journal de Windows est désormais copié par une tâche système protégée. Elle remplace d’elle-même l’ancienne tâche et disparaît quand tu désinstalles l’appli.</p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +233,7 @@ main{max-width:960px}
   <p class="contact">Questions et idées: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/fr/">PegasoHlib — toutes les applis</a> · <a href="https://pegasohlib.github.io/fr/terms.html">Conditions d’utilisation</a> · <a href="https://pegasohlib.github.io/fr/site-privacy.html">Confidentialité du site</a><small class="legal">Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube et TikTok sont des marques de leurs propriétaires respectifs ; PegasoHlib n’est pas affilié à ces sociétés.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/fr/">PegasoHlib — toutes les applis</a> · <a href="https://pegasohlib.github.io/fr/terms.html">Conditions d’utilisation</a> · <a href="https://pegasohlib.github.io/fr/site-privacy.html">Confidentialité du site</a><small class="legal">Cette traduction a été réalisée avec l’IA ; elle peut donc contenir des inexactitudes. Hébergeur : GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube et TikTok sont des marques de leurs propriétaires respectifs ; PegasoHlib n’est pas affilié à ces sociétés.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

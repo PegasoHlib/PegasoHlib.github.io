@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../hi/privacy.html">निजता नीति</a></p>
     <p class="note">यह नए वर्ज़न ख़ुद खोज लेता है; इंस्टॉल करने के लिए आप एक बटन दबाते हैं।<br>मुफ़्त · कोई विज्ञापन नहीं · 27 भाषाएँ</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>0 से 100 तक का स्कोर</h3><p>Oberih इस PC पर जो पाता है उसे एक संख्या में बदल देता है, ताकि आप एक नज़र में देख सकें कि आप कितने सुरक्षित हैं।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>नए ख़तरे पर चेतावनी</h3><p>अगर Oberih के खुले रहते Defender कुछ पकड़ता है, तो आपको चेतावनी दिखती है और आवाज़ सुनाई देती है। विंडो बंद होने पर वह निगरानी नहीं करता।</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>जोखिम भरे अपवादों पर निशान</h3><p>जब Defender से कहा जाता है कि वह पूरी ड्राइव, आपका यूज़र फ़ोल्डर, Downloads या .exe और .ps1 जैसे प्रोग्राम प्रकार छोड़ दे, तो यह आपको चेतावनी देता है।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>बिना इंस्टॉल किए चलता है</h3><p>डाउनलोड की गई फ़ाइल को जैसी है वैसी चलाएँ: न .NET इंस्टॉल करना है, न आपसे कुछ चाहिए। इंस्टॉल करने से सिर्फ़ शॉर्टकट और ऐप के अंदर अपडेट जुड़ते हैं।</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-hi">
-    <h2 class="eyebrow" id="x-hi">और भी</h2>
-    <div class="chips"><span>मुफ़्त</span><span>न विज्ञापन, न ट्रैकिंग</span><span>कोई बैकग्राउंड सेवा नहीं, कोई ऑटोस्टार्ट नहीं</span><span>Tamper Protection का सम्मान करता है</span><span>3 साउंड सेट</span></div>
-  </section>
+  <p class="also">मुफ़्त · न विज्ञापन, न ट्रैकिंग · कोई बैकग्राउंड सेवा नहीं, कोई ऑटोस्टार्ट नहीं</p>
 
   <section class="section faq" aria-labelledby="q-hi">
     <h2 class="eyebrow" id="q-hi">सवाल</h2>
-    <div class="faqs"><details class="card"><summary>Windows कहता है “Windows ने आपके PC को सुरक्षित किया”। क्या यह ठीक है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>हाँ। Windows यह उन फ़ाइलों के लिए दिखाता है जिन्हें वह अच्छी तरह नहीं जानता, जैसे वे ऐप जिनके पास भुगतान वाला कोड-साइनिंग सर्टिफ़िकेट नहीं होता, और Oberih के पास ऐसा सर्टिफ़िकेट नहीं है। टेक्स्ट के नीचे <b>अधिक जानकारी</b> पर क्लिक करें, फिर <b>फिर भी चलाएँ</b> पर, <b>न चलाएँ</b> पर नहीं। Oberih के अपने अपडेट लेखक की कुंजी से हस्ताक्षरित होते हैं और इंस्टॉल से पहले जाँचे जाते हैं।</p></details><details class="card"><summary>क्या Oberih एक एंटीवायरस है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। सारी स्कैनिंग और सुरक्षा Microsoft Defender करता है, जो Windows में बना एंटीवायरस है। Oberih उसकी स्थिति दिखाता है, उसकी सेटिंग संभालता है और उन्हें आसान शब्दों में समझाता है। अगर कोई दूसरा एंटीवायरस ज़िम्मेदारी संभाल रहा हो, तो Defender स्टैंडबाय पर रहता है, और Oberih आपको यह बताता है।</p></details><details class="card"><summary>यह एडमिनिस्ट्रेटर अधिकार क्यों माँगता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>देखना इनके बिना भी चलता है, सिवाय अपवादों की सूची और क्वारंटीन के। सेटिंग और अपवाद बदलने, ख़तरों को अनुमति देने, क्वारंटीन से बहाल करने, ऑफ़लाइन स्कैन और स्कैन रोकने के लिए इनकी ज़रूरत होती है। <b>अनलॉक</b> दबाएँ, Windows एक बार पूछता है, और अधिकार विंडो बंद होने तक रहते हैं। Oberih के पास कोई बैकग्राउंड सेवा नहीं है जो किसी और के कहने पर सेटिंग बदल सके, और अनलॉक करने से पहले वह जाँचता है कि उसकी अपनी फ़ाइल शुरू होने के बाद से बदली नहीं है।</p></details><details class="card"><summary>अगर Tamper Protection किसी सेटिंग को रोक दे तो?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih उसे बायपास नहीं करता। जिन सेटिंग की वह रक्षा करता है, वे ताले के निशान के साथ दिखती हैं और सिर्फ़ Windows सुरक्षा में बदली जा सकती हैं। यह अच्छी बात है: कोई वायरस भी सुरक्षा बंद नहीं कर सकता।</p></details><details class="card"><summary>इसे कैसे हटाएँ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows सेटिंग → <b>ऐप</b> में Oberih खोजें और <b>अनइंस्टॉल</b> चुनें, या Oberih की सेटिंग का बटन इस्तेमाल करें। ऐप, उसके शॉर्टकट और उसकी सेटिंग हट जाती हैं; Microsoft Defender और उसकी सारी सेटिंग जैसी हैं वैसी रहती हैं। Defender में आपके किए बदलाव, जैसे अपवाद, भी रहते हैं। अगर आपने डाउनलोड की गई फ़ाइल सिर्फ़ चलाई थी, इंस्टॉल नहीं की थी, तो उसे और फ़ोल्डर <code>%LOCALAPPDATA%\Oberih</code> को मिटा दें।</p></details><details class="card"><summary>अपडेट कैसे काम करते हैं?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>जब Oberih खुला होता है, तो अगर अपने-आप होने वाली जाँच चालू है (यह डिफ़ॉल्ट रूप से चालू रहती है), वह शुरू होने पर और हर 12 घंटे में pegasohlib.github.io से एक छोटी फ़ाइल पढ़ता है। अगर नया वर्ज़न हो, तो एक बटन दिखता है। सिर्फ़ जब आप उसे दबाते हैं, फ़ाइल GitHub से डाउनलोड होती है, उसका हस्ताक्षर और चेकसम जाँचे जाते हैं, और Oberih नए वर्ज़न के रूप में फिर शुरू होता है।</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-hi">
-    <h2 class="eyebrow" id="c-hi">नया क्या है</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>बेलारूसी भाषा जोड़ी गई।</dd></div><div><dt>0.3.3</dt><dd>सेटिंग्स में नई «ओपन-सोर्स लाइसेंस» विंडो: ऐप जिन लाइब्रेरी का उपयोग करता है, उन सभी का श्रेय उनके पूरे लाइसेंस पाठ के साथ।</dd></div><div><dt>0.3.2</dt><dd>नई भाषा: पारंपरिक चीनी।</dd></div><div><dt>0.3.1</dt><dd>नई भाषाएँ: हिन्दी, सरलीकृत चीनी, डच और अरबी (दाएँ से बाएँ लेआउट के साथ)।</dd></div></dl>
+    <div class="faqs"><details><summary>Windows कहता है “Windows ने आपके PC को सुरक्षित किया”। क्या यह ठीक है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>हाँ। Windows यह उन फ़ाइलों के लिए दिखाता है जिन्हें वह अच्छी तरह नहीं जानता, जैसे वे ऐप जिनके पास भुगतान वाला कोड-साइनिंग सर्टिफ़िकेट नहीं होता, और Oberih के पास ऐसा सर्टिफ़िकेट नहीं है। टेक्स्ट के नीचे <b>अधिक जानकारी</b> पर क्लिक करें, फिर <b>फिर भी चलाएँ</b> पर, <b>न चलाएँ</b> पर नहीं। Oberih के अपने अपडेट लेखक की कुंजी से हस्ताक्षरित होते हैं और इंस्टॉल से पहले जाँचे जाते हैं।</p></details><details><summary>क्या Oberih एक एंटीवायरस है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। सारी स्कैनिंग और सुरक्षा Microsoft Defender करता है, जो Windows में बना एंटीवायरस है। Oberih उसकी स्थिति दिखाता है, उसकी सेटिंग संभालता है और उन्हें आसान शब्दों में समझाता है। अगर कोई दूसरा एंटीवायरस ज़िम्मेदारी संभाल रहा हो, तो Defender स्टैंडबाय पर रहता है, और Oberih आपको यह बताता है।</p></details><details><summary>यह एडमिनिस्ट्रेटर अधिकार क्यों माँगता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>देखना इनके बिना भी चलता है, सिवाय अपवादों की सूची और क्वारंटीन के। सेटिंग और अपवाद बदलने, ख़तरों को अनुमति देने, क्वारंटीन से बहाल करने, ऑफ़लाइन स्कैन और स्कैन रोकने के लिए इनकी ज़रूरत होती है। <b>अनलॉक</b> दबाएँ, Windows एक बार पूछता है, और अधिकार विंडो बंद होने तक रहते हैं। Oberih के पास कोई बैकग्राउंड सेवा नहीं है जो किसी और के कहने पर सेटिंग बदल सके, और अनलॉक करने से पहले वह जाँचता है कि उसकी अपनी फ़ाइल शुरू होने के बाद से बदली नहीं है।</p></details><details><summary>अगर Tamper Protection किसी सेटिंग को रोक दे तो?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih उसे बायपास नहीं करता। जिन सेटिंग की वह रक्षा करता है, वे ताले के निशान के साथ दिखती हैं और सिर्फ़ Windows सुरक्षा में बदली जा सकती हैं। यह अच्छी बात है: कोई वायरस भी सुरक्षा बंद नहीं कर सकता।</p></details><details><summary>इसे कैसे हटाएँ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows सेटिंग → <b>ऐप</b> में Oberih खोजें और <b>अनइंस्टॉल</b> चुनें, या Oberih की सेटिंग का बटन इस्तेमाल करें। ऐप, उसके शॉर्टकट और उसकी सेटिंग हट जाती हैं; Microsoft Defender और उसकी सारी सेटिंग जैसी हैं वैसी रहती हैं। Defender में आपके किए बदलाव, जैसे अपवाद, भी रहते हैं। अगर आपने डाउनलोड की गई फ़ाइल सिर्फ़ चलाई थी, इंस्टॉल नहीं की थी, तो उसे और फ़ोल्डर <code>%LOCALAPPDATA%\Oberih</code> को मिटा दें।</p></details><details><summary>अपडेट कैसे काम करते हैं?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>जब Oberih खुला होता है, तो अगर अपने-आप होने वाली जाँच चालू है (यह डिफ़ॉल्ट रूप से चालू रहती है), वह शुरू होने पर और हर 12 घंटे में pegasohlib.github.io से एक छोटी फ़ाइल पढ़ता है। अगर नया वर्ज़न हो, तो एक बटन दिखता है। सिर्फ़ जब आप उसे दबाते हैं, फ़ाइल GitHub से डाउनलोड होती है, उसका हस्ताक्षर और चेकसम जाँचे जाते हैं, और Oberih नए वर्ज़न के रूप में फिर शुरू होता है।</p></details><details><summary>नया क्या है: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>बेलारूसी भाषा जोड़ी गई।</p></details><details class="sha" hidden><summary>फ़ाइल की जाँच कैसे करें?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>डाउनलोड की गई फ़ाइल का SHA-256 चेकसम इससे मेल खाना चाहिए: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">यह अनुवाद AI से किया गया है, इसलिए इसमें अशुद्धियाँ हो सकती हैं। होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

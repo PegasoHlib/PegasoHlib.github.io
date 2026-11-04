@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Тек Windows 10 / 11, 64 биттік · 70,3 МБ · тегін · 27 тіл<br>Жаңартуларды әр 6 сағат сайын тексереді және сен өшірмесең, оларды өзі орнатады; әр жаңарту цифрлық қолтаңба арқылы тексеріледі.</p>
     
     
-    
     </div>
     <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
   </header>
@@ -228,12 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-kk">
     <h2 class="eyebrow" id="q-kk">Сұрақтар</h2>
-    <div class="faqs"><details class="card"><summary>Windows ескертуі қандай болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>«Windows компьютеріңізді қорғады»</b> деген тақырыбы бар көк терезе, мәтіні: «Microsoft Defender SmartScreen танылмаған қолданбаның іске қосылуына жол бермеді…». Мәтіннің астындағы <b>Қосымша ақпарат</b> дегенді бас, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір іске қосу</b> батырмасын бас.</p></details><details class="card"><summary>Менде ДК-ға арналған ескі Хронометр бар<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жаңа файлды іске қосып, <b>Жаңарту</b> батырмасын бас: ол ескісінің орнын алады, ал тарих, лимиттер, Google-ға кіру және автоіске қосу сақталады.</p></details><details class="card"><summary>Ол менің компьютеріме не қосады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ол сенің пайдаланушың үшін, әкімші құқықтарынсыз орнатылады: <code>%LOCALAPPDATA%\Programs\Khronometr</code> ішіндегі бағдарлама, «Іске қосу» мәзіріндегі таңбаша, «Орнатылған қолданбалардағы» жазба және автоіске қосу. Сондай-ақ ол пайдаланушыңның «Khronometr Watchdog» тапсырмасын жасайды, ол жұмыс істемесе, оны әр 10 минут сайын қайта іске қосады. Тек Windows журналын импорттауды өзің таңдасаң, Windows бір рет әкімші құқықтарын сұрайды және «Khronometr Journal» тапсырмасы жасалады; ол журналды әр 6 сағат сайын Program Files ішіндегі тек әкімшілер мен сен оқи алатын қалтаға көшіреді.</p></details><details class="card"><summary>Google арқылы кіру міндетті ме?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жоқ. Санау, рекордтар және лимиттер бұл компьютерде онсыз да жұмыс істейді. Телефоның мен планшетіңді осында көру және олармен лимиттерді бөлісу үшін кір.</p></details><details class="card"><summary>Бағдарламаны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows параметрлері → Қолданбалар → Орнатылған қолданбалар → Хронометр → Жою</b>. Бұл бағдарламаны, таңбашаны, автоіске қосуды, Watchdog тапсырмасын және «Орнатылған қолданбалардағы» жазбаны жояды. Журнал тапсырмасы, егер жасалған болса, мұны байқап, өзін және Program Files ішіндегі қалтасын жояды — әдетте бірден, ал кеш дегенде келесі іске қосылғанда, сұраусыз. Тарихың <code>%LOCALAPPDATA%\Khronometr</code> ішінде қалады: оны жою үшін бұл қалтаны қолмен жой, ал синхрондауды пайдаланған болсаң, Дисктегі көшірмені Google Диск баптауларында жой.</p></details><details class="card"><summary>1.2.2-ден ескі нұсқа жойылған<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Бұл нұсқалар артында <code>Khronometr\JournalCopy</code> тапсырмасын қалдыратын. Оны жой: ол пайдаланушы қалтасындағы файлды әкімші құқықтарымен іске қосар еді. «Тапсырмалар жоспарлағышын» ашып, оны жой немесе әкімші терминалында орында: <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-kk">
-    <h2 class="eyebrow" id="c-kk">Не жаңалық</h2>
-    <dl class="card"><div><dt>1.2.2</dt><dd>Қауіпсіздік түзетуі: Windows журналын енді қорғалған жүйелік тапсырма көшіреді. Ол ескі тапсырманы өзі ауыстырады және қолданбаны жойғанда жоғалады.</dd></div><div><dt>1.2.1</dt><dd>Анығырақ көрініс: сандар бұлыңғыр жарқылсыз, фон тереңірек, ал таңдау сұр емес, түрлі түсті.</dd></div><div><dt>1.2.0</dt><dd>Жаңа шыны дизайн: фонда жұмсақ шұғыла, шыны карталар және барлық жерде бір біркелкі таңдағыш. Енді әр қолданбаның бетінде басты экрандағыдай өз кезеңін таңдауға болады.</dd></div><div><dt>1.1.4</dt><dd>Беларусь тілі қосылды.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows ескертуі қандай болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>«Windows компьютеріңізді қорғады»</b> деген тақырыбы бар көк терезе, мәтіні: «Microsoft Defender SmartScreen танылмаған қолданбаның іске қосылуына жол бермеді…». Мәтіннің астындағы <b>Қосымша ақпарат</b> дегенді бас, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір іске қосу</b> батырмасын бас.</p></details><details><summary>Менде ДК-ға арналған ескі Хронометр бар<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жаңа файлды іске қосып, <b>Жаңарту</b> батырмасын бас: ол ескісінің орнын алады, ал тарих, лимиттер, Google-ға кіру және автоіске қосу сақталады.</p></details><details><summary>Ол менің компьютеріме не қосады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ол сенің пайдаланушың үшін, әкімші құқықтарынсыз орнатылады: <code>%LOCALAPPDATA%\Programs\Khronometr</code> ішіндегі бағдарлама, «Іске қосу» мәзіріндегі таңбаша, «Орнатылған қолданбалардағы» жазба және автоіске қосу. Сондай-ақ ол пайдаланушыңның «Khronometr Watchdog» тапсырмасын жасайды, ол жұмыс істемесе, оны әр 10 минут сайын қайта іске қосады. Тек Windows журналын импорттауды өзің таңдасаң, Windows бір рет әкімші құқықтарын сұрайды және «Khronometr Journal» тапсырмасы жасалады; ол журналды әр 6 сағат сайын Program Files ішіндегі тек әкімшілер мен сен оқи алатын қалтаға көшіреді.</p></details><details><summary>Google арқылы кіру міндетті ме?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жоқ. Санау, рекордтар және лимиттер бұл компьютерде онсыз да жұмыс істейді. Телефоның мен планшетіңді осында көру және олармен лимиттерді бөлісу үшін кір.</p></details><details><summary>Бағдарламаны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows параметрлері → Қолданбалар → Орнатылған қолданбалар → Хронометр → Жою</b>. Бұл бағдарламаны, таңбашаны, автоіске қосуды, Watchdog тапсырмасын және «Орнатылған қолданбалардағы» жазбаны жояды. Журнал тапсырмасы, егер жасалған болса, мұны байқап, өзін және Program Files ішіндегі қалтасын жояды — әдетте бірден, ал кеш дегенде келесі іске қосылғанда, сұраусыз. Тарихың <code>%LOCALAPPDATA%\Khronometr</code> ішінде қалады: оны жою үшін бұл қалтаны қолмен жой, ал синхрондауды пайдаланған болсаң, Дисктегі көшірмені Google Диск баптауларында жой.</p></details><details><summary>1.2.2-ден ескі нұсқа жойылған<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Бұл нұсқалар артында <code>Khronometr\JournalCopy</code> тапсырмасын қалдыратын. Оны жой: ол пайдаланушы қалтасындағы файлды әкімші құқықтарымен іске қосар еді. «Тапсырмалар жоспарлағышын» ашып, оны жой немесе әкімші терминалында орында: <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>.</p></details><details><summary>Не жаңалық: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Қауіпсіздік түзетуі: Windows журналын енді қорғалған жүйелік тапсырма көшіреді. Ол ескі тапсырманы өзі ауыстырады және қолданбаны жойғанда жоғалады.</p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +233,7 @@ main{max-width:960px}
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/kk/">PegasoHlib — барлық қолданбалар</a> · <a href="https://pegasohlib.github.io/kk/terms.html">Пайдалану шарттары</a> · <a href="https://pegasohlib.github.io/kk/site-privacy.html">Сайт құпиялығы</a><small class="legal">Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — иелерінің сауда белгілері; PegasoHlib олармен байланысты емес.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/kk/">PegasoHlib — барлық қолданбалар</a> · <a href="https://pegasohlib.github.io/kk/terms.html">Пайдалану шарттары</a> · <a href="https://pegasohlib.github.io/kk/site-privacy.html">Сайт құпиялығы</a><small class="legal">Бұл аударма жасанды интеллектпен жасалған, сондықтан қателер болуы мүмкін. Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — иелерінің сауда белгілері; PegasoHlib олармен байланысты емес.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

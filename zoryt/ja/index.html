@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">PCとスマホで遊べるRobloxゲーム・多言語対応<br>基本プレイ無料、Robux での任意の購入あり<br>まだ開発中のため、変更されることがあります</p>
     
     
-    
     </div>
     <img class="heroart" src="../img/shot-boss.webp" alt="" width="960" height="540">
   </header>
@@ -229,16 +222,12 @@ main{max-width:960px}
     <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>釣りとダイビング</h3><p>桟橋で釣りをし、沈んだ宝箱を求めて潜り、霧の中をさまよう幽霊船に目を光らせよう。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>帯の試験</h3><p>ハンゾウ先生の試験に合格して、白帯から黒帯まで手に入れよう。</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>図鑑</h3><p>モンスター、世界、ペット、装備、隠された秘密まで、見つけたものはすべて図鑑に。コレクションを集めきると報酬も。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>称号とエモート</h3><p>「黒帯」などの称号を手に入れ、エモートでほかのプレイヤーにあいさつしよう。</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>ペットの交換と合成</h3><p>交換でほかのプレイヤーにペットを贈ったり、余ったペットを合成してより強いものにしたりできます。</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>物語の中での選択</h3><p>一部のクエストでは、登場人物があなたに何かを尋ね、あなたの答えが記憶されます。</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-ja">
-    <h2 class="eyebrow" id="x-ja">ほかにも</h2>
-    <div class="chips"><span>多言語対応</span><span>PCとスマホ</span><span>動かせるタッチボタン</span><span>オートトレーニング</span><span>グラフィック: 自動、低、中、高</span><span>世界とボスごとの音楽</span><span>無料トラックとゴールドトラックのあるオンラインパス</span><span>報酬とクエスト</span></div>
-  </section>
+  <p class="also">多言語対応 · PCとスマホ · オートトレーニング · 無料トラックとゴールドトラックのあるオンラインパス</p>
 
   <section class="section faq" aria-labelledby="q-ja">
     <h2 class="eyebrow" id="q-ja">よくある質問</h2>
-    <div class="faqs"><details class="card"><summary>ZORYT は無料ですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい、無料で遊べます。Robux での任意の購入があります。4つのパス(オンラインパスのゴールドトラック、Auto x3、VIP、Fast Hatch)と、コインのチェスト、Power の巻物、ポーション、スターターパックなどの商品です。そのうちいくつかは、コイン、Power、より速い修行といった進行を販売しています。</p></details><details class="card"><summary>ゲームは完成していますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。Roblox にはありますが、まだ開発中なので、世界、バランス、テキストが変わります。2026年11月1日に、全員の進行状況が最初の状態にリセットされました。</p></details><details class="card"><summary>どこで遊べますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT は、PC とスマホの Roblox の中で動きます。ゲームが完成していないため、このページにはまだゲームへのリンクがありません。</p></details><details class="card"><summary>遊ぶのに友達は必要ですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。すべてをひとりで遊べます。チームの塔には2〜4人が必要で、PvP アリーナと家は、ほかの人と遊ぶためのものです。</p></details><details class="card"><summary>転生では何が消えますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Power、コイン、剣、オーラが最初からやり直しになります。ペット、称号、開いた世界、PATH のアイテム、Robux パスは残り、PATH 用のトークンを得ます。</p></details><details class="card"><summary>ゲームは私について何を保存しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>あなたの進行状況、設定、送った報告を Roblox のデータストアに、プレイのイベントを Roblox の分析に保存します。メール、本名、支払い情報が開発者に届くことはありません。<a href="../ja/privacy.html">プライバシーポリシーを読む</a>。</p></details></div>
+    <div class="faqs"><details><summary>ZORYT は無料ですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい、無料で遊べます。Robux での任意の購入があります。4つのパス(オンラインパスのゴールドトラック、Auto x3、VIP、Fast Hatch)と、コインのチェスト、Power の巻物、ポーション、スターターパックなどの商品です。そのうちいくつかは、コイン、Power、より速い修行といった進行を販売しています。</p></details><details><summary>ゲームは完成していますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。Roblox にはありますが、まだ開発中なので、世界、バランス、テキストが変わります。2026年11月1日に、全員の進行状況が最初の状態にリセットされました。</p></details><details><summary>どこで遊べますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT は、PC とスマホの Roblox の中で動きます。ゲームが完成していないため、このページにはまだゲームへのリンクがありません。</p></details><details><summary>遊ぶのに友達は必要ですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。すべてをひとりで遊べます。チームの塔には2〜4人が必要で、PvP アリーナと家は、ほかの人と遊ぶためのものです。</p></details><details><summary>転生では何が消えますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Power、コイン、剣、オーラが最初からやり直しになります。ペット、称号、開いた世界、PATH のアイテム、Robux パスは残り、PATH 用のトークンを得ます。</p></details><details><summary>ゲームは私について何を保存しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>あなたの進行状況、設定、送った報告を Roblox のデータストアに、プレイのイベントを Roblox の分析に保存します。メール、本名、支払い情報が開発者に届くことはありません。<a href="../ja/privacy.html">プライバシーポリシーを読む</a>。</p></details></div>
   </section>
-
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
@@ -249,7 +238,7 @@ main{max-width:960px}
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">この翻訳は AI で作成したため、不正確な部分が含まれる場合があります。 ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

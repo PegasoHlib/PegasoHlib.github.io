@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../ja/privacy.html">プライバシーポリシー</a></p>
     <p class="note">新しいバージョンは自分で見つけ、インストールはボタンを押して行います。<br>無料 · 広告なし · 27 言語</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>0から100のスコア</h3><p>オベリフは、この PC で見つけたものをひとつの数字にまとめるので、どのくらい守られているかが一目でわかります。</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>新しい脅威の通知</h3><p>オベリフが開いている間に Defender が何かを検出すると、警告が表示され、音が鳴ります。ウィンドウが閉じているときは監視しません。</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>危険な除外を警告</h3><p>Defender がドライブ全体、あなたのユーザーフォルダ、ダウンロード、または .exe や .ps1 などのプログラムの種類をスキップするように設定されていると、警告します。</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>インストールなしで実行</h3><p>ダウンロードしたファイルをそのまま実行できます。インストールする .NET も、あなたがすることも不要です。インストールすると、ショートカットとアプリ内アップデートが加わるだけです。</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-ja">
-    <h2 class="eyebrow" id="x-ja">さらに</h2>
-    <div class="chips"><span>無料</span><span>広告・追跡なし</span><span>バックグラウンドサービスも、自動起動もありません</span><span>改ざん防止を尊重</span><span>サウンドセット3種類</span></div>
-  </section>
+  <p class="also">無料 · 広告・追跡なし · バックグラウンドサービスも、自動起動もありません</p>
 
   <section class="section faq" aria-labelledby="q-ja">
     <h2 class="eyebrow" id="q-ja">よくある質問</h2>
-    <div class="faqs"><details class="card"><summary>「Windows によって PC が保護されました」と表示されます。大丈夫？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい。Windows は、有料のコード署名証明書がないアプリなど、よく知らないファイルに対してこれを表示します。オベリフにはその証明書がありません。文章の下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックしてください。オベリフ自身のアップデートは作者の鍵で署名されており、インストール前に検証されます。</p></details><details class="card"><summary>オベリフはウイルス対策ソフトですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。スキャンと保護はすべて、Windows に組み込まれたウイルス対策ソフト Microsoft Defender が行います。オベリフはその状態を表示し、設定を管理し、わかりやすく説明します。ほかのウイルス対策ソフトが使われている場合、Defender は待機状態になり、オベリフがそれを知らせます。</p></details><details class="card"><summary>なぜ管理者権限を求めるのですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>除外リストと隔離を除き、表示するだけなら不要です。設定や除外の変更、脅威の許可、隔離からの復元、オフラインスキャン、スキャンの停止には必要です。<b>ロック解除</b>を押すと、Windows が一度確認し、その権限はウィンドウを閉じるまで続きます。オベリフには、他人の要求で設定を変更できるようなバックグラウンドサービスはなく、ロックを解除する前に、自分のファイルが起動後に変更されていないか確認します。</p></details><details class="card"><summary>改ざん防止が設定をブロックしたら？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフはそれを回避しません。改ざん防止で守られている設定は鍵マークで表示され、「Windows セキュリティ」でのみ変更できます。これは良いことで、ウイルスも保護をオフにできません。</p></details><details class="card"><summary>削除するには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows の設定 → <b>アプリ</b>でオベリフを探して<b>アンインストール</b>を選ぶか、オベリフの設定にあるボタンを使ってください。アプリ、ショートカット、設定が削除され、Microsoft Defender とそのすべての設定はそのまま残ります。除外など、Defender であなたが行った変更も残ります。インストールせずにダウンロードしたファイルを実行しただけの場合は、そのファイルとフォルダ <code>%LOCALAPPDATA%\Oberih</code> を削除してください。</p></details><details class="card"><summary>アップデートはどのように行われますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフが開いている間、自動確認がオン(初期設定ではオンです)であれば、起動時と12時間ごとに pegasohlib.github.io から小さなファイルを読み取ります。より新しいバージョンがあると、ボタンが表示されます。あなたがそのボタンを押したときだけ、GitHub からファイルがダウンロードされ、署名とチェックサムが確認されたあと、オベリフが新しいバージョンとして再起動します。</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-ja">
-    <h2 class="eyebrow" id="c-ja">新機能</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>ベラルーシ語を追加しました。</dd></div><div><dt>0.3.3</dt><dd>設定に「オープンソースライセンス」画面を追加：アプリが使うすべてのライブラリを、ライセンス全文とともに記載。</dd></div><div><dt>0.3.2</dt><dd>新しい言語：繁体字中国語。</dd></div><div><dt>0.3.1</dt><dd>新しい言語：ヒンディー語、簡体字中国語、オランダ語、アラビア語（右から左のレイアウト）。</dd></div></dl>
+    <div class="faqs"><details><summary>「Windows によって PC が保護されました」と表示されます。大丈夫？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい。Windows は、有料のコード署名証明書がないアプリなど、よく知らないファイルに対してこれを表示します。オベリフにはその証明書がありません。文章の下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックしてください。オベリフ自身のアップデートは作者の鍵で署名されており、インストール前に検証されます。</p></details><details><summary>オベリフはウイルス対策ソフトですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。スキャンと保護はすべて、Windows に組み込まれたウイルス対策ソフト Microsoft Defender が行います。オベリフはその状態を表示し、設定を管理し、わかりやすく説明します。ほかのウイルス対策ソフトが使われている場合、Defender は待機状態になり、オベリフがそれを知らせます。</p></details><details><summary>なぜ管理者権限を求めるのですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>除外リストと隔離を除き、表示するだけなら不要です。設定や除外の変更、脅威の許可、隔離からの復元、オフラインスキャン、スキャンの停止には必要です。<b>ロック解除</b>を押すと、Windows が一度確認し、その権限はウィンドウを閉じるまで続きます。オベリフには、他人の要求で設定を変更できるようなバックグラウンドサービスはなく、ロックを解除する前に、自分のファイルが起動後に変更されていないか確認します。</p></details><details><summary>改ざん防止が設定をブロックしたら？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフはそれを回避しません。改ざん防止で守られている設定は鍵マークで表示され、「Windows セキュリティ」でのみ変更できます。これは良いことで、ウイルスも保護をオフにできません。</p></details><details><summary>削除するには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows の設定 → <b>アプリ</b>でオベリフを探して<b>アンインストール</b>を選ぶか、オベリフの設定にあるボタンを使ってください。アプリ、ショートカット、設定が削除され、Microsoft Defender とそのすべての設定はそのまま残ります。除外など、Defender であなたが行った変更も残ります。インストールせずにダウンロードしたファイルを実行しただけの場合は、そのファイルとフォルダ <code>%LOCALAPPDATA%\Oberih</code> を削除してください。</p></details><details><summary>アップデートはどのように行われますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフが開いている間、自動確認がオン(初期設定ではオンです)であれば、起動時と12時間ごとに pegasohlib.github.io から小さなファイルを読み取ります。より新しいバージョンがあると、ボタンが表示されます。あなたがそのボタンを押したときだけ、GitHub からファイルがダウンロードされ、署名とチェックサムが確認されたあと、オベリフが新しいバージョンとして再起動します。</p></details><details><summary>新機能: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ベラルーシ語を追加しました。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">ご質問・アイデア: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">この翻訳は AI で作成したため、不正確な部分が含まれる場合があります。 ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

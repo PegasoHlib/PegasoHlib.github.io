@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -86,6 +86,7 @@ main{max-width:760px}
 .hero h1{font-size:clamp(28px,6.4vw,40px);line-height:1.12;margin:4px 0 12px}
 .date{display:inline-block;margin:0 0 16px;font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
 .lead{margin:0 auto;max-width:600px;font-size:17.5px;color:var(--ink2);text-wrap:pretty}
+.refnote{margin:22px 0 0;text-align:center;font-size:14px;color:var(--ink3)}
 .glance{margin:32px 0 0}
 .glance ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
 @media (min-width:480px){.glance ul>li:last-child:nth-child(odd){grid-column:1/-1}}
@@ -107,7 +108,7 @@ main{max-width:760px}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
 th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
-thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
+thead th{border-top:0;font-size:14px;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
 td:last-child{font-weight:600;color:var(--ink)}
@@ -165,14 +166,14 @@ td:last-child{font-weight:600;color:var(--ink)}
 
   <nav class="toc" aria-label="本页内容">
     <p class="eyebrow">本页内容</p>
-    <div class="chips"><a href="#zh-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>哪些内容留在你的手机上</a><a href="#zh-lock"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg>封存的信是如何受到保护的</a><a href="#zh-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google 云端硬盘（可选）</a><a href="#zh-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>如何使用 Google 数据</a><a href="#zh-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>校验日期</a><a href="#zh-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>城市和天气（可选）</a><a href="#zh-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>歌曲搜索（可选）</a><a href="#zh-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>作为礼物的胶囊</a><a href="#zh-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>通知、日历和小组件</a><a href="#zh-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>更新</a><a href="#zh-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kolys 不会做的事</a><a href="#zh-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>应用请求的权限</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>删除你的数据</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
+    <div class="chips"><a href="#zh-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>哪些内容留在你的手机上</a><a href="#zh-lock"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg>封存的信是如何受到保护的</a><a href="#zh-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google 云端硬盘（可选）</a><a href="#zh-copy"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>文件备份（如果你创建了）</a><a href="#zh-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>如何使用 Google 数据</a><a href="#zh-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>校验日期</a><a href="#zh-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>城市和天气（可选）</a><a href="#zh-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>歌曲搜索（可选）</a><a href="#zh-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>作为礼物的胶囊</a><a href="#zh-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>通知、日历和小组件</a><a href="#zh-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>更新</a><a href="#zh-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kolys 不会做的事</a><a href="#zh-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>应用请求的权限</a><a href="#zh-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>删除你的数据</a><a href="#zh-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>儿童</a><a href="#zh-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的变更</a><a href="#zh-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>联系方式</a></div>
   </nav>
 
   <section class="card tablecard" aria-labelledby="zh-table">
     <h2 id="zh-table">有哪些数据、存在哪里、谁能看到</h2>
     <table>
       <thead><tr><th scope="col">数据</th><th scope="col">保存位置</th><th scope="col">谁能看到</th></tr></thead>
-      <tbody><tr><th scope="row">胶囊和草稿：信件、照片、视频、语音消息、“此刻”</th><td data-label="保存位置">在你的手机上，未加密；如果你开启了云端硬盘，每个封存的胶囊也会作为未加密的 zip 保存在你自己的 Google 云端硬盘中</td><td data-label="谁能看到">你、突破了 Android 应用保护的人，以及能看到云端硬盘副本的 Google</td></tr><tr><th scope="row">“此刻”：手机的名称或型号和电量（每次都有）、心情、歌曲、城市、天气</th><td data-label="保存位置">在胶囊内部：在你的手机上、云端硬盘中和礼物文件里</td><td data-label="谁能看到">任何能看到该胶囊的人，因此也包括礼物和群组胶囊的收件人</td></tr><tr><th scope="row">设置、你的生日、已连接 Google 账号的电子邮件地址</th><td data-label="保存位置">在你的手机上</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">大致位置</th><td data-label="保存位置">不保存：只转换一次城市名称；只保留城市和天气</td><td data-label="谁能看到">MET Norway（精确到约一公里），用于获取天气</td></tr><tr><th scope="row">歌曲搜索中输入的文字</th><td data-label="保存位置">不保存；胶囊只保留歌曲名称、艺人和年份</td><td data-label="谁能看到">MusicBrainz，用于查找歌曲名称</td></tr><tr><th scope="row">礼物、群组胶囊，以及发给群组组织者的信件</th><td data-label="保存位置">在你自己发送的文件中，然后在每位收件人的应用里</td><td data-label="谁能看到">你、你发送给的人，以及你用来发送的应用；没有暗语时，密钥就在文件里面</td></tr></tbody>
+      <tbody><tr><th scope="row">胶囊和草稿：信件、照片、视频、语音消息、“此刻”</th><td data-label="保存位置">在你的手机上，未加密；如果你开启了云端硬盘，每个封存的胶囊也会作为未加密的 zip 保存在你自己的 Google 云端硬盘中</td><td data-label="谁能看到">你、突破了 Android 应用保护的人，以及能看到云端硬盘副本的 Google</td></tr><tr><th scope="row">文件备份（只有你保存了才有）</th><td data-label="保存位置">存在你选择的地方；只有用暗号锁住才会加密</td><td data-label="谁能看到">拿到文件的人</td></tr><tr><th scope="row">“此刻”：手机的名称或型号和电量（每次都有）、心情、歌曲、城市、天气</th><td data-label="保存位置">在胶囊内部：在你的手机上、云端硬盘中和礼物文件里</td><td data-label="谁能看到">任何能看到该胶囊的人，因此也包括礼物和群组胶囊的收件人</td></tr><tr><th scope="row">设置、你的生日、已连接 Google 账号的电子邮件地址</th><td data-label="保存位置">在你的手机上</td><td data-label="谁能看到">只有你</td></tr><tr><th scope="row">大致位置</th><td data-label="保存位置">不保存：只转换一次城市名称；只保留城市和天气</td><td data-label="谁能看到">MET Norway（精确到约一公里），用于获取天气</td></tr><tr><th scope="row">歌曲搜索中输入的文字</th><td data-label="保存位置">不保存；胶囊只保留歌曲名称、艺人和年份</td><td data-label="谁能看到">MusicBrainz，用于查找歌曲名称</td></tr><tr><th scope="row">礼物、群组胶囊，以及发给群组组织者的信件</th><td data-label="保存位置">在你自己发送的文件中，然后在每位收件人的应用里</td><td data-label="谁能看到">你、你发送给的人，以及你用来发送的应用；没有暗语时，密钥就在文件里面</td></tr></tbody>
     </table>
   </section>
 
@@ -191,13 +192,18 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>如果你使用 Google 登录，Kolys 只请求一项权限：<code>drive.appdata</code>。它只允许应用在你 Google 云端硬盘的隐藏应用文件夹中创建、读取和删除它自己的文件。应用无法查看或更改你云端硬盘中的任何其他文件。</p><p>每个封存的胶囊都会作为一个普通的 zip 文件保存在那里，文件名使用胶囊的随机 ID（信件、它的照片、视频、语音留言和“此刻”），没有加密。开启日期和实际开启的日期也会作为该文件的属性保存。草稿不会上传。有网络时，更改几秒钟后会开始同步，此外大约每天同步两次。这就是在新手机上找回你的封存胶囊的方式。应用还会读取你账号的电子邮件地址，仅用于告诉你连接的是哪个账号。</p><p>数据通过加密连接在你的手机和 Google 之间直接传输，中间没有其他服务器。存储在你云端硬盘中的内容适用 Google 自己的隐私政策。</p>
     
   </section>
+  <section class="card sec" id="zh-copy">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>文件备份（如果你创建了）</h2></div>
+    <p>在设置里，你可以把所有胶囊和草稿存进一个文件，存到你选择的地方，不用 Google。应用不会把这个文件发送到任何地方。如果你把它存到云端文件夹，就由那个服务来保存。</p><p>没有暗号，文件不会加密：拿到文件的人能读到所有的信，包括已封存的。有暗号，文件会加密，安全程度取决于暗号有多难猜。如果你忘了暗号，谁也打不开这个文件。</p><p>恢复会放回手机上没有的胶囊，已封存的仍然封存。仍在为群组收集的信，以及你发出的礼物的暗号，不在文件里。</p>
+    
+  </section>
   <section class="card sec" id="zh-google">
     <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>如何使用 Google 数据</h2></div>
     <p>Kolys 对从 Google API 获取的信息的使用及向任何其他应用的传输，将遵守 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 服务用户数据政策</a>，包括其中的“有限使用”要求。</p><ul><li>来自你 Google 云端硬盘的数据只用于保存你的胶囊，并把它们恢复到你的手机上。</li><li>这些数据从不出售，从不用于广告，也从不与任何人分享。</li><li>没有任何人会阅读它们：开发者无法访问你的云端硬盘或你的信件。</li></ul>
     
   </section>
   <section class="card sec" id="zh-time">
-    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>校验日期</h2></div>
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>校验日期</h2></div>
     <p>为了防止有人通过调整手机时钟提前打开胶囊，应用会向网络服务器（www.google.com 或 www.cloudflare.com）询问当前时间，并从回复中读取日期。胶囊到期那天，在通知你之前，它会再询问一次。不会发送任何关于你或你的胶囊的信息。和任何网络请求一样，这些服务能看到你的 IP 地址。</p>
     
   </section>
@@ -212,7 +218,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
   <section class="card sec" id="zh-gifts">
-    <div class="sechead"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>作为礼物的胶囊</h2></div>
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>作为礼物的胶囊</h2></div>
     <p>给别人的胶囊会变成一个由你自己通过所选应用（即时通讯应用、电子邮件、Google 云端硬盘）发送的文件。开发者永远不会收到它。该文件包含信件及其照片、视频、语音留言和“此刻”（含手机的名称或型号和电量），以及你的名字（如果你提供）。文件名包含你为收件人或群组输入的名称，即时通讯应用或邮件服务可以看到它。</p><p>没有暗语时，文件是加密的，但密钥就保存在文件里面。这只能防止朋友不小心提前解开它，防不住任何拿到文件并且有些本事的人。如果你用暗语锁定它，密钥由暗语生成，不在任何文件中，所以文件的安全程度取决于暗语有多难猜。暗语只保存在你的手机上，这样你可以再次查看，它绝不会进入文件、你的 Google 云端硬盘或发给开发者。只有你写下的提示可以在解锁前被读取。</p><p>群组胶囊还会带有群组的名称和你列出的名字。当一个群组共同写一个胶囊时，邀请文件会以未加密的方式包含群组的密钥，所以任何拿到邀请的人都可以读取寄回的信。每个人的信会作为文件发送给收集的人，并用该密钥加密。在胶囊封存之前，收集到的信作为普通文件存放在组织者的应用存储空间中；应用只显示谁写了，不显示写了什么，它们也不会被复制到云端硬盘。</p><p>收件人在 Kolys 中打开文件后，他们的副本就存放在他们的应用里，和任何胶囊一样没有加密，如果他们使用的话，也会存放在他们自己的 Google 云端硬盘中。你已发出的文件会留在收件人那里，以及即时通讯应用或邮件服务里；在 Kolys 中删除胶囊无法把它们收回。</p>
     
   </section>
@@ -238,7 +244,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   </section>
   <section class="card sec" id="zh-delete">
     <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>删除你的数据</h2></div>
-    <ul><li>在应用中删除胶囊，会立即从你的手机上移除这封信、它的文件、“此刻”、它的提醒和保存的礼物暗语，无论你是否已登录。只会留下一个带有胶囊随机 ID 的空白行，直到下一次同步。旧版本遗留的内容会在新版本启动时被清空。</li><li>在 Google 云端硬盘上，胶囊的 zip 会被删除，并留下一个以 .gone 结尾、以胶囊 ID 命名的小文件。它只包含“gone”这个词，用来告诉你的其他手机也删除该胶囊。在那之后你在另一部手机上更改过的胶囊会保留。一封回信会保留它所回复的那些信的副本，所以即使删除原件，它们也不会丢失。</li><li>卸载应用会移除它在手机上存储的所有内容，但不会移除你 Google 云端硬盘中的副本，也不会移除你发给别人的文件。</li><li>如需在不使用应用的情况下删除云端硬盘中的副本：在网页上打开 Google 云端硬盘 → 设置 → 管理应用 → Kolys → 选项 → 删除隐藏的应用数据。</li><li>你可以随时在 <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> 撤销应用的访问权限。</li></ul>
+    <ul><li>在应用中删除胶囊，会立即从你的手机上移除这封信、它的文件、“此刻”、它的提醒和保存的礼物暗语，无论你是否已登录。只会留下一个带有胶囊随机 ID 的空白行，直到下一次同步。旧版本遗留的内容会在新版本启动时被清空。</li><li>在 Google 云端硬盘上，胶囊的 zip 会被删除，并留下一个以 .gone 结尾、以胶囊 ID 命名的小文件。它只包含“gone”这个词，用来告诉你的其他手机也删除该胶囊。在那之后你在另一部手机上更改过的胶囊会保留。一封回信会保留它所回复的那些信的副本，所以即使删除原件，它们也不会丢失。</li><li>卸载应用会删除它存在手机上的所有内容，但不会删除你 Google Drive 里的备份、你保存的备份文件，也不会删除你发给别人的文件。</li><li>如需在不使用应用的情况下删除云端硬盘中的副本：在网页上打开 Google 云端硬盘 → 设置 → 管理应用 → Kolys → 选项 → 删除隐藏的应用数据。</li><li>你可以随时在 <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> 撤销应用的访问权限。</li></ul>
     
   </section>
   <section class="card sec" id="zh-children">
@@ -247,7 +253,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
   <section class="card sec" id="zh-changes">
-    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的变更</h2></div>
+    <div class="sechead"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的变更</h2></div>
     <p>如果应用开始以新的方式处理数据，本页面会先行更新，并在顶部标注新的日期。</p>
     
   </section>
@@ -256,9 +262,10 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>隐私相关问题：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p>
     
   </section>
+  <p class="refnote">本页面最初以英文撰写。如译文与英文有出入，以英文为准。</p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/zh/">PegasoHlib — 全部应用</a> · <a href="https://pegasohlib.github.io/zh/terms.html">使用条款</a> · <a href="https://pegasohlib.github.io/zh/site-privacy.html">网站隐私</a><small class="legal">托管服务：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube 和 TikTok 是其各自所有者的商标；PegasoHlib 与它们没有关联。</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/zh/">PegasoHlib — 全部应用</a> · <a href="https://pegasohlib.github.io/zh/terms.html">使用条款</a> · <a href="https://pegasohlib.github.io/zh/site-privacy.html">网站隐私</a><small class="legal">本译文由 AI 完成，可能存在不准确之处。 托管服务：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube 和 TikTok 是其各自所有者的商标；PegasoHlib 与它们没有关联。</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

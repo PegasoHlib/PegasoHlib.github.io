@@ -79,7 +79,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -93,7 +94,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -129,18 +129,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -173,15 +168,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -233,7 +227,6 @@ main{max-width:960px}
     <p class="note">A Roblox game for PC and phones, in many languages<br>Free to play, with optional purchases for Robux<br>Still in development: things can change</p>
     
     
-    
     </div>
     <img class="heroart" src="img/shot-boss.webp" alt="" width="960" height="540">
   </header>
@@ -255,16 +248,12 @@ main{max-width:960px}
     <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Fishing and diving</h3><p>Fish off the piers, dive for sunken chests and keep an eye out for the ghost ship drifting through the fog.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Belt exams</h3><p>Earn your belts from white to black by passing Sensei Hanzo's exams.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>The Codex</h3><p>Monsters, worlds, pets, gear and hidden secrets: everything you find goes into the Codex, with rewards for full collections.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titles and emotes</h3><p>Earn titles for your feats, like Black Belt, and greet other players with emotes.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Trade and fuse pets</h3><p>Give pets to other players in a trade, or fuse spare ones into something stronger.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>Choices in the story</h3><p>In some quests a character asks you something, and your answer is remembered.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-en">
-    <h2 class="eyebrow" id="x-en">Also</h2>
-    <div class="chips"><span>Many languages</span><span>PC and phones</span><span>Movable touch buttons</span><span>Auto-training</span><span>Graphics: Auto, Low, Medium, High</span><span>Music for worlds and bosses</span><span>Online Pass with a free and a gold track</span><span>Rewards and quests</span></div>
-  </section>
+  <p class="also">Many languages · PC and phones · Auto-training · Online Pass with a free and a gold track</p>
 
   <section class="section faq" aria-labelledby="q-en">
     <h2 class="eyebrow" id="q-en">Questions</h2>
-    <div class="faqs"><details class="card"><summary>Is ZORYT free?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Yes, you can play it for free. There are optional purchases for Robux: four passes (the gold track of the Online Pass, Auto x3, VIP and Fast Hatch) and products such as coin chests, Power Scrolls, potions and a Starter Pack. Some of them sell progress, like coins, Power or faster training.</p></details><details class="card"><summary>Is the game finished?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. It is on Roblox but still in development, so worlds, balance and texts change. On 1 November 2026 everyone's progress was reset to the start.</p></details><details class="card"><summary>Where can I play it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT runs inside Roblox, on PC and phones. This page has no link to it yet, because the game is not finished.</p></details><details class="card"><summary>Do I need friends to play?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. You can play it all alone. The team tower needs 2 to 4 players, and PvP arenas and houses are for playing with others.</p></details><details class="card"><summary>What does a rebirth erase?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Your Power, coins, swords and auras start over. You keep your pets, titles, opened worlds, PATH items and Robux passes, and you earn tokens for the PATH.</p></details><details class="card"><summary>What does the game save about me?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Your progress, your settings and the reports you send, in data stores on Roblox, plus play events in Roblox's analytics. No email, real name or payment details reach the developer. <a href="privacy.html">Read the privacy policy</a>.</p></details></div>
+    <div class="faqs"><details><summary>Is ZORYT free?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Yes, you can play it for free. There are optional purchases for Robux: four passes (the gold track of the Online Pass, Auto x3, VIP and Fast Hatch) and products such as coin chests, Power Scrolls, potions and a Starter Pack. Some of them sell progress, like coins, Power or faster training.</p></details><details><summary>Is the game finished?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. It is on Roblox but still in development, so worlds, balance and texts change. On 1 November 2026 everyone's progress was reset to the start.</p></details><details><summary>Where can I play it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT runs inside Roblox, on PC and phones. This page has no link to it yet, because the game is not finished.</p></details><details><summary>Do I need friends to play?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. You can play it all alone. The team tower needs 2 to 4 players, and PvP arenas and houses are for playing with others.</p></details><details><summary>What does a rebirth erase?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Your Power, coins, swords and auras start over. You keep your pets, titles, opened worlds, PATH items and Robux passes, and you earn tokens for the PATH.</p></details><details><summary>What does the game save about me?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Your progress, your settings and the reports you send, in data stores on Roblox, plus play events in Roblox's analytics. No email, real name or payment details reach the developer. <a href="privacy.html">Read the privacy policy</a>.</p></details></div>
   </section>
-
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>

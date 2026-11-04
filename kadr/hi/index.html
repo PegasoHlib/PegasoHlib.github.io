@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows के लिए डाउनलोड करें</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../hi/privacy.html">निजता नीति</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">लाइसेंस और सोर्स कोड</a></p>
+    <p class="textlinks"><a href="../hi/privacy.html">निजता नीति</a></p>
     <p class="note">मुफ़्त · कोई विज्ञापन नहीं · Windows 10 और 11 (64-बिट)<br>अपडेट ऐप के अंदर से जाँचे जाते हैं; आप अपने-आप होने वाला डाउनलोड बंद कर सकते हैं<br>27 भाषाएँ, इस वेबसाइट जितनी ही</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>परतें और कैनवास के साइज़</h3><p>फ़ोटो और टेक्स्ट परतों के रूप में। थंबनेल, चौकोर पोस्ट और स्टोरी के लिए तैयार साइज़।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>बैकग्राउंड हटाना</h3><p>एक क्लिक में, आपके PC पर। मॉडल, लगभग 115 MB का, एक बार डाउनलोड होता है। ब्लर ब्रश और <b>बैकग्राउंड ब्लर करें</b> भी है।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>AI से बेहतरी ×2 या ×4</h3><p>2–5 MB के Real-ESRGAN मॉडल, एक बार डाउनलोड होते हैं। आपकी फ़ोटो कभी अपलोड नहीं होतीं।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>ब्रश, आकृतियाँ और क्लिपबोर्ड</h3><p>ब्रश, इरेज़र, तीर और आकृतियाँ। <b>Ctrl+V</b> स्क्रीनशॉट पेस्ट करता है, <b>Ctrl+Shift+C</b> नतीजा कॉपी करता है।</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-hi">
-    <h2 class="eyebrow" id="x-hi">और भी</h2>
-    <div class="chips"><span>मुफ़्त, बिना विज्ञापन</span><span>लाइट और डार्क थीम</span><span>टेक्स्ट का साइज़ बदलें</span><span>TikTok के लिए सेफ़ ज़ोन</span><span>वीडियो प्रोजेक्ट का ऑटोसेव</span><span>हस्ताक्षरित अपडेट</span><span>एडमिनिस्ट्रेटर अधिकारों की ज़रूरत नहीं</span><span>ओपन-सोर्स हिस्से और Microsoft DirectML, लाइसेंस अंदर हैं</span></div>
-  </section>
+  <p class="also">मुफ़्त, बिना विज्ञापन · वीडियो प्रोजेक्ट का ऑटोसेव · हस्ताक्षरित अपडेट</p>
 
   <section class="section faq" aria-labelledby="q-hi">
     <h2 class="eyebrow" id="q-hi">सवाल</h2>
-    <div class="faqs"><details class="card"><summary>Windows कहता है “Windows ने आपके PC को सुरक्षित किया”। क्या यह ठीक है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows यह उन ऐप के लिए दिखाता है जिनके पास भुगतान वाला कोड-साइनिंग सर्टिफ़िकेट नहीं होता, और Kadr के पास नहीं है। <b>अधिक जानकारी</b> पर क्लिक करें, फिर <b>फिर भी चलाएँ</b> पर। Kadr के अपने अपडेट इंस्टॉल से पहले डिजिटल हस्ताक्षर से जाँचे जाते हैं।</p></details><details class="card"><summary>क्या मेरे वीडियो या फ़ोटो कहीं अपलोड होते हैं?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। वे आपके कंप्यूटर पर रहते हैं, और बैकग्राउंड हटाना व बेहतरी भी उसी पर चलती है। इकलौता अपवाद ऑटो-सबटाइटल है, और सिर्फ़ तब जब आप उन्हें शुरू करें: चुनी हुई क्लिप का ऑडियो आपकी अपनी API कुंजी से ElevenLabs को जाता है।</p></details><details class="card"><summary>Kadr को इंटरनेट की क्या ज़रूरत है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>अपडेट जाँचने के लिए (Kadr शुरू होने पर और हर 6 घंटे में), अपडेट डाउनलोड करने के लिए, और हर AI मॉडल के लिए एक बार। जाँच को ख़ुद बंद नहीं किया जा सकता; सेटिंग → अपडेट में आप सिर्फ़ अपने-आप होने वाला डाउनलोड बंद कर सकते हैं। ऑटो-सबटाइटल भी ऑनलाइन जाते हैं, अगर आप उन्हें इस्तेमाल करें।</p></details><details class="card"><summary>क्या AI के लिए दमदार ग्राफ़िक्स कार्ड चाहिए?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं, लेकिन उसके बिना यह बहुत धीमा होता है। DirectML चालू होने पर (डिफ़ॉल्ट) AI ग्राफ़िक्स कार्ड इस्तेमाल करता है; बैकग्राउंड हटाने में लगभग 5 GB वीडियो मेमोरी लग सकती है। सेटिंग → AI में आप सिर्फ़ प्रोसेसर पर जा सकते हैं।</p></details><details class="card"><summary>अगर Kadr या PC क्रैश हो जाए तो?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>वीडियो प्रोजेक्ट हर 45 सेकंड में अपने-आप सहेजा जाता है और Kadr अगली बार उसे वापस पाने का प्रस्ताव देता है। फ़ोटो प्रोजेक्ट अपने-आप नहीं सहेजे जाते, इसलिए उन्हें ख़ुद सहेजें।</p></details><details class="card"><summary>इसे कैसे हटाऊँ, और क्या रह जाता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kadr को Windows सेटिंग → <b>ऐप</b> में अनइंस्टॉल करें। आपकी सेटिंग, हाल के प्रोजेक्ट के रास्ते और एन्क्रिप्टेड ElevenLabs कुंजी रजिस्ट्री में रहती हैं, और ऑटोसेव, कैश और मॉडल <code>%LOCALAPPDATA%\Kadr</code> में रहते हैं। इन्हें हटाने का तरीक़ा गोपनीयता नीति में है।</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-hi">
-    <h2 class="eyebrow" id="c-hi">नया क्या है</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>फ़ोटो एडिटर में धुंधलापन: अलग ‘धुंधलापन’ स्लाइडर (पहले से कहीं ज़्यादा तेज़), ‘धुंधला करें’ ब्रश जो सिर्फ़ वहीं धुंधला करता है जहाँ आप चलाएँ, और ‘बैकग्राउंड धुंधला करें’: व्यक्ति या वस्तु साफ़ रहती है और पीछे का बैकग्राउंड फ़ोन के पोर्ट्रेट मोड की तरह धुंधला हो जाता है (हल्का, मध्यम या तेज़; इसी कंप्यूटर पर चलता है)।</dd></div><div><dt>2.8.0</dt><dd>स्पीड कर्व: क्लिप की गति धीरे-धीरे बदल सकती है — सही पल पर स्लो-मोशन, तेज़ी, “जंप”। तैयार विकल्प (तेज़ होना, धीमा होना, हीरो, बुलेट, मोंटाज, जंप) और अपना ग्राफ़: बिंदुओं को ऊपर या नीचे खींचें, डबल-क्लिक से बिंदु जोड़ें। प्रीव्यू, काटना और एक्सपोर्ट ठीक कर्व के हिसाब से चलते हैं, और आवाज़ की पिच बदले बिना ध्वनि तेज़ होती है।</dd></div><div><dt>2.7.2</dt><dd>‘परिचय’ पेज सरल हो गया है: तृतीय-पक्ष लाइब्रेरी के सोर्स कोड के लिंक अब केवल ‘लाइसेंस’ विंडो में हैं।</dd></div><div><dt>2.7.1</dt><dd>नई सेटिंग्स और ‘परिचय’ पेज: स्विच वाले कार्ड, झंडों के साथ एक ही सूची में भाषा, टाइल के रूप में लिंक। और सुंदर बारीकियाँ: ऊपर की पट्टी में लोगो, टाइमलाइन पर नरम रंगों और चयन-किनारे वाली क्लिप, पिन जैसा प्लेहेड और खाली प्रोजेक्ट में संकेत।</dd></div></dl>
+    <div class="faqs"><details><summary>Windows कहता है “Windows ने आपके PC को सुरक्षित किया”। क्या यह ठीक है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows यह उन ऐप के लिए दिखाता है जिनके पास भुगतान वाला कोड-साइनिंग सर्टिफ़िकेट नहीं होता, और Kadr के पास नहीं है। <b>अधिक जानकारी</b> पर क्लिक करें, फिर <b>फिर भी चलाएँ</b> पर। Kadr के अपने अपडेट इंस्टॉल से पहले डिजिटल हस्ताक्षर से जाँचे जाते हैं।</p></details><details><summary>क्या मेरे वीडियो या फ़ोटो कहीं अपलोड होते हैं?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। वे आपके कंप्यूटर पर रहते हैं, और बैकग्राउंड हटाना व बेहतरी भी उसी पर चलती है। इकलौता अपवाद ऑटो-सबटाइटल है, और सिर्फ़ तब जब आप उन्हें शुरू करें: चुनी हुई क्लिप का ऑडियो आपकी अपनी API कुंजी से ElevenLabs को जाता है।</p></details><details><summary>Kadr को इंटरनेट की क्या ज़रूरत है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>अपडेट जाँचने के लिए (Kadr शुरू होने पर और हर 6 घंटे में), अपडेट डाउनलोड करने के लिए, और हर AI मॉडल के लिए एक बार। जाँच को ख़ुद बंद नहीं किया जा सकता; सेटिंग → अपडेट में आप सिर्फ़ अपने-आप होने वाला डाउनलोड बंद कर सकते हैं। ऑटो-सबटाइटल भी ऑनलाइन जाते हैं, अगर आप उन्हें इस्तेमाल करें।</p></details><details><summary>क्या AI के लिए दमदार ग्राफ़िक्स कार्ड चाहिए?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं, लेकिन उसके बिना यह बहुत धीमा होता है। DirectML चालू होने पर (डिफ़ॉल्ट) AI ग्राफ़िक्स कार्ड इस्तेमाल करता है; बैकग्राउंड हटाने में लगभग 5 GB वीडियो मेमोरी लग सकती है। सेटिंग → AI में आप सिर्फ़ प्रोसेसर पर जा सकते हैं।</p></details><details><summary>अगर Kadr या PC क्रैश हो जाए तो?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>वीडियो प्रोजेक्ट हर 45 सेकंड में अपने-आप सहेजा जाता है और Kadr अगली बार उसे वापस पाने का प्रस्ताव देता है। फ़ोटो प्रोजेक्ट अपने-आप नहीं सहेजे जाते, इसलिए उन्हें ख़ुद सहेजें।</p></details><details><summary>Kadr किन चीज़ों से बना है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>इसमें FFmpeg और Qt जैसे ओपन-सोर्स हिस्से हैं, और बंद-स्रोत Microsoft DirectML भी है। हर हिस्से और उसके लाइसेंस की सूची ऐप में “About → Licenses” (परिचय → लाइसेंस) में है। इन लाइसेंसों की शर्तों के अनुसार, <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">ओपन-सोर्स हिस्सों का सोर्स कोड</a> डाउनलोड के लिए उपलब्ध है।</p></details><details><summary>इसे कैसे हटाऊँ, और क्या रह जाता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kadr को Windows सेटिंग → <b>ऐप</b> में अनइंस्टॉल करें। आपकी सेटिंग, हाल के प्रोजेक्ट के रास्ते और एन्क्रिप्टेड ElevenLabs कुंजी रजिस्ट्री में रहती हैं, और ऑटोसेव, कैश और मॉडल <code>%LOCALAPPDATA%\Kadr</code> में रहते हैं। इन्हें हटाने का तरीक़ा गोपनीयता नीति में है।</p></details><details><summary>नया क्या है: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>फ़ोटो एडिटर में धुंधलापन: अलग ‘धुंधलापन’ स्लाइडर (पहले से कहीं ज़्यादा तेज़), ‘धुंधला करें’ ब्रश जो सिर्फ़ वहीं धुंधला करता है जहाँ आप चलाएँ, और ‘बैकग्राउंड धुंधला करें’: व्यक्ति या वस्तु साफ़ रहती है और पीछे का बैकग्राउंड फ़ोन के पोर्ट्रेट मोड की तरह धुंधला हो जाता है (हल्का, मध्यम या तेज़; इसी कंप्यूटर पर चलता है)।</p></details><details class="sha" hidden><summary>फ़ाइल की जाँच कैसे करें?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>डाउनलोड की गई फ़ाइल का SHA-256 चेकसम इससे मेल खाना चाहिए: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">यह अनुवाद AI से किया गया है, इसलिए इसमें अशुद्धियाँ हो सकती हैं। होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

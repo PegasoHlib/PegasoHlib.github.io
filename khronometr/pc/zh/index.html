@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">仅限 Windows 10 / 11 64 位 · 70.3 MB · 免费 · 27 种语言<br>每 6 小时检查一次更新，除非你关闭，否则会自动安装；每个更新都会用数字签名验证。</p>
     
     
-    
     </div>
     <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
   </header>
@@ -228,12 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-zh">
     <h2 class="eyebrow" id="q-zh">常见问题</h2>
-    <div class="faqs"><details class="card"><summary>Windows 的警告是什么样子的？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>一个蓝色窗口，标题为<b>“Windows 已保护你的电脑”</b>，文字为“Microsoft Defender SmartScreen 阻止了无法识别的应用启动……”。点击文字下方的<b>更多信息</b>，然后点击<b>仍要运行</b>，而不是<b>不运行</b>。</p></details><details class="card"><summary>我已经装有旧版 Khronometr 电脑版<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>直接运行新文件并点击<b>更新</b>：它会替换旧版，你的历史记录、限制、Google 登录和开机自启动都会保留。</p></details><details class="card"><summary>它会在我的电脑上添加什么？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它只为你的用户安装，不需要管理员权限：程序位于 <code>%LOCALAPPDATA%\Programs\Khronometr</code>，另有开始菜单快捷方式、“已安装的应用”中的一项和开机自启动。它还会创建一个属于你的用户的任务“Khronometr Watchdog”，如果程序没有在运行，每 10 分钟就会重新启动它。只有当你选择导入 Windows 日志时，Windows 才会请求一次管理员权限，并创建一个任务“Khronometr Journal”；它每 6 小时把日志复制到 Program Files 中的一个文件夹，只有管理员和你可以读取该文件夹。</p></details><details class="card"><summary>我必须用 Google 登录吗？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不必。统计、纪录和限制在这台电脑上不登录也能用。登录后可以在这里看到你的手机和平板，并与它们共享限制。</p></details><details class="card"><summary>如何卸载？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 设置 → 应用 → 已安装的应用 → Khronometr → 卸载</b>。这会移除程序、快捷方式、自启动、Watchdog 任务和“已安装的应用”中的条目。如果你创建过日志任务，它会自行发现并删除自己和它在 Program Files 中的文件夹，通常是立刻删除，最迟在下次运行时，不会有任何提示。你的历史记录保留在 <code>%LOCALAPPDATA%\Khronometr</code> 中：要删除它，请手动删除该文件夹；如果你用过同步，还请在 Google 云端硬盘设置中删除云端副本。</p></details><details class="card"><summary>我卸载了 1.2.2 之前的版本<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>那些版本会遗留一个任务 <code>Khronometr\JournalCopy</code>。请删除它：它会以管理员权限运行用户文件夹中的文件。请打开任务计划程序并删除它，或在管理员终端中运行：<code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>。</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-zh">
-    <h2 class="eyebrow" id="c-zh">更新内容</h2>
-    <dl class="card"><div><dt>1.2.2</dt><dd>安全修复：Windows 日志现在由受保护的系统任务复制。它会自动替换旧任务，并在你卸载应用时一并移除。</dd></div><div><dt>1.2.1</dt><dd>画面更清晰：数字去掉了模糊的光晕，背景更深，选中项改用彩色而非灰色。</dd></div><div><dt>1.2.0</dt><dd>全新玻璃设计：柔和的极光背景、玻璃卡片，以及处处一致的流畅选择器。现在每个应用的页面都能像主屏幕一样单独选择时间段。</dd></div><div><dt>1.1.4</dt><dd>新增白俄罗斯语。</dd></div></dl>
+    <div class="faqs"><details><summary>Windows 的警告是什么样子的？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>一个蓝色窗口，标题为<b>“Windows 已保护你的电脑”</b>，文字为“Microsoft Defender SmartScreen 阻止了无法识别的应用启动……”。点击文字下方的<b>更多信息</b>，然后点击<b>仍要运行</b>，而不是<b>不运行</b>。</p></details><details><summary>我已经装有旧版 Khronometr 电脑版<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>直接运行新文件并点击<b>更新</b>：它会替换旧版，你的历史记录、限制、Google 登录和开机自启动都会保留。</p></details><details><summary>它会在我的电脑上添加什么？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它只为你的用户安装，不需要管理员权限：程序位于 <code>%LOCALAPPDATA%\Programs\Khronometr</code>，另有开始菜单快捷方式、“已安装的应用”中的一项和开机自启动。它还会创建一个属于你的用户的任务“Khronometr Watchdog”，如果程序没有在运行，每 10 分钟就会重新启动它。只有当你选择导入 Windows 日志时，Windows 才会请求一次管理员权限，并创建一个任务“Khronometr Journal”；它每 6 小时把日志复制到 Program Files 中的一个文件夹，只有管理员和你可以读取该文件夹。</p></details><details><summary>我必须用 Google 登录吗？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不必。统计、纪录和限制在这台电脑上不登录也能用。登录后可以在这里看到你的手机和平板，并与它们共享限制。</p></details><details><summary>如何卸载？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 设置 → 应用 → 已安装的应用 → Khronometr → 卸载</b>。这会移除程序、快捷方式、自启动、Watchdog 任务和“已安装的应用”中的条目。如果你创建过日志任务，它会自行发现并删除自己和它在 Program Files 中的文件夹，通常是立刻删除，最迟在下次运行时，不会有任何提示。你的历史记录保留在 <code>%LOCALAPPDATA%\Khronometr</code> 中：要删除它，请手动删除该文件夹；如果你用过同步，还请在 Google 云端硬盘设置中删除云端副本。</p></details><details><summary>我卸载了 1.2.2 之前的版本<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>那些版本会遗留一个任务 <code>Khronometr\JournalCopy</code>。请删除它：它会以管理员权限运行用户文件夹中的文件。请打开任务计划程序并删除它，或在管理员终端中运行：<code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>。</p></details><details><summary>更新内容: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>安全修复：Windows 日志现在由受保护的系统任务复制。它会自动替换旧任务，并在你卸载应用时一并移除。</p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +233,7 @@ main{max-width:960px}
   <p class="contact">问题与建议: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/zh/">PegasoHlib — 全部应用</a> · <a href="https://pegasohlib.github.io/zh/terms.html">使用条款</a> · <a href="https://pegasohlib.github.io/zh/site-privacy.html">网站隐私</a><small class="legal">托管服务：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube 和 TikTok 是其各自所有者的商标；PegasoHlib 与它们没有关联。</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/zh/">PegasoHlib — 全部应用</a> · <a href="https://pegasohlib.github.io/zh/terms.html">使用条款</a> · <a href="https://pegasohlib.github.io/zh/site-privacy.html">网站隐私</a><small class="legal">本译文由 AI 完成，可能存在不准确之处。 托管服务：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube 和 TikTok 是其各自所有者的商标；PegasoHlib 与它们没有关联。</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

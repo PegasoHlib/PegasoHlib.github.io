@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Scarica per Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../it/privacy.html">Informativa sulla privacy</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">Licenze e codice sorgente</a></p>
+    <p class="textlinks"><a href="../it/privacy.html">Informativa sulla privacy</a></p>
     <p class="note">Gratis · senza pubblicità · Windows 10 e 11 (64 bit)<br>Gli aggiornamenti vengono controllati dall’interno dell’app; puoi disattivare il download automatico<br>27 lingue, le stesse di questo sito web</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Livelli e dimensioni della tela</h3><p>Foto e testo come livelli. Dimensioni pronte per una miniatura, un post quadrato e una storia.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Rimozione dello sfondo</h3><p>Un clic, sul tuo PC. Il modello, di circa 115 MB, viene scaricato una sola volta. C’è anche un pennello sfocatura e <b>Sfoca sfondo</b>.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>Miglioramento con l’IA ×2 o ×4</h3><p>Modelli Real-ESRGAN da 2–5 MB, scaricati una sola volta. Le tue foto non vengono mai caricate.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Pennello, forme e appunti</h3><p>Pennello, gomma, frecce e forme. <b>Ctrl+V</b> incolla uno screenshot, <b>Ctrl+Maiusc+C</b> copia il risultato.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-it">
-    <h2 class="eyebrow" id="x-it">E inoltre</h2>
-    <div class="chips"><span>Gratis, senza pubblicità</span><span>Tema chiaro e scuro</span><span>Dimensione del testo regolabile</span><span>Zona sicura per TikTok</span><span>Salvataggio automatico per i progetti video</span><span>Aggiornamenti firmati</span><span>Nessun diritto di amministratore</span><span>Componenti open source più Microsoft DirectML, licenze incluse</span></div>
-  </section>
+  <p class="also">Gratis, senza pubblicità · Salvataggio automatico per i progetti video · Aggiornamenti firmati</p>
 
   <section class="section faq" aria-labelledby="q-it">
     <h2 class="eyebrow" id="q-it">Domande</h2>
-    <div class="faqs"><details class="card"><summary>Windows dice «PC protetto da Windows». È normale?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows lo mostra per le app senza un certificato di firma del codice a pagamento, e Kadr non ne ha uno. Fai clic su <b>Ulteriori informazioni</b>, poi su <b>Esegui comunque</b>. Gli aggiornamenti di Kadr vengono confrontati con una firma digitale prima di essere installati.</p></details><details class="card"><summary>I miei video o le mie foto vengono caricati da qualche parte?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Restano sul tuo computer, e anche la rimozione dello sfondo e il miglioramento funzionano lì. L’unica eccezione sono i sottotitoli automatici, e solo quando li avvii: l’audio della clip scelta va a ElevenLabs con la tua chiave API.</p></details><details class="card"><summary>Perché Kadr ha bisogno di internet?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Per cercare aggiornamenti (all’avvio di Kadr e ogni 6 ore), per scaricare un aggiornamento e una volta per ogni modello di IA. Il controllo in sé non può essere disattivato; in Impostazioni → Aggiornamenti puoi disattivare solo il download automatico. Anche i sottotitoli automatici vanno online, se li usi.</p></details><details class="card"><summary>L’IA ha bisogno di una scheda grafica potente?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No, ma senza è molto più lenta. Con DirectML attivo (lo è per impostazione predefinita) l’IA usa la scheda grafica; la rimozione dello sfondo può richiedere circa 5 GB di memoria video. In Impostazioni → IA puoi passare al solo processore.</p></details><details class="card"><summary>E se Kadr o il PC si blocca?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Un progetto video viene salvato automaticamente ogni 45 secondi e Kadr propone di recuperarlo la volta successiva. I progetti foto non vengono salvati automaticamente, quindi salvali tu.</p></details><details class="card"><summary>Come lo rimuovo e cosa resta?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Disinstalla Kadr in Impostazioni di Windows → <b>App</b>. Le tue impostazioni, i percorsi dei progetti recenti e la chiave ElevenLabs cifrata restano nel registro, e il salvataggio automatico, la cache e i modelli restano in <code>%LOCALAPPDATA%\Kadr</code>. L’informativa sulla privacy spiega come eliminarli.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-it">
-    <h2 class="eyebrow" id="c-it">Novità</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>Sfocatura nell’editor foto: un cursore Sfocatura a parte (molto più forte di prima), un pennello Sfoca che sfoca solo dove passi e Sfoca sfondo: la persona o l’oggetto resta nitido e lo sfondo dietro viene sfocato, come la modalità ritratto del telefono (leggera, media o forte; funziona su questo computer).</dd></div><div><dt>2.8.0</dt><dd>Curva di velocità: la velocità di una clip può cambiare in modo fluido — rallentatore al momento giusto, accelerazione, uno «scatto». Preset pronti (Accelerazione, Rallentamento, Eroe, Proiettile, Montaggio, Scatto) e una curva tua: trascina i punti in alto o in basso, il doppio clic aggiunge un punto. Anteprima, tagli ed esportazione seguono esattamente la curva e l’audio accelera senza cambiare intonazione.</dd></div><div><dt>2.7.2</dt><dd>La pagina Informazioni è più semplice: i link al codice delle librerie di terze parti ora sono solo nella finestra Licenze.</dd></div><div><dt>2.7.1</dt><dd>Nuove Impostazioni e pagina Informazioni: schede con interruttori, la lingua in un unico elenco con bandiere, i link a riquadri. Dettagli più curati: il logo nella barra in alto, clip della timeline con colori più morbidi e contorno di selezione, una testina a forma di spillo e suggerimenti in un progetto vuoto.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows dice «PC protetto da Windows». È normale?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows lo mostra per le app senza un certificato di firma del codice a pagamento, e Kadr non ne ha uno. Fai clic su <b>Ulteriori informazioni</b>, poi su <b>Esegui comunque</b>. Gli aggiornamenti di Kadr vengono confrontati con una firma digitale prima di essere installati.</p></details><details><summary>I miei video o le mie foto vengono caricati da qualche parte?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Restano sul tuo computer, e anche la rimozione dello sfondo e il miglioramento funzionano lì. L’unica eccezione sono i sottotitoli automatici, e solo quando li avvii: l’audio della clip scelta va a ElevenLabs con la tua chiave API.</p></details><details><summary>Perché Kadr ha bisogno di internet?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Per cercare aggiornamenti (all’avvio di Kadr e ogni 6 ore), per scaricare un aggiornamento e una volta per ogni modello di IA. Il controllo in sé non può essere disattivato; in Impostazioni → Aggiornamenti puoi disattivare solo il download automatico. Anche i sottotitoli automatici vanno online, se li usi.</p></details><details><summary>L’IA ha bisogno di una scheda grafica potente?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No, ma senza è molto più lenta. Con DirectML attivo (lo è per impostazione predefinita) l’IA usa la scheda grafica; la rimozione dello sfondo può richiedere circa 5 GB di memoria video. In Impostazioni → IA puoi passare al solo processore.</p></details><details><summary>E se Kadr o il PC si blocca?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Un progetto video viene salvato automaticamente ogni 45 secondi e Kadr propone di recuperarlo la volta successiva. I progetti foto non vengono salvati automaticamente, quindi salvali tu.</p></details><details><summary>Di cosa è fatto Kadr?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Usa componenti open source come FFmpeg e Qt, e Microsoft DirectML, che è chiuso. Ogni componente e la sua licenza sono elencati nell’app, in «Info → Licenze». Come richiedono queste licenze, il <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">codice sorgente dei componenti open source</a> è disponibile per il download.</p></details><details><summary>Come lo rimuovo e cosa resta?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Disinstalla Kadr in Impostazioni di Windows → <b>App</b>. Le tue impostazioni, i percorsi dei progetti recenti e la chiave ElevenLabs cifrata restano nel registro, e il salvataggio automatico, la cache e i modelli restano in <code>%LOCALAPPDATA%\Kadr</code>. L’informativa sulla privacy spiega come eliminarli.</p></details><details><summary>Novità: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Sfocatura nell’editor foto: un cursore Sfocatura a parte (molto più forte di prima), un pennello Sfoca che sfoca solo dove passi e Sfoca sfondo: la persona o l’oggetto resta nitido e lo sfondo dietro viene sfocato, come la modalità ritratto del telefono (leggera, media o forte; funziona su questo computer).</p></details><details class="sha" hidden><summary>Come verifico il file?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Il checksum SHA-256 del file che scarichi deve corrispondere a questo: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Domande e idee: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/it/">PegasoHlib — tutte le app</a> · <a href="https://pegasohlib.github.io/it/terms.html">Condizioni d’uso</a> · <a href="https://pegasohlib.github.io/it/site-privacy.html">Privacy del sito</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube e TikTok sono marchi dei rispettivi proprietari; PegasoHlib non è affiliato a essi.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/it/">PegasoHlib — tutte le app</a> · <a href="https://pegasohlib.github.io/it/terms.html">Condizioni d’uso</a> · <a href="https://pegasohlib.github.io/it/site-privacy.html">Privacy del sito</a><small class="legal">Questa traduzione è stata fatta con l’IA, quindi può contenere imprecisioni. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube e TikTok sono marchi dei rispettivi proprietari; PegasoHlib non è affiliato a essi.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

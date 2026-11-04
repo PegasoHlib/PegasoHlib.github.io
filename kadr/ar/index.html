@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>تنزيل لنظام Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../ar/privacy.html">سياسة الخصوصية</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">التراخيص والشيفرة المصدرية</a></p>
+    <p class="textlinks"><a href="../ar/privacy.html">سياسة الخصوصية</a></p>
     <p class="note">مجاني · بلا إعلانات · لنظامي Windows 10 و11 (64 بت)<br>يُتحقَّق من التحديثات من داخل التطبيق؛ ويمكنك إيقاف التنزيل التلقائي<br>27 لغة، مثل هذا الموقع</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>الطبقات وأحجام اللوحة</h3><p>الصور والنصوص كطبقات. وأحجام جاهزة للصورة المصغّرة والمنشور المربّع والقصة.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>إزالة الخلفية</h3><p>بنقرة واحدة، على جهازك. يُنزَّل النموذج، نحو 115 MB، مرة واحدة. وهناك أيضًا فرشاة تمويه و<b>تمويه الخلفية</b>.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>تحسين بالذكاء الاصطناعي ×2 أو ×4</h3><p>نماذج Real-ESRGAN بحجم 2–5 MB، تُنزَّل مرة واحدة. ولا تُرفع صورك أبدًا.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>الفرشاة والأشكال والحافظة</h3><p>فرشاة وممحاة وأسهم وأشكال. يلصق <b>Ctrl+V</b> لقطة شاشة، وينسخ <b>Ctrl+Shift+C</b> النتيجة.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-ar">
-    <h2 class="eyebrow" id="x-ar">وكذلك</h2>
-    <div class="chips"><span>مجاني، بلا إعلانات</span><span>سمة فاتحة وداكنة</span><span>حجم نص قابل للتعديل</span><span>منطقة آمنة لـ TikTok</span><span>حفظ تلقائي لمشاريع الفيديو</span><span>تحديثات موقَّعة</span><span>دون صلاحيات المسؤول</span><span>أجزاء مفتوحة المصدر إضافة إلى Microsoft DirectML، والتراخيص بداخله</span></div>
-  </section>
+  <p class="also">مجاني، بلا إعلانات · حفظ تلقائي لمشاريع الفيديو · تحديثات موقَّعة</p>
 
   <section class="section faq" aria-labelledby="q-ar">
     <h2 class="eyebrow" id="q-ar">أسئلة</h2>
-    <div class="faqs"><details class="card"><summary>تظهر رسالة «قام Windows بحماية الكمبيوتر الخاص بك». هل هذا طبيعي؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يعرض Windows هذا للتطبيقات التي ليس لها شهادة توقيع برمجي مدفوعة، وليس لدى Kadr واحدة. انقر <b>مزيد من المعلومات</b> ثم <b>تشغيل على أي حال</b>. وتحديثات Kadr نفسه يُتحقَّق منها بتوقيع رقمي قبل تثبيتها.</p></details><details class="card"><summary>هل تُرفع فيديوهاتي أو صوري إلى أي مكان؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>لا. تبقى على جهازك، وتعمل إزالة الخلفية والتحسين عليه أيضًا. والاستثناء الوحيد هو الترجمة التلقائية، وفقط حين تبدأها: يذهب صوت المقطع المختار إلى ElevenLabs بمفتاح API الخاص بك.</p></details><details class="card"><summary>لماذا يحتاج Kadr إلى الإنترنت؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>للتحقق من التحديثات (عند بدء Kadr وكل 6 ساعات)، ولتنزيل تحديث، ومرة واحدة لكل نموذج ذكاء اصطناعي. والتحقق نفسه لا يمكن إيقافه؛ ومن الإعدادات ← التحديثات يمكنك إيقاف التنزيل التلقائي فقط. وتتصل الترجمة التلقائية أيضًا بالإنترنت، إن استخدمتها.</p></details><details class="card"><summary>هل يحتاج الذكاء الاصطناعي إلى بطاقة رسوميات قوية؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>لا، لكنه أبطأ كثيرًا بدونها. ومع تفعيل DirectML (وهو الافتراضي) يستخدم الذكاء الاصطناعي بطاقة الرسوميات؛ وقد تستهلك إزالة الخلفية نحو 5 GB من ذاكرة الفيديو. ومن الإعدادات ← الذكاء الاصطناعي يمكنك التحويل إلى المعالج فقط.</p></details><details class="card"><summary>ماذا لو تعطّل Kadr أو الكمبيوتر؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يُحفظ مشروع الفيديو تلقائيًا كل 45 ثانية ويعرض Kadr استرجاعه في المرة التالية. أما مشاريع الصور فلا تُحفظ تلقائيًا، فاحفظها بنفسك.</p></details><details class="card"><summary>كيف أزيله، وما الذي يبقى؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>أزل تثبيت Kadr من إعدادات Windows ← <b>التطبيقات</b>. وتبقى إعداداتك ومسارات المشاريع الأخيرة ومفتاح ElevenLabs المشفّر في السجل، ويبقى الحفظ التلقائي والذاكرة المؤقتة والنماذج في <code>%LOCALAPPDATA%\Kadr</code>. وتوضح سياسة الخصوصية كيفية حذفها.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-ar">
-    <h2 class="eyebrow" id="c-ar">ما الجديد</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>التمويه في محرر الصور: منزلق «تمويه» مستقل (أقوى بكثير من قبل)، وفرشاة «تمويه» لا تموّه إلا حيث ترسمون، و«تمويه الخلفية»: يبقى الشخص أو الشيء واضحًا وتُموَّه الخلفية خلفه مثل وضع البورتريه في الهاتف (خفيف أو متوسط أو قوي؛ يعمل على هذا الكمبيوتر).</dd></div><div><dt>2.8.0</dt><dd>منحنى السرعة: يمكن أن تتغيّر سرعة المقطع بسلاسة — حركة بطيئة في اللحظة المناسبة، أو تسارع، أو «قفزة». أنماط جاهزة (تسارع، تباطؤ، بطل، رصاصة، مونتاج، قفزة) ومنحنى خاص بكم: اسحبوا النقاط للأعلى أو للأسفل، والنقر المزدوج يضيف نقطة. تتبع المعاينة والقص والتصدير المنحنى بدقة، ويتسارع الصوت دون تغيّر طبقته.</dd></div><div><dt>2.7.2</dt><dd>أصبحت صفحة «حول» أبسط: روابط الشيفرة المصدرية لمكتبات الجهات الخارجية موجودة الآن في نافذة «التراخيص» فقط.</dd></div><div><dt>2.7.1</dt><dd>إعدادات وصفحة «حول» جديدتان: بطاقات بمفاتيح تبديل، واللغة في قائمة واحدة مع الأعلام، والروابط على شكل مربعات. تفاصيل أجمل: الشعار في الشريط العلوي، ومقاطع الخط الزمني بألوان أهدأ وإطار للتحديد، ومؤشر تشغيل على شكل دبوس، وتلميحات في المشروع الفارغ.</dd></div></dl>
+    <div class="faqs"><details><summary>تظهر رسالة «قام Windows بحماية الكمبيوتر الخاص بك». هل هذا طبيعي؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يعرض Windows هذا للتطبيقات التي ليس لها شهادة توقيع برمجي مدفوعة، وليس لدى Kadr واحدة. انقر <b>مزيد من المعلومات</b> ثم <b>تشغيل على أي حال</b>. وتحديثات Kadr نفسه يُتحقَّق منها بتوقيع رقمي قبل تثبيتها.</p></details><details><summary>هل تُرفع فيديوهاتي أو صوري إلى أي مكان؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>لا. تبقى على جهازك، وتعمل إزالة الخلفية والتحسين عليه أيضًا. والاستثناء الوحيد هو الترجمة التلقائية، وفقط حين تبدأها: يذهب صوت المقطع المختار إلى ElevenLabs بمفتاح API الخاص بك.</p></details><details><summary>لماذا يحتاج Kadr إلى الإنترنت؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>للتحقق من التحديثات (عند بدء Kadr وكل 6 ساعات)، ولتنزيل تحديث، ومرة واحدة لكل نموذج ذكاء اصطناعي. والتحقق نفسه لا يمكن إيقافه؛ ومن الإعدادات ← التحديثات يمكنك إيقاف التنزيل التلقائي فقط. وتتصل الترجمة التلقائية أيضًا بالإنترنت، إن استخدمتها.</p></details><details><summary>هل يحتاج الذكاء الاصطناعي إلى بطاقة رسوميات قوية؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>لا، لكنه أبطأ كثيرًا بدونها. ومع تفعيل DirectML (وهو الافتراضي) يستخدم الذكاء الاصطناعي بطاقة الرسوميات؛ وقد تستهلك إزالة الخلفية نحو 5 GB من ذاكرة الفيديو. ومن الإعدادات ← الذكاء الاصطناعي يمكنك التحويل إلى المعالج فقط.</p></details><details><summary>ماذا لو تعطّل Kadr أو الكمبيوتر؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يُحفظ مشروع الفيديو تلقائيًا كل 45 ثانية ويعرض Kadr استرجاعه في المرة التالية. أما مشاريع الصور فلا تُحفظ تلقائيًا، فاحفظها بنفسك.</p></details><details><summary>مما يتكوّن Kadr؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يستخدم مكوّنات مفتوحة المصدر مثل FFmpeg وQt، إضافةً إلى Microsoft DirectML المغلق. يُدرج كل مكوّن وترخيصه داخل التطبيق ضمن «حول → التراخيص». وبحسب ما تشترطه هذه التراخيص، يتوفر <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">الكود المصدري للمكوّنات مفتوحة المصدر</a> للتنزيل.</p></details><details><summary>كيف أزيله، وما الذي يبقى؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>أزل تثبيت Kadr من إعدادات Windows ← <b>التطبيقات</b>. وتبقى إعداداتك ومسارات المشاريع الأخيرة ومفتاح ElevenLabs المشفّر في السجل، ويبقى الحفظ التلقائي والذاكرة المؤقتة والنماذج في <code>%LOCALAPPDATA%\Kadr</code>. وتوضح سياسة الخصوصية كيفية حذفها.</p></details><details><summary>ما الجديد: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>التمويه في محرر الصور: منزلق «تمويه» مستقل (أقوى بكثير من قبل)، وفرشاة «تمويه» لا تموّه إلا حيث ترسمون، و«تمويه الخلفية»: يبقى الشخص أو الشيء واضحًا وتُموَّه الخلفية خلفه مثل وضع البورتريه في الهاتف (خفيف أو متوسط أو قوي؛ يعمل على هذا الكمبيوتر).</p></details><details class="sha" hidden><summary>كيف أتحقق من الملف؟<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>يجب أن يطابق مجموع التحقق SHA-256 للملف الذي تنزّله هذا المجموع: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">أسئلة وأفكار: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ar/">PegasoHlib — كل التطبيقات</a> · <a href="https://pegasohlib.github.io/ar/terms.html">شروط الاستخدام</a> · <a href="https://pegasohlib.github.io/ar/site-privacy.html">خصوصية الموقع</a><small class="legal">الاستضافة: ⁦GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA⁩. ⁦Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok⁩ علامات تجارية مملوكة لأصحابها، ولا ترتبط ⁦PegasoHlib⁩ بها.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ar/">PegasoHlib — كل التطبيقات</a> · <a href="https://pegasohlib.github.io/ar/terms.html">شروط الاستخدام</a> · <a href="https://pegasohlib.github.io/ar/site-privacy.html">خصوصية الموقع</a><small class="legal">تمت هذه الترجمة بالذكاء الاصطناعي، لذا قد تحتوي على أخطاء. الاستضافة: ⁦GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA⁩. ⁦Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok⁩ علامات تجارية مملوكة لأصحابها، ولا ترتبط ⁦PegasoHlib⁩ بها.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

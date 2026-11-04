@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../kk/privacy.html">Құпиялылық саясаты</a></p>
     <p class="note">Жаңа нұсқаларды өзі табады; орнату үшін түймені басасың.<br>Тегін · жарнамасыз · 27 тіл</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>0-ден 100-ге дейінгі баға</h3><p>Оберіг осы компьютерде тапқанын бір санға айналдырады, сонда қаншалықты қорғалғаныңды бір қарағанда көресің.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Жаңа қауіп туралы дабыл</h3><p>Оберіг ашық тұрғанда Defender бірдеңе тауып алса, ескертуді көресің және дыбысты естисің. Терезе жабық болса, ол бақыламайды.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Қауіпті ерекшеліктер белгіленеді</h3><p>Defender-ге бүкіл дискіні, пайдаланушы қалтаңды, «Жүктелгендерді» немесе .exe және .ps1 сияқты бағдарлама түрлерін өткізіп жіберу тапсырылса, ол ескертеді.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Орнатусыз жұмыс істейді</h3><p>Жүктелген файлды сол күйінде іске қос: .NET орнату қажет емес, сенен ештеңе керек емес. Орнату тек таңбашалар мен қолданбадағы жаңартуларды қосады.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-kk">
-    <h2 class="eyebrow" id="x-kk">Тағы да</h2>
-    <div class="chips"><span>Тегін</span><span>Жарнамасыз, бақылаусыз</span><span>Фондық қызметсіз, автоіске қосусыз</span><span>Араласудан қорғауды бұзбайды</span><span>3 дыбыс жиынтығы</span></div>
-  </section>
+  <p class="also">Тегін · Жарнамасыз, бақылаусыз · Фондық қызметсіз, автоіске қосусыз</p>
 
   <section class="section faq" aria-labelledby="q-kk">
     <h2 class="eyebrow" id="q-kk">Сұрақтар</h2>
-    <div class="faqs"><details class="card"><summary>Windows «Windows компьютеріңізді қорғады» деп жазады. Бұл қалыпты ма?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Иә. Windows мұны өзі жақсы білмейтін файлдар үшін, мысалы, ақылы код қолтаңбасы сертификаты жоқ қолданбалар үшін көрсетеді, ал Оберігте ондай сертификат жоқ. Мәтіннің астындағы <b>Қосымша ақпарат</b> түймесін, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір орындау</b> түймесін бас. Оберігтің өз жаңартуларына автордың кілтімен қол қойылған және олар орнатылмас бұрын тексеріледі.</p></details><details class="card"><summary>Оберіг антивирус па?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жоқ. Барлық тексеру мен қорғауды Windows-қа кірістірілген антивирус Microsoft Defender атқарады. Оберіг оның күйін көрсетеді, баптауларын басқарады және оларды қарапайым тілмен түсіндіреді. Егер басқа антивирус басты болса, Defender күту режимінде тұрады, және Оберіг бұл туралы айтады.</p></details><details class="card"><summary>Оған әкімші құқықтары не үшін керек?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Қарау оларсыз да жұмыс істейді, ерекшеліктер тізімі мен карантиннен басқа. Баптаулар мен ерекшеліктерді өзгерту, қауіптерге рұқсат беру, карантиннен қалпына келтіру, офлайн тексеру және тексеруді тоқтату үшін олар қажет. <b>Құлыпты ашу</b> түймесін бас, Windows бір рет сұрайды, ал құқықтар терезені жапқанша әрекет етеді. Оберігте басқа біреудің өтініші бойынша баптауларды өзгерте алатын фондық қызмет жоқ, ал құлыпты ашпас бұрын ол өз файлының іске қосылғаннан бері өзгермегенін тексереді.</p></details><details class="card"><summary>Баптауды араласудан қорғау бұғаттаса ше?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг оны айналып өтпейді. Ол күзететін баптаулар құлып белгісімен көрсетіледі және тек «Windows қауіпсіздігі» ішінде өзгертіледі. Бұл жақсы: вирус та қорғауды өшіре алмайды.</p></details><details class="card"><summary>Оны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows параметрлері → <b>Қолданбалар</b> бөлімінде Оберігті тауып, <b>Жою</b> таңда немесе Оберіг баптауларындағы түймені пайдалан. Қолданба, оның таңбашалары және баптаулары жойылады; Microsoft Defender және оның барлық баптаулары сол күйінде қалады. Defender-де жасаған өзгерістер, мысалы, ерекшеліктер де қалады. Жүктелген файлды орнатпай ғана іске қосқан болсаң, оны және <code>%LOCALAPPDATA%\Oberih</code> қалтасын жой.</p></details><details class="card"><summary>Жаңартулар қалай жұмыс істейді?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг ашық тұрғанда ол іске қосылғанда және әр 12 сағат сайын, автоматты тексерулер қосулы болса (әдепкіде солай), pegasohlib.github.io-дан шағын файлды оқиды. Жаңа нұсқа болса, түйме пайда болады. Тек сен оны басқанда файл GitHub-тан жүктеледі, оның қолтаңбасы мен бақылау қосындысы тексеріледі, және Оберіг жаңа нұсқа ретінде қайта іске қосылады.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-kk">
-    <h2 class="eyebrow" id="c-kk">Не жаңалық</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>Беларусь тілі қосылды.</dd></div><div><dt>0.3.3</dt><dd>Баптаулардағы жаңа «Ашық бастапқы код лицензиялары» терезесі: қолданба пайдаланатын әр кітапхана лицензиясының толық мәтінімен көрсетілген.</dd></div><div><dt>0.3.2</dt><dd>Жаңа тіл: дәстүрлі қытай тілі.</dd></div><div><dt>0.3.1</dt><dd>Жаңа тілдер: хинди, қытай (жеңілдетілген), нидерланд және араб (оңнан солға қарай интерфейспен).</dd></div></dl>
+    <div class="faqs"><details><summary>Windows «Windows компьютеріңізді қорғады» деп жазады. Бұл қалыпты ма?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Иә. Windows мұны өзі жақсы білмейтін файлдар үшін, мысалы, ақылы код қолтаңбасы сертификаты жоқ қолданбалар үшін көрсетеді, ал Оберігте ондай сертификат жоқ. Мәтіннің астындағы <b>Қосымша ақпарат</b> түймесін, содан кейін <b>Іске қоспау</b> емес, <b>Бәрібір орындау</b> түймесін бас. Оберігтің өз жаңартуларына автордың кілтімен қол қойылған және олар орнатылмас бұрын тексеріледі.</p></details><details><summary>Оберіг антивирус па?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жоқ. Барлық тексеру мен қорғауды Windows-қа кірістірілген антивирус Microsoft Defender атқарады. Оберіг оның күйін көрсетеді, баптауларын басқарады және оларды қарапайым тілмен түсіндіреді. Егер басқа антивирус басты болса, Defender күту режимінде тұрады, және Оберіг бұл туралы айтады.</p></details><details><summary>Оған әкімші құқықтары не үшін керек?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Қарау оларсыз да жұмыс істейді, ерекшеліктер тізімі мен карантиннен басқа. Баптаулар мен ерекшеліктерді өзгерту, қауіптерге рұқсат беру, карантиннен қалпына келтіру, офлайн тексеру және тексеруді тоқтату үшін олар қажет. <b>Құлыпты ашу</b> түймесін бас, Windows бір рет сұрайды, ал құқықтар терезені жапқанша әрекет етеді. Оберігте басқа біреудің өтініші бойынша баптауларды өзгерте алатын фондық қызмет жоқ, ал құлыпты ашпас бұрын ол өз файлының іске қосылғаннан бері өзгермегенін тексереді.</p></details><details><summary>Баптауды араласудан қорғау бұғаттаса ше?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг оны айналып өтпейді. Ол күзететін баптаулар құлып белгісімен көрсетіледі және тек «Windows қауіпсіздігі» ішінде өзгертіледі. Бұл жақсы: вирус та қорғауды өшіре алмайды.</p></details><details><summary>Оны қалай жоюға болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows параметрлері → <b>Қолданбалар</b> бөлімінде Оберігті тауып, <b>Жою</b> таңда немесе Оберіг баптауларындағы түймені пайдалан. Қолданба, оның таңбашалары және баптаулары жойылады; Microsoft Defender және оның барлық баптаулары сол күйінде қалады. Defender-де жасаған өзгерістер, мысалы, ерекшеліктер де қалады. Жүктелген файлды орнатпай ғана іске қосқан болсаң, оны және <code>%LOCALAPPDATA%\Oberih</code> қалтасын жой.</p></details><details><summary>Жаңартулар қалай жұмыс істейді?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг ашық тұрғанда ол іске қосылғанда және әр 12 сағат сайын, автоматты тексерулер қосулы болса (әдепкіде солай), pegasohlib.github.io-дан шағын файлды оқиды. Жаңа нұсқа болса, түйме пайда болады. Тек сен оны басқанда файл GitHub-тан жүктеледі, оның қолтаңбасы мен бақылау қосындысы тексеріледі, және Оберіг жаңа нұсқа ретінде қайта іске қосылады.</p></details><details><summary>Не жаңалық: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Беларусь тілі қосылды.</p></details><details class="sha" hidden><summary>Файлды қалай тексеруге болады?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Жүктеп алған файлдың SHA-256 бақылау соммасы мынаған сәйкес келуі керек: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">Сұрақтар мен идеялар: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/kk/">PegasoHlib — барлық қолданбалар</a> · <a href="https://pegasohlib.github.io/kk/terms.html">Пайдалану шарттары</a> · <a href="https://pegasohlib.github.io/kk/site-privacy.html">Сайт құпиялығы</a><small class="legal">Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — иелерінің сауда белгілері; PegasoHlib олармен байланысты емес.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/kk/">PegasoHlib — барлық қолданбалар</a> · <a href="https://pegasohlib.github.io/kk/terms.html">Пайдалану шарттары</a> · <a href="https://pegasohlib.github.io/kk/site-privacy.html">Сайт құпиялығы</a><small class="legal">Бұл аударма жасанды интеллектпен жасалған, сондықтан қателер болуы мүмкін. Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — иелерінің сауда белгілері; PegasoHlib олармен байланысты емес.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

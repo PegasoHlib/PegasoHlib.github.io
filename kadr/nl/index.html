@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Downloaden voor Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../nl/privacy.html">Privacybeleid</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">Licenties en broncode</a></p>
+    <p class="textlinks"><a href="../nl/privacy.html">Privacybeleid</a></p>
     <p class="note">Gratis · geen advertenties · Windows 10 en 11 (64-bit)<br>Updates worden vanuit de app gecontroleerd; je kunt het automatisch downloaden uitzetten<br>27 talen, dezelfde als deze website</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Lagen en canvasformaten</h3><p>Foto’s en tekst als lagen. Kant-en-klare formaten voor een thumbnail, een vierkante post en een story.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Achtergrond verwijderen</h3><p>Eén klik, op je pc. Het model, ongeveer 115 MB, wordt één keer gedownload. Er is ook een vervagingskwast en <b>Achtergrond vervagen</b>.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>AI-verbetering ×2 of ×4</h3><p>Real-ESRGAN-modellen van 2–5 MB, één keer gedownload. Je foto’s worden nooit geüpload.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Kwast, vormen en klembord</h3><p>Kwast, gum, pijlen en vormen. <b>Ctrl+V</b> plakt een schermafbeelding, <b>Ctrl+Shift+C</b> kopieert het resultaat.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-nl">
-    <h2 class="eyebrow" id="x-nl">En verder</h2>
-    <div class="chips"><span>Gratis, geen advertenties</span><span>Licht en donker thema</span><span>Instelbare tekstgrootte</span><span>Veilige zone voor TikTok</span><span>Automatisch opslaan voor videoprojecten</span><span>Ondertekende updates</span><span>Geen beheerdersrechten</span><span>Open-sourceonderdelen plus Microsoft DirectML, licenties inbegrepen</span></div>
-  </section>
+  <p class="also">Gratis, geen advertenties · Automatisch opslaan voor videoprojecten · Ondertekende updates</p>
 
   <section class="section faq" aria-labelledby="q-nl">
     <h2 class="eyebrow" id="q-nl">Vragen</h2>
-    <div class="faqs"><details class="card"><summary>Windows zegt “Uw pc is beveiligd door Windows”. Is dat oké?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows toont dit bij apps zonder betaald codeondertekeningscertificaat, en Kadr heeft er geen. Klik op <b>Meer informatie</b> en dan op <b>Toch uitvoeren</b>. De eigen updates van Kadr worden vóór het installeren gecontroleerd aan de hand van een digitale handtekening.</p></details><details class="card"><summary>Worden mijn video’s of foto’s ergens geüpload?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nee. Ze blijven op je computer, en achtergrond verwijderen en verbeteren draaien er ook op. De enige uitzondering zijn automatische ondertitels, en alleen als je ze start: de audio van de gekozen clip gaat met je eigen API-sleutel naar ElevenLabs.</p></details><details class="card"><summary>Waarvoor heeft Kadr internet nodig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Om op updates te controleren (bij het starten van Kadr en elke 6 uur), om een update te downloaden en één keer per AI-model. De controle zelf kan niet worden uitgezet; in Instellingen → Updates kun je alleen het automatisch downloaden uitzetten. Automatische ondertitels gaan ook online, als je ze gebruikt.</p></details><details class="card"><summary>Heeft AI een krachtige videokaart nodig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nee, maar het is veel trager zonder. Met DirectML aan (standaard) gebruikt AI de videokaart; achtergrond verwijderen kan zo’n 5 GB videogeheugen innemen. In Instellingen → AI kun je overschakelen op alleen de processor.</p></details><details class="card"><summary>Wat als Kadr of de pc crasht?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Een videoproject wordt elke 45 seconden automatisch opgeslagen en Kadr biedt de volgende keer aan het te herstellen. Fotoprojecten worden niet automatisch opgeslagen, dus sla ze zelf op.</p></details><details class="card"><summary>Hoe verwijder ik het, en wat blijft er?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Verwijder Kadr in Windows-instellingen → <b>Apps</b>. Je instellingen, de paden van recente projecten en de versleutelde ElevenLabs-sleutel blijven in het register, en het automatisch opgeslagen werk, de cache en de modellen blijven in <code>%LOCALAPPDATA%\Kadr</code>. Het privacybeleid zegt hoe je ze verwijdert.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-nl">
-    <h2 class="eyebrow" id="c-nl">Wat is er nieuw</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>Vervaging in de foto-editor: een eigen schuif Vervaging (veel sterker dan voorheen), een vervagingspenseel dat alleen vervaagt waar je schildert, en Achtergrond vervagen: de persoon of het voorwerp blijft scherp terwijl de achtergrond erachter vervaagt, zoals de portretmodus van een telefoon (licht, gemiddeld of sterk; draait op deze computer).</dd></div><div><dt>2.8.0</dt><dd>Snelheidscurve: de snelheid van een clip kan vloeiend veranderen — slow motion op het juiste moment, versnellen, een ‘sprong’. Kant-en-klare voorinstellingen (Versnellen, Vertragen, Held, Kogel, Montage, Sprong) en je eigen curve: sleep punten omhoog of omlaag, dubbelklik voegt een punt toe. Voorbeeld, knippen en exporteren volgen de curve precies, en het geluid gaat sneller zonder dat de toonhoogte verandert.</dd></div><div><dt>2.7.2</dt><dd>De Info-pagina is eenvoudiger: links naar de broncode van bibliotheken van derden staan nu alleen in het venster Licenties.</dd></div><div><dt>2.7.1</dt><dd>Nieuwe Instellingen en Info-pagina: kaarten met schakelaars, de taal in één lijst met vlaggen en links als tegels. Mooiere details: het logo in de bovenbalk, clips op de tijdlijn met zachtere kleuren en een selectierand, een afspeelkop in de vorm van een speld en tips in een leeg project.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows zegt “Uw pc is beveiligd door Windows”. Is dat oké?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows toont dit bij apps zonder betaald codeondertekeningscertificaat, en Kadr heeft er geen. Klik op <b>Meer informatie</b> en dan op <b>Toch uitvoeren</b>. De eigen updates van Kadr worden vóór het installeren gecontroleerd aan de hand van een digitale handtekening.</p></details><details><summary>Worden mijn video’s of foto’s ergens geüpload?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nee. Ze blijven op je computer, en achtergrond verwijderen en verbeteren draaien er ook op. De enige uitzondering zijn automatische ondertitels, en alleen als je ze start: de audio van de gekozen clip gaat met je eigen API-sleutel naar ElevenLabs.</p></details><details><summary>Waarvoor heeft Kadr internet nodig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Om op updates te controleren (bij het starten van Kadr en elke 6 uur), om een update te downloaden en één keer per AI-model. De controle zelf kan niet worden uitgezet; in Instellingen → Updates kun je alleen het automatisch downloaden uitzetten. Automatische ondertitels gaan ook online, als je ze gebruikt.</p></details><details><summary>Heeft AI een krachtige videokaart nodig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nee, maar het is veel trager zonder. Met DirectML aan (standaard) gebruikt AI de videokaart; achtergrond verwijderen kan zo’n 5 GB videogeheugen innemen. In Instellingen → AI kun je overschakelen op alleen de processor.</p></details><details><summary>Wat als Kadr of de pc crasht?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Een videoproject wordt elke 45 seconden automatisch opgeslagen en Kadr biedt de volgende keer aan het te herstellen. Fotoprojecten worden niet automatisch opgeslagen, dus sla ze zelf op.</p></details><details><summary>Waarvan is Kadr gemaakt?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Het gebruikt open-sourceonderdelen zoals FFmpeg en Qt, en Microsoft DirectML, dat gesloten is. Elk onderdeel en de bijbehorende licentie staan in de app onder ‘Over → Licenties’. Zoals deze licenties vereisen, kun je de <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">broncode van de open-sourceonderdelen</a> downloaden.</p></details><details><summary>Hoe verwijder ik het, en wat blijft er?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Verwijder Kadr in Windows-instellingen → <b>Apps</b>. Je instellingen, de paden van recente projecten en de versleutelde ElevenLabs-sleutel blijven in het register, en het automatisch opgeslagen werk, de cache en de modellen blijven in <code>%LOCALAPPDATA%\Kadr</code>. Het privacybeleid zegt hoe je ze verwijdert.</p></details><details><summary>Wat is er nieuw: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Vervaging in de foto-editor: een eigen schuif Vervaging (veel sterker dan voorheen), een vervagingspenseel dat alleen vervaagt waar je schildert, en Achtergrond vervagen: de persoon of het voorwerp blijft scherp terwijl de achtergrond erachter vervaagt, zoals de portretmodus van een telefoon (licht, gemiddeld of sterk; draait op deze computer).</p></details><details class="sha" hidden><summary>Hoe controleer ik het bestand?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>De SHA-256-controlesom van het bestand dat je downloadt moet overeenkomen met deze: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Vragen en ideeën: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/nl/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/nl/terms.html">Gebruiksvoorwaarden</a> · <a href="https://pegasohlib.github.io/nl/site-privacy.html">Privacy van de site</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube en TikTok zijn handelsmerken van hun eigenaars; PegasoHlib is daar niet aan verbonden.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/nl/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/nl/terms.html">Gebruiksvoorwaarden</a> · <a href="https://pegasohlib.github.io/nl/site-privacy.html">Privacy van de site</a><small class="legal">Deze vertaling is met AI gemaakt en kan daarom onnauwkeurigheden bevatten. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube en TikTok zijn handelsmerken van hun eigenaars; PegasoHlib is daar niet aan verbonden.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

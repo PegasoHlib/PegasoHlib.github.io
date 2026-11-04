@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download til Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../da/privacy.html">Privatlivspolitik</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">Licenser og kildekode</a></p>
+    <p class="textlinks"><a href="../da/privacy.html">Privatlivspolitik</a></p>
     <p class="note">Gratis · ingen reklamer · Windows 10 og 11 (64-bit)<br>Opdateringer søges inde fra appen; du kan slå den automatiske download fra<br>27 sprog, de samme som på denne hjemmeside</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Lag og lærredsstørrelser</h3><p>Billeder og tekst som lag. Færdige størrelser til et miniaturebillede, et kvadratisk opslag og en story.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Fjernelse af baggrund</h3><p>Ét klik, på din pc. Modellen, cirka 115 MB, downloades én gang. Der er også en sløringspensel og <b>Slør baggrund</b>.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>AI-forbedring ×2 eller ×4</h3><p>Real-ESRGAN-modeller på 2–5 MB, downloadet én gang. Dine billeder uploades aldrig.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Pensel, former og udklipsholder</h3><p>Pensel, viskelæder, pile og former. <b>Ctrl+V</b> indsætter et skærmbillede, <b>Ctrl+Shift+C</b> kopierer resultatet.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-da">
-    <h2 class="eyebrow" id="x-da">Og også</h2>
-    <div class="chips"><span>Gratis, ingen reklamer</span><span>Lyst og mørkt tema</span><span>Justerbar tekststørrelse</span><span>Sikkerhedszone til TikTok</span><span>Autogem til videoprojekter</span><span>Signerede opdateringer</span><span>Ingen administratorrettigheder</span><span>Open source-dele plus Microsoft DirectML, licenser inkluderet</span></div>
-  </section>
+  <p class="also">Gratis, ingen reklamer · Autogem til videoprojekter · Signerede opdateringer</p>
 
   <section class="section faq" aria-labelledby="q-da">
     <h2 class="eyebrow" id="q-da">Spørgsmål</h2>
-    <div class="faqs"><details class="card"><summary>Windows skriver »Windows beskyttede din pc«. Er det i orden?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows viser det for apps uden et betalt kodesigneringscertifikat, og Kadr har ikke et. Klik på <b>Flere oplysninger</b> og derefter på <b>Kør alligevel</b>. Kadrs egne opdateringer kontrolleres mod en digital signatur, før de installeres.</p></details><details class="card"><summary>Bliver mine videoer eller billeder uploadet nogen steder?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. De bliver på din computer, og fjernelse af baggrund og forbedring kører også på den. Den ene undtagelse er automatiske undertekster, og kun når du starter dem: Lyden fra det valgte klip går til ElevenLabs med din egen API-nøgle.</p></details><details class="card"><summary>Hvad skal Kadr bruge internettet til?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Til at søge efter opdateringer (når Kadr starter og hver 6. time), til at downloade en opdatering og én gang pr. AI-model. Selve søgningen kan ikke slås fra; under Indstillinger → Opdateringer kan du kun slå den automatiske download fra. Automatiske undertekster går også online, hvis du bruger dem.</p></details><details class="card"><summary>Kræver AI et kraftigt grafikkort?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej, men det er meget langsommere uden. Med DirectML slået til (standard) bruger AI grafikkortet; fjernelse af baggrund kan bruge omkring 5 GB videohukommelse. Under Indstillinger → AI kan du skifte til kun processoren.</p></details><details class="card"><summary>Hvad hvis Kadr eller pc’en går ned?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Et videoprojekt gemmes automatisk hvert 45. sekund, og Kadr tilbyder at gendanne det næste gang. Billedprojekter gemmes ikke automatisk, så gem dem selv.</p></details><details class="card"><summary>Hvordan fjerner jeg den, og hvad bliver?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Afinstaller Kadr i Windows Indstillinger → <b>Apps</b>. Dine indstillinger, stierne til seneste projekter og den krypterede ElevenLabs-nøgle bliver i registreringsdatabasen, og autogemningen, cachen og modellerne bliver i <code>%LOCALAPPDATA%\Kadr</code>. Privatlivspolitikken siger, hvordan du sletter dem.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-da">
-    <h2 class="eyebrow" id="c-da">Nyheder</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>Sløring i fotoeditoren: en særskilt skyder Sløring (meget kraftigere end før), en slørepensel der kun slører, hvor du maler, og Slør baggrund: personen eller tingen forbliver skarp, mens baggrunden bagved sløres som telefonens portrættilstand (let, middel eller kraftig; kører på denne computer).</dd></div><div><dt>2.8.0</dt><dd>Hastighedskurve: et klips hastighed kan ændre sig blødt – slowmotion på det rette tidspunkt, en acceleration, et “spring”. Færdige forvalg (Accelerér, Sænk farten, Helt, Kugle, Montage, Spring) og din egen kurve: træk punkterne op eller ned, dobbeltklik tilføjer et punkt. Forhåndsvisning, klipning og eksport følger kurven præcist, og lyden bliver hurtigere uden at tonehøjden ændres.</dd></div><div><dt>2.7.2</dt><dd>Om-siden er enklere: links til kildekoden til tredjepartsbiblioteker findes nu kun i vinduet Licenser.</dd></div><div><dt>2.7.1</dt><dd>Nye Indstillinger og Om-side: kort med kontakter, sproget i én liste med flag og links som fliser. Pænere detaljer: logoet i topbjælken, klip på tidslinjen med blødere farver og markeringsramme, et nåleformet afspilningshoved og tips i et tomt projekt.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows skriver »Windows beskyttede din pc«. Er det i orden?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows viser det for apps uden et betalt kodesigneringscertifikat, og Kadr har ikke et. Klik på <b>Flere oplysninger</b> og derefter på <b>Kør alligevel</b>. Kadrs egne opdateringer kontrolleres mod en digital signatur, før de installeres.</p></details><details><summary>Bliver mine videoer eller billeder uploadet nogen steder?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. De bliver på din computer, og fjernelse af baggrund og forbedring kører også på den. Den ene undtagelse er automatiske undertekster, og kun når du starter dem: Lyden fra det valgte klip går til ElevenLabs med din egen API-nøgle.</p></details><details><summary>Hvad skal Kadr bruge internettet til?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Til at søge efter opdateringer (når Kadr starter og hver 6. time), til at downloade en opdatering og én gang pr. AI-model. Selve søgningen kan ikke slås fra; under Indstillinger → Opdateringer kan du kun slå den automatiske download fra. Automatiske undertekster går også online, hvis du bruger dem.</p></details><details><summary>Kræver AI et kraftigt grafikkort?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej, men det er meget langsommere uden. Med DirectML slået til (standard) bruger AI grafikkortet; fjernelse af baggrund kan bruge omkring 5 GB videohukommelse. Under Indstillinger → AI kan du skifte til kun processoren.</p></details><details><summary>Hvad hvis Kadr eller pc’en går ned?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Et videoprojekt gemmes automatisk hvert 45. sekund, og Kadr tilbyder at gendanne det næste gang. Billedprojekter gemmes ikke automatisk, så gem dem selv.</p></details><details><summary>Hvad er Kadr bygget af?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Den bruger open source-komponenter som FFmpeg og Qt samt Microsoft DirectML, som er lukket. Hver komponent og dens licens er opført i appen under “Om → Licenser”. Som disse licenser kræver, kan <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">kildekoden til open source-komponenterne</a> downloades.</p></details><details><summary>Hvordan fjerner jeg den, og hvad bliver?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Afinstaller Kadr i Windows Indstillinger → <b>Apps</b>. Dine indstillinger, stierne til seneste projekter og den krypterede ElevenLabs-nøgle bliver i registreringsdatabasen, og autogemningen, cachen og modellerne bliver i <code>%LOCALAPPDATA%\Kadr</code>. Privatlivspolitikken siger, hvordan du sletter dem.</p></details><details><summary>Nyheder: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Sløring i fotoeditoren: en særskilt skyder Sløring (meget kraftigere end før), en slørepensel der kun slører, hvor du maler, og Slør baggrund: personen eller tingen forbliver skarp, mens baggrunden bagved sløres som telefonens portrættilstand (let, middel eller kraftig; kører på denne computer).</p></details><details class="sha" hidden><summary>Hvordan tjekker jeg filen?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>SHA-256-checksummen for den fil, du downloader, skal matche denne: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Denne oversættelse er lavet med AI og kan derfor indeholde unøjagtigheder. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

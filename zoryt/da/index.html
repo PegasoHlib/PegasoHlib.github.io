@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Et Roblox-spil til pc og mobil, på mange sprog<br>Gratis at spille, med valgfrie køb for Robux<br>Stadig under udvikling: Ting kan ændre sig</p>
     
     
-    
     </div>
     <img class="heroart" src="../img/shot-boss.webp" alt="" width="960" height="540">
   </header>
@@ -229,16 +222,12 @@ main{max-width:960px}
     <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Fiskeri og dykning</h3><p>Fisk fra molerne, dyk efter sunkne kister, og hold øje med spøgelsesskibet, der driver gennem tågen.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Bælteprøver</h3><p>Tjen dine bælter fra hvidt til sort ved at bestå Sensei Hanzos prøver.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Kodekset</h3><p>Monstre, verdener, kæledyr, udstyr og skjulte hemmeligheder: alt, hvad du finder, kommer i Kodekset, med belønninger for fulde samlinger.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Titler og emotes</h3><p>Optjen titler for dine bedrifter, som Sort bælte, og hils på andre spillere med emotes.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Byt og smelt kæledyr sammen</h3><p>Giv kæledyr til andre spillere i et bytte, eller smelt overskydende sammen til noget stærkere.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>Valg i historien</h3><p>I nogle quests spørger en figur dig om noget, og dit svar huskes.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-da">
-    <h2 class="eyebrow" id="x-da">Og også</h2>
-    <div class="chips"><span>Mange sprog</span><span>Pc og mobil</span><span>Flytbare touch-knapper</span><span>Autotræning</span><span>Grafik: Auto, Lav, Mellem, Høj</span><span>Musik til verdener og bosser</span><span>Online-pas med et gratis og et guldspor</span><span>Belønninger og quests</span></div>
-  </section>
+  <p class="also">Mange sprog · Pc og mobil · Autotræning · Online-pas med et gratis og et guldspor</p>
 
   <section class="section faq" aria-labelledby="q-da">
     <h2 class="eyebrow" id="q-da">Spørgsmål</h2>
-    <div class="faqs"><details class="card"><summary>Er ZORYT gratis?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ja, du kan spille det gratis. Der er valgfrie køb for Robux: fire pas (guldsporet i Online-passet, Auto x3, VIP og Hurtig udklækning) og produkter som møntkister, Kraftruller, drikke og en startpakke. Nogle af dem sælger fremskridt, såsom mønter, Kraft eller hurtigere træning.</p></details><details class="card"><summary>Er spillet færdigt?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. Det er på Roblox, men stadig under udvikling, så verdener, balance og tekster ændrer sig. Den 1. november 2026 blev alles fremskridt nulstillet til starten.</p></details><details class="card"><summary>Hvor kan jeg spille det?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT kører inde i Roblox, på pc og telefoner. Denne side har endnu intet link til det, fordi spillet ikke er færdigt.</p></details><details class="card"><summary>Skal jeg have venner for at spille?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. Du kan spille helt alene. Holdtårnet kræver 2 til 4 spillere, og PvP-arenaer og huse er til at spille med andre.</p></details><details class="card"><summary>Hvad sletter en genfødsel?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Din Kraft, mønter, sværd og auraer starter forfra. Du beholder dine kæledyr, titler, åbnede verdener, PATH-genstande og Robux-pas, og du tjener tokens til PATH.</p></details><details class="card"><summary>Hvad gemmer spillet om mig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Dine fremskridt, dine indstillinger og de rapporter, du sender, i datalagre på Roblox, plus spilhændelser i Roblox’ analyse. Ingen mailadresse, intet rigtigt navn og ingen betalingsoplysninger når udvikleren. <a href="../da/privacy.html">Læs privatlivspolitikken</a>.</p></details></div>
+    <div class="faqs"><details><summary>Er ZORYT gratis?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ja, du kan spille det gratis. Der er valgfrie køb for Robux: fire pas (guldsporet i Online-passet, Auto x3, VIP og Hurtig udklækning) og produkter som møntkister, Kraftruller, drikke og en startpakke. Nogle af dem sælger fremskridt, såsom mønter, Kraft eller hurtigere træning.</p></details><details><summary>Er spillet færdigt?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. Det er på Roblox, men stadig under udvikling, så verdener, balance og tekster ændrer sig. Den 1. november 2026 blev alles fremskridt nulstillet til starten.</p></details><details><summary>Hvor kan jeg spille det?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT kører inde i Roblox, på pc og telefoner. Denne side har endnu intet link til det, fordi spillet ikke er færdigt.</p></details><details><summary>Skal jeg have venner for at spille?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nej. Du kan spille helt alene. Holdtårnet kræver 2 til 4 spillere, og PvP-arenaer og huse er til at spille med andre.</p></details><details><summary>Hvad sletter en genfødsel?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Din Kraft, mønter, sværd og auraer starter forfra. Du beholder dine kæledyr, titler, åbnede verdener, PATH-genstande og Robux-pas, og du tjener tokens til PATH.</p></details><details><summary>Hvad gemmer spillet om mig?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Dine fremskridt, dine indstillinger og de rapporter, du sender, i datalagre på Roblox, plus spilhændelser i Roblox’ analyse. Ingen mailadresse, intet rigtigt navn og ingen betalingsoplysninger når udvikleren. <a href="../da/privacy.html">Læs privatlivspolitikken</a>.</p></details></div>
   </section>
-
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
@@ -249,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Spørgsmål og idéer: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/da/">PegasoHlib — alle apps</a> · <a href="https://pegasohlib.github.io/da/terms.html">Brugsvilkår</a> · <a href="https://pegasohlib.github.io/da/site-privacy.html">Privatliv på siden</a><small class="legal">Denne oversættelse er lavet med AI og kan derfor indeholde unøjagtigheder. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube og TikTok er varemærker tilhørende deres ejere; PegasoHlib har ingen tilknytning til dem.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

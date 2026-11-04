@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -203,9 +197,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>ดาวน์โหลดสำหรับ Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="../th/privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">สัญญาอนุญาตและซอร์สโค้ด</a></p>
+    <p class="textlinks"><a href="../th/privacy.html">นโยบายความเป็นส่วนตัว</a></p>
     <p class="note">ฟรี · ไม่มีโฆษณา · Windows 10 และ 11 (64 บิต)<br>ตรวจหาอัปเดตจากในแอป ปิดการดาวน์โหลดอัตโนมัติได้<br>27 ภาษา เหมือนกับเว็บไซต์นี้</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -229,19 +222,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>เลเยอร์และขนาดผืนผ้าใบ</h3><p>รูปภาพและข้อความเป็นเลเยอร์ ขนาดสำเร็จรูปสำหรับภาพปก โพสต์สี่เหลี่ยมจัตุรัส และสตอรี</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>การลบพื้นหลัง</h3><p>คลิกเดียว บนพีซีของคุณ ดาวน์โหลดโมเดลขนาดประมาณ 115 MB เพียงครั้งเดียว มีแปรงเบลอและ <b>เบลอพื้นหลัง</b> ด้วย</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>การปรับปรุงด้วย AI ×2 หรือ ×4</h3><p>โมเดล Real-ESRGAN ขนาด 2–5 MB ดาวน์โหลดเพียงครั้งเดียว รูปถ่ายของคุณไม่ถูกอัปโหลดเลย</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>แปรง รูปร่าง และคลิปบอร์ด</h3><p>แปรง ยางลบ ลูกศร และรูปร่าง <b>Ctrl+V</b> วางภาพหน้าจอ <b>Ctrl+Shift+C</b> คัดลอกผลลัพธ์</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-th">
-    <h2 class="eyebrow" id="x-th">และยังมี</h2>
-    <div class="chips"><span>ฟรี ไม่มีโฆษณา</span><span>ธีมสว่างและมืด</span><span>ปรับขนาดข้อความได้</span><span>โซนปลอดภัยสำหรับ TikTok</span><span>บันทึกอัตโนมัติสำหรับโปรเจกต์วิดีโอ</span><span>การอัปเดตที่ลงนามแล้ว</span><span>ไม่ต้องใช้สิทธิ์ผู้ดูแลระบบ</span><span>ส่วนโอเพนซอร์สและ Microsoft DirectML ใบอนุญาตอยู่ในแอป</span></div>
-  </section>
+  <p class="also">ฟรี ไม่มีโฆษณา · บันทึกอัตโนมัติสำหรับโปรเจกต์วิดีโอ · การอัปเดตที่ลงนามแล้ว</p>
 
   <section class="section faq" aria-labelledby="q-th">
     <h2 class="eyebrow" id="q-th">คำถาม</h2>
-    <div class="faqs"><details class="card"><summary>Windows แจ้งว่า “Windows ป้องกันพีซีของคุณแล้ว” แบบนี้ปกติไหม?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows แสดงข้อความนี้กับแอปที่ไม่มีใบรับรองลงนามโค้ดแบบเสียเงิน และ Kadr ไม่มี คลิก <b>ข้อมูลเพิ่มเติม</b> แล้วคลิก <b>เรียกใช้อยู่ดี</b> การอัปเดตของ Kadr เองจะถูกตรวจสอบกับลายเซ็นดิจิทัลก่อนติดตั้ง</p></details><details class="card"><summary>วิดีโอหรือรูปของฉันถูกอัปโหลดไปที่ไหนหรือไม่?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ ไฟล์เหล่านั้นอยู่บนคอมพิวเตอร์ของคุณ และการลบพื้นหลังและการปรับปรุงภาพก็ทำงานบนเครื่องนั้นด้วย ข้อยกเว้นเดียวคือคำบรรยายอัตโนมัติ และเฉพาะเมื่อคุณเริ่มใช้: เสียงของคลิปที่เลือกจะไปที่ ElevenLabs ด้วยคีย์ API ของคุณเอง</p></details><details class="card"><summary>Kadr ต้องใช้อินเทอร์เน็ตเพื่ออะไร<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>เพื่อตรวจหาอัปเดต (เมื่อ Kadr เริ่มทำงานและทุก 6 ชั่วโมง) เพื่อดาวน์โหลดอัปเดต และหนึ่งครั้งต่อโมเดล AI การตรวจสอบเองปิดไม่ได้ ในการตั้งค่า → การอัปเดต คุณปิดได้เฉพาะการดาวน์โหลดอัตโนมัติ คำบรรยายอัตโนมัติก็ใช้ออนไลน์เช่นกัน หากคุณใช้</p></details><details class="card"><summary>AI ต้องใช้การ์ดจอแรงไหม<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ แต่จะช้ากว่ามากหากไม่มี เมื่อเปิด DirectML (ค่าเริ่มต้น) AI จะใช้การ์ดจอ การลบพื้นหลังอาจใช้หน่วยความจำวิดีโอราว 5 GB ในการตั้งค่า → AI คุณสลับไปใช้ตัวประมวลผลอย่างเดียวได้</p></details><details class="card"><summary>ถ้า Kadr หรือพีซีล่มล่ะ<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>โปรเจกต์วิดีโอถูกบันทึกอัตโนมัติทุก 45 วินาที และ Kadr จะเสนอให้กู้คืนในครั้งถัดไป โปรเจกต์รูปภาพไม่ถูกบันทึกอัตโนมัติ ให้บันทึกเอง</p></details><details class="card"><summary>ลบออกอย่างไร และอะไรที่ยังอยู่<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ถอนการติดตั้ง Kadr ในการตั้งค่า Windows → <b>แอป</b> การตั้งค่า เส้นทางโปรเจกต์ล่าสุด และคีย์ ElevenLabs ที่เข้ารหัสยังอยู่ในรีจิสทรี ส่วนการบันทึกอัตโนมัติ แคช และโมเดลยังอยู่ใน <code>%LOCALAPPDATA%\Kadr</code> นโยบายความเป็นส่วนตัวบอกวิธีลบ</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-th">
-    <h2 class="eyebrow" id="c-th">มีอะไรใหม่</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>เบลอในโปรแกรมแต่งรูป: แถบเลื่อนเบลอแยกต่างหาก (แรงกว่าเดิมมาก) แปรงเบลอที่เบลอเฉพาะตรงที่ระบาย และเบลอพื้นหลัง: คนหรือวัตถุยังคมชัด ส่วนพื้นหลังด้านหลังถูกเบลอเหมือนโหมดถ่ายบุคคลของโทรศัพท์ (น้อย ปานกลาง หรือมาก ประมวลผลบนคอมพิวเตอร์เครื่องนี้)</dd></div><div><dt>2.8.0</dt><dd>เส้นโค้งความเร็ว: ความเร็วของคลิปเปลี่ยนได้อย่างนุ่มนวล — สโลว์โมชันในจังหวะที่ใช่ เร่งความเร็ว หรือ “กระโดด” มีแบบสำเร็จรูป (เร่ง ชะลอ ฮีโร่ กระสุน มอนทาจ กระโดด) และกราฟของคุณเอง: ลากจุดขึ้นหรือลง ดับเบิลคลิกเพื่อเพิ่มจุด ตัวอย่าง การตัด และการส่งออกเป็นไปตามเส้นโค้งอย่างแม่นยำ และเสียงเร็วขึ้นโดยไม่เปลี่ยนระดับเสียง</dd></div><div><dt>2.7.2</dt><dd>หน้าเกี่ยวกับเรียบง่ายขึ้น: ลิงก์ไปยังซอร์สโค้ดของไลบรารีภายนอกตอนนี้อยู่ในหน้าต่างใบอนุญาตเท่านั้น</dd></div><div><dt>2.7.1</dt><dd>หน้าการตั้งค่าและเกี่ยวกับแบบใหม่: การ์ดพร้อมสวิตช์ ภาษาอยู่ในรายการเดียวพร้อมธง ลิงก์เป็นไทล์ รายละเอียดสวยขึ้น: โลโก้บนแถบด้านบน คลิปบนไทม์ไลน์สีนุ่มขึ้นพร้อมกรอบเมื่อเลือก หัวเล่นรูปหมุด และคำแนะนำในโปรเจกต์ว่าง</dd></div></dl>
+    <div class="faqs"><details><summary>Windows แจ้งว่า “Windows ป้องกันพีซีของคุณแล้ว” แบบนี้ปกติไหม?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows แสดงข้อความนี้กับแอปที่ไม่มีใบรับรองลงนามโค้ดแบบเสียเงิน และ Kadr ไม่มี คลิก <b>ข้อมูลเพิ่มเติม</b> แล้วคลิก <b>เรียกใช้อยู่ดี</b> การอัปเดตของ Kadr เองจะถูกตรวจสอบกับลายเซ็นดิจิทัลก่อนติดตั้ง</p></details><details><summary>วิดีโอหรือรูปของฉันถูกอัปโหลดไปที่ไหนหรือไม่?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ ไฟล์เหล่านั้นอยู่บนคอมพิวเตอร์ของคุณ และการลบพื้นหลังและการปรับปรุงภาพก็ทำงานบนเครื่องนั้นด้วย ข้อยกเว้นเดียวคือคำบรรยายอัตโนมัติ และเฉพาะเมื่อคุณเริ่มใช้: เสียงของคลิปที่เลือกจะไปที่ ElevenLabs ด้วยคีย์ API ของคุณเอง</p></details><details><summary>Kadr ต้องใช้อินเทอร์เน็ตเพื่ออะไร<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>เพื่อตรวจหาอัปเดต (เมื่อ Kadr เริ่มทำงานและทุก 6 ชั่วโมง) เพื่อดาวน์โหลดอัปเดต และหนึ่งครั้งต่อโมเดล AI การตรวจสอบเองปิดไม่ได้ ในการตั้งค่า → การอัปเดต คุณปิดได้เฉพาะการดาวน์โหลดอัตโนมัติ คำบรรยายอัตโนมัติก็ใช้ออนไลน์เช่นกัน หากคุณใช้</p></details><details><summary>AI ต้องใช้การ์ดจอแรงไหม<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ แต่จะช้ากว่ามากหากไม่มี เมื่อเปิด DirectML (ค่าเริ่มต้น) AI จะใช้การ์ดจอ การลบพื้นหลังอาจใช้หน่วยความจำวิดีโอราว 5 GB ในการตั้งค่า → AI คุณสลับไปใช้ตัวประมวลผลอย่างเดียวได้</p></details><details><summary>ถ้า Kadr หรือพีซีล่มล่ะ<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>โปรเจกต์วิดีโอถูกบันทึกอัตโนมัติทุก 45 วินาที และ Kadr จะเสนอให้กู้คืนในครั้งถัดไป โปรเจกต์รูปภาพไม่ถูกบันทึกอัตโนมัติ ให้บันทึกเอง</p></details><details><summary>Kadr สร้างจากอะไร<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ใช้ส่วนประกอบโอเพนซอร์ส เช่น FFmpeg และ Qt รวมถึง Microsoft DirectML ซึ่งเป็นซอฟต์แวร์ปิด ส่วนประกอบทั้งหมดและสัญญาอนุญาตของแต่ละส่วนแสดงอยู่ในแอปที่ “เกี่ยวกับ → สัญญาอนุญาต” ตามที่สัญญาอนุญาตเหล่านี้กำหนด <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">ซอร์สโค้ดของส่วนประกอบโอเพนซอร์ส</a>พร้อมให้ดาวน์โหลด</p></details><details><summary>ลบออกอย่างไร และอะไรที่ยังอยู่<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ถอนการติดตั้ง Kadr ในการตั้งค่า Windows → <b>แอป</b> การตั้งค่า เส้นทางโปรเจกต์ล่าสุด และคีย์ ElevenLabs ที่เข้ารหัสยังอยู่ในรีจิสทรี ส่วนการบันทึกอัตโนมัติ แคช และโมเดลยังอยู่ใน <code>%LOCALAPPDATA%\Kadr</code> นโยบายความเป็นส่วนตัวบอกวิธีลบ</p></details><details><summary>มีอะไรใหม่: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>เบลอในโปรแกรมแต่งรูป: แถบเลื่อนเบลอแยกต่างหาก (แรงกว่าเดิมมาก) แปรงเบลอที่เบลอเฉพาะตรงที่ระบาย และเบลอพื้นหลัง: คนหรือวัตถุยังคมชัด ส่วนพื้นหลังด้านหลังถูกเบลอเหมือนโหมดถ่ายบุคคลของโทรศัพท์ (น้อย ปานกลาง หรือมาก ประมวลผลบนคอมพิวเตอร์เครื่องนี้)</p></details><details class="sha" hidden><summary>ตรวจสอบไฟล์อย่างไร<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ค่าเช็กซัม SHA-256 ของไฟล์ที่ดาวน์โหลดต้องตรงกับค่านี้: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -253,7 +238,7 @@ main{max-width:960px}
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/th/">PegasoHlib — แอปทั้งหมด</a> · <a href="https://pegasohlib.github.io/th/terms.html">ข้อกำหนดการใช้งาน</a> · <a href="https://pegasohlib.github.io/th/site-privacy.html">ความเป็นส่วนตัวของเว็บไซต์</a><small class="legal">โฮสติ้ง: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube และ TikTok เป็นเครื่องหมายการค้าของเจ้าของแต่ละราย PegasoHlib ไม่มีส่วนเกี่ยวข้องกับบริษัทเหล่านั้น</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/th/">PegasoHlib — แอปทั้งหมด</a> · <a href="https://pegasohlib.github.io/th/terms.html">ข้อกำหนดการใช้งาน</a> · <a href="https://pegasohlib.github.io/th/site-privacy.html">ความเป็นส่วนตัวของเว็บไซต์</a><small class="legal">คำแปลนี้ทำด้วย AI จึงอาจมีความคลาดเคลื่อน โฮสติ้ง: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube และ TikTok เป็นเครื่องหมายการค้าของเจ้าของแต่ละราย PegasoHlib ไม่มีส่วนเกี่ยวข้องกับบริษัทเหล่านั้น</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -276,7 +261,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

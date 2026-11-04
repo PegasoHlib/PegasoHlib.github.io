@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">PC और फ़ोन के लिए Roblox गेम, कई भाषाओं में<br>खेलना मुफ़्त, Robux से वैकल्पिक ख़रीदारी के साथ<br>अभी विकास में: चीज़ें बदल सकती हैं</p>
     
     
-    
     </div>
     <img class="heroart" src="../img/shot-boss.webp" alt="" width="960" height="540">
   </header>
@@ -229,16 +222,12 @@ main{max-width:960px}
     <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>मछली पकड़ना और गोताखोरी</h3><p>घाटों से मछली पकड़ें, डूबे हुए संदूकों के लिए गोता लगाएँ और धुंध में भटकते भूतिया जहाज़ पर नज़र रखें।</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>बेल्ट परीक्षा</h3><p>सेंसेई हानज़ो की परीक्षाएँ पास करके सफ़ेद से काली तक अपनी बेल्ट हासिल करें।</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>कोडेक्स</h3><p>राक्षस, दुनियाएँ, पेट्स, उपकरण और छिपे राज़: आपको जो भी मिलता है, वह कोडेक्स में जाता है, और पूरे संग्रह पर इनाम मिलते हैं।</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>टाइटल और इमोट</h3><p>अपनी उपलब्धियों के लिए ब्लैक बेल्ट जैसे टाइटल पाएँ, और इमोट से दूसरे खिलाड़ियों का अभिवादन करें।</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>पालतू जीवों की अदला-बदली और मेल</h3><p>अदला-बदली में दूसरे खिलाड़ियों को पालतू जीव दें, या फ़ालतू वाले को मिलाकर कुछ ज़्यादा ताक़तवर बनाएँ।</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>कहानी में चुनाव</h3><p>कुछ क्वेस्ट में कोई किरदार आपसे कुछ पूछता है, और आपका जवाब याद रखा जाता है।</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-hi">
-    <h2 class="eyebrow" id="x-hi">और भी</h2>
-    <div class="chips"><span>कई भाषाएँ</span><span>PC और फ़ोन</span><span>खिसकाए जा सकने वाले टच बटन</span><span>ऑटो-ट्रेनिंग</span><span>ग्राफ़िक्स: ऑटो, निम्न, मध्यम, उच्च</span><span>दुनियाओं और बॉस के लिए संगीत</span><span>एक मुफ़्त और एक सुनहरे ट्रैक वाला ऑनलाइन पास</span><span>इनाम और क्वेस्ट</span></div>
-  </section>
+  <p class="also">कई भाषाएँ · PC और फ़ोन · ऑटो-ट्रेनिंग · एक मुफ़्त और एक सुनहरे ट्रैक वाला ऑनलाइन पास</p>
 
   <section class="section faq" aria-labelledby="q-hi">
     <h2 class="eyebrow" id="q-hi">सवाल</h2>
-    <div class="faqs"><details class="card"><summary>क्या ZORYT मुफ़्त है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>हाँ, आप इसे मुफ़्त में खेल सकते हैं। Robux से वैकल्पिक ख़रीदारी हैं: चार पास (ऑनलाइन पास का सुनहरा ट्रैक, Auto x3, VIP और Fast Hatch) और उत्पाद जैसे सिक्कों के संदूक, Power स्क्रॉल, पोशन और एक स्टार्टर पैक। इनमें से कुछ प्रगति बेचते हैं, जैसे सिक्के, Power या तेज़ ट्रेनिंग।</p></details><details class="card"><summary>क्या गेम पूरा हो गया है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। यह Roblox पर है लेकिन अभी विकास में है, इसलिए दुनियाएँ, संतुलन और टेक्स्ट बदलते हैं। 1 नवंबर 2026 को सबकी प्रगति शुरुआत पर रीसेट कर दी गई थी।</p></details><details class="card"><summary>मैं इसे कहाँ खेल सकता हूँ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT Roblox के अंदर चलता है, PC और फ़ोन पर। इस पेज पर अभी उसका कोई लिंक नहीं है, क्योंकि गेम पूरा नहीं हुआ है।</p></details><details class="card"><summary>क्या खेलने के लिए दोस्त चाहिए?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। आप इसे पूरा अकेले खेल सकते हैं। टीम टावर के लिए 2 से 4 खिलाड़ी चाहिए, और PvP अखाड़े और घर दूसरों के साथ खेलने के लिए हैं।</p></details><details class="card"><summary>रीबर्थ क्या मिटाता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>आपकी Power, सिक्के, तलवारें और आभाएँ फिर से शुरू होती हैं। आप अपने पालतू जीव, उपाधियाँ, खोली हुई दुनियाएँ, PATH की चीज़ें और Robux पास रखते हैं, और PATH के लिए टोकन कमाते हैं।</p></details><details class="card"><summary>गेम मेरे बारे में क्या सहेजता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>आपकी प्रगति, आपकी सेटिंग और आपके भेजे हुए रिपोर्ट, Roblox पर डेटा स्टोर में, और Roblox के एनालिटिक्स में खेल की घटनाएँ। कोई ईमेल, असली नाम या भुगतान का ब्योरा डेवलपर तक नहीं पहुँचता। <a href="../hi/privacy.html">गोपनीयता नीति पढ़ें</a>।</p></details></div>
+    <div class="faqs"><details><summary>क्या ZORYT मुफ़्त है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>हाँ, आप इसे मुफ़्त में खेल सकते हैं। Robux से वैकल्पिक ख़रीदारी हैं: चार पास (ऑनलाइन पास का सुनहरा ट्रैक, Auto x3, VIP और Fast Hatch) और उत्पाद जैसे सिक्कों के संदूक, Power स्क्रॉल, पोशन और एक स्टार्टर पैक। इनमें से कुछ प्रगति बेचते हैं, जैसे सिक्के, Power या तेज़ ट्रेनिंग।</p></details><details><summary>क्या गेम पूरा हो गया है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। यह Roblox पर है लेकिन अभी विकास में है, इसलिए दुनियाएँ, संतुलन और टेक्स्ट बदलते हैं। 1 नवंबर 2026 को सबकी प्रगति शुरुआत पर रीसेट कर दी गई थी।</p></details><details><summary>मैं इसे कहाँ खेल सकता हूँ?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT Roblox के अंदर चलता है, PC और फ़ोन पर। इस पेज पर अभी उसका कोई लिंक नहीं है, क्योंकि गेम पूरा नहीं हुआ है।</p></details><details><summary>क्या खेलने के लिए दोस्त चाहिए?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>नहीं। आप इसे पूरा अकेले खेल सकते हैं। टीम टावर के लिए 2 से 4 खिलाड़ी चाहिए, और PvP अखाड़े और घर दूसरों के साथ खेलने के लिए हैं।</p></details><details><summary>रीबर्थ क्या मिटाता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>आपकी Power, सिक्के, तलवारें और आभाएँ फिर से शुरू होती हैं। आप अपने पालतू जीव, उपाधियाँ, खोली हुई दुनियाएँ, PATH की चीज़ें और Robux पास रखते हैं, और PATH के लिए टोकन कमाते हैं।</p></details><details><summary>गेम मेरे बारे में क्या सहेजता है?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>आपकी प्रगति, आपकी सेटिंग और आपके भेजे हुए रिपोर्ट, Roblox पर डेटा स्टोर में, और Roblox के एनालिटिक्स में खेल की घटनाएँ। कोई ईमेल, असली नाम या भुगतान का ब्योरा डेवलपर तक नहीं पहुँचता। <a href="../hi/privacy.html">गोपनीयता नीति पढ़ें</a>।</p></details></div>
   </section>
-
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
@@ -249,7 +238,7 @@ main{max-width:960px}
   <p class="contact">सवाल और सुझाव: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/hi/">PegasoHlib — सभी ऐप</a> · <a href="https://pegasohlib.github.io/hi/terms.html">उपयोग की शर्तें</a> · <a href="https://pegasohlib.github.io/hi/site-privacy.html">साइट की निजता</a><small class="legal">यह अनुवाद AI से किया गया है, इसलिए इसमें अशुद्धियाँ हो सकती हैं। होस्टिंग: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube और TikTok अपने-अपने मालिकों के ट्रेडमार्क हैं; PegasoHlib का इनसे कोई संबंध नहीं है।</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

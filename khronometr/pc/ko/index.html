@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Windows 10 / 11, 64비트 전용 · 70.3 MB · 무료 · 27개 언어<br>6시간마다 업데이트를 확인하고, 끄지 않는 한 스스로 설치해요. 모든 업데이트는 디지털 서명으로 검증해요.</p>
     
     
-    
     </div>
     <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
   </header>
@@ -228,12 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-ko">
     <h2 class="eyebrow" id="q-ko">질문</h2>
-    <div class="faqs"><details class="card"><summary>Windows 경고는 어떻게 생겼나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>“Windows의 PC 보호”</b>라는 제목의 파란 창에 “Microsoft Defender SmartScreen에서 인식할 수 없는 앱의 시작을 차단했습니다…”라는 문구가 있어요. 문구 아래의 <b>추가 정보</b>를 누른 다음 <b>실행 안 함</b>이 아니라 <b>실행</b>을 누르세요.</p></details><details class="card"><summary>예전 PC용 Khronometr가 이미 있어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>새 파일을 실행하고 <b>업데이트</b>를 누르면 돼요. 예전 버전을 대신하고, 기록, 제한, Google 로그인, 자동 시작은 그대로 유지돼요.</p></details><details class="card"><summary>내 PC에 무엇이 추가되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>관리자 권한 없이 내 사용자 계정에 설치돼요. 프로그램은 <code>%LOCALAPPDATA%\Programs\Khronometr</code>에, 그리고 시작 메뉴 바로 가기, 설치된 앱 항목, 자동 시작이 추가돼요. 또 내 사용자 계정의 작업 “Khronometr Watchdog”을 만들어, 실행 중이 아니면 10분마다 다시 시작해요. Windows 기록 가져오기를 선택한 경우에만 Windows가 관리자 권한을 한 번 요청하고 “Khronometr Journal” 작업이 만들어져요. 이 작업은 6시간마다 기록을 Program Files 안의 폴더로 복사하며, 그 폴더는 관리자와 나만 읽을 수 있어요.</p></details><details class="card"><summary>꼭 Google로 로그인해야 하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>아니요. 집계, 기록, 제한은 로그인 없이도 이 PC에서 작동해요. 휴대폰과 태블릿을 여기서 보고 제한을 공유하려면 로그인하세요.</p></details><details class="card"><summary>어떻게 제거하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 설정 → 앱 → 설치된 앱 → Khronometr → 제거</b>. 이렇게 하면 프로그램, 바로 가기, 자동 시작, Watchdog 작업, 설치된 앱 항목이 삭제돼요. 기록 작업을 만들었다면 이를 알아채고 스스로, 그리고 자기 Program Files 폴더도 확인 없이 삭제해요. 보통 바로, 늦어도 다음 실행 때예요. 내 기록은 <code>%LOCALAPPDATA%\Khronometr</code>에 남아요. 지우려면 그 폴더를 직접 삭제하고, 동기화를 썼다면 Google Drive 설정에서 Drive 사본도 삭제하세요.</p></details><details class="card"><summary>1.2.2보다 오래된 버전을 제거했어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>그 버전들은 <code>Khronometr\JournalCopy</code> 작업을 남겨 두었어요. 이 작업은 사용자 폴더의 파일을 관리자 권한으로 실행하므로 삭제하세요. 작업 스케줄러를 열어 삭제하거나, 관리자 터미널에서 <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>를 실행하세요.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-ko">
-    <h2 class="eyebrow" id="c-ko">새로운 내용</h2>
-    <dl class="card"><div><dt>1.2.2</dt><dd>보안 수정: Windows 저널을 이제 보호된 시스템 작업이 복사해요. 이 작업은 이전 작업을 스스로 대체하고, 앱을 삭제하면 함께 사라져요.</dd></div><div><dt>1.2.1</dt><dd>더 선명한 모습: 흐릿한 빛 번짐 없는 숫자, 더 깊은 배경, 회색 대신 색이 있는 강조 표시.</dd></div><div><dt>1.2.0</dt><dd>새 유리 디자인: 은은한 오로라 배경, 유리 카드, 어디서나 같은 부드러운 선택기. 이제 각 앱 페이지에서도 메인 화면처럼 기간을 따로 고를 수 있습니다.</dd></div><div><dt>1.1.4</dt><dd>벨라루스어가 추가되었습니다.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows 경고는 어떻게 생겼나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>“Windows의 PC 보호”</b>라는 제목의 파란 창에 “Microsoft Defender SmartScreen에서 인식할 수 없는 앱의 시작을 차단했습니다…”라는 문구가 있어요. 문구 아래의 <b>추가 정보</b>를 누른 다음 <b>실행 안 함</b>이 아니라 <b>실행</b>을 누르세요.</p></details><details><summary>예전 PC용 Khronometr가 이미 있어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>새 파일을 실행하고 <b>업데이트</b>를 누르면 돼요. 예전 버전을 대신하고, 기록, 제한, Google 로그인, 자동 시작은 그대로 유지돼요.</p></details><details><summary>내 PC에 무엇이 추가되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>관리자 권한 없이 내 사용자 계정에 설치돼요. 프로그램은 <code>%LOCALAPPDATA%\Programs\Khronometr</code>에, 그리고 시작 메뉴 바로 가기, 설치된 앱 항목, 자동 시작이 추가돼요. 또 내 사용자 계정의 작업 “Khronometr Watchdog”을 만들어, 실행 중이 아니면 10분마다 다시 시작해요. Windows 기록 가져오기를 선택한 경우에만 Windows가 관리자 권한을 한 번 요청하고 “Khronometr Journal” 작업이 만들어져요. 이 작업은 6시간마다 기록을 Program Files 안의 폴더로 복사하며, 그 폴더는 관리자와 나만 읽을 수 있어요.</p></details><details><summary>꼭 Google로 로그인해야 하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>아니요. 집계, 기록, 제한은 로그인 없이도 이 PC에서 작동해요. 휴대폰과 태블릿을 여기서 보고 제한을 공유하려면 로그인하세요.</p></details><details><summary>어떻게 제거하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 설정 → 앱 → 설치된 앱 → Khronometr → 제거</b>. 이렇게 하면 프로그램, 바로 가기, 자동 시작, Watchdog 작업, 설치된 앱 항목이 삭제돼요. 기록 작업을 만들었다면 이를 알아채고 스스로, 그리고 자기 Program Files 폴더도 확인 없이 삭제해요. 보통 바로, 늦어도 다음 실행 때예요. 내 기록은 <code>%LOCALAPPDATA%\Khronometr</code>에 남아요. 지우려면 그 폴더를 직접 삭제하고, 동기화를 썼다면 Google Drive 설정에서 Drive 사본도 삭제하세요.</p></details><details><summary>1.2.2보다 오래된 버전을 제거했어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>그 버전들은 <code>Khronometr\JournalCopy</code> 작업을 남겨 두었어요. 이 작업은 사용자 폴더의 파일을 관리자 권한으로 실행하므로 삭제하세요. 작업 스케줄러를 열어 삭제하거나, 관리자 터미널에서 <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>를 실행하세요.</p></details><details><summary>새로운 내용: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>보안 수정: Windows 저널을 이제 보호된 시스템 작업이 복사해요. 이 작업은 이전 작업을 스스로 대체하고, 앱을 삭제하면 함께 사라져요.</p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +233,7 @@ main{max-width:960px}
   <p class="contact">질문과 아이디어: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ko/">PegasoHlib — 모든 앱</a> · <a href="https://pegasohlib.github.io/ko/terms.html">이용 약관</a> · <a href="https://pegasohlib.github.io/ko/site-privacy.html">사이트 개인정보</a><small class="legal">호스팅: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok은 각 소유자의 상표이며, PegasoHlib는 이들과 관련이 없습니다.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ko/">PegasoHlib — 모든 앱</a> · <a href="https://pegasohlib.github.io/ko/terms.html">이용 약관</a> · <a href="https://pegasohlib.github.io/ko/site-privacy.html">사이트 개인정보</a><small class="legal">이 번역은 AI로 만들어서 부정확한 부분이 있을 수 있습니다. 호스팅: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok은 각 소유자의 상표이며, PegasoHlib는 이들과 관련이 없습니다.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

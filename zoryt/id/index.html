@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FF8CC4}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Gim Roblox untuk PC dan ponsel, dalam banyak bahasa<br>Gratis dimainkan, dengan pembelian opsional dengan Robux<br>Masih dalam pengembangan: hal-hal bisa berubah</p>
     
     
-    
     </div>
     <img class="heroart" src="../img/shot-boss.webp" alt="" width="960" height="540">
   </header>
@@ -229,16 +222,12 @@ main{max-width:960px}
     <div class="grid n3"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.2c3.3 4 5.7 7 5.7 10.2a5.7 5.7 0 0 1-11.4 0c0-3.2 2.4-6.2 5.7-10.2z"/><path d="M7 14.5c1.7-1 3.4-1 5 0s3.3 1 5 0"/></svg><h3>Memancing dan menyelam</h3><p>Memancing dari dermaga, menyelam mencari peti karam, dan awasi kapal hantu yang hanyut di tengah kabut.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z"/></svg><h3>Ujian sabuk</h3><p>Raih sabuk dari putih sampai hitam dengan lulus ujian Sensei Hanzo.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5zM4 20.5A2.5 2.5 0 0 0 6.5 23H20v-5"/></svg><h3>Kodeks</h3><p>Monster, dunia, pet, perlengkapan, dan rahasia tersembunyi: semua yang kamu temukan masuk ke Kodeks, dengan hadiah untuk koleksi yang lengkap.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.5 14.5a4.5 4.5 0 0 0 7 0M9 9.5h.01M15 9.5h.01"/></svg><h3>Gelar dan emote</h3><p>Raih gelar untuk prestasimu, seperti Sabuk Hitam, dan sapa pemain lain dengan emote.</p></div><div class="card feat"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h3>Tukar dan gabungkan peliharaan</h3><p>Berikan peliharaan kepada pemain lain dalam pertukaran, atau gabungkan yang berlebih menjadi sesuatu yang lebih kuat.</p></div><div class="card feat"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M15.5 8.5l-2 5-5 2 2-5z"/></svg><h3>Pilihan dalam cerita</h3><p>Di beberapa misi, sebuah karakter menanyakan sesuatu kepadamu, dan jawabanmu diingat.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-id">
-    <h2 class="eyebrow" id="x-id">Selain itu</h2>
-    <div class="chips"><span>Banyak bahasa</span><span>PC dan ponsel</span><span>Tombol sentuh bisa dipindah</span><span>Latihan otomatis</span><span>Grafis: Otomatis, Rendah, Sedang, Tinggi</span><span>Musik untuk dunia dan bos</span><span>Online Pass dengan jalur gratis dan jalur emas</span><span>Hadiah dan misi</span></div>
-  </section>
+  <p class="also">Banyak bahasa · PC dan ponsel · Latihan otomatis · Online Pass dengan jalur gratis dan jalur emas</p>
 
   <section class="section faq" aria-labelledby="q-id">
     <h2 class="eyebrow" id="q-id">Pertanyaan</h2>
-    <div class="faqs"><details class="card"><summary>Apakah ZORYT gratis?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ya, kamu bisa memainkannya secara gratis. Ada pembelian opsional dengan Robux: empat pass (jalur emas Online Pass, Auto x3, VIP, dan Fast Hatch) dan produk seperti peti koin, Power Scroll, ramuan, dan Starter Pack. Sebagian menjual kemajuan, seperti koin, Power, atau latihan yang lebih cepat.</p></details><details class="card"><summary>Apakah game ini sudah selesai?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Belum. Game ada di Roblox tetapi masih dalam pengembangan, jadi dunia, keseimbangan, dan teks berubah. Pada 1 November 2026 kemajuan semua orang direset ke awal.</p></details><details class="card"><summary>Di mana aku bisa memainkannya?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT berjalan di dalam Roblox, di PC dan ponsel. Halaman ini belum punya tautan ke sana, karena game belum selesai.</p></details><details class="card"><summary>Apakah aku perlu teman untuk bermain?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Tidak. Kamu bisa memainkannya sendirian. Menara tim memerlukan 2 sampai 4 pemain, dan arena PvP serta rumah untuk bermain bersama orang lain.</p></details><details class="card"><summary>Apa yang dihapus oleh rebirth?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Power, koin, pedang, dan aura-mu mulai dari awal. Kamu tetap memiliki peliharaan, gelar, dunia yang sudah dibuka, item PATH, dan pass Robux, dan kamu mendapat token untuk PATH.</p></details><details class="card"><summary>Apa yang disimpan game tentang diriku?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kemajuanmu, pengaturanmu, dan laporan yang kamu kirim, di penyimpanan data di Roblox, ditambah peristiwa bermain di analitik Roblox. Tidak ada email, nama asli, atau detail pembayaran yang sampai ke pengembang. <a href="../id/privacy.html">Baca kebijakan privasi</a>.</p></details></div>
+    <div class="faqs"><details><summary>Apakah ZORYT gratis?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ya, kamu bisa memainkannya secara gratis. Ada pembelian opsional dengan Robux: empat pass (jalur emas Online Pass, Auto x3, VIP, dan Fast Hatch) dan produk seperti peti koin, Power Scroll, ramuan, dan Starter Pack. Sebagian menjual kemajuan, seperti koin, Power, atau latihan yang lebih cepat.</p></details><details><summary>Apakah game ini sudah selesai?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Belum. Game ada di Roblox tetapi masih dalam pengembangan, jadi dunia, keseimbangan, dan teks berubah. Pada 1 November 2026 kemajuan semua orang direset ke awal.</p></details><details><summary>Di mana aku bisa memainkannya?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ZORYT berjalan di dalam Roblox, di PC dan ponsel. Halaman ini belum punya tautan ke sana, karena game belum selesai.</p></details><details><summary>Apakah aku perlu teman untuk bermain?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Tidak. Kamu bisa memainkannya sendirian. Menara tim memerlukan 2 sampai 4 pemain, dan arena PvP serta rumah untuk bermain bersama orang lain.</p></details><details><summary>Apa yang dihapus oleh rebirth?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Power, koin, pedang, dan aura-mu mulai dari awal. Kamu tetap memiliki peliharaan, gelar, dunia yang sudah dibuka, item PATH, dan pass Robux, dan kamu mendapat token untuk PATH.</p></details><details><summary>Apa yang disimpan game tentang diriku?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Kemajuanmu, pengaturanmu, dan laporan yang kamu kirim, di penyimpanan data di Roblox, ditambah peristiwa bermain di analitik Roblox. Tidak ada email, nama asli, atau detail pembayaran yang sampai ke pengembang. <a href="../id/privacy.html">Baca kebijakan privasi</a>.</p></details></div>
   </section>
-
 
   <section class="private">
     <svg class="ic big" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12M6 21h12M7.5 3v3.5a4 4 0 0 0 1.6 3.2L12 12l2.9-2.3a4 4 0 0 0 1.6-3.2V3M7.5 21v-3.5a4 4 0 0 1 1.6-3.2L12 12l2.9 2.3a4 4 0 0 1 1.6 3.2V21"/></svg>
@@ -249,7 +238,7 @@ main{max-width:960px}
   <p class="contact">Pertanyaan dan ide: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/id/">PegasoHlib — semua aplikasi</a> · <a href="https://pegasohlib.github.io/id/terms.html">Ketentuan penggunaan</a> · <a href="https://pegasohlib.github.io/id/site-privacy.html">Privasi situs</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, dan TikTok adalah merek dagang milik pemiliknya; PegasoHlib tidak berafiliasi dengan mereka.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/id/">PegasoHlib — semua aplikasi</a> · <a href="https://pegasohlib.github.io/id/terms.html">Ketentuan penggunaan</a> · <a href="https://pegasohlib.github.io/id/site-privacy.html">Privasi situs</a><small class="legal">Terjemahan ini dibuat dengan AI, jadi mungkin ada ketidakakuratan. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, dan TikTok adalah merek dagang milik pemiliknya; PegasoHlib tidak berafiliasi dengan mereka.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

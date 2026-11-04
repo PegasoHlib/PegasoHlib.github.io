@@ -79,7 +79,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -93,7 +94,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -129,18 +129,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -173,15 +168,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -231,7 +225,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="privacy.html">Privacy policy</a></p>
     <p class="note">It finds new versions itself; you press a button to install.<br>Free · no ads · 27 languages</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -256,19 +249,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>A score from 0 to 100</h3><p>Oberih turns what it finds on this PC into one number, so you see at a glance how protected you are.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Alert on a new threat</h3><p>If Defender catches something while Oberih is open, you see a warning and hear a sound. It does not watch when the window is closed.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Risky exclusions flagged</h3><p>It warns you when Defender is told to skip a whole drive, your user folder, Downloads or program types such as .exe and .ps1.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Runs without installing</h3><p>Run the downloaded file as it is: no .NET to install, nothing needed from you. Installing only adds shortcuts and in-app updates.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-en">
-    <h2 class="eyebrow" id="x-en">And also</h2>
-    <div class="chips"><span>Free</span><span>No ads, no tracking</span><span>No background service, no autostart</span><span>Respects Tamper Protection</span><span>3 sound sets</span></div>
-  </section>
+  <p class="also">Free · No ads, no tracking · No background service, no autostart</p>
 
   <section class="section faq" aria-labelledby="q-en">
     <h2 class="eyebrow" id="q-en">Questions</h2>
-    <div class="faqs"><details class="card"><summary>Windows says “Windows protected your PC”. Is that OK?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Yes. Windows shows this for files it doesn’t know well, such as apps without a paid code-signing certificate, and Oberih doesn’t have one. Click <b>More info</b> under the text, then <b>Run anyway</b>, not <b>Don’t run</b>. Oberih’s own updates are signed with the author’s key and checked before they are installed.</p></details><details class="card"><summary>Is Oberih an antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Microsoft Defender, the antivirus built into Windows, does all the scanning and protecting. Oberih shows its status, manages its settings and explains them in plain words. If another antivirus is in charge, Defender is on standby, and Oberih tells you so.</p></details><details class="card"><summary>Why does it ask for administrator rights?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Viewing works without them, except the exclusion list and quarantine. Changing settings and exclusions, allowing threats, restoring from quarantine, the offline scan and stopping a scan need them. Press <b>Unlock</b>, Windows asks once, and the rights last until you close the window. Oberih has no background service that could change settings at someone else’s request, and before unlocking it checks that its own file hasn’t changed since it started.</p></details><details class="card"><summary>What if Tamper Protection blocks a setting?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih doesn’t bypass it. Settings it guards are shown with a lock and can be changed only in Windows Security. That’s good: a virus can’t turn protection off either.</p></details><details class="card"><summary>How do I remove it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>In Windows Settings → <b>Apps</b>, find Oberih and choose <b>Uninstall</b>, or use the button in Oberih’s Settings. The app, its shortcuts and its settings are removed; Microsoft Defender and all its settings stay as they are. Changes you made in Defender, such as exclusions, stay too. If you only ran the downloaded file without installing, delete it and the folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details class="card"><summary>How do updates work?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>While Oberih is open, it reads a small file from pegasohlib.github.io at start and every 12 hours, if automatic checks are on (they are by default). If a newer version exists, a button appears. Only when you press it, the file is downloaded from GitHub, its signature and checksum are checked, and Oberih restarts as the new version.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-en">
-    <h2 class="eyebrow" id="c-en">What’s new</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>Belarusian language added.</dd></div><div><dt>0.3.3</dt><dd>New «Open-source licenses» window in Settings: every library the app uses is credited, with its full license text.</dd></div><div><dt>0.3.2</dt><dd>New language: Traditional Chinese.</dd></div><div><dt>0.3.1</dt><dd>New languages: Hindi, Simplified Chinese, Dutch and Arabic (with a right-to-left layout).</dd></div></dl>
+    <div class="faqs"><details><summary>Windows says “Windows protected your PC”. Is that OK?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Yes. Windows shows this for files it doesn’t know well, such as apps without a paid code-signing certificate, and Oberih doesn’t have one. Click <b>More info</b> under the text, then <b>Run anyway</b>, not <b>Don’t run</b>. Oberih’s own updates are signed with the author’s key and checked before they are installed.</p></details><details><summary>Is Oberih an antivirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. Microsoft Defender, the antivirus built into Windows, does all the scanning and protecting. Oberih shows its status, manages its settings and explains them in plain words. If another antivirus is in charge, Defender is on standby, and Oberih tells you so.</p></details><details><summary>Why does it ask for administrator rights?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Viewing works without them, except the exclusion list and quarantine. Changing settings and exclusions, allowing threats, restoring from quarantine, the offline scan and stopping a scan need them. Press <b>Unlock</b>, Windows asks once, and the rights last until you close the window. Oberih has no background service that could change settings at someone else’s request, and before unlocking it checks that its own file hasn’t changed since it started.</p></details><details><summary>What if Tamper Protection blocks a setting?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih doesn’t bypass it. Settings it guards are shown with a lock and can be changed only in Windows Security. That’s good: a virus can’t turn protection off either.</p></details><details><summary>How do I remove it?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>In Windows Settings → <b>Apps</b>, find Oberih and choose <b>Uninstall</b>, or use the button in Oberih’s Settings. The app, its shortcuts and its settings are removed; Microsoft Defender and all its settings stay as they are. Changes you made in Defender, such as exclusions, stay too. If you only ran the downloaded file without installing, delete it and the folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details><summary>How do updates work?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>While Oberih is open, it reads a small file from pegasohlib.github.io at start and every 12 hours, if automatic checks are on (they are by default). If a newer version exists, a button appears. Only when you press it, the file is downloaded from GitHub, its signature and checksum are checked, and Oberih restarts as the new version.</p></details><details><summary>What’s new: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Belarusian language added.</p></details><details class="sha" hidden><summary>How do I check the file?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>The SHA-256 checksum of the file you download must match this one: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -303,7 +288,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

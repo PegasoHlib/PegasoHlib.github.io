@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../uk/privacy.html">Політика конфіденційності</a></p>
     <p class="note">Нові версії він знаходить сам, а встановлюєш ти кнопкою.<br>Безкоштовно · без реклами · 27 мов</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Оцінка від 0 до 100</h3><p>Оберіг зводить усе, що знаходить на цьому ПК, до одного числа, щоб одразу було видно, наскільки ПК захищений.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Сигнал про нову загрозу</h3><p>Якщо Defender щось спіймає, поки Оберіг відкритий, ти побачиш попередження й почуєш звук. Із закритим вікном він не стежить.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Ризиковані винятки під наглядом</h3><p>Оберіг попереджає, коли Defender веліли оминати цілий диск, твою папку користувача, «Завантаження» чи типи файлів на кшталт .exe і .ps1.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Працює без встановлення</h3><p>Запусти завантажений файл як є: .NET ставити не треба. Встановлення лише додає ярлики й оновлення зсередини застосунку.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-uk">
-    <h2 class="eyebrow" id="x-uk">А ще</h2>
-    <div class="chips"><span>Безкоштовно</span><span>Без реклами й стеження</span><span>Без фонової служби й автозапуску</span><span>Поважає захист від втручання</span><span>3 набори звуків</span></div>
-  </section>
+  <p class="also">Безкоштовно · Без реклами й стеження · Без фонової служби й автозапуску</p>
 
   <section class="section faq" aria-labelledby="q-uk">
     <h2 class="eyebrow" id="q-uk">Питання</h2>
-    <div class="faqs"><details class="card"><summary>Windows пише «Windows захистив ваш ПК». Це нормально?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Так. Windows показує це для файлів, які знає не надто добре, зокрема програм без платного сертифіката підпису коду, а в Оберега його немає. Натисни <b>Докладніше</b> під текстом, потім <b>Виконати все одно</b>, а не <b>Не запускати</b>. Власні оновлення Оберега підписані ключем автора й перевіряються перед встановленням.</p></details><details class="card"><summary>Оберіг — це антивірус?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ні. Усе сканування й захист робить Microsoft Defender — вбудований антивірус Windows. Оберіг показує його стан, керує налаштуваннями й пояснює їх простими словами. Якщо головний інший антивірус, Defender чекає в резерві, і Оберіг про це скаже.</p></details><details class="card"><summary>Навіщо йому права адміністратора?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Переглядати можна й без них, крім списку винятків і карантину. Права потрібні, щоб змінювати налаштування й винятки, дозволяти загрози, відновлювати з карантину, запускати офлайн-сканування й зупиняти сканування. Натисни <b>Розблокувати</b>, Windows один раз спитає, і права діють до закриття вікна. В Оберега немає фонової служби, яка могла б змінити налаштування на чужий запит, а перед розблокуванням він перевіряє, що його власний файл не змінився з моменту запуску.</p></details><details class="card"><summary>А якщо налаштування блокує захист від втручання?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг його не обходить. Налаштування, які він стереже, позначені замком і змінюються лише в «Безпеці Windows». Це добре: вірус теж не зможе вимкнути захист.</p></details><details class="card"><summary>Як його видалити?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>У Параметрах Windows → <b>Програми</b> знайди Оберіг і вибери <b>Видалити</b> або натисни кнопку в налаштуваннях Оберега. Застосунок, ярлики й налаштування буде видалено; Microsoft Defender і всі його налаштування залишаться як є. Зміни в Defender, наприклад винятки, теж лишаються. Якщо файл просто запускали без встановлення, видали його й папку <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details class="card"><summary>Як працюють оновлення?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Поки Оберіг відкритий, він читає маленький файл із pegasohlib.github.io під час запуску й раз на 12 годин, якщо автоматична перевірка ввімкнена (за замовчуванням вона ввімкнена). Коли є новіша версія, з'являється кнопка. Лише після її натискання файл завантажується з GitHub, перевіряються його підпис і контрольна сума, і Оберіг перезапускається вже новою версією.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-uk">
-    <h2 class="eyebrow" id="c-uk">Що нового</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>Додано білоруську мову.</dd></div><div><dt>0.3.3</dt><dd>Нове вікно «Ліцензії відкритого коду» в налаштуваннях: указано кожну бібліотеку, яку використовує застосунок, з повним текстом її ліцензії.</dd></div><div><dt>0.3.2</dt><dd>Нова мова: традиційна китайська.</dd></div><div><dt>0.3.1</dt><dd>Нові мови: гінді, китайська (спрощена), нідерландська та арабська (з інтерфейсом справа наліво).</dd></div></dl>
+    <div class="faqs"><details><summary>Windows пише «Windows захистив ваш ПК». Це нормально?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Так. Windows показує це для файлів, які знає не надто добре, зокрема програм без платного сертифіката підпису коду, а в Оберега його немає. Натисни <b>Докладніше</b> під текстом, потім <b>Виконати все одно</b>, а не <b>Не запускати</b>. Власні оновлення Оберега підписані ключем автора й перевіряються перед встановленням.</p></details><details><summary>Оберіг — це антивірус?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Ні. Усе сканування й захист робить Microsoft Defender — вбудований антивірус Windows. Оберіг показує його стан, керує налаштуваннями й пояснює їх простими словами. Якщо головний інший антивірус, Defender чекає в резерві, і Оберіг про це скаже.</p></details><details><summary>Навіщо йому права адміністратора?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Переглядати можна й без них, крім списку винятків і карантину. Права потрібні, щоб змінювати налаштування й винятки, дозволяти загрози, відновлювати з карантину, запускати офлайн-сканування й зупиняти сканування. Натисни <b>Розблокувати</b>, Windows один раз спитає, і права діють до закриття вікна. В Оберега немає фонової служби, яка могла б змінити налаштування на чужий запит, а перед розблокуванням він перевіряє, що його власний файл не змінився з моменту запуску.</p></details><details><summary>А якщо налаштування блокує захист від втручання?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Оберіг його не обходить. Налаштування, які він стереже, позначені замком і змінюються лише в «Безпеці Windows». Це добре: вірус теж не зможе вимкнути захист.</p></details><details><summary>Як його видалити?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>У Параметрах Windows → <b>Програми</b> знайди Оберіг і вибери <b>Видалити</b> або натисни кнопку в налаштуваннях Оберега. Застосунок, ярлики й налаштування буде видалено; Microsoft Defender і всі його налаштування залишаться як є. Зміни в Defender, наприклад винятки, теж лишаються. Якщо файл просто запускали без встановлення, видали його й папку <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details><summary>Як працюють оновлення?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Поки Оберіг відкритий, він читає маленький файл із pegasohlib.github.io під час запуску й раз на 12 годин, якщо автоматична перевірка ввімкнена (за замовчуванням вона ввімкнена). Коли є новіша версія, з'являється кнопка. Лише після її натискання файл завантажується з GitHub, перевіряються його підпис і контрольна сума, і Оберіг перезапускається вже новою версією.</p></details><details><summary>Що нового: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Додано білоруську мову.</p></details><details class="sha" hidden><summary>Як перевірити файл?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Контрольна сума SHA-256 завантаженого файлу має збігатися з цією: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">Питання та ідеї: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/uk/">PegasoHlib — всі застосунки</a> · <a href="https://pegasohlib.github.io/uk/terms.html">Умови використання</a> · <a href="https://pegasohlib.github.io/uk/site-privacy.html">Конфіденційність сайту</a><small class="legal">Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — торгові марки їхніх власників; PegasoHlib із ними не пов’язаний.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/uk/">PegasoHlib — всі застосунки</a> · <a href="https://pegasohlib.github.io/uk/terms.html">Умови використання</a> · <a href="https://pegasohlib.github.io/uk/site-privacy.html">Конфіденційність сайту</a><small class="legal">Переклад зроблено за допомогою ШІ, тому можливі неточності. Хостинг: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube, TikTok — торгові марки їхніх власників; PegasoHlib із ними не пов’язаний.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

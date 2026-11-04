@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#B49BFF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -207,7 +201,6 @@ main{max-width:960px}
     <p class="note">Windows 10 / 11 แบบ 64 บิตเท่านั้น · 70.3 MB · ฟรี · 27 ภาษา<br>ตรวจหาอัปเดตทุก 6 ชั่วโมงและติดตั้งเอง เว้นแต่คุณจะปิดไว้ ทุกอัปเดตได้รับการตรวจสอบด้วยลายเซ็นดิจิทัล</p>
     
     
-    
     </div>
     <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
   </header>
@@ -228,12 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-th">
     <h2 class="eyebrow" id="q-th">คำถาม</h2>
-    <div class="faqs"><details class="card"><summary>คำเตือนของ Windows หน้าตาเป็นอย่างไร?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>หน้าต่างสีน้ำเงินที่มีหัวข้อ <b>“Windows ป้องกันพีซีของคุณแล้ว”</b> และข้อความ “Microsoft Defender SmartScreen ป้องกันไม่ให้แอปที่ไม่รู้จักเริ่มทำงาน…” คลิก<b>ข้อมูลเพิ่มเติม</b>ใต้ข้อความ แล้วคลิก<b>เรียกใช้อยู่ดี</b> ไม่ใช่<b>ไม่ต้องเรียกใช้</b></p></details><details class="card"><summary>ฉันมี Khronometr รุ่นเก่าสำหรับพีซีอยู่แล้ว<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>แค่เรียกใช้ไฟล์ใหม่แล้วคลิก<b>อัปเดต</b> แอปใหม่จะแทนที่รุ่นเก่า ส่วนประวัติ การจำกัด การลงชื่อเข้าใช้ Google และการเริ่มอัตโนมัติยังอยู่ครบ</p></details><details class="card"><summary>แอปเพิ่มอะไรลงในพีซีของฉันบ้าง<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>แอปติดตั้งเฉพาะผู้ใช้ของคุณ โดยไม่ต้องใช้สิทธิ์ผู้ดูแลระบบ: โปรแกรมอยู่ใน <code>%LOCALAPPDATA%\Programs\Khronometr</code> ทางลัดในเมนู Start รายการใน “แอปที่ติดตั้ง” และการเริ่มอัตโนมัติ นอกจากนี้ยังสร้างงานของผู้ใช้คุณชื่อ “Khronometr Watchdog” ที่เริ่มแอปใหม่ทุก 10 นาทีหากแอปไม่ได้ทำงานอยู่ เฉพาะเมื่อคุณเลือกนำเข้าบันทึกของ Windows เท่านั้น Windows จะขอสิทธิ์ผู้ดูแลระบบหนึ่งครั้ง และจะมีการสร้างงาน “Khronometr Journal” ซึ่งคัดลอกบันทึกทุก 6 ชั่วโมงไปยังโฟลเดอร์ใน Program Files ที่มีเพียงผู้ดูแลระบบและคุณเท่านั้นที่อ่านได้</p></details><details class="card"><summary>ฉันต้องลงชื่อเข้าใช้ด้วย Google ไหม<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ต้อง การนับ สถิติสูงสุด และการจำกัดทำงานบนพีซีเครื่องนี้ได้โดยไม่ต้องลงชื่อเข้าใช้ ลงชื่อเข้าใช้เมื่อต้องการดูโทรศัพท์และแท็บเล็ตของคุณที่นี่ และแชร์การจำกัดกับเครื่องเหล่านั้น</p></details><details class="card"><summary>ถอนการติดตั้งอย่างไร?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>การตั้งค่า Windows → แอป → แอปที่ติดตั้ง → Khronometr → ถอนการติดตั้ง</b> วิธีนี้จะลบโปรแกรม ทางลัด การเริ่มอัตโนมัติ งาน Watchdog และรายการใน “แอปที่ติดตั้ง” ส่วนงานบันทึก หากคุณเคยสร้างไว้ จะรับรู้เองแล้วลบตัวเองพร้อมโฟลเดอร์ใน Program Files โดยปกติทันที และอย่างช้าที่สุดตอนรันครั้งถัดไป โดยไม่ถามอะไร ประวัติของคุณยังอยู่ใน <code>%LOCALAPPDATA%\Khronometr</code>: ลบโฟลเดอร์นั้นด้วยตัวเองหากต้องการลบประวัติ และลบสำเนาใน Drive ที่การตั้งค่า Google Drive หากคุณใช้การซิงค์</p></details><details class="card"><summary>ฉันถอนการติดตั้งเวอร์ชันที่เก่ากว่า 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>เวอร์ชันเหล่านั้นทิ้งงาน <code>Khronometr\JournalCopy</code> ไว้ ให้ลบทิ้ง: งานนี้จะรันไฟล์จากโฟลเดอร์ผู้ใช้ด้วยสิทธิ์ผู้ดูแลระบบ เปิด Task Scheduler แล้วลบ หรือรันในเทอร์มินัลผู้ดูแลระบบ: <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code></p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-th">
-    <h2 class="eyebrow" id="c-th">มีอะไรใหม่</h2>
-    <dl class="card"><div><dt>1.2.2</dt><dd>แก้ไขด้านความปลอดภัย: ตอนนี้บันทึก (journal) ของ Windows ถูกคัดลอกโดยงานระบบที่ได้รับการป้องกัน งานนี้จะแทนที่งานเก่าเอง และจะหายไปเมื่อคุณถอนการติดตั้งแอป</dd></div><div><dt>1.2.1</dt><dd>หน้าตาคมชัดขึ้น: ตัวเลขไม่มีแสงเรืองพร่ามัว พื้นหลังเข้มขึ้น และไฮไลต์เป็นสีแทนสีเทา</dd></div><div><dt>1.2.0</dt><dd>ดีไซน์กระจกใหม่: พื้นหลังแสงออโรราอ่อนๆ การ์ดกระจก และตัวเลือกแบบลื่นไหลเหมือนกันทุกที่ หน้าของแต่ละแอปมีตัวเลือกช่วงเวลาของตัวเองแล้ว เหมือนหน้าจอหลัก</dd></div><div><dt>1.1.4</dt><dd>เพิ่มภาษาเบลารุสแล้ว</dd></div></dl>
+    <div class="faqs"><details><summary>คำเตือนของ Windows หน้าตาเป็นอย่างไร?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>หน้าต่างสีน้ำเงินที่มีหัวข้อ <b>“Windows ป้องกันพีซีของคุณแล้ว”</b> และข้อความ “Microsoft Defender SmartScreen ป้องกันไม่ให้แอปที่ไม่รู้จักเริ่มทำงาน…” คลิก<b>ข้อมูลเพิ่มเติม</b>ใต้ข้อความ แล้วคลิก<b>เรียกใช้อยู่ดี</b> ไม่ใช่<b>ไม่ต้องเรียกใช้</b></p></details><details><summary>ฉันมี Khronometr รุ่นเก่าสำหรับพีซีอยู่แล้ว<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>แค่เรียกใช้ไฟล์ใหม่แล้วคลิก<b>อัปเดต</b> แอปใหม่จะแทนที่รุ่นเก่า ส่วนประวัติ การจำกัด การลงชื่อเข้าใช้ Google และการเริ่มอัตโนมัติยังอยู่ครบ</p></details><details><summary>แอปเพิ่มอะไรลงในพีซีของฉันบ้าง<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>แอปติดตั้งเฉพาะผู้ใช้ของคุณ โดยไม่ต้องใช้สิทธิ์ผู้ดูแลระบบ: โปรแกรมอยู่ใน <code>%LOCALAPPDATA%\Programs\Khronometr</code> ทางลัดในเมนู Start รายการใน “แอปที่ติดตั้ง” และการเริ่มอัตโนมัติ นอกจากนี้ยังสร้างงานของผู้ใช้คุณชื่อ “Khronometr Watchdog” ที่เริ่มแอปใหม่ทุก 10 นาทีหากแอปไม่ได้ทำงานอยู่ เฉพาะเมื่อคุณเลือกนำเข้าบันทึกของ Windows เท่านั้น Windows จะขอสิทธิ์ผู้ดูแลระบบหนึ่งครั้ง และจะมีการสร้างงาน “Khronometr Journal” ซึ่งคัดลอกบันทึกทุก 6 ชั่วโมงไปยังโฟลเดอร์ใน Program Files ที่มีเพียงผู้ดูแลระบบและคุณเท่านั้นที่อ่านได้</p></details><details><summary>ฉันต้องลงชื่อเข้าใช้ด้วย Google ไหม<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ไม่ต้อง การนับ สถิติสูงสุด และการจำกัดทำงานบนพีซีเครื่องนี้ได้โดยไม่ต้องลงชื่อเข้าใช้ ลงชื่อเข้าใช้เมื่อต้องการดูโทรศัพท์และแท็บเล็ตของคุณที่นี่ และแชร์การจำกัดกับเครื่องเหล่านั้น</p></details><details><summary>ถอนการติดตั้งอย่างไร?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>การตั้งค่า Windows → แอป → แอปที่ติดตั้ง → Khronometr → ถอนการติดตั้ง</b> วิธีนี้จะลบโปรแกรม ทางลัด การเริ่มอัตโนมัติ งาน Watchdog และรายการใน “แอปที่ติดตั้ง” ส่วนงานบันทึก หากคุณเคยสร้างไว้ จะรับรู้เองแล้วลบตัวเองพร้อมโฟลเดอร์ใน Program Files โดยปกติทันที และอย่างช้าที่สุดตอนรันครั้งถัดไป โดยไม่ถามอะไร ประวัติของคุณยังอยู่ใน <code>%LOCALAPPDATA%\Khronometr</code>: ลบโฟลเดอร์นั้นด้วยตัวเองหากต้องการลบประวัติ และลบสำเนาใน Drive ที่การตั้งค่า Google Drive หากคุณใช้การซิงค์</p></details><details><summary>ฉันถอนการติดตั้งเวอร์ชันที่เก่ากว่า 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>เวอร์ชันเหล่านั้นทิ้งงาน <code>Khronometr\JournalCopy</code> ไว้ ให้ลบทิ้ง: งานนี้จะรันไฟล์จากโฟลเดอร์ผู้ใช้ด้วยสิทธิ์ผู้ดูแลระบบ เปิด Task Scheduler แล้วลบ หรือรันในเทอร์มินัลผู้ดูแลระบบ: <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code></p></details><details><summary>มีอะไรใหม่: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>แก้ไขด้านความปลอดภัย: ตอนนี้บันทึก (journal) ของ Windows ถูกคัดลอกโดยงานระบบที่ได้รับการป้องกัน งานนี้จะแทนที่งานเก่าเอง และจะหายไปเมื่อคุณถอนการติดตั้งแอป</p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +233,7 @@ main{max-width:960px}
   <p class="contact">คำถามและไอเดีย: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/th/">PegasoHlib — แอปทั้งหมด</a> · <a href="https://pegasohlib.github.io/th/terms.html">ข้อกำหนดการใช้งาน</a> · <a href="https://pegasohlib.github.io/th/site-privacy.html">ความเป็นส่วนตัวของเว็บไซต์</a><small class="legal">โฮสติ้ง: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube และ TikTok เป็นเครื่องหมายการค้าของเจ้าของแต่ละราย PegasoHlib ไม่มีส่วนเกี่ยวข้องกับบริษัทเหล่านั้น</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/th/">PegasoHlib — แอปทั้งหมด</a> · <a href="https://pegasohlib.github.io/th/terms.html">ข้อกำหนดการใช้งาน</a> · <a href="https://pegasohlib.github.io/th/site-privacy.html">ความเป็นส่วนตัวของเว็บไซต์</a><small class="legal">คำแปลนี้ทำด้วย AI จึงอาจมีความคลาดเคลื่อน โฮสติ้ง: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube และ TikTok เป็นเครื่องหมายการค้าของเจ้าของแต่ละราย PegasoHlib ไม่มีส่วนเกี่ยวข้องกับบริษัทเหล่านั้น</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

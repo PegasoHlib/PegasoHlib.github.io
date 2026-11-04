@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#FFC673}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -86,6 +86,7 @@ main{max-width:760px}
 .hero h1{font-size:clamp(28px,6.4vw,40px);line-height:1.12;margin:4px 0 12px}
 .date{display:inline-block;margin:0 0 16px;font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
 .lead{margin:0 auto;max-width:600px;font-size:17.5px;color:var(--ink2);text-wrap:pretty}
+.refnote{margin:22px 0 0;text-align:center;font-size:14px;color:var(--ink3)}
 .glance{margin:32px 0 0}
 .glance ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
 @media (min-width:480px){.glance ul>li:last-child:nth-child(odd){grid-column:1/-1}}
@@ -107,7 +108,7 @@ main{max-width:760px}
 .sec ul+p{margin-top:10px}
 table{width:100%;border-collapse:collapse;font-size:15px}
 th,td{text-align:start;vertical-align:top;padding:10px;border-top:1px solid var(--line)}
-thead th{border-top:0;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding-top:0}
+thead th{border-top:0;font-size:14px;color:var(--ink3);font-weight:700;padding-top:0}
 tbody th{font-weight:600;color:var(--ink);width:38%}
 td{color:var(--ink2)}
 td:last-child{font-weight:600;color:var(--ink)}
@@ -165,14 +166,14 @@ td:last-child{font-weight:600;color:var(--ink)}
 
   <nav class="toc" aria-label="このページの内容">
     <p class="eyebrow">このページの内容</p>
-    <div class="chips"><a href="#ja-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>スマホに保存されるもの</a><a href="#ja-lock"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg>封をした手紙はどのように守られるか</a><a href="#ja-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google ドライブ（任意）</a><a href="#ja-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Google データの使い方</a><a href="#ja-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>日付の確認</a><a href="#ja-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>都市と天気（任意）</a><a href="#ja-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>曲の検索（任意）</a><a href="#ja-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>カプセルを贈る</a><a href="#ja-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>通知、カレンダー、ウィジェット</a><a href="#ja-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>アップデート</a><a href="#ja-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>コリスがしないこと</a><a href="#ja-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>アプリが求める権限</a><a href="#ja-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>データの削除</a><a href="#ja-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>お子さま</a><a href="#ja-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>ポリシーの変更</a><a href="#ja-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>お問い合わせ</a></div>
+    <div class="chips"><a href="#ja-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="6.5" y="2.5" width="11" height="19" rx="2.5"/><path d="M10.5 18.5h3"/></svg>スマホに保存されるもの</a><a href="#ja-lock"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="4.5" y="10.5" width="15" height="10" rx="2.5"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg>封をした手紙はどのように守られるか</a><a href="#ja-drive"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 18.5h10a4.5 4.5 0 0 0 .6-8.96A6 6 0 0 0 6.1 10.6 4 4 0 0 0 7 18.5z"/></svg>Google ドライブ（任意）</a><a href="#ja-copy"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg>ファイルのコピー（作った場合）</a><a href="#ja-google"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>Google データの使い方</a><a href="#ja-time"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>日付の確認</a><a href="#ja-place"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.5"/></svg>都市と天気（任意）</a><a href="#ja-song"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l11-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>曲の検索（任意）</a><a href="#ja-gifts"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg>カプセルを贈る</a><a href="#ja-notify"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 16.5V11a6 6 0 0 1 12 0v5.5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>通知、カレンダー、ウィジェット</a><a href="#ja-updates"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.5 12a7.5 7.5 0 1 1-2.2-5.3M19.5 4v4.5H15"/></svg>アップデート</a><a href="#ja-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>コリスがしないこと</a><a href="#ja-permissions"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14.5 8.5l2 2"/></svg>アプリが求める権限</a><a href="#ja-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>データの削除</a><a href="#ja-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>お子さま</a><a href="#ja-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>ポリシーの変更</a><a href="#ja-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>お問い合わせ</a></div>
   </nav>
 
   <section class="card tablecard" aria-labelledby="ja-table">
     <h2 id="ja-table">どのデータが、どこにあり、誰が見られるか</h2>
     <table>
       <thead><tr><th scope="col">データ</th><th scope="col">保存場所</th><th scope="col">見られる人</th></tr></thead>
-      <tbody><tr><th scope="row">カプセルと下書き：手紙、写真、動画、ボイスメッセージ、「この瞬間」</th><td data-label="保存場所">スマホ上に、暗号化されずに。オンにした場合は、封をしたカプセルごとに、あなた自身の Google ドライブにも、暗号化されていない zip として</td><td data-label="見られる人">あなた、Android のアプリ保護を突破した人、そして Drive のコピーについては Google</td></tr><tr><th scope="row">「この瞬間」: スマホの名前または機種名と電池残量(毎回)、気分、曲、都市、天気</th><td data-label="保存場所">カプセルの中に: スマホ上、Drive 上、贈り物のファイル内</td><td data-label="見られる人">カプセルを見られる人すべて。つまり、贈り物やグループカプセルの受取人も</td></tr><tr><th scope="row">設定、誕生日、接続している Google アカウントのメールアドレス</th><td data-label="保存場所">あなたのスマホ</td><td data-label="見られる人">あなただけ</td></tr><tr><th scope="row">おおよその位置情報</th><td data-label="保存場所">保存されません。一度だけ都市名に変換され、カプセルに残るのは都市と天気だけです</td><td data-label="見られる人">MET Norway（約 1 km 単位に丸めた位置を、天気の取得のため）</td></tr><tr><th scope="row">曲の検索で入力した言葉</th><td data-label="保存場所">保存されません。カプセルに残るのは曲名、アーティスト、年だけです</td><td data-label="見られる人">MusicBrainz（曲名を探すため）</td></tr><tr><th scope="row">贈り物、グループカプセル、グループの主催者に送る手紙</th><td data-label="保存場所">あなた自身が送るファイルの中、そのあと各受取人のアプリの中</td><td data-label="見られる人">あなた、送った相手、送るのに使ったアプリ。合言葉がない場合、鍵はファイルの中にあります</td></tr></tbody>
+      <tbody><tr><th scope="row">カプセルと下書き：手紙、写真、動画、ボイスメッセージ、「この瞬間」</th><td data-label="保存場所">スマホ上に、暗号化されずに。オンにした場合は、封をしたカプセルごとに、あなた自身の Google ドライブにも、暗号化されていない zip として</td><td data-label="見られる人">あなた、Android のアプリ保護を突破した人、そして Drive のコピーについては Google</td></tr><tr><th scope="row">ファイルのコピー（保存した場合のみ）</th><td data-label="保存場所">選んだ場所に。秘密の言葉でロックした場合のみ暗号化</td><td data-label="見られる人">ファイルを持つ人</td></tr><tr><th scope="row">「この瞬間」: スマホの名前または機種名と電池残量(毎回)、気分、曲、都市、天気</th><td data-label="保存場所">カプセルの中に: スマホ上、Drive 上、贈り物のファイル内</td><td data-label="見られる人">カプセルを見られる人すべて。つまり、贈り物やグループカプセルの受取人も</td></tr><tr><th scope="row">設定、誕生日、接続している Google アカウントのメールアドレス</th><td data-label="保存場所">あなたのスマホ</td><td data-label="見られる人">あなただけ</td></tr><tr><th scope="row">おおよその位置情報</th><td data-label="保存場所">保存されません。一度だけ都市名に変換され、カプセルに残るのは都市と天気だけです</td><td data-label="見られる人">MET Norway（約 1 km 単位に丸めた位置を、天気の取得のため）</td></tr><tr><th scope="row">曲の検索で入力した言葉</th><td data-label="保存場所">保存されません。カプセルに残るのは曲名、アーティスト、年だけです</td><td data-label="見られる人">MusicBrainz（曲名を探すため）</td></tr><tr><th scope="row">贈り物、グループカプセル、グループの主催者に送る手紙</th><td data-label="保存場所">あなた自身が送るファイルの中、そのあと各受取人のアプリの中</td><td data-label="見られる人">あなた、送った相手、送るのに使ったアプリ。合言葉がない場合、鍵はファイルの中にあります</td></tr></tbody>
     </table>
   </section>
 
@@ -191,13 +192,18 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>Google でログインすると、コリスは <code>drive.appdata</code> という 1 つの権限だけを求めます。この権限により、アプリは Google ドライブ内の非表示のアプリ用フォルダで、自分のファイルだけを作成、読み取り、削除できます。ドライブ内のほかのファイルを見たり変更したりすることはできません。</p><p>封をしたカプセルは、1つずつ、カプセルのランダムな ID を名前にした通常の zip ファイル1つ(手紙、写真、動画、音声メッセージ、「この瞬間」)として、そこに保存され、暗号化されません。開封日と、開封された日付も、ファイルのプロパティとして保存されます。下書きはアップロードされません。同期は、インターネットがあれば変更の数秒後と、1日に2回ほど始まります。これにより、新しいスマホで封をしたカプセルが戻ってきます。アプリは、どのアカウントが接続されているかを表示するためだけに、アカウントのメールアドレスも読み取ります。</p><p>データは暗号化された接続で、スマホと Google の間で直接やり取りされます。間にほかのサーバーはありません。ドライブに保存された内容には、Google 自身のプライバシー ポリシーが適用されます。</p>
     
   </section>
+  <section class="card sec" id="ja-copy">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2.5h8l4.5 4.5v14.5H6z"/><path d="M14 2.5V7h4.5M9 13h6M9 16.5h6"/></svg><h2>ファイルのコピー（作った場合）</h2></div>
+    <p>設定で、すべてのカプセルと下書きを、選んだ場所の1つのファイルにGoogleなしで保存できます。アプリはこのファイルをどこにも送りません。クラウドのフォルダに保存した場合は、そのサービスが保管します。</p><p>秘密の言葉がないと、ファイルは暗号化されません。ファイルを持つ人は誰でも、封をした手紙も含めてすべての手紙を読めます。言葉を設定すると暗号化され、言葉が推測しにくいほど安全です。言葉を忘れると、誰もファイルを開けません。</p><p>復元すると、端末にないカプセルが戻り、封をしたカプセルは封をされたままです。グループ用にまだ集めている手紙と、送ったギフトの言葉は、ファイルに入っていません。</p>
+    
+  </section>
   <section class="card sec" id="ja-google">
     <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>Google データの使い方</h2></div>
     <p>Google API から受け取った情報のコリスによる使用、およびほかのアプリへの転送は、限定使用（Limited Use）の要件を含む <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API サービスのユーザーデータに関するポリシー</a>に準拠します。</p><ul><li>Google ドライブのデータは、カプセルを保存し、あなたのスマホに戻すためだけに使われます。</li><li>販売されることも、広告に使われることも、誰かと共有されることも決してありません。</li><li>人がデータを読むことはありません。開発者はあなたのドライブにも手紙にもアクセスできません。</li></ul>
     
   </section>
   <section class="card sec" id="ja-time">
-    <div class="sechead"><svg class="ic tile t3" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>日付の確認</h2></div>
+    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg><h2>日付の確認</h2></div>
     <p>スマホの時計を動かしてカプセルを早く開けられないように、アプリはウェブサーバー(www.google.com または www.cloudflare.com)に現在時刻を問い合わせ、返答から日付を読み取ります。カプセルの日が来ると、お知らせする前にもう一度問い合わせます。あなたやカプセルに関する情報は送信されません。どのウェブリクエストとも同じく、これらのサービスはあなたの IP アドレスを見ることができます。</p>
     
   </section>
@@ -212,7 +218,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
   <section class="card sec" id="ja-gifts">
-    <div class="sechead"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>カプセルを贈る</h2></div>
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="8.5" width="17" height="4" rx="1"/><path d="M5 12.5v8h14v-8M12 8.5v12M12 8.5S10.5 4 8 4a2.2 2.2 0 0 0 0 4.5M12 8.5S13.5 4 16 4a2.2 2.2 0 0 1 0 4.5"/></svg><h2>カプセルを贈る</h2></div>
     <p>他の人に宛てたカプセルは、あなたが選んだアプリ(メッセンジャー、メール、Google ドライブ)で、あなた自身が送るひとつのファイルになります。開発者がそれを受け取ることはありません。ファイルには、写真、動画、音声メッセージ、「この瞬間」(スマホの名前または機種名と電池残量を含む)を伴う手紙と、入力した場合はあなたの名前が入っています。ファイル名には、受取人またはグループについて入力した名前が含まれ、メッセンジャーやメールのサービスはそれを見ることができます。</p><p>合言葉がない場合、ファイルは暗号化されますが、鍵はファイルの中に保存されています。これは、友人が誤って早く開いてしまうのを防ぐだけで、ファイルを持っていて多少の技術がある人を防ぐものではありません。合言葉でロックすると、鍵はその言葉から作られ、どのファイルにも入りません。そのため、ファイルは合言葉が推測されにくいほど安全です。合言葉はあなたのスマホにだけ残るので、再び確認でき、ファイル、あなたの Google ドライブ、開発者には決して渡りません。ロック解除の前に読めるのは、あなたが書いたヒントだけです。</p><p>グループ宛てのカプセルには、グループの名前と、あなたが挙げた名前も含まれます。グループで一緒にカプセルを書く場合、招待ファイルにはグループの鍵が暗号化されずに入っているため、招待を持っている人は、送り返された手紙を読めます。各人の手紙は、その鍵で暗号化されて、集める人にファイルとして届きます。カプセルに封がされるまで、集まった手紙は、主催者のアプリのストレージに通常のファイルとして置かれます。アプリは誰が書いたかだけを表示し、何を書いたかは表示せず、これらは Drive にコピーされません。</p><p>受取人がコリスでファイルを開くと、そのコピーは受取人のアプリの中に、ほかのカプセルと同じく暗号化されずに保存され、使っている場合は、その人自身の Google ドライブにも保存されます。あなたが送ったファイルは、受取人と、メッセンジャーやメールのサービスに残ります。コリスでカプセルを削除しても、それらを取り戻すことはできません。</p>
     
   </section>
@@ -238,7 +244,7 @@ td:last-child{font-weight:600;color:var(--ink)}
   </section>
   <section class="card sec" id="ja-delete">
     <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg><h2>データの削除</h2></div>
-    <ul><li>アプリでカプセルを削除すると、ログインしているかどうかにかかわらず、手紙、そのファイル、「この瞬間」、リマインダー、保存された贈り物の合言葉が、すぐにスマホから削除されます。カプセルのランダムな ID が入った空の行だけが、次の同期まで残ります。古いバージョンが残したものは、新しいバージョンの起動時に空にされます。</li><li>Google ドライブでは、カプセルの zip が削除され、カプセルの ID と拡張子 .gone が付いた小さなファイルが残ります。このファイルには「gone」という言葉だけが入っていて、ほかのスマホにもカプセルを削除するよう伝えます。そのあと別のスマホで変更したカプセルは残ります。返信は、返信先の手紙のコピーを自分で保持するため、元の手紙を削除しても残ります。</li><li>アプリをアンインストールすると、アプリがスマホに保存したものはすべて削除されますが、あなたの Google ドライブにあるコピーと、他の人に送ったファイルは削除されません。</li><li>アプリを使わずにドライブのコピーを削除するには：ウェブで Google ドライブを開く → 設定 → アプリの管理 → コリス（Kolys） → オプション → 非表示のアプリデータを削除。</li><li>アプリのアクセス権は <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> でいつでも取り消せます。</li></ul>
+    <ul><li>アプリでカプセルを削除すると、ログインしているかどうかにかかわらず、手紙、そのファイル、「この瞬間」、リマインダー、保存された贈り物の合言葉が、すぐにスマホから削除されます。カプセルのランダムな ID が入った空の行だけが、次の同期まで残ります。古いバージョンが残したものは、新しいバージョンの起動時に空にされます。</li><li>Google ドライブでは、カプセルの zip が削除され、カプセルの ID と拡張子 .gone が付いた小さなファイルが残ります。このファイルには「gone」という言葉だけが入っていて、ほかのスマホにもカプセルを削除するよう伝えます。そのあと別のスマホで変更したカプセルは残ります。返信は、返信先の手紙のコピーを自分で保持するため、元の手紙を削除しても残ります。</li><li>アプリを削除すると、アプリが端末に保存したものはすべて消えますが、Google Driveのコピー、保存したコピーのファイル、他の人に送ったファイルは消えません。</li><li>アプリを使わずにドライブのコピーを削除するには：ウェブで Google ドライブを開く → 設定 → アプリの管理 → コリス（Kolys） → オプション → 非表示のアプリデータを削除。</li><li>アプリのアクセス権は <a href="https://myaccount.google.com/connections">myaccount.google.com/connections</a> でいつでも取り消せます。</li></ul>
     
   </section>
   <section class="card sec" id="ja-children">
@@ -247,7 +253,7 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
   <section class="card sec" id="ja-changes">
-    <div class="sechead"><svg class="ic tile t7" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>ポリシーの変更</h2></div>
+    <div class="sechead"><svg class="ic tile t5" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>ポリシーの変更</h2></div>
     <p>アプリがデータに関して新しいことを始める場合は、まずこのページを更新し、上部の日付を新しくします。</p>
     
   </section>
@@ -256,9 +262,10 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>プライバシーに関するご質問は <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> までお寄せください。</p>
     
   </section>
+  <p class="refnote">このページは最初に英語で書かれました。翻訳が英語と異なる場合は、英語の文章が優先されます。</p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">この翻訳は AI で作成したため、不正確な部分が含まれる場合があります。 ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;

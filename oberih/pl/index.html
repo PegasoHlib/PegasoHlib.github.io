@@ -53,7 +53,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#2BF5A0}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -67,7 +68,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -103,18 +103,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -147,15 +142,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -205,7 +199,6 @@ main{max-width:960px}
     </div>
     <p class="textlinks"><a href="../pl/privacy.html">Polityka prywatności</a></p>
     <p class="note">Sam znajduje nowe wersje; Ty naciskasz przycisk, aby je zainstalować.<br>Za darmo · bez reklam · 27 języków</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -230,19 +223,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20.5h16M7 17V11M12 17V6M17 17v-4"/></svg><h3>Wynik od 0 do 100</h3><p>Oberih zamienia to, co znajdzie na tym komputerze, w jedną liczbę, aby od razu było widać, jak bardzo komputer jest chroniony.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="7.5"/><path d="M12 9.5V13l2.5 1.5M4 4.5l3-2M20 4.5l-3-2"/></svg><h3>Alert o nowym zagrożeniu</h3><p>Jeśli Defender coś złapie, gdy Oberih jest otwarty, zobaczysz ostrzeżenie i usłyszysz dźwięk. Nie nasłuchuje, gdy okno jest zamknięte.</p></div><div class="card feat"><svg class="ic tile t6 flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg><h3>Ryzykowne wykluczenia oznaczone</h3><p>Ostrzega, gdy Defenderowi każe się pominąć cały dysk, Twój folder użytkownika, Pobrane lub typy programów, takie jak .exe i .ps1.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg><h3>Działa bez instalacji</h3><p>Uruchom pobrany plik tak, jak jest: bez instalowania .NET, nic od Ciebie nie trzeba. Instalacja dodaje tylko skróty i aktualizacje z poziomu aplikacji.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-pl">
-    <h2 class="eyebrow" id="x-pl">A także</h2>
-    <div class="chips"><span>Za darmo</span><span>Bez reklam i śledzenia</span><span>Bez usługi w tle, bez autostartu</span><span>Szanuje ochronę przed naruszeniem</span><span>3 zestawy dźwięków</span></div>
-  </section>
+  <p class="also">Za darmo · Bez reklam i śledzenia · Bez usługi w tle, bez autostartu</p>
 
   <section class="section faq" aria-labelledby="q-pl">
     <h2 class="eyebrow" id="q-pl">Pytania</h2>
-    <div class="faqs"><details class="card"><summary>Windows pisze „System Windows ochronił Twój komputer”. Czy to w porządku?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Tak. Windows pokazuje to dla plików, których dobrze nie zna, takich jak aplikacje bez płatnego certyfikatu podpisywania kodu, a Oberih go nie ma. Kliknij <b>Więcej informacji</b> pod tekstem, a potem <b>Uruchom mimo to</b>, a nie <b>Nie uruchamiaj</b>. Własne aktualizacje Oberih są podpisane kluczem autora i sprawdzane przed instalacją.</p></details><details class="card"><summary>Czy Oberih to antywirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nie. Całe skanowanie i ochronę zapewnia Microsoft Defender, antywirus wbudowany w Windows. Oberih pokazuje jego stan, zarządza jego ustawieniami i wyjaśnia je prostymi słowami. Jeśli rządzi inny antywirus, Defender czeka w gotowości, a Oberih o tym informuje.</p></details><details class="card"><summary>Po co uprawnienia administratora?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Przeglądanie działa bez nich, z wyjątkiem listy wykluczeń i kwarantanny. Zmiana ustawień i wykluczeń, zezwalanie na zagrożenia, przywracanie z kwarantanny, skanowanie offline i zatrzymanie skanowania ich wymagają. Naciśnij <b>Odblokuj</b>, Windows zapyta raz, a prawa trwają, dopóki nie zamkniesz okna. Oberih nie ma usługi w tle, która mogłaby zmieniać ustawienia na czyjąś prośbę, a przed odblokowaniem sprawdza, czy jego własny plik nie zmienił się od uruchomienia.</p></details><details class="card"><summary>Co, jeśli ochrona przed naruszeniem blokuje ustawienie?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih jej nie omija. Chronione przez nią ustawienia mają kłódkę i można je zmienić tylko w Zabezpieczeniach Windows. To dobrze: wirus też nie wyłączy ochrony.</p></details><details class="card"><summary>Jak go usunąć?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>W Ustawieniach Windows → <b>Aplikacje</b> znajdź Oberih i wybierz <b>Odinstaluj</b> albo użyj przycisku w Ustawieniach Oberih. Aplikacja, jej skróty i ustawienia są usuwane; Microsoft Defender i wszystkie jego ustawienia zostają bez zmian. Zmiany wprowadzone w Defenderze, takie jak wykluczenia, też zostają. Jeśli tylko uruchomiono pobrany plik bez instalacji, usuń go oraz folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details class="card"><summary>Jak działają aktualizacje?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Gdy Oberih jest otwarty, odczytuje mały plik z pegasohlib.github.io przy uruchomieniu i co 12 godzin, jeśli automatyczne sprawdzanie jest włączone (domyślnie jest). Jeśli istnieje nowsza wersja, pojawia się przycisk. Dopiero po jego naciśnięciu plik jest pobierany z GitHub, sprawdzane są jego podpis i suma kontrolna, a Oberih uruchamia się ponownie jako nowa wersja.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-pl">
-    <h2 class="eyebrow" id="c-pl">Co nowego</h2>
-    <dl class="card"><div><dt>0.3.4</dt><dd>Dodano język białoruski.</dd></div><div><dt>0.3.3</dt><dd>Nowe okno „Licencje open source” w Ustawieniach: każda biblioteka używana przez aplikację jest wymieniona wraz z pełnym tekstem licencji.</dd></div><div><dt>0.3.2</dt><dd>Nowy język: chiński tradycyjny.</dd></div><div><dt>0.3.1</dt><dd>Nowe języki: hindi, chiński uproszczony, niderlandzki i arabski (z układem od prawej do lewej).</dd></div></dl>
+    <div class="faqs"><details><summary>Windows pisze „System Windows ochronił Twój komputer”. Czy to w porządku?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Tak. Windows pokazuje to dla plików, których dobrze nie zna, takich jak aplikacje bez płatnego certyfikatu podpisywania kodu, a Oberih go nie ma. Kliknij <b>Więcej informacji</b> pod tekstem, a potem <b>Uruchom mimo to</b>, a nie <b>Nie uruchamiaj</b>. Własne aktualizacje Oberih są podpisane kluczem autora i sprawdzane przed instalacją.</p></details><details><summary>Czy Oberih to antywirus?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Nie. Całe skanowanie i ochronę zapewnia Microsoft Defender, antywirus wbudowany w Windows. Oberih pokazuje jego stan, zarządza jego ustawieniami i wyjaśnia je prostymi słowami. Jeśli rządzi inny antywirus, Defender czeka w gotowości, a Oberih o tym informuje.</p></details><details><summary>Po co uprawnienia administratora?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Przeglądanie działa bez nich, z wyjątkiem listy wykluczeń i kwarantanny. Zmiana ustawień i wykluczeń, zezwalanie na zagrożenia, przywracanie z kwarantanny, skanowanie offline i zatrzymanie skanowania ich wymagają. Naciśnij <b>Odblokuj</b>, Windows zapyta raz, a prawa trwają, dopóki nie zamkniesz okna. Oberih nie ma usługi w tle, która mogłaby zmieniać ustawienia na czyjąś prośbę, a przed odblokowaniem sprawdza, czy jego własny plik nie zmienił się od uruchomienia.</p></details><details><summary>Co, jeśli ochrona przed naruszeniem blokuje ustawienie?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Oberih jej nie omija. Chronione przez nią ustawienia mają kłódkę i można je zmienić tylko w Zabezpieczeniach Windows. To dobrze: wirus też nie wyłączy ochrony.</p></details><details><summary>Jak go usunąć?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>W Ustawieniach Windows → <b>Aplikacje</b> znajdź Oberih i wybierz <b>Odinstaluj</b> albo użyj przycisku w Ustawieniach Oberih. Aplikacja, jej skróty i ustawienia są usuwane; Microsoft Defender i wszystkie jego ustawienia zostają bez zmian. Zmiany wprowadzone w Defenderze, takie jak wykluczenia, też zostają. Jeśli tylko uruchomiono pobrany plik bez instalacji, usuń go oraz folder <code>%LOCALAPPDATA%\Oberih</code>.</p></details><details><summary>Jak działają aktualizacje?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Gdy Oberih jest otwarty, odczytuje mały plik z pegasohlib.github.io przy uruchomieniu i co 12 godzin, jeśli automatyczne sprawdzanie jest włączone (domyślnie jest). Jeśli istnieje nowsza wersja, pojawia się przycisk. Dopiero po jego naciśnięciu plik jest pobierany z GitHub, sprawdzane są jego podpis i suma kontrolna, a Oberih uruchamia się ponownie jako nowa wersja.</p></details><details><summary>Co nowego: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Dodano język białoruski.</p></details><details class="sha" hidden><summary>Jak sprawdzić plik?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Suma kontrolna SHA-256 pobranego pliku musi być zgodna z tą: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -254,7 +239,7 @@ main{max-width:960px}
   <p class="contact">Pytania i pomysły: <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
 </article>
 </main>
-<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/pl/">PegasoHlib — wszystkie aplikacje</a> · <a href="https://pegasohlib.github.io/pl/terms.html">Warunki korzystania</a> · <a href="https://pegasohlib.github.io/pl/site-privacy.html">Prywatność strony</a><small class="legal">Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube i TikTok to znaki towarowe ich właścicieli; PegasoHlib nie jest z nimi powiązany.</small></footer>
+<footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/pl/">PegasoHlib — wszystkie aplikacje</a> · <a href="https://pegasohlib.github.io/pl/terms.html">Warunki korzystania</a> · <a href="https://pegasohlib.github.io/pl/site-privacy.html">Prywatność strony</a><small class="legal">To tłumaczenie powstało z pomocą AI, więc może zawierać nieścisłości. Hosting: GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Microsoft, Defender, Windows, Android, Google Play, Roblox, YouTube i TikTok to znaki towarowe ich właścicieli; PegasoHlib nie jest z nimi powiązany.</small></footer>
 <script>
 (function () {
   var sel = document.getElementById("lang"), cur = sel.value;
@@ -277,7 +262,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>

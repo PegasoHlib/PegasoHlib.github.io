@@ -79,7 +79,8 @@
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}}
 :root[data-theme=dark]{--h0:#3987E5;--h1:#D95926;--h2:#199E70;--h3:#C98500;--h4:#D55181;--h5:#2E9A2E;--h6:#9085E9;--h7:#E66767;--panel-line:var(--line);--accent:#A9B8FF}
 .tile{width:40px;height:40px;padding:9px;background:var(--g1);color:var(--on-accent)}
-h2.eyebrow{font-family:inherit;line-height:1.4}
+.eyebrow{margin:0 0 12px;font-size:20px;font-weight:700;line-height:1.3;letter-spacing:0;text-transform:none;color:var(--ink)}
+h2.eyebrow{font-family:inherit}
 :root:lang(th) body{font-family:Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,system-ui,sans-serif}
 :root:lang(th) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Thai","Noto Sans Thai UI","Leelawadee UI",Leelawadee,Thonburi,Tahoma,sans-serif;line-height:1.35}
 :root:lang(ko) body{font-family:Onest,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR","Noto Sans CJK KR","Nanum Gothic",system-ui,sans-serif;word-break:keep-all;overflow-wrap:anywhere}
@@ -93,7 +94,6 @@ h2.eyebrow{font-family:inherit;line-height:1.4}
 :root:lang(ar) body{font-family:Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",system-ui,sans-serif;line-height:1.75}
 :root:lang(ar) :is(h1,h2,.display,.card.app h3){font-family:Unbounded,Onest,"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,"Noto Naskh Arabic",sans-serif;line-height:1.45}
 :root:lang(ar) *{letter-spacing:0!important}
-:root:is(:lang(hi),:lang(zh)) :is(.eyebrow,.cat,.kicker,thead th){letter-spacing:.02em}
 :root:is(:lang(hi),:lang(zh),:lang(ar)) :is(h1,h2,h3){hyphens:manual}
 [dir=rtl] .ic.flip{transform:scaleX(-1)}
 [dir=rtl] .ic.flip.down{transform:rotate(90deg)}
@@ -129,18 +129,13 @@ main{max-width:960px}
 }
 .textlinks{margin:14px 0 0;font-size:15px;color:var(--ink3)}
 .textlinks a{color:var(--ink2)}
-.sha{margin-top:6px;font-size:13px;overflow-wrap:anywhere}
 .sha[hidden]{display:none}
-.sha code{font-size:12px;background:none;border:0;padding:0}
+.sha code{display:block;margin-top:6px;font-size:12.5px;overflow-wrap:anywhere}
 .qr{display:none;margin:20px auto 0;align-items:center;justify-content:center;gap:14px;max-width:360px;text-align:start}
 .qr svg{flex:none;display:block;width:112px;height:112px;border-radius:12px;border:1px solid var(--line)}
 .qr p{margin:0;font-size:14px;color:var(--ink2)}
 @media (min-width:900px) and (hover:hover){.qr{display:flex}}
-.changes{margin-top:36px}
-.changes dl{margin:0;display:grid;gap:12px}
-.changes dl div{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:12px}
-.changes dt{font-weight:700;font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
-.changes dd{margin:0;color:var(--ink2);font-size:15px}
+.also{margin:28px 0 0;color:var(--ink2);font-size:15px;text-align:center;text-wrap:balance}
 .shots.two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:680px}
 .grid.n2>:last-child:nth-child(odd){grid-column:1/-1}
 .count .mini{width:15px;height:15px}
@@ -173,15 +168,14 @@ main{max-width:960px}
 @media (min-width:900px){.grid.n4{grid-template-columns:repeat(4,minmax(0,1fr))}}
 .feat h3{margin:12px 0 4px;font-size:17.5px;line-height:1.3}
 .feat p{margin:0;color:var(--ink2);font-size:15.5px}
-.extra{margin-top:36px}
-.faq{margin-top:36px}
-.faqs{display:grid;gap:10px}
-.faqs details{padding:0}
-.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 20px;font-weight:600;cursor:pointer;list-style:none}
+.faq{margin-top:40px}
+.faqs{border-top:1px solid var(--line)}
+.faqs details{border-bottom:1px solid var(--line)}
+.faqs summary{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 2px;font-weight:600;line-height:1.4;cursor:pointer;list-style:none}
 .faqs summary::-webkit-details-marker{display:none}
-.faqs .chev{color:var(--ink3);transition:transform .2s}
+.faqs .chev{width:18px;height:18px;color:var(--ink3);transition:transform .2s}
 .faqs details[open] .chev{transform:rotate(180deg)}
-.faqs details p{padding:0 20px 18px}
+.faqs details p{margin:0;padding:0 2px 16px;color:var(--ink2);font-size:15.5px}
 .private{display:flex;gap:18px;align-items:flex-start;margin:40px 0 0;padding:26px;border-radius:26px;border:1px solid var(--panel-line);background:linear-gradient(135deg,var(--navy1),var(--navy2));color:#fff}
 .private .big{width:48px;height:48px;flex:none;color:var(--panel-ic);stroke-width:1.6}
 .private h2{margin:0;font-size:clamp(21px,4.4vw,26px);line-height:1.2}
@@ -229,9 +223,8 @@ main{max-width:960px}
       <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Download for Windows</span><span class="ver badge" hidden></span></a>
       
     </div>
-    <p class="textlinks"><a href="privacy.html">Privacy policy</a> · <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">Licenses and source code</a></p>
+    <p class="textlinks"><a href="privacy.html">Privacy policy</a></p>
     <p class="note">Free · no ads · Windows 10 and 11 (64-bit)<br>Updates are checked from inside the app; you can turn off the automatic download<br>27 languages, the same as this website</p>
-    <p class="note sha" hidden>SHA-256: <code></code></p>
     
     
     </div>
@@ -255,19 +248,11 @@ main{max-width:960px}
     <div class="grid n4"><div class="card feat"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5l9 4.5-9 4.5-9-4.5z"/><path d="M3 12.5l9 4.5 9-4.5M3 16.5l9 4.5 9-4.5"/></svg><h3>Layers and canvas sizes</h3><p>Photos and text as layers. Ready sizes for a thumbnail, a square post and a story.</p></div><div class="card feat"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5c.6 4.2 2.3 5.9 6.5 6.5-4.2.6-5.9 2.3-6.5 6.5-.6-4.2-2.3-5.9-6.5-6.5 4.2-.6 5.9-2.3 6.5-6.5zM18.5 15.5c.3 1.7.9 2.3 2.5 2.5-1.6.3-2.2.9-2.5 2.5-.3-1.6-.9-2.2-2.5-2.5 1.6-.2 2.2-.8 2.5-2.5z"/></svg><h3>Background removal</h3><p>One click, on your PC. The model, about 115 MB, is downloaded once. There is also a blur brush and <b>Blur background</b>.</p></div><div class="card feat"><svg class="ic tile t6" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg><h3>AI enhancement ×2 or ×4</h3><p>Real-ESRGAN models of 2–5 MB, downloaded once. Your photos are never uploaded.</p></div><div class="card feat"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4.6L15.8 4.8a2.1 2.1 0 0 1 3 0l.4.4a2.1 2.1 0 0 1 0 3L8.6 18.8z"/><path d="M13.8 6.8l3.4 3.4M4 20h16"/></svg><h3>Brush, shapes and clipboard</h3><p>Brush, eraser, arrows and shapes. <b>Ctrl+V</b> pastes a screenshot, <b>Ctrl+Shift+C</b> copies the result.</p></div></div>
   </section>
 
-  <section class="section extra" aria-labelledby="x-en">
-    <h2 class="eyebrow" id="x-en">And also</h2>
-    <div class="chips"><span>Free, no ads</span><span>Light and dark theme</span><span>Adjustable text size</span><span>Safe zone for TikTok</span><span>Autosave for video projects</span><span>Signed updates</span><span>No administrator rights</span><span>Open-source parts plus Microsoft DirectML, licenses inside</span></div>
-  </section>
+  <p class="also">Free, no ads · Autosave for video projects · Signed updates</p>
 
   <section class="section faq" aria-labelledby="q-en">
     <h2 class="eyebrow" id="q-en">Questions</h2>
-    <div class="faqs"><details class="card"><summary>Windows says “Windows protected your PC”. Is that OK?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows shows this for apps without a paid code-signing certificate, and Kadr doesn’t have one. Click <b>More info</b>, then <b>Run anyway</b>. Kadr’s own updates are checked against a digital signature before they are installed.</p></details><details class="card"><summary>Are my videos or photos uploaded anywhere?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. They stay on your computer, and background removal and enhancement run on it too. The one exception is auto-subtitles, and only when you start them: the audio of the chosen clip goes to ElevenLabs with your own API key.</p></details><details class="card"><summary>What does Kadr need the internet for?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>To check for updates (when Kadr starts and every 6 hours), to download an update, and once per AI model. The check itself cannot be turned off; in Settings → Updates you can turn off only the automatic download. Auto-subtitles also go online, if you use them.</p></details><details class="card"><summary>Does AI need a strong graphics card?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No, but it is much slower without one. With DirectML on (the default) AI uses the graphics card; background removal can take around 5 GB of video memory. In Settings → AI you can switch to the processor only.</p></details><details class="card"><summary>What if Kadr or the PC crashes?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>A video project is autosaved every 45 seconds and Kadr offers to recover it next time. Photo projects are not autosaved, so save them yourself.</p></details><details class="card"><summary>How do I remove it, and what stays?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Uninstall Kadr in Windows Settings → <b>Apps</b>. Your settings, recent project paths and the encrypted ElevenLabs key stay in the registry, and the autosave, cache and models stay in <code>%LOCALAPPDATA%\Kadr</code>. The privacy policy says how to delete them.</p></details></div>
-  </section>
-
-  <section class="section changes" aria-labelledby="c-en">
-    <h2 class="eyebrow" id="c-en">What’s new</h2>
-    <dl class="card"><div><dt>2.9.0</dt><dd>Blur in the photo editor: a separate Blur slider (much stronger than before), a Blur brush tool that blurs only where you paint, and Blur background: the person or object stays sharp while the background behind it is blurred, like a phone’s portrait mode (light, medium or strong; runs on this computer).</dd></div><div><dt>2.8.0</dt><dd>Speed curve: a clip's speed can change smoothly — slow motion at the right moment, a speed-up, a “jump”. Ready presets (Speed up, Slow down, Hero, Bullet, Montage, Jump) and your own graph: drag points up or down, double-click adds a point. Preview, splitting and export follow the curve exactly, and the sound speeds up without changing the pitch.</dd></div><div><dt>2.7.2</dt><dd>The About page is simpler: links to the source code of third-party libraries are now only in the Licenses window.</dd></div><div><dt>2.7.1</dt><dd>New Settings and About pages: cards with switches, the language in one list with flags, links as tiles. Nicer details: the logo in the top bar, timeline clips with softer colours and a selection outline, a pin-shaped playhead and hints in an empty project.</dd></div></dl>
+    <div class="faqs"><details><summary>Windows says “Windows protected your PC”. Is that OK?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows shows this for apps without a paid code-signing certificate, and Kadr doesn’t have one. Click <b>More info</b>, then <b>Run anyway</b>. Kadr’s own updates are checked against a digital signature before they are installed.</p></details><details><summary>Are my videos or photos uploaded anywhere?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No. They stay on your computer, and background removal and enhancement run on it too. The one exception is auto-subtitles, and only when you start them: the audio of the chosen clip goes to ElevenLabs with your own API key.</p></details><details><summary>What does Kadr need the internet for?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>To check for updates (when Kadr starts and every 6 hours), to download an update, and once per AI model. The check itself cannot be turned off; in Settings → Updates you can turn off only the automatic download. Auto-subtitles also go online, if you use them.</p></details><details><summary>Does AI need a strong graphics card?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>No, but it is much slower without one. With DirectML on (the default) AI uses the graphics card; background removal can take around 5 GB of video memory. In Settings → AI you can switch to the processor only.</p></details><details><summary>What if Kadr or the PC crashes?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>A video project is autosaved every 45 seconds and Kadr offers to recover it next time. Photo projects are not autosaved, so save them yourself.</p></details><details><summary>What is Kadr built from?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>It uses open-source parts such as FFmpeg and Qt, and Microsoft DirectML, which is closed. Every part and its license are listed in the app under About → Licenses. As these licenses require, the <a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">source code of the open-source parts</a> is available to download.</p></details><details><summary>How do I remove it, and what stays?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Uninstall Kadr in Windows Settings → <b>Apps</b>. Your settings, recent project paths and the encrypted ElevenLabs key stay in the registry, and the autosave, cache and models stay in <code>%LOCALAPPDATA%\Kadr</code>. The privacy policy says how to delete them.</p></details><details><summary>What’s new: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Blur in the photo editor: a separate Blur slider (much stronger than before), a Blur brush tool that blurs only where you paint, and Blur background: the person or object stays sharp while the background behind it is blurred, like a phone’s portrait mode (light, medium or strong; runs on this computer).</p></details><details class="sha" hidden><summary>How do I check the file?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>The SHA-256 checksum of the file you download must match this one: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -302,7 +287,7 @@ main{max-width:960px}
       a[i].href = url;
       var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
     }
-    var sha = document.querySelector(".sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
   }).catch(function () {});
 })();
 </script>
