@@ -1,11 +1,11 @@
 {
-    "versionCode":  3600,
-    "versionName":  "0.36.0",
+    "versionCode":  3601,
+    "versionName":  "0.36.1",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "5c80d4bdeb935ba1dbeb8c9fea1e76cd6a575a9659256592fa637bde60fe3c5b",
-    "size":  308187616,
+    "sha256":  "b6fd56ca5bcfee2b3944ed22a33c1894a890fd629cc93bda32d8dc2b94228623",
+    "size":  308189304,
     "notes":  {
-                  "uk":  "Зв\u0027язок зі столицею й перші закони: провінції далеко від столиці гінець досягає за дні, і чим довше, тим слабший контроль (з 1850 року телеграф). Податки: низькі, звичайні, високі, грабіжницькі. Новий закон поширюється від столиці й діє в провінції, лише коли туди дійде звістка. Провінції можна дати автономію: платить половину, зате спокійніша.",
-                  "en":  "The capital\u0027s reach and the first laws: far provinces are days away by messenger, and the longer, the looser they are held (the telegraph from 1850). Taxes: low, normal, high, plunder. A new law spreads from the capital and holds in a province only once word arrives. A province can be given autonomy: it pays half but is calmer."
+                  "uk":  "Посилання на умови використання й політику конфіденційності в налаштуваннях. Точніші джерела даних у титрах.",
+                  "en":  "Links to the terms of use and the privacy policy in Settings. More exact data sources in the credits."
               }
 }
