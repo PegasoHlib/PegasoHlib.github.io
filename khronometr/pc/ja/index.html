@@ -88,6 +88,9 @@ main{max-width:960px}
 .count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
 .heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
 .heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.herofig{min-width:0}
+.herocredit{margin:8px 0 0;text-align:center;font-size:12px;color:var(--ink3)}
+.herocredit a{color:inherit}
 .gallery{display:grid;gap:12px;margin-top:28px}
 .gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
 @media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
@@ -202,14 +205,14 @@ main{max-width:960px}
     
     
     </div>
-    <img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780">
+    <div class="herofig"><img class="heroart" src="../../img/pc-home.webp" alt="" width="1180" height="780"></div>
   </header>
 
   <section class="gallery"><img src="../../img/pc-records.webp" alt="" width="1180" height="780" loading="lazy"><img src="../../img/pc-app.webp" alt="" width="1180" height="780" loading="lazy"></section>
 
   <section class="show" aria-label="インストール方法">
     <div class="showtext"><h2 class="display">インストール方法</h2></div>
-    <ol class="steps"><li><span class="num">1</span><div><h3>ダウンロードして実行</h3><p>上のボタンでファイルを<b>ダウンロード</b>して<b>実行</b>してください。フロノメトルが<b>インストール</b>を提案します。あなたのユーザーだけに入り、管理者権限は不要です。スタートメニューに表示されます。</p></div></li><li><span class="num">2</span><div><h3>Windows の警告が出たら</h3><p>Windows に「Windows によって PC が保護されました」と表示されたら、<b>詳細情報</b>をクリックし、<b>実行</b>をクリックしてください。有料の署名がないアプリでは、こうなります。フロノメトルが PC に追加するものは、下の質問に載っています。</p></div></li><li><span class="num">3</span><div><h3>Google でログイン</h3><p>フロノメトルのウィンドウで<b>ログイン</b>をクリックし、スマホと同じアカウントでログインします。すると、スマホとタブレットもここに表示されます。</p></div></li><li><span class="num">4</span><div><h3>完了</h3><p>フロノメトルは、ウィンドウを閉じても計測を続けます。<b>時計の隣</b>(トレイ)に常駐し、Windows と一緒に起動します。設定でオフにできます。</p></div></li></ol>
+    <ol class="steps"><li><span class="num">1</span><div><h3>ダウンロードして実行</h3><p>上のボタンでファイルを<b>ダウンロード</b>して<b>実行</b>してください。フロノメトルが<b>インストール</b>を提案します。あなたのユーザーだけに入り、管理者権限は不要です。スタートメニューに表示されます。</p></div></li><li><span class="num">2</span><div><h3>Windows の警告が出たら</h3><p>Windows に「Windows によって PC が保護されました」と表示されたら、<b>詳細情報</b>をクリックし、<b>実行</b>をクリックしてください。有料の署名がないアプリでは、こうなります。フロノメトルが PC に追加するものは、下の質問に載っています。</p></div></li><li><span class="num">3</span><div><h3>Google ドライブに接続</h3><p>フロノメトルのウィンドウで<b>「Google ドライブに接続」</b>をクリックし、スマホと同じアカウントを選びます。すると、スマホやタブレットもここに表示されます。</p></div></li><li><span class="num">4</span><div><h3>完了</h3><p>フロノメトルは、ウィンドウを閉じても計測を続けます。<b>時計の隣</b>(トレイ)に常駐し、Windows と一緒に起動します。設定でオフにできます。</p></div></li></ol>
   </section>
 
   <section class="section features" aria-labelledby="f-ja">
@@ -221,7 +224,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-ja">
     <h2 class="eyebrow" id="q-ja">よくある質問</h2>
-    <div class="faqs"><details><summary>Windows の警告はどんな画面？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>「Windows によって PC が保護されました」</b>という青いウィンドウに「Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…」と表示されます。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックします。</p></details><details><summary>PC には何が追加されますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>管理者権限なしで、あなたのユーザーにインストールされます。プログラムは <code>%LOCALAPPDATA%\Programs\Khronometr</code> に入り、スタートメニューのショートカット、インストールされているアプリの項目、自動起動が加わります。また、あなたのユーザーのタスク「Khronometr Watchdog」を作成し、実行中でなければ10分ごとに再起動します。Windows のジャーナルをインポートすることを選んだ場合に限り、Windows が管理者権限を一度求め、タスク「Khronometr Journal」が作成されます。このタスクは6時間ごとにジャーナルを Program Files 内のフォルダにコピーし、そのフォルダは管理者とあなただけが読めます。</p></details><details><summary>Google でログインする必要はありますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。計測、記録、上限は、ログインしなくてもこの PC で動作します。スマホとタブレットをここで見たり、上限を共有したりするには、ログインしてください。</p></details><details><summary>アンインストールするには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows の設定 → アプリ → インストールされているアプリ → フロノメトル → アンインストール</b>。これでプログラム、ショートカット、自動起動、Watchdog タスク、インストールされているアプリの項目が削除されます。ジャーナルのタスクを作っていた場合は、それに気づいて、自分自身と自分の Program Files フォルダを確認なしで削除します。通常はすぐに、遅くとも次回の実行時です。履歴は <code>%LOCALAPPDATA%\Khronometr</code> に残ります。消すにはそのフォルダを手動で削除し、同期を使っていた場合は Google ドライブの設定で Drive 上のコピーも削除してください。</p></details><details><summary>新機能: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>セキュリティ修正: Windows のジャーナルは、保護されたシステムタスクでコピーされるようになりました。古いタスクは自動的に置き換えられ、アプリをアンインストールすると消えます。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
+    <div class="faqs"><details><summary>Windows の警告はどんな画面？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>「Windows によって PC が保護されました」</b>という青いウィンドウに「Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…」と表示されます。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックします。</p></details><details><summary>PC には何が追加されますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>管理者権限なしで、あなたのユーザーにインストールされます。プログラムは <code>%LOCALAPPDATA%\Programs\Khronometr</code> に入り、スタートメニューのショートカット、インストールされているアプリの項目、自動起動が加わります。また、あなたのユーザーのタスク「Khronometr Watchdog」を作成し、実行中でなければ10分ごとに再起動します。Windows のジャーナルをインポートすることを選んだ場合に限り、Windows が管理者権限を一度求め、タスク「Khronometr Journal」が作成されます。このタスクは6時間ごとにジャーナルを Program Files 内のフォルダにコピーし、そのフォルダは管理者とあなただけが読めます。</p></details><details><summary>Google でログインする必要はありますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。計測、記録、上限は、ログインしなくてもこの PC で動作します。スマホとタブレットをここで見たり、上限を共有したりするには、ログインしてください。</p></details><details><summary>アンインストールするには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows の設定 → アプリ → インストールされているアプリ → フロノメトル → アンインストール</b>。これでプログラム、ショートカット、自動起動、Watchdog タスク、インストールされているアプリの項目が削除されます。ジャーナルのタスクを作っていた場合は、それに気づいて、自分自身と自分の Program Files フォルダを確認なしで削除します。通常はすぐに、遅くとも次回の実行時です。履歴は <code>%LOCALAPPDATA%\Khronometr</code> に残ります。消すにはそのフォルダを手動で削除し、同期を使っていた場合は Google ドライブの設定で Drive 上のコピーも削除してください。</p></details><details><summary>新機能: 1.2.3<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>新機能:設定から Google ドライブのコピーを削除できます。Steam の公開ストアでゲーム名を調べるスイッチを追加しました(初期設定はオフ)。インストール画面と設定に利用規約へのリンクがあります。履歴に含まれるのは、現在の Windows アカウントとそこで使う Steam アカウントだけです。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
   </section>
 
   <section class="private">

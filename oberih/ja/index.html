@@ -88,6 +88,9 @@ main{max-width:960px}
 .count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
 .heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
 .heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.herofig{min-width:0}
+.herocredit{margin:8px 0 0;text-align:center;font-size:12px;color:var(--ink3)}
+.herocredit a{color:inherit}
 .gallery{display:grid;gap:12px;margin-top:28px}
 .gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
 @media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
@@ -194,7 +197,7 @@ main{max-width:960px}
     <p class="tagline">Microsoft Defender の便利なパートナー</p>
     <p class="lead">PC を守っているのは、Windows に組み込まれたウイルス対策ソフト Microsoft Defender です。オベリフはその状態を表示し、スキャンを実行し、すべての設定をわかりやすく説明して、より安全に使うためのヒントを提案します。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.3.4/Oberih-0.3.4.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/oberih-v0.3.5/Oberih-0.3.5.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>Windows 版をダウンロード</span><span class="ver badge" hidden></span></a>
       
     </div>
     <p class="textlinks"><a href="../ja/privacy.html">プライバシーポリシー</a></p>
@@ -202,7 +205,7 @@ main{max-width:960px}
     
     
     </div>
-    <img class="heroart" src="../img/overview.webp" alt="" width="1100" height="720">
+    <div class="herofig"><img class="heroart" src="../img/overview.webp" alt="" width="1100" height="720"></div>
   </header>
 
   <section class="gallery"><img src="../img/scan.webp" alt="" width="1100" height="720" loading="lazy"><img src="../img/protection.webp" alt="" width="1100" height="720" loading="lazy"></section>
@@ -227,7 +230,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-ja">
     <h2 class="eyebrow" id="q-ja">よくある質問</h2>
-    <div class="faqs"><details><summary>「Windows によって PC が保護されました」と表示されます。大丈夫？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい。Windows は、有料のコード署名証明書がないアプリなど、よく知らないファイルに対してこれを表示します。オベリフにはその証明書がありません。文章の下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックしてください。オベリフ自身のアップデートは作者の鍵で署名されており、インストール前に検証されます。</p></details><details><summary>オベリフはウイルス対策ソフトですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。スキャンと保護はすべて、Windows に組み込まれたウイルス対策ソフト Microsoft Defender が行います。オベリフはその状態を表示し、設定を管理し、わかりやすく説明します。ほかのウイルス対策ソフトが使われている場合、Defender は待機状態になり、オベリフがそれを知らせます。</p></details><details><summary>なぜ管理者権限を求めるのですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>除外リストと隔離を除き、表示するだけなら不要です。設定や除外の変更、脅威の許可、隔離からの復元、オフラインスキャン、スキャンの停止には必要です。<b>ロック解除</b>を押すと、Windows が一度確認し、その権限はウィンドウを閉じるまで続きます。オベリフには、他人の要求で設定を変更できるようなバックグラウンドサービスはなく、ロックを解除する前に、自分のファイルが起動後に変更されていないか確認します。</p></details><details><summary>改ざん防止が設定をブロックしたら？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフはそれを回避しません。改ざん防止で守られている設定は鍵マークで表示され、「Windows セキュリティ」でのみ変更できます。これは良いことで、ウイルスも保護をオフにできません。</p></details><details><summary>削除するには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows の設定 → <b>アプリ</b>でオベリフを探して<b>アンインストール</b>を選ぶか、オベリフの設定にあるボタンを使ってください。アプリ、ショートカット、設定が削除され、Microsoft Defender とそのすべての設定はそのまま残ります。除外など、Defender であなたが行った変更も残ります。インストールせずにダウンロードしたファイルを実行しただけの場合は、そのファイルとフォルダ <code>%LOCALAPPDATA%\Oberih</code> を削除してください。</p></details><details><summary>アップデートはどのように行われますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフが開いている間、自動確認がオン(初期設定ではオンです)であれば、起動時と12時間ごとに pegasohlib.github.io から小さなファイルを読み取ります。より新しいバージョンがあると、ボタンが表示されます。あなたがそのボタンを押したときだけ、GitHub からファイルがダウンロードされ、署名とチェックサムが確認されたあと、オベリフが新しいバージョンとして再起動します。</p></details><details><summary>新機能: 0.3.4<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ベラルーシ語を追加しました。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
+    <div class="faqs"><details><summary>「Windows によって PC が保護されました」と表示されます。大丈夫？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>はい。Windows は、有料のコード署名証明書がないアプリなど、よく知らないファイルに対してこれを表示します。オベリフにはその証明書がありません。文章の下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックしてください。オベリフ自身のアップデートは作者の鍵で署名されており、インストール前に検証されます。</p></details><details><summary>オベリフはウイルス対策ソフトですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。スキャンと保護はすべて、Windows に組み込まれたウイルス対策ソフト Microsoft Defender が行います。オベリフはその状態を表示し、設定を管理し、わかりやすく説明します。ほかのウイルス対策ソフトが使われている場合、Defender は待機状態になり、オベリフがそれを知らせます。</p></details><details><summary>なぜ管理者権限を求めるのですか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>除外リストと隔離を除き、表示するだけなら不要です。設定や除外の変更、脅威の許可、隔離からの復元、オフラインスキャン、スキャンの停止には必要です。<b>ロック解除</b>を押すと、Windows が一度確認し、その権限はウィンドウを閉じるまで続きます。オベリフには、他人の要求で設定を変更できるようなバックグラウンドサービスはなく、ロックを解除する前に、自分のファイルが起動後に変更されていないか確認します。</p></details><details><summary>改ざん防止が設定をブロックしたら？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフはそれを回避しません。改ざん防止で守られている設定は鍵マークで表示され、「Windows セキュリティ」でのみ変更できます。これは良いことで、ウイルスも保護をオフにできません。</p></details><details><summary>削除するには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>Windows の設定 → <b>アプリ</b>でオベリフを探して<b>アンインストール</b>を選ぶか、オベリフの設定にあるボタンを使ってください。アプリ、ショートカット、設定が削除され、Microsoft Defender とそのすべての設定はそのまま残ります。除外など、Defender であなたが行った変更も残ります。インストールせずにダウンロードしたファイルを実行しただけの場合は、そのファイルとフォルダ <code>%LOCALAPPDATA%\Oberih</code> を削除してください。</p></details><details><summary>アップデートはどのように行われますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>オベリフが開いている間、自動確認がオン(初期設定ではオンです)であれば、起動時と12時間ごとに pegasohlib.github.io から小さなファイルを読み取ります。より新しいバージョンがあると、ボタンが表示されます。あなたがそのボタンを押したときだけ、GitHub からファイルがダウンロードされ、署名とチェックサムが確認されたあと、オベリフが新しいバージョンとして再起動します。</p></details><details><summary>新機能: 0.3.5<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>保護を弱める前の確認、利用規約へのリンク。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
   </section>
 
   <section class="private">

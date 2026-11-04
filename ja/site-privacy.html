@@ -86,7 +86,6 @@ main{max-width:760px}
 .hero h1{font-size:clamp(28px,6.4vw,40px);line-height:1.12;margin:4px 0 12px}
 .date{display:inline-block;margin:0 0 16px;font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
 .lead{margin:0 auto;max-width:600px;font-size:17.5px;color:var(--ink2);text-wrap:pretty}
-.refnote{margin:22px 0 0;text-align:center;font-size:14px;color:var(--ink3)}
 .glance{margin:32px 0 0}
 .glance ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
 @media (min-width:480px){.glance ul>li:last-child:nth-child(odd){grid-column:1/-1}}
@@ -166,7 +165,7 @@ td:last-child{font-weight:600;color:var(--ink)}
 
   <nav class="toc" aria-label="このページの内容">
     <p class="eyebrow">このページの内容</p>
-    <div class="chips"><a href="#ja-browser"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>ブラウザに保存されるもの</a><a href="#ja-browser2"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>同意バナーがない理由</a><a href="#ja-host"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg>ホスティング</a><a href="#ja-downloads"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロードと数値</a><a href="#ja-none"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>サイトが使っていないもの</a><a href="#ja-mail"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>メールを送った場合</a><a href="#ja-apps"><svg class="ic mini flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg>アプリとゲームのプライバシーポリシー</a><a href="#ja-rights"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>あなたの権利</a><a href="#ja-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>変更とお問い合わせ</a></div>
+    <div class="chips"><a href="#ja-browser"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="3.5" width="19" height="13.5" rx="2"/><path d="M8 21h8M12 17v4"/></svg>ブラウザに保存されるもの</a><a href="#ja-browser2"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M10.6 6A9.5 9.5 0 0 1 12 5.5c6 0 9.5 6.5 9.5 6.5a17 17 0 0 1-2.6 3.4M6.6 7.6A16 16 0 0 0 2.5 12S6 18.5 12 18.5a9 9 0 0 0 4.4-1.1M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>同意バナーがない理由</a><a href="#ja-host"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4" width="17" height="6.5" rx="2"/><rect x="3.5" y="13.5" width="17" height="6.5" rx="2"/><path d="M7 7.2h.01M7 16.8h.01M4 4l16 16"/></svg>ホスティング</a><a href="#ja-downloads"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5v11.5M7 10.5l5 5 5-5M4.5 20h15"/></svg>ダウンロードと数値</a><a href="#ja-none"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>サイトが使っていないもの</a><a href="#ja-mail"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>メールを送った場合</a><a href="#ja-apps"><svg class="ic mini flip" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6.5h11M9 12h11M9 17.5h11M4.5 6.5h.01M4.5 12h.01M4.5 17.5h.01"/></svg>アプリとゲームのプライバシーポリシー</a><a href="#ja-rights"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>あなたの権利と法的な詳細</a><a href="#ja-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>変更とお問い合わせ</a></div>
   </nav>
 
 
@@ -206,8 +205,8 @@ td:last-child{font-weight:600;color:var(--ink)}
     
   </section>
   <section class="card sec" id="ja-rights">
-    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h2>あなたの権利</h2></div>
-    <p>お住まいの地域によっては（たとえば EU の GDPR に基づき）、個人データの開示、訂正、削除を求めることができ、データ保護当局に苦情を申し立てることもできます。PegasoHlib があなたに関する個人データを保有するのは、メールを送っていただいた場合だけです。ホスティングとダウンロードのデータについては、GitHub にお問い合わせください。</p>
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg><h2>あなたの権利と法的な詳細</h2></div>
+    <p><b>責任者。</b>ここで説明するデータについては、これらのアプリを開発している個人の PegasoHlib が責任を負います。連絡先：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p><p><b>データを受け取る相手と EU 域外への移転。</b>GitHub は本サイトをホストしており、訪問者の IP アドレスを見ることができます。Google は Gmail アドレス宛てのメールを処理します。どちらも米国にあります。そのような移転は、その企業が参加している場合は EU-米国データプライバシーフレームワーク（EU–US Data Privacy Framework）に、そうでない場合はその企業の標準契約条項（standard contractual clauses）に基づいています。</p><p><b>保存期間。</b>お送りいただいたメールは、その件が完了するまで保管し、2年を超えることはありません。GitHub は自社の規則に従ってログを保管します。</p><p><b>あなたの権利。</b>あなたは、自分のデータの開示、訂正、削除、処理の制限、他へ持ち出すためのコピー（データポータビリティ）を求めることができ、処理に異議を述べることができます。上記のアドレスまでご連絡ください。1か月以内にお答えします。PegasoHlib があなたに関する個人データを保有するのは、メールを送っていただいた場合だけです。ホスティングとダウンロードのデータについては、GitHub にお問い合わせください。</p><p><b>苦情。</b>フランスの <a href="https://www.cnil.fr/en/complaints">CNIL</a> やお住まいの国の機関など、データ保護当局に苦情を申し立てることができます。</p><p><b>言語。</b>本ページの翻訳は AI の助けを借りて作成されています。翻訳が英語の文面と異なる場合は、あなたにとってより有利な版が適用されます。</p>
     
   </section>
   <section class="card sec" id="ja-changes">
@@ -215,7 +214,6 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>このページが変更されると、上部の日付も変わります。ご質問：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a></p>
     
   </section>
-  <p class="refnote">このページは最初に英語で書かれました。翻訳が英語と異なる場合は、英語の文章が優先されます。</p>
 </article>
 </main>
 <footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/ja/">PegasoHlib — すべてのアプリ</a> · <a href="https://pegasohlib.github.io/ja/terms.html">利用規約</a> · <a href="https://pegasohlib.github.io/ja/site-privacy.html">サイトのプライバシー</a><small class="legal">この翻訳は AI で作成したため、不正確な部分が含まれる場合があります。 ホスティング：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube、TikTok は各所有者の商標であり、PegasoHlib はこれらと提携していません。</small></footer>

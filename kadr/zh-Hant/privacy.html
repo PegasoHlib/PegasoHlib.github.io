@@ -86,7 +86,6 @@ main{max-width:760px}
 .hero h1{font-size:clamp(28px,6.4vw,40px);line-height:1.12;margin:4px 0 12px}
 .date{display:inline-block;margin:0 0 16px;font-size:13.5px;font-weight:600;color:var(--ink2);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px 12px}
 .lead{margin:0 auto;max-width:600px;font-size:17.5px;color:var(--ink2);text-wrap:pretty}
-.refnote{margin:22px 0 0;text-align:center;font-size:14px;color:var(--ink3)}
 .glance{margin:32px 0 0}
 .glance ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}
 @media (min-width:480px){.glance ul>li:last-child:nth-child(odd){grid-column:1/-1}}
@@ -166,7 +165,7 @@ td:last-child{font-weight:600;color:var(--ink)}
 
   <nav class="toc" aria-label="本頁內容">
     <p class="eyebrow">本頁內容</p>
-    <div class="chips"><a href="#zh-Hant-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="2.5"/><path d="M16 10.5l5.5-3v9l-5.5-3z"/></svg>你的影片、相片和專案</a><a href="#zh-Hant-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Kadr 在你的電腦上儲存什麼</a><a href="#zh-Hant-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>連上網路：更新</a><a href="#zh-Hant-background"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg>移除背景和畫質提升</a><a href="#zh-Hant-gpu"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg>用顯示卡執行 AI：Microsoft DirectML</a><a href="#zh-Hant-subtitles"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg>透過 ElevenLabs 產生自動字幕</a><a href="#zh-Hant-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kadr 不會做的事</a><a href="#zh-Hant-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>刪除 Kadr 及其資料</a><a href="#zh-Hant-children"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg>兒童</a><a href="#zh-Hant-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的變更</a><a href="#zh-Hant-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>聯絡方式</a></div>
+    <div class="chips"><a href="#zh-Hant-data"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="6" width="13.5" height="12" rx="2.5"/><path d="M16 10.5l5.5-3v9l-5.5-3z"/></svg>你的影片、相片和專案</a><a href="#zh-Hant-stored"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 6.5a2 2 0 0 1 2-2h4l2 2.5h7a2 2 0 0 1 2 2v8.5a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2z"/></svg>Kadr 在你的電腦上儲存什麼</a><a href="#zh-Hant-internet"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.6 3.6 5.4 3.6 8.5s-1.1 5.9-3.6 8.5c-2.5-2.6-3.6-5.4-3.6-8.5s1.1-5.9 3.6-8.5z"/></svg>連上網路：更新</a><a href="#zh-Hant-background"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="9" cy="10" r="1.8"/><path d="M20.5 16l-5-5-8.5 8.5"/></svg>移除背景和畫質提升</a><a href="#zh-Hant-gpu"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2.5L4.5 13.5h7l-1 8 8.5-11h-7z"/></svg>用顯示卡執行 AI：Microsoft DirectML</a><a href="#zh-Hant-subtitles"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg>透過 ElevenLabs 產生自動字幕</a><a href="#zh-Hant-not"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M6 6l12 12"/></svg>Kadr 不會做的事</a><a href="#zh-Hant-delete"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16M9.5 6.5V4h5v2.5M6 6.5l1 14h10l1-14M10 10.5v6M14 10.5v6"/></svg>刪除 Kadr 及其資料</a><a href="#zh-Hant-changes"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg>本政策的變更</a><a href="#zh-Hant-legal"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg>你的權利與法律細節</a><a href="#zh-Hant-contact"><svg class="ic mini" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M3.5 6.5l8.5 6.5 8.5-6.5"/></svg>聯絡方式</a></div>
   </nav>
 
   <section class="card tablecard" aria-labelledby="zh-Hant-table">
@@ -217,14 +216,14 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>在 Windows 設定 → 應用程式中解除安裝 Kadr。解除安裝程式會移除程式和檔案關聯，但不會移除登錄機碼 <code>HKCU\Software\PegasoHlib\Kadr</code>（設定、最近專案的路徑和加密的 ElevenLabs 金鑰）或資料夾 <code>%LOCALAPPDATA%\Kadr</code>（自動儲存、快取、預覽圖、模型、最近的安裝程式）。</p><p>要把它們也一併移除，請刪除該資料夾，並在登錄編輯程式（<code>regedit</code>）中刪除該登錄機碼。如果你只想讓它忘記 ElevenLabs 金鑰，也可以在 Kadr 的「設定」中清除它。你自己的影片、相片、專案和匯出檔案會留在你儲存的位置，直到你把它們刪除。</p>
     
   </section>
-  <section class="card sec" id="zh-Hant-children">
-    <div class="sechead"><svg class="ic tile t4" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="6.5" r="3"/><path d="M8 21v-6.5l-2.5-3M16 21v-6.5l2.5-3M8.5 11h7M12 11v4"/></svg><h2>兒童</h2></div>
-    <p>Kadr 不會向任何人收集個人資料，包括兒童。它沒有帳號、沒有聊天，也沒有分享功能。</p>
+  <section class="card sec" id="zh-Hant-changes">
+    <div class="sechead"><svg class="ic tile t0" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的變更</h2></div>
+    <p>如果應用程式開始以新的方式處理資料，本頁面會先行更新，並在頂端註明新的日期。</p>
     
   </section>
-  <section class="card sec" id="zh-Hant-changes">
-    <div class="sechead"><svg class="ic tile t1" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5"/><path d="M4 4v4.5h4.5M12 8v4.5l3 2"/></svg><h2>本政策的變更</h2></div>
-    <p>如果應用程式開始以新的方式處理資料，本頁面會先行更新，並在頂端註明新的日期。</p>
+  <section class="card sec" id="zh-Hant-legal">
+    <div class="sechead"><svg class="ic tile t2" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l7.5 3v5.6c0 4.6-3.2 8.3-7.5 9.8-4.3-1.5-7.5-5.2-7.5-9.8V5.8z"/><path d="M8.8 12.2l2.2 2.2 4.4-4.6"/></svg><h2>你的權利與法律細節</h2></div>
+    <p><b>誰負責。</b>開發這些應用程式的自然人 PegasoHlib 對此處所述資料負責。聯絡方式：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p><p><b>為什麼使用資料，法律依據是什麼。</b></p><dl class="perms"><div><dt>應用程式的運作</dt><dd>契約：為提供你所要求的內容所必需（GDPR 第 6(1)(b) 條）</dd></div><div><dt>透過 ElevenLabs 自動產生字幕</dt><dd>同意：你可以隨時關閉（第 6(1)(a) 條）</dd></div><div><dt>更新檢查與安全</dt><dd>正當利益：保障應用程式安全並保持最新（第 6(1)(f) 條）</dd></div><div><dt>你寄送的電子郵件</dt><dd>正當利益：回覆你（第 6(1)(f) 條）</dd></div></dl><p><b>誰會收到，以及向歐盟以外的傳輸。</b>GitHub（更新檢查、更新和 AI 模型），以及僅在你使用時的 ElevenLabs（自動字幕）。Microsoft 可能會依你的 Windows 設定接收來自 DirectML 的診斷資料。 其中一些公司位於美國或歐盟以外的其他國家。這些傳輸依據歐盟－美國資料隱私框架（EU–US Data Privacy Framework，前提是該公司參與其中），或該公司的標準契約條款。</p><p><b>保存多久。</b>應用程式中的資料會一直保存，直到你刪除它或解除安裝應用程式。你自己雲端儲存空間中的副本會一直保存，直到你刪除它們。你寄送的電子郵件會保存到事情辦結為止，且不超過 2 年。</p><p><b>你的權利。</b>你可以要求存取你的資料、更正、刪除、限制處理、取得副本以便移轉到別處（可攜性），也可以隨時反對處理或撤回同意。請寫信到上面的地址。你會在一個月內收到回覆。大部分資料只在你的裝置上，所以你通常可以直接在應用程式中自行完成這些操作。</p><p><b>申訴。</b>你可以向資料保護主管機關申訴，例如法國的 <a href="https://www.cnil.fr/en/complaints">CNIL</a>，或你所在國家的機關。</p><p><b>年齡。</b>你必須年滿 15 歲，才能自行使用本應用程式。如果你未滿 15 歲，請先取得父母或監護人的同意。</p><p><b>語言。</b>本政策的譯文借助 AI 製作。如果譯文與英文文本不一致，適用對你較有利的版本。</p>
     
   </section>
   <section class="card sec" id="zh-Hant-contact">
@@ -232,7 +231,6 @@ td:last-child{font-weight:600;color:var(--ink)}
     <p>隱私相關問題：<a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a>。</p>
     
   </section>
-  <p class="refnote">本頁面最初以英文撰寫。若譯文與英文有出入，以英文為準。</p>
 </article>
 </main>
 <footer>© 2026 · <a href="mailto:pegasohlib12@gmail.com">pegasohlib12@gmail.com</a> · <a href="https://pegasohlib.github.io/zh-Hant/">PegasoHlib — 所有應用程式</a> · <a href="https://pegasohlib.github.io/zh-Hant/terms.html">使用條款</a> · <a href="https://pegasohlib.github.io/zh-Hant/site-privacy.html">網站隱私權</a><small class="legal">本譯文由 AI 完成，可能有不準確之處。 代管服務：GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA。 Microsoft、Defender、Windows、Android、Google Play、Roblox、YouTube 和 TikTok 是其各自所有者的商標；PegasoHlib 與它們沒有關聯。</small></footer>

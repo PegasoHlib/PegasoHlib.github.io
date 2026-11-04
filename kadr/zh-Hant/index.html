@@ -88,6 +88,9 @@ main{max-width:960px}
 .count{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:6px}
 .heroart{display:block;width:100%;height:auto;margin:24px auto 0;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 44px -24px rgba(18,21,28,.55)}
 .heroart.phone{width:auto;max-width:100%;max-height:560px;border-radius:26px}
+.herofig{min-width:0}
+.herocredit{margin:8px 0 0;text-align:center;font-size:12px;color:var(--ink3)}
+.herocredit a{color:inherit}
 .gallery{display:grid;gap:12px;margin-top:28px}
 .gallery img{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line)}
 @media (min-width:760px){.gallery{grid-template-columns:repeat(auto-fit,minmax(0,1fr));grid-auto-flow:column}}
@@ -194,7 +197,7 @@ main{max-width:960px}
     <p class="tagline">為 Shorts 和 YouTube 打造的免費影片與相片編輯器</p>
     <p class="lead">剪輯適用於 TikTok、Shorts 和 Reels 的直式影片或一般 YouTube 影片，還能製作縮圖、拼貼和貼文。相片的背景移除和 AI 增強都在你自己的電腦上執行。</p>
     <div class="actions">
-      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.0/Kadr-Setup-2.9.0.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>下載 Windows 版</span><span class="ver badge" hidden></span></a>
+      <a class="btn primary dl" href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kadr-v2.9.1/Kadr-Setup-2.9.1.exe"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 5.8l7-1v6.7h-7zM12 4.6l8.5-1.1v8H12zM3.5 12.5h7v6.7l-7-1zM12 12.5h8.5v8L12 19.4z"/></svg><span>下載 Windows 版</span><span class="ver badge" hidden></span></a>
       
     </div>
     <p class="textlinks"><a href="../zh-Hant/privacy.html">隱私權政策</a></p>
@@ -202,7 +205,7 @@ main{max-width:960px}
     
     
     </div>
-    <img class="heroart" src="../img/editor.webp" alt="" width="1300" height="699">
+    <div class="herofig"><img class="heroart" src="../img/editor.webp" alt="" width="1300" height="699"></div>
   </header>
 
 
@@ -226,7 +229,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-zh-Hant">
     <h2 class="eyebrow" id="q-zh-Hant">常見問題</h2>
-    <div class="faqs"><details><summary>Windows 顯示「Windows 已保護您的電腦」，這正常嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>對於沒有付費程式碼簽署憑證的應用程式，Windows 會顯示這個提示，而 Kadr 沒有這樣的憑證。請按一下<b>其他資訊</b>，然後按一下<b>仍要執行</b>。Kadr 自己的更新在安裝前會對照數位簽章進行檢查。</p></details><details><summary>我的影片或相片會被上傳到哪裡嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不會。它們留在你的電腦上，背景移除和增強也在電腦上執行。唯一的例外是自動字幕，而且僅在你啟動它時：所選片段的音訊會透過你自己的 API 金鑰傳送到 ElevenLabs。</p></details><details><summary>Kadr 為什麼需要連上網路？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>用於檢查更新（在 Kadr 啟動時以及每 6 小時）、下載更新，以及每個 AI 模型下載一次。檢查本身無法關閉；在「設定」→「更新」中，你只能關閉自動下載。如果你使用自動字幕，它也會連上網路。</p></details><details><summary>AI 需要效能強的顯示卡嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不需要，但沒有顯示卡時會慢得多。DirectML 開啟時（預設為開啟），AI 會使用顯示卡；背景移除可能佔用約 5 GB 的顯示記憶體。在「設定」→「AI」中，你可以切換為只使用處理器。</p></details><details><summary>如果 Kadr 或電腦當機了怎麼辦？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>影片專案每 45 秒自動儲存一次，Kadr 會在下次啟動時提示復原。相片專案不會自動儲存，所以請自己儲存。</p></details><details><summary>Kadr 是用什麼做的？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它使用 FFmpeg、Qt 等開放原始碼元件，以及閉源的 Microsoft DirectML。每個元件及其授權都列在應用程式的「關於 → 授權」中。依照這些授權的要求，可下載<a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">開放原始碼元件的原始碼</a>。</p></details><details><summary>怎麼解除安裝，會留下什麼？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>在 Windows 設定 → <b>應用程式</b>中解除安裝 Kadr。你的設定、最近專案的路徑和加密的 ElevenLabs 金鑰會保留在登錄中，自動儲存、快取和模型會保留在 <code>%LOCALAPPDATA%\Kadr</code> 中。隱私權政策說明了如何刪除它們。</p></details><details><summary>更新內容: 2.9.0<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>相片編輯器加入模糊：獨立的「模糊」滑桿（比以前強得多）、只模糊塗抹之處的「模糊」筆刷，以及「模糊背景」：人物或物體保持清晰，背後的背景像手機人像模式一樣被虛化（輕、中、強；在本機執行）。</p></details><details class="sha" hidden><summary>如何驗證檔案？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>你下載的檔案的 SHA-256 查核碼必須與下面這個相符： <code></code></p></details></div>
+    <div class="faqs"><details><summary>Windows 顯示「Windows 已保護您的電腦」，這正常嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>對於沒有付費程式碼簽署憑證的應用程式，Windows 會顯示這個提示，而 Kadr 沒有這樣的憑證。請按一下<b>其他資訊</b>，然後按一下<b>仍要執行</b>。Kadr 自己的更新在安裝前會對照數位簽章進行檢查。</p></details><details><summary>我的影片或相片會被上傳到哪裡嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不會。它們留在你的電腦上，背景移除和增強也在電腦上執行。唯一的例外是自動字幕，而且僅在你啟動它時：所選片段的音訊會透過你自己的 API 金鑰傳送到 ElevenLabs。</p></details><details><summary>Kadr 為什麼需要連上網路？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>用於檢查更新（在 Kadr 啟動時以及每 6 小時）、下載更新，以及每個 AI 模型下載一次。檢查本身無法關閉；在「設定」→「更新」中，你只能關閉自動下載。如果你使用自動字幕，它也會連上網路。</p></details><details><summary>AI 需要效能強的顯示卡嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不需要，但沒有顯示卡時會慢得多。DirectML 開啟時（預設為開啟），AI 會使用顯示卡；背景移除可能佔用約 5 GB 的顯示記憶體。在「設定」→「AI」中，你可以切換為只使用處理器。</p></details><details><summary>如果 Kadr 或電腦當機了怎麼辦？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>影片專案每 45 秒自動儲存一次，Kadr 會在下次啟動時提示復原。相片專案不會自動儲存，所以請自己儲存。</p></details><details><summary>Kadr 是用什麼做的？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它使用 FFmpeg、Qt 等開放原始碼元件，以及閉源的 Microsoft DirectML。每個元件及其授權都列在應用程式的「關於 → 授權」中。依照這些授權的要求，可下載<a href="https://github.com/PegasoHlib/PegasoHlib.github.io/releases/tag/kadr-sources">開放原始碼元件的原始碼</a>。</p></details><details><summary>怎麼解除安裝，會留下什麼？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>在 Windows 設定 → <b>應用程式</b>中解除安裝 Kadr。你的設定、最近專案的路徑和加密的 ElevenLabs 金鑰會保留在登錄中，自動儲存、快取和模型會保留在 <code>%LOCALAPPDATA%\Kadr</code> 中。隱私權政策說明了如何刪除它們。</p></details><details><summary>更新內容: 2.9.1<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>在「關於」頁面和安裝程式中新增了使用條款連結。「授權」視窗現在包含 FFmpeg 程式內建的所有程式庫的授權文字和著作權聲明。</p></details><details class="sha" hidden><summary>如何驗證檔案？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>你下載的檔案的 SHA-256 查核碼必須與下面這個相符： <code></code></p></details></div>
   </section>
 
   <section class="private">
