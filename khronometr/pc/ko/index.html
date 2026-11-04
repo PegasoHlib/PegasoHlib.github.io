@@ -221,7 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-ko">
     <h2 class="eyebrow" id="q-ko">질문</h2>
-    <div class="faqs"><details><summary>Windows 경고는 어떻게 생겼나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>“Windows의 PC 보호”</b>라는 제목의 파란 창에 “Microsoft Defender SmartScreen에서 인식할 수 없는 앱의 시작을 차단했습니다…”라는 문구가 있어요. 문구 아래의 <b>추가 정보</b>를 누른 다음 <b>실행 안 함</b>이 아니라 <b>실행</b>을 누르세요.</p></details><details><summary>예전 PC용 Khronometr가 이미 있어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>새 파일을 실행하고 <b>업데이트</b>를 누르면 돼요. 예전 버전을 대신하고, 기록, 제한, Google 로그인, 자동 시작은 그대로 유지돼요.</p></details><details><summary>내 PC에 무엇이 추가되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>관리자 권한 없이 내 사용자 계정에 설치돼요. 프로그램은 <code>%LOCALAPPDATA%\Programs\Khronometr</code>에, 그리고 시작 메뉴 바로 가기, 설치된 앱 항목, 자동 시작이 추가돼요. 또 내 사용자 계정의 작업 “Khronometr Watchdog”을 만들어, 실행 중이 아니면 10분마다 다시 시작해요. Windows 기록 가져오기를 선택한 경우에만 Windows가 관리자 권한을 한 번 요청하고 “Khronometr Journal” 작업이 만들어져요. 이 작업은 6시간마다 기록을 Program Files 안의 폴더로 복사하며, 그 폴더는 관리자와 나만 읽을 수 있어요.</p></details><details><summary>꼭 Google로 로그인해야 하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>아니요. 집계, 기록, 제한은 로그인 없이도 이 PC에서 작동해요. 휴대폰과 태블릿을 여기서 보고 제한을 공유하려면 로그인하세요.</p></details><details><summary>어떻게 제거하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 설정 → 앱 → 설치된 앱 → Khronometr → 제거</b>. 이렇게 하면 프로그램, 바로 가기, 자동 시작, Watchdog 작업, 설치된 앱 항목이 삭제돼요. 기록 작업을 만들었다면 이를 알아채고 스스로, 그리고 자기 Program Files 폴더도 확인 없이 삭제해요. 보통 바로, 늦어도 다음 실행 때예요. 내 기록은 <code>%LOCALAPPDATA%\Khronometr</code>에 남아요. 지우려면 그 폴더를 직접 삭제하고, 동기화를 썼다면 Google Drive 설정에서 Drive 사본도 삭제하세요.</p></details><details><summary>1.2.2보다 오래된 버전을 제거했어요<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>그 버전들은 <code>Khronometr\JournalCopy</code> 작업을 남겨 두었어요. 이 작업은 사용자 폴더의 파일을 관리자 권한으로 실행하므로 삭제하세요. 작업 스케줄러를 열어 삭제하거나, 관리자 터미널에서 <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>를 실행하세요.</p></details><details><summary>새로운 내용: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>보안 수정: Windows 저널을 이제 보호된 시스템 작업이 복사해요. 이 작업은 이전 작업을 스스로 대체하고, 앱을 삭제하면 함께 사라져요.</p></details></div>
+    <div class="faqs"><details><summary>Windows 경고는 어떻게 생겼나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>“Windows의 PC 보호”</b>라는 제목의 파란 창에 “Microsoft Defender SmartScreen에서 인식할 수 없는 앱의 시작을 차단했습니다…”라는 문구가 있어요. 문구 아래의 <b>추가 정보</b>를 누른 다음 <b>실행 안 함</b>이 아니라 <b>실행</b>을 누르세요.</p></details><details><summary>내 PC에 무엇이 추가되나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>관리자 권한 없이 내 사용자 계정에 설치돼요. 프로그램은 <code>%LOCALAPPDATA%\Programs\Khronometr</code>에, 그리고 시작 메뉴 바로 가기, 설치된 앱 항목, 자동 시작이 추가돼요. 또 내 사용자 계정의 작업 “Khronometr Watchdog”을 만들어, 실행 중이 아니면 10분마다 다시 시작해요. Windows 기록 가져오기를 선택한 경우에만 Windows가 관리자 권한을 한 번 요청하고 “Khronometr Journal” 작업이 만들어져요. 이 작업은 6시간마다 기록을 Program Files 안의 폴더로 복사하며, 그 폴더는 관리자와 나만 읽을 수 있어요.</p></details><details><summary>꼭 Google로 로그인해야 하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>아니요. 집계, 기록, 제한은 로그인 없이도 이 PC에서 작동해요. 휴대폰과 태블릿을 여기서 보고 제한을 공유하려면 로그인하세요.</p></details><details><summary>어떻게 제거하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 설정 → 앱 → 설치된 앱 → Khronometr → 제거</b>. 이렇게 하면 프로그램, 바로 가기, 자동 시작, Watchdog 작업, 설치된 앱 항목이 삭제돼요. 기록 작업을 만들었다면 이를 알아채고 스스로, 그리고 자기 Program Files 폴더도 확인 없이 삭제해요. 보통 바로, 늦어도 다음 실행 때예요. 내 기록은 <code>%LOCALAPPDATA%\Khronometr</code>에 남아요. 지우려면 그 폴더를 직접 삭제하고, 동기화를 썼다면 Google Drive 설정에서 Drive 사본도 삭제하세요.</p></details><details><summary>새로운 내용: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>보안 수정: Windows 저널을 이제 보호된 시스템 작업이 복사해요. 이 작업은 이전 작업을 스스로 대체하고, 앱을 삭제하면 함께 사라져요.</p></details><details class="sha" hidden><summary>파일은 어떻게 확인하나요?<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>다운로드한 파일의 SHA-256 체크섬이 다음 값과 일치해야 합니다: <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +245,21 @@ main{max-width:960px}
 })();
 </script>
 <script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
-
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("https://pegasohlib.github.io/khronometr/pc/update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
 <script src="/assets/kit.js" defer></script>
 </body>
 </html>

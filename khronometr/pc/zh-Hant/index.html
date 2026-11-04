@@ -221,7 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-zh-Hant">
     <h2 class="eyebrow" id="q-zh-Hant">常見問題</h2>
-    <div class="faqs"><details><summary>Windows 的警告長什麼樣子？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>一個藍色視窗，標題為<b>「Windows 已保護您的電腦」</b>，內容為「Microsoft Defender SmartScreen 已阻止無法辨識的應用程式啟動……」。按一下文字下方的<b>其他資訊</b>，然後按一下<b>仍要執行</b>，而不是<b>不要執行</b>。</p></details><details><summary>我已經裝有舊版 Khronometr 電腦版<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>直接執行新檔案並按一下<b>更新</b>：它會取代舊版，你的歷史紀錄、限制、Google 登入和開機自動啟動都會保留。</p></details><details><summary>它會在我的電腦上新增什麼？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它只為你的使用者安裝，不需要管理員權限：程式位於 <code>%LOCALAPPDATA%\Programs\Khronometr</code>，另有開始功能表捷徑、「已安裝的應用程式」中的一項和開機自動啟動。它還會建立一個屬於你的使用者的工作「Khronometr Watchdog」，如果程式沒有在執行，每 10 分鐘就會重新啟動它。只有當你選擇匯入 Windows 記錄時，Windows 才會要求一次管理員權限，並建立一個工作「Khronometr Journal」；它每 6 小時把記錄複製到 Program Files 中的一個資料夾，只有管理員和你可以讀取該資料夾。</p></details><details><summary>我一定要用 Google 登入嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不必。統計、紀錄和限制在這台電腦上不登入也能用。登入後可以在這裡看到你的手機和平板，並與它們共用限制。</p></details><details><summary>如何解除安裝？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 設定 → 應用程式 → 已安裝的應用程式 → Khronometr → 解除安裝</b>。這會移除程式、捷徑、自動啟動、Watchdog 工作和「已安裝的應用程式」中的項目。如果你建立過記錄工作，它會自行發現並刪除自己和它在 Program Files 中的資料夾，通常是立刻刪除，最遲在下次執行時，不會有任何提示。你的歷史記錄保留在 <code>%LOCALAPPDATA%\Khronometr</code> 中：要刪除它，請手動刪除該資料夾；如果你用過同步，還請在 Google 雲端硬碟設定中刪除雲端副本。</p></details><details><summary>我解除安裝了 1.2.2 之前的版本<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>那些版本會遺留一個工作 <code>Khronometr\JournalCopy</code>。請刪除它：它會以管理員權限執行使用者資料夾中的檔案。請開啟工作排程器並刪除它，或在系統管理員終端機中執行：<code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code>。</p></details><details><summary>更新內容: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>安全性修正：Windows 日誌現在由受保護的系統工作複製。它會自動取代舊的工作，並在你解除安裝應用程式時一併移除。</p></details></div>
+    <div class="faqs"><details><summary>Windows 的警告長什麼樣子？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>一個藍色視窗，標題為<b>「Windows 已保護您的電腦」</b>，內容為「Microsoft Defender SmartScreen 已阻止無法辨識的應用程式啟動……」。按一下文字下方的<b>其他資訊</b>，然後按一下<b>仍要執行</b>，而不是<b>不要執行</b>。</p></details><details><summary>它會在我的電腦上新增什麼？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>它只為你的使用者安裝，不需要管理員權限：程式位於 <code>%LOCALAPPDATA%\Programs\Khronometr</code>，另有開始功能表捷徑、「已安裝的應用程式」中的一項和開機自動啟動。它還會建立一個屬於你的使用者的工作「Khronometr Watchdog」，如果程式沒有在執行，每 10 分鐘就會重新啟動它。只有當你選擇匯入 Windows 記錄時，Windows 才會要求一次管理員權限，並建立一個工作「Khronometr Journal」；它每 6 小時把記錄複製到 Program Files 中的一個資料夾，只有管理員和你可以讀取該資料夾。</p></details><details><summary>我一定要用 Google 登入嗎？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>不必。統計、紀錄和限制在這台電腦上不登入也能用。登入後可以在這裡看到你的手機和平板，並與它們共用限制。</p></details><details><summary>如何解除安裝？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows 設定 → 應用程式 → 已安裝的應用程式 → Khronometr → 解除安裝</b>。這會移除程式、捷徑、自動啟動、Watchdog 工作和「已安裝的應用程式」中的項目。如果你建立過記錄工作，它會自行發現並刪除自己和它在 Program Files 中的資料夾，通常是立刻刪除，最遲在下次執行時，不會有任何提示。你的歷史記錄保留在 <code>%LOCALAPPDATA%\Khronometr</code> 中：要刪除它，請手動刪除該資料夾；如果你用過同步，還請在 Google 雲端硬碟設定中刪除雲端副本。</p></details><details><summary>更新內容: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>安全性修正：Windows 日誌現在由受保護的系統工作複製。它會自動取代舊的工作，並在你解除安裝應用程式時一併移除。</p></details><details class="sha" hidden><summary>如何驗證檔案？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>你下載的檔案的 SHA-256 查核碼必須與下面這個相符： <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +245,21 @@ main{max-width:960px}
 })();
 </script>
 <script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
-
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("https://pegasohlib.github.io/khronometr/pc/update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
 <script src="/assets/kit.js" defer></script>
 </body>
 </html>

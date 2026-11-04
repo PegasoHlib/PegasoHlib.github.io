@@ -221,7 +221,7 @@ main{max-width:960px}
 
   <section class="section faq" aria-labelledby="q-ja">
     <h2 class="eyebrow" id="q-ja">よくある質問</h2>
-    <div class="faqs"><details><summary>Windows の警告はどんな画面？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>「Windows によって PC が保護されました」</b>という青いウィンドウに「Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…」と表示されます。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックします。</p></details><details><summary>古い PC 版フロノメトルを使っています<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>新しいファイルを実行して<b>更新</b>をクリックするだけです。古い版と置き換わり、履歴、上限、Google のログイン、自動起動はそのまま残ります。</p></details><details><summary>PC には何が追加されますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>管理者権限なしで、あなたのユーザーにインストールされます。プログラムは <code>%LOCALAPPDATA%\Programs\Khronometr</code> に入り、スタートメニューのショートカット、インストールされているアプリの項目、自動起動が加わります。また、あなたのユーザーのタスク「Khronometr Watchdog」を作成し、実行中でなければ10分ごとに再起動します。Windows のジャーナルをインポートすることを選んだ場合に限り、Windows が管理者権限を一度求め、タスク「Khronometr Journal」が作成されます。このタスクは6時間ごとにジャーナルを Program Files 内のフォルダにコピーし、そのフォルダは管理者とあなただけが読めます。</p></details><details><summary>Google でログインする必要はありますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。計測、記録、上限は、ログインしなくてもこの PC で動作します。スマホとタブレットをここで見たり、上限を共有したりするには、ログインしてください。</p></details><details><summary>アンインストールするには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows の設定 → アプリ → インストールされているアプリ → フロノメトル → アンインストール</b>。これでプログラム、ショートカット、自動起動、Watchdog タスク、インストールされているアプリの項目が削除されます。ジャーナルのタスクを作っていた場合は、それに気づいて、自分自身と自分の Program Files フォルダを確認なしで削除します。通常はすぐに、遅くとも次回の実行時です。履歴は <code>%LOCALAPPDATA%\Khronometr</code> に残ります。消すにはそのフォルダを手動で削除し、同期を使っていた場合は Google ドライブの設定で Drive 上のコピーも削除してください。</p></details><details><summary>1.2.2 より古いバージョンをアンインストールしました<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>それらのバージョンは <code>Khronometr\JournalCopy</code> というタスクを残しました。このタスクはユーザーフォルダのファイルを管理者権限で実行してしまうため、削除してください。タスク スケジューラを開いて削除するか、管理者のターミナルで <code>schtasks /Delete /TN "Khronometr\JournalCopy" /F</code> を実行してください。</p></details><details><summary>新機能: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>セキュリティ修正: Windows のジャーナルは、保護されたシステムタスクでコピーされるようになりました。古いタスクは自動的に置き換えられ、アプリをアンインストールすると消えます。</p></details></div>
+    <div class="faqs"><details><summary>Windows の警告はどんな画面？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>「Windows によって PC が保護されました」</b>という青いウィンドウに「Microsoft Defender SmartScreen は認識されないアプリの起動を停止しました…」と表示されます。テキストの下の<b>詳細情報</b>をクリックし、<b>実行しない</b>ではなく<b>実行</b>をクリックします。</p></details><details><summary>PC には何が追加されますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>管理者権限なしで、あなたのユーザーにインストールされます。プログラムは <code>%LOCALAPPDATA%\Programs\Khronometr</code> に入り、スタートメニューのショートカット、インストールされているアプリの項目、自動起動が加わります。また、あなたのユーザーのタスク「Khronometr Watchdog」を作成し、実行中でなければ10分ごとに再起動します。Windows のジャーナルをインポートすることを選んだ場合に限り、Windows が管理者権限を一度求め、タスク「Khronometr Journal」が作成されます。このタスクは6時間ごとにジャーナルを Program Files 内のフォルダにコピーし、そのフォルダは管理者とあなただけが読めます。</p></details><details><summary>Google でログインする必要はありますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>いいえ。計測、記録、上限は、ログインしなくてもこの PC で動作します。スマホとタブレットをここで見たり、上限を共有したりするには、ログインしてください。</p></details><details><summary>アンインストールするには？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p><b>Windows の設定 → アプリ → インストールされているアプリ → フロノメトル → アンインストール</b>。これでプログラム、ショートカット、自動起動、Watchdog タスク、インストールされているアプリの項目が削除されます。ジャーナルのタスクを作っていた場合は、それに気づいて、自分自身と自分の Program Files フォルダを確認なしで削除します。通常はすぐに、遅くとも次回の実行時です。履歴は <code>%LOCALAPPDATA%\Khronometr</code> に残ります。消すにはそのフォルダを手動で削除し、同期を使っていた場合は Google ドライブの設定で Drive 上のコピーも削除してください。</p></details><details><summary>新機能: 1.2.2<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>セキュリティ修正: Windows のジャーナルは、保護されたシステムタスクでコピーされるようになりました。古いタスクは自動的に置き換えられ、アプリをアンインストールすると消えます。</p></details><details class="sha" hidden><summary>ファイルはどう確認しますか？<svg class="ic chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10l5 5 5-5"/></svg></summary><p>ダウンロードしたファイルの SHA-256 チェックサムが、次の値と一致する必要があります： <code></code></p></details></div>
   </section>
 
   <section class="private">
@@ -245,7 +245,21 @@ main{max-width:960px}
 })();
 </script>
 <script>if(/Windows NT/.test(navigator.userAgent)){var a=document.querySelector(".actions"),p=a&&a.querySelector("a[data-pc]"),d=a&&a.querySelector("a.dl");if(p&&d){p.classList.add("primary");d.classList.remove("primary");a.prepend(p)}}</script>
-
+<script>
+(function () {
+  if (!window.fetch) return;
+  fetch("https://pegasohlib.github.io/khronometr/pc/update.json", { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (u) {
+    var url = u && (u.url || u.apk), v = u && (u.name || u.versionName || u.version);
+    if (typeof url !== "string" || url.indexOf("https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/") !== 0) return;
+    var a = document.querySelectorAll("a.dl");
+    for (var i = 0; i < a.length; i++) {
+      a[i].href = url;
+      var b = a[i].querySelector(".ver"); if (b && v) { b.textContent = "v" + v; b.hidden = false; }
+    }
+    var sha = document.querySelector("details.sha"); if (sha && u.sha256) { sha.querySelector("code").textContent = u.sha256; sha.hidden = false; }
+  }).catch(function () {});
+})();
+</script>
 <script src="/assets/kit.js" defer></script>
 </body>
 </html>
