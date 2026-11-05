@@ -1,6 +1,6 @@
 # PegasoHlib.github.io
 
-https://pegasohlib.github.io — apps and games by PegasoHlib.
+https://pegasohlib.com — apps and games by PegasoHlib.
 
 - `index.html`, `assets/` — the main site (all projects, 27 languages). Generated; sources live outside this repo.
 - `favicon.ico`, `sitemap.xml`, `robots.txt` — generated with the main site (favicon from `assets/mark.svg`, sitemap lists every page that answers).

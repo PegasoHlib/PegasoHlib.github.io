@@ -1,4 +1,4 @@
-// PegasoHlib site kit: the theme button, shared by every page on pegasohlib.github.io.
+// PegasoHlib site kit: the theme button, shared by every page on pegasohlib.com.
 // The first visit follows the phone (light or dark); one tap switches light ↔ dark and the choice is kept for all the sites.
 // Put <button class="theme" id="theme" type="button"></button> in the header and load this file with `defer`.
 // To avoid a flash, each page's <head> also runs:
