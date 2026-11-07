@@ -1,11 +1,11 @@
 {
-    "versionCode":  3601,
-    "versionName":  "0.36.1",
+    "versionCode":  3602,
+    "versionName":  "0.36.2",
     "apk":  "https://github.com/PegasoHlib/PegasoHlib.github.io/releases/download/kordon/Kordon.apk",
-    "sha256":  "b6fd56ca5bcfee2b3944ed22a33c1894a890fd629cc93bda32d8dc2b94228623",
-    "size":  308189304,
+    "sha256":  "6d912bf7783007ea3e0cfcfb8b1886f67f356efc646f7506b1cc24c828cec6b3",
+    "size":  308190308,
     "notes":  {
-                  "uk":  "Посилання на умови використання й політику конфіденційності в налаштуваннях. Точніші джерела даних у титрах.",
-                  "en":  "Links to the terms of use and the privacy policy in Settings. More exact data sources in the credits."
+                  "uk":  "Уточнені підписи на карті, оновлені титри, дрібні технічні правки.",
+                  "en":  "Corrected map labels, updated credits, small technical fixes."
               }
 }
