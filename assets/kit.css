@@ -65,9 +65,9 @@ html.theme-fade,html.theme-fade *{transition:background-color .4s ease,color .4s
 .theme .ic.spin{animation:theme-spin .55s cubic-bezier(.3,1.4,.5,1)}
 @keyframes theme-spin{from{transform:rotate(-120deg) scale(.4);opacity:0}to{transform:none;opacity:1}}
 @media (prefers-reduced-motion:reduce){.theme .ic.spin{animation:none}}
-/* Narrow phones: page links take their own row under the logo. */
+/* Narrow phones: page links take their own row under the logo; the bar stays on top while scrolling, as on computers. */
 @media (max-width:620px){
-  .bar{position:static}
+  html{scroll-padding-top:118px}
   .links{order:5;width:100%;justify-content:flex-start;overflow-x:auto;scrollbar-width:none}
   .links::-webkit-scrollbar{display:none}
   .links{gap:2px}
