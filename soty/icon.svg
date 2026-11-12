@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- SOTY: Honeycomb Kingdoms — the app icon (S-14, variant 3 of brand/variants.html, chosen 12.11.2026).
+       Blue cells on the left, red on the right, the golden capital with a dark banner between them. Drawn by hand, our own work.
+       Cells: pointy-top hexagons, circumradius 61 + a 10 px stroke of the same colour (rounded corners); neighbours 128 apart.
+       brand/mark.svg is the same drawing without the dark tile. After a change: npm run icons. -->
+  <defs><polygon id="c" points="0,-61 52.8,-30.5 52.8,30.5 0,61 -52.8,30.5 -52.8,-30.5"/></defs>
+  <rect width="512" height="512" rx="112" fill="#0f1622"/>
+  <g stroke-width="10" stroke-linejoin="round">
+    <use href="#c" x="192" y="145" fill="#5b95f0" stroke="#5b95f0"/>
+    <use href="#c" x="128" y="256" fill="#5b95f0" stroke="#5b95f0"/>
+    <use href="#c" x="192" y="367" fill="#5b95f0" stroke="#5b95f0"/>
+    <use href="#c" x="320" y="145" fill="#ef6a5e" stroke="#ef6a5e"/>
+    <use href="#c" x="384" y="256" fill="#ef6a5e" stroke="#ef6a5e"/>
+    <use href="#c" x="320" y="367" fill="#ef6a5e" stroke="#ef6a5e"/>
+    <use href="#c" x="256" y="256" fill="#f2c14e" stroke="#f2c14e"/>
+  </g>
+  <rect x="229" y="211" width="10" height="90" rx="5" fill="#0f1622"/>
+  <path d="M239 217 L285 234 L239 251 Z" fill="#0f1622" stroke="#0f1622" stroke-width="5" stroke-linejoin="round"/>
+</svg>
