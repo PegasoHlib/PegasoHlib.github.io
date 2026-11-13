@@ -1,0 +1,20 @@
+{
+  "name": "SOTY: Honeycomb Kingdoms",
+  "short_name": "SOTY",
+  "description": "A turn-based strategy on hexes: 2–4 states, bots, peoples, sieges and diplomacy. In English and Ukrainian.",
+  "lang": "en",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "any",
+  "background_color": "#0f1622",
+  "theme_color": "#0f1622",
+  "categories": ["games", "strategy"],
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
