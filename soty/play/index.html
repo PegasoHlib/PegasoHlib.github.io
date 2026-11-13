@@ -336,6 +336,9 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
  #topbar,#panel,#actions,.seg,#aiBanner{--fs:var(--fs2)}
  #btnEnd{flex:1;padding:13px}
  #aiBanner{bottom:calc(max(6px,env(safe-area-inset-bottom)) + 66px * var(--fs2))}
+ /* the banner stands above the panel (its height: --ph, ui.js), not on it; it never wraps: the notify button keeps its icon */
+ #aiBanner{bottom:calc(max(6px,env(safe-area-inset-bottom)) + 60px * var(--fs2) + var(--ph, 0px) + 8px);white-space:nowrap;max-width:calc(100% - 12px)}
+ #btnNotify .nt{display:none}
  #banner .b1{font-size:calc(36px * var(--fs))}
  .card{padding:18px}.card h1{font-size:calc(29px * var(--fs))}.cardhead{top:-18px;margin:-18px -18px 8px;padding:14px 18px 8px}
  .logo .crest{width:52px;height:52px}
@@ -385,6 +388,8 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 #chipTimer.low b{color:#ff8a7a}
 #emoteBar{position:absolute;left:max(8px,env(safe-area-inset-left));bottom:calc(max(8px,env(safe-area-inset-bottom)) + 64px);display:flex;gap:6px;padding:6px;border-radius:14px;background:var(--glass2);border:1px solid var(--line2);box-shadow:var(--shadow);z-index:6}
 #emoteBar button{min-width:44px;min-height:44px;border-radius:11px;background:rgba(255,255,255,.08);border:1px solid var(--line);font-size:calc(20px * var(--fs));font-weight:900}
+#btnNotify .nt{margin-left:6px}
+@media (pointer:coarse){#btnNotify{min-width:44px}}
 #btnNotify{margin-left:8px;font-size:calc(13px * var(--fs));font-weight:800;background:rgba(255,255,255,.1);border:1px solid var(--line2);border-radius:10px;padding:5px 10px;white-space:nowrap}
 
 /* ---------- touch screens: everything you tap is at least 44×44 px */
@@ -457,7 +462,18 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
  #hud:has(#coach:not(.hidden)) #toasts{left:max(8px,env(safe-area-inset-left))}
  #hud:has(#coach:not(.hidden)) :is(#minimap,#mmBtn){visibility:hidden}
  #coach{font-size:calc(13px * var(--fs));padding:9px 11px;max-width:none}
- #aiBanner{top:calc(max(6px,env(safe-area-inset-top)) + 52px);bottom:auto;left:calc(50% + 75px - min(150px,21vw));padding:8px 16px}
+ #aiBanner{top:calc(max(6px,env(safe-area-inset-top)) + 52px);bottom:auto;left:calc(50% + 75px - min(150px,21vw));padding:8px 12px;gap:8px;white-space:nowrap;box-sizing:border-box;max-width:calc(100% - min(300px,42vw) - 190px - env(safe-area-inset-left) - env(safe-area-inset-right))}
+ #aiBanner .who{min-width:0;overflow:hidden;text-overflow:ellipsis}
+ #aiBanner:has(#btnNotify:not(.hidden)) .dots{display:none}
+ #aiBanner:has(#btnNotify:not(.hidden)){font-size:0}   /* drops the ⚔ (a bare text) for the name's sake */
+ #aiBanner:has(#btnNotify:not(.hidden)) .who{font-size:calc(14px * var(--fs))}
+ #btnNotify .nt{display:none}
+ /* toasts go under the banner while it shows (both use the middle) */
+ #hud:has(#aiBanner:not(.hidden)) #toasts{top:calc(max(6px,env(safe-area-inset-top)) + 122px)}
+ /* the tutorial's box fills the left and the middle: only the newest toast shows, at the bottom of the middle */
+ #hud:has(#coach:not(.hidden)) #banner{top:68%}
+ #hud:has(#coach:not(.hidden)) .toast{display:none}
+ #hud:has(#coach:not(.hidden)) .toast:last-child{display:block;position:fixed;bottom:max(8px,env(safe-area-inset-bottom));left:calc(max(8px,env(safe-area-inset-left)) + 158px);right:calc(max(8px,env(safe-area-inset-right)) + min(300px,42vw) + 8px);text-align:center}
  #forecast{top:calc(max(6px,env(safe-area-inset-top)) + 52px);left:calc(50% + 75px - min(150px,21vw));width:min(330px,calc(100% - min(300px,42vw) - 190px));max-height:calc(100% - 70px);overflow:auto}
  #banner{left:calc(max(8px,env(safe-area-inset-left)) + 158px);right:calc(max(8px,env(safe-area-inset-right)) + min(300px,42vw) + 8px);top:58%}
  #banner .b1{font-size:calc(30px * var(--fs))}#banner .b2{font-size:calc(13.5px * var(--fs))}
@@ -506,6 +522,7 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 /* tablet on its side: tips, toasts, the AI banner, the forecast and the turn banner use the map right of the panel */
 @media (pointer:coarse) and (min-width:700px) and (min-height:600px) and (orientation:landscape){
  #toasts,#forecast,#aiBanner{left:calc(var(--pw) + 16px + (100% - var(--pw) - 16px) / 2)}
+ #aiBanner{bottom:calc(max(8px,env(safe-area-inset-bottom)) + var(--ah, 60px) + 10px)}
  #coach{max-width:min(520px,calc(100vw - var(--pw) - 48px))}
  #forecast{width:min(400px,calc(100% - var(--pw) - 48px))}
  #banner{left:calc(var(--pw) + 16px);top:46%}
@@ -514,6 +531,12 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 @media (pointer:coarse) and (min-width:700px) and (min-height:600px) and (orientation:portrait){
  #panel{max-height:52%}
  #chipWin .lng{display:none}#chipWin .sht{display:inline}
+ /* the AI banner: right of the panel, above the action buttons (--ah, ui.js); online the next-unit button keeps its icon */
+ #aiBanner{left:calc(var(--pw) + 16px + (100% - var(--pw) - 16px) / 2);bottom:calc(max(8px,env(safe-area-inset-bottom)) + var(--ah, 60px) + 10px);white-space:nowrap;box-sizing:border-box;max-width:calc(100% - var(--pw) - 32px)}
+ #aiBanner .who{min-width:0;overflow:hidden;text-overflow:ellipsis}
+ #btnNotify .nt{display:none}
+ #actions:has(#btnEmote:not(.hidden)) #btnNext [data-i18n]{display:none}
+ #btnNext{min-width:48px}
 }
 
 /* ---------- PC (a mouse): the turn banner keeps right of the panel; big screens get a slightly bigger interface,
@@ -539,6 +562,30 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 /* S-39: less motion — the page's own animations and transitions last a moment */
 html.lessmo *,html.lessmo *::before,html.lessmo *::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 html.lessmo #btnEnd.tutPulse{box-shadow:0 0 0 3px rgba(242,193,78,.7)}   /* S-39: the tutorial still points at «End turn», without pulsing */
+
+/* ---------- replays (S-41): the controls take the action buttons' place; the game's own controls and panels stay away */
+html.replay #actions > :not(#rpBox),html.replay #aiBanner,html.replay #btnDiplo,html.replay #panel,html.replay #forecast,html.replay #chipTimer,html.replay #emoteBar,html.replay #offer{display:none!important}
+#rpBox{pointer-events:auto;width:340px;display:flex;flex-direction:column;gap:6px;background:var(--glass);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line2);border-radius:16px;padding:8px 10px 10px;box-shadow:var(--shadow)}
+#rpTurn{display:flex;align-items:center;gap:7px;font-weight:800;font-size:calc(14px * var(--fs));min-height:20px}
+#rpTurn i{width:11px;height:11px;border-radius:50%;flex:none;box-shadow:0 0 0 2px rgba(0,0,0,.35)}
+#rpTurn.flash span{animation:rpflash .8s ease-out}
+@keyframes rpflash{from{color:#ffd23f;text-shadow:0 0 12px rgba(242,193,78,.8)}to{color:inherit;text-shadow:none}}
+#rpSlider{width:100%;height:26px;margin:0;accent-color:#f2b84b;cursor:pointer}
+.rpbtns{display:flex;gap:6px}
+.rpbtns button{flex:1 1 0;min-width:0;min-height:40px;background:rgba(255,255,255,.07);border:1px solid var(--line2);border-radius:11px;font-size:calc(17px * var(--fs));font-weight:800}
+.rpbtns button:disabled{opacity:.4}
+#rpPlay{background:linear-gradient(#f2b84b,#d4891f);color:#1d1306;border-color:transparent}
+#rpSpeed{font-size:calc(15px * var(--fs))}
+@media (pointer:coarse){#rpSlider{height:44px}.rpbtns button{min-height:44px}}
+@media (max-width:720px){#rpBox{width:auto;flex:1;padding:6px 8px 8px;gap:4px}#rpTurn{font-size:calc(13px * var(--fs2))}}
+/* a phone on its side: the panel never shows in a replay, so the controls sit on the right, one row of buttons */
+@media (orientation:landscape) and (max-height:500px){
+ html.replay #actions{left:auto;right:max(8px,env(safe-area-inset-right));width:310px}   /* 6 buttons of at least 44 px */
+ #rpBox{width:auto;padding:6px;gap:4px}.rpbtns{gap:4px}
+}
+@media (pointer:coarse) and (min-width:700px) and (min-height:600px){#rpBox{width:400px}.rpbtns button{min-height:48px}}
+/* a tablet on its side keeps toasts right of the panel; a replay has no panel: the middle */
+@media (pointer:coarse) and (min-width:700px) and (min-height:600px) and (orientation:landscape){html.replay #toasts{left:50%}}
 </style>
 </head>
 <body>
@@ -565,12 +612,17 @@ html.lessmo #btnEnd.tutPulse{box-shadow:0 0 0 3px rgba(242,193,78,.7)}   /* S-39
   <div id="toasts"><div id="coach" class="hidden"><div class="ci">💡</div><div class="cb"><div id="coachText"></div><div class="ca"><button id="coachOk" data-i18n="tip.ok"></button><button id="coachOff" data-i18n="tip.off"></button><button id="coachSkip" class="hidden" data-i18n="tut.skip"></button><button id="coachPlay" class="hidden" data-i18n="tut.done.play"></button><button id="coachMenu" class="hidden" data-i18n="tut.done.menu"></button></div></div></div></div>
   <div id="banner" class="hidden"><div class="b1"></div><div class="b2"></div></div>
   <div id="emoteBar" class="hidden"></div>
-  <div id="aiBanner" class="hidden">⚔ <span class="who" data-i18n="hud.ai.turn"></span> <span class="dots"><i></i><i></i><i></i></span><button id="btnSpeed" data-i18n-title="hud.ai.speed.title">⏩ ×1</button><button id="btnNotify" class="hidden" data-i18n="net.notify" data-i18n-title="net.notify.title"></button></div>
+  <div id="aiBanner" class="hidden">⚔ <span class="who" data-i18n="hud.ai.turn"></span> <span class="dots"><i></i><i></i><i></i></span><button id="btnSpeed" data-i18n-title="hud.ai.speed.title">⏩ ×1</button><button id="btnNotify" class="hidden" data-i18n-title="net.notify.title" data-i18n-aria-label="net.notify.title">📤<span class="nt" data-i18n="net.notify"></span></button></div>
  <div id="actions">
     <button id="btnUndo" class="hidden" data-i18n-title="hud.undo.title">↶</button>
     <button id="btnEmote" class="hidden" data-i18n-title="net.emote.title">😊</button>
     <button id="btnNext" data-i18n-title="hud.next.title">⏭ <span data-i18n="hud.next"></span><span class="nb" id="nextBadge">0</span></button>
     <button id="btnEnd" data-i18n-title="hud.end.title" data-i18n="hud.end"></button>
+    <div id="rpBox" class="hidden">
+      <div id="rpTurn"><i></i><span></span></div>
+      <input type="range" id="rpSlider" min="0" max="1" step="1" value="0" data-i18n-aria-label="replay.slider">
+      <div class="rpbtns"><button id="rpPrev" data-i18n-title="replay.prev">⏮</button><button id="rpPlay">⏸</button><button id="rpNext" data-i18n-title="replay.next">⏭</button><button id="rpSpeed" data-i18n-title="replay.speed">1×</button><button id="rpEye"></button><button id="rpExit" data-i18n-title="replay.exit">✕</button></div>
+    </div>
   </div>
 </div>
 <div id="tooltip" class="hidden"></div>
@@ -4510,8 +4562,9 @@ void main() {
     // varangians: gold for every enemy unit destroyed
     // the later states' start gold, for moving later (balance study 13.11, docs/balance.md): with two states the second
     // state's, by map size (on a large map the second seat is the stronger one, so there it starts with less); with three
-    // none; with four the seat's share of 35, as before. An easy bot never gets more than nothing.
-    seatGold: { 2: { small: 10, medium: 10, large: -15, huge: -15 }, 3: 0, 4: 35 }
+    // none; with four the seat's share of 35, as before. An easy bot never gets more than nothing. Small and medium +10 → +15
+    // when hired troops stopped appearing on the bottom-left state's front side (rules.js spawnCellFor, 13.11).
+    seatGold: { 2: { small: 15, medium: 15, large: -15, huge: -15 }, 3: 0, 4: 35 }
   };
   var BT = {
     farm: { icon: "🌾", cost: 20, terr: ["plains", "hills"], sight: 1, claim: 0 },
@@ -5774,14 +5827,16 @@ void main() {
     const c = G.cells[i];
     return G.terr[i] === s && c.cap < 0 && !c.village && !c.bld && landT(c.t);
   }
+  var toMid = (i) => POS[i].x * POS[i].x + POS[i].z * POS[i].z;
   function spawnCellFor(s, src, type = "inf") {
-    if (UT[type].naval) {
-      for (const n of NB[src]) if (bigSea(n) && !G.grid[n]) return n;
-      return -1;
+    const naval = !!UT[type].naval;
+    if (!naval && !G.grid[src]) return src;
+    let best = -1;
+    for (const n of NB[src]) {
+      if (G.grid[n] || (naval ? !bigSea(n) : !passT(G.cells[n].t) || G.terr[n] !== s)) continue;
+      if (best < 0 || toMid(n) < toMid(best)) best = n;
     }
-    if (!G.grid[src]) return src;
-    for (const n of NB[src]) if (passT(G.cells[n].t) && !G.grid[n] && G.terr[n] === s) return n;
-    return -1;
+    return best;
   }
   function isRecruitSite(s, i) {
     const c = G.cells[i];
@@ -8313,13 +8368,34 @@ void main() {
         if (onStep) onStep(n - 1, a, ev);
       }
       useGame(g);
-      return { ok: failed < 0, n, hash: hashSnap(snapshotState()), failed, state: g };
+      const snap = snapshotState();
+      return { ok: failed < 0, n, hash: hashSnap(snap), failed, state: g, snap };
     } finally {
       keepJournal(keep);
       setUid(uid0);
       useGame(prev);
       if (prev && (W !== w || H !== h || NSIDES !== ns)) setupGrid(w, h, ns);
     }
+  }
+  function replayTimeline(j, { spectate = false } = {}) {
+    const s0 = j.start, rounds = [{ at: 0, turn: s0.turn, snap: s0 }], turns = [{ at: 0, side: s0.current, turn: s0.turn }];
+    let turn = s0.turn;
+    const r = playJournal(j, { spectate, onStep: (k, a) => {
+      if (a.t !== "end" || G.over) return;
+      turns.push({ at: k + 1, side: G.current, turn: G.turn });
+      if (G.turn !== turn) {
+        turn = G.turn;
+        rounds.push({ at: k + 1, turn, snap: snapshotState() });
+      }
+    } });
+    return { ok: r.ok, n: r.n, failed: r.failed, hash: r.hash, rounds, turns };
+  }
+  function replayAt(j, tl, k, { spectate = false } = {}) {
+    let r0 = tl.rounds[0];
+    for (const r2 of tl.rounds) if (r2.at <= k) r0 = r2;
+    const part = { v: j.v, seq: (j.seq || 0) + r0.at, start: r0.snap, acts: j.acts.slice(r0.at, Math.max(r0.at, k)) };
+    const r = playJournal(part, { spectate });
+    return { ok: r.ok, hash: r.hash, snap: r.snap, state: r.state };
   }
 
   // src/engine/start.js
@@ -8394,6 +8470,7 @@ void main() {
     big: 256 * 1024,
     act: 2048,
     batch: 200,
+    histPage: 400,
     rate: 20,
     perSeat: 3,
     emoteMs: 2e3,
@@ -8656,6 +8733,15 @@ void main() {
     }
     on_resync(w) {
       this.sendSnap(w);
+    }
+    // the whole game for a replay (S-41): its start (with the first page) and the actions from number `from` on, at most
+    // LIMITS.histPage a message (more: there is another page). Only for a seat of this room, once the game began; it reads
+    // what the room already keeps and writes nothing.
+    on_history(w, m) {
+      if (this.room.state === "open") return this.err(w, "state");
+      const from = Number.isInteger(m.from) && m.from >= 1 && m.from <= this.seq + 1 ? m.from : 1;
+      const list = this.actsAfter(from - 1).slice(0, LIMITS.histPage);
+      this.send(w, { t: "history", from, seq: this.seq, list, more: from + list.length <= this.seq, ...from === 1 ? { st: JSON.parse(this.room.start) } : {} });
     }
     // ---- the game
     // an action of the state whose turn it is: {seq, a, hash, next?}. next: who plays now, required with {t: 'end'}; -1 (with
@@ -9316,8 +9402,8 @@ void main() {
   }
 
   // src/game-parts.js
-  var SOTY_VERSION = "0.5.1";
-  var BOT_WORKER = '(()=>{var Ir=Math.sqrt(3),se={plains:{move:1,def:0,sight:0,gold:1,col:10274660,h:.34},forest:{move:2,def:.25,sight:0,gold:1,col:6987852,h:.4},hills:{move:2,def:.4,sight:1,gold:1,col:12888684,h:.7},mountain:{move:99,def:0,sight:0,gold:0,col:9341831,h:.92},water:{move:99,def:0,sight:0,gold:0,col:4163781,h:.13},ford:{move:3,stop:!0,def:-.15,sight:0,gold:0,col:7323869,h:.15},river:{move:99,def:0,sight:0,gold:0,col:5810398,h:.16},bridge:{move:1,def:0,sight:0,gold:0,col:5810398,h:.16}},k={inf:{icon:"🛡",hp:30,atk:6,def:6,move:2,sight:2,range:1,cost:18,food:1,beats:"cav"},arch:{icon:"🏹",hp:22,atk:7,def:3,move:2,sight:2,range:2,cost:23,food:1,beats:"inf"},cav:{icon:"🐎",hp:26,atk:8,def:4,move:4,sight:3,range:1,cost:26,food:2,beats:"arch"},scout:{icon:"🔭",hp:14,atk:3,def:2,move:5,sight:3,range:1,cost:14,food:1,beats:"cat",noCapture:!0,skirmish:!0,eagle:!0},cat:{icon:"🪨",hp:20,atk:5,def:2,move:2,sight:1,range:2,minRange:2,cost:44,food:2,beats:null,noCapture:!0,siege:!0,noRet:!0,setup:!0},cmd:{icon:"🎖",hp:28,atk:7,def:7,move:3,sight:3,range:1,cost:50,food:2,beats:null,unique:!0,capOnly:!0},healer:{icon:"⚕️",hp:18,atk:2,def:3,move:2,sight:2,range:1,cost:30,food:1,beats:null,noCapture:!0,noAtk:!0,noRet:!0},cossack:{icon:"🗡",hp:30,atk:8,def:6,move:3,sight:2,range:1,cost:28,food:1,beats:"cav",kind:"inf",fac:"cossacks"},harch:{icon:"🎯",hp:22,atk:6,def:3,move:4,sight:3,range:2,cost:32,food:2,beats:"inf",kind:"arch",fac:"nomads"},knight:{icon:"🏇",hp:32,atk:10,def:6,move:3,sight:2,range:1,cost:35,food:2,beats:"arch",kind:"cav",fac:"knights"},galley:{icon:"⛵",hp:28,atk:7,def:5,move:4,sight:3,range:1,cost:34,food:1,beats:"trans",naval:!0,noCapture:!0},drakkar:{icon:"🐉",hp:28,atk:8,def:5,move:5,sight:3,range:1,cost:40,food:1,beats:"trans",naval:!0,noCapture:!0,hold:2,kind:"galley",fac:"varangians"},trans:{icon:"🚢",hp:24,atk:2,def:3,move:5,sight:2,range:1,cost:25,food:1,beats:null,naval:!0,noCapture:!0,noAtk:!0,hold:2}},We=["inf","cossack","arch","harch","cav","knight","scout","healer","cat","cmd","galley","drakkar","trans"],de=e=>k[e].kind||e,Le=e=>!!k[e.type].naval,Zt={knights:{icon:"⚜",uniq:"knight"},nomads:{icon:"🏕",uniq:"harch"},cossacks:{icon:"🔱",uniq:"cossack"},varangians:{icon:"🪓",uniq:"drakkar"}},Tn=Object.keys(Zt),tt=["inf","arch","cav"],H={flank:.15,flankMax:3,aura:.2,morale:.2,moraleTurns:3,supplyPen:.2,attrition:0,siegeMul:1.5,rangedMelee:.5,wallDmg:{inf:5,arch:2,cav:3,scout:1,cat:14,cmd:5,cossack:5,harch:2,knight:3,galley:4,drakkar:4,trans:0,healer:0},shore:.75,fortWalls:24,wallRegen:.08,repairCost:12,repairFrac:.3,siegeHunger:.15,siegeCostMul:1.5,market:{lot:10,sell:5,buy:16,sellStep:1,buyStep:2},heal:.2,plunder:5,seatGold:{2:{small:10,medium:10,large:-15,huge:-15},3:0,4:35}},Oe={farm:{icon:"🌾",cost:20,terr:["plains","hills"],sight:1,claim:0},fort:{icon:"🏰",cost:30,terr:["plains","forest","hills"],sight:3,claim:1},barracks:{icon:"⚒",cost:40,terr:["plains","forest","hills"],sight:2,claim:1},port:{icon:"⚓",cost:35,terr:["plains","forest","hills"],sight:2,claim:1,coast:!0},market:{icon:"⚖",cost:40,terr:["plains","hills"],sight:2,claim:1,one:!0}},$t={easy:{smart:0,group:2,cap:9},normal:{smart:1,group:4,cap:14},hard:{smart:2,group:5,cap:18}},vo=8,yo=[0,3,7],wo=22,bo=15,ko=9,ue=[null,{gold:0,food:0,walls:40,tower:4,cost:0},{gold:3,food:1,walls:60,tower:6,cost:70},{gold:6,food:2,walls:80,tower:8,cost:140}],dt=35,rt={smith:{icon:"⚒",cost:50},armor:{icon:"🛡",cost:60,req:"smith",cap:2},bows:{icon:"🏹",cost:45},stable:{icon:"🐎",cost:40},crops:{icon:"🌾",cost:35},mason:{icon:"🧱",cost:50},siege:{icon:"⚙",cost:55,cap:2},maps:{icon:"🗺",cost:30}},Cr={villFrac:3/4,villTurns:8,terrFrac:.65,terrTurns:8},xo={2:{v:.86,t:.65},3:{v:.75,t:.58},4:{v:.67,t:.52}},Tt={gold:20,food:10},Mo={siege:{limit:20,kind:"deadline"},outpost:{limit:30,kind:"survive"}};var Y=12,ne=12,L=Y*ne,Rr=e=>e%Y,Br=e=>e/Y|0,ge=[],Fr=[],E=[],Ur=[],Ln=[[1,0],[1,-1],[0,-1],[-1,0],[-1,1],[0,1]],So=0,Oo=0,Pr=null,pt=[[],[]],Ao=0,En=[new Set,new Set],Qt=new Map,Lt=2;function Hr(e,t){if(t<0||t>=ne)return-1;let o=e+(t>>1);return o<0||o>=Y?-1:t*Y+o}var Xt={small:{w:10,h:10,maxNs:2,code:"S"},medium:{w:12,h:12,maxNs:3,code:"M"},large:{w:15,h:13,maxNs:4,code:"L"},huge:{w:18,h:16,maxNs:4,code:"H"}},Nn={2:["BL","TR"],3:["BL","TC","BR"],4:["BL","TR","TL","BR"]};function ut(e,t,o=2){Y=e,ne=t,L=Y*ne,Lt=o,So=Ir*(Y-.5)/2,Oo=1.5*(ne-1)/2,ge.length=Fr.length=E.length=Ur.length=0;for(let f=0;f<L;f++){let l=Rr(f),c=Br(f);ge[f]={q:l-(c>>1),r:c},Fr[f]={x:Ir*(l+.5*(c&1))-So,z:1.5*c-Oo}}for(let f=0;f<L;f++)Ur[f]=Ln.map(([l,c])=>Hr(ge[f].q+l,ge[f].r+c)),E[f]=Ur[f].filter(l=>l>=0);Pr=new Uint8Array(L*L);for(let f=0;f<L;f++)for(let l=0;l<L;l++){let c=ge[f].q-ge[l].q,p=ge[f].r-ge[l].r;Pr[f*L+l]=(Math.abs(c)+Math.abs(p)+Math.abs(c+p))/2}let i=Y>>1,a={BL:[1,3,ne-4,ne-2],TR:[Y-4,Y-2,1,3],TL:[1,3,1,3],BR:[Y-4,Y-2,ne-4,ne-2],TC:[i-1,i+1,1,3]};pt=Nn[o].map(f=>{let[l,c,p,u]=a[f],S=[];for(let b=0;b<L;b++){let O=Rr(b),R=Br(b);O>=l&&O<=c&&R>=p&&R<=u&&S.push(b)}return S}),En=pt.map(f=>new Set(f)),Ao=(ne>>1)*Y+(Y>>1),Qt=new Map}ut(12,12);var x=(e,t)=>Pr[e*L+t],ae=e=>se[e].move<99;var Ae=e=>e==="plains"||e==="forest"||e==="hills";var er=(e,t)=>{for(let o=e.length-1;o>0;o--){let i=Math.floor(t()*(o+1));[e[o],e[i]]=[e[i],e[o]]}return e};var tr={flank:!0,wideFords:!0};var zr=2;var r=null;function Re(e){return r=e,e}var Ge=1,Lo=()=>Ge++;function ot(e){Ge=e}var rr=[],N=e=>{rr.push(e)};function Dr(e){let t=rr,o=rr=[];try{e()}finally{rr=t}return o}function nt(){let e=r.rng=r.rng+1831565813|0,t=Math.imul(e^e>>>15,1|e);return t=t+Math.imul(t^t>>>7,61|t)^t,((t^t>>>14)>>>0)/4294967296}var Et=e=>!r.human[e]||!!r.spectate,Nt=()=>r.human.filter(Boolean).length===1?r.human.findIndex(Boolean):-1;var D=(e,t)=>e>=0&&t>=0&&e!==t&&r.rel[e][t]==="war",ce=(e,t)=>e>=0&&(e===t||t>=0&&r.rel[e][t]==="ally"),lt=(e,t)=>e>=0&&t>=0&&e!==t&&r.rel[e][t]==="peace",ve=()=>r.sides.filter(e=>e.alive).map(e=>e.id),ye=e=>ve().filter(t=>D(e,t)),ht=(e,t)=>Math.max(0,r.relSince[e][t]+vo-r.turn);var mt={auto:{icon:"🎲"},balanced:{icon:"⚖"},conqueror:{icon:"⚔",attack:1},builder:{icon:"🏗",build:1,trade:1},raider:{icon:"🐎",raid:1}};var _r={knights:"conqueror",nomads:"raider",cossacks:"builder",varangians:"balanced"};var A=(e,t)=>({key:e,vars:t||null}),_=e=>r.units.filter(t=>t.alive&&t.side===e),pe=(e,t)=>!!r.sides[e].tech[t],Uo=["inf","cav","cmd"],Q=e=>r&&r.sides[e]?r.sides[e].fac:null,In=(e,t)=>!k[t].fac||Q(e)===k[t].fac;function Eo(e){let t=de(e.type);return k[e.type].atk+(pe(e.side,"smith")&&Uo.includes(t)?1:0)+(pe(e.side,"bows")&&t==="arch"?1:0)+(t==="inf"&&Q(e.side)==="varangians"?1:0)+(t==="cav"&&Q(e.side)==="knights"?1:0)}function No(e){let t=de(e.type);return k[e.type].def+(pe(e.side,"armor")&&Uo.includes(t)?1:0)+(t==="cav"&&Q(e.side)==="knights"?1:0)}function qe(e,t){let o=de(t);return k[t].cost-(o==="cav"&&pe(e,"stable")?5:0)-(t==="cat"&&pe(e,"siege")?10:0)-((o==="cav"||t==="harch")&&Q(e)==="nomads"?4:0)-(k[t].naval&&Q(e)==="varangians"?4:0)}function Cn(e,t){return de(t)==="cav"&&pe(e,"stable")?1:k[t].food}function Je(e,t){return k[t].move+(t==="cat"&&pe(e,"siege")?1:0)+(t==="scout"&&pe(e,"maps")?1:0)+(k[t].naval&&Q(e)==="varangians"?1:0)}function Un(e,t){return k[t].sight+(t==="scout"&&pe(e,"maps")?1:0)+(Q(e)==="nomads"?1:0)}var yt=(e,t)=>ue[t]?Math.round(ue[t].cost*(Q(e)==="knights"?.8:1)):0,wt=(e,t)=>Oe[t].cost-(t==="port"&&Q(e)==="varangians"?15:0),Ye=e=>e==="water"||e==="river"||e==="ford",Ro=(e,t)=>k[e.type].naval?Ye(r.cells[t].t):ae(r.cells[t].t),Bo=(e,t)=>k[e.type].naval?1:se[r.cells[t].t].move,je=e=>r.units.filter(t=>t.alive&&t.aboard===e.id),Fo=e=>e.aboard?r.units.find(t=>t.id===e.aboard&&t.alive):null,bt=e=>(k[e.type].hold||0)-je(e).length;var Ut=e=>r.sea[e]>=0&&r.seaSize[r.sea[e]]>=6,Rn=e=>Ae(r.cells[e].t)&&E[e].some(Ut),Po=(e,t)=>E[t].some(o=>{let i=r.cells[o].bld;return i&&i.type==="port"&&i.owner===e}),le=e=>{let t=r.cells[e];return t.cap>=0?t.cap:t.bld?t.bld.owner:t.village?t.vOwner:-1};function he(e){let t=r.cells[e];if(t.cap<0&&!(t.bld&&t.bld.type==="fort"))return 0;let o=t.cap>=0?ue[r.sides[t.cap].capLvl].walls:H.fortWalls;return Math.round(o*(pe(le(e),"mason")?1.5:1)*(Q(le(e))==="knights"?1.25:1))}var Ee=e=>{let t=r.walls[e];return!!t&&t.hp>0},lr=e=>{let t=r.breach[e];return!!t&&r.turn<=t.until};function Ct(e){let t=r.cells[e];return t.cap>=0||t.bld&&t.bld.type==="fort"?Ee(e)?.5:0:t.village&&!lr(e)?t.vLvl>1?.3:.2:0}function we(e){return Math.max(se[r.cells[e].t].def,Ct(e))}var ir=(e,t)=>Ee(t)&&D(e,le(t)),vt=(e,t)=>Ee(t)&&le(t)!==e,Gr=e=>{let t=r.cells[e];return t.cap>=0||t.village||!!(t.bld&&t.bld.type==="fort")};function Ho(e){let t=le(e);if(t<0||!Gr(e))return!1;let o=f=>{let l=r.grid[f];return l&&l.alive&&D(t,l.side)?l:null},i=0,a=new Set;for(let f of E[e]){if(!ae(r.cells[f].t))continue;i++;let l=r.grid[f];if(l&&l.alive&&D(t,l.side)){a.add(l);continue}if(l&&l.alive&&ce(t,l.side))return!1;let c=!1;for(let p of E[f]){let u=p!==e&&o(p);u&&(c=!0,a.add(u))}if(!c)return!1}return i>0&&a.size>=Math.min(r.cells[e].cap>=0?3:2,i)}var Pe=e=>!!(r.siege&&r.siege[e]),nr=(e,t,o)=>Math.ceil(qe(e,t)*(Pe(o)?H.siegeCostMul:1));function qr(e,t){let o=r.walls[t];return!o||le(t)!==e?A("rule.repair.noWalls"):o.hp>=he(t)?A("rule.repair.intact"):Pe(t)?A("rule.repair.besieged"):o.rep===r.turn?A("rule.repair.done"):E[t].some(i=>{let a=r.grid[i];return a&&a.alive&&D(e,a.side)})?A("rule.repair.enemyNear"):r.sides[e].gold<H.repairCost?A("rule.gold.short",{n:H.repairCost-r.sides[e].gold}):""}var Jr=(e,t)=>Math.ceil(he(t)*H.repairFrac);function zo(e,t){if(qr(e,t))return!1;let o=r.sides[e],i=r.walls[t];return o.gold-=H.repairCost,i.hp=Math.min(he(t),i.hp+Jr(e,t)),i.rep=r.turn,o.stats.repairs=(o.stats.repairs||0)+1,!0}function Rt(e){for(let t of r.cells)if(t.bld&&t.bld.type==="market"&&t.bld.owner===e)return t.i;return-1}var sr=e=>e.trade&&e.trade.s!==void 0?e.trade:e.trade={s:0,b:0};function Yr(e,t){let o=r.sides[e],i=H.market,a=Rt(e);return a<0?A("rule.trade.noMarket"):Pe(a)?A("rule.trade.besieged"):t==="sell"?o.food<i.lot?A("rule.trade.lowFood"):"":o.gold<it(e,"buy")?A("rule.gold.short",{n:it(e,"buy")-o.gold}):""}function it(e,t,o=0){let i=H.market,a=sr(r.sides[e]);return t==="sell"?Math.max(1,i.sell-(a.s+o)*i.sellStep):i.buy+(a.b+o)*i.buyStep}function Do(e,t){if(Yr(e,t))return!1;let o=r.sides[e],i=H.market,a=sr(o);return t==="sell"?(o.food-=i.lot,o.gold+=it(e,"sell"),a.s++):(o.gold-=it(e,"buy"),o.food+=i.lot,a.b++),o.stats.trades=(o.stats.trades||0)+1,!0}var jr=e=>E[e.cell].some(t=>{let o=r.grid[t];return o&&o.alive&&o!==e&&o.type==="healer"&&ce(e.side,o.side)});function Vr(e){let t=he(e);t?r.walls[e]={hp:t}:delete r.walls[e]}function Bt(e){return Math.max(1,Math.round(H.wallDmg[e.type]*It(e)*(Wr(e.side)?1-H.morale:1)))}var Wr=e=>r.turn<r.sides[e].moraleUntil;function Io(e,t,o){for(let i of E[t]){let a=r.grid[i];if(a&&a.alive&&a.side===e&&a.type==="cmd"&&a!==o)return!0}return!1}function Bn(e,t){let o=0;for(let i of E[t.cell]){let a=r.grid[i];a&&a.alive&&a.side===e.side&&a!==e&&a.type!=="cat"&&!k[a.type].noAtk&&o++}return Math.min(H.flankMax,o)}function st(e){let t=r.supply[e];if(t.fill(0),!r.sides[e].alive)return;let o=[],i=a=>{t[a]!==2&&(t[a]=2,o.push(a))};i(r.caps[e]);for(let a of r.cells)a.village&&a.vOwner===e&&i(a.i),a.bld&&a.bld.owner===e&&i(a.i);for(;o.length;){let a=o.pop();for(let f of E[a])t[f]!==2&&(ce(e,r.terr[f])&&Ae(r.cells[f].t)||r.cells[f].t==="bridge")&&(t[f]=2,o.push(f))}for(let a=0;a<L;a++)if(t[a]===2)for(let f of E[a])t[f]||(t[f]=1)}function _o(e,t,o){let i=r.sides[e],a=k[t],f=r.cells[o];if(!In(e,t))return A("rule.recruit.otherPeople");let l=f.bld&&f.bld.type==="port"&&f.bld.owner===e;return a.naval&&!l?A("rule.recruit.portOnly"):!a.naval&&l&&f.cap!==e?A("rule.recruit.shipsOnly"):a.capOnly&&f.cap!==e?A("rule.recruit.capitalOnly"):a.unique&&r.units.some(c=>c.alive&&c.side===e&&c.type===t)?A("rule.recruit.have"):t==="cmd"&&r.turn<i.cmdReady?A("rule.recruit.wait",{n:i.cmdReady-r.turn}):Kr(e,o,t)<0?a.naval?A("rule.recruit.noWater"):A("rule.recruit.noRoom"):i.gold<nr(e,t,o)?A("rule.gold.short",{n:nr(e,t,o)-i.gold}):""}function Te(){let e=new Array(L).fill(null),t=(o,i,a,f)=>{for(let l=0;l<L;l++){let c=x(o,l);if(c>a)continue;let p=c-f*.5,u=e[l];!u||p<u.k?e[l]={k:p,side:i}:p===u.k&&u.side!==i&&(e[l]={k:p,side:-1})}};for(let o of r.sides)o.alive&&t(r.caps[o.id],o.id,2,1);for(let o of r.cells)o.village&&o.vOwner>=0&&t(o.i,o.vOwner,1,0),o.bld&&t(o.i,o.bld.owner,Oe[o.bld.type].claim,0);for(let o=0;o<L;o++)r.zone[o]=e[o]?e[o].side:-2,r.terr[o]=r.zone[o]>=0?r.zone[o]:r.walk[o]}function Wo(e,t){return!Ae(r.cells[t].t)||r.walk[t]===e||r.zone[t]>=0&&r.zone[t]!==e||r.walk[t]>=0&&!D(e,r.walk[t])?!1:(r.walk[t]=e,Te(),!0)}function Fn(e,t){let o=e*L+t,i=Qt.get(o);if(i)return i;i=[];let a=x(e,t),f=ge[e].q+1e-6,l=ge[e].r+2e-6,c=ge[t].q+1e-6,p=ge[t].r+2e-6;for(let u=1;u<a;u++){let S=u/a,b=f+(c-f)*S,O=l+(p-l)*S,R=-b-O,U=Math.round(b),B=Math.round(O),P=Math.round(R),J=Math.abs(U-b),j=Math.abs(B-O),X=Math.abs(P-R);J>j&&J>X?U=-B-P:j>X&&(B=-U-P);let ee=Hr(U,B);ee>=0&&i.push(ee)}return Qt.set(o,i),i}function Pn(e,t,o){if(x(e,t)<=1)return!0;for(let i of Fn(e,t)){let a=r.cells[i].t;if(a==="mountain"||a==="forest"&&!o)return!1}return!0}function kt(e){let t=r.sides[e];if(t.vis.fill(0),!t.alive&&!r.preview)return;let o=(l,c,p)=>{for(let u=0;u<L;u++)!t.vis[u]&&x(l,u)<=c&&Pn(l,u,p)&&(t.vis[u]=1)},i=(l,c)=>r.cells[l].t==="hills"||r.cells[l].bld&&r.cells[l].bld.type==="fort"&&r.cells[l].bld.owner===c;for(let l of r.units)l.alive&&!l.aboard&&ce(e,l.side)&&o(l.cell,Un(l.side,l.type)+se[r.cells[l.cell].t].sight,i(l.cell,l.side)||!!k[l.type].eagle);for(let l of r.sides)l.alive&&ce(e,l.id)&&o(r.caps[l.id],3,!0);for(let l of r.cells)l.village&&ce(e,l.vOwner)&&o(l.i,1,!1),l.bld&&ce(e,l.bld.owner)&&o(l.i,Oe[l.bld.type].sight,l.bld.type==="fort"||l.t==="hills");let a=Object.fromEntries(We.map(l=>[l,0])),f={};for(let l=0;l<L;l++)if(t.vis[l]){t.explored[l]=1;let c=r.cells[l];t.memOwner[l]=c.village?c.vOwner:-1,t.memBld[l]=c.bld?{type:c.bld.type,owner:c.bld.owner}:null,t.memLvl[l]=c.village?c.vLvl:c.cap>=0?r.sides[c.cap].capLvl:0,t.memRuin[l]=r.walls[l]&&r.walls[l].hp<=0?1:0,c.cap>=0&&c.cap!==e&&(t.kc[c.cap]=l,t.intel[c.cap].wall={hp:r.walls[l]?r.walls[l].hp:0,max:he(l),t:r.turn});let p=r.grid[l];if(p&&p.alive&&D(e,p.side)&&a[p.type]++,p&&p.alive&&p.side!==e){let u=f[p.side]||(f[p.side]={});u[p.type]=(u[p.type]||0)+1}}for(let l in f){let c=t.intel[l];c.last=r.turn,c.now=f[l];for(let p in f[l])c.max[p]=Math.max(c.max[p]||0,f[l][p])}for(let l=0;l<r.ns;l++)f[l]||(t.intel[l].now=null);for(let l of We)t.seen[l]=Math.max(t.seen[l],a[l])}function be(e){let t=ue[r.sides[e].capLvl],o=Pe(r.caps[e]),i=o?0:5+t.gold,a=o?0:3+t.food,f=0,l=0,c=0,p=0;for(let u of r.cells)r.terr[u.i]===e&&(p+=se[u.t].gold),u.village&&u.vOwner===e&&(l++,Pe(u.i)||(i+=u.vLvl>1?5:3,a+=(u.vLvl>1?2:1)+(Q(e)==="cossacks"?1:0))),u.bld&&u.bld.owner===e&&u.bld.type==="port"&&(a+=1),u.bld&&u.bld.owner===e&&u.bld.type==="market"&&!Pe(u.i)&&(i+=1),u.bld&&u.bld.owner===e&&u.bld.type==="farm"&&(a+=(u.t==="plains"?3:2)+(pe(e,"crops")?1:0),c++);i+=Math.floor(p/2);for(let u of r.units)u.alive&&u.side===e&&(f+=Cn(e,u.type));return{gold:i,food:a,up:f,net:a-f,vill:l,farms:c}}function ar(e,t,o){let i=r.cells[t];if(r.terr[t]!==e||i.cap>=0||i.village||i.bld||!Oe[o].terr.includes(i.t)||Oe[o].coast&&!Rn(t)||Oe[o].one&&Rt(e)>=0)return!1;let a=r.grid[t];return a&&a.side!==e?!1:r.sides[e].gold>=wt(e,o)}function Kr(e,t,o="inf"){if(k[o].naval){for(let i of E[t])if(Ut(i)&&!r.grid[i])return i;return-1}if(!r.grid[t])return t;for(let i of E[t])if(ae(r.cells[i].t)&&!r.grid[i]&&r.terr[i]===e)return i;return-1}function Go(e,t){let o=r.cells[t];return o.cap===e||!!(o.bld&&(o.bld.type==="barracks"||o.bld.type==="port")&&o.bld.owner===e)}var It=e=>1+.2*(e.lvl-1),or=(e,t)=>.5+.5*t/e.maxHp,gt=(e,t)=>k[e.type].beats===de(t.type)||e.type==="cat"&&k[t.type].naval?1.5:1,Co=(e,t,o)=>!!k[e.type].naval!=!!k[t.type].naval&&o===1&&!k[e.type].siege?H.shore:1,He=(e,t,o)=>{let i=x(t,o),a=k[e];return i<=a.range&&i>=(a.minRange||1)};function Ve(e,t,o){let i=k[e.type],a=k[t.type],f=x(o,t.cell),l=!!i.siege&&Ct(t.cell)>0,c=Bn(e,t),p=Io(e.side,o,e),u=Io(t.side,t.cell,t),S=Wr(e.side),b=Wr(t.side),O=(p?1+H.aura:1)*(e.oos?1-H.supplyPen:1),R=(u?1+H.aura:1)*(t.oos?1-H.supplyPen:1),U=l?se[r.cells[t.cell].t].def:we(t.cell),B=Co(e,t,f),P=Eo(e)*It(e)*or(e,e.hp)*gt(e,t)*(1+H.flank*c)*O*(S?1-H.morale:1)*(l?H.siegeMul:1)*B,J=No(t)*It(t)*or(t,t.hp)*(1+U)*gt(t,e)*R,j=Math.max(1,Math.round(wo*P/(P+J))),X=Math.max(0,t.hp-j),ee=0;if(X>0&&!a.noRet&&f<=a.range&&f>=(a.minRange||1)){let $=Eo(t)*It(t)*or(t,X)*gt(t,e)*R*(b?1-H.morale:1)*(a.range>1&&f===1?H.rangedMelee:1)*Co(t,e,f),ie=No(e)*It(e)*or(e,e.hp)*(1+we(o))*gt(e,t)*O;ee=Math.max(1,Math.round(bo*$/($+ie)))}let Me=Math.max(0,e.hp-ee);return{dmg:j,ret:ee,dHp:X,aHp:Me,defDies:X<=0,attDies:Me<=0,dist:f,adv:gt(e,t)>1,disadv:gt(t,e)>1,tdef:U,wall:l?Ct(t.cell):0,flank:c,aAura:p,dAura:u,aMor:S,dMor:b,aOos:!!e.oos,dOos:!!t.oos,siege:l,shore:B<1,breach:l&&r.cells[t.cell].village&&!lr(t.cell),wallHit:l&&Ee(t.cell)?Bt(e):0}}function ze(e){let t=r.sides[e.side],o=new Map;if(e.moves<=0)return o;if(e.aboard){for(let U of E[e.cell]){if(!t.explored[U]||!ae(r.cells[U].t)||r.grid[U]||vt(e.side,U))continue;let B=r.terr[U];B>=0&&lt(e.side,B)||o.set(U,{cost:e.moves,prev:e.cell,end:!0,land:!0})}return o}let i=!!k[e.type].naval,a=U=>{let B=r.grid[U];return B&&B.alive&&B.side!==e.side&&t.vis[U]&&!ce(e.side,B.side)},f=U=>{let B=r.grid[U];return B&&B.alive&&t.vis[U]&&D(e.side,B.side)&&!!k[B.type].naval===i},l=U=>E[U].some(f),c=r.terr[e.cell],p=U=>{let B=r.terr[U];return B>=0&&lt(e.side,B)&&B!==c},u=new Map([[e.cell,0]]),S=new Map,b=[e.cell],O=new Set,R=new Map;for(;b.length;){let U=0;for(let P=1;P<b.length;P++)u.get(b[P])<u.get(b[U])&&(U=P);let B=b.splice(U,1)[0];if(!O.has(B)&&(O.add(B),!(B!==e.cell&&!k[e.type].skirmish&&l(B))))for(let P of E[B]){if(!t.explored[P])continue;if(!i){let X=r.grid[P];if(X&&X.alive&&X.side===e.side&&k[X.type].hold&&bt(X)>0){!R.has(P)&&u.get(B)<e.moves&&R.set(P,B);continue}}if(i?!Ye(r.cells[P].t):se[r.cells[P].t].move>=99)continue;let J=i?1:se[r.cells[P].t].move;if(a(P)||vt(e.side,P)||p(P))continue;let j=!i&&r.cells[P].t==="ford"?e.moves:u.get(B)+J;j>e.moves||(!u.has(P)||j<u.get(P))&&(u.set(P,j),S.set(P,B),b.push(P))}}for(let[U,B]of u)if(U!==e.cell){let P=r.grid[U];o.set(U,{cost:B,prev:S.get(U),end:!(P&&P.alive&&P!==e&&(ce(e.side,P.side)||t.vis[U]))})}for(let[U,B]of R)o.set(U,{cost:e.moves,prev:B,end:!0,board:!0});return o}function ke(e,t,o){let i=[],a=o,f=0;for(;a!==t&&f++<60;)i.unshift(a),a=e.get(a).prev;return i}function Zr(e,t){let o=r.sides[e.side],i=new Map,a=k[e.type];if(e.attacked||a.setup&&e.moved||e.aboard||a.noAtk)return i;let f=[e.cell];if(t&&!a.setup)for(let[l,c]of t)c.end&&!c.board&&f.push(l);for(let l of r.units){if(!l.alive||l.aboard||!D(e.side,l.side)||!o.vis[l.cell])continue;let c=null,p=-1e9;for(let u of f){if(!He(e.type,u,l.cell))continue;let S=Ve(e,l,u),b=(u===e.cell?3:0)+we(u)*4-S.ret-(t&&u!==e.cell?t.get(u).cost*.1:0);b>p&&(p=b,c=u)}c!==null&&i.set(l.cell,{from:c,target:l})}for(let l in r.walls){let c=+l;if(!ir(e.side,c)||!o.vis[c]||r.grid[c])continue;let p=null,u=-1e9;for(let S of f){if(!He(e.type,S,c))continue;let b=(S===e.cell?3:0)+we(S)*4-(t&&S!==e.cell?t.get(S).cost*.1:0);b>u&&(u=b,p=S)}p!==null&&i.set(c,{from:p,wall:!0,cell:c})}if(a.siege)for(let l=0;l<L;l++){let c=r.cells[l];c.bld&&D(e.side,c.bld.owner)&&o.vis[l]&&!r.grid[l]&&!Ee(l)&&He(e.type,e.cell,l)&&i.set(l,{from:e.cell,bld:!0,cell:l})}return i}function te(){Te();for(let e=0;e<r.ns;e++)kt(e)}function re(e){if(!r.sides[e].alive)return 0;let t=0;for(let o of r.units)o.alive&&o.side===e&&(t+=k[o.type].cost*(1+.3*(o.lvl-1))*(o.hp/o.maxHp*.5+.5));return Math.round(t+12*r.cells.filter(o=>o.village&&o.vOwner===e).length+25*r.sides[e].capLvl+r.sides[e].gold*.3)}function cr(e,t){let o=r.sides[e],i=rt[t];return o.tech[t]?A("act.tech.have"):i.req&&!o.tech[i.req]?A("act.tech.needs",{name:{tech:i.req}}):i.cap&&o.capLvl<i.cap?A("act.tech.capLevel",{lvl:i.cap}):o.gold<i.cost?A("rule.gold.short",{n:i.cost-o.gold}):""}function $r(e,t,o,i){let a={id:Lo(),side:e,type:t,cell:o,hp:k[t].hp,maxHp:k[t].hp,xp:0,lvl:1,moves:i?Je(e,t):0,attacked:!i,moved:!1,oos:!1,order:null,alive:!0,role:null,goal:-1};return r.units.push(a),r.grid[o]=a,a}function Ft(){return{v:ko,mapv:zr,diff:r.diff,seed:r.seed,rng:r.rng,turn:r.turn,current:r.current,begun:r.begun,uid:Ge,size:r.size,mapType:r.mapType,mode:r.mode,win:{...r.win},setup:{...r.setup,slots:r.setup.slots?r.setup.slots.map(e=>({...e})):null},human:[...r.human],rel:r.rel.map(e=>[...e]),relSince:r.relSince.map(e=>[...e]),dip:JSON.parse(JSON.stringify(r.dip)),cells:r.cells.map(e=>e.village||e.bld?[e.vOwner,e.bld?e.bld.type:0,e.bld?e.bld.owner:0,e.vLvl||1]:0),walk:Array.from(r.walk),breach:JSON.parse(JSON.stringify(r.breach)),walls:JSON.parse(JSON.stringify(r.walls)),siege:{...r.siege},units:r.units.filter(e=>e.alive).map(e=>({id:e.id,side:e.side,type:e.type,cell:e.cell,hp:e.hp,maxHp:e.maxHp,xp:e.xp,lvl:e.lvl,moves:e.moves,attacked:e.attacked,moved:e.moved,oos:e.oos,order:e.order?{...e.order}:null,aboard:e.aboard||null})),sides:r.sides.map(e=>({fac:e.fac||null,bot:e.bot?{...e.bot}:null,alive:e.alive,diedAt:e.diedAt,killer:e.killer,gold:e.gold,food:e.food,kc:[...e.kc],explored:Array.from(e.explored).join(""),memOwner:Array.from(e.memOwner),memBld:e.memBld.map(t=>t?[t.type,t.owner]:0),memLvl:Array.from(e.memLvl),memRuin:Array.from(e.memRuin),intel:e.intel.map(t=>({max:{...t.max},last:t.last,wall:t.wall?{...t.wall}:null})),trade:e.trade?{...e.trade}:null,seen:{...e.seen},ai:{...e.ai},capLvl:e.capLvl,tech:{...e.tech},vStreak:e.vStreak,tStreak:e.tStreak,moraleUntil:e.moraleUntil,cmdReady:e.cmdReady,stats:JSON.parse(JSON.stringify(e.stats))}))}}var qo=(e,t)=>{let o=r.sides[e.side];return r.units.some(i=>i.alive&&D(e.side,i.side)&&o.vis[i.cell]&&x(i.cell,e.cell)<=t)};function Jo(e){let t=r.sides[e.side],o=new Float32Array(L).fill(1/0),i=new Int16Array(L).fill(-1),a=new Uint8Array(L);o[e.cell]=0;let f=r.terr[e.cell];for(;;){let l=-1,c=1/0;for(let p=0;p<L;p++)!a[p]&&o[p]<c&&(c=o[p],l=p);if(l<0)break;a[l]=1;for(let p of E[l]){if(a[p]||!t.explored[p])continue;let u=!!k[e.type].naval,S=u?Ye(r.cells[p].t)?1:99:se[r.cells[p].t].move;if(S>=99||vt(e.side,p))continue;let b=r.terr[p];if(b>=0&&lt(e.side,b)&&b!==f)continue;let O=r.grid[p];if(O&&O.alive&&t.vis[p]&&!ce(e.side,O.side))continue;let R=c+(!k[e.type].naval&&r.cells[p].t==="ford"?3:S);R<o[p]&&(o[p]=R,i[p]=l)}}return{d:o,prev:i}}function Hn(e,t,o){if(o=o||Jo(e),t===e.cell||!isFinite(o.d[t]))return null;let i=[];for(let a=t;a!==e.cell&&a>=0;a=o.prev[a])i.unshift(a);return{path:i,cost:o.d[t],turns:Math.max(1,Math.ceil(o.d[t]/Math.max(1,Je(e.side,e.type))))}}function Pt(e,t){e.order=null,N({e:"orderEnd",u:e.id,side:e.side,cell:e.cell,why:t})}function Yo(e){let t=e.order;if(!t||!e.alive)return!1;let o=t.type==="explore"?2:3;if(qo(e,o))return Pt(e,"enemy"),!1;if(t.type==="hold"||e.moves<=0)return!1;let i=Jo(e),a=t.dest;if(t.type==="explore"){let p=r.sides[e.side],u=-1,S=1/0;for(let b=0;b<L;b++){if(b===e.cell||!isFinite(i.d[b])||r.grid[b]&&r.grid[b].alive)continue;let O=E[b].filter(U=>!p.explored[U]).length;if(!O)continue;let R=i.d[b]-O*.8;R<S&&(S=R,u=b)}if(u<0)return Pt(e,"explored"),!1;a=u}let f=Hn(e,a,i);if(!f)return t.type==="goto"&&(a!==e.cell?Pt(e,"blocked"):e.order=null),!1;let l=ze(e),c=-1;for(let p=f.path.length-1;p>=0;p--){let u=l.get(f.path[p]);if(u&&u.end){c=p;break}}return c<0?(t.wait=(t.wait||0)+1,t.wait>2&&Pt(e,"busy"),!1):(t.wait=0,fr(e,ke(l,e.cell,f.path[c])),e.alive&&(t.type==="goto"&&e.cell===t.dest?e.order=null:qo(e,o)&&Pt(e,"enemy")),!0)}function jo(e){let t=_(e).filter(a=>a.order);if(!t.length)return;let o=0,i=0;for(let a of t){if(r.over)break;if(!a.alive||!a.order)continue;let f=a.order;Yo(a),a.alive&&!a.order&&(f.type==="goto"&&a.cell===f.dest?i++:o++)}N({e:"ordersDone",side:e,stopped:o,arrived:i}),te()}function Vo(e,t){e.order=t,t&&t.type!=="hold"&&e.moves>0&&Yo(e)}var Ke=(e,t)=>e<t?e+"-"+t:t+"-"+e;function zt(e){!r||!r.dip||(r.dip.log.unshift({t:r.turn,key:e.key,vars:e.vars}),r.dip.log.length>14&&(r.dip.log.length=14))}var Z=(e,t)=>t?{s:e,f:t}:{s:e};function ur(e,t,o){r.rel[e][t]=r.rel[t][e]=o,r.relSince[e][t]=r.relSince[t][e]=r.turn,r.dip.offers=r.dip.offers.filter(i=>Ke(i.from,i.to)!==Ke(e,t)),Te();for(let i of r.sides)st(i.id);for(let i=0;i<r.ns;i++)kt(i);at()}function hr(e,t,o,i){zt(o),N({e:"news",a:e,b:t,key:o.key,vars:o.vars,tone:i})}function Ko(e,t){ur(e,t,"peace");let o=Nt();hr(e,t,o>=0&&(e===o||t===o)?A("dip.peace.made.you",{b:Z(e===o?t:e)}):A("dip.peace.made.others",{a:Z(e),b:Z(t)}),"good")}function Zo(e,t){ur(e,t,"ally");let o=Nt();hr(e,t,o>=0&&(e===o||t===o)?A("dip.ally.made.you",{b:Z(e===o?t:e)}):A("dip.ally.made.others",{a:Z(e),b:Z(t)}),"good")}function $o(e,t){let o=r.rel[e][t];ur(e,t,"war"),r.sides[t].ai.grudge=Object.assign(r.sides[t].ai.grudge||{},{[e]:r.turn});let i=Nt();hr(e,t,i>=0&&t===i?A("dip.war.declared.onYou",{a:Z(e)}):i>=0&&e===i?A("dip.war.declared.byYou",{b:Z(t,"dat")}):o==="ally"?A("dip.war.declared.othersAlly",{a:Z(e),b:Z(t,"dat")}):A("dip.war.declared.others",{a:Z(e),b:Z(t,"dat")}),"bad")}function Qo(e,t){ur(e,t,"peace"),r.sides[t].ai.grudge=Object.assign(r.sides[t].ai.grudge||{},{[e]:r.turn});let o=Nt();hr(e,t,o>=0&&t===o?A("dip.ally.broken.withYou",{a:Z(e)}):o>=0&&e===o?A("dip.ally.broken.byYou",{b:Z(t,"ins")}):A("dip.ally.broken.others",{a:Z(e),b:Z(t)}),"bad")}function dr(){let e=ve(),t=e.find(i=>r.sides[i].vStreak>0||r.sides[i].tStreak>0);if(t!==void 0)return t;let o=e.map(i=>[i,re(i)]).sort((i,a)=>a[1]-i[1]);return o.length>1&&o[0][1]>o[1][1]*1.25?o[0][0]:-1}function mr(e,t){let o=ve();if(o.length<3)return-1;let i=(a,f)=>!(a===e&&f===t||a===t&&f===e)&&r.rel[a][f]==="war";for(let a of o){let f=o.filter(l=>l!==a);if(f.every(l=>i(a,l))&&f.every(l=>f.every(c=>l===c||!i(l,c))))return a}return-1}var Ht=(e,t)=>r.units.filter(o=>o.alive&&o.side===e&&(r.zone[o.cell]===t||x(o.cell,r.caps[t])<=4)).length,xe=e=>({ok:!1,why:e}),xt=e=>({ok:!0,why:e});function zn(e,t,o){let i=r.sides[e],a=Math.max(1,re(e)),f=Math.max(1,re(t));if(i.ai.grudge&&i.ai.grudge[t]!==void 0&&r.turn-i.ai.grudge[t]<12)return xe(A("dip.why.grudge"));let c=r.sides[t];if(c.vStreak||c.tStreak)return xe(A("dip.why.racing"));if(r.turn<5)return xe(A("dip.why.early"));if(o==="peace"){if(r.rel[e][t]!=="war")return xe(A("dip.why.notAtWar"));let p=ye(e).length,u=i.ai.target===t,S=mr(e,t);if(S>=0&&S!==dr())return xe(A("dip.why.leftAlone",{side:Z(S)}));let b=Ht(t,e),O=Ht(e,t);return O>=2&&a>f*.9?xe(A("dip.why.armyNear")):a<f*.75&&(b||p>=2)?xt(A("dip.why.fearArmy")):p>=2&&!u?xt(A("dip.why.otherFoes")):p>=2&&a<f?xt(A("dip.why.manyFronts")):u&&a>f*1.1?xe(A("dip.why.advantage")):a<f*.9?xt(A("dip.why.youStronger")):!b&&!O&&x(r.caps[e],r.caps[t])>(Y+ne)/2.4?xt(A("dip.why.farApart")):xe(A("dip.why.wantWar"))}if(o==="ally"){if(r.rel[e][t]!=="peace")return xe(A("dip.why.needPeace"));if(r.turn-r.relSince[e][t]<3)return xe(A("dip.why.peaceFresh"));let p=dr();return p===e?xe(A("dip.why.noAllyNeeded")):p===t?xe(A("dip.why.fearPower")):ye(e).some(u=>D(t,u))?xt(A("dip.why.commonFoe")):xe(A("dip.why.noCommonFoe"))}return{ok:!1,why:""}}function Xo(e,t,o){if(r.dip.asked[Ke(e,t)+o]=r.turn,!Et(t)){r.dip.offers.some(a=>a.from===e&&a.to===t)||r.dip.offers.push({from:e,to:t,type:o,turn:r.turn}),N({e:"offer",from:e,to:t,type:o});return}let i=zn(t,e,o);i.ok&&(o==="peace"?Ko(e,t):Zo(e,t)),N({e:"answer",from:e,to:t,type:o,ok:i.ok,why:i.why})}var Qr=(e,t)=>r.dip.offers.find(o=>o.from===e&&o.to===t&&r.sides[o.from].alive&&r.sides[o.to].alive&&(o.type==="peace"?r.rel[o.from][o.to]==="war":r.rel[o.from][o.to]==="peace"))||null;function en(e,t,o){let i=Qr(t,e);if(r.dip.offers=r.dip.offers.filter(f=>f!==i),o){i.type==="peace"?Ko(i.from,i.to):Zo(i.from,i.to);return}r.dip.asked[Ke(i.from,i.to)+i.type]=r.turn;let a={a:Z(i.to),b:Z(i.from,"ins")};zt(i.type==="peace"?A("dip.rejected.peace",a):A("dip.rejected.ally",a)),N({e:"rejected",from:i.from,to:i.to,type:i.type})}var Ze=(e,t,o,i)=>{let a=r.dip.asked[Ke(e,t)+o];return a!==void 0&&r.turn-a<i};function pr(e,t,o,i=Tt[o]){let a=r.sides[e],f=r.sides[t];return e===t||!f.alive||r.rel[e][t]!=="ally"||(o==="gold"?a.gold:a.food)<i?!1:(o==="gold"?(a.gold-=i,f.gold+=i):(a.food-=i,f.food+=i),a.stats.aid=(a.stats.aid||0)+i,zt(A("dip.aid.log."+o,{a:Z(e),b:Z(t,"dat"),n:i})),N({e:"aid",from:e,to:t,kind:o,n:i}),!0)}function tn(e,t){r.dip.asked[Ke(e,t)+"aid"]=r.turn;let o=r.sides[t],i=ye(t).length>0,a=o.gold-(i?70:50);if(a>=20){let f=Math.min(40,Math.floor(a/2/5)*5);pr(t,e,"gold",Math.max(15,f));return}if(o.food>=35&&be(t).net>=0){pr(t,e,"food",15);return}N({e:"aidRefused",from:e,to:t,why:i?A("dip.why.aid.struggling"):A("dip.why.aid.emptyTreasury")})}function Dn(e){let t=r.sides[e];Te();for(let l of We)t.seen[l]*=.85;{let l=sr(t);l.s=Math.max(0,l.s-1),l.b=Math.max(0,l.b-1)}for(let l in r.breach)r.turn>r.breach[l].until&&delete r.breach[l];st(e);let o=-1;for(let l of r.cells)!Gr(l.i)||le(l.i)!==e||(Ho(l.i)?(r.siege[l.i]=(r.siege[l.i]||0)+1,l.cap>=0&&(t.stats.besieged=(t.stats.besieged||0)+1),r.siege[l.i]===1&&(o<0||l.cap>=0)&&(o=l.i)):delete r.siege[l.i]);o>=0&&N({e:"besieged",side:e,cell:o,cap:r.cells[o].cap>=0});for(let l in r.walls){let c=+l,p=r.walls[l];if(le(c)!==e)continue;let u=he(c);if(p.hit){delete p.hit;continue}Pe(c)||p.hp<u&&!E[c].some(S=>{let b=r.grid[S];return b&&b.alive&&D(e,b.side)})&&(p.hp=Math.min(u,p.hp+Math.ceil(u*H.wallRegen*(pe(e,"mason")?1.6:1))))}let i=r.caps[e];if(Ee(i))for(let l of E[i]){let c=r.grid[l];if(!c||!c.alive||!D(e,c.side))continue;let p=Math.min(c.hp,ue[t.capLvl].tower);c.hp-=p,t.stats.towerDmg=(t.stats.towerDmg||0)+p,N({e:"tower",side:e,from:i,cell:l,u:c.id,dmg:p,hp:c.hp}),c.hp<=0&&(t.stats.kills++,Dt(c,null,"tower"))}Yn(e);let a=!1;if(r.turn>1){let l=be(e);t.gold+=l.gold,t.stats.goldEarned+=l.gold,t.food+=l.net,t.food<0&&(t.food=0,a=!0)}for(let l of _(e)){if(l.moves=Je(e,l.type),l.attacked=!1,l.moved=!1,l.oos=!k[l.type].naval&&!l.aboard&&!r.supply[e][l.cell],l.oos&&r.turn>1){let c=Math.min(l.hp-1,Math.ceil(l.maxHp*H.attrition));c>0&&(l.hp-=c,N({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"supply"}))}if(a){let c=Math.ceil(l.maxHp*.15);if(l.hp-=c,t.stats.starved++,N({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"hunger"}),l.hp<=0){Dt(l,null,"starve");continue}}else if(Pe(l.cell)&&le(l.cell)===e){if(r.siege[l.cell]>=2){let c=Math.min(l.hp-1,Math.ceil(l.maxHp*H.siegeHunger));c>0&&(l.hp-=c,N({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"siege"}))}}else if(k[l.type].naval&&Po(e,l.cell)&&l.hp<l.maxHp){let c=l.hp;l.hp=Math.min(l.maxHp,l.hp+Math.ceil(l.maxHp*.3)),N({e:"heal",u:l.id,side:e,cell:l.cell,n:l.hp-c,hp:l.hp,med:!1})}else if(!l.aboard&&l.hp<l.maxHp&&(r.zone[l.cell]===e||jr(l))){let c=r.cells[l.cell],p=r.zone[l.cell]===e,u=c.cap===e||c.village&&c.vOwner===e||c.bld&&c.bld.type==="fort",S=l.hp,b=jr(l)?H.heal:0;l.hp=Math.min(l.maxHp,l.hp+Math.ceil(l.maxHp*((p?u?.3:.2:0)+b+(Q(e)==="cossacks"?.1:0)))),N({e:"heal",u:l.id,side:e,cell:l.cell,n:l.hp-S,hp:l.hp,med:!!b})}}a&&N({e:"starving",side:e});let f=_(e).filter(l=>l.oos).length;f&&N({e:"supplyCut",side:e,n:f}),te()}function _n(e){if(N({e:"turn",side:e,turn:r.turn}),Dn(e),r.begun=!0,!(!r.human[e]||r.spectate)&&!(at()||r.over)){if(_(e).length===0&&r.sides[e].gold<15&&r.ns===2){r.over={winner:1-e,reason:"army"};return}N({e:"orders",side:e}),jo(e),at()}}function on(e){if((!r.human[e]||r.spectate)&&at(),r.over)return;N({e:"end",side:e});let t=e;do t=(t+1)%r.ns;while(!r.sides[t].alive&&t!==e);t<=e&&r.turn++,r.current=t,r.begun=!1,_n(t)}function nn(e,t){let o=r.sides[e];if(!o.alive)return;o.alive=!1,o.diedAt=r.turn,o.killer=t;let i=_(e);for(let l of i)l.alive=!1,r.grid[l.cell]===l&&(r.grid[l.cell]=null);for(let l of r.cells)l.village&&l.vOwner===e&&(l.vOwner=t),l.bld&&l.bld.owner===e&&(l.bld.owner=t,r.walls[l.i]&&(r.walls[l.i].hp=Math.min(r.walls[l.i].hp,he(l.i))));for(let l=0;l<L;l++)r.walk[l]===e&&(r.walk[l]=t);let a=r.caps[e],f=r.cells[a];f.cap=-1,f.village=!0,f.vOwner=t,f.vLvl=2,delete r.walls[a],delete r.siege[a],t>=0&&(r.sides[t].gold+=o.gold,r.sides[t].stats.conquered=(r.sides[t].stats.conquered||0)+1),o.gold=0,r.dip&&(r.dip.offers=r.dip.offers.filter(l=>l.from!==e&&l.to!==e)),zt(A("act.fall.log",{by:{s:t},side:{s:e,f:"gen"}})),N({e:"fall",side:e,by:t,army:i.map(l=>l.cell)});for(let l of r.sides)st(l.id);Te()}function Wn(){let e=r&&r.setup&&Mo[r.setup.scen];return!e||r.over||r.turn<=e.limit?!1:e.kind==="survive"&&r.sides[0].alive?(r.over={winner:0,reason:"survive"},!0):e.kind==="deadline"?(r.over={winner:1,loser:0,reason:"deadline"},!0):!1}function at(){if(r.over)return!0;let e=ve();if(e.length===1)return r.over={winner:e[0],reason:"capital"},!0;if(r.ns>2&&e.every(t=>e.every(o=>t===o||r.rel[t][o]==="ally")))return r.over={winner:e[0],winners:e,reason:r.team?"team":"alliance"},!0;if(!r.spectate&&r.human.some(Boolean)&&!e.some(t=>r.human[t])){let t=r.human.findIndex(Boolean);return r.over={winner:r.sides[t].killer,loser:t,reason:"capital"},!0}return Wn()}var rn=()=>r.cells.reduce((e,t)=>e+(Ae(t.t)?1:0),0),Gn=e=>({v:e+(1-e)*.72,t:e+(1-e)*.3});function qn(e){return r.team?Gn(r.team.filter(t=>t===r.team[e]).length/r.ns):xo[r.ns]}function Jn(e){let t=r.cells.filter(i=>i.village).length,o=qn(e);return{vill:Math.ceil(t*o.v),villTotal:t,terr:Math.ceil(rn()*o.t),land:rn(),vPct:Math.round(o.v*100),tPct:Math.round(o.t*100)}}function Xr(e){let t=Jn(e),o=f=>f===e||r.team&&f>=0&&r.team[f]===r.team[e],i=r.cells.filter(f=>f.village&&o(f.vOwner)).length,a=0;for(let f=0;f<L;f++)o(r.terr[f])&&Ae(r.cells[f].t)&&a++;return{vill:i,terr:a,need:t,villOk:r.win.villages&&i>=t.vill,terrOk:r.win.territory&&a>=t.terr}}function Yn(e){let t=r.sides[e],o=Xr(e);if(!t.alive||(t.vStreak=o.villOk?t.vStreak+1:0,t.tStreak=o.terrOk?t.tStreak+1:0,r.over))return;let i=r.team?ve().filter(a=>r.team[a]===r.team[e]):null;t.vStreak>=Cr.villTurns?r.over={winner:e,winners:i,reason:"villages"}:t.tStreak>=Cr.terrTurns&&(r.over={winner:e,winners:i,reason:"territory"})}function ln(e,t){let o=r.cells[t],i=!1;if(k[e.type].noCapture)return!1;if(o.village&&o.vOwner!==e.side&&(o.vOwner<0||D(e.side,o.vOwner))){let a=o.vOwner;o.vOwner=e.side,i=!0,r.sides[e.side].stats.villages++,N({e:"capture",what:"village",cell:t,side:e.side,prev:a})}if(o.bld&&D(e.side,o.bld.owner)){let a=o.bld.owner;o.bld.owner=e.side,i=!0,N({e:"capture",what:"bld",cell:t,side:e.side,prev:a,type:o.bld.type})}return o.cap>=0&&D(e.side,o.cap)&&(i=!0,N({e:"capture",what:"capital",cell:t,side:e.side,prev:o.cap}),r.ns===2?r.over={winner:e.side,reason:"capital"}:(nn(o.cap,e.side),at())),i&&(delete r.siege[t],Te()),Wo(e.side,t),i&&te(),i}function fr(e,t){let o=r.sides[e.side],i=e.cell,a=[i];for(let f of t){if(!e.alive||r.over)break;let l=r.grid[f];if(l&&l.alive&&l!==e&&l.side===e.side&&!e.aboard&&!Le(e)&&k[l.type].hold&&bt(l)>0){let S=e.cell;r.grid[S]===e&&(r.grid[S]=null),e.aboard=l.id,e.cell=f,e.moves=0,e.moved=!0,N({e:"board",u:e.id,side:e.side,ship:l.id,from:S,to:f});break}if(l&&l.alive&&l.side!==e.side&&!ce(e.side,l.side)){e.moves=0,kt(e.side),N({e:"ambush",u:e.id,side:e.side,cell:e.cell,foe:f});break}let c=e.cell,p=e.aboard?Fo(e):null;e.moves=Math.max(0,e.moves-Bo(e,f)),e.moved=!0,p&&(e.aboard=null,e.moves=0,o.stats.landed=(o.stats.landed||0)+1),r.grid[c]===e&&(r.grid[c]=null),e.cell=f,a.push(f),r.grid[f]||(r.grid[f]=e);for(let S of k[e.type].hold?je(e):[])S.cell=f;N({e:"step",u:e.id,side:e.side,from:c,to:f,ship:p?p.id:0});let u=!1;if(r.grid[f]===e&&(u=ln(e,f)),kt(e.side),N({e:"sight",side:e.side,vis:o.vis.slice()}),!k[e.type].skirmish&&E[f].some(S=>{let b=r.grid[S];return b&&b.alive&&D(e.side,b.side)&&Le(b)===Le(e)})&&(u=!0),u){e.moves=0;break}}if(e.alive&&!e.aboard&&r.grid[e.cell]!==e)for(let f=a.length-2;f>=0;f--){let l=a[f];if(!r.grid[l]||r.grid[l]===e){let c=e.cell;e.cell=l,r.grid[l]=e,N({e:"settle",u:e.id,from:c,to:l});break}}te()}function sn(e,t){let o=Ve(e,t,e.cell),i=o.dist>1,a=r.sides[e.side].stats;N({e:"strike",u:e.id,side:e.side,from:e.cell,foe:t.id,foeSide:t.side,at:t.cell,ranged:i||e.type==="arch"}),a.attacks++,a.dmgBy[e.type]=(a.dmgBy[e.type]||0)+(t.hp-o.dHp),t.hp=o.dHp,N({e:"hit",u:t.id,side:t.side,cell:t.cell,by:e.id,dmg:o.dmg,hp:t.hp,max:t.maxHp,dies:o.defDies}),o.siege&&(a.siegeHits=(a.siegeHits||0)+1),o.wallHit&&an(t.cell,o.wallHit,e.side),o.breach&&!o.defDies&&(N({e:"breach",cell:t.cell,fresh:!lr(t.cell)}),r.breach[t.cell]={side:e.side,until:r.turn+1}),e.attacked=!0,e.moves=0;let f=!1;if(o.defDies)f=!0,a.killsBy[e.type]=(a.killsBy[e.type]||0)+1,Dt(t,e,"hit"),e.xp+=3;else{if(t.xp+=1,o.ret>0){N({e:"strike",u:t.id,side:t.side,from:t.cell,foe:e.id,foeSide:e.side,at:e.cell,ranged:o.dist>1||t.type==="arch",back:!0});let p=r.sides[t.side].stats;p.dmgBy[t.type]=(p.dmgBy[t.type]||0)+(e.hp-o.aHp),e.hp=o.aHp,N({e:"hit",u:e.id,side:e.side,cell:e.cell,by:t.id,dmg:o.ret,hp:e.hp,max:e.maxHp,dies:o.attDies,back:!0}),o.attDies&&(p.killsBy[t.type]=(p.killsBy[t.type]||0)+1,Dt(e,t,"hit"),t.xp+=2)}e.alive&&(e.xp+=1)}for(let p of[e,t])p.alive&&eo(p);let l=r.cells[t.cell],c=l.cap>=0||l.village||!!l.bld;if(f&&e.alive&&c&&k[e.type].range===1&&x(e.cell,t.cell)===1&&!r.grid[t.cell]&&!vt(e.side,t.cell)&&Ro(e,t.cell)){let p=e.cell;r.grid[p]=null,e.cell=t.cell,r.grid[e.cell]=e,N({e:"step",u:e.id,side:e.side,from:p,to:e.cell,ship:0,advance:!0}),ln(e,e.cell)}te()}function an(e,t,o){let i=r.walls[e];!i||i.hp<=0||(i.hp=Math.max(0,i.hp-t),i.hit=1,N({e:"walls",cell:e,dmg:t,hp:i.hp,by:o,owner:le(e),fell:i.hp===0,cap:r.cells[e].cap>=0}))}function cn(e,t){N({e:"wallStrike",u:e.id,side:e.side,from:e.cell,cell:t,owner:le(t)});let o=Bt(e);r.sides[e.side].stats.wallDmg=(r.sides[e.side].stats.wallDmg||0)+Math.min(o,r.walls[t].hp),e.attacked=!0,e.moves=0,e.xp+=1,an(t,o,e.side),eo(e),te()}function fn(e,t){let o=r.cells[t],i=o.bld.owner,a=o.bld.type;N({e:"siegeShot",u:e.id,side:e.side,from:e.cell,cell:t,owner:i}),o.bld=null,delete r.walls[t],r.sides[e.side].stats.demolished++,e.attacked=!0,e.moves=0,e.xp+=1,eo(e),Te(),N({e:"collapse",cell:t,type:a,prev:i,by:e.side}),te()}function Dt(e,t,o){let i=k[e.type].hold?je(e):[];e.alive=!1,r.grid[e.cell]===e&&(r.grid[e.cell]=null),r.sides[e.side].stats.losses++;for(let f of i)f.alive=!1,r.sides[f.side].stats.losses++,t&&r.sides[t.side].stats.kills++;let a=0;if(t&&Q(t.side)==="varangians"&&(a=H.plunder*(1+i.length),r.sides[t.side].gold+=a),e.type==="cmd"){let f=r.sides[e.side];f.moraleUntil=r.turn+H.moraleTurns,f.cmdReady=r.turn+H.moraleTurns}t&&r.sides[t.side].stats.kills++,N({e:"die",u:e.id,side:e.side,cell:e.cell,type:e.type,by:t?t.id:0,bySide:t?t.side:-1,cargo:i.map(f=>f.id),loot:a,how:o})}function eo(e){let t=!1;for(;e.lvl<3&&e.xp>=yo[e.lvl];){e.lvl++,t=!0;let o=Math.round(k[e.type].hp*(1+.15*(e.lvl-1)));e.hp=Math.min(o,e.hp+(o-e.maxHp)+Math.round(o*.25)),e.maxHp=o}t&&N({e:"level",u:e.id,side:e.side,cell:e.cell,type:e.type,lvl:e.lvl,hp:e.hp,maxHp:e.maxHp})}var $e=null;function _t(e){$e=e}var Mt=()=>$e;function dn(e,t){$e&&($e.acts.push(e),e.t==="end"&&r.turn!==t&&($e.prev=$e.round,$e.round={at:$e.acts.length,turn:r.turn,base:Ft()}))}function jn(e,t,o){let i=r.sides[e],a=Kr(e,o,t);i.gold-=nr(e,t,o);let f=$r(e,t,a,!1);i.stats.recruited++,i.stats.recBy[t]=(i.stats.recBy[t]||0)+1,N({e:"recruit",u:f.id,side:e,type:t,cell:a}),te()}function Vn(e){let t=r.sides[e];t.gold-=yt(e,t.capLvl+1),t.capLvl++;let o=r.caps[e],i=r.walls[o],a=i?i.hp:0;r.walls[o]={hp:Math.min(he(o),a+(he(o)-Math.round(ue[t.capLvl-1].walls*(pe(e,"mason")?1.5:1))))},t.stats.upgrades=(t.stats.upgrades||0)+1,te(),N({e:"capUp",side:e,cell:o,lvl:t.capLvl})}function Kn(e,t){let o=r.sides[e];o.gold-=dt,r.cells[t].vLvl=2,o.stats.upgrades=(o.stats.upgrades||0)+1,te(),N({e:"villUp",side:e,cell:t})}function Zn(e,t){let o=r.sides[e];if(o.gold-=rt[t].cost,o.tech[t]=!0,o.stats.research=(o.stats.research||0)+1,t==="mason")for(let i in r.walls)le(+i)===e&&(r.walls[i].hp=Math.round(r.walls[i].hp*1.5));if(t==="stable"||t==="siege"||t==="maps")for(let i of _(e))!i.moved&&!i.attacked&&(i.moves=Je(e,i.type));te(),N({e:"research",side:e,k:t})}function $n(e,t,o){let i=r.sides[e];i.gold-=wt(e,t),r.cells[o].bld={type:t,owner:e},t==="fort"&&Vr(o),i.stats.buildings++,te(),N({e:"build",side:e,type:t,cell:o})}var W=()=>A("act.refused"),vr=(e,t)=>typeof t=="string"&&Object.prototype.hasOwnProperty.call(e,t),Qe=e=>Number.isInteger(e)&&e>=0&&e<L,gr=(e,t)=>{let o=Number.isInteger(t)?r.units.find(i=>i.id===t):null;return o&&o.alive&&o.side===e?o:null},pn=(e,t)=>Number.isInteger(t)&&t!==e&&!!r.sides[t]&&r.sides[t].alive;function Qn(e,t){if(!Array.isArray(t)||!t.length||t.length>64||!t.every(Qe))return!1;let o=ze(e);return t.every((i,a)=>{let f=o.get(i);return!!f&&f.prev===(a?t[a-1]:e.cell)})}var Xn=["hold","explore","goto"],un={move:(e,t)=>{let o=gr(e,t.u);return o&&Qn(o,t.path)?"":W()},attack:(e,t)=>{let o=gr(e,t.u),i=o&&Qe(t.target)?Zr(o,null).get(t.target):null;return i&&!i.bld?"":W()},demolish:(e,t)=>{let o=gr(e,t.u),i=o&&Qe(t.cell)?Zr(o,null).get(t.cell):null;return i&&i.bld?"":W()},recruit:(e,t)=>!vr(k,t.type)||!Qe(t.at)||!Go(e,t.at)?W():_o(e,t.type,t.at),build:(e,t)=>vr(Oe,t.type)&&Qe(t.cell)&&ar(e,t.cell,t.type)?"":W(),research:(e,t)=>vr(rt,t.k)?cr(e,t.k):W(),capUp:e=>{let t=r.sides[e],o=t.capLvl+1;return ue[o]?t.gold<yt(e,o)?A("rule.gold.short",{n:yt(e,o)-t.gold}):"":W()},villUp:(e,t)=>{let o=Qe(t.cell)&&r.cells[t.cell],i=r.sides[e];return!o||!o.village||o.vOwner!==e||o.vLvl>1?W():i.gold<dt?A("rule.gold.short",{n:dt-i.gold}):""},repair:(e,t)=>Qe(t.cell)?qr(e,t.cell):W(),trade:(e,t)=>t.kind==="buy"||t.kind==="sell"?Yr(e,t.kind):W(),order:(e,t)=>{let o=gr(e,t.u),i=t.order;return o&&(i===null||i&&typeof i=="object"&&Xn.includes(i.type)&&(i.type!=="goto"||Qe(i.dest)&&ae(r.cells[i.dest].t)))?"":W()},dip:(e,t)=>{if(!pn(e,t.to))return W();let o=r.rel[e][t.to];switch(t.kind){case"peace":return r.diplo&&o==="war"&&!Ze(e,t.to,"peace",1)?"":W();case"ally":return r.diplo&&o==="peace"&&!Ze(e,t.to,"ally",1)?"":W();case"war":return r.diplo&&o==="peace"&&!ht(e,t.to)?"":W();case"break":return r.diplo&&o==="ally"&&!ht(e,t.to)?"":W();case"yes":case"no":return Qr(t.to,e)?"":W()}return W()},aid:(e,t)=>{if(!pn(e,t.to)||r.rel[e][t.to]!=="ally")return W();if(t.kind==="ask")return!r.human[t.to]&&!Ze(e,t.to,"aid",3)?"":W();if(t.kind!=="gold"&&t.kind!=="food")return W();let o=t.n===void 0?Tt[t.kind]:t.n,i=r.sides[e];return Number.isInteger(o)&&o>0&&o<=(t.kind==="gold"?i.gold:i.food)?"":W()},end:(e,t)=>t.bot===void 0||Et(e)&&el(t.bot)?"":W()},el=e=>!!e&&typeof e=="object"&&Number.isInteger(e.rng)&&!!e.ai&&typeof e.ai=="object"&&!Array.isArray(e.ai)&&JSON.stringify(e.ai).length<=8192;function yr(e,t,o){return e!==r&&Re(e),!o||typeof o!="object"||!vr(un,o.t)||!r||r.over&&!(o.t==="end"&&o.bot!==void 0)||!r.begun||t!==r.current||!r.sides[t]||!r.sides[t].alive&&!r.over?W():un[o.t](t,o)||""}function to(e,t){if(e!==r&&Re(e),!r||yr(r,r.current,t))return null;let o=r.current,i=r.turn,a=Mt()?JSON.parse(JSON.stringify(t)):null,f=c=>r.units.find(p=>p.id===c),l=Dr(()=>{switch(t.t){case"move":{let c=f(t.u);c.order=null,fr(c,t.path);break}case"attack":{let c=f(t.u),p=r.grid[t.target];c.order=null,p&&p.alive&&!p.aboard&&D(o,p.side)?sn(c,p):cn(c,t.target);break}case"demolish":{let c=f(t.u);c.order=null,fn(c,t.cell);break}case"recruit":jn(o,t.type,t.at);break;case"build":$n(o,t.type,t.cell);break;case"research":Zn(o,t.k);break;case"capUp":Vn(o);break;case"villUp":Kn(o,t.cell);break;case"repair":zo(o,t.cell),N({e:"repair",side:o,cell:t.cell,n:Jr(o,t.cell)}),te();break;case"trade":Do(o,t.kind),N({e:"trade",side:o,kind:t.kind});break;case"order":{let c=t.order;Vo(f(t.u),c?c.type==="goto"?{type:"goto",dest:c.dest}:{type:c.type}:null);break}case"dip":t.kind==="peace"||t.kind==="ally"?Xo(o,t.to,t.kind):t.kind==="war"?$o(o,t.to):t.kind==="break"?Qo(o,t.to):en(o,t.to,t.kind==="yes");break;case"aid":if(t.kind==="ask"){tn(o,t.to);break}Et(o)&&(r.dip.asked[Ke(o,t.to)+"gift"]=r.turn),pr(o,t.to,t.kind,t.n===void 0?Tt[t.kind]:t.n);break;case"end":t.bot&&(r.sides[o].ai=JSON.parse(JSON.stringify(t.bot.ai)),r.rng=t.bot.rng|0),r.over||on(o);break}});return a&&dn(a,i),l}var wr=null;function oo(e){wr=e}function q(e){let t=r.current,o=to(r,e);return o?wr.steps.push({a:JSON.parse(JSON.stringify(e))}):r.over||wr.refused.push({turn:r.turn,side:t,a:e,why:yr(r,t,e)}),o}var fe=e=>yr(r,r.current,e)?null:q(e),ro=e=>{wr.steps.push({wait:e})};function De(e,t){let o=r.sides[e];if(o.kc[t]>=0)return o.kc[t];let i=pt[t].filter(f=>!o.explored[f]);return(i.length?i:pt[t]).reduce((f,l)=>x(l,r.caps[e])<x(f,r.caps[e])?l:f)}function tl(e){let t=r.sides[e],o=ye(e),i=r.caps[e];if(!o.length)return-1;let a=Math.max(1,re(e)),f=-1,l=1/0;for(let c of o){let p=r.sides[c],u=r.units.filter(O=>O.alive&&O.side===c&&(r.zone[O.cell]===e||x(O.cell,i)<=4)).length,S=r.sides.filter(O=>O.alive&&O.id!==e&&O.id!==c&&O.ai.target===c&&!r.human[O.id]).length,b=x(i,De(e,c))+Math.min(6,re(c)/a*3)-u*2.5-(p.vStreak||p.tStreak?8:-S*3)-(c===t.ai.target?3:0);b<l&&(l=b,f=c)}return f}var Wt=e=>r.sides[e].bot||{diff:e===0&&r.botDiff?r.botDiff:r.diff||"normal",style:_r[r.sides[e].fac]||"balanced"},br=e=>Wt(e).style;function rl(e,t,o){let i=r.sides[e],a=ye(e);if(!a.length)return"build";if(t===0)return"capital";let f=Xr(e),l=Math.max(1,re(e)),c=Math.max(1,...a.map(re)),p={capital:1+(o.attack?.35:0)+(l>c*1.3?.3:0)+(a.some(b=>i.kc[b]>=0)?.15:0)};r.win.villages&&(p.villages=.35+f.vill/Math.max(1,f.need.vill)*1.1+(o.raid?.35:0)+(o.build?.1:0)),r.win.territory&&(p.territory=.25+f.terr/Math.max(1,f.need.terr)*1.1+(o.build?.3:0)+(o.raid?.15:0));let u=r.units.some(b=>b.alive&&D(e,b.side)&&(r.zone[b.cell]===e||x(b.cell,r.caps[e])<=4));r.turn>=6&&l<c*.6&&(u||r.turn>=15)&&(p.defend=1.35+(o.build?.15:0)-(o.attack?.2:0));let S=p[i.ai.goal]!==void 0?i.ai.goal:"capital";for(let b in p)p[b]>p[S]+.12&&(S=b);return S}function hn(e){let t=r.sides[e];if(!t.alive)return;let o=tl(e);t.ai.target=o;let i=o<0;if(i){let n=-1,s=1/0;for(let d of ve())d!==e&&x(r.caps[e],De(e,d))<s&&(s=x(r.caps[e],De(e,d)),n=d);o=n}let a=n=>D(e,n),f=$t[e===0&&r.botDiff?r.botDiff:Wt(e).diff]||$t.normal,l=mt[br(e)]||mt.balanced,c=f.smart,p=f.group,u=t.ai.goal;t.ai.goal=rl(e,c,l),u&&u!==t.ai.goal&&(t.ai.goalAt=r.turn);let S=t.ai.goal,b=f.cap+(t.gold>=200?4:t.gold>=120?2:0),O=r.caps[e],R=t.kc[o],U=De(e,o),B=n=>r.terr[n]>=0&&lt(e,r.terr[n]),P=new Map,J=(n,s)=>{let d=s?"a"+n:n;if(P.has(d))return P.get(d);let m=new Float32Array(L).fill(1/0);m[n]=0;let h=new Uint8Array(L);for(let g=0;g<L;g++){let v=-1,w=1/0;for(let M=0;M<L;M++)!h[M]&&m[M]<w&&(w=m[M],v=M);if(v<0)break;h[v]=1;let y=t.explored[v]?se[r.cells[v].t].move:1.5;if(!(y>=99&&v!==n))for(let M of E[v]){if(t.explored[M]&&se[r.cells[M].t].move>=99||B(M)&&M!==n)continue;let T=w+(v===n?1:y)+(s?s[M]:0);T<m[M]&&(m[M]=T)}}return P.set(d,m),m},j=()=>r.units.filter(n=>n.alive&&!n.aboard&&a(n.side)&&t.vis[n.cell]),X=n=>k[n.type].cost*(1+.3*(n.lvl-1))*(n.type==="cmd"?1.8:1),ee=n=>j().reduce((s,d)=>s+(x(n,d.cell)<=(k[d.type].move>=4?3:2)?1:0),0),Me=n=>E[n].some(s=>{let d=r.grid[s];return d&&d.alive&&a(d.side)&&t.vis[s]}),$=nt,ie=(n,s)=>{let d=0,m={type:n.type,side:n.side,lvl:n.lvl,hp:n.hp,maxHp:n.maxHp,cell:s,oos:n.oos};for(let h of j())x(h.cell,s)>k[h.type].move+k[h.type].range||(d+=Ve(h,m,h.cell).dmg);return d},gn=n=>!r.supply[e][n]&&a(r.zone[n])&&!E[n].some(s=>r.supply[e][s]===2),me=n=>tt.includes(de(n.type))&&!n.aboard&&!Le(n),kr=new Map,St=n=>{if(kr.has(n))return kr.get(n);let s=new Float32Array(L).fill(1/0),d=new Uint8Array(L);for(s[n]=0;;){let m=-1,h=1/0;for(let g=0;g<L;g++)!d[g]&&s[g]<h&&(h=s[g],m=g);if(m<0)break;if(d[m]=1,!(m!==n&&t.explored[m]&&!Ye(r.cells[m].t)))for(let g of E[m]){if(t.explored[g]&&!Ye(r.cells[g].t))continue;let v=h+(t.explored[g]?1:2);v<s[g]&&(s[g]=v)}}return kr.set(n,s),s},V=_(e),ct=j().filter(n=>x(n.cell,O)<=4||r.zone[n.cell]===e);V.forEach(n=>{n.role=n.aboard?"cargo":Le(n)?"navy":n.type==="cat"?"siege":n.type==="cmd"?"command":n.type==="healer"?"medic":"army",n.goal=-1});let no=V.filter(me),vn=Math.min((ct.length&&c>=1?2:1)+(S==="defend"?1:0),Math.max(1,no.length-1));[...no].sort((n,s)=>x(n.cell,O)+(n.type==="cav"?3:0)-(x(s.cell,O)+(s.type==="cav"?3:0))).slice(0,vn).forEach(n=>n.role="garrison");let Gt=[];for(let n=0;n<L;n++)t.explored[n]&&ae(r.cells[n].t)&&E[n].some(s=>!t.explored[s])&&Gt.push(n);let xr=j().filter(n=>n.type==="cat");for(let n of V)if(n.type==="scout"&&(n.role=Gt.length&&(r.turn<=30||R<0)?"scout":"picket",xr.length&&c>=1)){let s=xr.reduce((d,m)=>x(m.cell,n.cell)<x(d.cell,n.cell)?m:d);x(s.cell,n.cell)<=8&&(n.role="hunt",n.goal=s.cell)}if(Gt.length&&(r.turn<=24||R<0)&&!V.some(n=>n.role==="scout")){let n=V.filter(s=>s.role==="army").sort((s,d)=>(d.type==="cav")-(s.type==="cav"))[0];n&&(n.type==="cav"||r.turn<=3)&&(n.role="scout")}let Ot=[];for(let n=0;n<L;n++)t.explored[n]&&r.cells[n].village&&t.memOwner[n]!==e&&(t.memOwner[n]<0||a(t.memOwner[n]))&&!B(n)&&Ot.push(n);let yn=ye(e).find(n=>r.sides[n].vStreak>0||r.sides[n].tStreak>0)!==void 0,wn=(c===0?2:c===1?3:4)+(yn&&c>=1?2:0)+(S==="villages"?3:0)+(l.raid?1:0);for(let n=0;n<wn&&Ot.length;n++){let s=null,d=1e9,m=-1;for(let h of V)if(h.role==="army")for(let g of Ot){let v=J(g)[h.cell]+(a(t.memOwner[g])?r.sides[t.memOwner[g]].vStreak?-3:1:0);v<d&&(d=v,s=h,m=g)}if(!s||d>(S==="villages"?18:12))break;s.role="capture",s.goal=m,Ot.splice(Ot.indexOf(m),1)}if(S==="territory"){let n=new Set,s=d=>E[d].some(m=>r.terr[m]===e);for(let d=0;d<(c===2?4:3);d++){let m=null,h=-1,g=1e9;for(let v of V)if(v.role==="army"&&me(v))for(let w=0;w<L;w++){if(n.has(w)||!t.explored[w]||!Ae(r.cells[w].t)||r.terr[w]===e||B(w)||r.zone[w]>=0&&r.zone[w]!==e||r.grid[w]&&r.grid[w].alive)continue;let y=x(v.cell,w)+(s(w)?0:1.5)+ee(w)*1.5;y<g&&(g=y,m=v,h=w)}if(!m||g>9)break;m.role="capture",m.goal=h;for(let v of[h,...E[h]])n.add(v)}}if(ct.length){let n=V.filter(s=>s.role==="army"||s.role==="capture"||s.role==="scout"&&s.type!=="scout");for(let s of[...ct].sort((d,m)=>x(d.cell,O)-x(m.cell,O))){let d=x(s.cell,O)<=3?3:2,m=n.filter(h=>h.role!=="defend"&&J(s.cell)[h.cell]<=7).sort((h,g)=>J(s.cell)[h.cell]-J(s.cell)[g.cell]).slice(0,d);for(let h of m)h.role="defend",h.goal=s.cell}}let Ne=J(U),lo=!i&&isFinite(Ne[O])?Ne[O]/2:i?0:99,Se=r.cells.filter(n=>n.bld&&n.bld.type==="port"&&n.bld.owner===e).map(n=>n.i),Mr=n=>{if(n==null||n<0||i)return null;let s=St(n),d=null;for(let m=0;m<L;m++){if(!t.explored[m]||!Ae(r.cells[m].t)||!isFinite(Ne[m])||B(m)||r.grid[m]&&r.grid[m].alive&&a(r.grid[m].side))continue;let h=-1,g=1/0;for(let w of E[m])Ye(r.cells[w].t)&&r.sea[w]===r.sea[n]&&s[w]<g&&(g=s[w],h=w);if(h<0)continue;let v=2+g/5+Ne[m]/2;(!d||v<d.turns)&&(d={land:m,sea:h,turns:v})}return d},qt=n=>E[n].filter(Ut).sort((s,d)=>Ne[s]-Ne[d])[0],F=t.ai.ferry||null;if(F&&!r.units.some(n=>n.id===F.ship&&n.alive)&&(F=t.ai.ferry=null,t.ai.ferryLost=r.turn),t.ai.ferryWorth=!1,c>=1&&Se.length&&!i){let n=qt(Se[0]),s=Mr(n);if(t.ai.ferryWorth=!!s&&s.turns+2<lo&&r.turn-(t.ai.ferryLost??-99)>=8&&ee(Se[0])===0,!F&&t.ai.ferryWorth){let d=V.find(m=>k[m.type].hold&&r.sea[m.cell]===r.sea[n]);d&&(F=t.ai.ferry={ship:d.id,pick:n,stage:"load",wait:0,land:s.land,sea:s.sea})}}if(F&&F.stage==="load"){let n=r.units.find(s=>s.id===F.ship&&s.alive);if(n&&x(n.cell,F.pick)<=1){let s=bt(n),d=J(n.cell),m=V.filter(h=>h.role==="army"&&me(h)&&isFinite(d[h.cell])&&d[h.cell]<=9).sort((h,g)=>d[h.cell]-d[g.cell]);for(let h of m){if(s--<=0)break;h.role="ferry",h.goal=n.cell}}}let At=V.filter(n=>n.role==="army"),oe=J(U),Sr=!i&&R>=0&&r.cells[R].cap===o?E[R].filter(n=>ae(r.cells[n].t)&&!(r.grid[n]&&r.grid[n].alive&&r.grid[n].side===e)&&!E[n].some(s=>s!==R&&r.grid[s]&&r.grid[s].alive&&r.grid[s].side===e)):null;t.ai.blocked=!i&&!isFinite(oe[O]);let Jt=O,io=1/0;for(let n=0;n<L;n++)r.zone[n]===e&&ae(r.cells[n].t)&&n!==O&&oe[n]<io&&(io=oe[n],Jt=n);let Yt=t.gold>=120&&V.length>=b-2,Or=Math.max(2,p+(l.attack?-1:0)+(l.build&&c>=1?1:0)+(S==="defend"?3:0));i?t.ai.phase="gather":Yt||r.sides[o].tStreak>0&&c>=1?t.ai.phase="attack":t.ai.phase==="gather"?(At.filter(s=>x(s.cell,Jt)<=2).length>=Or||At.length>=Or+3||t.gold>120&&V.length>=b-1||r.turn>=40&&At.length>=2)&&(t.ai.phase="attack"):At.length<Math.max(2,Math.ceil(Or/2))&&(t.ai.phase="gather");let Ar=At.map(n=>oe[n.cell]).filter(isFinite).sort((n,s)=>n-s),Tr=Ar.slice(0,Math.max(2,p)),Lr=Tr.length?Tr[Tr.length-1]:0;if(tr.flank&&r.mapType!=="continent"&&t.ai.phase==="attack"&&Ar.length&&c>=1){let n=Ar[0];t.ai.best==null||n<t.ai.best-.5?(t.ai.best=n,t.ai.stallT=r.turn):r.turn-(t.ai.stallT||0)>=6&&r.turn>=(t.ai.flankUntil||0)&&(t.ai.flankUntil=r.turn+8,t.ai.stallT=r.turn,t.ai.best=null)}else t.ai.best=null,t.ai.stallT=r.turn;let so=r.turn<(t.ai.flankUntil||0),ao=null;if(so){let n=new Float32Array(L);for(let s of j()){n[s.cell]+=6;for(let d of E[s.cell])n[d]+=3}ao=J(U,n)}function Be(n,s){let d=null,m=k[n.type];if(n.attacked||m.setup&&n.moved||n.aboard||m.noAtk)return null;m.setup&&(s=[n.cell]);for(let h of j())for(let g of s){if(!He(n.type,g,h.cell))continue;let v=Ve(n,h,g),w;if(c===0)w=v.dmg*.6+(v.defDies?12:0)-(v.attDies?15:0)+$()*6-1;else{if(w=v.dmg/h.maxHp*X(h)+(v.defDies?X(h)*.7:0)-v.ret/n.maxHp*X(n)*.8-(v.attDies?X(n)*1.3:0)+we(g)*3,m.range>1&&g!==h.cell&&Me(g)&&x(g,h.cell)>1&&(w-=3),v.breach&&(w+=6+2*j().filter(y=>y.cell===h.cell).length+(h.cell===R?6:0)),c>=2&&(w+=(1-h.hp/h.maxHp)*5,x(h.cell,O)<=2&&(w+=8),R>=0&&h.cell===R&&(w+=4),h.type==="cmd"&&(w+=6),!v.attDies)){let y=ie({...n,hp:v.aHp},g)-(v.defDies?Ve(h,{...n,hp:v.aHp,cell:g},h.cell).dmg:0);w-=Math.min(1.5,y/Math.max(1,v.aHp))*X(n)*(n.type==="cmd"?.4:.18)}n.type==="cmd"&&!v.defDies&&(w-=6)}(!d||w>d.score)&&(d={score:w,from:g,target:h})}for(let h in r.walls){let g=+h;if(!ir(e,g)||!t.vis[g]||r.grid[g])continue;let v=r.cells[g].cap>=0,w=v?g===R?70:50:18,y=Bt(n),M=r.walls[g].hp;for(let T of s){if(!He(n.type,T,g))continue;let I=c===0?y*.8+$()*3:Math.min(y,M)/he(g)*w+(y>=M?w*.4:0)+we(T)*2;c>=1&&E[T].includes(g)&&v&&(I-=ue[r.sides[r.cells[g].cap].capLvl].tower*.6),(!d||I>d.score)&&(d={score:I,from:T,wall:g})}}if(m.siege)for(let h=0;h<L;h++){let g=r.cells[h];if(!g.bld||!a(g.bld.owner)||!t.vis[h]||r.grid[h]||Ee(h)||!He(n.type,n.cell,h))continue;let v=(g.bld.type==="barracks"?16:g.bld.type==="fort"?14:9)+$();(!d||v>d.score)&&(d={score:v,from:n.cell,bld:h})}return d}function Ie(n,s,d,m,h,g,v){if(m==null||m<0)return;let w=v||J(m),y=n.cell,M=1/0;for(let T of d){if(!isFinite(w[T]))continue;let I=w[T];if(c>=1&&(I-=we(T)*.7,k[n.type].range>1&&Me(T)&&(I+=2.5),n.hp<n.maxHp*.5&&(I+=ee(T)*.8),gn(T)&&!(n.role==="army"&&t.ai.phase==="attack")&&(I+=1.5),n.role==="army"&&t.ai.phase==="attack"&&me(n)))for(let z of E[T]){let K=r.grid[z];K&&K.alive&&a(K.side)&&t.vis[z]&&(I-=.35*E[z].filter(Ce=>{let C=r.grid[Ce];return C&&C.alive&&C.side===e&&C!==n}).length)}if(c>=1&&Sr&&Sr.length&&n.role==="army"&&t.ai.phase==="attack"&&me(n)&&x(T,R)===2){let z=0;for(let K of Sr)E[T].includes(K)&&z++;I-=Math.min(2,z)*.8}if(c>=2&&!(co&&t.ai.phase==="attack"&&n.role==="army")&&(I+=Math.min(2,ie(n,T)/n.hp)*(n.role==="army"&&t.ai.phase==="attack"?.6:1.4)),c>=1)for(let z of ye(e)){let K=t.kc[z];K>=0&&Ee(K)&&x(T,K)===1&&(I+=ue[r.sides[z].capLvl].tower/n.hp*4*(r.grid[K]?1:.4))}h!=null&&w[T]<h&&(I+=(h-w[T])*2),g&&(I+=g(T)),I+=$()*(c===0?1.2:.2)+(T===n.cell?.05:0),I<M&&(M=I,y=T)}y!==n.cell&&q({t:"move",u:n.id,path:ke(s,n.cell,y)})}function Fe(n,s,d){if(s.bld!==void 0){q({t:"demolish",u:n.id,cell:s.bld}),ro(120);return}if(s.wall!==void 0){s.from!==n.cell&&q({t:"move",u:n.id,path:ke(d,n.cell,s.from)}),n.alive&&!r.over&&!n.attacked&&ir(e,s.wall)&&t.vis[s.wall]&&!r.grid[s.wall]&&He(n.type,n.cell,s.wall)&&q({t:"attack",u:n.id,target:s.wall}),ro(100);return}s.from!==n.cell&&q({t:"move",u:n.id,path:ke(d,n.cell,s.from)}),!(!n.alive||r.over||!s.target.alive||n.attacked)&&(!He(n.type,n.cell,s.target.cell)||!t.vis[s.target.cell]||(q({t:"attack",u:n.id,target:s.target.cell}),ro(120)))}let bn=r.turn>=30&&R>=0,co=Yt||_(e).length>=(bn?1.1:1.5)*Math.max(2,j().length)&&_(e).length>=p+2,jt=n=>c===0?n.role==="garrison"||n.role==="army"&&t.ai.phase==="attack"?-3:0:n.role==="garrison"?-4:n.role==="defend"?-3:n.role==="siege"?-2:n.role==="navy"?-1:n.role==="army"&&t.ai.phase==="attack"?co?-7:-1:3,fo=(n,s)=>{let d=[n.cell];for(let[m,h]of s)h.end&&!h.board&&d.push(m);return n.role==="garrison"&&x(n.cell,O)<=1&&(d=d.filter(m=>x(m,O)<=1)),d},Vt=new Set;for(let n of ye(e)){let s=t.kc[n];if(!(s<0||Ee(s)||r.grid[s]||r.cells[s].cap!==n)){for(let d of _(e)){if(k[d.type].noCapture||d.moves<=0)continue;let m=ze(d);if(m.has(s)&&m.get(s).end){q({t:"move",u:d.id,path:ke(m,d.cell,s)});break}}if(r.over)return}}for(let n of V)if(n.type==="cat"&&n.alive&&!r.over){let s=Be(n,[n.cell]);s&&s.score>jt(n)&&(Vt.add(n),Fe(n,s,null))}if(r.over)return;if(c>=1){for(let n=0;n<40&&!r.over;n++){let s=null;for(let d of _(e)){if(Vt.has(d)||d.attacked||d.aboard||d.type==="cat"||k[d.type].noAtk||d.hp<d.maxHp*.4&&d.role!=="garrison")continue;let m=ze(d),h=Be(d,fo(d,m)),g=jt(d);h&&h.score>g&&(!s||h.score-g>s.margin)&&(s={o:h,u:d,reach:m,margin:h.score-g})}if(!s)break;Vt.add(s.u),Fe(s.u,s.o,s.reach)}if(r.over)return}let kn={galley:-2,trans:-1,cat:0,arch:1,inf:2,scout:3,cav:4,cmd:5},po=n=>kn[de(n.type)]??3;V.sort((n,s)=>po(n)-po(s));function xn(n,s,d){let m=je(n),h=g=>Math.min(4,ie(n,g)/n.hp*4);if(F.stage==="load"){let g=Se.find(v=>E[v].includes(F.pick))??Se[0];if(g!==void 0){let v=E[g].filter(w=>Ut(w)&&(!r.grid[w]||r.grid[w]===n)).sort((w,y)=>ie(n,w)-ie(n,y))[0];v!==void 0&&(F.pick=v)}if(m.length>=k[n.type].hold||m.length&&F.wait>=2)F.stage="sail";else{n.cell!==F.pick&&Ie(n,s,d,F.pick,null,h,St(F.pick)),(m.length||!t.ai.ferryWorth)&&F.wait++;return}}if(F.stage==="sail")if(!m.length)F.stage="back";else{let g=Mr(n.cell);g&&(F.land=g.land,F.sea=g.sea);let v=()=>E[n.cell].some(w=>Ae(r.cells[w].t)&&isFinite(Ne[w])&&Ne[w]<=Ne[F.land]+2);if(v()||Ie(n,s,d,F.sea,null,h,St(F.sea)),n.alive&&v())for(let w of je(n)){if(w.moves<=0||r.over)continue;let y=-1,M=1/0;for(let[T]of ze(w)){let I=Ne[T]+ee(T)*.6-we(T);I<M&&(M=I,y=T)}y>=0&&(w.role="army",q({t:"move",u:w.id,path:[y]}))}n.alive&&!je(n).length&&(F.stage="back");return}F.stage==="back"&&(n.cell!==F.pick&&Ie(n,s,d,F.pick,null,h,St(F.pick)),n.alive&&x(n.cell,F.pick)<=1&&(F.stage="load",F.wait=0))}function Mn(n,s,d){let m=jt(n);if(!k[n.type].noAtk){let v=Be(n,d);if(v&&v.score>m){Fe(n,v,s);return}}if(F&&F.ship===n.id){xn(n,s,d);return}let h=j().filter(v=>Le(v)&&r.sea[v.cell]===r.sea[n.cell]),g=-1;if(k[n.type].noAtk)Se.length&&(g=qt(Se[0])??-1),ie(n,n.cell)>=n.hp*.4&&(g=-2);else if(h.length)g=h.reduce((v,w)=>x(w.cell,n.cell)<x(v.cell,n.cell)?w:v).cell;else if(n.hp<n.maxHp*.55&&Se.length)g=qt(Se[0])??-1;else if(F&&F.stage==="sail"){let v=r.units.find(w=>w.id===F.ship&&w.alive);v&&(g=v.cell)}else i||(g=U);if(g===-2){let v=n.cell,w=ie(n,n.cell);for(let y of d){let M=ie(n,y);M<w&&(w=M,v=y)}v!==n.cell&&q({t:"move",u:n.id,path:ke(s,n.cell,v)})}else g>=0&&g!==n.cell&&Ie(n,s,d,g,null,v=>(n.hp<n.maxHp*.5&&Me(v)?3:0)+(c>=1?Math.min(2,ie(n,v)/n.hp*2):0),St(g));if(n.alive&&!n.attacked&&!r.over){let v=Be(n,[n.cell]);v&&v.score>m&&Fe(n,v,null)}}for(let n of V){if(!n.alive||r.over||Vt.has(n)||n.aboard)continue;let s=ze(n),d=fo(n,s);if(Le(n)){Mn(n,s,d);continue}if(n.role==="ferry"&&F){let y=r.units.find(M=>M.id===F.ship&&M.alive);if(y&&bt(y)>0){if(s.has(y.cell)&&s.get(y.cell).board){q({t:"move",u:n.id,path:ke(s,n.cell,y.cell)});continue}Ie(n,s,d,y.cell);continue}}let m=jt(n);if(n.type==="cat"){let y=[];R>=0&&y.push(R);for(let C=0;C<L;C++){let G=t.memBld[C];G&&a(G.owner)&&t.explored[C]&&y.push(C),r.cells[C].village&&a(t.memOwner[C])&&y.push(C)}let M=j().map(C=>C.cell),T=C=>_(e).filter(G=>G!==n&&me(G)&&x(G.cell,C)<=2).length,I=y.length?y.reduce((C,G)=>J(G)[n.cell]<J(C)[n.cell]?G:C):t.ai.phase==="attack"?U:Jt;R>=0&&t.ai.phase==="attack"&&I!==R&&J(R)[n.cell]<=J(I)[n.cell]+6&&(I=R);let z=J(I),K=n.cell,Ce=1/0;for(let C of d){let G=(isFinite(z[C])?z[C]:30)*.8;x(C,I)===2?G-=8:x(C,I)<2&&(G+=6),M.some(Kt=>x(C,Kt)===2&&Ct(Kt)>0)?G-=5:M.some(Kt=>x(C,Kt)===2)&&(G-=2),Me(C)&&(G+=10);let Ue=T(C);Ue<2?G+=(2-Ue)*2.5+Math.min(3,ie(n,C)/n.hp)*3:G+=Math.min(3,ie(n,C)/n.hp)*1,G+=$()*.2+(C===n.cell?-.2:0),G<Ce&&(Ce=G,K=C)}K!==n.cell&&q({t:"move",u:n.id,path:ke(s,n.cell,K)});continue}if(n.type==="healer"){let y=_(e).filter(I=>I!==n&&!I.aboard&&!Le(I));if(!y.length){Ie(n,s,d,O);continue}let M=n.cell,T=-1/0;for(let I of d){let z=0;for(let Ce of E[I]){let C=r.grid[Ce];C&&C.alive&&C!==n&&ce(e,C.side)&&!Le(C)&&(z+=(C.maxHp-C.hp)/C.maxHp*5+.3)}let K=y.reduce((Ce,C)=>Math.min(Ce,x(C.cell,I)+(C.hp<C.maxHp*.7?-1:0)),9);z-=K*.6+(c>=1?ie(n,I)/n.hp*6:0)+(Me(I)?4:0)-we(I)*.5-$()*.3,z>T&&(T=z,M=I)}M!==n.cell&&q({t:"move",u:n.id,path:ke(s,n.cell,M)});continue}if(n.type==="cmd"){let y=Be(n,d);if(y&&y.score>2){Fe(n,y,s);continue}let M=_(e).filter(z=>z!==n&&z.type!=="cat");if(!M.length){Ie(n,s,d,O);continue}let T=n.cell,I=-1/0;for(let z of d){let K=0;for(let G of E[z]){let Ue=r.grid[G];Ue&&Ue.alive&&Ue.side===e&&Ue!==n&&Ue.type!=="cat"&&K++}let Ce=M.reduce((G,Ue)=>Math.min(G,x(Ue.cell,z)),9),C=K*2-Ce*.8-(c>=1?ie(n,z)/n.hp*5:0)-(Me(z)?3:0)+we(z)+$()*.3;C>I&&(I=C,T=z)}T!==n.cell&&q({t:"move",u:n.id,path:ke(s,n.cell,T)});continue}if(c>=1&&n.hp<n.maxHp*.4&&n.role!=="garrison"){let y=Be(n,d);if(y&&y.target){let M=Ve(n,y.target,y.from);if(M.defDies&&!M.attDies){Fe(n,y,s);continue}}if(r.zone[n.cell]!==e){let M=O,T=1/0;for(let I=0;I<L;I++)if(r.zone[I]===e&&ae(r.cells[I].t)){let z=x(I,n.cell);z<T&&(T=z,M=I)}Ie(n,s,d,M)}continue}let h=Be(n,d);if(h&&h.score>m){Fe(n,h,s);continue}if(n.role!=="garrison"&&!k[n.type].noCapture){let y=d.find(M=>r.cells[M].village&&t.memOwner[M]!==e&&M!==n.cell);if(y!==void 0){q({t:"move",u:n.id,path:ke(s,n.cell,y)});continue}}let g=-1,v=null,w=null;if(n.role==="garrison")g=O;else if(n.role==="scout"){n.type==="scout"&&(w=T=>Math.min(3,ie(n,T)/n.hp)*3+(Me(T)?3:0));let y=-1/0,M=J(n.cell);for(let T of Gt){if(r.grid[T]&&T!==n.cell||!isFinite(M[T]))continue;let z=E[T].filter(K=>!t.explored[K]).length*1.5-Math.min(M[T],x(n.cell,T)*2)*.7+x(T,O)*.25-ee(T)*(n.type==="scout"?3.5:2)+$()-(R<0?x(T,U)*.35:0);z>y&&(y=z,g=T)}}else if(n.role==="picket"){let y=1/0;for(let M=0;M<L;M++){if(!t.explored[M]||!ae(r.cells[M].t)||r.grid[M]&&M!==n.cell||!isFinite(oe[M]))continue;let T=Math.abs(oe[M]-(Lr-3))*.6-(r.cells[M].t==="hills"?1.5:0)+ee(M)*2+x(n.cell,M)*.15;T<y&&(y=T,g=M)}w=M=>ee(M)*2.5+(Me(M)?4:0)}else if(n.role==="capture"||n.role==="defend")g=n.goal;else if(n.role==="hunt")g=n.goal,w=y=>Me(y)&&!E[y].includes(n.goal)?3:0;else if(t.ai.phase==="gather")g=Jt;else if(so&&n.role==="army"&&me(n)){if(Ie(n,s,d,U,null,null,ao),n.alive&&!n.attacked&&!r.over){let y=Be(n,[n.cell]);y&&y.score>m&&Fe(n,y,null)}continue}else{let y=j().filter(M=>x(M.cell,n.cell)<=3);g=y.length?y[0].cell:U,!y.length&&oe[n.cell]<=Lr&&(v=Lr-2)}if(Ie(n,s,d,g,v,w),n.alive&&!n.attacked&&!r.over){let y=Be(n,[n.cell]);y&&y.score>m&&Fe(n,y,null)}}if(r.over)return;for(let n in r.walls){let s=+n;le(s)===e&&r.walls[s].hp<he(s)*(r.cells[s].cap>=0?.8:.5)&&t.gold>=H.repairCost+(c>=1?8:25)&&fe({t:"repair",cell:s})}if(c>=1&&Rt(e)>=0){let n=be(e);for(let s=0;s<4&&n.net<0&&t.food+n.net<0&&t.gold>=it(e,"buy")+10&&fe({t:"trade",kind:"buy"});s++);for(let s=0;s<4&&t.food>=45+Math.max(0,-n.net)*5&&it(e,"sell")>=3&&fe({t:"trade",kind:"sell"});s++);}let ft=be(e),Xe=n=>{let s=[];for(let d=0;d<L;d++)ar(e,d,n)&&s.push(d);return s},uo=c===0?ft.net<0:ft.net<1||ft.net<2&&t.food<8;if(uo){let n=Xe("farm").sort((s,d)=>x(s,O)-(r.cells[s].t==="plains"?2:0)+ee(s)*3-(x(d,O)-(r.cells[d].t==="plains"?2:0)+ee(d)*3));n.length&&fe({t:"build",type:"farm",cell:n[0]})}let Sn=n=>r.cells.some(s=>s.bld&&s.bld.owner===e&&s.bld.type===n),Er=n=>r.cells.filter(s=>s.bld&&s.bld.owner===e&&s.bld.type===n).length;if(c>=1&&!Sn("barracks")&&r.turn>=(c===2?7:9)&&t.gold>=Oe.barracks.cost+15&&_(e).length>=p+1){let n=Xe("barracks").filter(s=>x(s,O)>=2).sort((s,d)=>oe[s]-oe[d]);n.length&&oe[n[0]]<oe[O]-2&&fe({t:"build",type:"barracks",cell:n[0]})}let On=(c===2?2:c===1?1:0)+(l.build||S==="defend"||S==="territory"?1:0);if(c>=1&&r.turn>=(c===2?9:12)&&Er("fort")<On&&t.gold>=(c===2?100:70)){let n=Xe("fort").sort((s,d)=>oe[s]-we(s)*3-(oe[d]-we(d)*3));n.length&&fe({t:"build",type:"fort",cell:n[0]})}if(c>=1&&Yt&&Er("fort")<4&&t.gold>=150){let n=Xe("fort").filter(s=>ee(s)<=2&&x(s,O)>=3).sort((s,d)=>oe[s]-oe[d]);n.length&&!r.cells.some(s=>s.bld&&s.bld.owner===e&&s.bld.type==="fort"&&x(s.i,n[0])<=2)&&fe({t:"build",type:"fort",cell:n[0]})}if(c>=1&&Rt(e)<0&&r.turn>=(l.trade?8:10)&&t.gold>=wt(e,"market")+(l.trade?25:35)&&(l.trade||be(e).net<0||t.food>=40)){let n=Xe("market").filter(s=>ee(s)===0).sort((s,d)=>x(s,O)-x(d,O));n.length&&fe({t:"build",type:"market",cell:n[0]})}let ho=t.seen.galley+t.seen.trans+t.seen.drakkar;if(c>=1&&!Se.length&&!i&&r.turn>=(r.mapType==="islands"?6:10)&&t.gold>=wt(e,"port")+20){let n=null;for(let s of Xe("port")){let d=Mr(qt(s)),m=(d?d.turns:60)+x(s,O)*.3;(!n||m<n.sc)&&(n={i:s,sc:m,p:d})}n&&(n.p&&n.p.turns+2<lo||ho>=.5&&c===2)&&fe({t:"build",type:"port",cell:n.i})}let mo=n=>{for(let s of Se)if(fe({t:"recruit",type:n,at:s}))return!0;return!1};if(Se.length&&_(e).length<b){let n=Q(e)==="varangians",s=g=>_(e).filter(v=>v.type===g).length,d=s("trans")+s("drakkar"),m=s("galley")+s("drakkar"),h=Math.min(c===2?3:2,Math.ceil(ho)+(t.ai.ferryWorth&&c===2?1:0)+(r.mapType==="islands"&&r.turn>=14&&c>=1?1:0));t.ai.ferryWorth&&!d&&t.gold>=qe(e,n?"drakkar":"trans")+10?mo(n?"drakkar":"trans"):m<h&&t.gold>=qe(e,n?"drakkar":"galley")+15&&mo(n?"drakkar":"galley")}let An=n=>{let s=[O];for(let d of r.cells)d.bld&&d.bld.owner===e&&d.bld.type==="barracks"&&s.push(d.i);return n&&s.sort((d,m)=>oe[d]-oe[m]),s},et=(n,s)=>{for(let d of An(s))if(fe({t:"recruit",type:n,at:d}))return!0;return!1},_e=n=>_(e).filter(s=>s.type===n).length;if(_(e).length<b)if(c>=1){xr.length&&_e("scout")<(c===2?2:1)&&t.gold>=k.scout.cost+5&&et("scout",!0),R<0&&!_e("scout")&&r.turn>=2&&r.turn<=24&&r.turn>=(t.ai.scoutAt||0)&&t.gold>=k.scout.cost+8&&et("scout",!0)&&(t.ai.scoutAt=r.turn+7);let n=_(e).filter(d=>me(d)&&d.hp<d.maxHp*.7).length;_e("healer")<(c===2?2:1)+(l.medic?1:0)&&r.turn>=8&&n>=2&&_(e).filter(me).length>=p&&t.gold>=qe(e,"healer")+20&&et("healer",!0),!_e("cmd")&&r.turn>=8&&r.turn>=t.cmdReady&&t.gold>=k.cmd.cost+10&&_(e).length>=p&&fe({t:"recruit",type:"cmd",at:O}),(R>=0||t.memBld.some(d=>d&&a(d.owner)&&d.type==="fort"))&&(t.ai.phase==="attack"||R>=0)&&_e("cat")<(c===2||c===1&&R>=0?2:1)+(Yt||l.attack?1:0)&&r.turn>=(l.attack?8:10)&&r.turn>=(t.ai.catAt||0)&&t.gold>=k.cat.cost+15&&_(e).filter(me).length>=p+1&&et("cat",!0)&&(t.ai.catAt=r.turn+6)}else!_e("scout")&&r.turn>=2&&r.turn<=12&&r.turn>=(t.ai.scoutAt||0)&&$()<.3&&et("scout",!0)&&(t.ai.scoutAt=r.turn+8),!_e("cmd")&&r.turn>=10&&$()<.12&&fe({t:"recruit",type:"cmd",at:O}),!_e("cat")&&r.turn>=14&&$()<.1&&et("cat",!0);let Nr=n=>{let s=h=>_(e).filter(g=>de(g.type)===h).length,d=[];t.capLvl===1&&r.turn>=10&&d.push(["cap"]),_(e).filter(me).length>=p&&d.push(["tech","smith"]),be(e).net<1&&Er("farm")>=1&&d.push(["tech","crops"]),s("cav")>=3&&d.push(["tech","stable"]),s("arch")>=3&&d.push(["tech","bows"]),(t.seen.cat>=.5||ct.length>=2||S==="defend")&&d.push(["tech","mason"]),l.build&&t.capLvl===2&&t.gold>=160&&d.unshift(["cap"]),s("cat")>=1&&d.push(["tech","siege"]),t.tech.smith&&d.push(["tech","armor"]),R<0&&s("scout")&&d.push(["tech","maps"]),t.capLvl===2&&t.gold>=220&&d.push(["cap"]);let m=r.cells.find(h=>h.village&&h.vOwner===e&&h.vLvl<2&&ee(h.i)===0);m&&d.push(["vup",m.i]),c===0&&er(d,$);for(let h of d){let g=h[0]==="cap"?ue[t.capLvl+1]?yt(e,t.capLvl+1):1e9:h[0]==="vup"?dt:rt[h[1]].cost;if(!(t.gold<g+n||h[0]==="tech"&&cr(e,h[1]))&&(h[0]==="cap"?fe({t:"capUp"}):h[0]==="vup"?fe({t:"villUp",cell:h[1]}):fe({t:"research",k:h[1]})))return!0}return!1};c>=1&&t.gold>=(l.build?120:l.attack?190:150)&&(!l.build||_(e).filter(me).length>=p)&&Nr(l.build?40:60);let go={cav:"inf",arch:"cav",inf:"arch"};for(let n=0;n<5&&(V=_(e),ft=be(e),!(V.length>=b));n++){let s;if(c===0){let m=$();s=m<.45?"inf":m<.8?"arch":"cav"}else{let m={inf:0,arch:0,cav:0};V.forEach(v=>{let w=de(v.type);m[w]!==void 0&&!v.aboard&&m[w]++});let h=V.some(v=>(de(v.type)==="inf"||de(v.type)==="arch")&&x(v.cell,O)<=1),g=v=>We.reduce((w,y)=>w+(de(y)===v&&t.seen[y]||0),0);if(m.cav===0&&r.turn<=8)s="cav";else if(!h)s="inf";else{let v={inf:1,arch:.9,cav:.7+(l.raid?.5:0)};for(let y of tt)v[go[y]]+=g(y)*.9,v[y]-=g(go[y])*.5;let w=V.filter(me).length||1;for(let y of tt)v[y]-=m[y]/w*1.2;if(c===1)for(let y of tt)v[y]+=$()*.6;s=tt.reduce((y,M)=>v[y]>=v[M]?y:M)}}let d=Q(e)?Zt[Q(e)].uniq:null;if(d&&!k[d].naval&&de(d)===s&&t.gold>=qe(e,d)+4&&$()<(c===0?.4:.75)&&(s=d),t.gold<qe(e,s)){let m=tt.filter(h=>qe(e,h)<=t.gold&&h!=="cav");if(!m.length)break;s=m[Math.floor($()*m.length)]}if(ft.net-k[s].food<-1&&t.food<8&&!ct.length||c>=1&&uo&&t.gold-k[s].cost<Oe.farm.cost&&Xe("farm").length===0&&ft.net-k[s].food<-2||!et(s,!ct.length))break}c>=1?Nr((c===2?20:35)+(l.attack?25:0)-(l.build?10:0)):$()<.2&&Nr(30)}function ol(e){if(!r.diplo)return;let t=r.sides[e];if(!t.alive)return;let o=Math.max(1,re(e)),i=ve().filter(p=>p!==e),a=dr(),f=p=>r.sides[p].vStreak>0||r.sides[p].tStreak>0;for(let p of i)if(f(p)&&r.sides[p].vStreak+r.sides[p].tStreak>=2&&!ht(e,p)){if(r.rel[e][p]==="ally"){q({t:"dip",kind:"break",to:p});return}if(r.rel[e][p]==="peace"){q({t:"dip",kind:"war",to:p});return}}let l=ye(e),c=t.ai.target;if(r.turn>=4&&nt()<(t.ai.goal==="defend"?.55:.3)&&(l.length>=2||l.length===1&&o<re(l[0])*.7)){let p=l.filter(u=>!Ze(e,u,"peace",6)&&u!==a&&!f(u)&&(mr(e,u)<0||mr(e,u)===a)).sort((u,S)=>(u===c)-(S===c)||Ht(S,e)-Ht(u,e));if(p.length&&(l.length>=2||p[0]!==c||o<re(p[0])*.7)){q({t:"dip",kind:"peace",to:p[0]});return}}if(a>=0&&a!==e&&D(e,a)&&nt()<.5){let p=i.find(u=>u!==a&&r.rel[e][u]==="peace"&&D(u,a)&&r.turn-r.relSince[e][u]>=3&&!Ze(e,u,"ally",6));if(p!==void 0){q({t:"dip",kind:"ally",to:p});return}}if(r.turn>=10&&nt()<.4){let p=i.filter(u=>r.rel[e][u]==="peace"&&!ht(e,u)).sort((u,S)=>x(r.caps[e],De(e,u))-x(r.caps[e],De(e,S)));if(!l.length||t.ai.blocked){let u=ve().some(b=>ye(b).length),S=p.find(b=>re(b)<o*(mt[br(e)].attack?1.4:1.15)||r.turn-r.relSince[e][b]>=(mt[br(e)].attack?10:14)||!u);if(S!==void 0&&(Wt(e).diff!=="easy"||!u)){q({t:"dip",kind:"war",to:S});return}}else if(Wt(e).diff!=="easy"&&l.length===1){let u=x(r.caps[e],De(e,l[0])),S=p.find(b=>re(b)<o*.7&&x(r.caps[e],De(e,b))<u);if(S!==void 0&&o>re(l[0])*1.2){q({t:"dip",kind:"war",to:S});return}}}}function nl(e){let t=r.sides[e];if(!(!t.alive||r.turn<5))for(let o of ve()){if(o===e||r.rel[e][o]!=="ally"||Ze(e,o,"gift",5))continue;let i=r.sides[o],a=r.units.some(c=>c.alive&&D(o,c.side)&&r.zone[c.cell]===o);if(i.food<=5&&be(o).net<0&&t.food>=30&&be(e).net>=0){q({t:"aid",to:o,kind:"food",n:15});return}let l=re(o)<re(e)*.6;if(t.gold>=90&&i.gold<40&&a||t.gold>=130&&i.gold<60&&l){q({t:"aid",to:o,kind:"gold",n:t.gold>=160?40:25});return}}}var ll=e=>({ai:JSON.parse(JSON.stringify(r.sides[e].ai)),rng:r.rng});function mn(e,t){let o=r,i=Ge,a=Mt(),f={steps:[],refused:[],error:null};Re(e),oo(f),_t(null);try{r.over||(ol(t),nl(t),hn(t))}catch(l){f.error=String(l&&l.stack||l)}return f.steps.push({a:{t:"end",bot:ll(t)}}),oo(null),_t(a),ot(i),Re(o),f}self.onmessage=e=>{let{id:t,g:o,side:i,uid:a,opt:f}=e.data,l=Date.now(),c=Xt[o.size];(c.w!==Y||c.h!==ne||o.ns!==Lt)&&ut(c.w,c.h,o.ns),Object.assign(tr,f),ot(a);let p=mn(o,i);self.postMessage({id:t,...p,ms:Date.now()-l})};})();\n';
+  var SOTY_VERSION = "0.5.2";
+  var BOT_WORKER = '(()=>{var Cr=Math.sqrt(3),se={plains:{move:1,def:0,sight:0,gold:1,col:10274660,h:.34},forest:{move:2,def:.25,sight:0,gold:1,col:6987852,h:.4},hills:{move:2,def:.4,sight:1,gold:1,col:12888684,h:.7},mountain:{move:99,def:0,sight:0,gold:0,col:9341831,h:.92},water:{move:99,def:0,sight:0,gold:0,col:4163781,h:.13},ford:{move:3,stop:!0,def:-.15,sight:0,gold:0,col:7323869,h:.15},river:{move:99,def:0,sight:0,gold:0,col:5810398,h:.16},bridge:{move:1,def:0,sight:0,gold:0,col:5810398,h:.16}},k={inf:{icon:"🛡",hp:30,atk:6,def:6,move:2,sight:2,range:1,cost:18,food:1,beats:"cav"},arch:{icon:"🏹",hp:22,atk:7,def:3,move:2,sight:2,range:2,cost:23,food:1,beats:"inf"},cav:{icon:"🐎",hp:26,atk:8,def:4,move:4,sight:3,range:1,cost:26,food:2,beats:"arch"},scout:{icon:"🔭",hp:14,atk:3,def:2,move:5,sight:3,range:1,cost:14,food:1,beats:"cat",noCapture:!0,skirmish:!0,eagle:!0},cat:{icon:"🪨",hp:20,atk:5,def:2,move:2,sight:1,range:2,minRange:2,cost:44,food:2,beats:null,noCapture:!0,siege:!0,noRet:!0,setup:!0},cmd:{icon:"🎖",hp:28,atk:7,def:7,move:3,sight:3,range:1,cost:50,food:2,beats:null,unique:!0,capOnly:!0},healer:{icon:"⚕️",hp:18,atk:2,def:3,move:2,sight:2,range:1,cost:30,food:1,beats:null,noCapture:!0,noAtk:!0,noRet:!0},cossack:{icon:"🗡",hp:30,atk:8,def:6,move:3,sight:2,range:1,cost:28,food:1,beats:"cav",kind:"inf",fac:"cossacks"},harch:{icon:"🎯",hp:22,atk:6,def:3,move:4,sight:3,range:2,cost:32,food:2,beats:"inf",kind:"arch",fac:"nomads"},knight:{icon:"🏇",hp:32,atk:10,def:6,move:3,sight:2,range:1,cost:35,food:2,beats:"arch",kind:"cav",fac:"knights"},galley:{icon:"⛵",hp:28,atk:7,def:5,move:4,sight:3,range:1,cost:34,food:1,beats:"trans",naval:!0,noCapture:!0},drakkar:{icon:"🐉",hp:28,atk:8,def:5,move:5,sight:3,range:1,cost:40,food:1,beats:"trans",naval:!0,noCapture:!0,hold:2,kind:"galley",fac:"varangians"},trans:{icon:"🚢",hp:24,atk:2,def:3,move:5,sight:2,range:1,cost:25,food:1,beats:null,naval:!0,noCapture:!0,noAtk:!0,hold:2}},We=["inf","cossack","arch","harch","cav","knight","scout","healer","cat","cmd","galley","drakkar","trans"],de=e=>k[e].kind||e,Le=e=>!!k[e.type].naval,$t={knights:{icon:"⚜",uniq:"knight"},nomads:{icon:"🏕",uniq:"harch"},cossacks:{icon:"🔱",uniq:"cossack"},varangians:{icon:"🪓",uniq:"drakkar"}},Ln=Object.keys($t),rt=["inf","arch","cav"],H={flank:.15,flankMax:3,aura:.2,morale:.2,moraleTurns:3,supplyPen:.2,attrition:0,siegeMul:1.5,rangedMelee:.5,wallDmg:{inf:5,arch:2,cav:3,scout:1,cat:14,cmd:5,cossack:5,harch:2,knight:3,galley:4,drakkar:4,trans:0,healer:0},shore:.75,fortWalls:24,wallRegen:.08,repairCost:12,repairFrac:.3,siegeHunger:.15,siegeCostMul:1.5,market:{lot:10,sell:5,buy:16,sellStep:1,buyStep:2},heal:.2,plunder:5,seatGold:{2:{small:15,medium:15,large:-15,huge:-15},3:0,4:35}},Oe={farm:{icon:"🌾",cost:20,terr:["plains","hills"],sight:1,claim:0},fort:{icon:"🏰",cost:30,terr:["plains","forest","hills"],sight:3,claim:1},barracks:{icon:"⚒",cost:40,terr:["plains","forest","hills"],sight:2,claim:1},port:{icon:"⚓",cost:35,terr:["plains","forest","hills"],sight:2,claim:1,coast:!0},market:{icon:"⚖",cost:40,terr:["plains","hills"],sight:2,claim:1,one:!0}},Qt={easy:{smart:0,group:2,cap:9},normal:{smart:1,group:4,cap:14},hard:{smart:2,group:5,cap:18}},vo=8,yo=[0,3,7],wo=22,bo=15,ko=9,ue=[null,{gold:0,food:0,walls:40,tower:4,cost:0},{gold:3,food:1,walls:60,tower:6,cost:70},{gold:6,food:2,walls:80,tower:8,cost:140}],pt=35,ot={smith:{icon:"⚒",cost:50},armor:{icon:"🛡",cost:60,req:"smith",cap:2},bows:{icon:"🏹",cost:45},stable:{icon:"🐎",cost:40},crops:{icon:"🌾",cost:35},mason:{icon:"🧱",cost:50},siege:{icon:"⚙",cost:55,cap:2},maps:{icon:"🗺",cost:30}},Ur={villFrac:3/4,villTurns:8,terrFrac:.65,terrTurns:8},xo={2:{v:.86,t:.65},3:{v:.75,t:.58},4:{v:.67,t:.52}},Lt={gold:20,food:10},Mo={siege:{limit:20,kind:"deadline"},outpost:{limit:30,kind:"survive"}};var Y=12,ne=12,L=Y*ne,Br=e=>e%Y,Pr=e=>e/Y|0,ge=[],qe=[],N=[],Rr=[],En=[[1,0],[1,-1],[0,-1],[-1,0],[-1,1],[0,1]],So=0,Oo=0,Fr=null,ut=[[],[]],Ao=0,Nn=[new Set,new Set],Xt=new Map,Et=2;function Hr(e,t){if(t<0||t>=ne)return-1;let o=e+(t>>1);return o<0||o>=Y?-1:t*Y+o}var er={small:{w:10,h:10,maxNs:2,code:"S"},medium:{w:12,h:12,maxNs:3,code:"M"},large:{w:15,h:13,maxNs:4,code:"L"},huge:{w:18,h:16,maxNs:4,code:"H"}},In={2:["BL","TR"],3:["BL","TC","BR"],4:["BL","TR","TL","BR"]};function ht(e,t,o=2){Y=e,ne=t,L=Y*ne,Et=o,So=Cr*(Y-.5)/2,Oo=1.5*(ne-1)/2,ge.length=qe.length=N.length=Rr.length=0;for(let f=0;f<L;f++){let l=Br(f),c=Pr(f);ge[f]={q:l-(c>>1),r:c},qe[f]={x:Cr*(l+.5*(c&1))-So,z:1.5*c-Oo}}for(let f=0;f<L;f++)Rr[f]=En.map(([l,c])=>Hr(ge[f].q+l,ge[f].r+c)),N[f]=Rr[f].filter(l=>l>=0);Fr=new Uint8Array(L*L);for(let f=0;f<L;f++)for(let l=0;l<L;l++){let c=ge[f].q-ge[l].q,p=ge[f].r-ge[l].r;Fr[f*L+l]=(Math.abs(c)+Math.abs(p)+Math.abs(c+p))/2}let i=Y>>1,s={BL:[1,3,ne-4,ne-2],TR:[Y-4,Y-2,1,3],TL:[1,3,1,3],BR:[Y-4,Y-2,ne-4,ne-2],TC:[i-1,i+1,1,3]};ut=In[o].map(f=>{let[l,c,p,u]=s[f],S=[];for(let b=0;b<L;b++){let O=Br(b),R=Pr(b);O>=l&&O<=c&&R>=p&&R<=u&&S.push(b)}return S}),Nn=ut.map(f=>new Set(f)),Ao=(ne>>1)*Y+(Y>>1),Xt=new Map}ht(12,12);var x=(e,t)=>Fr[e*L+t],ae=e=>se[e].move<99;var Ae=e=>e==="plains"||e==="forest"||e==="hills";var tr=(e,t)=>{for(let o=e.length-1;o>0;o--){let i=Math.floor(t()*(o+1));[e[o],e[i]]=[e[i],e[o]]}return e};var rr={flank:!0,wideFords:!0};var zr=2;var r=null;function Re(e){return r=e,e}var Ge=1,Lo=()=>Ge++;function nt(e){Ge=e}var or=[],E=e=>{or.push(e)};function Dr(e){let t=or,o=or=[];try{e()}finally{or=t}return o}function lt(){let e=r.rng=r.rng+1831565813|0,t=Math.imul(e^e>>>15,1|e);return t=t+Math.imul(t^t>>>7,61|t)^t,((t^t>>>14)>>>0)/4294967296}var Nt=e=>!r.human[e]||!!r.spectate,It=()=>r.human.filter(Boolean).length===1?r.human.findIndex(Boolean):-1;var D=(e,t)=>e>=0&&t>=0&&e!==t&&r.rel[e][t]==="war",ce=(e,t)=>e>=0&&(e===t||t>=0&&r.rel[e][t]==="ally"),it=(e,t)=>e>=0&&t>=0&&e!==t&&r.rel[e][t]==="peace",ve=()=>r.sides.filter(e=>e.alive).map(e=>e.id),ye=e=>ve().filter(t=>D(e,t)),mt=(e,t)=>Math.max(0,r.relSince[e][t]+vo-r.turn);var gt={auto:{icon:"🎲"},balanced:{icon:"⚖"},conqueror:{icon:"⚔",attack:1},builder:{icon:"🏗",build:1,trade:1},raider:{icon:"🐎",raid:1}};var _r={knights:"conqueror",nomads:"raider",cossacks:"builder",varangians:"balanced"};var A=(e,t)=>({key:e,vars:t||null}),_=e=>r.units.filter(t=>t.alive&&t.side===e),pe=(e,t)=>!!r.sides[e].tech[t],Ro=["inf","cav","cmd"],Q=e=>r&&r.sides[e]?r.sides[e].fac:null,Cn=(e,t)=>!k[t].fac||Q(e)===k[t].fac;function Eo(e){let t=de(e.type);return k[e.type].atk+(pe(e.side,"smith")&&Ro.includes(t)?1:0)+(pe(e.side,"bows")&&t==="arch"?1:0)+(t==="inf"&&Q(e.side)==="varangians"?1:0)+(t==="cav"&&Q(e.side)==="knights"?1:0)}function No(e){let t=de(e.type);return k[e.type].def+(pe(e.side,"armor")&&Ro.includes(t)?1:0)+(t==="cav"&&Q(e.side)==="knights"?1:0)}function Je(e,t){let o=de(t);return k[t].cost-(o==="cav"&&pe(e,"stable")?5:0)-(t==="cat"&&pe(e,"siege")?10:0)-((o==="cav"||t==="harch")&&Q(e)==="nomads"?4:0)-(k[t].naval&&Q(e)==="varangians"?4:0)}function Un(e,t){return de(t)==="cav"&&pe(e,"stable")?1:k[t].food}function Ye(e,t){return k[t].move+(t==="cat"&&pe(e,"siege")?1:0)+(t==="scout"&&pe(e,"maps")?1:0)+(k[t].naval&&Q(e)==="varangians"?1:0)}function Rn(e,t){return k[t].sight+(t==="scout"&&pe(e,"maps")?1:0)+(Q(e)==="nomads"?1:0)}var wt=(e,t)=>ue[t]?Math.round(ue[t].cost*(Q(e)==="knights"?.8:1)):0,bt=(e,t)=>Oe[t].cost-(t==="port"&&Q(e)==="varangians"?15:0),Ve=e=>e==="water"||e==="river"||e==="ford",Bo=(e,t)=>k[e.type].naval?Ve(r.cells[t].t):ae(r.cells[t].t),Po=(e,t)=>k[e.type].naval?1:se[r.cells[t].t].move,je=e=>r.units.filter(t=>t.alive&&t.aboard===e.id),Fo=e=>e.aboard?r.units.find(t=>t.id===e.aboard&&t.alive):null,kt=e=>(k[e.type].hold||0)-je(e).length;var Rt=e=>r.sea[e]>=0&&r.seaSize[r.sea[e]]>=6,Bn=e=>Ae(r.cells[e].t)&&N[e].some(Rt),Ho=(e,t)=>N[t].some(o=>{let i=r.cells[o].bld;return i&&i.type==="port"&&i.owner===e}),le=e=>{let t=r.cells[e];return t.cap>=0?t.cap:t.bld?t.bld.owner:t.village?t.vOwner:-1};function he(e){let t=r.cells[e];if(t.cap<0&&!(t.bld&&t.bld.type==="fort"))return 0;let o=t.cap>=0?ue[r.sides[t.cap].capLvl].walls:H.fortWalls;return Math.round(o*(pe(le(e),"mason")?1.5:1)*(Q(le(e))==="knights"?1.25:1))}var Ee=e=>{let t=r.walls[e];return!!t&&t.hp>0},ir=e=>{let t=r.breach[e];return!!t&&r.turn<=t.until};function Ut(e){let t=r.cells[e];return t.cap>=0||t.bld&&t.bld.type==="fort"?Ee(e)?.5:0:t.village&&!ir(e)?t.vLvl>1?.3:.2:0}function we(e){return Math.max(se[r.cells[e].t].def,Ut(e))}var sr=(e,t)=>Ee(t)&&D(e,le(t)),yt=(e,t)=>Ee(t)&&le(t)!==e,qr=e=>{let t=r.cells[e];return t.cap>=0||t.village||!!(t.bld&&t.bld.type==="fort")};function zo(e){let t=le(e);if(t<0||!qr(e))return!1;let o=f=>{let l=r.grid[f];return l&&l.alive&&D(t,l.side)?l:null},i=0,s=new Set;for(let f of N[e]){if(!ae(r.cells[f].t))continue;i++;let l=r.grid[f];if(l&&l.alive&&D(t,l.side)){s.add(l);continue}if(l&&l.alive&&ce(t,l.side))return!1;let c=!1;for(let p of N[f]){let u=p!==e&&o(p);u&&(c=!0,s.add(u))}if(!c)return!1}return i>0&&s.size>=Math.min(r.cells[e].cap>=0?3:2,i)}var Fe=e=>!!(r.siege&&r.siege[e]),lr=(e,t,o)=>Math.ceil(Je(e,t)*(Fe(o)?H.siegeCostMul:1));function Gr(e,t){let o=r.walls[t];return!o||le(t)!==e?A("rule.repair.noWalls"):o.hp>=he(t)?A("rule.repair.intact"):Fe(t)?A("rule.repair.besieged"):o.rep===r.turn?A("rule.repair.done"):N[t].some(i=>{let s=r.grid[i];return s&&s.alive&&D(e,s.side)})?A("rule.repair.enemyNear"):r.sides[e].gold<H.repairCost?A("rule.gold.short",{n:H.repairCost-r.sides[e].gold}):""}var Jr=(e,t)=>Math.ceil(he(t)*H.repairFrac);function Do(e,t){if(Gr(e,t))return!1;let o=r.sides[e],i=r.walls[t];return o.gold-=H.repairCost,i.hp=Math.min(he(t),i.hp+Jr(e,t)),i.rep=r.turn,o.stats.repairs=(o.stats.repairs||0)+1,!0}function Bt(e){for(let t of r.cells)if(t.bld&&t.bld.type==="market"&&t.bld.owner===e)return t.i;return-1}var ar=e=>e.trade&&e.trade.s!==void 0?e.trade:e.trade={s:0,b:0};function Yr(e,t){let o=r.sides[e],i=H.market,s=Bt(e);return s<0?A("rule.trade.noMarket"):Fe(s)?A("rule.trade.besieged"):t==="sell"?o.food<i.lot?A("rule.trade.lowFood"):"":o.gold<st(e,"buy")?A("rule.gold.short",{n:st(e,"buy")-o.gold}):""}function st(e,t,o=0){let i=H.market,s=ar(r.sides[e]);return t==="sell"?Math.max(1,i.sell-(s.s+o)*i.sellStep):i.buy+(s.b+o)*i.buyStep}function _o(e,t){if(Yr(e,t))return!1;let o=r.sides[e],i=H.market,s=ar(o);return t==="sell"?(o.food-=i.lot,o.gold+=st(e,"sell"),s.s++):(o.gold-=st(e,"buy"),o.food+=i.lot,s.b++),o.stats.trades=(o.stats.trades||0)+1,!0}var Vr=e=>N[e.cell].some(t=>{let o=r.grid[t];return o&&o.alive&&o!==e&&o.type==="healer"&&ce(e.side,o.side)});function jr(e){let t=he(e);t?r.walls[e]={hp:t}:delete r.walls[e]}function Pt(e){return Math.max(1,Math.round(H.wallDmg[e.type]*Ct(e)*(Wr(e.side)?1-H.morale:1)))}var Wr=e=>r.turn<r.sides[e].moraleUntil;function Io(e,t,o){for(let i of N[t]){let s=r.grid[i];if(s&&s.alive&&s.side===e&&s.type==="cmd"&&s!==o)return!0}return!1}function Pn(e,t){let o=0;for(let i of N[t.cell]){let s=r.grid[i];s&&s.alive&&s.side===e.side&&s!==e&&s.type!=="cat"&&!k[s.type].noAtk&&o++}return Math.min(H.flankMax,o)}function at(e){let t=r.supply[e];if(t.fill(0),!r.sides[e].alive)return;let o=[],i=s=>{t[s]!==2&&(t[s]=2,o.push(s))};i(r.caps[e]);for(let s of r.cells)s.village&&s.vOwner===e&&i(s.i),s.bld&&s.bld.owner===e&&i(s.i);for(;o.length;){let s=o.pop();for(let f of N[s])t[f]!==2&&(ce(e,r.terr[f])&&Ae(r.cells[f].t)||r.cells[f].t==="bridge")&&(t[f]=2,o.push(f))}for(let s=0;s<L;s++)if(t[s]===2)for(let f of N[s])t[f]||(t[f]=1)}function Wo(e,t,o){let i=r.sides[e],s=k[t],f=r.cells[o];if(!Cn(e,t))return A("rule.recruit.otherPeople");let l=f.bld&&f.bld.type==="port"&&f.bld.owner===e;return s.naval&&!l?A("rule.recruit.portOnly"):!s.naval&&l&&f.cap!==e?A("rule.recruit.shipsOnly"):s.capOnly&&f.cap!==e?A("rule.recruit.capitalOnly"):s.unique&&r.units.some(c=>c.alive&&c.side===e&&c.type===t)?A("rule.recruit.have"):t==="cmd"&&r.turn<i.cmdReady?A("rule.recruit.wait",{n:i.cmdReady-r.turn}):Kr(e,o,t)<0?s.naval?A("rule.recruit.noWater"):A("rule.recruit.noRoom"):i.gold<lr(e,t,o)?A("rule.gold.short",{n:lr(e,t,o)-i.gold}):""}function Te(){let e=new Array(L).fill(null),t=(o,i,s,f)=>{for(let l=0;l<L;l++){let c=x(o,l);if(c>s)continue;let p=c-f*.5,u=e[l];!u||p<u.k?e[l]={k:p,side:i}:p===u.k&&u.side!==i&&(e[l]={k:p,side:-1})}};for(let o of r.sides)o.alive&&t(r.caps[o.id],o.id,2,1);for(let o of r.cells)o.village&&o.vOwner>=0&&t(o.i,o.vOwner,1,0),o.bld&&t(o.i,o.bld.owner,Oe[o.bld.type].claim,0);for(let o=0;o<L;o++)r.zone[o]=e[o]?e[o].side:-2,r.terr[o]=r.zone[o]>=0?r.zone[o]:r.walk[o]}function qo(e,t){return!Ae(r.cells[t].t)||r.walk[t]===e||r.zone[t]>=0&&r.zone[t]!==e||r.walk[t]>=0&&!D(e,r.walk[t])?!1:(r.walk[t]=e,Te(),!0)}function Fn(e,t){let o=e*L+t,i=Xt.get(o);if(i)return i;i=[];let s=x(e,t),f=ge[e].q+1e-6,l=ge[e].r+2e-6,c=ge[t].q+1e-6,p=ge[t].r+2e-6;for(let u=1;u<s;u++){let S=u/s,b=f+(c-f)*S,O=l+(p-l)*S,R=-b-O,U=Math.round(b),B=Math.round(O),F=Math.round(R),J=Math.abs(U-b),V=Math.abs(B-O),X=Math.abs(F-R);J>V&&J>X?U=-B-F:V>X&&(B=-U-F);let ee=Hr(U,B);ee>=0&&i.push(ee)}return Xt.set(o,i),i}function Hn(e,t,o){if(x(e,t)<=1)return!0;for(let i of Fn(e,t)){let s=r.cells[i].t;if(s==="mountain"||s==="forest"&&!o)return!1}return!0}function xt(e){let t=r.sides[e];if(t.vis.fill(0),!t.alive&&!r.preview)return;let o=(l,c,p)=>{for(let u=0;u<L;u++)!t.vis[u]&&x(l,u)<=c&&Hn(l,u,p)&&(t.vis[u]=1)},i=(l,c)=>r.cells[l].t==="hills"||r.cells[l].bld&&r.cells[l].bld.type==="fort"&&r.cells[l].bld.owner===c;for(let l of r.units)l.alive&&!l.aboard&&ce(e,l.side)&&o(l.cell,Rn(l.side,l.type)+se[r.cells[l.cell].t].sight,i(l.cell,l.side)||!!k[l.type].eagle);for(let l of r.sides)l.alive&&ce(e,l.id)&&o(r.caps[l.id],3,!0);for(let l of r.cells)l.village&&ce(e,l.vOwner)&&o(l.i,1,!1),l.bld&&ce(e,l.bld.owner)&&o(l.i,Oe[l.bld.type].sight,l.bld.type==="fort"||l.t==="hills");let s=Object.fromEntries(We.map(l=>[l,0])),f={};for(let l=0;l<L;l++)if(t.vis[l]){t.explored[l]=1;let c=r.cells[l];t.memOwner[l]=c.village?c.vOwner:-1,t.memBld[l]=c.bld?{type:c.bld.type,owner:c.bld.owner}:null,t.memLvl[l]=c.village?c.vLvl:c.cap>=0?r.sides[c.cap].capLvl:0,t.memRuin[l]=r.walls[l]&&r.walls[l].hp<=0?1:0,c.cap>=0&&c.cap!==e&&(t.kc[c.cap]=l,t.intel[c.cap].wall={hp:r.walls[l]?r.walls[l].hp:0,max:he(l),t:r.turn});let p=r.grid[l];if(p&&p.alive&&D(e,p.side)&&s[p.type]++,p&&p.alive&&p.side!==e){let u=f[p.side]||(f[p.side]={});u[p.type]=(u[p.type]||0)+1}}for(let l in f){let c=t.intel[l];c.last=r.turn,c.now=f[l];for(let p in f[l])c.max[p]=Math.max(c.max[p]||0,f[l][p])}for(let l=0;l<r.ns;l++)f[l]||(t.intel[l].now=null);for(let l of We)t.seen[l]=Math.max(t.seen[l],s[l])}function be(e){let t=ue[r.sides[e].capLvl],o=Fe(r.caps[e]),i=o?0:5+t.gold,s=o?0:3+t.food,f=0,l=0,c=0,p=0;for(let u of r.cells)r.terr[u.i]===e&&(p+=se[u.t].gold),u.village&&u.vOwner===e&&(l++,Fe(u.i)||(i+=u.vLvl>1?5:3,s+=(u.vLvl>1?2:1)+(Q(e)==="cossacks"?1:0))),u.bld&&u.bld.owner===e&&u.bld.type==="port"&&(s+=1),u.bld&&u.bld.owner===e&&u.bld.type==="market"&&!Fe(u.i)&&(i+=1),u.bld&&u.bld.owner===e&&u.bld.type==="farm"&&(s+=(u.t==="plains"?3:2)+(pe(e,"crops")?1:0),c++);i+=Math.floor(p/2);for(let u of r.units)u.alive&&u.side===e&&(f+=Un(e,u.type));return{gold:i,food:s,up:f,net:s-f,vill:l,farms:c}}function cr(e,t,o){let i=r.cells[t];if(r.terr[t]!==e||i.cap>=0||i.village||i.bld||!Oe[o].terr.includes(i.t)||Oe[o].coast&&!Bn(t)||Oe[o].one&&Bt(e)>=0)return!1;let s=r.grid[t];return s&&s.side!==e?!1:r.sides[e].gold>=bt(e,o)}var Co=e=>qe[e].x*qe[e].x+qe[e].z*qe[e].z;function Kr(e,t,o="inf"){let i=!!k[o].naval;if(!i&&!r.grid[t])return t;let s=-1;for(let f of N[t])r.grid[f]||(i?!Rt(f):!ae(r.cells[f].t)||r.terr[f]!==e)||(s<0||Co(f)<Co(s))&&(s=f);return s}function Go(e,t){let o=r.cells[t];return o.cap===e||!!(o.bld&&(o.bld.type==="barracks"||o.bld.type==="port")&&o.bld.owner===e)}var Ct=e=>1+.2*(e.lvl-1),nr=(e,t)=>.5+.5*t/e.maxHp,vt=(e,t)=>k[e.type].beats===de(t.type)||e.type==="cat"&&k[t.type].naval?1.5:1,Uo=(e,t,o)=>!!k[e.type].naval!=!!k[t.type].naval&&o===1&&!k[e.type].siege?H.shore:1,He=(e,t,o)=>{let i=x(t,o),s=k[e];return i<=s.range&&i>=(s.minRange||1)};function Ke(e,t,o){let i=k[e.type],s=k[t.type],f=x(o,t.cell),l=!!i.siege&&Ut(t.cell)>0,c=Pn(e,t),p=Io(e.side,o,e),u=Io(t.side,t.cell,t),S=Wr(e.side),b=Wr(t.side),O=(p?1+H.aura:1)*(e.oos?1-H.supplyPen:1),R=(u?1+H.aura:1)*(t.oos?1-H.supplyPen:1),U=l?se[r.cells[t.cell].t].def:we(t.cell),B=Uo(e,t,f),F=Eo(e)*Ct(e)*nr(e,e.hp)*vt(e,t)*(1+H.flank*c)*O*(S?1-H.morale:1)*(l?H.siegeMul:1)*B,J=No(t)*Ct(t)*nr(t,t.hp)*(1+U)*vt(t,e)*R,V=Math.max(1,Math.round(wo*F/(F+J))),X=Math.max(0,t.hp-V),ee=0;if(X>0&&!s.noRet&&f<=s.range&&f>=(s.minRange||1)){let $=Eo(t)*Ct(t)*nr(t,X)*vt(t,e)*R*(b?1-H.morale:1)*(s.range>1&&f===1?H.rangedMelee:1)*Uo(t,e,f),ie=No(e)*Ct(e)*nr(e,e.hp)*(1+we(o))*vt(e,t)*O;ee=Math.max(1,Math.round(bo*$/($+ie)))}let Me=Math.max(0,e.hp-ee);return{dmg:V,ret:ee,dHp:X,aHp:Me,defDies:X<=0,attDies:Me<=0,dist:f,adv:vt(e,t)>1,disadv:vt(t,e)>1,tdef:U,wall:l?Ut(t.cell):0,flank:c,aAura:p,dAura:u,aMor:S,dMor:b,aOos:!!e.oos,dOos:!!t.oos,siege:l,shore:B<1,breach:l&&r.cells[t.cell].village&&!ir(t.cell),wallHit:l&&Ee(t.cell)?Pt(e):0}}function ze(e){let t=r.sides[e.side],o=new Map;if(e.moves<=0)return o;if(e.aboard){for(let U of N[e.cell]){if(!t.explored[U]||!ae(r.cells[U].t)||r.grid[U]||yt(e.side,U))continue;let B=r.terr[U];B>=0&&it(e.side,B)||o.set(U,{cost:e.moves,prev:e.cell,end:!0,land:!0})}return o}let i=!!k[e.type].naval,s=U=>{let B=r.grid[U];return B&&B.alive&&B.side!==e.side&&t.vis[U]&&!ce(e.side,B.side)},f=U=>{let B=r.grid[U];return B&&B.alive&&t.vis[U]&&D(e.side,B.side)&&!!k[B.type].naval===i},l=U=>N[U].some(f),c=r.terr[e.cell],p=U=>{let B=r.terr[U];return B>=0&&it(e.side,B)&&B!==c},u=new Map([[e.cell,0]]),S=new Map,b=[e.cell],O=new Set,R=new Map;for(;b.length;){let U=0;for(let F=1;F<b.length;F++)u.get(b[F])<u.get(b[U])&&(U=F);let B=b.splice(U,1)[0];if(!O.has(B)&&(O.add(B),!(B!==e.cell&&!k[e.type].skirmish&&l(B))))for(let F of N[B]){if(!t.explored[F])continue;if(!i){let X=r.grid[F];if(X&&X.alive&&X.side===e.side&&k[X.type].hold&&kt(X)>0){!R.has(F)&&u.get(B)<e.moves&&R.set(F,B);continue}}if(i?!Ve(r.cells[F].t):se[r.cells[F].t].move>=99)continue;let J=i?1:se[r.cells[F].t].move;if(s(F)||yt(e.side,F)||p(F))continue;let V=!i&&r.cells[F].t==="ford"?e.moves:u.get(B)+J;V>e.moves||(!u.has(F)||V<u.get(F))&&(u.set(F,V),S.set(F,B),b.push(F))}}for(let[U,B]of u)if(U!==e.cell){let F=r.grid[U];o.set(U,{cost:B,prev:S.get(U),end:!(F&&F.alive&&F!==e&&(ce(e.side,F.side)||t.vis[U]))})}for(let[U,B]of R)o.set(U,{cost:e.moves,prev:B,end:!0,board:!0});return o}function ke(e,t,o){let i=[],s=o,f=0;for(;s!==t&&f++<60;)i.unshift(s),s=e.get(s).prev;return i}function Zr(e,t){let o=r.sides[e.side],i=new Map,s=k[e.type];if(e.attacked||s.setup&&e.moved||e.aboard||s.noAtk)return i;let f=[e.cell];if(t&&!s.setup)for(let[l,c]of t)c.end&&!c.board&&f.push(l);for(let l of r.units){if(!l.alive||l.aboard||!D(e.side,l.side)||!o.vis[l.cell])continue;let c=null,p=-1e9;for(let u of f){if(!He(e.type,u,l.cell))continue;let S=Ke(e,l,u),b=(u===e.cell?3:0)+we(u)*4-S.ret-(t&&u!==e.cell?t.get(u).cost*.1:0);b>p&&(p=b,c=u)}c!==null&&i.set(l.cell,{from:c,target:l})}for(let l in r.walls){let c=+l;if(!sr(e.side,c)||!o.vis[c]||r.grid[c])continue;let p=null,u=-1e9;for(let S of f){if(!He(e.type,S,c))continue;let b=(S===e.cell?3:0)+we(S)*4-(t&&S!==e.cell?t.get(S).cost*.1:0);b>u&&(u=b,p=S)}p!==null&&i.set(c,{from:p,wall:!0,cell:c})}if(s.siege)for(let l=0;l<L;l++){let c=r.cells[l];c.bld&&D(e.side,c.bld.owner)&&o.vis[l]&&!r.grid[l]&&!Ee(l)&&He(e.type,e.cell,l)&&i.set(l,{from:e.cell,bld:!0,cell:l})}return i}function te(){Te();for(let e=0;e<r.ns;e++)xt(e)}function re(e){if(!r.sides[e].alive)return 0;let t=0;for(let o of r.units)o.alive&&o.side===e&&(t+=k[o.type].cost*(1+.3*(o.lvl-1))*(o.hp/o.maxHp*.5+.5));return Math.round(t+12*r.cells.filter(o=>o.village&&o.vOwner===e).length+25*r.sides[e].capLvl+r.sides[e].gold*.3)}function fr(e,t){let o=r.sides[e],i=ot[t];return o.tech[t]?A("act.tech.have"):i.req&&!o.tech[i.req]?A("act.tech.needs",{name:{tech:i.req}}):i.cap&&o.capLvl<i.cap?A("act.tech.capLevel",{lvl:i.cap}):o.gold<i.cost?A("rule.gold.short",{n:i.cost-o.gold}):""}function $r(e,t,o,i){let s={id:Lo(),side:e,type:t,cell:o,hp:k[t].hp,maxHp:k[t].hp,xp:0,lvl:1,moves:i?Ye(e,t):0,attacked:!i,moved:!1,oos:!1,order:null,alive:!0,role:null,goal:-1};return r.units.push(s),r.grid[o]=s,s}function Ft(){return{v:ko,mapv:zr,diff:r.diff,seed:r.seed,rng:r.rng,turn:r.turn,current:r.current,begun:r.begun,uid:Ge,size:r.size,mapType:r.mapType,mode:r.mode,win:{...r.win},setup:{...r.setup,slots:r.setup.slots?r.setup.slots.map(e=>({...e})):null},human:[...r.human],rel:r.rel.map(e=>[...e]),relSince:r.relSince.map(e=>[...e]),dip:JSON.parse(JSON.stringify(r.dip)),cells:r.cells.map(e=>e.village||e.bld?[e.vOwner,e.bld?e.bld.type:0,e.bld?e.bld.owner:0,e.vLvl||1]:0),walk:Array.from(r.walk),breach:JSON.parse(JSON.stringify(r.breach)),walls:JSON.parse(JSON.stringify(r.walls)),siege:{...r.siege},units:r.units.filter(e=>e.alive).map(e=>({id:e.id,side:e.side,type:e.type,cell:e.cell,hp:e.hp,maxHp:e.maxHp,xp:e.xp,lvl:e.lvl,moves:e.moves,attacked:e.attacked,moved:e.moved,oos:e.oos,order:e.order?{...e.order}:null,aboard:e.aboard||null})),sides:r.sides.map(e=>({fac:e.fac||null,bot:e.bot?{...e.bot}:null,alive:e.alive,diedAt:e.diedAt,killer:e.killer,gold:e.gold,food:e.food,kc:[...e.kc],explored:Array.from(e.explored).join(""),memOwner:Array.from(e.memOwner),memBld:e.memBld.map(t=>t?[t.type,t.owner]:0),memLvl:Array.from(e.memLvl),memRuin:Array.from(e.memRuin),intel:e.intel.map(t=>({max:{...t.max},last:t.last,wall:t.wall?{...t.wall}:null})),trade:e.trade?{...e.trade}:null,seen:{...e.seen},ai:{...e.ai},capLvl:e.capLvl,tech:{...e.tech},vStreak:e.vStreak,tStreak:e.tStreak,moraleUntil:e.moraleUntil,cmdReady:e.cmdReady,stats:JSON.parse(JSON.stringify(e.stats))}))}}var Jo=(e,t)=>{let o=r.sides[e.side];return r.units.some(i=>i.alive&&D(e.side,i.side)&&o.vis[i.cell]&&x(i.cell,e.cell)<=t)};function Yo(e){let t=r.sides[e.side],o=new Float32Array(L).fill(1/0),i=new Int16Array(L).fill(-1),s=new Uint8Array(L);o[e.cell]=0;let f=r.terr[e.cell];for(;;){let l=-1,c=1/0;for(let p=0;p<L;p++)!s[p]&&o[p]<c&&(c=o[p],l=p);if(l<0)break;s[l]=1;for(let p of N[l]){if(s[p]||!t.explored[p])continue;let u=!!k[e.type].naval,S=u?Ve(r.cells[p].t)?1:99:se[r.cells[p].t].move;if(S>=99||yt(e.side,p))continue;let b=r.terr[p];if(b>=0&&it(e.side,b)&&b!==f)continue;let O=r.grid[p];if(O&&O.alive&&t.vis[p]&&!ce(e.side,O.side))continue;let R=c+(!k[e.type].naval&&r.cells[p].t==="ford"?3:S);R<o[p]&&(o[p]=R,i[p]=l)}}return{d:o,prev:i}}function zn(e,t,o){if(o=o||Yo(e),t===e.cell||!isFinite(o.d[t]))return null;let i=[];for(let s=t;s!==e.cell&&s>=0;s=o.prev[s])i.unshift(s);return{path:i,cost:o.d[t],turns:Math.max(1,Math.ceil(o.d[t]/Math.max(1,Ye(e.side,e.type))))}}function Ht(e,t){e.order=null,E({e:"orderEnd",u:e.id,side:e.side,cell:e.cell,why:t})}function Vo(e){let t=e.order;if(!t||!e.alive)return!1;let o=t.type==="explore"?2:3;if(Jo(e,o))return Ht(e,"enemy"),!1;if(t.type==="hold"||e.moves<=0)return!1;let i=Yo(e),s=t.dest;if(t.type==="explore"){let p=r.sides[e.side],u=-1,S=1/0;for(let b=0;b<L;b++){if(b===e.cell||!isFinite(i.d[b])||r.grid[b]&&r.grid[b].alive)continue;let O=N[b].filter(U=>!p.explored[U]).length;if(!O)continue;let R=i.d[b]-O*.8;R<S&&(S=R,u=b)}if(u<0)return Ht(e,"explored"),!1;s=u}let f=zn(e,s,i);if(!f)return t.type==="goto"&&(s!==e.cell?Ht(e,"blocked"):e.order=null),!1;let l=ze(e),c=-1;for(let p=f.path.length-1;p>=0;p--){let u=l.get(f.path[p]);if(u&&u.end){c=p;break}}return c<0?(t.wait=(t.wait||0)+1,t.wait>2&&Ht(e,"busy"),!1):(t.wait=0,dr(e,ke(l,e.cell,f.path[c])),e.alive&&(t.type==="goto"&&e.cell===t.dest?e.order=null:Jo(e,o)&&Ht(e,"enemy")),!0)}function jo(e){let t=_(e).filter(s=>s.order);if(!t.length)return;let o=0,i=0;for(let s of t){if(r.over)break;if(!s.alive||!s.order)continue;let f=s.order;Vo(s),s.alive&&!s.order&&(f.type==="goto"&&s.cell===f.dest?i++:o++)}E({e:"ordersDone",side:e,stopped:o,arrived:i}),te()}function Ko(e,t){e.order=t,t&&t.type!=="hold"&&e.moves>0&&Vo(e)}var Ze=(e,t)=>e<t?e+"-"+t:t+"-"+e;function Dt(e){!r||!r.dip||(r.dip.log.unshift({t:r.turn,key:e.key,vars:e.vars}),r.dip.log.length>14&&(r.dip.log.length=14))}var Z=(e,t)=>t?{s:e,f:t}:{s:e};function hr(e,t,o){r.rel[e][t]=r.rel[t][e]=o,r.relSince[e][t]=r.relSince[t][e]=r.turn,r.dip.offers=r.dip.offers.filter(i=>Ze(i.from,i.to)!==Ze(e,t)),Te();for(let i of r.sides)at(i.id);for(let i=0;i<r.ns;i++)xt(i);ct()}function mr(e,t,o,i){Dt(o),E({e:"news",a:e,b:t,key:o.key,vars:o.vars,tone:i})}function Zo(e,t){hr(e,t,"peace");let o=It();mr(e,t,o>=0&&(e===o||t===o)?A("dip.peace.made.you",{b:Z(e===o?t:e)}):A("dip.peace.made.others",{a:Z(e),b:Z(t)}),"good")}function $o(e,t){hr(e,t,"ally");let o=It();mr(e,t,o>=0&&(e===o||t===o)?A("dip.ally.made.you",{b:Z(e===o?t:e)}):A("dip.ally.made.others",{a:Z(e),b:Z(t)}),"good")}function Qo(e,t){let o=r.rel[e][t];hr(e,t,"war"),r.sides[t].ai.grudge=Object.assign(r.sides[t].ai.grudge||{},{[e]:r.turn});let i=It();mr(e,t,i>=0&&t===i?A("dip.war.declared.onYou",{a:Z(e)}):i>=0&&e===i?A("dip.war.declared.byYou",{b:Z(t,"dat")}):o==="ally"?A("dip.war.declared.othersAlly",{a:Z(e),b:Z(t,"dat")}):A("dip.war.declared.others",{a:Z(e),b:Z(t,"dat")}),"bad")}function Xo(e,t){hr(e,t,"peace"),r.sides[t].ai.grudge=Object.assign(r.sides[t].ai.grudge||{},{[e]:r.turn});let o=It();mr(e,t,o>=0&&t===o?A("dip.ally.broken.withYou",{a:Z(e)}):o>=0&&e===o?A("dip.ally.broken.byYou",{b:Z(t,"ins")}):A("dip.ally.broken.others",{a:Z(e),b:Z(t)}),"bad")}function pr(){let e=ve(),t=e.find(i=>r.sides[i].vStreak>0||r.sides[i].tStreak>0);if(t!==void 0)return t;let o=e.map(i=>[i,re(i)]).sort((i,s)=>s[1]-i[1]);return o.length>1&&o[0][1]>o[1][1]*1.25?o[0][0]:-1}function gr(e,t){let o=ve();if(o.length<3)return-1;let i=(s,f)=>!(s===e&&f===t||s===t&&f===e)&&r.rel[s][f]==="war";for(let s of o){let f=o.filter(l=>l!==s);if(f.every(l=>i(s,l))&&f.every(l=>f.every(c=>l===c||!i(l,c))))return s}return-1}var zt=(e,t)=>r.units.filter(o=>o.alive&&o.side===e&&(r.zone[o.cell]===t||x(o.cell,r.caps[t])<=4)).length,xe=e=>({ok:!1,why:e}),Mt=e=>({ok:!0,why:e});function Dn(e,t,o){let i=r.sides[e],s=Math.max(1,re(e)),f=Math.max(1,re(t));if(i.ai.grudge&&i.ai.grudge[t]!==void 0&&r.turn-i.ai.grudge[t]<12)return xe(A("dip.why.grudge"));let c=r.sides[t];if(c.vStreak||c.tStreak)return xe(A("dip.why.racing"));if(r.turn<5)return xe(A("dip.why.early"));if(o==="peace"){if(r.rel[e][t]!=="war")return xe(A("dip.why.notAtWar"));let p=ye(e).length,u=i.ai.target===t,S=gr(e,t);if(S>=0&&S!==pr())return xe(A("dip.why.leftAlone",{side:Z(S)}));let b=zt(t,e),O=zt(e,t);return O>=2&&s>f*.9?xe(A("dip.why.armyNear")):s<f*.75&&(b||p>=2)?Mt(A("dip.why.fearArmy")):p>=2&&!u?Mt(A("dip.why.otherFoes")):p>=2&&s<f?Mt(A("dip.why.manyFronts")):u&&s>f*1.1?xe(A("dip.why.advantage")):s<f*.9?Mt(A("dip.why.youStronger")):!b&&!O&&x(r.caps[e],r.caps[t])>(Y+ne)/2.4?Mt(A("dip.why.farApart")):xe(A("dip.why.wantWar"))}if(o==="ally"){if(r.rel[e][t]!=="peace")return xe(A("dip.why.needPeace"));if(r.turn-r.relSince[e][t]<3)return xe(A("dip.why.peaceFresh"));let p=pr();return p===e?xe(A("dip.why.noAllyNeeded")):p===t?xe(A("dip.why.fearPower")):ye(e).some(u=>D(t,u))?Mt(A("dip.why.commonFoe")):xe(A("dip.why.noCommonFoe"))}return{ok:!1,why:""}}function en(e,t,o){if(r.dip.asked[Ze(e,t)+o]=r.turn,!Nt(t)){r.dip.offers.some(s=>s.from===e&&s.to===t)||r.dip.offers.push({from:e,to:t,type:o,turn:r.turn}),E({e:"offer",from:e,to:t,type:o});return}let i=Dn(t,e,o);i.ok&&(o==="peace"?Zo(e,t):$o(e,t)),E({e:"answer",from:e,to:t,type:o,ok:i.ok,why:i.why})}var Qr=(e,t)=>r.dip.offers.find(o=>o.from===e&&o.to===t&&r.sides[o.from].alive&&r.sides[o.to].alive&&(o.type==="peace"?r.rel[o.from][o.to]==="war":r.rel[o.from][o.to]==="peace"))||null;function tn(e,t,o){let i=Qr(t,e);if(r.dip.offers=r.dip.offers.filter(f=>f!==i),o){i.type==="peace"?Zo(i.from,i.to):$o(i.from,i.to);return}r.dip.asked[Ze(i.from,i.to)+i.type]=r.turn;let s={a:Z(i.to),b:Z(i.from,"ins")};Dt(i.type==="peace"?A("dip.rejected.peace",s):A("dip.rejected.ally",s)),E({e:"rejected",from:i.from,to:i.to,type:i.type})}var $e=(e,t,o,i)=>{let s=r.dip.asked[Ze(e,t)+o];return s!==void 0&&r.turn-s<i};function ur(e,t,o,i=Lt[o]){let s=r.sides[e],f=r.sides[t];return e===t||!f.alive||r.rel[e][t]!=="ally"||(o==="gold"?s.gold:s.food)<i?!1:(o==="gold"?(s.gold-=i,f.gold+=i):(s.food-=i,f.food+=i),s.stats.aid=(s.stats.aid||0)+i,Dt(A("dip.aid.log."+o,{a:Z(e),b:Z(t,"dat"),n:i})),E({e:"aid",from:e,to:t,kind:o,n:i}),!0)}function rn(e,t){r.dip.asked[Ze(e,t)+"aid"]=r.turn;let o=r.sides[t],i=ye(t).length>0,s=o.gold-(i?70:50);if(s>=20){let f=Math.min(40,Math.floor(s/2/5)*5);ur(t,e,"gold",Math.max(15,f));return}if(o.food>=35&&be(t).net>=0){ur(t,e,"food",15);return}E({e:"aidRefused",from:e,to:t,why:i?A("dip.why.aid.struggling"):A("dip.why.aid.emptyTreasury")})}function _n(e){let t=r.sides[e];Te();for(let l of We)t.seen[l]*=.85;{let l=ar(t);l.s=Math.max(0,l.s-1),l.b=Math.max(0,l.b-1)}for(let l in r.breach)r.turn>r.breach[l].until&&delete r.breach[l];at(e);let o=-1;for(let l of r.cells)!qr(l.i)||le(l.i)!==e||(zo(l.i)?(r.siege[l.i]=(r.siege[l.i]||0)+1,l.cap>=0&&(t.stats.besieged=(t.stats.besieged||0)+1),r.siege[l.i]===1&&(o<0||l.cap>=0)&&(o=l.i)):delete r.siege[l.i]);o>=0&&E({e:"besieged",side:e,cell:o,cap:r.cells[o].cap>=0});for(let l in r.walls){let c=+l,p=r.walls[l];if(le(c)!==e)continue;let u=he(c);if(p.hit){delete p.hit;continue}Fe(c)||p.hp<u&&!N[c].some(S=>{let b=r.grid[S];return b&&b.alive&&D(e,b.side)})&&(p.hp=Math.min(u,p.hp+Math.ceil(u*H.wallRegen*(pe(e,"mason")?1.6:1))))}let i=r.caps[e];if(Ee(i))for(let l of N[i]){let c=r.grid[l];if(!c||!c.alive||!D(e,c.side))continue;let p=Math.min(c.hp,ue[t.capLvl].tower);c.hp-=p,t.stats.towerDmg=(t.stats.towerDmg||0)+p,E({e:"tower",side:e,from:i,cell:l,u:c.id,dmg:p,hp:c.hp}),c.hp<=0&&(t.stats.kills++,_t(c,null,"tower"))}Vn(e);let s=!1;if(r.turn>1){let l=be(e);t.gold+=l.gold,t.stats.goldEarned+=l.gold,t.food+=l.net,t.food<0&&(t.food=0,s=!0)}for(let l of _(e)){if(l.moves=Ye(e,l.type),l.attacked=!1,l.moved=!1,l.oos=!k[l.type].naval&&!l.aboard&&!r.supply[e][l.cell],l.oos&&r.turn>1){let c=Math.min(l.hp-1,Math.ceil(l.maxHp*H.attrition));c>0&&(l.hp-=c,E({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"supply"}))}if(s){let c=Math.ceil(l.maxHp*.15);if(l.hp-=c,t.stats.starved++,E({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"hunger"}),l.hp<=0){_t(l,null,"starve");continue}}else if(Fe(l.cell)&&le(l.cell)===e){if(r.siege[l.cell]>=2){let c=Math.min(l.hp-1,Math.ceil(l.maxHp*H.siegeHunger));c>0&&(l.hp-=c,E({e:"hurt",u:l.id,side:e,cell:l.cell,n:c,hp:l.hp,why:"siege"}))}}else if(k[l.type].naval&&Ho(e,l.cell)&&l.hp<l.maxHp){let c=l.hp;l.hp=Math.min(l.maxHp,l.hp+Math.ceil(l.maxHp*.3)),E({e:"heal",u:l.id,side:e,cell:l.cell,n:l.hp-c,hp:l.hp,med:!1})}else if(!l.aboard&&l.hp<l.maxHp&&(r.zone[l.cell]===e||Vr(l))){let c=r.cells[l.cell],p=r.zone[l.cell]===e,u=c.cap===e||c.village&&c.vOwner===e||c.bld&&c.bld.type==="fort",S=l.hp,b=Vr(l)?H.heal:0;l.hp=Math.min(l.maxHp,l.hp+Math.ceil(l.maxHp*((p?u?.3:.2:0)+b+(Q(e)==="cossacks"?.1:0)))),E({e:"heal",u:l.id,side:e,cell:l.cell,n:l.hp-S,hp:l.hp,med:!!b})}}s&&E({e:"starving",side:e});let f=_(e).filter(l=>l.oos).length;f&&E({e:"supplyCut",side:e,n:f}),te()}function Wn(e){if(E({e:"turn",side:e,turn:r.turn}),_n(e),r.begun=!0,!(!r.human[e]||r.spectate)&&!(ct()||r.over)){if(_(e).length===0&&r.sides[e].gold<15&&r.ns===2){r.over={winner:1-e,reason:"army"};return}E({e:"orders",side:e}),jo(e),ct()}}function nn(e){if((!r.human[e]||r.spectate)&&ct(),r.over)return;E({e:"end",side:e});let t=e;do t=(t+1)%r.ns;while(!r.sides[t].alive&&t!==e);t<=e&&r.turn++,r.current=t,r.begun=!1,Wn(t)}function ln(e,t){let o=r.sides[e];if(!o.alive)return;o.alive=!1,o.diedAt=r.turn,o.killer=t;let i=_(e);for(let l of i)l.alive=!1,r.grid[l.cell]===l&&(r.grid[l.cell]=null);for(let l of r.cells)l.village&&l.vOwner===e&&(l.vOwner=t),l.bld&&l.bld.owner===e&&(l.bld.owner=t,r.walls[l.i]&&(r.walls[l.i].hp=Math.min(r.walls[l.i].hp,he(l.i))));for(let l=0;l<L;l++)r.walk[l]===e&&(r.walk[l]=t);let s=r.caps[e],f=r.cells[s];f.cap=-1,f.village=!0,f.vOwner=t,f.vLvl=2,delete r.walls[s],delete r.siege[s],t>=0&&(r.sides[t].gold+=o.gold,r.sides[t].stats.conquered=(r.sides[t].stats.conquered||0)+1),o.gold=0,r.dip&&(r.dip.offers=r.dip.offers.filter(l=>l.from!==e&&l.to!==e)),Dt(A("act.fall.log",{by:{s:t},side:{s:e,f:"gen"}})),E({e:"fall",side:e,by:t,army:i.map(l=>l.cell)});for(let l of r.sides)at(l.id);Te()}function qn(){let e=r&&r.setup&&Mo[r.setup.scen];return!e||r.over||r.turn<=e.limit?!1:e.kind==="survive"&&r.sides[0].alive?(r.over={winner:0,reason:"survive"},!0):e.kind==="deadline"?(r.over={winner:1,loser:0,reason:"deadline"},!0):!1}function ct(){if(r.over)return!0;let e=ve();if(e.length===1)return r.over={winner:e[0],reason:"capital"},!0;if(r.ns>2&&e.every(t=>e.every(o=>t===o||r.rel[t][o]==="ally")))return r.over={winner:e[0],winners:e,reason:r.team?"team":"alliance"},!0;if(!r.spectate&&r.human.some(Boolean)&&!e.some(t=>r.human[t])){let t=r.human.findIndex(Boolean);return r.over={winner:r.sides[t].killer,loser:t,reason:"capital"},!0}return qn()}var on=()=>r.cells.reduce((e,t)=>e+(Ae(t.t)?1:0),0),Gn=e=>({v:e+(1-e)*.72,t:e+(1-e)*.3});function Jn(e){return r.team?Gn(r.team.filter(t=>t===r.team[e]).length/r.ns):xo[r.ns]}function Yn(e){let t=r.cells.filter(i=>i.village).length,o=Jn(e);return{vill:Math.ceil(t*o.v),villTotal:t,terr:Math.ceil(on()*o.t),land:on(),vPct:Math.round(o.v*100),tPct:Math.round(o.t*100)}}function Xr(e){let t=Yn(e),o=f=>f===e||r.team&&f>=0&&r.team[f]===r.team[e],i=r.cells.filter(f=>f.village&&o(f.vOwner)).length,s=0;for(let f=0;f<L;f++)o(r.terr[f])&&Ae(r.cells[f].t)&&s++;return{vill:i,terr:s,need:t,villOk:r.win.villages&&i>=t.vill,terrOk:r.win.territory&&s>=t.terr}}function Vn(e){let t=r.sides[e],o=Xr(e);if(!t.alive||(t.vStreak=o.villOk?t.vStreak+1:0,t.tStreak=o.terrOk?t.tStreak+1:0,r.over))return;let i=r.team?ve().filter(s=>r.team[s]===r.team[e]):null;t.vStreak>=Ur.villTurns?r.over={winner:e,winners:i,reason:"villages"}:t.tStreak>=Ur.terrTurns&&(r.over={winner:e,winners:i,reason:"territory"})}function sn(e,t){let o=r.cells[t],i=!1;if(k[e.type].noCapture)return!1;if(o.village&&o.vOwner!==e.side&&(o.vOwner<0||D(e.side,o.vOwner))){let s=o.vOwner;o.vOwner=e.side,i=!0,r.sides[e.side].stats.villages++,E({e:"capture",what:"village",cell:t,side:e.side,prev:s})}if(o.bld&&D(e.side,o.bld.owner)){let s=o.bld.owner;o.bld.owner=e.side,i=!0,E({e:"capture",what:"bld",cell:t,side:e.side,prev:s,type:o.bld.type})}return o.cap>=0&&D(e.side,o.cap)&&(i=!0,E({e:"capture",what:"capital",cell:t,side:e.side,prev:o.cap}),r.ns===2?r.over={winner:e.side,reason:"capital"}:(ln(o.cap,e.side),ct())),i&&(delete r.siege[t],Te()),qo(e.side,t),i&&te(),i}function dr(e,t){let o=r.sides[e.side],i=e.cell,s=[i];for(let f of t){if(!e.alive||r.over)break;let l=r.grid[f];if(l&&l.alive&&l!==e&&l.side===e.side&&!e.aboard&&!Le(e)&&k[l.type].hold&&kt(l)>0){let S=e.cell;r.grid[S]===e&&(r.grid[S]=null),e.aboard=l.id,e.cell=f,e.moves=0,e.moved=!0,E({e:"board",u:e.id,side:e.side,ship:l.id,from:S,to:f});break}if(l&&l.alive&&l.side!==e.side&&!ce(e.side,l.side)){e.moves=0,xt(e.side),E({e:"ambush",u:e.id,side:e.side,cell:e.cell,foe:f});break}let c=e.cell,p=e.aboard?Fo(e):null;e.moves=Math.max(0,e.moves-Po(e,f)),e.moved=!0,p&&(e.aboard=null,e.moves=0,o.stats.landed=(o.stats.landed||0)+1),r.grid[c]===e&&(r.grid[c]=null),e.cell=f,s.push(f),r.grid[f]||(r.grid[f]=e);for(let S of k[e.type].hold?je(e):[])S.cell=f;E({e:"step",u:e.id,side:e.side,from:c,to:f,ship:p?p.id:0});let u=!1;if(r.grid[f]===e&&(u=sn(e,f)),xt(e.side),E({e:"sight",side:e.side,vis:o.vis.slice()}),!k[e.type].skirmish&&N[f].some(S=>{let b=r.grid[S];return b&&b.alive&&D(e.side,b.side)&&Le(b)===Le(e)})&&(u=!0),u){e.moves=0;break}}if(e.alive&&!e.aboard&&r.grid[e.cell]!==e)for(let f=s.length-2;f>=0;f--){let l=s[f];if(!r.grid[l]||r.grid[l]===e){let c=e.cell;e.cell=l,r.grid[l]=e,E({e:"settle",u:e.id,from:c,to:l});break}}te()}function an(e,t){let o=Ke(e,t,e.cell),i=o.dist>1,s=r.sides[e.side].stats;E({e:"strike",u:e.id,side:e.side,from:e.cell,foe:t.id,foeSide:t.side,at:t.cell,ranged:i||e.type==="arch"}),s.attacks++,s.dmgBy[e.type]=(s.dmgBy[e.type]||0)+(t.hp-o.dHp),t.hp=o.dHp,E({e:"hit",u:t.id,side:t.side,cell:t.cell,by:e.id,dmg:o.dmg,hp:t.hp,max:t.maxHp,dies:o.defDies}),o.siege&&(s.siegeHits=(s.siegeHits||0)+1),o.wallHit&&cn(t.cell,o.wallHit,e.side),o.breach&&!o.defDies&&(E({e:"breach",cell:t.cell,fresh:!ir(t.cell)}),r.breach[t.cell]={side:e.side,until:r.turn+1}),e.attacked=!0,e.moves=0;let f=!1;if(o.defDies)f=!0,s.killsBy[e.type]=(s.killsBy[e.type]||0)+1,_t(t,e,"hit"),e.xp+=3;else{if(t.xp+=1,o.ret>0){E({e:"strike",u:t.id,side:t.side,from:t.cell,foe:e.id,foeSide:e.side,at:e.cell,ranged:o.dist>1||t.type==="arch",back:!0});let p=r.sides[t.side].stats;p.dmgBy[t.type]=(p.dmgBy[t.type]||0)+(e.hp-o.aHp),e.hp=o.aHp,E({e:"hit",u:e.id,side:e.side,cell:e.cell,by:t.id,dmg:o.ret,hp:e.hp,max:e.maxHp,dies:o.attDies,back:!0}),o.attDies&&(p.killsBy[t.type]=(p.killsBy[t.type]||0)+1,_t(e,t,"hit"),t.xp+=2)}e.alive&&(e.xp+=1)}for(let p of[e,t])p.alive&&eo(p);let l=r.cells[t.cell],c=l.cap>=0||l.village||!!l.bld;if(f&&e.alive&&c&&k[e.type].range===1&&x(e.cell,t.cell)===1&&!r.grid[t.cell]&&!yt(e.side,t.cell)&&Bo(e,t.cell)){let p=e.cell;r.grid[p]=null,e.cell=t.cell,r.grid[e.cell]=e,E({e:"step",u:e.id,side:e.side,from:p,to:e.cell,ship:0,advance:!0}),sn(e,e.cell)}te()}function cn(e,t,o){let i=r.walls[e];!i||i.hp<=0||(i.hp=Math.max(0,i.hp-t),i.hit=1,E({e:"walls",cell:e,dmg:t,hp:i.hp,by:o,owner:le(e),fell:i.hp===0,cap:r.cells[e].cap>=0}))}function fn(e,t){E({e:"wallStrike",u:e.id,side:e.side,from:e.cell,cell:t,owner:le(t)});let o=Pt(e);r.sides[e.side].stats.wallDmg=(r.sides[e.side].stats.wallDmg||0)+Math.min(o,r.walls[t].hp),e.attacked=!0,e.moves=0,e.xp+=1,cn(t,o,e.side),eo(e),te()}function dn(e,t){let o=r.cells[t],i=o.bld.owner,s=o.bld.type;E({e:"siegeShot",u:e.id,side:e.side,from:e.cell,cell:t,owner:i}),o.bld=null,delete r.walls[t],r.sides[e.side].stats.demolished++,e.attacked=!0,e.moves=0,e.xp+=1,eo(e),Te(),E({e:"collapse",cell:t,type:s,prev:i,by:e.side}),te()}function _t(e,t,o){let i=k[e.type].hold?je(e):[];e.alive=!1,r.grid[e.cell]===e&&(r.grid[e.cell]=null),r.sides[e.side].stats.losses++;for(let f of i)f.alive=!1,r.sides[f.side].stats.losses++,t&&r.sides[t.side].stats.kills++;let s=0;if(t&&Q(t.side)==="varangians"&&(s=H.plunder*(1+i.length),r.sides[t.side].gold+=s),e.type==="cmd"){let f=r.sides[e.side];f.moraleUntil=r.turn+H.moraleTurns,f.cmdReady=r.turn+H.moraleTurns}t&&r.sides[t.side].stats.kills++,E({e:"die",u:e.id,side:e.side,cell:e.cell,type:e.type,by:t?t.id:0,bySide:t?t.side:-1,cargo:i.map(f=>f.id),loot:s,how:o})}function eo(e){let t=!1;for(;e.lvl<3&&e.xp>=yo[e.lvl];){e.lvl++,t=!0;let o=Math.round(k[e.type].hp*(1+.15*(e.lvl-1)));e.hp=Math.min(o,e.hp+(o-e.maxHp)+Math.round(o*.25)),e.maxHp=o}t&&E({e:"level",u:e.id,side:e.side,cell:e.cell,type:e.type,lvl:e.lvl,hp:e.hp,maxHp:e.maxHp})}var Qe=null;function Wt(e){Qe=e}var St=()=>Qe;function pn(e,t){Qe&&(Qe.acts.push(e),e.t==="end"&&r.turn!==t&&(Qe.prev=Qe.round,Qe.round={at:Qe.acts.length,turn:r.turn,base:Ft()}))}function jn(e,t,o){let i=r.sides[e],s=Kr(e,o,t);i.gold-=lr(e,t,o);let f=$r(e,t,s,!1);i.stats.recruited++,i.stats.recBy[t]=(i.stats.recBy[t]||0)+1,E({e:"recruit",u:f.id,side:e,type:t,cell:s}),te()}function Kn(e){let t=r.sides[e];t.gold-=wt(e,t.capLvl+1),t.capLvl++;let o=r.caps[e],i=r.walls[o],s=i?i.hp:0;r.walls[o]={hp:Math.min(he(o),s+(he(o)-Math.round(ue[t.capLvl-1].walls*(pe(e,"mason")?1.5:1))))},t.stats.upgrades=(t.stats.upgrades||0)+1,te(),E({e:"capUp",side:e,cell:o,lvl:t.capLvl})}function Zn(e,t){let o=r.sides[e];o.gold-=pt,r.cells[t].vLvl=2,o.stats.upgrades=(o.stats.upgrades||0)+1,te(),E({e:"villUp",side:e,cell:t})}function $n(e,t){let o=r.sides[e];if(o.gold-=ot[t].cost,o.tech[t]=!0,o.stats.research=(o.stats.research||0)+1,t==="mason")for(let i in r.walls)le(+i)===e&&(r.walls[i].hp=Math.round(r.walls[i].hp*1.5));if(t==="stable"||t==="siege"||t==="maps")for(let i of _(e))!i.moved&&!i.attacked&&(i.moves=Ye(e,i.type));te(),E({e:"research",side:e,k:t})}function Qn(e,t,o){let i=r.sides[e];i.gold-=bt(e,t),r.cells[o].bld={type:t,owner:e},t==="fort"&&jr(o),i.stats.buildings++,te(),E({e:"build",side:e,type:t,cell:o})}var W=()=>A("act.refused"),yr=(e,t)=>typeof t=="string"&&Object.prototype.hasOwnProperty.call(e,t),Xe=e=>Number.isInteger(e)&&e>=0&&e<L,vr=(e,t)=>{let o=Number.isInteger(t)?r.units.find(i=>i.id===t):null;return o&&o.alive&&o.side===e?o:null},un=(e,t)=>Number.isInteger(t)&&t!==e&&!!r.sides[t]&&r.sides[t].alive;function Xn(e,t){if(!Array.isArray(t)||!t.length||t.length>64||!t.every(Xe))return!1;let o=ze(e);return t.every((i,s)=>{let f=o.get(i);return!!f&&f.prev===(s?t[s-1]:e.cell)})}var el=["hold","explore","goto"],hn={move:(e,t)=>{let o=vr(e,t.u);return o&&Xn(o,t.path)?"":W()},attack:(e,t)=>{let o=vr(e,t.u),i=o&&Xe(t.target)?Zr(o,null).get(t.target):null;return i&&!i.bld?"":W()},demolish:(e,t)=>{let o=vr(e,t.u),i=o&&Xe(t.cell)?Zr(o,null).get(t.cell):null;return i&&i.bld?"":W()},recruit:(e,t)=>!yr(k,t.type)||!Xe(t.at)||!Go(e,t.at)?W():Wo(e,t.type,t.at),build:(e,t)=>yr(Oe,t.type)&&Xe(t.cell)&&cr(e,t.cell,t.type)?"":W(),research:(e,t)=>yr(ot,t.k)?fr(e,t.k):W(),capUp:e=>{let t=r.sides[e],o=t.capLvl+1;return ue[o]?t.gold<wt(e,o)?A("rule.gold.short",{n:wt(e,o)-t.gold}):"":W()},villUp:(e,t)=>{let o=Xe(t.cell)&&r.cells[t.cell],i=r.sides[e];return!o||!o.village||o.vOwner!==e||o.vLvl>1?W():i.gold<pt?A("rule.gold.short",{n:pt-i.gold}):""},repair:(e,t)=>Xe(t.cell)?Gr(e,t.cell):W(),trade:(e,t)=>t.kind==="buy"||t.kind==="sell"?Yr(e,t.kind):W(),order:(e,t)=>{let o=vr(e,t.u),i=t.order;return o&&(i===null||i&&typeof i=="object"&&el.includes(i.type)&&(i.type!=="goto"||Xe(i.dest)&&ae(r.cells[i.dest].t)))?"":W()},dip:(e,t)=>{if(!un(e,t.to))return W();let o=r.rel[e][t.to];switch(t.kind){case"peace":return r.diplo&&o==="war"&&!$e(e,t.to,"peace",1)?"":W();case"ally":return r.diplo&&o==="peace"&&!$e(e,t.to,"ally",1)?"":W();case"war":return r.diplo&&o==="peace"&&!mt(e,t.to)?"":W();case"break":return r.diplo&&o==="ally"&&!mt(e,t.to)?"":W();case"yes":case"no":return Qr(t.to,e)?"":W()}return W()},aid:(e,t)=>{if(!un(e,t.to)||r.rel[e][t.to]!=="ally")return W();if(t.kind==="ask")return!r.human[t.to]&&!$e(e,t.to,"aid",3)?"":W();if(t.kind!=="gold"&&t.kind!=="food")return W();let o=t.n===void 0?Lt[t.kind]:t.n,i=r.sides[e];return Number.isInteger(o)&&o>0&&o<=(t.kind==="gold"?i.gold:i.food)?"":W()},end:(e,t)=>t.bot===void 0||Nt(e)&&tl(t.bot)?"":W()},tl=e=>!!e&&typeof e=="object"&&Number.isInteger(e.rng)&&!!e.ai&&typeof e.ai=="object"&&!Array.isArray(e.ai)&&JSON.stringify(e.ai).length<=8192;function wr(e,t,o){return e!==r&&Re(e),!o||typeof o!="object"||!yr(hn,o.t)||!r||r.over&&!(o.t==="end"&&o.bot!==void 0)||!r.begun||t!==r.current||!r.sides[t]||!r.sides[t].alive&&!r.over?W():hn[o.t](t,o)||""}function to(e,t){if(e!==r&&Re(e),!r||wr(r,r.current,t))return null;let o=r.current,i=r.turn,s=St()?JSON.parse(JSON.stringify(t)):null,f=c=>r.units.find(p=>p.id===c),l=Dr(()=>{switch(t.t){case"move":{let c=f(t.u);c.order=null,dr(c,t.path);break}case"attack":{let c=f(t.u),p=r.grid[t.target];c.order=null,p&&p.alive&&!p.aboard&&D(o,p.side)?an(c,p):fn(c,t.target);break}case"demolish":{let c=f(t.u);c.order=null,dn(c,t.cell);break}case"recruit":jn(o,t.type,t.at);break;case"build":Qn(o,t.type,t.cell);break;case"research":$n(o,t.k);break;case"capUp":Kn(o);break;case"villUp":Zn(o,t.cell);break;case"repair":Do(o,t.cell),E({e:"repair",side:o,cell:t.cell,n:Jr(o,t.cell)}),te();break;case"trade":_o(o,t.kind),E({e:"trade",side:o,kind:t.kind});break;case"order":{let c=t.order;Ko(f(t.u),c?c.type==="goto"?{type:"goto",dest:c.dest}:{type:c.type}:null);break}case"dip":t.kind==="peace"||t.kind==="ally"?en(o,t.to,t.kind):t.kind==="war"?Qo(o,t.to):t.kind==="break"?Xo(o,t.to):tn(o,t.to,t.kind==="yes");break;case"aid":if(t.kind==="ask"){rn(o,t.to);break}Nt(o)&&(r.dip.asked[Ze(o,t.to)+"gift"]=r.turn),ur(o,t.to,t.kind,t.n===void 0?Lt[t.kind]:t.n);break;case"end":t.bot&&(r.sides[o].ai=JSON.parse(JSON.stringify(t.bot.ai)),r.rng=t.bot.rng|0),r.over||nn(o);break}});return s&&pn(s,i),l}var br=null;function oo(e){br=e}function G(e){let t=r.current,o=to(r,e);return o?br.steps.push({a:JSON.parse(JSON.stringify(e))}):r.over||br.refused.push({turn:r.turn,side:t,a:e,why:wr(r,t,e)}),o}var fe=e=>wr(r,r.current,e)?null:G(e),ro=e=>{br.steps.push({wait:e})};function De(e,t){let o=r.sides[e];if(o.kc[t]>=0)return o.kc[t];let i=ut[t].filter(f=>!o.explored[f]);return(i.length?i:ut[t]).reduce((f,l)=>x(l,r.caps[e])<x(f,r.caps[e])?l:f)}function rl(e){let t=r.sides[e],o=ye(e),i=r.caps[e];if(!o.length)return-1;let s=Math.max(1,re(e)),f=-1,l=1/0;for(let c of o){let p=r.sides[c],u=r.units.filter(O=>O.alive&&O.side===c&&(r.zone[O.cell]===e||x(O.cell,i)<=4)).length,S=r.sides.filter(O=>O.alive&&O.id!==e&&O.id!==c&&O.ai.target===c&&!r.human[O.id]).length,b=x(i,De(e,c))+Math.min(6,re(c)/s*3)-u*2.5-(p.vStreak||p.tStreak?8:-S*3)-(c===t.ai.target?3:0);b<l&&(l=b,f=c)}return f}var qt=e=>r.sides[e].bot||{diff:e===0&&r.botDiff?r.botDiff:r.diff||"normal",style:_r[r.sides[e].fac]||"balanced"},kr=e=>qt(e).style;function ol(e,t,o){let i=r.sides[e],s=ye(e);if(!s.length)return"build";if(t===0)return"capital";let f=Xr(e),l=Math.max(1,re(e)),c=Math.max(1,...s.map(re)),p={capital:1+(o.attack?.35:0)+(l>c*1.3?.3:0)+(s.some(b=>i.kc[b]>=0)?.15:0)};r.win.villages&&(p.villages=.35+f.vill/Math.max(1,f.need.vill)*1.1+(o.raid?.35:0)+(o.build?.1:0)),r.win.territory&&(p.territory=.25+f.terr/Math.max(1,f.need.terr)*1.1+(o.build?.3:0)+(o.raid?.15:0));let u=r.units.some(b=>b.alive&&D(e,b.side)&&(r.zone[b.cell]===e||x(b.cell,r.caps[e])<=4));r.turn>=6&&l<c*.6&&(u||r.turn>=15)&&(p.defend=1.35+(o.build?.15:0)-(o.attack?.2:0));let S=p[i.ai.goal]!==void 0?i.ai.goal:"capital";for(let b in p)p[b]>p[S]+.12&&(S=b);return S}function mn(e){let t=r.sides[e];if(!t.alive)return;let o=rl(e);t.ai.target=o;let i=o<0;if(i){let n=-1,a=1/0;for(let d of ve())d!==e&&x(r.caps[e],De(e,d))<a&&(a=x(r.caps[e],De(e,d)),n=d);o=n}let s=n=>D(e,n),f=Qt[e===0&&r.botDiff?r.botDiff:qt(e).diff]||Qt.normal,l=gt[kr(e)]||gt.balanced,c=f.smart,p=f.group,u=t.ai.goal;t.ai.goal=ol(e,c,l),u&&u!==t.ai.goal&&(t.ai.goalAt=r.turn);let S=t.ai.goal,b=f.cap+(t.gold>=200?4:t.gold>=120?2:0),O=r.caps[e],R=t.kc[o],U=De(e,o),B=n=>r.terr[n]>=0&&it(e,r.terr[n]),F=new Map,J=(n,a)=>{let d=a?"a"+n:n;if(F.has(d))return F.get(d);let m=new Float32Array(L).fill(1/0);m[n]=0;let h=new Uint8Array(L);for(let g=0;g<L;g++){let v=-1,w=1/0;for(let M=0;M<L;M++)!h[M]&&m[M]<w&&(w=m[M],v=M);if(v<0)break;h[v]=1;let y=t.explored[v]?se[r.cells[v].t].move:1.5;if(!(y>=99&&v!==n))for(let M of N[v]){if(t.explored[M]&&se[r.cells[M].t].move>=99||B(M)&&M!==n)continue;let T=w+(v===n?1:y)+(a?a[M]:0);T<m[M]&&(m[M]=T)}}return F.set(d,m),m},V=()=>r.units.filter(n=>n.alive&&!n.aboard&&s(n.side)&&t.vis[n.cell]),X=n=>k[n.type].cost*(1+.3*(n.lvl-1))*(n.type==="cmd"?1.8:1),ee=n=>V().reduce((a,d)=>a+(x(n,d.cell)<=(k[d.type].move>=4?3:2)?1:0),0),Me=n=>N[n].some(a=>{let d=r.grid[a];return d&&d.alive&&s(d.side)&&t.vis[a]}),$=lt,ie=(n,a)=>{let d=0,m={type:n.type,side:n.side,lvl:n.lvl,hp:n.hp,maxHp:n.maxHp,cell:a,oos:n.oos};for(let h of V())x(h.cell,a)>k[h.type].move+k[h.type].range||(d+=Ke(h,m,h.cell).dmg);return d},vn=n=>!r.supply[e][n]&&s(r.zone[n])&&!N[n].some(a=>r.supply[e][a]===2),me=n=>rt.includes(de(n.type))&&!n.aboard&&!Le(n),xr=new Map,Ot=n=>{if(xr.has(n))return xr.get(n);let a=new Float32Array(L).fill(1/0),d=new Uint8Array(L);for(a[n]=0;;){let m=-1,h=1/0;for(let g=0;g<L;g++)!d[g]&&a[g]<h&&(h=a[g],m=g);if(m<0)break;if(d[m]=1,!(m!==n&&t.explored[m]&&!Ve(r.cells[m].t)))for(let g of N[m]){if(t.explored[g]&&!Ve(r.cells[g].t))continue;let v=h+(t.explored[g]?1:2);v<a[g]&&(a[g]=v)}}return xr.set(n,a),a},j=_(e),ft=V().filter(n=>x(n.cell,O)<=4||r.zone[n.cell]===e);j.forEach(n=>{n.role=n.aboard?"cargo":Le(n)?"navy":n.type==="cat"?"siege":n.type==="cmd"?"command":n.type==="healer"?"medic":"army",n.goal=-1});let no=j.filter(me),yn=Math.min((ft.length&&c>=1?2:1)+(S==="defend"?1:0),Math.max(1,no.length-1));[...no].sort((n,a)=>x(n.cell,O)+(n.type==="cav"?3:0)-(x(a.cell,O)+(a.type==="cav"?3:0))).slice(0,yn).forEach(n=>n.role="garrison");let Gt=[];for(let n=0;n<L;n++)t.explored[n]&&ae(r.cells[n].t)&&N[n].some(a=>!t.explored[a])&&Gt.push(n);let Mr=V().filter(n=>n.type==="cat");for(let n of j)if(n.type==="scout"&&(n.role=Gt.length&&(r.turn<=30||R<0)?"scout":"picket",Mr.length&&c>=1)){let a=Mr.reduce((d,m)=>x(m.cell,n.cell)<x(d.cell,n.cell)?m:d);x(a.cell,n.cell)<=8&&(n.role="hunt",n.goal=a.cell)}if(Gt.length&&(r.turn<=24||R<0)&&!j.some(n=>n.role==="scout")){let n=j.filter(a=>a.role==="army").sort((a,d)=>(d.type==="cav")-(a.type==="cav"))[0];n&&(n.type==="cav"||r.turn<=3)&&(n.role="scout")}let At=[];for(let n=0;n<L;n++)t.explored[n]&&r.cells[n].village&&t.memOwner[n]!==e&&(t.memOwner[n]<0||s(t.memOwner[n]))&&!B(n)&&At.push(n);let wn=ye(e).find(n=>r.sides[n].vStreak>0||r.sides[n].tStreak>0)!==void 0,bn=(c===0?2:c===1?3:4)+(wn&&c>=1?2:0)+(S==="villages"?3:0)+(l.raid?1:0);for(let n=0;n<bn&&At.length;n++){let a=null,d=1e9,m=-1;for(let h of j)if(h.role==="army")for(let g of At){let v=J(g)[h.cell]+(s(t.memOwner[g])?r.sides[t.memOwner[g]].vStreak?-3:1:0);v<d&&(d=v,a=h,m=g)}if(!a||d>(S==="villages"?18:12))break;a.role="capture",a.goal=m,At.splice(At.indexOf(m),1)}if(S==="territory"){let n=new Set,a=d=>N[d].some(m=>r.terr[m]===e);for(let d=0;d<(c===2?4:3);d++){let m=null,h=-1,g=1e9;for(let v of j)if(v.role==="army"&&me(v))for(let w=0;w<L;w++){if(n.has(w)||!t.explored[w]||!Ae(r.cells[w].t)||r.terr[w]===e||B(w)||r.zone[w]>=0&&r.zone[w]!==e||r.grid[w]&&r.grid[w].alive)continue;let y=x(v.cell,w)+(a(w)?0:1.5)+ee(w)*1.5;y<g&&(g=y,m=v,h=w)}if(!m||g>9)break;m.role="capture",m.goal=h;for(let v of[h,...N[h]])n.add(v)}}if(ft.length){let n=j.filter(a=>a.role==="army"||a.role==="capture"||a.role==="scout"&&a.type!=="scout");for(let a of[...ft].sort((d,m)=>x(d.cell,O)-x(m.cell,O))){let d=x(a.cell,O)<=3?3:2,m=n.filter(h=>h.role!=="defend"&&J(a.cell)[h.cell]<=7).sort((h,g)=>J(a.cell)[h.cell]-J(a.cell)[g.cell]).slice(0,d);for(let h of m)h.role="defend",h.goal=a.cell}}let Ne=J(U),lo=!i&&isFinite(Ne[O])?Ne[O]/2:i?0:99,Se=r.cells.filter(n=>n.bld&&n.bld.type==="port"&&n.bld.owner===e).map(n=>n.i),Sr=n=>{if(n==null||n<0||i)return null;let a=Ot(n),d=null;for(let m=0;m<L;m++){if(!t.explored[m]||!Ae(r.cells[m].t)||!isFinite(Ne[m])||B(m)||r.grid[m]&&r.grid[m].alive&&s(r.grid[m].side))continue;let h=-1,g=1/0;for(let w of N[m])Ve(r.cells[w].t)&&r.sea[w]===r.sea[n]&&a[w]<g&&(g=a[w],h=w);if(h<0)continue;let v=2+g/5+Ne[m]/2;(!d||v<d.turns)&&(d={land:m,sea:h,turns:v})}return d},Jt=n=>N[n].filter(Rt).sort((a,d)=>Ne[a]-Ne[d])[0],P=t.ai.ferry||null;if(P&&!r.units.some(n=>n.id===P.ship&&n.alive)&&(P=t.ai.ferry=null,t.ai.ferryLost=r.turn),t.ai.ferryWorth=!1,c>=1&&Se.length&&!i){let n=Jt(Se[0]),a=Sr(n);if(t.ai.ferryWorth=!!a&&a.turns+2<lo&&r.turn-(t.ai.ferryLost??-99)>=8&&ee(Se[0])===0,!P&&t.ai.ferryWorth){let d=j.find(m=>k[m.type].hold&&r.sea[m.cell]===r.sea[n]);d&&(P=t.ai.ferry={ship:d.id,pick:n,stage:"load",wait:0,land:a.land,sea:a.sea})}}if(P&&P.stage==="load"){let n=r.units.find(a=>a.id===P.ship&&a.alive);if(n&&x(n.cell,P.pick)<=1){let a=kt(n),d=J(n.cell),m=j.filter(h=>h.role==="army"&&me(h)&&isFinite(d[h.cell])&&d[h.cell]<=9).sort((h,g)=>d[h.cell]-d[g.cell]);for(let h of m){if(a--<=0)break;h.role="ferry",h.goal=n.cell}}}let Tt=j.filter(n=>n.role==="army"),oe=J(U),Or=!i&&R>=0&&r.cells[R].cap===o?N[R].filter(n=>ae(r.cells[n].t)&&!(r.grid[n]&&r.grid[n].alive&&r.grid[n].side===e)&&!N[n].some(a=>a!==R&&r.grid[a]&&r.grid[a].alive&&r.grid[a].side===e)):null;t.ai.blocked=!i&&!isFinite(oe[O]);let Yt=O,io=1/0;for(let n=0;n<L;n++)r.zone[n]===e&&ae(r.cells[n].t)&&n!==O&&oe[n]<io&&(io=oe[n],Yt=n);let Vt=t.gold>=120&&j.length>=b-2,Ar=Math.max(2,p+(l.attack?-1:0)+(l.build&&c>=1?1:0)+(S==="defend"?3:0));i?t.ai.phase="gather":Vt||r.sides[o].tStreak>0&&c>=1?t.ai.phase="attack":t.ai.phase==="gather"?(Tt.filter(a=>x(a.cell,Yt)<=2).length>=Ar||Tt.length>=Ar+3||t.gold>120&&j.length>=b-1||r.turn>=40&&Tt.length>=2)&&(t.ai.phase="attack"):Tt.length<Math.max(2,Math.ceil(Ar/2))&&(t.ai.phase="gather");let Tr=Tt.map(n=>oe[n.cell]).filter(isFinite).sort((n,a)=>n-a),Lr=Tr.slice(0,Math.max(2,p)),Er=Lr.length?Lr[Lr.length-1]:0;if(rr.flank&&r.mapType!=="continent"&&t.ai.phase==="attack"&&Tr.length&&c>=1){let n=Tr[0];t.ai.best==null||n<t.ai.best-.5?(t.ai.best=n,t.ai.stallT=r.turn):r.turn-(t.ai.stallT||0)>=6&&r.turn>=(t.ai.flankUntil||0)&&(t.ai.flankUntil=r.turn+8,t.ai.stallT=r.turn,t.ai.best=null)}else t.ai.best=null,t.ai.stallT=r.turn;let so=r.turn<(t.ai.flankUntil||0),ao=null;if(so){let n=new Float32Array(L);for(let a of V()){n[a.cell]+=6;for(let d of N[a.cell])n[d]+=3}ao=J(U,n)}function Be(n,a){let d=null,m=k[n.type];if(n.attacked||m.setup&&n.moved||n.aboard||m.noAtk)return null;m.setup&&(a=[n.cell]);for(let h of V())for(let g of a){if(!He(n.type,g,h.cell))continue;let v=Ke(n,h,g),w;if(c===0)w=v.dmg*.6+(v.defDies?12:0)-(v.attDies?15:0)+$()*6-1;else{if(w=v.dmg/h.maxHp*X(h)+(v.defDies?X(h)*.7:0)-v.ret/n.maxHp*X(n)*.8-(v.attDies?X(n)*1.3:0)+we(g)*3,m.range>1&&g!==h.cell&&Me(g)&&x(g,h.cell)>1&&(w-=3),v.breach&&(w+=6+2*V().filter(y=>y.cell===h.cell).length+(h.cell===R?6:0)),c>=2&&(w+=(1-h.hp/h.maxHp)*5,x(h.cell,O)<=2&&(w+=8),R>=0&&h.cell===R&&(w+=4),h.type==="cmd"&&(w+=6),!v.attDies)){let y=ie({...n,hp:v.aHp},g)-(v.defDies?Ke(h,{...n,hp:v.aHp,cell:g},h.cell).dmg:0);w-=Math.min(1.5,y/Math.max(1,v.aHp))*X(n)*(n.type==="cmd"?.4:.18)}n.type==="cmd"&&!v.defDies&&(w-=6)}(!d||w>d.score)&&(d={score:w,from:g,target:h})}for(let h in r.walls){let g=+h;if(!sr(e,g)||!t.vis[g]||r.grid[g])continue;let v=r.cells[g].cap>=0,w=v?g===R?70:50:18,y=Pt(n),M=r.walls[g].hp;for(let T of a){if(!He(n.type,T,g))continue;let I=c===0?y*.8+$()*3:Math.min(y,M)/he(g)*w+(y>=M?w*.4:0)+we(T)*2;c>=1&&N[T].includes(g)&&v&&(I-=ue[r.sides[r.cells[g].cap].capLvl].tower*.6),(!d||I>d.score)&&(d={score:I,from:T,wall:g})}}if(m.siege)for(let h=0;h<L;h++){let g=r.cells[h];if(!g.bld||!s(g.bld.owner)||!t.vis[h]||r.grid[h]||Ee(h)||!He(n.type,n.cell,h))continue;let v=(g.bld.type==="barracks"?16:g.bld.type==="fort"?14:9)+$();(!d||v>d.score)&&(d={score:v,from:n.cell,bld:h})}return d}function Ie(n,a,d,m,h,g,v){if(m==null||m<0)return;let w=v||J(m),y=n.cell,M=1/0;for(let T of d){if(!isFinite(w[T]))continue;let I=w[T];if(c>=1&&(I-=we(T)*.7,k[n.type].range>1&&Me(T)&&(I+=2.5),n.hp<n.maxHp*.5&&(I+=ee(T)*.8),vn(T)&&!(n.role==="army"&&t.ai.phase==="attack")&&(I+=1.5),n.role==="army"&&t.ai.phase==="attack"&&me(n)))for(let z of N[T]){let K=r.grid[z];K&&K.alive&&s(K.side)&&t.vis[z]&&(I-=.35*N[z].filter(Ce=>{let C=r.grid[Ce];return C&&C.alive&&C.side===e&&C!==n}).length)}if(c>=1&&Or&&Or.length&&n.role==="army"&&t.ai.phase==="attack"&&me(n)&&x(T,R)===2){let z=0;for(let K of Or)N[T].includes(K)&&z++;I-=Math.min(2,z)*.8}if(c>=2&&!(co&&t.ai.phase==="attack"&&n.role==="army")&&(I+=Math.min(2,ie(n,T)/n.hp)*(n.role==="army"&&t.ai.phase==="attack"?.6:1.4)),c>=1)for(let z of ye(e)){let K=t.kc[z];K>=0&&Ee(K)&&x(T,K)===1&&(I+=ue[r.sides[z].capLvl].tower/n.hp*4*(r.grid[K]?1:.4))}h!=null&&w[T]<h&&(I+=(h-w[T])*2),g&&(I+=g(T)),I+=$()*(c===0?1.2:.2)+(T===n.cell?.05:0),I<M&&(M=I,y=T)}y!==n.cell&&G({t:"move",u:n.id,path:ke(a,n.cell,y)})}function Pe(n,a,d){if(a.bld!==void 0){G({t:"demolish",u:n.id,cell:a.bld}),ro(120);return}if(a.wall!==void 0){a.from!==n.cell&&G({t:"move",u:n.id,path:ke(d,n.cell,a.from)}),n.alive&&!r.over&&!n.attacked&&sr(e,a.wall)&&t.vis[a.wall]&&!r.grid[a.wall]&&He(n.type,n.cell,a.wall)&&G({t:"attack",u:n.id,target:a.wall}),ro(100);return}a.from!==n.cell&&G({t:"move",u:n.id,path:ke(d,n.cell,a.from)}),!(!n.alive||r.over||!a.target.alive||n.attacked)&&(!He(n.type,n.cell,a.target.cell)||!t.vis[a.target.cell]||(G({t:"attack",u:n.id,target:a.target.cell}),ro(120)))}let kn=r.turn>=30&&R>=0,co=Vt||_(e).length>=(kn?1.1:1.5)*Math.max(2,V().length)&&_(e).length>=p+2,jt=n=>c===0?n.role==="garrison"||n.role==="army"&&t.ai.phase==="attack"?-3:0:n.role==="garrison"?-4:n.role==="defend"?-3:n.role==="siege"?-2:n.role==="navy"?-1:n.role==="army"&&t.ai.phase==="attack"?co?-7:-1:3,fo=(n,a)=>{let d=[n.cell];for(let[m,h]of a)h.end&&!h.board&&d.push(m);return n.role==="garrison"&&x(n.cell,O)<=1&&(d=d.filter(m=>x(m,O)<=1)),d},Kt=new Set;for(let n of ye(e)){let a=t.kc[n];if(!(a<0||Ee(a)||r.grid[a]||r.cells[a].cap!==n)){for(let d of _(e)){if(k[d.type].noCapture||d.moves<=0)continue;let m=ze(d);if(m.has(a)&&m.get(a).end){G({t:"move",u:d.id,path:ke(m,d.cell,a)});break}}if(r.over)return}}for(let n of j)if(n.type==="cat"&&n.alive&&!r.over){let a=Be(n,[n.cell]);a&&a.score>jt(n)&&(Kt.add(n),Pe(n,a,null))}if(r.over)return;if(c>=1){for(let n=0;n<40&&!r.over;n++){let a=null;for(let d of _(e)){if(Kt.has(d)||d.attacked||d.aboard||d.type==="cat"||k[d.type].noAtk||d.hp<d.maxHp*.4&&d.role!=="garrison")continue;let m=ze(d),h=Be(d,fo(d,m)),g=jt(d);h&&h.score>g&&(!a||h.score-g>a.margin)&&(a={o:h,u:d,reach:m,margin:h.score-g})}if(!a)break;Kt.add(a.u),Pe(a.u,a.o,a.reach)}if(r.over)return}let xn={galley:-2,trans:-1,cat:0,arch:1,inf:2,scout:3,cav:4,cmd:5},po=n=>xn[de(n.type)]??3;j.sort((n,a)=>po(n)-po(a));function Mn(n,a,d){let m=je(n),h=g=>Math.min(4,ie(n,g)/n.hp*4);if(P.stage==="load"){let g=Se.find(v=>N[v].includes(P.pick))??Se[0];if(g!==void 0){let v=N[g].filter(w=>Rt(w)&&(!r.grid[w]||r.grid[w]===n)).sort((w,y)=>ie(n,w)-ie(n,y))[0];v!==void 0&&(P.pick=v)}if(m.length>=k[n.type].hold||m.length&&P.wait>=2)P.stage="sail";else{n.cell!==P.pick&&Ie(n,a,d,P.pick,null,h,Ot(P.pick)),(m.length||!t.ai.ferryWorth)&&P.wait++;return}}if(P.stage==="sail")if(!m.length)P.stage="back";else{let g=Sr(n.cell);g&&(P.land=g.land,P.sea=g.sea);let v=()=>N[n.cell].some(w=>Ae(r.cells[w].t)&&isFinite(Ne[w])&&Ne[w]<=Ne[P.land]+2);if(v()||Ie(n,a,d,P.sea,null,h,Ot(P.sea)),n.alive&&v())for(let w of je(n)){if(w.moves<=0||r.over)continue;let y=-1,M=1/0;for(let[T]of ze(w)){let I=Ne[T]+ee(T)*.6-we(T);I<M&&(M=I,y=T)}y>=0&&(w.role="army",G({t:"move",u:w.id,path:[y]}))}n.alive&&!je(n).length&&(P.stage="back");return}P.stage==="back"&&(n.cell!==P.pick&&Ie(n,a,d,P.pick,null,h,Ot(P.pick)),n.alive&&x(n.cell,P.pick)<=1&&(P.stage="load",P.wait=0))}function Sn(n,a,d){let m=jt(n);if(!k[n.type].noAtk){let v=Be(n,d);if(v&&v.score>m){Pe(n,v,a);return}}if(P&&P.ship===n.id){Mn(n,a,d);return}let h=V().filter(v=>Le(v)&&r.sea[v.cell]===r.sea[n.cell]),g=-1;if(k[n.type].noAtk)Se.length&&(g=Jt(Se[0])??-1),ie(n,n.cell)>=n.hp*.4&&(g=-2);else if(h.length)g=h.reduce((v,w)=>x(w.cell,n.cell)<x(v.cell,n.cell)?w:v).cell;else if(n.hp<n.maxHp*.55&&Se.length)g=Jt(Se[0])??-1;else if(P&&P.stage==="sail"){let v=r.units.find(w=>w.id===P.ship&&w.alive);v&&(g=v.cell)}else i||(g=U);if(g===-2){let v=n.cell,w=ie(n,n.cell);for(let y of d){let M=ie(n,y);M<w&&(w=M,v=y)}v!==n.cell&&G({t:"move",u:n.id,path:ke(a,n.cell,v)})}else g>=0&&g!==n.cell&&Ie(n,a,d,g,null,v=>(n.hp<n.maxHp*.5&&Me(v)?3:0)+(c>=1?Math.min(2,ie(n,v)/n.hp*2):0),Ot(g));if(n.alive&&!n.attacked&&!r.over){let v=Be(n,[n.cell]);v&&v.score>m&&Pe(n,v,null)}}for(let n of j){if(!n.alive||r.over||Kt.has(n)||n.aboard)continue;let a=ze(n),d=fo(n,a);if(Le(n)){Sn(n,a,d);continue}if(n.role==="ferry"&&P){let y=r.units.find(M=>M.id===P.ship&&M.alive);if(y&&kt(y)>0){if(a.has(y.cell)&&a.get(y.cell).board){G({t:"move",u:n.id,path:ke(a,n.cell,y.cell)});continue}Ie(n,a,d,y.cell);continue}}let m=jt(n);if(n.type==="cat"){let y=[];R>=0&&y.push(R);for(let C=0;C<L;C++){let q=t.memBld[C];q&&s(q.owner)&&t.explored[C]&&y.push(C),r.cells[C].village&&s(t.memOwner[C])&&y.push(C)}let M=V().map(C=>C.cell),T=C=>_(e).filter(q=>q!==n&&me(q)&&x(q.cell,C)<=2).length,I=y.length?y.reduce((C,q)=>J(q)[n.cell]<J(C)[n.cell]?q:C):t.ai.phase==="attack"?U:Yt;R>=0&&t.ai.phase==="attack"&&I!==R&&J(R)[n.cell]<=J(I)[n.cell]+6&&(I=R);let z=J(I),K=n.cell,Ce=1/0;for(let C of d){let q=(isFinite(z[C])?z[C]:30)*.8;x(C,I)===2?q-=8:x(C,I)<2&&(q+=6),M.some(Zt=>x(C,Zt)===2&&Ut(Zt)>0)?q-=5:M.some(Zt=>x(C,Zt)===2)&&(q-=2),Me(C)&&(q+=10);let Ue=T(C);Ue<2?q+=(2-Ue)*2.5+Math.min(3,ie(n,C)/n.hp)*3:q+=Math.min(3,ie(n,C)/n.hp)*1,q+=$()*.2+(C===n.cell?-.2:0),q<Ce&&(Ce=q,K=C)}K!==n.cell&&G({t:"move",u:n.id,path:ke(a,n.cell,K)});continue}if(n.type==="healer"){let y=_(e).filter(I=>I!==n&&!I.aboard&&!Le(I));if(!y.length){Ie(n,a,d,O);continue}let M=n.cell,T=-1/0;for(let I of d){let z=0;for(let Ce of N[I]){let C=r.grid[Ce];C&&C.alive&&C!==n&&ce(e,C.side)&&!Le(C)&&(z+=(C.maxHp-C.hp)/C.maxHp*5+.3)}let K=y.reduce((Ce,C)=>Math.min(Ce,x(C.cell,I)+(C.hp<C.maxHp*.7?-1:0)),9);z-=K*.6+(c>=1?ie(n,I)/n.hp*6:0)+(Me(I)?4:0)-we(I)*.5-$()*.3,z>T&&(T=z,M=I)}M!==n.cell&&G({t:"move",u:n.id,path:ke(a,n.cell,M)});continue}if(n.type==="cmd"){let y=Be(n,d);if(y&&y.score>2){Pe(n,y,a);continue}let M=_(e).filter(z=>z!==n&&z.type!=="cat");if(!M.length){Ie(n,a,d,O);continue}let T=n.cell,I=-1/0;for(let z of d){let K=0;for(let q of N[z]){let Ue=r.grid[q];Ue&&Ue.alive&&Ue.side===e&&Ue!==n&&Ue.type!=="cat"&&K++}let Ce=M.reduce((q,Ue)=>Math.min(q,x(Ue.cell,z)),9),C=K*2-Ce*.8-(c>=1?ie(n,z)/n.hp*5:0)-(Me(z)?3:0)+we(z)+$()*.3;C>I&&(I=C,T=z)}T!==n.cell&&G({t:"move",u:n.id,path:ke(a,n.cell,T)});continue}if(c>=1&&n.hp<n.maxHp*.4&&n.role!=="garrison"){let y=Be(n,d);if(y&&y.target){let M=Ke(n,y.target,y.from);if(M.defDies&&!M.attDies){Pe(n,y,a);continue}}if(r.zone[n.cell]!==e){let M=O,T=1/0;for(let I=0;I<L;I++)if(r.zone[I]===e&&ae(r.cells[I].t)){let z=x(I,n.cell);z<T&&(T=z,M=I)}Ie(n,a,d,M)}continue}let h=Be(n,d);if(h&&h.score>m){Pe(n,h,a);continue}if(n.role!=="garrison"&&!k[n.type].noCapture){let y=d.find(M=>r.cells[M].village&&t.memOwner[M]!==e&&M!==n.cell);if(y!==void 0){G({t:"move",u:n.id,path:ke(a,n.cell,y)});continue}}let g=-1,v=null,w=null;if(n.role==="garrison")g=O;else if(n.role==="scout"){n.type==="scout"&&(w=T=>Math.min(3,ie(n,T)/n.hp)*3+(Me(T)?3:0));let y=-1/0,M=J(n.cell);for(let T of Gt){if(r.grid[T]&&T!==n.cell||!isFinite(M[T]))continue;let z=N[T].filter(K=>!t.explored[K]).length*1.5-Math.min(M[T],x(n.cell,T)*2)*.7+x(T,O)*.25-ee(T)*(n.type==="scout"?3.5:2)+$()-(R<0?x(T,U)*.35:0);z>y&&(y=z,g=T)}}else if(n.role==="picket"){let y=1/0;for(let M=0;M<L;M++){if(!t.explored[M]||!ae(r.cells[M].t)||r.grid[M]&&M!==n.cell||!isFinite(oe[M]))continue;let T=Math.abs(oe[M]-(Er-3))*.6-(r.cells[M].t==="hills"?1.5:0)+ee(M)*2+x(n.cell,M)*.15;T<y&&(y=T,g=M)}w=M=>ee(M)*2.5+(Me(M)?4:0)}else if(n.role==="capture"||n.role==="defend")g=n.goal;else if(n.role==="hunt")g=n.goal,w=y=>Me(y)&&!N[y].includes(n.goal)?3:0;else if(t.ai.phase==="gather")g=Yt;else if(so&&n.role==="army"&&me(n)){if(Ie(n,a,d,U,null,null,ao),n.alive&&!n.attacked&&!r.over){let y=Be(n,[n.cell]);y&&y.score>m&&Pe(n,y,null)}continue}else{let y=V().filter(M=>x(M.cell,n.cell)<=3);g=y.length?y[0].cell:U,!y.length&&oe[n.cell]<=Er&&(v=Er-2)}if(Ie(n,a,d,g,v,w),n.alive&&!n.attacked&&!r.over){let y=Be(n,[n.cell]);y&&y.score>m&&Pe(n,y,null)}}if(r.over)return;for(let n in r.walls){let a=+n;le(a)===e&&r.walls[a].hp<he(a)*(r.cells[a].cap>=0?.8:.5)&&t.gold>=H.repairCost+(c>=1?8:25)&&fe({t:"repair",cell:a})}if(c>=1&&Bt(e)>=0){let n=be(e);for(let a=0;a<4&&n.net<0&&t.food+n.net<0&&t.gold>=st(e,"buy")+10&&fe({t:"trade",kind:"buy"});a++);for(let a=0;a<4&&t.food>=45+Math.max(0,-n.net)*5&&st(e,"sell")>=3&&fe({t:"trade",kind:"sell"});a++);}let dt=be(e),et=n=>{let a=[];for(let d=0;d<L;d++)cr(e,d,n)&&a.push(d);return a},uo=c===0?dt.net<0:dt.net<1||dt.net<2&&t.food<8;if(uo){let n=et("farm").sort((a,d)=>x(a,O)-(r.cells[a].t==="plains"?2:0)+ee(a)*3-(x(d,O)-(r.cells[d].t==="plains"?2:0)+ee(d)*3));n.length&&fe({t:"build",type:"farm",cell:n[0]})}let On=n=>r.cells.some(a=>a.bld&&a.bld.owner===e&&a.bld.type===n),Nr=n=>r.cells.filter(a=>a.bld&&a.bld.owner===e&&a.bld.type===n).length;if(c>=1&&!On("barracks")&&r.turn>=(c===2?7:9)&&t.gold>=Oe.barracks.cost+15&&_(e).length>=p+1){let n=et("barracks").filter(a=>x(a,O)>=2).sort((a,d)=>oe[a]-oe[d]);n.length&&oe[n[0]]<oe[O]-2&&fe({t:"build",type:"barracks",cell:n[0]})}let An=(c===2?2:c===1?1:0)+(l.build||S==="defend"||S==="territory"?1:0);if(c>=1&&r.turn>=(c===2?9:12)&&Nr("fort")<An&&t.gold>=(c===2?100:70)){let n=et("fort").sort((a,d)=>oe[a]-we(a)*3-(oe[d]-we(d)*3));n.length&&fe({t:"build",type:"fort",cell:n[0]})}if(c>=1&&Vt&&Nr("fort")<4&&t.gold>=150){let n=et("fort").filter(a=>ee(a)<=2&&x(a,O)>=3).sort((a,d)=>oe[a]-oe[d]);n.length&&!r.cells.some(a=>a.bld&&a.bld.owner===e&&a.bld.type==="fort"&&x(a.i,n[0])<=2)&&fe({t:"build",type:"fort",cell:n[0]})}if(c>=1&&Bt(e)<0&&r.turn>=(l.trade?8:10)&&t.gold>=bt(e,"market")+(l.trade?25:35)&&(l.trade||be(e).net<0||t.food>=40)){let n=et("market").filter(a=>ee(a)===0).sort((a,d)=>x(a,O)-x(d,O));n.length&&fe({t:"build",type:"market",cell:n[0]})}let ho=t.seen.galley+t.seen.trans+t.seen.drakkar;if(c>=1&&!Se.length&&!i&&r.turn>=(r.mapType==="islands"?6:10)&&t.gold>=bt(e,"port")+20){let n=null;for(let a of et("port")){let d=Sr(Jt(a)),m=(d?d.turns:60)+x(a,O)*.3;(!n||m<n.sc)&&(n={i:a,sc:m,p:d})}n&&(n.p&&n.p.turns+2<lo||ho>=.5&&c===2)&&fe({t:"build",type:"port",cell:n.i})}let mo=n=>{for(let a of Se)if(fe({t:"recruit",type:n,at:a}))return!0;return!1};if(Se.length&&_(e).length<b){let n=Q(e)==="varangians",a=g=>_(e).filter(v=>v.type===g).length,d=a("trans")+a("drakkar"),m=a("galley")+a("drakkar"),h=Math.min(c===2?3:2,Math.ceil(ho)+(t.ai.ferryWorth&&c===2?1:0)+(r.mapType==="islands"&&r.turn>=14&&c>=1?1:0));t.ai.ferryWorth&&!d&&t.gold>=Je(e,n?"drakkar":"trans")+10?mo(n?"drakkar":"trans"):m<h&&t.gold>=Je(e,n?"drakkar":"galley")+15&&mo(n?"drakkar":"galley")}let Tn=n=>{let a=[O];for(let d of r.cells)d.bld&&d.bld.owner===e&&d.bld.type==="barracks"&&a.push(d.i);return n&&a.sort((d,m)=>oe[d]-oe[m]),a},tt=(n,a)=>{for(let d of Tn(a))if(fe({t:"recruit",type:n,at:d}))return!0;return!1},_e=n=>_(e).filter(a=>a.type===n).length;if(_(e).length<b)if(c>=1){Mr.length&&_e("scout")<(c===2?2:1)&&t.gold>=k.scout.cost+5&&tt("scout",!0),R<0&&!_e("scout")&&r.turn>=2&&r.turn<=24&&r.turn>=(t.ai.scoutAt||0)&&t.gold>=k.scout.cost+8&&tt("scout",!0)&&(t.ai.scoutAt=r.turn+7);let n=_(e).filter(d=>me(d)&&d.hp<d.maxHp*.7).length;_e("healer")<(c===2?2:1)+(l.medic?1:0)&&r.turn>=8&&n>=2&&_(e).filter(me).length>=p&&t.gold>=Je(e,"healer")+20&&tt("healer",!0),!_e("cmd")&&r.turn>=8&&r.turn>=t.cmdReady&&t.gold>=k.cmd.cost+10&&_(e).length>=p&&fe({t:"recruit",type:"cmd",at:O}),(R>=0||t.memBld.some(d=>d&&s(d.owner)&&d.type==="fort"))&&(t.ai.phase==="attack"||R>=0)&&_e("cat")<(c===2||c===1&&R>=0?2:1)+(Vt||l.attack?1:0)&&r.turn>=(l.attack?8:10)&&r.turn>=(t.ai.catAt||0)&&t.gold>=k.cat.cost+15&&_(e).filter(me).length>=p+1&&tt("cat",!0)&&(t.ai.catAt=r.turn+6)}else!_e("scout")&&r.turn>=2&&r.turn<=12&&r.turn>=(t.ai.scoutAt||0)&&$()<.3&&tt("scout",!0)&&(t.ai.scoutAt=r.turn+8),!_e("cmd")&&r.turn>=10&&$()<.12&&fe({t:"recruit",type:"cmd",at:O}),!_e("cat")&&r.turn>=14&&$()<.1&&tt("cat",!0);let Ir=n=>{let a=h=>_(e).filter(g=>de(g.type)===h).length,d=[];t.capLvl===1&&r.turn>=10&&d.push(["cap"]),_(e).filter(me).length>=p&&d.push(["tech","smith"]),be(e).net<1&&Nr("farm")>=1&&d.push(["tech","crops"]),a("cav")>=3&&d.push(["tech","stable"]),a("arch")>=3&&d.push(["tech","bows"]),(t.seen.cat>=.5||ft.length>=2||S==="defend")&&d.push(["tech","mason"]),l.build&&t.capLvl===2&&t.gold>=160&&d.unshift(["cap"]),a("cat")>=1&&d.push(["tech","siege"]),t.tech.smith&&d.push(["tech","armor"]),R<0&&a("scout")&&d.push(["tech","maps"]),t.capLvl===2&&t.gold>=220&&d.push(["cap"]);let m=r.cells.find(h=>h.village&&h.vOwner===e&&h.vLvl<2&&ee(h.i)===0);m&&d.push(["vup",m.i]),c===0&&tr(d,$);for(let h of d){let g=h[0]==="cap"?ue[t.capLvl+1]?wt(e,t.capLvl+1):1e9:h[0]==="vup"?pt:ot[h[1]].cost;if(!(t.gold<g+n||h[0]==="tech"&&fr(e,h[1]))&&(h[0]==="cap"?fe({t:"capUp"}):h[0]==="vup"?fe({t:"villUp",cell:h[1]}):fe({t:"research",k:h[1]})))return!0}return!1};c>=1&&t.gold>=(l.build?120:l.attack?190:150)&&(!l.build||_(e).filter(me).length>=p)&&Ir(l.build?40:60);let go={cav:"inf",arch:"cav",inf:"arch"};for(let n=0;n<5&&(j=_(e),dt=be(e),!(j.length>=b));n++){let a;if(c===0){let m=$();a=m<.45?"inf":m<.8?"arch":"cav"}else{let m={inf:0,arch:0,cav:0};j.forEach(v=>{let w=de(v.type);m[w]!==void 0&&!v.aboard&&m[w]++});let h=j.some(v=>(de(v.type)==="inf"||de(v.type)==="arch")&&x(v.cell,O)<=1),g=v=>We.reduce((w,y)=>w+(de(y)===v&&t.seen[y]||0),0);if(m.cav===0&&r.turn<=8)a="cav";else if(!h)a="inf";else{let v={inf:1,arch:.9,cav:.7+(l.raid?.5:0)};for(let y of rt)v[go[y]]+=g(y)*.9,v[y]-=g(go[y])*.5;let w=j.filter(me).length||1;for(let y of rt)v[y]-=m[y]/w*1.2;if(c===1)for(let y of rt)v[y]+=$()*.6;a=rt.reduce((y,M)=>v[y]>=v[M]?y:M)}}let d=Q(e)?$t[Q(e)].uniq:null;if(d&&!k[d].naval&&de(d)===a&&t.gold>=Je(e,d)+4&&$()<(c===0?.4:.75)&&(a=d),t.gold<Je(e,a)){let m=rt.filter(h=>Je(e,h)<=t.gold&&h!=="cav");if(!m.length)break;a=m[Math.floor($()*m.length)]}if(dt.net-k[a].food<-1&&t.food<8&&!ft.length||c>=1&&uo&&t.gold-k[a].cost<Oe.farm.cost&&et("farm").length===0&&dt.net-k[a].food<-2||!tt(a,!ft.length))break}c>=1?Ir((c===2?20:35)+(l.attack?25:0)-(l.build?10:0)):$()<.2&&Ir(30)}function nl(e){if(!r.diplo)return;let t=r.sides[e];if(!t.alive)return;let o=Math.max(1,re(e)),i=ve().filter(p=>p!==e),s=pr(),f=p=>r.sides[p].vStreak>0||r.sides[p].tStreak>0;for(let p of i)if(f(p)&&r.sides[p].vStreak+r.sides[p].tStreak>=2&&!mt(e,p)){if(r.rel[e][p]==="ally"){G({t:"dip",kind:"break",to:p});return}if(r.rel[e][p]==="peace"){G({t:"dip",kind:"war",to:p});return}}let l=ye(e),c=t.ai.target;if(r.turn>=4&&lt()<(t.ai.goal==="defend"?.55:.3)&&(l.length>=2||l.length===1&&o<re(l[0])*.7)){let p=l.filter(u=>!$e(e,u,"peace",6)&&u!==s&&!f(u)&&(gr(e,u)<0||gr(e,u)===s)).sort((u,S)=>(u===c)-(S===c)||zt(S,e)-zt(u,e));if(p.length&&(l.length>=2||p[0]!==c||o<re(p[0])*.7)){G({t:"dip",kind:"peace",to:p[0]});return}}if(s>=0&&s!==e&&D(e,s)&&lt()<.5){let p=i.find(u=>u!==s&&r.rel[e][u]==="peace"&&D(u,s)&&r.turn-r.relSince[e][u]>=3&&!$e(e,u,"ally",6));if(p!==void 0){G({t:"dip",kind:"ally",to:p});return}}if(r.turn>=10&&lt()<.4){let p=i.filter(u=>r.rel[e][u]==="peace"&&!mt(e,u)).sort((u,S)=>x(r.caps[e],De(e,u))-x(r.caps[e],De(e,S)));if(!l.length||t.ai.blocked){let u=ve().some(b=>ye(b).length),S=p.find(b=>re(b)<o*(gt[kr(e)].attack?1.4:1.15)||r.turn-r.relSince[e][b]>=(gt[kr(e)].attack?10:14)||!u);if(S!==void 0&&(qt(e).diff!=="easy"||!u)){G({t:"dip",kind:"war",to:S});return}}else if(qt(e).diff!=="easy"&&l.length===1){let u=x(r.caps[e],De(e,l[0])),S=p.find(b=>re(b)<o*.7&&x(r.caps[e],De(e,b))<u);if(S!==void 0&&o>re(l[0])*1.2){G({t:"dip",kind:"war",to:S});return}}}}function ll(e){let t=r.sides[e];if(!(!t.alive||r.turn<5))for(let o of ve()){if(o===e||r.rel[e][o]!=="ally"||$e(e,o,"gift",5))continue;let i=r.sides[o],s=r.units.some(c=>c.alive&&D(o,c.side)&&r.zone[c.cell]===o);if(i.food<=5&&be(o).net<0&&t.food>=30&&be(e).net>=0){G({t:"aid",to:o,kind:"food",n:15});return}let l=re(o)<re(e)*.6;if(t.gold>=90&&i.gold<40&&s||t.gold>=130&&i.gold<60&&l){G({t:"aid",to:o,kind:"gold",n:t.gold>=160?40:25});return}}}var il=e=>({ai:JSON.parse(JSON.stringify(r.sides[e].ai)),rng:r.rng});function gn(e,t){let o=r,i=Ge,s=St(),f={steps:[],refused:[],error:null};Re(e),oo(f),Wt(null);try{r.over||(nl(t),ll(t),mn(t))}catch(l){f.error=String(l&&l.stack||l)}return f.steps.push({a:{t:"end",bot:il(t)}}),oo(null),Wt(s),nt(i),Re(o),f}self.onmessage=e=>{let{id:t,g:o,side:i,uid:s,opt:f}=e.data,l=Date.now(),c=er[o.size];(c.w!==Y||c.h!==ne||o.ns!==Et)&&ht(c.w,c.h,o.ns),Object.assign(rr,f),nt(s);let p=gn(o,i);self.postMessage({id:t,...p,ms:Date.now()-l})};})();\n';
   (function() {
     const KEYS = { save: "soty.save", prefs: "soty.prefs", sound: "soty.sound", lang: "soty.lang", rooms: "soty.rooms" };
     let storeLocked = false;
@@ -10513,7 +10599,7 @@ void main() {
       "net.mine.turn": "хід {n}",
       "net.mine.over": "Партія скінчилась",
       "net.mine.gone": "Кімнати вже немає",
-      "net.notify": "📤 Повідомити друга",
+      "net.notify": "Повідомити друга",
       "net.notify.title": "Надіслати другові посилання: тепер його хід",
       "net.notify.text": "Твій хід у «Соти: держави на гексах»! Кімната {code}.",
       "pause.netLeave": "🚪 Вийти з онлайн-партії",
@@ -10563,7 +10649,32 @@ void main() {
       "pause.motion.auto": "🌀 Рух: як у системі",
       "pause.motion.less": "🌀 Рух: менше",
       "pause.motion.full": "🌀 Рух: увесь",
-      "pause.motion.title": "Менше руху: без тремтіння камери, хвилястих прапорів, пульсування й обертання меню; ходи все одно показано"
+      "pause.motion.title": "Менше руху: без тремтіння камери, хвилястих прапорів, пульсування й обертання меню; ходи все одно показано",
+      // S-41: replays
+      "replay.watch": "🎬 Переглянути партію",
+      "replay.mine": "🎬 Переглянути",
+      "replay.loading": "Завантажуємо партію…",
+      "replay.preparing": "Готуємо повтор…",
+      "replay.err": "Не вдалося показати цю партію.",
+      "replay.err.gone": "Цієї кімнати вже немає: завершені партії зберігаються 7 днів.",
+      "replay.from": "Повтор з ходу {n}: раніші ходи цієї партії на цьому пристрої не збереглися.",
+      "replay.cut": "Повтор обривається на ході {n}: далі журнал партії не збігається з правилами.",
+      "replay.cut.version": "Повтор обривається на ході {n}: партію зіграно в іншій версії гри.",
+      "replay.turn": "Хід {n} з {m} · {side}",
+      "replay.turn.go": "До ходу {n} з {m}",
+      "replay.end": "Кінець партії",
+      "replay.play": "Грати",
+      "replay.pause": "Пауза",
+      "replay.again": "Спочатку",
+      "replay.prev": "Попередній хід",
+      "replay.next": "Наступний хід",
+      "replay.speed": "Швидкість повтору",
+      "replay.eye.all": "Усе видно: уся мапа, без туману війни",
+      "replay.eye.mine": "Мій огляд: лише те, що бачила ваша держава",
+      "replay.eye.toast.all": "👁 Видно всю мапу",
+      "replay.eye.toast.mine": "🌫 Огляд вашої держави",
+      "replay.exit": "Вийти з повтору",
+      "replay.slider": "Хід партії"
     };
     LANGS.en = {
       // page, language
@@ -11607,7 +11718,7 @@ void main() {
       "net.mine.turn": "turn {n}",
       "net.mine.over": "The game is over",
       "net.mine.gone": "The room is gone",
-      "net.notify": "📤 Tell your friend",
+      "net.notify": "Tell your friend",
       "net.notify.title": "Send your friend the link: it is their turn now",
       "net.notify.text": "Your turn in SOTY: Honeycomb Kingdoms! Room {code}.",
       "pause.netLeave": "🚪 Leave the online game",
@@ -11657,7 +11768,32 @@ void main() {
       "pause.motion.auto": "🌀 Motion: as the system",
       "pause.motion.less": "🌀 Motion: less",
       "pause.motion.full": "🌀 Motion: full",
-      "pause.motion.title": "Less motion: no camera shake, waving flags, pulsing or turning menu; moves are still shown"
+      "pause.motion.title": "Less motion: no camera shake, waving flags, pulsing or turning menu; moves are still shown",
+      // S-41: replays
+      "replay.watch": "🎬 Watch the replay",
+      "replay.mine": "🎬 Watch",
+      "replay.loading": "Loading the game…",
+      "replay.preparing": "Preparing the replay…",
+      "replay.err": "Could not show this game.",
+      "replay.err.gone": "This room is gone: finished games are kept for 7 days.",
+      "replay.from": "Replay from turn {n}: the earlier turns of this game were not kept on this device.",
+      "replay.cut": "The replay stops at turn {n}: after that the game’s log does not match the rules.",
+      "replay.cut.version": "The replay stops at turn {n}: the game was played in another version.",
+      "replay.turn": "Turn {n} of {m} · {side}",
+      "replay.turn.go": "To turn {n} of {m}",
+      "replay.end": "End of the game",
+      "replay.play": "Play",
+      "replay.pause": "Pause",
+      "replay.again": "From the start",
+      "replay.prev": "Previous turn",
+      "replay.next": "Next turn",
+      "replay.speed": "Replay speed",
+      "replay.eye.all": "See all: the whole map, no fog of war",
+      "replay.eye.mine": "My view: only what your state saw",
+      "replay.eye.toast.all": "👁 The whole map",
+      "replay.eye.toast.mine": "🌫 Your state’s view",
+      "replay.exit": "Leave the replay",
+      "replay.slider": "Turn of the game"
     };
     applyPageTexts();
     if (location.protocol !== "file:") {
@@ -11956,7 +12092,7 @@ void main() {
       G.units.forEach((u, k) => makeUnitObj(u, st.units[k].rot));
     }
     function saveGame() {
-      if (!G || G.preview || FAST || G.over || !G.cells || NET.game || G === NET.g || G === TUT.g) return;
+      if (!G || G.preview || FAST || G.over || !G.cells || NET.game || G === NET.g || G === TUT.g || REPLAY.on) return;
       const st = snapshot(), j = journal();
       if (j) st.log = journalTail(j);
       store.set(SAVE_KEY, JSON.stringify(st));
@@ -11976,7 +12112,7 @@ void main() {
       }
     }
     const clearSave = () => {
-      if (!NET.game && G !== NET.g && G !== TUT.g) store.del(SAVE_KEY);
+      if (!NET.game && G !== NET.g && G !== TUT.g && !REPLAY.on) store.del(SAVE_KEY);
     };
     function cleanSnap(st) {
       if (!st || typeof st !== "object" || st.v !== SAVE_VER) return null;
@@ -13417,9 +13553,11 @@ void main() {
     if (!Array.isArray(SETUP.slots) || SETUP.slots.length < 2) SETUP.slots = legacySlots(SETUP, "normal");
     const TUT = { on: false, g: null, t: null, done: null, shown: null, mark: null };
     const NET = { stub: false, tp: null, room: null, code: null, want: null, pending: false, last: null, game: null, entering: false, sync: false, rate: void 0, next: null, off: {}, awayT: null, botsT: null, g: null, lostSaid: false, busy: false, note: null };
+    const REPLAY = { on: false, j: null, tl: null, n: 0, k: 0, spec: false, play: false, speed: 1, all: true, eye: null, gen: 0, g0: null, uid0: 0, pv0: 0, keep: null, from: null, jump: null, jumping: false, last: 0, shown: null };
     let PV = 0;
+    const eye = () => REPLAY.on && REPLAY.all && REPLAY.eye ? REPLAY.eye : G.sides[PV];
     let BUSY = false;
-    const myTurn = () => !!G && G.current === PV && G.human[PV] && !G.handoff && !SHOWN_TURN;
+    const myTurn = () => !!G && G.current === PV && G.human[PV] && !G.handoff && !SHOWN_TURN && !REPLAY.on;
     const soloHuman = () => G && G.human.filter(Boolean).length === 1;
     const sideName = (s) => soloHuman() && s === PV ? tr("side.you.name") : G && G.ns === 2 && G.mode !== "duo" ? tr("side.ai.name") : SIDE[s].name;
     const sideGen = (s) => soloHuman() && s === PV ? tr("side.you.gen") : G && G.ns === 2 && G.mode !== "duo" ? tr("side.ai.gen") : SIDE[s].gen;
@@ -13428,6 +13566,7 @@ void main() {
     const GOALS = textTable({ capital: "", villages: "", territory: "", defend: "", build: "" }, "goal");
     function newGame(diff, preview, st, opts) {
       if (NET.game && !NET.entering) netStop();
+      if (REPLAY.on) replayOff();
       if (!(opts && opts.scen === "tut")) {
         TUT.on = false;
         $("btnEnd").classList.remove("tutPulse");
@@ -13471,14 +13610,7 @@ void main() {
         for (let s = 0; s < ns; s++) computeSupply(s);
       }
       buildMapView();
-      const k = (W + H) / 24;
-      SHALLOWS.scale.set(1.65 * SQ3 * W, 1.65 * 1.5 * H, 1);
-      controls.maxDistance = 34 * Math.max(1, k);
-      scene.fog.near = 32 * Math.max(1, k);
-      scene.fog.far = 72 * Math.max(1, k);
-      const sh = Math.max(16, Math.max(CX, CZ) + 3);
-      Object.assign(sun.shadow.camera, { left: -sh, right: sh, top: sh, bottom: -sh });
-      sun.shadow.camera.updateProjectionMatrix();
+      fitView();
       if (preview) {
         computeTerritory();
         G.sides[0].explored.fill(1);
@@ -13555,6 +13687,16 @@ void main() {
         tip("start");
         if (G.sides[PV].fac) tip("fac");
       }, 2300);
+    }
+    function fitView() {
+      const k = (W + H) / 24;
+      SHALLOWS.scale.set(1.65 * SQ3 * W, 1.65 * 1.5 * H, 1);
+      controls.maxDistance = 34 * Math.max(1, k);
+      scene.fog.near = 32 * Math.max(1, k);
+      scene.fog.far = 72 * Math.max(1, k);
+      const sh = Math.max(16, Math.max(CX, CZ) + 3);
+      Object.assign(sun.shadow.camera, { left: -sh, right: sh, top: sh, bottom: -sh });
+      sun.shadow.camera.updateProjectionMatrix();
     }
     function focusCamera(cell) {
       if (cell == null) {
@@ -13874,7 +14016,7 @@ void main() {
         }
       }
       cellView.length = 0;
-      tweens.length = 0;
+      for (const tw of tweens.splice(0)) tw.res();
       UOBJ.clear();
     }
     const ovMat = (c) => new THREE.MeshBasicMaterial({ color: c, transparent: true, opacity: 0, depthWrite: false });
@@ -13959,7 +14101,7 @@ void main() {
       }
     }
     function structSig(i) {
-      const P = G.sides[PV], c = G.cells[i];
+      const P = eye(), c = G.cells[i];
       return `${c.cap}|${c.village ? P.memOwner[i] : "x"}|${P.memBld[i] ? P.memBld[i].type + P.memBld[i].owner : "-"}|${P.memLvl[i]}|${P.memRuin[i]}`;
     }
     function makeBlades() {
@@ -13975,7 +14117,7 @@ void main() {
       return mergeParts(g);
     }
     function renderStruct(i) {
-      const cv = cellView[i], c = G.cells[i], P = G.sides[PV];
+      const cv = cellView[i], c = G.cells[i], P = eye();
       while (cv.struct.children.length) {
         const o = cv.struct.children.pop();
         disposeObj(o);
@@ -14046,7 +14188,7 @@ void main() {
     }
     function applyFog(force, vis) {
       if (!G) return;
-      const P = G.sides[PV];
+      const P = eye();
       for (let i = 0; i < N; i++) {
         const cv = cellView[i], c = G.cells[i];
         const st = vis ? vis[i] ? 2 : cv.fog > 0 ? 1 : 0 : !P.explored[i] ? 0 : P.vis[i] ? 2 : 1;
@@ -14699,7 +14841,7 @@ void main() {
         camera.position.copy(controls.target).add(off);
       });
     }
-    const playerSees = (i) => G.sides[PV].vis[i] === 1;
+    const playerSees = (i) => eye().vis[i] === 1;
     const unitById = (id) => G.units.find((u) => u.id === id);
     let SHOW = false;
     let SEEN = null;
@@ -14755,7 +14897,7 @@ void main() {
         placeAt(u, e.to);
       },
       sight(e) {
-        if (e.side === PV) {
+        if (e.side === PV && eye() === G.sides[PV]) {
           SEEN = e.vis;
           applyFog(false, SEEN);
         }
@@ -14799,7 +14941,7 @@ void main() {
             faceTo(a, e.at, e.from);
             return;
           }
-          if (!G.human[e.side]) await swingTo(e.at);
+          if (!G.human[e.side] || REPLAY.on) await swingTo(e.at);
           objOf(a).visible = true;
           objOf(d).visible = true;
         } else if (!SHOW) return;
@@ -14838,7 +14980,7 @@ void main() {
           faceTo(a, e.cell, e.from);
           return;
         }
-        if (!G.human[e.side]) await swingTo(e.cell);
+        if (!G.human[e.side] || REPLAY.on) await swingTo(e.cell);
         objOf(a).visible = true;
         await animWallStrike(a, e.cell, e.from);
       },
@@ -14849,7 +14991,7 @@ void main() {
           faceTo(a, e.cell, e.from);
           return;
         }
-        if (!G.human[e.side]) await swingTo(e.cell);
+        if (!G.human[e.side] || REPLAY.on) await swingTo(e.cell);
         objOf(a).visible = true;
         await animSiegeShot(a, e.cell, null, e.from);
       },
@@ -15266,7 +15408,7 @@ void main() {
       return -1;
     }
     async function onTap(i, ptype) {
-      if (!G || G.over || i < 0) return;
+      if (!G || G.over || i < 0 || REPLAY.on) return;
       const P = G.sides[PV];
       if (BUSY || !myTurn()) {
         if (P.explored[i]) selectCell(i);
@@ -15512,7 +15654,7 @@ void main() {
       renderTipAt(i, hoverXY);
     }
     function renderTipAt(i, xy) {
-      const P = G.sides[PV];
+      const P = eye();
       if (i < 0 || !P.explored[i] || !xy) {
         hideTip();
         hoverRing.visible = false;
@@ -15642,7 +15784,8 @@ void main() {
       if (k === "Enter" || k === " ") {
         e.preventDefault();
         if (document.activeElement && document.activeElement !== document.body) document.activeElement.blur();
-        endTurn();
+        if (REPLAY.on) replayToggle();
+        else endTurn();
       } else if (k === "Tab") {
         e.preventDefault();
         nextUnit();
@@ -15707,6 +15850,15 @@ void main() {
       cvs.addEventListener("pointerup", lift);
       cvs.addEventListener("pointercancel", lift);
     }
+    {
+      const root = document.documentElement.style, fit = () => {
+        root.setProperty("--ph", $("panel").offsetHeight + "px");
+        root.setProperty("--ah", $("actions").offsetHeight + "px");
+      };
+      const ro = new ResizeObserver(fit);
+      ro.observe($("panel"));
+      ro.observe($("actions"));
+    }
     function toast(msg, cls) {
       if (FAST || G && G.preview) return;
       const t = document.createElement("div");
@@ -15769,10 +15921,10 @@ void main() {
       $("turnNo").textContent = scL && scL.limit ? `${turnShown}/${scL.limit}` : turnShown;
       $("turnNo").parentNode.title = scL && scL.limit ? scL.kind === "survive" ? tr("ui.turnNo.survive", { n: scL.limit }) : tr("ui.turnNo.deadline", { n: scL.limit }) : tr("ui.turnNo.title");
       $("turnNo").parentNode.classList.toggle("warn", !!(scL && scL.limit && scL.kind === "deadline" && scL.limit - turnShown <= 3));
-      const who = $("turnWho"), mine = myTurn();
+      const who = $("turnWho"), mine = myTurn(), seen = mine || REPLAY.on && cur === PV && G.human[PV];
       const cf = FACTIONS[G.sides[cur].fac];
-      who.querySelector(".tw").textContent = (cf ? cf.icon + " " : "") + (mine && soloHuman() ? tr("turn.who.you") : G.ns === 2 && G.mode !== "duo" ? tr("turn.who.ai") : tr("turn.who.side", { side: SIDE[cur].name }));
-      who.className = "chip" + (mine ? "" : " ai");
+      who.querySelector(".tw").textContent = (cf ? cf.icon + " " : "") + (seen && soloHuman() ? tr("turn.who.you") : G.ns === 2 && G.mode !== "duo" ? tr("turn.who.ai") : tr("turn.who.side", { side: SIDE[cur].name }));
+      who.className = "chip" + (seen ? "" : " ai");
       who.querySelector("i").style.background = who.querySelector("i").style.boxShadow = "";
       if (G.mode === "duo" || G.ns > 2) {
         who.querySelector("i").style.background = SIDE[cur].css;
@@ -16703,7 +16855,7 @@ void main() {
     const TOUCH = matchMedia("(pointer: coarse)").matches;
     const tipQueue = [];
     function tip(id) {
-      if (TUT.on) return;
+      if (TUT.on || REPLAY.on) return;
       if (!PREF.tips || PREF.seen[id] || FAST || !G || G.preview || G.over || tipQueue.includes(id) || $("coach").dataset.id === id) return;
       tipQueue.push(id);
       if ($("coach").classList.contains("hidden")) nextTip();
@@ -16913,13 +17065,14 @@ void main() {
       }
       $("endCard").innerHTML = `<div class="endtitle ${win ? "win" : "lose"}"${duo && w >= 0 ? ` style="color:${SIDE[w].css}"` : ""}>${title}</div>
     <div class="endsub">${sub}<br>${meta}</div>${table}
-    <button class="big go" id="btnAgain">${tr("end.again")}</button><button class="big alt" id="btnSameMap">${tr("end.same")}</button><button class="big alt" id="btnEndMenu">${tr("end.menu")}</button>`;
+    <button class="big go" id="btnAgain">${tr("end.again")}</button><button class="big alt" id="btnSameMap">${tr("end.same")}</button>${replayCan() ? `<button class="big alt" id="btnReplay">${tr("replay.watch")}</button>` : ""}<button class="big alt" id="btnEndMenu">${tr("end.menu")}</button>`;
       $("endScreen").classList.remove("hidden");
       const st = G.setup, seed = G.seed, diff = G.diff, facs = G.sides.some((S2) => S2.fac) ? G.sides.map((S2) => S2.fac) : null;
       $("btnAgain").onclick = () => newGame(diff);
       $("btnSameMap").onclick = () => newGame(diff, false, null, scE ? { ...st, ...scE.setup } : { ...st, seed, facs });
       $("btnSameMap").textContent = scE ? tr("end.same.scen") : tr("end.same");
       $("btnEndMenu").onclick = toMenu;
+      if ($("btnReplay")) $("btnReplay").onclick = replayFromEnd;
       if (NET.game) netEndButtons();
     }
     const mm = $("minimap"), mctx = mm.getContext("2d");
@@ -16938,7 +17091,7 @@ void main() {
     const hexCss = (n) => "#" + n.toString(16).padStart(6, "0");
     function drawMinimap() {
       if (!G) return;
-      const P = G.sides[PV], s = MM.s;
+      const P = eye(), s = MM.s;
       mctx.clearRect(0, 0, mm.width, mm.height);
       for (let i = 0; i < N; i++) {
         const x = MM.ox + POS[i].x * s, y = MM.oy + POS[i].z * s;
@@ -17015,6 +17168,339 @@ void main() {
       const off = camera.position.clone().sub(controls.target);
       controls.target.set(x, 0.4, z);
       camera.position.copy(controls.target).add(off);
+    });
+    const RP_SPEEDS = [1, 2, 4, 8];
+    const replayCan = () => !!(G && G.over && (NET.game && NET.room || journal() && journal().start));
+    function replayLog(h) {
+      if (!h || !h.st || !Array.isArray(h.acts) || !markupFree(h.acts)) return null;
+      const st = cleanSnap(JSON.parse(JSON.stringify(h.st)));
+      if (!st || !st.setup || !Array.isArray(st.human)) return null;
+      return { v: JOURNAL_V, seq: 0, start: st, acts: h.acts, round: null, prev: null };
+    }
+    async function replayFromEnd() {
+      if (!G || !G.over || REPLAY.on) return;
+      const g0 = G, b = $("btnReplay"), online = !!(NET.game && NET.room);
+      if (b) {
+        b.disabled = true;
+        b.textContent = online ? tr("replay.loading") : tr("replay.preparing");
+      }
+      let j = online ? replayLog(await netHistory(NET.room)) : null;
+      if (G !== g0 || REPLAY.on) return;
+      const own2 = journal();
+      if (!j && own2 && own2.start) j = JSON.parse(JSON.stringify(own2));
+      if (!j) {
+        if (b) b.textContent = tr("replay.err");
+        return;
+      }
+      replayOpen(j, { spectate: !online && !!g0.spectate, pv: online ? NET.game.seat : PV, g0, from: "end" });
+    }
+    function replayRoom(code) {
+      const me = netRooms()[code];
+      if (!me || !netHere() || REPLAY.on) return;
+      netSay(tr("replay.loading"));
+      let done = false, asked = false, gone = false;
+      const fin = (h) => {
+        if (done) return;
+        done = true;
+        clearTimeout(t);
+        R.close();
+        if (NET_HIST && NET_HIST.R === R) NET_HIST.done(null);
+        if ($("netSheet").classList.contains("hidden")) return;
+        const j = replayLog(h);
+        if (!j) {
+          netSay(gone ? tr("replay.err.gone") : tr("replay.err"));
+          return;
+        }
+        replayOpen(j, { pv: me.seat, from: "sheet", v: h.v });
+      };
+      const R = new NetRoom(netTp(), code, me, { rate: NET.rate, have: () => ({ have: 0 }), onMsg: (m) => {
+        if (m.t === "welcome" && !asked) {
+          asked = true;
+          netHistory(R).then(fin);
+        } else if (m.t === "history" || m.t === "err") netHistTake(m);
+        else if (m.t === "net" && m.state === "gone") {
+          gone = true;
+          if (R.why === "room") netStatus(code, { state: "gone" });
+          fin(null);
+        }
+      } });
+      const t = setTimeout(() => fin(null), 25e3);
+      R.connect();
+    }
+    function replayOpen(j, o) {
+      if (o.from === "sheet") netSay(tr("replay.preparing"));
+      setTimeout(() => replayStart(j, o), 60);
+    }
+    function replayStart(j, { spectate = false, pv = 0, g0 = null, from = "end", v = null } = {}) {
+      let tl = null;
+      try {
+        tl = replayTimeline(j, { spectate });
+      } catch (e) {
+        console.warn("SOTY replay:", e);
+      }
+      if (!tl || !tl.rounds.length || !tl.n && j.acts.length) {
+        if (from === "sheet") netSay(tr("replay.err"));
+        else if ($("btnReplay")) $("btnReplay").textContent = tr("replay.err");
+        return;
+      }
+      Object.assign(REPLAY, {
+        on: true,
+        j,
+        tl,
+        n: tl.n,
+        k: 0,
+        spec: spectate,
+        play: false,
+        all: true,
+        eye: null,
+        g0,
+        uid0: uid,
+        pv0: PV,
+        keep: journal(),
+        from,
+        jump: null,
+        jumping: false,
+        last: tl.rounds[tl.rounds.length - 1].turn,
+        shown: null
+      });
+      REPLAY.gen++;
+      keepJournal(null);
+      PV = pv;
+      for (const id of ["menu", "netSheet", "lobby", "endScreen", "handoff", "lookBar", "offer", "pause", "emoteBar"]) $(id).classList.add("hidden");
+      closeDiplo();
+      hideTip();
+      hideCoach();
+      document.documentElement.classList.add("replay");
+      $("rpBox").classList.remove("hidden");
+      $("hud").classList.remove("hidden");
+      controls.autoRotate = false;
+      const r = replayAt(j, tl, 0, { spectate });
+      replayStage(r.state, r.snap.uid);
+      focusCamera(G.caps[PV]);
+      if (j.seq > 0) toast(tr("replay.from", { n: j.start.turn }));
+      if (!tl.ok) {
+        const n = tl.rounds[tl.rounds.length - 1].turn;
+        toast(v && v !== SOTY_VERSION ? tr("replay.cut.version", { n }) : tr("replay.cut", { n }), "neg");
+      }
+      replayRun();
+    }
+    function replayStage(g, u) {
+      clearScene();
+      resetSelection();
+      clearQueue();
+      BUSY = false;
+      SHOWN_TURN = null;
+      SHOWN_RES = null;
+      PENDING = null;
+      bobU = null;
+      const sz = MAP_SIZES[g.size];
+      if (W !== sz.w || H !== sz.h || NSIDES !== g.ns) setupGrid(sz.w, sz.h, g.ns);
+      useGame(g);
+      setUid(u);
+      if (REPLAY.on) {
+        G.started = true;
+        G.handoff = false;
+        G.undo = [];
+      }
+      for (const x of G.units) if (x.alive) makeUnitObj(x);
+      buildMapView();
+      fitView();
+      replayEye();
+      lastGold = lastFood = null;
+      refreshAll(true);
+      updateUI();
+      mmDirty = true;
+    }
+    function replayEye() {
+      if (!REPLAY.on || !REPLAY.all) {
+        REPLAY.eye = null;
+        return;
+      }
+      const E = Object.create(G.sides[PV]), all = new Uint8Array(N).fill(1);
+      E.vis = all;
+      E.explored = all;
+      E.memOwner = G.cells.map((c) => c.village ? c.vOwner : -1);
+      E.memBld = G.cells.map((c) => c.bld ? { type: c.bld.type, owner: c.bld.owner } : null);
+      E.memLvl = G.cells.map((c) => c.village ? c.vLvl : c.cap >= 0 ? G.sides[c.cap].capLvl : 0);
+      E.memRuin = G.cells.map((c) => G.walls[c.i] && G.walls[c.i].hp <= 0 ? 1 : 0);
+      E.kc = G.caps.map((c, s) => G.sides[s].alive ? c : -1);
+      REPLAY.eye = E;
+    }
+    async function replayRun() {
+      if (!REPLAY.on || REPLAY.k >= REPLAY.n) return;
+      const gen = ++REPLAY.gen, g = G;
+      REPLAY.play = true;
+      replayBar();
+      while (REPLAY.on && REPLAY.gen === gen && G === g && REPLAY.k < REPLAY.n) {
+        const a = REPLAY.j.acts[REPLAY.k], turn = G.turn, sp = REPLAY.speed;
+        const ev = apply(G, JSON.parse(JSON.stringify(a)));
+        if (!ev) {
+          REPLAY.n = REPLAY.k;
+          break;
+        }
+        REPLAY.k++;
+        replayEye();
+        enqueue({ fn: () => replayFocus(ev), speed: sp });
+        enqueue({ ev, speed: sp });
+        pause(a.t === "end" ? G.turn !== turn ? 700 : 450 : 160, sp);
+        await played();
+        if (REPLAY.gen !== gen || G !== g) return;
+        updateUI();
+        replayBar();
+      }
+      if (REPLAY.gen === gen) {
+        REPLAY.play = false;
+        replayBar();
+      }
+    }
+    async function replayFocus(ev) {
+      const e = ev.find((x) => ["step", "board", "recruit", "build", "capUp", "villUp"].includes(x.e));
+      const c = !e ? -1 : e.e === "step" || e.e === "board" ? e.from : e.cell;
+      if (c >= 0 && playerSees(c)) await swingTo(c);
+    }
+    function replayToggle() {
+      if (!REPLAY.on) return;
+      if (REPLAY.jumping) {
+        if (REPLAY.jump) REPLAY.jump.play = !REPLAY.jump.play;
+        return;
+      }
+      if (REPLAY.play) {
+        REPLAY.gen++;
+        REPLAY.play = false;
+        replayBar();
+        return;
+      }
+      if (REPLAY.k >= REPLAY.n) replayJump(0, true);
+      else replayRun();
+    }
+    function replayJump(k, play) {
+      if (!REPLAY.on) return;
+      REPLAY.jump = { k: Math.max(0, Math.min(REPLAY.n, k)), play: play != null ? play : REPLAY.jump ? REPLAY.jump.play : REPLAY.play };
+      REPLAY.gen++;
+      REPLAY.play = false;
+      if (REPLAY.jumping) return;
+      REPLAY.jumping = true;
+      (async () => {
+        try {
+          while (REPLAY.on && REPLAY.jump) {
+            clearQueue();
+            await played();
+            const w = REPLAY.jump;
+            REPLAY.jump = null;
+            if (!REPLAY.on || !w) return;
+            const r = replayAt(REPLAY.j, REPLAY.tl, w.k, { spectate: REPLAY.spec });
+            if (!r.ok) {
+              toast(tr("replay.err"), "neg");
+              return;
+            }
+            replayStage(r.state, r.snap.uid);
+            REPLAY.k = w.k;
+            replayBar();
+            if (w.play && !REPLAY.jump) replayRun();
+          }
+        } finally {
+          REPLAY.jumping = false;
+        }
+      })();
+    }
+    const replayRound = (k) => {
+      const R = REPLAY.tl.rounds;
+      let r = 0;
+      for (let x = 0; x < R.length; x++) if (R[x].at <= k) r = x;
+      return r;
+    };
+    function replayPrev() {
+      const R = REPLAY.tl.rounds, r = replayRound(REPLAY.k);
+      replayJump(REPLAY.k > R[r].at ? R[r].at : R[Math.max(0, r - 1)].at);
+    }
+    function replayNext() {
+      const R = REPLAY.tl.rounds, r = replayRound(REPLAY.k);
+      replayJump(r + 1 < R.length ? R[r + 1].at : REPLAY.n);
+    }
+    async function replayClose() {
+      if (!REPLAY.on) return;
+      const g0 = REPLAY.g0, u0 = REPLAY.uid0, from = REPLAY.from;
+      REPLAY.gen++;
+      REPLAY.play = false;
+      REPLAY.jump = null;
+      clearQueue();
+      await played();
+      if (!REPLAY.on) return;
+      if (g0) {
+        replayOff();
+        replayStage(g0, u0);
+        renderEnd();
+      } else {
+        toMenu();
+        if (from === "sheet") openNetSheet();
+      }
+    }
+    function replayOff() {
+      REPLAY.gen++;
+      REPLAY.on = false;
+      REPLAY.play = false;
+      REPLAY.jump = null;
+      REPLAY.eye = null;
+      REPLAY.j = REPLAY.tl = REPLAY.g0 = null;
+      keepJournal(REPLAY.keep);
+      REPLAY.keep = null;
+      PV = REPLAY.pv0;
+      document.documentElement.classList.remove("replay");
+      $("rpBox").classList.add("hidden");
+    }
+    function replayBar() {
+      if (!REPLAY.on) return;
+      const R = REPLAY, rounds = R.tl.rounds, end = R.k >= R.n, s = G.current, over = end && !!G.over;
+      const lab = $("rpTurn"), key = over ? "end" : G.turn + "." + s;
+      lab.querySelector("span").textContent = over ? tr("replay.end") : tr("replay.turn", { n: G.turn, m: R.last, side: SIDE[s].name });
+      lab.querySelector("i").style.background = over ? "transparent" : SIDE[s].css;
+      if (R.shown !== key) {
+        R.shown = key;
+        lab.classList.remove("flash");
+        void lab.offsetWidth;
+        lab.classList.add("flash");
+      }
+      const sl = $("rpSlider");
+      sl.max = rounds.length;
+      sl.value = end ? rounds.length : replayRound(R.k);
+      $("rpPlay").textContent = R.play ? "⏸" : end ? "↺" : "▶";
+      $("rpPlay").title = R.play ? tr("replay.pause") : end ? tr("replay.again") : tr("replay.play");
+      $("rpSpeed").textContent = R.speed + "×";
+      $("rpEye").textContent = R.all ? "👁" : "🌫";
+      $("rpEye").title = R.all ? tr("replay.eye.all") : tr("replay.eye.mine");
+      $("rpPrev").disabled = R.k === 0;
+      $("rpNext").disabled = end;
+    }
+    $("rpPlay").onclick = replayToggle;
+    $("rpPrev").onclick = replayPrev;
+    $("rpNext").onclick = replayNext;
+    $("rpExit").onclick = replayClose;
+    $("rpSpeed").onclick = () => {
+      REPLAY.speed = RP_SPEEDS[(RP_SPEEDS.indexOf(REPLAY.speed) + 1) % RP_SPEEDS.length];
+      replayBar();
+    };
+    $("rpEye").onclick = () => {
+      REPLAY.all = !REPLAY.all;
+      replayEye();
+      refreshAll(true);
+      mmDirty = true;
+      replayBar();
+      toast(REPLAY.all ? tr("replay.eye.toast.all") : tr("replay.eye.toast.mine"));
+    };
+    $("rpSlider").addEventListener("input", () => {
+      const R = REPLAY.tl && REPLAY.tl.rounds, v = +$("rpSlider").value;
+      if (!REPLAY.on || !R) return;
+      $("rpTurn").querySelector("span").textContent = v >= R.length ? tr("replay.end") : tr("replay.turn.go", { n: R[v].turn, m: REPLAY.last });
+    });
+    $("rpSlider").addEventListener("change", () => {
+      const R = REPLAY.tl && REPLAY.tl.rounds, v = +$("rpSlider").value;
+      if (REPLAY.on && R) replayJump(v >= R.length ? REPLAY.n : R[v].at);
+    });
+    LANG_HOOKS.push(() => {
+      if (REPLAY.on) {
+        REPLAY.shown = null;
+        replayBar();
+      }
     });
     const NET_HOME = "https://pegasohlib.com";
     const NET_LINK = NET_HOME + "/soty/play/#join=";
@@ -17145,7 +17631,7 @@ void main() {
         const st = r.st || {}, yours = st.state === "playing" && st.cur === r.seat;
         const what = st.state === "open" ? tr("net.mine.lobby") : st.state === "over" ? tr("net.mine.over") : st.state === "gone" ? tr("net.mine.gone") : st.state === "playing" ? yours ? tr("net.mine.your") : st.cur != null ? tr("turn.who.side", { side: SIDE[st.cur].name }) : "" : "";
         const more = [st.turn && st.state === "playing" ? tr("net.mine.turn", { n: st.turn }) : "", netAgo(st.last)].filter(Boolean).join(" · ");
-        return `<div class="nmine${yours ? " yours" : ""}"><i class="sd e${r.seat}" style="background:${SIDE[r.seat].css}"></i><div class="nst"><b>${c} · ${netNameText(r.name, r.seat)}</b><span>${[what, more].filter(Boolean).join(" · ")}</span></div>${st.state === "gone" ? "" : `<button class="nsit${yours ? " sel" : ""}" data-open="${c}"${ok ? "" : " disabled"}>${tr("net.mine.open")}</button>`}<button class="sx" data-forget="${c}" aria-label="${tr("net.mine.forget")}" title="${tr("net.mine.forget")}">✕</button></div>`;
+        return `<div class="nmine${yours ? " yours" : ""}"><i class="sd e${r.seat}" style="background:${SIDE[r.seat].css}"></i><div class="nst"><b>${c} · ${netNameText(r.name, r.seat)}</b><span>${[what, more].filter(Boolean).join(" · ")}</span></div>${st.state === "gone" ? "" : st.state === "over" ? `<button class="nsit" data-replay="${c}"${ok ? "" : " disabled"}>${tr("replay.mine")}</button>` : `<button class="nsit${yours ? " sel" : ""}" data-open="${c}"${ok ? "" : " disabled"}>${tr("net.mine.open")}</button>`}<button class="sx" data-forget="${c}" aria-label="${tr("net.mine.forget")}" title="${tr("net.mine.forget")}">✕</button></div>`;
       }).join("") : "";
     }
     function netSay(text) {
@@ -17182,8 +17668,9 @@ void main() {
       savePrefs();
     });
     $("netMine").addEventListener("click", (e) => {
-      const o = e.target.closest("[data-open]"), f = e.target.closest("[data-forget]");
+      const o = e.target.closest("[data-open]"), f = e.target.closest("[data-forget]"), rp = e.target.closest("[data-replay]");
       if (o && !o.disabled) openLobby(o.dataset.open);
+      else if (rp && !rp.disabled) replayRoom(rp.dataset.replay);
       else if (f) {
         netKeep(f.dataset.forget, null);
         renderNetSheet();
@@ -17533,7 +18020,7 @@ void main() {
       toMenu();
     };
     $("btnMenu").addEventListener("click", () => {
-      $("btnNetLeave").classList.toggle("hidden", !NET.game);
+      $("btnNetLeave").classList.toggle("hidden", !NET.game || REPLAY.on);
       $("netLeaveAsk").classList.add("hidden");
     });
     function netFromHash() {
@@ -17650,7 +18137,7 @@ void main() {
     }
     const netBots = () => !!(NET.game && NET.room && NET.room.state === "open" && netBotSeat() === NET.game.seat);
     function netBotsCheck() {
-      if (!NET.game || !G || G.over || NET.sync) return;
+      if (!NET.game || !G || G.over || NET.sync || REPLAY.on) return;
       if (G.human[G.current] && !netAway(G.current)) {
         netAwayLater(G.current);
         return;
@@ -17717,6 +18204,12 @@ void main() {
     function netGameMsg(m) {
       const g = NET.game, R = NET.room;
       if (!g || !R) return false;
+      if (m.t === "history" || m.t === "err" && NET_HIST && NET_HIST.R === R) {
+        netHistTake(m);
+        return true;
+      }
+      if (REPLAY.on && !["next", "emote", "online"].includes(m.t)) return m.t !== "net";
+      if (REPLAY.on && m.t === "online") return true;
       if (NET.sync) {
         if (m.t === "snap") {
           NET.last = { st: m.st, seq: m.seq, hash: m.hash, acts: [] };
@@ -17857,6 +18350,42 @@ void main() {
       NET.last = null;
       if (NET.game) NET.game.out = [];
       NET.room.resync();
+    }
+    let NET_HIST = null;
+    function netHistory(R) {
+      if (NET_HIST) NET_HIST.done(null);
+      return new Promise((res) => {
+        const h = NET_HIST = { R, st: null, list: [], done: (v) => {
+          clearTimeout(h.t);
+          if (NET_HIST === h) NET_HIST = null;
+          res(v);
+        } };
+        h.t = setTimeout(() => h.done(null), 2e4);
+        if (!R.send({ t: "history", from: 1 })) h.done(null);
+      });
+    }
+    function netHistTake(m) {
+      const h = NET_HIST;
+      if (!h) return;
+      if (m.t === "err") {
+        if (m.code === "state" || m.code === "bad") h.done(null);
+        return;
+      }
+      if (!Number.isInteger(m.from) || m.from !== h.list.length + 1) {
+        h.done(null);
+        return;
+      }
+      if (m.from === 1) h.st = m.st;
+      for (const x of Array.isArray(m.list) ? m.list : []) {
+        if (!x || !x.a || typeof x.a !== "object" || typeof x.a.t !== "string" || x.seq !== h.list.length + 1) {
+          h.done(null);
+          return;
+        }
+        h.list.push(x.a);
+      }
+      if (m.more && Array.isArray(m.list) && m.list.length) {
+        if (!h.R.send({ t: "history", from: h.list.length + 1 })) h.done(null);
+      } else h.done(h.st ? { st: h.st, acts: h.list, v: h.R.info && h.R.info.v } : null);
     }
     const NET_AWAY = { live: 2 * 6e4 + 1e4, slow: 3 * 864e5 + 6e4 };
     const EMOTES = ["👍", "🤝", "⚔", "😅", "gg"];
@@ -18479,7 +19008,38 @@ void main() {
         BOT_ON = !!v;
       },
       bots: () => ({ ...BOT_STAT, thread: BOT_W ? "worker" : BOT_W === false ? "none" : "not started" }),
-      botPlay
+      botPlay,
+      // replays (S-41): replay() = where it is (k of n actions, the round, the fingerprint on screen and the timeline's at that
+      // round's start); replayJump(k), replayToggle(), replaySpeed(v), replayClose()
+      replay() {
+        if (!REPLAY.on) return { on: false };
+        const r = replayRound(REPLAY.k), R = REPLAY.tl.rounds[r];
+        return {
+          on: true,
+          k: REPLAY.k,
+          n: REPLAY.n,
+          round: r,
+          rounds: REPLAY.tl.rounds.length,
+          at: R.at,
+          turn: G.turn,
+          play: REPLAY.play,
+          speed: REPLAY.speed,
+          all: REPLAY.all,
+          jumping: !!REPLAY.jumping,
+          pv: PV,
+          hash: hash(G),
+          roundHash: hashSnap(R.snap),
+          endHash: REPLAY.tl.hash
+        };
+      },
+      replayJump: (k, play) => replayJump(k, play),
+      replayToggle: () => replayToggle(),
+      replaySpeed(v) {
+        REPLAY.speed = v;
+        replayBar();
+      },
+      replayClose: () => replayClose(),
+      replayRoom: (c) => replayRoom(c)
     };
   })();
 })();
